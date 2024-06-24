@@ -5,7 +5,7 @@ site_url: https://github.com/CyberSecAI/CyberSecAI.github.io
 # Page tree
 nav:
   - Home: index.md
-  - NotebookML: NotebookML/NotebookML.md
+  - NotebookML: NotebookML/NotebookML_VulnerabilityStandards.md
   
   - Annex:
     - Glossary: annex/Glossary.md
