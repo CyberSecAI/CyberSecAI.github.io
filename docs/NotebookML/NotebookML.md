@@ -2,7 +2,7 @@
 
 !!! abstract "Overview"
 
-    LLMs change the information retrieval paradigm. Instead of searching for information where we go to the information, we can chat with our documents and ask questions of them, so that the information in the form of an answer comes to us.
+    LLMs change the information retrieval paradigm. Instead of searching for information where **we go to the information**, we can chat with our documents and ask questions of them, so that **the information comes to us** in the form of an answer 
 
     In this chapter, we'll use [NotebookLM](https://notebooklm.google.com/) to quickly and easily build such a system.
 
@@ -20,7 +20,9 @@ For this example, we'll use the main vulnerability management standards and guid
 These files are available in docs/NotebookML/InputDocs for convenience.
 
 !!! tip 
-    "Any sources can be used e.g. Books in PDF format", websites, text files
+    Any sources can be used e.g. Books in PDF format, websites, text files.
+
+    Using a file of site content (if available) e.g.a PDF, is generally more reliable than using a URL to that site; it ensures all the content is ingested.
 
 
 
@@ -48,7 +50,7 @@ These files are available in docs/NotebookML/InputDocs for convenience.
 
 Documents are loaded via GoogleDrive, PDFs, Text files, Copied text, Web page URL.
 
-These documents become the corpus where information is retrieved from, with references to the document(s) it was retrieved from.
+These documents become the corpus where information is retrieved from, with references to the document(s) the information was retrieved from.
 
 
 
@@ -80,7 +82,7 @@ Each circled-number is a clickable link to the reference text in the original so
 2. https://www.computerworld.com/article/1611774/google-notebooklm-generative-ai-notes-app.html
 
 !!! success "Takeaways"
-    1. [Don't use CVSS Base (CVSS-B) scores alone to assess risk](https://www.first.org/cvss/v4.0/user-guide#CVSS-Base-Score-CVSS-B-Measures-Severity-not-Risk) - you will waste a LOT of time/effort/$ if you do! 
+    1. 
 
 
   

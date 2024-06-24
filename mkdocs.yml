@@ -92,23 +92,23 @@ watch:
 
 extra:
   analytics:
-    provider: google
-    property: G-51FVYR35TJ
+    # provider: google
+    # property: G-51FVYR35TJ
   social:
   - icon: fontawesome/solid/house
-    link: https://github.com/RiskBasedPrioritization/RiskBasedPrioritization.github.io
-    name: Risk Based Prioritization Guide
+    link: https://github.com/CyberSecAI/CyberSecAI.github.io
+    name: Guide
   - icon: fontawesome/solid/bug
-    link: https://github.com/RiskBasedPrioritization/RiskBasedPrioritization.github.io/issues/
+    link: https://github.com/CyberSecAI/CyberSecAI.github.io/issues/
     name: Report an Issue or Suggest a Change
   - icon: fontawesome/brands/github
-    link: https://github.com/RiskBasedPrioritization/RiskBasedPrioritization.github.io
-    name: Risk Based Prioritization source on Github
+    link: https://github.com/CyberSecAI/CyberSecAI.github.io
+    name: source on Github
   - icon: fontawesome/solid/download
-    link: https://riskbasedprioritization.github.io/print_page/
+    link: https://github.com/CyberSecAI/CyberSecAI.github.io/print_page/
     name: Save as HTML or print to PDF / paper
 
-copyright: Copyright &copy; Contributors to the Risk Based Prioritization Guide.
+copyright: Copyright &copy; Contributors to the CyberSecAI Guide.
 
 plugins:
   - search
