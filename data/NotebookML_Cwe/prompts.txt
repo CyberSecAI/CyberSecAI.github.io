@@ -1,0 +1,13 @@
+what cwe ids are associated with buffer overflow?
+
+what cwe ids are associated with xss?
+
+How does the OWASP Top Ten 2021 categorise XSS?
+
+what is the parent weakness or cwe for xss and csrf?
+
+what are the different types of xss?
+
+what is the CWE associated with CVE-2021-27104 "Accellion FTA OS Command Injection Vulnerability"
+
+what is the CWE associated with CVE-2019-1653 "Cisco Small Business RV320 and RV325 Routers Information Disclosure Vulnerability"

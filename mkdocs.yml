@@ -5,12 +5,14 @@ site_url: https://github.com/CyberSecAI/CyberSecAI.github.io
 # Page tree
 nav:
   - Home: index.md
-  - NotebookML: NotebookML/NotebookML_VulnerabilityStandards.md
-  
+  - NotebookML:
+    - NotebookML: NotebookML/NotebookML.md
+    - NotebookML Vulnerability Standards: NotebookML/NotebookML_VulnerabilityStandards.md
+    - NotebookML CWEs: NotebookML/NotebookML_Cwe.md
   - Annex:
     - Glossary: annex/Glossary.md
   
-    
+
 
 theme:
   name: material
