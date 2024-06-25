@@ -9,7 +9,7 @@
 
     Using NotebookML, we can chat with the CWE document and ask questions, so that **the information comes to us** in the form of an answer. 
 
-    For comparison, we will also ask some of the same questions of ChatGPT4o (the covering 2 cases:
+    For comparison, we will also ask some of the same questions of ChatGPT4o covering 2 cases:
 
     1. without uploading any documents to it.
     2. uploading a document to it.

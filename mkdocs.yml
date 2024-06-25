@@ -8,7 +8,8 @@ nav:
   - NotebookML:
     - NotebookML: NotebookML/NotebookML.md
     - NotebookML Vulnerability Standards: NotebookML/NotebookML_VulnerabilityStandards.md
-    - NotebookML CWEs: NotebookML/NotebookML_Cwe.md
+    - NotebookML CWE: NotebookML/NotebookML_Cwe.md
+    - NotebookML CAPEC: NotebookML/NotebookML_Capec.md
   - Annex:
     - Glossary: annex/Glossary.md
   
