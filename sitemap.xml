@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/CyberSecAI/CyberSecAI.github.io/NotebookML/NotebookML_Capec/</loc>
+         <lastmod>2024-06-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/CyberSecAI/CyberSecAI.github.io/NotebookML/NotebookML_Cwe/</loc>
          <lastmod>2024-06-25</lastmod>
          <changefreq>daily</changefreq>

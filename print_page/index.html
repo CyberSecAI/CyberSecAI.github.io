@@ -371,7 +371,28 @@
         
   
   <span class="md-ellipsis">
-    NotebookML CWEs
+    NotebookML CWE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NotebookML/NotebookML_Capec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookML CAPEC
   </span>
   
 
@@ -519,7 +540,16 @@
           <li class="md-nav__item">
   <a href="#notebookml-notebookml_cwe" class="md-nav__link">
     <span class="md-ellipsis">
-      4. NotebookML CWEs
+      4. NotebookML CWE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebookml-notebookml_capec" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. NotebookML CAPEC
     </span>
   </a>
   
@@ -543,7 +573,7 @@
           <li class="md-nav__item">
   <a href="#annex-glossary" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Glossary
+      6. Glossary
     </span>
   </a>
   
@@ -745,7 +775,7 @@
 <li>It can be unwieldy to navigate or assimilate this information. </li>
 </ul>
 <p>Using NotebookML, we can chat with the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> document and ask questions, so that <strong>the information comes to us</strong> in the form of an answer. </p>
-<p>For comparison, we will also ask some of the same questions of ChatGPT4o (the covering 2 cases:</p>
+<p>For comparison, we will also ask some of the same questions of ChatGPT4o covering 2 cases:</p>
 <ol>
 <li>without uploading any documents to it.</li>
 <li>uploading a document to it.</li>
@@ -825,6 +855,81 @@
 <li>ChatGPT provides richer answers to questions that can be answered outside of the provided source documents (based on the extremely limited test cases here!).</li>
 </ol>
 </li>
+</ol>
+</div></section><section class="print-page" id="notebookml-notebookml_capec"><h1 id="notebookml-notebookml_capec-notebookml">NotebookML<a class="headerlink" href="#notebookml-notebookml_capec-notebookml" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>In this chapter, we'll use <a href="https://notebooklm.google.com/">NotebookLM</a> to ingest the <a href="https://capec.mitre.org/">Common Attack Pattern Enumeration and Classification (CAPEC) list</a>. </p>
+<ul>
+<li>In the current version (CAPEC List Version 3.9 as at June 2024), there are 559 Total Attack Patterns. </li>
+<li>It can be unwieldy to navigate or assimilate this information. </li>
+</ul>
+<p>Using NotebookML, we can chat with the CAPEC document and ask questions, so that <strong>the information comes to us</strong> in the form of an answer. </p>
+<p>For comparison, we will also ask some of the same questions of ChatGPT4o covering 2 cases:</p>
+<ol>
+<li>without uploading any documents to it.</li>
+<li>uploading a document to it.</li>
+</ol>
+<p><strong>Note that CAPEC appears a lot less than <abbr title="CWE Common Weakness Enumeration">CWE</abbr> on the internet so an LLM will have a lot less context for CAPEC.</strong></p>
+</div>
+<h2 id="notebookml-notebookml_capec-data-sources">Data Sources<a class="headerlink" href="#notebookml-notebookml_capec-data-sources" title="Permanent link">&para;</a></h2>
+<p><a href="https://capec.mitre.org/data/downloads.html">https://capec.mitre.org/data/downloads.html</a> offers various formats (XML, CSV, HTML), and views:</p>
+<ul>
+<li>Mechanisms of Attack: <a href="https://capec.mitre.org/data/slices/1000.html">https://capec.mitre.org/data/slices/1000.html</a></li>
+<li>Domains of Attack: <a href="https://capec.mitre.org/data/slices/3000.html">https://capec.mitre.org/data/slices/3000.html</a><ul>
+<li>We'll use this one.</li>
+</ul>
+</li>
+</ul>
+<p>NotebookML - Upload from - Web page URL - Paste website link - <a href="https://capec.mitre.org/data/slices/3000.html">https://capec.mitre.org/data/slices/3000.html</a></p>
+<figure>
+<p><img alt="" src="../assets/images/NotebookML_1.png" /></p>
+</figure>
+<h2 id="notebookml-notebookml_capec-what-is-the-capec-id-that-related-to-xss">what is the CAPEC ID that related to xss<a class="headerlink" href="#notebookml-notebookml_capec-what-is-the-capec-id-that-related-to-xss" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../assets/images/capec_xss_1.png" /></p>
+</figure>
+<h3 id="notebookml-notebookml_capec-chatgpt4o-answer">ChatGPT4o Answer<a class="headerlink" href="#notebookml-notebookml_capec-chatgpt4o-answer" title="Permanent link">&para;</a></h3>
+<p>ChatGPT4o did not provide all the CWEs that NotebookLM did.</p>
+<figure>
+<p><img alt="" src="../assets/images/chatgpt4o.png" /></p>
+</figure>
+<h3 id="notebookml-notebookml_capec-chatgpt4o-answer-with-hallucination">ChatGPT4o Answer with Hallucination<a class="headerlink" href="#notebookml-notebookml_capec-chatgpt4o-answer-with-hallucination" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="" src="../assets/images/chatgpt4o_retry.png" /></p>
+</figure>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p><strong>Hallucination</strong></p>
+<p>"CAPEC-633: Client-Side XSS using Content-Security-Policy Bypass" is not valid
+<a href="https://capec.mitre.org/data/definitions/633.html">https://capec.mitre.org/data/definitions/633.html</a></p>
+</div>
+<h3 id="notebookml-notebookml_capec-chatgpt4o-answer-with-hallucination-with-uploaded-capec-file">ChatGPT4o Answer with Hallucination with Uploaded CAPEC File<a class="headerlink" href="#notebookml-notebookml_capec-chatgpt4o-answer-with-hallucination-with-uploaded-capec-file" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="" src="../assets/images/chatgpt4o_with_file.png" /></p>
+</figure>
+<h3 id="notebookml-notebookml_capec-chatgpt4o-validate-the-hallucination">ChatGPT4o Validate the Hallucination<a class="headerlink" href="#notebookml-notebookml_capec-chatgpt4o-validate-the-hallucination" title="Permanent link">&para;</a></h3>
+<p>In a different ChatGPT4o session (new context to avoid the hallucination), we ask ChatGPT4o to validate the CAPEC. </p>
+<figure>
+<p><img alt="" src="../assets/images/chatgpt_validate.png" /></p>
+</figure>
+<h3 id="notebookml-notebookml_capec-chatgpt4o-review-and-rate-the-responses-from-notebooklm-and-chatgpt4o">ChatGPT4o Review and Rate the Responses from NotebookLM and ChatGPT4o<a class="headerlink" href="#notebookml-notebookml_capec-chatgpt4o-review-and-rate-the-responses-from-notebooklm-and-chatgpt4o" title="Permanent link">&para;</a></h3>
+<p>ChatGPT4o was used to review and rate both responses (copied directly from the NoteBookLM and ChatGPT4o responses)</p>
+<figure>
+<p><img alt="" src="../assets/images/chatgpt40_review1.png" /></p>
+</figure>
+<figure>
+<p><img alt="" src="../assets/images/chatgpt40_review2.png" /></p>
+</figure>
+<figure>
+<p><img alt="" src="../assets/images/chatgpt40_review3.png" /></p>
+</figure>
+<h2 id="notebookml-notebookml_capec-takeaways">Takeaways<a class="headerlink" href="#notebookml-notebookml_capec-takeaways" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<ol>
+<li>For less common or referenced text like CAPEC, ChatGPT4o can hallucinate even when the CAPEC list is uploaded to it.</li>
+<li>NotebookLM did not hallucinate (a benefit of the "Closed System" approach).</li>
 </ol>
 </div></section><h1 class='nav-section-title-end'>Ended: NotebookML</h1>
                         <h1 class='nav-section-title' id='section-annex'>
