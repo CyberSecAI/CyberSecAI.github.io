@@ -5,6 +5,8 @@ Wikis enabled
 
 https://cybersecai.github.io/
 
+https://github.com/CyberSecAI/CyberSecAI.github.io/settings/pages
+gh-pages (not main) - save
 
 # Create virtual environment
 python3 -m venv Guide

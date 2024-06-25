@@ -43,6 +43,12 @@ These documents become the corpus where information is retrieved from, with refe
 ### Sharing
 Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing is done directly via email addresses.
 
+### How To Use NotebookLM
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iWPjBwXy_Io?si=0Z0e0u_ni0R4tAM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ## References
 
 1. [Introducing NotebookLM](https://adjacentpossible.substack.com/p/introducing-notebooklm), Oct 19, 2023, Steven Johnson who contributed to NotebookLM
@@ -54,6 +60,10 @@ Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing 
 
 
 
+## Takeaways
   
+!!! success "Takeaways" 
+
+    1. 
 
   
