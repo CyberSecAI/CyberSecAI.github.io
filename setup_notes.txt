@@ -1,3 +1,11 @@
+
+github.Command
+Wikis enabled
+    Wikis host documentation for your repository.
+
+https://cybersecai.github.io/
+
+
 # Create virtual environment
 python3 -m venv Guide
 

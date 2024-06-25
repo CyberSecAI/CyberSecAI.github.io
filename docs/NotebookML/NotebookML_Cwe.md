@@ -8,6 +8,11 @@
     * It can be unwieldy to navigate or assimilate this information. 
 
     Using NotebookML, we can chat with the CWE document and ask questions, so that **the information comes to us** in the form of an answer. 
+
+    For comparison, we will also ask some of the same questions of ChatGPT4o (the covering 2 cases:
+
+    1. without uploading any documents to it.
+    2. uploading a document to it.
     
 
 
@@ -23,29 +28,61 @@ pagesper=280 file=./data/NotebookML_CweCapec/cwe_latest.pdf ./pdfsplit.sh
 ````
 
 
-## [NotebookLM](https://notebooklm.google.com/)
-
 <figure markdown>
 ![](../assets/images/NotebookML_1.png)
-<figcaption>T</figcaption>
 </figure>
 
+## what cwe ids are associated with buffer overflow?
+
 <figure markdown>
-![](../assets/images/NotebookML_2.png)
+![](../assets/images/bufferoverflow.png)
 </figure>
+
+### ChatGPT4o Answer
+ChatGPT4o did not provide all the CWEs that NotebookLM did.
+
+<figure markdown>
+![](../assets/images/chatgpt_bufferoverflow.png)
+</figure>
+
+
+### ChatGPT4o Answer with uploaded CWE document
+ChatGPT4o required some additional prompting to provide a comparable list of CWEs to what NotebookLM gave.
+
+
+<figure markdown>
+![](../assets/images/chatgpt_cwe_latest.png)
+</figure>
+
+## what cwe ids are associated with xss?
 
 <figure markdown>
 ![](../assets/images/NotebookML_3.png)
 <figcaption>The Sources sidebar is no longer shown in this and the following examples</figcaption>
 </figure>
 
+## what is the parent weakness or cwe for xss and csrf?
+
 <figure markdown>
 ![](../assets/images/NotebookML_4.png)
 </figure>
 
+## what are the different types of xss?
+
 <figure markdown>
 ![](../assets/images/NotebookML_5.png)
 </figure>
+
+### ChatGPT4o Answer
+ChatGPT4o provided the same types - but gave a much richer answer than NotebookLM did because it has access to a lot more documents on XSS.
+
+
+
+<figure markdown>
+![](../assets/images/xss.png)
+</figure>
+
+## what is the CWE associated with CVE-2021-27104 "Accellion FTA OS Command Injection Vulnerability"
 
 <figure markdown>
 ![](../assets/images/NotebookML_6.png)
@@ -55,14 +92,25 @@ pagesper=280 file=./data/NotebookML_CweCapec/cwe_latest.pdf ./pdfsplit.sh
 ![](../assets/images/NotebookML_7.png)
 </figure>
 
+## what is the CWE associated with CVE-2019-1653 "Cisco Small Business RV320 and RV325 Routers Information Disclosure Vulnerability"
+
 <figure markdown>
 ![](../assets/images/NotebookML_8.png)
 </figure>
 
+### ChatGPT4o Answer
+ChatGPT4o provided the same types - but gave a much richer answer than NotebookLM did because it has access to a lot more documents on XSS.
+
+<figure markdown>
+![](../assets/images/cve.png)
+</figure>
 
 
   
-
+## Takeaways
   
+!!! success "Takeaways" 
 
-  
+    1. The large CWE document could not be uploaded to NoteBookLM as one PDF document, but had to be split into smaller PDFs.
+    2. NoteBookAI provides better answers on the provided source documents (based on the extremely limited test cases here!).
+    3. ChatGPT provides richer answers to questions that can be answered outside of the provided source documents (based on the extremely limited test cases here!).

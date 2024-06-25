@@ -43,7 +43,7 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
-        primary: light blue
+      primary: cyan
       accent: purple 
     - scheme: slate 
       toggle:
