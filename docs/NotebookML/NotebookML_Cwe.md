@@ -111,6 +111,9 @@ ChatGPT4o provided the same types - but gave a much richer answer than NotebookL
   
 !!! success "Takeaways" 
 
+    1. I found it useful, quick, and convenient to be able to ask questions of the CWE list, as a compliment to the traditional search method I've used in the past.
     1. The large CWE document could not be uploaded to NoteBookLM as one PDF document, but had to be split into smaller PDFs.
-    2. NoteBookAI provides better answers on the provided source documents (based on the extremely limited test cases here!).
-    3. ChatGPT provides richer answers to questions that can be answered outside of the provided source documents (based on the extremely limited test cases here!).
+        1. The same document could be uploaded to ChatGPT4o.
+    2. Based on the extremely limited test cases here (your experience may vary):
+        1. NoteBookAI provides better answers on the provided source documents.
+        1. ChatGPT provides richer answers to questions that can be answered outside of the provided source documents (based on the extremely limited test cases here!).

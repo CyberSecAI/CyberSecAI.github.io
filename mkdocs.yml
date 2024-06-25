@@ -18,7 +18,8 @@ theme:
   name: material
   custom_dir: docs/overrides
   icon:
-    logo: material/fire-off
+    logo: material/head-plus
+
   features:
     - navigation.expand
     - navigation.footer
@@ -94,8 +95,8 @@ watch:
 
 extra:
   analytics:
-    # provider: google
-    # property: G-51FVYR35TJ
+    provider: google
+    property: G-NMMB0KXVGQ
   social:
   - icon: fontawesome/solid/house
     link: https://github.com/CyberSecAI/CyberSecAI.github.io

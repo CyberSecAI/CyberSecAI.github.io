@@ -64,6 +64,6 @@ Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing 
   
 !!! success "Takeaways" 
 
-    1. 
+    1. NotebookML is a powerful free solution from Google that allows users to quickly and easily build a source-grounded AI (where users define the set of documents) and then have an open-ended conversation with the language model where its answers will be “grounded” in the information users selected.
 
   
