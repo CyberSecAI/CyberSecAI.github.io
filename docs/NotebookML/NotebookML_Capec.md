@@ -28,9 +28,7 @@ https://capec.mitre.org/data/downloads.html offers various formats (XML, CSV, HT
 NotebookML - Upload from - Web page URL - Paste website link - https://capec.mitre.org/data/slices/3000.html
 
 
-<figure markdown>
-![](../assets/images/NotebookML_1.png)
-</figure>
+
 
 ## what is the CAPEC ID that related to xss
 
@@ -60,6 +58,7 @@ ChatGPT4o did not provide all the CWEs that NotebookLM did.
 
 
 ### ChatGPT4o Answer with Hallucination with Uploaded CAPEC File
+ChatGPT4o UI did not process the CAPEC HTML file, and the UI does not accept URLs, so the CSV file was uploaded instead.
 
 <figure markdown>
 ![](../assets/images/chatgpt4o_with_file.png)
