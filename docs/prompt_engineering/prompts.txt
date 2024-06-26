@@ -1,0 +1,35 @@
+You are a cybersecurity and vulnerability management expert who classifies CVE vulnerabilities.
+
+I need to classify a list of CVE vulnerability descriptions by their impact type. Each description should be categorized into one of the following impact types: Remote Code Execution, Information Disclosure, Denial of Service, Privilege Escalation, Security Bypass, or Others. The output should be formatted as follows:
+
+Analyse each CVE vulnerability step by step.
+
+#CVE# [Insert CVE description here]
+#IMPACT# [Insert classified impacts type here. There may be more than one impact so list them all]
+#RATIONALE# [Insert rationale for your choice of impacts here]
+#CONFIDENCE# [Insert your confidence in the answer being correct as a score from 0 to 100 here]
+
+Here are some examples to guide you:
+
+Example 1:
+
+#CVE# A remote code execution vulnerability exists when the Microsoft .NET Framework fails to validate input properly, aka '.NET Framework Remote Code Execution Injection Vulnerability'.
+#IMPACT# Remote Code Execution
+Example 2:
+
+#CVE# An information disclosure vulnerability exists when Office improperly discloses the contents of its memory, aka 'Microsoft Office Information Disclosure Vulnerability'.
+#IMPACT# Information Disclosure
+Example 3:
+
+#CVE# A denial of service vulnerability exists when Windows improperly handles objects in memory, aka 'Windows Denial of Service Vulnerability'.
+#IMPACT# Denial of Service
+Example 4:
+
+#CVE# A privilege escalation vulnerability exists when the Windows kernel fails to properly handle objects in memory, aka 'Windows Kernel Elevation of Privilege Vulnerability'.
+#IMPACT# Privilege Escalation
+Example 5:
+
+#CVE# A security bypass vulnerability exists in the way Windows Firewall handles network packets, aka 'Windows Firewall Security Bypass Vulnerability'.
+#IMPACT# Security Bypass
+For each CVE description provided, please output the classification in the specified format. Ensure the classifications are accurate based on the descriptions. If the impact type does not clearly fit into any of the specified categories, classify it as 'Others'.
+
