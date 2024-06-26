@@ -1,0 +1,1 @@
+I am currently using CVSS to rank vulnerabilities. I also want to rank based on exploitation as I heard only a small percentage of CVEs are actually exploited. What standard should I use. How should I use them. Provide an answer with rationale and examples.

@@ -4,7 +4,14 @@
 
     LLMs change the information retrieval paradigm. Instead of searching for information where **we go to the information**, we can chat with our documents and ask questions of them, so that **the information comes to us** in the form of an answer. 
 
-    In this chapter, we'll use [NotebookLM](https://notebooklm.google.com/) to quickly and easily build such a system.
+    In this section, we'll use [NotebookLM](https://notebooklm.google.com/), and we just need to import our documents to be able to chat with them. 
+
+    ChatGPT4o is also used for comparison to highlight where one is better applied than the other depending on the context.
+    
+    * Both tools use LLMs, but NoteBookLM uses a "Closed System" (only the document sources you provide), versus ChatGPT4o which bases it answers on the open internet content at the time it was trained, and adittionally the documents you provide.
+    
+  
+
 
 
 
@@ -21,6 +28,10 @@
 !!! quote 
     
     **“source-grounded AI”**: you define a set of documents that are important to your work—called “sources” in the NotebookLM parlance—and from that point on, you can have an open-ended conversation with the language model where its answers will be “grounded” in the information you’ve selected. It is as if you are giving the AI instant expertise in whatever domain you happen to be working in. ([ref](https://adjacentpossible.substack.com/p/introducing-notebooklm))
+
+
+!!! tip
+    Your responses from NotebookLM may be different than the examples shown here. LLMs will give different responses to the same question.
 
 ### Document Loading
 
@@ -65,5 +76,6 @@ Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing 
 !!! success "Takeaways" 
 
     1. NotebookML is a powerful free solution from Google that allows users to quickly and easily build a source-grounded AI (where users define the set of documents) and then have an open-ended conversation with the language model where its answers will be “grounded” in the information users selected.
+    2. I found it a useful tool / companion for the research I was doing on vulnerability management to augment my knowledge and capabilities.
 
   
