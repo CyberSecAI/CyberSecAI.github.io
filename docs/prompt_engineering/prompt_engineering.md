@@ -6,18 +6,27 @@
 
     ChatGPTo will be used here but the techniques apply in general to any LLM.
 
-  
+## Prompt Guides
+There are many books, guides, and articles on Prompt Engineering. Some of the better ones are listed here:
 
-## Use the LLM for more than answering the question
-There are many books, guides, and articles on Prompt Engineering - some of the better ones are listed in the References section below.
+1. [Prompt Engineering Guide](https://www.promptingguide.ai/) 
+1. [OpenAI Prompt engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering) 
+1. [Google Gemini Prompting guide 101 - A quick-start handbook for effective prompts, April 2024 edition](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)
+1. [How I Won Singapore’s GPT-4 Prompt Engineering Competition](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41), Dec 2023
+2. [Prompt Engineering for Generative AI](https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/), May 2024
+3. [Prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies) 
 
-Some points I've found useful that I don't see described often are:
+
+
+
+## Useful Prompt Tactics
+
+Some tactics I find particularly useful:
 
 1. Ask the LLM to generate the prompt.
       1. Do this in 2 parts (task decomposition)
          1. Ask the LLM what techniques are best to use for effective prompt engineering
          2. Ask the LLM to create a prompt using these techniques for the objective and example you specify
-2. Ask the LLM to approach the problem step by step, and to provide the rationale for their response
 3. Ask the LLM to provide a confidence score for their answer. 
       1. People can be fooled by the fluency of LLMs aka hallucinations 
       2. LLMs know how confident they are.
@@ -69,12 +78,28 @@ _functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect b
 ![Guide](../assets/images/prompting_classification2.png)
 </figure>
 
-## References
 
-1. [Prompting guide 101 - A quick-start handbook for effective prompts, April 2024 edition](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)
-1. [How I Won Singapore’s GPT-4 Prompt Engineering Competition](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41), Dec 2023
-2. [Prompt Engineering for Generative AI](https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/), May 2024
-3. [Prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies) 
+## Fabric Prompt Collection and Framework
+
+https://github.com/danielmiessler/fabric/tree/main 
+
+!!! quote
+    Since the start of 2023 and GenAI we've seen a massive number of AI applications for accomplishing tasks. It's powerful, but it's not easy to integrate this functionality into our lives.
+
+    In other words, AI doesn't have a capabilities problem—it has an integration problem.
+    Fabric was created to address this by enabling everyone to granularly apply AI to everyday challenges.
+
+
+    One of fabric's primary features is helping people collect and integrate prompts, which we call Patterns, into various parts of their lives.
+
+
+### Fabric Prompts 
+https://github.com/danielmiessler/fabric/tree/main/patterns
+
+
+### Fabric Prompt to Improve Prompts 
+https://github.com/danielmiessler/fabric/blob/main/patterns/improve_prompt/system.md
+
 
 
 
@@ -82,5 +107,5 @@ _functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect b
   
 !!! success "Takeaways" 
 
-    1. 
+    1. ToDo
   

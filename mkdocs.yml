@@ -10,8 +10,8 @@ nav:
     - NotebookML Vulnerability Standards: NotebookML/NotebookML_VulnerabilityStandards.md
     - NotebookML CWE: NotebookML/NotebookML_Cwe.md
     - NotebookML CAPEC: NotebookML/NotebookML_Capec.md
-    - Prompting:
-      - Prompt Engineering: prompt_engineering/prompt_engineering.md    
+  - Prompting:
+    - Prompt Engineering: prompt_engineering/prompt_engineering.md    
   - Annex:
     - Glossary: annex/Glossary.md
   
