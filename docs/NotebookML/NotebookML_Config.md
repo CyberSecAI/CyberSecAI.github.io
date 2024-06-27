@@ -774,9 +774,16 @@ Note that Config Namespace placeholders are used for some security configuration
   
 !!! success "Takeaways" 
 
-    1. NotebookML did not understand the concept of placeholder config parameters from the source documents. Since there are several config parameters per placeholder, it missed many config parameters (Attempt 1).
-    2. **When the prompt explained about placeholder config parameters, NotebookLM found all but 1 of the 79 configuration parameters related to security (Attempt 2).**
-    3. **NotebookML found 18 config parameters related to security that were not found by humans as part of the expected answers.**
+
+    
+    1. NotebookML
+          1. NotebookML did not understand the concept of placeholder config parameters from the source documents. Since there are several config parameters per placeholder, it missed many config parameters (Attempt 1).
+          2. **When the prompt explained about placeholder config parameters, NotebookLM found all but 1 of the 79 configuration parameters related to security (Attempt 2).**
+          3. **NotebookML found 18 config parameters related to security that were not found by humans as part of the expected answers.**
+    2. ChatGPT4o
+       1. When the concept of placeholder config parameters was explained in the second prompt, ChatGPT made 2 mistakes
+          1. it did not extend the example to all the placeholder config parameters
+          2. it appended the {ns} placeholder parameters to a different placholder {service}
 
 
 
