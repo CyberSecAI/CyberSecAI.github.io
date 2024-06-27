@@ -2,8 +2,13 @@
 
 !!! abstract "Overview"
     
-    https://www.coguard.io/post/coguard-uses-openai-cybersecurity-grant-to-automate-infrastructure-security
-    https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file
+    One area of research is using LLMs for infrastructure configuration as detailed in https://www.coguard.io/post/coguard-uses-openai-cybersecurity-grant-to-automate-infrastructure-security and the associated [repo](https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file).
+
+    Here we take on:
+
+    1. the first task [C1]: Extraction of security and uptime-relevant configuration parameters from manuals.
+        1. for the example provided in the [repo](https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file): Apache Spark
+
 
 
 ## Details
@@ -19,9 +24,6 @@
 
 ### Original Prompt 
 
-<figure markdown>
-![](../assets/images/apache_spark_prompt.png)
-</figure>
 
 
 The original prompt used is per https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file#extraction-of-security-relevant-parameters-in-c1
@@ -35,14 +37,87 @@ The expected answer is per https://github.com/coguardio/coguard_openai_rule_auto
 !!! quote
     The following parameters were identified by the CoGuard team by hand as relevant from a security point of view.
 
-    * spark.yarn.shuffle.server.recovery.disabled
-    * spark.authenticate
-    * spark.authenticate.secret
-    * spark.authenticate.secret.file
-    * spark.authenticate.secret.driver.file
-    * spark.authenticate.secret.executor.file
-    * THIS LIST IS TRUNCATED...
-
+    ````
+    spark.yarn.shuffle.server.recovery.disabled
+    spark.authenticate
+    spark.authenticate.secret
+    spark.authenticate.secret.file
+    spark.authenticate.secret.driver.file
+    spark.authenticate.secret.executor.file
+    spark.network.crypto.enabled
+    spark.network.crypto.config.*
+    spark.network.crypto.saslFallback
+    spark.authenticate.enableSaslEncryption
+    spark.network.sasl.serverAlwaysEncrypt
+    spark.io.encryption.enabled
+    spark.io.encryption.keySizeBits
+    spark.io.encryption.keygen.algorithm
+    spark.io.encryption.commons.config.*
+    spark.ui.allowFramingFrom
+    spark.ui.filters
+    spark.acls.enable
+    spark.admin.acls
+    spark.admin.acls.groups
+    spark.modify.acls
+    spark.modify.acls.groups
+    spark.ui.view.acls
+    spark.ui.view.acls.groups
+    spark.user.groups.mapping
+    spark.history.ui.acls.enable
+    spark.history.ui.admin.acls
+    spark.history.ui.admin.acls.groups
+    spark.ssl.enabled
+    spark.ssl.port
+    spark.ssl.enabledAlgorithms
+    spark.ssl.keyPassword
+    spark.ssl.keyStore
+    spark.ssl.keyStorePassword
+    spark.ssl.keyStoreType
+    spark.ssl.protocol
+    spark.ssl.needClientAuth
+    spark.ssl.trustStore
+    spark.ssl.trustStorePassword
+    spark.ssl.trustStoreType
+    spark.ssl.ui.enabled
+    spark.ssl.ui.port
+    spark.ssl.ui.enabledAlgorithms
+    spark.ssl.ui.keyPassword
+    spark.ssl.ui.keyStore
+    spark.ssl.ui.keyStorePassword
+    spark.ssl.ui.keyStoreType
+    spark.ssl.ui.protocol
+    spark.ssl.ui.needClientAuth
+    spark.ssl.ui.trustStore
+    spark.ssl.ui.trustStorePassword
+    spark.ssl.ui.trustStoreType
+    spark.ssl.standalone.enabled
+    spark.ssl.standalone.port
+    spark.ssl.standalone.enabledAlgorithms
+    spark.ssl.standalone.keyPassword
+    spark.ssl.standalone.keyStore
+    spark.ssl.standalone.keyStorePassword
+    spark.ssl.standalone.keyStoreType
+    spark.ssl.standalone.protocol
+    spark.ssl.standalone.needClientAuth
+    spark.ssl.standalone.trustStore
+    spark.ssl.standalone.trustStorePassword
+    spark.ssl.standalone.trustStoreType
+    spark.ssl.historyServer.enabled
+    spark.ssl.historyServer.port
+    spark.ssl.historyServer.enabledAlgorithms
+    spark.ssl.historyServer.keyPassword
+    spark.ssl.historyServer.keyStore
+    spark.ssl.historyServer.keyStorePassword
+    spark.ssl.historyServer.keyStoreType
+    spark.ssl.historyServer.protocol
+    spark.ssl.historyServer.needClientAuth
+    spark.ssl.historyServer.trustStore
+    spark.ssl.historyServer.trustStorePassword
+    spark.ssl.historyServer.trustStoreType
+    spark.ui.xXssProtection
+    spark.ui.xContentTypeOptions.enabled
+    spark.ui.strictTransportSecurity
+    ````
 
 ## Data Sources
 The data sources are per above:
@@ -62,13 +137,20 @@ The data sources are per above:
 ````
 
 
-## Attempt 1
+## Attempt 1: Use the Provided Prompt
 
 ### Create A New Notebooklm With The 2 Data Sources Only
 New NotebookLM.
 Sources - Upload from - Web page URL for the 2 Data Sources listed above.
 
+<figure markdown>
+![](../assets/images/notebookml_config_2.png)
+</figure>
+
 ### Submit the prompt
+<figure markdown>
+![](../assets/images/apache_spark_prompt.png)
+</figure>
 
 !!! quote
     You are an assistant that is a cybersecurity expert and knows their configuration files. Your response here should be a JSON list of strings
@@ -213,7 +295,7 @@ diff data/NotebookML_Config/security_parameters_manual.txt data/NotebookML_Confi
 > spark.user.groups.mapping
 ````
 
-## Attempt 2
+## Attempt 2: Explain about Config Namespace Placeholders
 
 The LLM did not understand from the documents about Config Namespace placeholders.
 So this time, we explain as part of the prompt about Config Namespace placeholders.
@@ -234,11 +316,15 @@ So this time, we explain as part of the prompt about Config Namespace placeholde
 !!! quote
     Note that Config Namespace placeholders are used for some security configurations. These are placeholders "${ns}" that can take values listed under Config Namespace. For these security configurations placeholders list all possible security configurations for each Config Namespace e.g. For Property Name: "${ns}.enabled", "spark.ssl.enabled" and "spark.ssl.historyServer" would be some possible configurations now that you understand namespace placeholders, list all the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values. Your response here should be a JSON list of strings only. list the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values and repeated patterns
 
+!!! note
+    Note the duplication in the prompt to emphasize what we want
+    
+    !!! quote
+        "list the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values and repeated patterns" in the prompt.
+
 [security_parameters_ns.json](../../data/NotebookML_Config/security_parameters_ns.json) is the resulting file that has 96 config parameters - more than the expected config parameters.
 
-<figure markdown>
-![](../assets/images/notebookml_config_2.png)
-</figure>
+
 
 ### Save The Result
 1. Click the Copy button.
@@ -473,19 +559,224 @@ spark.ssl.useNodeLocalConf
 </figure>
 
 
-It's not obvious why the 1 config parameter was not included 
-`spark.yarn.shuffle.server.recovery.disabled`
+1 config parameter was not found by NotebookML, and it's not obvious why.
+`spark.yarn.shuffle.server.recovery.disabled
+
+
+
 
 <figure markdown>
 ![](../assets/images/apache_spark_chatgpt_miss.png)
 </figure>
+
+## ChatGPT4o
+
+### Original Prompt
+````
+You are an assistant that is a cybersecurity expert and knows their configuration files. Your response here should be a JSON list of strings
+Using only the documentation of Apache Spark from the URLs below (and no other source), which configuration parameters are relevant from a security perspective?
+
+The data sources are :
+1. https://spark.apache.org/docs/latest/configuration.html
+2. https://spark.apache.org/docs/latest/security.html
+````
+
+````
+[
+    "spark.authenticate",
+    "spark.authenticate.secret",
+    "spark.authenticate.secret.file",
+    "spark.authenticate.secret.driver.file",
+    "spark.authenticate.secret.executor.file",
+    "spark.network.crypto.enabled",
+    "spark.network.crypto.config.*",
+    "spark.network.crypto.saslFallback",
+    "spark.authenticate.enableSaslEncryption",
+    "spark.network.sasl.serverAlwaysEncrypt",
+    "spark.io.encryption.enabled",
+    "spark.io.encryption.keySizeBits",
+    "spark.io.encryption.keygen.algorithm",
+    "spark.io.encryption.commons.config.*",
+    "spark.ui.allowFramingFrom",
+    "spark.ui.filters",
+    "spark.acls.enable",
+    "spark.admin.acls",
+    "spark.admin.acls.groups",
+    "spark.modify.acls",
+    "spark.modify.acls.groups",
+    "spark.ui.view.acls",
+    "spark.ui.view.acls.groups",
+    "spark.user.groups.mapping",
+    "spark.history.ui.acls.enable",
+    "spark.history.ui.admin.acls",
+    "spark.history.ui.admin.acls.groups",
+    "spark.ssl.enabled",
+    "spark.ssl.port",
+    "spark.ssl.enabledAlgorithms",
+    "spark.ssl.keyPassword",
+    "spark.ssl.keyStore",
+    "spark.ssl.keyStorePassword",
+    "spark.ssl.keyStoreType",
+    "spark.ssl.protocol",
+    "spark.ssl.needClientAuth",
+    "spark.ssl.trustStore",
+    "spark.ssl.trustStorePassword",
+    "spark.ssl.trustStoreType",
+    "spark.ui.xXssProtection",
+    "spark.ui.xContentTypeOptions.enabled",
+    "spark.ui.strictTransportSecurity",
+    "spark.kerberos.access.hadoopFileSystems",
+    "spark.security.credentials.${service}.enabled"
+]
+
+````
+
+### Prompt Explaining Config Namespace placeholders
+````
+Note that Config Namespace placeholders are used for some security configurations. These are placeholders "${ns}" that can take values listed under Config Namespace. For these security configurations placeholders list all possible security configurations for each Config Namespace e.g. For Property Name: "${ns}.enabled", "spark.ssl.enabled" and "spark.ssl.historyServer" would be some possible configurations now that you understand namespace placeholders, list all the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values. Your response here should be a JSON list of strings only. list the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values and repeated patterns
+````
+
+````
+[
+    "spark.ssl.enabled",
+    "spark.ssl.historyServer.enabled",
+    "spark.security.credentials.enabled",
+    "spark.ssl.port",
+    "spark.ssl.historyServer.port",
+    "spark.security.credentials.port",
+    "spark.ssl.enabledAlgorithms",
+    "spark.ssl.historyServer.enabledAlgorithms",
+    "spark.security.credentials.enabledAlgorithms",
+    "spark.ssl.keyPassword",
+    "spark.ssl.historyServer.keyPassword",
+    "spark.security.credentials.keyPassword",
+    "spark.ssl.keyStore",
+    "spark.ssl.historyServer.keyStore",
+    "spark.security.credentials.keyStore",
+    "spark.ssl.keyStorePassword",
+    "spark.ssl.historyServer.keyStorePassword",
+    "spark.security.credentials.keyStorePassword",
+    "spark.ssl.keyStoreType",
+    "spark.ssl.historyServer.keyStoreType",
+    "spark.security.credentials.keyStoreType",
+    "spark.ssl.protocol",
+    "spark.ssl.historyServer.protocol",
+    "spark.security.credentials.protocol",
+    "spark.ssl.needClientAuth",
+    "spark.ssl.historyServer.needClientAuth",
+    "spark.security.credentials.needClientAuth",
+    "spark.ssl.trustStore",
+    "spark.ssl.historyServer.trustStore",
+    "spark.security.credentials.trustStore",
+    "spark.ssl.trustStorePassword",
+    "spark.ssl.historyServer.trustStorePassword",
+    "spark.security.credentials.trustStorePassword",
+    "spark.ssl.trustStoreType",
+    "spark.ssl.historyServer.trustStoreType",
+    "spark.security.credentials.trustStoreType",
+    "spark.ssl.historyServer",
+    "spark.ssl.historyServer.historyServer",
+    "spark.security.credentials.historyServer",
+    "spark.authenticate",
+    "spark.authenticate.secret",
+    "spark.authenticate.secret.file",
+    "spark.authenticate.secret.driver.file",
+    "spark.authenticate.secret.executor.file",
+    "spark.network.crypto.enabled",
+    "spark.network.crypto.config.*",
+    "spark.network.crypto.saslFallback",
+    "spark.authenticate.enableSaslEncryption",
+    "spark.network.sasl.serverAlwaysEncrypt",
+    "spark.io.encryption.enabled",
+    "spark.io.encryption.keySizeBits",
+    "spark.io.encryption.keygen.algorithm",
+    "spark.io.encryption.commons.config.*",
+    "spark.ui.allowFramingFrom",
+    "spark.ui.filters",
+    "spark.acls.enable",
+    "spark.admin.acls",
+    "spark.admin.acls.groups",
+    "spark.modify.acls",
+    "spark.modify.acls.groups",
+    "spark.ui.view.acls",
+    "spark.ui.view.acls.groups",
+    "spark.user.groups.mapping",
+    "spark.history.ui.acls.enable",
+    "spark.history.ui.admin.acls",
+    "spark.history.ui.admin.acls.groups",
+    "spark.ui.xXssProtection",
+    "spark.ui.xContentTypeOptions.enabled",
+    "spark.ui.strictTransportSecurity",
+    "spark.kerberos.access.hadoopFileSystems",
+    "spark.security.credentials.${service}.enabled"
+]
+``` &#8203;:citation[oaicite:0]{index=0}&#8203;
+
+````
+
+### Compare The Answer With The Expected Answer
+
+1. ChatGPT4o missed these 2 config placeholders (these were not provided in the example in the prompt - only the first and last one were provided)
+      1. spark.ssl.ui
+      2. spark.ssl.standalone	
+2. ChatGPT4o wrongly interpreted spark.security.credentials.${service}.enabled as being the same as ${ns} placeholder, and appended the parameters for ${ns} placeholder to spark.security.credentials.
+
+````
+{
+    "manual_not_in_chatgpt4o": [
+        "spark.yarn.shuffle.server.recovery.disabled",
+        "spark.ssl.ui.enabled",
+        "spark.ssl.ui.port",
+        "spark.ssl.ui.enabledAlgorithms",
+        "spark.ssl.ui.keyPassword",
+        "spark.ssl.ui.keyStore",
+        "spark.ssl.ui.keyStorePassword",
+        "spark.ssl.ui.keyStoreType",
+        "spark.ssl.ui.protocol",
+        "spark.ssl.ui.needClientAuth",
+        "spark.ssl.ui.trustStore",
+        "spark.ssl.ui.trustStorePassword",
+        "spark.ssl.ui.trustStoreType",
+        "spark.ssl.standalone.enabled",
+        "spark.ssl.standalone.port",
+        "spark.ssl.standalone.enabledAlgorithms",
+        "spark.ssl.standalone.keyPassword",
+        "spark.ssl.standalone.keyStore",
+        "spark.ssl.standalone.keyStorePassword",
+        "spark.ssl.standalone.keyStoreType",
+        "spark.ssl.standalone.protocol",
+        "spark.ssl.standalone.needClientAuth",
+        "spark.ssl.standalone.trustStore",
+        "spark.ssl.standalone.trustStorePassword",
+        "spark.ssl.standalone.trustStoreType"
+    ],
+    "chatgpt4o_not_in_manual": [
+        "spark.security.credentials.enabled",
+        "spark.security.credentials.port",
+        "spark.security.credentials.enabledAlgorithms",
+        "spark.security.credentials.keyPassword",
+        "spark.security.credentials.keyStore",
+        "spark.security.credentials.keyStorePassword",
+        "spark.security.credentials.keyStoreType",
+        "spark.security.credentials.protocol",
+        "spark.security.credentials.needClientAuth",
+        "spark.security.credentials.trustStore",
+        "spark.security.credentials.trustStorePassword",
+        "spark.security.credentials.trustStoreType",
+        "spark.security.credentials.historyServer",
+        "spark.security.credentials.${service}.enabled"
+    ]
+}
+````
 
 
 ## Takeaways
   
 !!! success "Takeaways" 
 
-    1. NotebookLM 
+    1. NotebookML did not understand the concept of placeholder config parameters from the source documents. Since there are several config parameters per placeholder, it missed many config parameters (Attempt 1).
+    2. **When the prompt explained about placeholder config parameters, NotebookLM found all but 1 of the 79 configuration parameters related to security (Attempt 2).**
+    3. **NotebookML found 18 config parameters related to security that were not found by humans as part of the expected answers.**
 
 
 
