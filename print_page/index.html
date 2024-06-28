@@ -872,7 +872,7 @@
 <tr>
 <td><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> <abbr title="Known Exploited Vulnerability">KEV</abbr></td>
 <td><a href="https://www.cisa.gov/known-exploited-vulnerabilities">https://www.cisa.gov/known-exploited-vulnerabilities</a></td>
-<td>copyNpaste text to a file cisakev.txt because NotebookML cannot pull content directly from the page</td>
+<td>copy and paste text to a file cisakev.txt because NotebookML cannot pull content directly from the page</td>
 </tr>
 </tbody>
 </table>
@@ -901,7 +901,7 @@
 <h2 id="notebookml-notebookml_vulnerabilitystandards-explain-risk-like-im-a-5-year-old">Explain risk like I'm a 5 year old<a class="headerlink" href="#notebookml-notebookml_vulnerabilitystandards-explain-risk-like-im-a-5-year-old" title="Permanent link">&para;</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
-<p>I want to prioritize vulnerabilites by risk. But I don't understand risk and the components or factors of risk. Can you explain that to me like I'm a 5 year old. Then explain how I can use that for my risk based prioritization approach. Pleae provide a rationale</p>
+<p>I want to prioritize vulnerabilities by risk. But I don't understand risk and the components or factors of risk. Can you explain that to me like I'm a 5 year old. Then explain how I can use that for my risk based prioritization approach. Please provide a rationale</p>
 </div>
 <figure>
 <p><img alt="Guide" src="../assets/images/notebooklm_vulnerabilities_risk.png" /></p>
@@ -1108,6 +1108,7 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 </div></section><section class="print-page" id="notebookml-notebookml_config"><h1 id="notebookml-notebookml_config-notebookml">NotebookML<a class="headerlink" href="#notebookml-notebookml_config-notebookml" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Overview</p>
+<p>I came across this via <a href="https://tldrsec.com/p/tldr-sec-237">https://tldrsec.com/p/tldr-sec-237</a> (an excellent newsletter) in the "AI + Security" section, and it piqued my interest! </p>
 <p>One area of research is using LLMs for infrastructure configuration as detailed in <a href="https://www.coguard.io/post/coguard-uses-openai-cybersecurity-grant-to-automate-infrastructure-security">https://www.coguard.io/post/coguard-uses-openai-cybersecurity-grant-to-automate-infrastructure-security</a> and the associated <a href="https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file">repo</a>.</p>
 <p>Here we take on the first task [C1]: Extraction of security and uptime-relevant configuration parameters from manuals; for the example provided in the <a href="https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file">repo</a>: Apache Spark</p>
 </div>
@@ -1115,9 +1116,9 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 <h3 id="notebookml-notebookml_config-task">Task<a class="headerlink" href="#notebookml-notebookml_config-task" title="Permanent link">&para;</a></h3>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
-<p>[C1] Extraction of security and uptime-relevant configuration parameters from manuals
+<p>[C1] Extraction of security and uptime-relevant configuration parameters from manuals.
 The goal of this component is simple to describe, but hard to accomplish. Given a manual for a software component, extract the configuration parameters and define the security relevant ones from it.</p>
-<p>Example: For Apache Spark, the manual is provided on the general <a href="https://spark.apache.org/docs/latest/configuration.html#spark-ui">confiugration page</a> online, i.e. in HTML format, and there is also a specific <a href="https://spark.apache.org/docs/latest/security.html">security page</a>. The expectation would be to at least extract the parameters from the security page, as well as some log-related items from the general page. In total, when manually examining the configuration parameters, it totals approximately 80 parameters that are security relevant. You can find these in the <a href="https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master##appendix-a">Appendix A</a>.</p>
+<p>Example: For Apache Spark, the manual is provided on the general <a href="https://spark.apache.org/docs/latest/configuration.html#spark-ui">configuration page</a> online, i.e. in HTML format, and there is also a specific <a href="https://spark.apache.org/docs/latest/security.html">security page</a>. The expectation would be to at least extract the parameters from the security page, as well as some log-related items from the general page. In total, when manually examining the configuration parameters, it totals approximately 80 parameters that are security relevant. You can find these in the <a href="https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master##appendix-a">Appendix A</a>.</p>
 </div>
 <h3 id="notebookml-notebookml_config-original-prompt">Original Prompt<a class="headerlink" href="#notebookml-notebookml_config-original-prompt" title="Permanent link">&para;</a></h3>
 <p>The original prompt used is per <a href="https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file#extraction-of-security-relevant-parameters-in-c1">https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file#extraction-of-security-relevant-parameters-in-c1</a></p>
@@ -1414,7 +1415,7 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#notebookml-notebookml_config-__codelineno-4-1"></a>jq -r &#39;.[]&#39; ./data/NotebookML_Config/security_parameters_ns.json | sort | uniq &gt; ./data/NotebookML_Config/security_parameters_ns.txt
 </code></pre></div>
 <h3 id="notebookml-notebookml_config-compare-the-answer-with-the-expected-answer_1">Compare The Answer With The Expected Answer<a class="headerlink" href="#notebookml-notebookml_config-compare-the-answer-with-the-expected-answer_1" title="Permanent link">&para;</a></h3>
-<p>In this case, we use ChatGPT4o to do the diff, copyNpasting the values from each file:</p>
+<p>In this case, we use ChatGPT4o to do the diff, copy and pasting the values from each file:</p>
 <ul>
 <li>./data/NotebookML_Config/security_parameters_manual.txt: the expected answers</li>
 <li>./data/NotebookML_Config/security_parameters_ns.txt: the actual answers</li>
@@ -1839,7 +1840,7 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <li>ChatGPT4o found 44 parameters in the first prompt.</li>
 <li>When the concept of placeholder config parameters was explained in the second prompt, ChatGPT made 2 mistakes and thereby got many config parameters wrong<ol>
 <li>it did not extend the example to all the placeholder config parameters</li>
-<li>it appended the {ns} placeholder parameters to a different placholder {service}</li>
+<li>it appended the {ns} placeholder parameters to a different placeholder {service}</li>
 </ol>
 </li>
 </ol>
@@ -1848,7 +1849,7 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
 <ol>
-<li>NotebookML and ChatGPT4o did reasonably well at extracting te config parameters related to security - with NotebookML performing better, missing just 1, and finding 18 more than the human generated answer.</li>
+<li>NotebookML and ChatGPT4o did reasonably well at extracting the config parameters related to security - with NotebookML performing better, missing just 1, and finding 18 more than the human-generated answer.</li>
 <li>Overall, with everything-as-code (infrastructure, policy, LLM answers, ....), and LLMs being able to process code, there's a lot of benefit and promise in applying LLMs.</li>
 </ol>
 </div></section><h1 class='nav-section-title-end'>Ended: NotebookML</h1>
