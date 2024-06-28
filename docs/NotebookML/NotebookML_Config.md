@@ -2,6 +2,8 @@
 
 !!! abstract "Overview"
     
+    I came across this via https://tldrsec.com/p/tldr-sec-237 (an excellent newsletter) in the "AI + Security" section, and it piqued my interest! 
+
     One area of research is using LLMs for infrastructure configuration as detailed in https://www.coguard.io/post/coguard-uses-openai-cybersecurity-grant-to-automate-infrastructure-security and the associated [repo](https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file).
 
     Here we take on the first task [C1]: Extraction of security and uptime-relevant configuration parameters from manuals; for the example provided in the [repo](https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master?tab=readme-ov-file): Apache Spark
@@ -13,10 +15,10 @@
 ### Task
 
 !!! quote
-    [C1] Extraction of security and uptime-relevant configuration parameters from manuals
+    [C1] Extraction of security and uptime-relevant configuration parameters from manuals.
     The goal of this component is simple to describe, but hard to accomplish. Given a manual for a software component, extract the configuration parameters and define the security relevant ones from it.
 
-    Example: For Apache Spark, the manual is provided on the general [confiugration page](https://spark.apache.org/docs/latest/configuration.html#spark-ui) online, i.e. in HTML format, and there is also a specific [security page](https://spark.apache.org/docs/latest/security.html). The expectation would be to at least extract the parameters from the security page, as well as some log-related items from the general page. In total, when manually examining the configuration parameters, it totals approximately 80 parameters that are security relevant. You can find these in the [Appendix A](https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master##appendix-a).
+    Example: For Apache Spark, the manual is provided on the general [configuration page](https://spark.apache.org/docs/latest/configuration.html#spark-ui) online, i.e. in HTML format, and there is also a specific [security page](https://spark.apache.org/docs/latest/security.html). The expectation would be to at least extract the parameters from the security page, as well as some log-related items from the general page. In total, when manually examining the configuration parameters, it totals approximately 80 parameters that are security relevant. You can find these in the [Appendix A](https://github.com/coguardio/coguard_openai_rule_auto_generation_research/tree/master##appendix-a).
 
 
 ### Original Prompt 
@@ -339,7 +341,7 @@ jq -r '.[]' ./data/NotebookML_Config/security_parameters_ns.json | sort | uniq >
 
 ### Compare The Answer With The Expected Answer
 
-In this case, we use ChatGPT4o to do the diff, copyNpasting the values from each file:
+In this case, we use ChatGPT4o to do the diff, copy and pasting the values from each file:
 
 * ./data/NotebookML_Config/security_parameters_manual.txt: the expected answers
 * ./data/NotebookML_Config/security_parameters_ns.txt: the actual answers
@@ -778,7 +780,7 @@ Note that Config Namespace placeholders are used for some security configuration
     2. ChatGPT4o found 44 parameters in the first prompt.
     3. When the concept of placeholder config parameters was explained in the second prompt, ChatGPT made 2 mistakes and thereby got many config parameters wrong
           1. it did not extend the example to all the placeholder config parameters
-          2. it appended the {ns} placeholder parameters to a different placholder {service}
+          2. it appended the {ns} placeholder parameters to a different placeholder {service}
 
 
 
@@ -787,7 +789,7 @@ Note that Config Namespace placeholders are used for some security configuration
   
 !!! success "Takeaways" 
 
-    1. NotebookML and ChatGPT4o did reasonably well at extracting te config parameters related to security - with NotebookML performing better, missing just 1, and finding 18 more than the human generated answer.
+    1. NotebookML and ChatGPT4o did reasonably well at extracting the config parameters related to security - with NotebookML performing better, missing just 1, and finding 18 more than the human-generated answer.
     2. Overall, with everything-as-code (infrastructure, policy, LLM answers, ....), and LLMs being able to process code, there's a lot of benefit and promise in applying LLMs.
 
 
