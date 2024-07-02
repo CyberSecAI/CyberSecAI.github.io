@@ -17,9 +17,8 @@ nav:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
   - Annex:
     - Glossary: annex/Glossary.md
+    - Talks & Research: research/research.md
   
-
-
 theme:
   name: material
   custom_dir: docs/overrides
