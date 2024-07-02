@@ -10,11 +10,13 @@
 There are many books, guides, and articles on Prompt Engineering. Some of the better ones are listed here:
 
 1. [Prompt Engineering Guide](https://www.promptingguide.ai/) 
-1. [OpenAI Prompt engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering) 
-1. [Google Gemini Prompting guide 101 - A quick-start handbook for effective prompts, April 2024 edition](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)
-1. [How I Won Singapore’s GPT-4 Prompt Engineering Competition](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41), Dec 2023
-2. [Prompt Engineering for Generative AI](https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/), May 2024
-3. [Prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies) 
+1. [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering) 
+2. [Best practices for prompt Engineering with the OpenAI API](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api)
+3. [Google Gemini Prompting guide 101 - A quick-start handbook for effective prompts, April 2024 edition](https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf)
+4. [How I Won Singapore’s GPT-4 Prompt Engineering Competition](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41), Dec 2023
+5. [Prompt Engineering for Generative AI Book](https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/), May 2024
+6. [Google Prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies) 
+7. [Anthropic Prompt Engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) 
 
 
 
@@ -24,12 +26,12 @@ There are many books, guides, and articles on Prompt Engineering. Some of the be
 Some tactics I find particularly useful:
 
 1. Ask the LLM to generate the prompt.
-      1. Do this in 2 parts (task decomposition)
+      1. Do this in 2 parts (task decomposition, )
          1. Ask the LLM what techniques are best to use for effective prompt engineering
          2. Ask the LLM to create a prompt using these techniques for the objective and example you specify
 3. Ask the LLM to provide a confidence score for their answer. 
       1. People can be fooled by the fluency of LLMs aka hallucinations 
-      2. LLMs know how confident they are.
+      2. LLMs know how confident they are in their answer.
       3. So asking an LLM to rate their confidence in the answer can reduce blind trust.
 4. Ask the LLM (or a different LLM) to review the answer and provide improvements.
 

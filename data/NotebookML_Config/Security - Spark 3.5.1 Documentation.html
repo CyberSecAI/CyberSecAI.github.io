@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://spark.apache.org/docs/latest/security.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><script async="" src="./Security - Spark 3.5.1 Documentation_files/matomo.js"></script><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Security - Spark 3.5.1 Documentation</title>
+        
+
+        
+
+
+        <style class="anchorjs"></style><link href="./Security - Spark 3.5.1 Documentation_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./Security - Spark 3.5.1 Documentation_files/css2" rel="stylesheet">
+        <link href="./Security - Spark 3.5.1 Documentation_files/custom.css" rel="stylesheet">
+        <script src="./Security - Spark 3.5.1 Documentation_files/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+
+        <link rel="stylesheet" href="./Security - Spark 3.5.1 Documentation_files/pygments-default.css">
+        <link rel="stylesheet" href="./Security - Spark 3.5.1 Documentation_files/docsearch.min.css">
+        <link rel="stylesheet" href="./Security - Spark 3.5.1 Documentation_files/docsearch.css">
+
+        
+        <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(["disableCookies"]);
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u="https://analytics.apache.org/";
+              _paq.push(['setTrackerUrl', u+'matomo.php']);
+              _paq.push(['setSiteId', '40']);
+              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+              g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+        <!-- End Matomo Code -->
+        
+
+    <script type="text/javascript" async="" src="./Security - Spark 3.5.1 Documentation_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+    <body class="global"><div id="MathJax_Message" style="display: none;"></div>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="https://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark p-0 px-4 fixed-top" style="background: #1d6890;" id="topbar">
+            <div class="navbar-brand"><a href="https://spark.apache.org/docs/latest/index.html">
+                <img src="./Security - Spark 3.5.1 Documentation_files/spark-logo-rev.svg" width="141" height="72"></a><span class="version">3.5.1</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a href="https://spark.apache.org/docs/latest/index.html" class="nav-link">Overview</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a href="https://spark.apache.org/docs/latest/security.html#" class="nav-link dropdown-toggle" id="navbarQuickStart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programming Guides</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarQuickStart">
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/quick-start.html">Quick Start</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/rdd-programming-guide.html">RDDs, Accumulators, Broadcasts Vars</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/sql-programming-guide.html">SQL, DataFrames, and Datasets</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html">Structured Streaming</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/streaming-programming-guide.html">Spark Streaming (DStreams)</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/ml-guide.html">MLlib (Machine Learning)</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/graphx-programming-guide.html">GraphX (Graph Processing)</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/sparkr.html">SparkR (R on Spark)</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/api/python/getting_started/index.html">PySpark (Python on Spark)</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="https://spark.apache.org/docs/latest/security.html#" class="nav-link dropdown-toggle" id="navbarAPIDocs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">API Docs</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarAPIDocs">
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/index.html">Scala</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/api/java/index.html">Java</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/api/python/index.html">Python</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/api/R/index.html">R</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/api/sql/index.html">SQL, Built-in Functions</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="https://spark.apache.org/docs/latest/security.html#" class="nav-link dropdown-toggle" id="navbarDeploying" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Deploying</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDeploying">
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/cluster-overview.html">Overview</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/submitting-applications.html">Submitting Applications</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/spark-standalone.html">Spark Standalone</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/running-on-mesos.html">Mesos</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/running-on-yarn.html">YARN</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/running-on-kubernetes.html">Kubernetes</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="https://spark.apache.org/docs/latest/security.html#" class="nav-link dropdown-toggle" id="navbarMore" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarMore">
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/configuration.html">Configuration</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/monitoring.html">Monitoring</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/tuning.html">Tuning Guide</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/job-scheduling.html">Job Scheduling</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/security.html">Security</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/hardware-provisioning.html">Hardware Provisioning</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/migration-guide.html">Migration Guide</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://spark.apache.org/docs/latest/building-spark.html">Building Spark</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/contributing.html">Contributing to Spark</a>
+                            <a class="dropdown-item" href="https://spark.apache.org/third-party-projects.html">Third Party Projects</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        
+  <form novalidate="novalidate" onsubmit="return false;" class="searchbox">
+    <div role="search" class="searchbox__wrapper">
+      <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input id="docsearch" type="search" name="search" placeholder="Search the docs" autocomplete="off" required="required" class="searchbox__input ds-input" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="search input" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span>
+      <button type="submit" title="Submit your search query." class="searchbox__submit">
+        <svg width="12" height="12" role="img" aria-label="Search">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sbx-icon-search-13"></use>
+        </svg>
+      </button>
+      <button type="reset" title="Clear the search query." class="searchbox__reset hide">
+        <svg width="12" height="12" role="img" aria-label="Reset">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sbx-icon-clear-3"></use>
+        </svg>
+      </button>
+    </div>
+</form>
+
+<div class="svg-icons" style="height: 0; width: 0; position: absolute; visibility: hidden">
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="sbx-icon-clear-3" viewBox="0 0 40 40"><path d="M16.228 20L1.886 5.657 0 3.772 3.772 0l1.885 1.886L20 16.228 34.343 1.886 36.228 0 40 3.772l-1.886 1.885L23.772 20l14.342 14.343L40 36.228 36.228 40l-1.885-1.886L20 23.772 5.657 38.114 3.772 40 0 36.228l1.886-1.885L16.228 20z" fill-rule="evenodd"></path></symbol>
+    <symbol id="sbx-icon-search-13" viewBox="0 0 40 40"><path d="M26.806 29.012a16.312 16.312 0 0 1-10.427 3.746C7.332 32.758 0 25.425 0 16.378 0 7.334 7.333 0 16.38 0c9.045 0 16.378 7.333 16.378 16.38 0 3.96-1.406 7.593-3.746 10.426L39.547 37.34c.607.608.61 1.59-.004 2.203a1.56 1.56 0 0 1-2.202.004L26.807 29.012zm-10.427.627c7.322 0 13.26-5.938 13.26-13.26 0-7.324-5.938-13.26-13.26-13.26-7.324 0-13.26 5.936-13.26 13.26 0 7.322 5.936 13.26 13.26 13.26z" fill-rule="evenodd"></path></symbol>
+  </svg>
+</div>
+  
+                    </li>
+                </ul>
+                <!--<span class="navbar-text navbar-right"><span class="version-text">v3.5.1</span></span>-->
+            </div>
+        </nav>
+
+        
+
+        <div class="container">
+
+            
+                <div class="content mr-3" id="content">
+                    
+                        
+                            <h1 class="title" id="spark-security">Spark Security<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#spark-security" aria-label="Anchor link for: spark security" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+                        
+                    
+                    <ul id="markdown-toc">
+  <li><a href="https://spark.apache.org/docs/latest/security.html#spark-security-things-you-need-to-know" id="markdown-toc-spark-security-things-you-need-to-know">Spark Security: Things You Need To Know</a></li>
+  <li><a href="https://spark.apache.org/docs/latest/security.html#spark-rpc-communication-protocol-between-spark-processes" id="markdown-toc-spark-rpc-communication-protocol-between-spark-processes">Spark RPC (Communication protocol between Spark processes)</a>    <ul>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#authentication" id="markdown-toc-authentication">Authentication</a>        <ul>
+          <li><a href="https://spark.apache.org/docs/latest/security.html#yarn" id="markdown-toc-yarn">YARN</a></li>
+          <li><a href="https://spark.apache.org/docs/latest/security.html#kubernetes" id="markdown-toc-kubernetes">Kubernetes</a></li>
+        </ul>
+      </li>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#encryption" id="markdown-toc-encryption">Encryption</a></li>
+    </ul>
+  </li>
+  <li><a href="https://spark.apache.org/docs/latest/security.html#local-storage-encryption" id="markdown-toc-local-storage-encryption">Local Storage Encryption</a></li>
+  <li><a href="https://spark.apache.org/docs/latest/security.html#web-ui" id="markdown-toc-web-ui">Web UI</a>    <ul>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#authentication-and-authorization" id="markdown-toc-authentication-and-authorization">Authentication and Authorization</a></li>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#spark-history-server-acls" id="markdown-toc-spark-history-server-acls">Spark History Server ACLs</a></li>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#ssl-configuration" id="markdown-toc-ssl-configuration">SSL Configuration</a></li>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#preparing-the-key-stores" id="markdown-toc-preparing-the-key-stores">Preparing the key stores</a>        <ul>
+          <li><a href="https://spark.apache.org/docs/latest/security.html#yarn-mode" id="markdown-toc-yarn-mode">YARN mode</a></li>
+          <li><a href="https://spark.apache.org/docs/latest/security.html#standalone-mode" id="markdown-toc-standalone-mode">Standalone mode</a></li>
+          <li><a href="https://spark.apache.org/docs/latest/security.html#mesos-mode" id="markdown-toc-mesos-mode">Mesos mode</a></li>
+        </ul>
+      </li>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#http-security-headers" id="markdown-toc-http-security-headers">HTTP Security Headers</a></li>
+    </ul>
+  </li>
+  <li><a href="https://spark.apache.org/docs/latest/security.html#configuring-ports-for-network-security" id="markdown-toc-configuring-ports-for-network-security">Configuring Ports for Network Security</a>    <ul>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#standalone-mode-only" id="markdown-toc-standalone-mode-only">Standalone mode only</a></li>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#all-cluster-managers" id="markdown-toc-all-cluster-managers">All cluster managers</a></li>
+    </ul>
+  </li>
+  <li><a href="https://spark.apache.org/docs/latest/security.html#kerberos" id="markdown-toc-kerberos">Kerberos</a>    <ul>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#long-running-applications" id="markdown-toc-long-running-applications">Long-Running Applications</a>        <ul>
+          <li><a href="https://spark.apache.org/docs/latest/security.html#using-a-keytab" id="markdown-toc-using-a-keytab">Using a Keytab</a></li>
+          <li><a href="https://spark.apache.org/docs/latest/security.html#using-a-ticket-cache" id="markdown-toc-using-a-ticket-cache">Using a ticket cache</a></li>
+        </ul>
+      </li>
+      <li><a href="https://spark.apache.org/docs/latest/security.html#secure-interaction-with-kubernetes" id="markdown-toc-secure-interaction-with-kubernetes">Secure Interaction with Kubernetes</a></li>
+    </ul>
+  </li>
+  <li><a href="https://spark.apache.org/docs/latest/security.html#event-logging" id="markdown-toc-event-logging">Event Logging</a></li>
+  <li><a href="https://spark.apache.org/docs/latest/security.html#persisting-driver-logs-in-client-mode" id="markdown-toc-persisting-driver-logs-in-client-mode">Persisting driver logs in client mode</a></li>
+</ul>
+
+<h1 id="spark-security-things-you-need-to-know">Spark Security: Things You Need To Know<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#spark-security-things-you-need-to-know" aria-label="Anchor link for: spark security things you need to know" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<p>Security features like authentication are not enabled by default. When deploying a cluster that is open to the internet
+or an untrusted network, it’s important to secure access to the cluster to prevent unauthorized applications
+from running on the cluster.</p>
+
+<p>Spark supports multiple deployments types and each one supports different levels of security. Not
+all deployment types will be secure in all environments and none are secure by default. Be
+sure to evaluate your environment, what Spark supports, and take the appropriate measure to secure
+your Spark deployment.</p>
+
+<p>There are many different types of security concerns. Spark does not necessarily protect against
+all things. Listed below are some of the things Spark supports. Also check the deployment
+documentation for the type of deployment you are using for deployment specific settings. Anything
+not documented, Spark does not support.</p>
+
+<h1 id="spark-rpc-communication-protocol-between-spark-processes">Spark RPC (Communication protocol between Spark processes)<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#spark-rpc-communication-protocol-between-spark-processes" aria-label="Anchor link for: spark rpc communication protocol between spark processes" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<h2 id="authentication">Authentication<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#authentication" aria-label="Anchor link for: authentication" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Spark currently supports authentication for RPC channels using a shared secret. Authentication can
+be turned on by setting the <code class="language-plaintext highlighter-rouge">spark.authenticate</code> configuration parameter.</p>
+
+<p>The exact mechanism used to generate and distribute the shared secret is deployment-specific. Unless
+specified below, the secret must be defined by setting the <code class="language-plaintext highlighter-rouge">spark.authenticate.secret</code> config
+option. The same secret is shared by all Spark applications and daemons in that case, which limits
+the security of these deployments, especially on multi-tenant clusters.</p>
+
+<p>The REST Submission Server and the MesosClusterDispatcher do not support authentication.  You should
+ensure that all network access to the REST API &amp; MesosClusterDispatcher (port 6066 and 7077
+respectively by default) are restricted to hosts that are trusted to submit jobs.</p>
+
+<h3 id="yarn">YARN<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#yarn" aria-label="Anchor link for: yarn" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h3>
+
+<p>For Spark on <a href="https://spark.apache.org/docs/latest/running-on-yarn.html">YARN</a>, Spark will automatically handle generating and
+distributing the shared secret. Each application will use a unique shared secret. In
+the case of YARN, this feature relies on YARN RPC encryption being enabled for the distribution of
+secrets to be secure.</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.yarn.shuffle.server.recovery.disabled</code></td>
+  <td>false</td>
+  <td>
+    Set to true for applications that have higher security requirements and prefer that their
+    secret is not saved in the db. The shuffle data of such applications wll not be recovered after
+    the External Shuffle Service restarts.
+  </td>
+  <td>3.5.0</td>
+</tr>
+</tbody></table>
+
+<h3 id="kubernetes">Kubernetes<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#kubernetes" aria-label="Anchor link for: kubernetes" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h3>
+
+<p>On Kubernetes, Spark will also automatically generate an authentication secret unique to each
+application. The secret is propagated to executor pods using environment variables. This means
+that any user that can list pods in the namespace where the Spark application is running can
+also see their authentication secret. Access control rules should be properly set up by the
+Kubernetes admin to ensure that Spark authentication is secure.</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.authenticate</code></td>
+  <td>false</td>
+  <td>Whether Spark authenticates its internal connections.</td>
+  <td>1.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.authenticate.secret</code></td>
+  <td>None</td>
+  <td>
+    The secret key used authentication. See above for when this configuration should be set.
+  </td>
+  <td>1.0.0</td>
+</tr>
+</tbody></table>
+
+<p>Alternatively, one can mount authentication secrets using files and Kubernetes secrets that
+the user mounts into their pods.</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.authenticate.secret.file</code></td>
+  <td>None</td>
+  <td>
+    Path pointing to the secret key to use for securing connections. Ensure that the
+    contents of the file have been securely generated. This file is loaded on both the driver
+    and the executors unless other settings override this (see below).
+  </td>
+  <td>3.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.authenticate.secret.driver.file</code></td>
+  <td>The value of <code>spark.authenticate.secret.file</code></td>
+  <td>
+    When specified, overrides the location that the Spark driver reads to load the secret.
+    Useful when in client mode, when the location of the secret file may differ in the pod versus
+    the node the driver is running in. When this is specified,
+    <code>spark.authenticate.secret.executor.file</code> must be specified so that the driver
+    and the executors can both use files to load the secret key. Ensure that the contents of the file
+    on the driver is identical to the contents of the file on the executors.
+  </td>
+  <td>3.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.authenticate.secret.executor.file</code></td>
+  <td>The value of <code>spark.authenticate.secret.file</code></td>
+  <td>
+    When specified, overrides the location that the Spark executors read to load the secret.
+    Useful in client mode, when the location of the secret file may differ in the pod versus
+    the node the driver is running in. When this is specified,
+    <code>spark.authenticate.secret.driver.file</code> must be specified so that the driver
+    and the executors can both use files to load the secret key. Ensure that the contents of the file
+    on the driver is identical to the contents of the file on the executors.
+  </td>
+  <td>3.0.0</td>
+</tr>
+</tbody></table>
+
+<p>Note that when using files, Spark will not mount these files into the containers for you. It is up
+you to ensure that the secret files are deployed securely into your containers and that the driver’s
+secret file agrees with the executors’ secret file.</p>
+
+<h2 id="encryption">Encryption<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#encryption" aria-label="Anchor link for: encryption" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Spark supports AES-based encryption for RPC connections. For encryption to be enabled, RPC
+authentication must also be enabled and properly configured. AES encryption uses the
+<a href="https://commons.apache.org/proper/commons-crypto/">Apache Commons Crypto</a> library, and Spark’s
+configuration system allows access to that library’s configuration for advanced users.</p>
+
+<p>There is also support for SASL-based encryption, although it should be considered deprecated. It
+is still required when talking to shuffle services from Spark versions older than 2.2.0.</p>
+
+<p>The following table describes the different options available for configuring this feature.</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.network.crypto.enabled</code></td>
+  <td>false</td>
+  <td>
+    Enable AES-based RPC encryption, including the new authentication protocol added in 2.2.0.
+  </td>
+  <td>2.2.0</td>
+</tr>
+<tr>
+  <td><code>spark.network.crypto.config.*</code></td>
+  <td>None</td>
+  <td>
+    Configuration values for the commons-crypto library, such as which cipher implementations to
+    use. The config name should be the name of commons-crypto configuration without the
+    <code>commons.crypto</code> prefix.
+  </td>
+  <td>2.2.0</td>
+</tr>
+<tr>
+  <td><code>spark.network.crypto.saslFallback</code></td>
+  <td>true</td>
+  <td>
+    Whether to fall back to SASL authentication if authentication fails using Spark's internal
+    mechanism. This is useful when the application is connecting to old shuffle services that
+    do not support the internal Spark authentication protocol. On the shuffle service side,
+    disabling this feature will block older clients from authenticating.
+  </td>
+  <td>2.2.0</td>
+</tr>
+<tr>
+  <td><code>spark.authenticate.enableSaslEncryption</code></td>
+  <td>false</td>
+  <td>
+    Enable SASL-based encrypted communication.
+  </td>
+  <td>2.2.0</td>
+</tr>
+<tr>
+  <td><code>spark.network.sasl.serverAlwaysEncrypt</code></td>
+  <td>false</td>
+  <td>
+    Disable unencrypted connections for ports using SASL authentication. This will deny connections
+    from clients that have authentication enabled, but do not request SASL-based encryption.
+  </td>
+  <td>1.4.0</td>
+</tr>
+</tbody></table>
+
+<h1 id="local-storage-encryption">Local Storage Encryption<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#local-storage-encryption" aria-label="Anchor link for: local storage encryption" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<p>Spark supports encrypting temporary data written to local disks. This covers shuffle files, shuffle
+spills and data blocks stored on disk (for both caching and broadcast variables). It does not cover
+encrypting output data generated by applications with APIs such as <code class="language-plaintext highlighter-rouge">saveAsHadoopFile</code> or
+<code class="language-plaintext highlighter-rouge">saveAsTable</code>. It also may not cover temporary files created explicitly by the user.</p>
+
+<p>The following settings cover enabling encryption for data written to disk:</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.io.encryption.enabled</code></td>
+  <td>false</td>
+  <td>
+    Enable local disk I/O encryption. Currently supported by all modes except Mesos. It's strongly
+    recommended that RPC encryption be enabled when using this feature.
+  </td>
+  <td>2.1.0</td>
+</tr>
+<tr>
+  <td><code>spark.io.encryption.keySizeBits</code></td>
+  <td>128</td>
+  <td>
+    IO encryption key size in bits. Supported values are 128, 192 and 256.
+  </td>
+  <td>2.1.0</td>
+</tr>
+<tr>
+  <td><code>spark.io.encryption.keygen.algorithm</code></td>
+  <td>HmacSHA1</td>
+  <td>
+    The algorithm to use when generating the IO encryption key. The supported algorithms are
+    described in the KeyGenerator section of the Java Cryptography Architecture Standard Algorithm
+    Name Documentation.
+  </td>
+  <td>2.1.0</td>
+</tr>
+<tr>
+  <td><code>spark.io.encryption.commons.config.*</code></td>
+  <td>None</td>
+  <td>
+    Configuration values for the commons-crypto library, such as which cipher implementations to
+    use. The config name should be the name of commons-crypto configuration without the
+    <code>commons.crypto</code> prefix.
+  </td>
+  <td>2.1.0</td>
+</tr>
+</tbody></table>
+
+<h1 id="web-ui">Web UI<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#web-ui" aria-label="Anchor link for: web ui" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<h2 id="authentication-and-authorization">Authentication and Authorization<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#authentication-and-authorization" aria-label="Anchor link for: authentication and authorization" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Enabling authentication for the Web UIs is done using <a href="https://docs.oracle.com/javaee/6/api/javax/servlet/Filter.html">javax servlet filters</a>.
+You will need a filter that implements the authentication method you want to deploy. Spark does not
+provide any built-in authentication filters.</p>
+
+<p>Spark also supports access control to the UI when an authentication filter is present. Each
+application can be configured with its own separate access control lists (ACLs). Spark
+differentiates between “view” permissions (who is allowed to see the application’s UI), and “modify”
+permissions (who can do things like kill jobs in a running application).</p>
+
+<p>ACLs can be configured for either users or groups. Configuration entries accept comma-separated
+lists as input, meaning multiple users or groups can be given the desired privileges. This can be
+used if you run on a shared cluster and have a set of administrators or developers who need to
+monitor applications they may not have started themselves. A wildcard (<code class="language-plaintext highlighter-rouge">*</code>) added to specific ACL
+means that all users will have the respective privilege. By default, only the user submitting the
+application is added to the ACLs.</p>
+
+<p>Group membership is established by using a configurable group mapping provider. The mapper is
+configured using the <code>spark.user.groups.mapping</code> config option, described in the table
+below.</p>
+
+<p>The following options control the authentication of Web UIs:</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.ui.allowFramingFrom</code></td>
+  <td><code>SAMEORIGIN</code></td>
+  <td>Allow framing for a specific named URI via <code>X-Frame-Options</code>. By default, allow only from the same origin.</td>
+  <td>1.6.0</td>
+</tr>
+<tr>
+  <td><code>spark.ui.filters</code></td>
+  <td>None</td>
+  <td>
+    See the <a href="https://spark.apache.org/docs/latest/configuration.html#spark-ui">Spark UI</a> configuration for how to configure
+    filters.
+  </td>
+  <td>1.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.acls.enable</code></td>
+  <td>false</td>
+  <td>
+    Whether UI ACLs should be enabled. If enabled, this checks to see if the user has access
+    permissions to view or modify the application. Note this requires the user to be authenticated,
+    so if no authentication filter is installed, this option does not do anything.
+  </td>
+  <td>1.1.0</td>
+</tr>
+<tr>
+  <td><code>spark.admin.acls</code></td>
+  <td>None</td>
+  <td>
+    Comma-separated list of users that have view and modify access to the Spark application.
+  </td>
+  <td>1.1.0</td>
+</tr>
+<tr>
+  <td><code>spark.admin.acls.groups</code></td>
+  <td>None</td>
+  <td>
+    Comma-separated list of groups that have view and modify access to the Spark application.
+  </td>
+  <td>2.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.modify.acls</code></td>
+  <td>None</td>
+  <td>
+    Comma-separated list of users that have modify access to the Spark application.
+  </td>
+  <td>1.1.0</td>
+</tr>
+<tr>
+  <td><code>spark.modify.acls.groups</code></td>
+  <td>None</td>
+  <td>
+    Comma-separated list of groups that have modify access to the Spark application.
+  </td>
+  <td>2.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.ui.view.acls</code></td>
+  <td>None</td>
+  <td>
+    Comma-separated list of users that have view access to the Spark application.
+  </td>
+  <td>1.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.ui.view.acls.groups</code></td>
+  <td>None</td>
+  <td>
+    Comma-separated list of groups that have view access to the Spark application.
+  </td>
+  <td>2.0.0</td>
+</tr>
+<tr>
+  <td><code>spark.user.groups.mapping</code></td>
+  <td><code>org.apache.spark.security.ShellBasedGroupsMappingProvider</code></td>
+  <td>
+    The list of groups for a user is determined by a group mapping service defined by the trait
+    <code>org.apache.spark.security.GroupMappingServiceProvider</code>, which can be configured by
+    this property.
+
+    <br>By default, a Unix shell-based implementation is used, which collects this information
+    from the host OS.
+
+    <br><em>Note:</em> This implementation supports only Unix/Linux-based environments.
+    Windows environment is currently <b>not</b> supported. However, a new platform/protocol can
+    be supported by implementing the trait mentioned above.
+  </td>
+  <td>2.0.0</td>
+</tr>
+</tbody></table>
+
+<p>On YARN, the view and modify ACLs are provided to the YARN service when submitting applications, and
+control who has the respective privileges via YARN interfaces.</p>
+
+<h2 id="spark-history-server-acls">Spark History Server ACLs<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#spark-history-server-acls" aria-label="Anchor link for: spark history server acls" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Authentication for the SHS Web UI is enabled the same way as for regular applications, using
+servlet filters.</p>
+
+<p>To enable authorization in the SHS, a few extra options are used:</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.history.ui.acls.enable</code></td>
+  <td>false</td>
+  <td>
+    Specifies whether ACLs should be checked to authorize users viewing the applications in
+    the history server. If enabled, access control checks are performed regardless of what the
+    individual applications had set for <code>spark.ui.acls.enable</code>. The application owner
+    will always have authorization to view their own application and any users specified via
+    <code>spark.ui.view.acls</code> and groups specified via <code>spark.ui.view.acls.groups</code>
+    when the application was run will also have authorization to view that application.
+    If disabled, no access control checks are made for any application UIs available through
+    the history server.
+  </td>
+  <td>1.0.1</td>
+</tr>
+<tr>
+  <td><code>spark.history.ui.admin.acls</code></td>
+  <td>None</td>
+  <td>
+    Comma separated list of users that have view access to all the Spark applications in history
+    server.
+  </td>
+  <td>2.1.1</td>
+</tr>
+<tr>
+  <td><code>spark.history.ui.admin.acls.groups</code></td>
+  <td>None</td>
+  <td>
+    Comma separated list of groups that have view access to all the Spark applications in history
+    server.
+  </td>
+  <td>2.1.1</td>
+</tr>
+</tbody></table>
+
+<p>The SHS uses the same options to configure the group mapping provider as regular applications.
+In this case, the group mapping provider will apply to all UIs server by the SHS, and individual
+application configurations will be ignored.</p>
+
+<h2 id="ssl-configuration">SSL Configuration<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#ssl-configuration" aria-label="Anchor link for: ssl configuration" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Configuration for SSL is organized hierarchically. The user can configure the default SSL settings
+which will be used for all the supported communication protocols unless they are overwritten by
+protocol-specific settings. This way the user can easily provide the common settings for all the
+protocols without disabling the ability to configure each one individually. The following table
+describes the SSL configuration namespaces:</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>Config Namespace</th>
+    <th>Component</th>
+  </tr>
+  </thead>
+  <tbody><tr>
+    <td><code>spark.ssl</code></td>
+    <td>
+      The default SSL configuration. These values will apply to all namespaces below, unless
+      explicitly overridden at the namespace level.
+    </td>
+  </tr>
+  <tr>
+    <td><code>spark.ssl.ui</code></td>
+    <td>Spark application Web UI</td>
+  </tr>
+  <tr>
+    <td><code>spark.ssl.standalone</code></td>
+    <td>Standalone Master / Worker Web UI</td>
+  </tr>
+  <tr>
+    <td><code>spark.ssl.historyServer</code></td>
+    <td>History Server Web UI</td>
+  </tr>
+</tbody></table>
+
+<p>The full breakdown of available SSL options can be found below. The <code class="language-plaintext highlighter-rouge">${ns}</code> placeholder should be
+replaced with one of the above namespaces.</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody><tr>
+    <td><code>${ns}.enabled</code></td>
+    <td>false</td>
+    <td>Enables SSL. When enabled, <code>${ns}.ssl.protocol</code> is required.</td>
+  </tr>
+  <tr>
+    <td><code>${ns}.port</code></td>
+    <td>None</td>
+    <td>
+      The port where the SSL service will listen on.
+
+      <br>The port must be defined within a specific namespace configuration. The default
+      namespace is ignored when reading this configuration.
+
+      <br>When not set, the SSL port will be derived from the non-SSL port for the
+      same service. A value of "0" will make the service bind to an ephemeral port.
+    </td>
+  </tr>
+  <tr>
+    <td><code>${ns}.enabledAlgorithms</code></td>
+    <td>None</td>
+    <td>
+      A comma-separated list of ciphers. The specified ciphers must be supported by JVM.
+
+      <br>The reference list of protocols can be found in the "JSSE Cipher Suite Names" section
+      of the Java security guide. The list for Java 8 can be found at
+      <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#ciphersuites">this</a>
+      page.
+
+      <br>Note: If not set, the default cipher suite for the JRE will be used.
+    </td>
+  </tr>
+  <tr>
+    <td><code>${ns}.keyPassword</code></td>
+    <td>None</td>
+    <td>
+      The password to the private key in the key store.
+    </td>
+  </tr>
+  <tr>
+    <td><code>${ns}.keyStore</code></td>
+    <td>None</td>
+    <td>
+      Path to the key store file. The path can be absolute or relative to the directory in which the
+      process is started.
+    </td>
+  </tr>
+  <tr>
+    <td><code>${ns}.keyStorePassword</code></td>
+    <td>None</td>
+    <td>Password to the key store.</td>
+  </tr>
+  <tr>
+    <td><code>${ns}.keyStoreType</code></td>
+    <td>JKS</td>
+    <td>The type of the key store.</td>
+  </tr>
+  <tr>
+    <td><code>${ns}.protocol</code></td>
+    <td>None</td>
+    <td>
+      TLS protocol to use. The protocol must be supported by JVM.
+
+      <br>The reference list of protocols can be found in the "Additional JSSE Standard Names"
+      section of the Java security guide. For Java 8, the list can be found at
+      <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#jssenames">this</a>
+      page.
+    </td>
+  </tr>
+  <tr>
+    <td><code>${ns}.needClientAuth</code></td>
+    <td>false</td>
+    <td>Whether to require client authentication.</td>
+  </tr>
+  <tr>
+    <td><code>${ns}.trustStore</code></td>
+    <td>None</td>
+    <td>
+      Path to the trust store file. The path can be absolute or relative to the directory in which
+      the process is started.
+    </td>
+  </tr>
+  <tr>
+    <td><code>${ns}.trustStorePassword</code></td>
+    <td>None</td>
+    <td>Password for the trust store.</td>
+  </tr>
+  <tr>
+    <td><code>${ns}.trustStoreType</code></td>
+    <td>JKS</td>
+    <td>The type of the trust store.</td>
+  </tr>
+</tbody></table>
+
+<p>Spark also supports retrieving <code class="language-plaintext highlighter-rouge">${ns}.keyPassword</code>, <code class="language-plaintext highlighter-rouge">${ns}.keyStorePassword</code> and <code class="language-plaintext highlighter-rouge">${ns}.trustStorePassword</code> from
+<a href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CredentialProviderAPI.html">Hadoop Credential Providers</a>.
+User could store password into credential file and make it accessible by different components, like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hadoop credential create spark.ssl.keyPassword -value password \
+    -provider jceks://hdfs@nn1.example.com:9001/user/backup/ssl.jceks
+</code></pre></div></div>
+
+<p>To configure the location of the credential provider, set the <code class="language-plaintext highlighter-rouge">hadoop.security.credential.provider.path</code>
+config option in the Hadoop configuration used by Spark, like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;property&gt;
+    &lt;name&gt;hadoop.security.credential.provider.path&lt;/name&gt;
+    &lt;value&gt;jceks://hdfs@nn1.example.com:9001/user/backup/ssl.jceks&lt;/value&gt;
+  &lt;/property&gt;
+</code></pre></div></div>
+
+<p>Or via SparkConf “spark.hadoop.hadoop.security.credential.provider.path=jceks://hdfs@nn1.example.com:9001/user/backup/ssl.jceks”.</p>
+
+<h2 id="preparing-the-key-stores">Preparing the key stores<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#preparing-the-key-stores" aria-label="Anchor link for: preparing the key stores" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Key stores can be generated by <code class="language-plaintext highlighter-rouge">keytool</code> program. The reference documentation for this tool for
+Java 8 is <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html">here</a>.
+The most basic steps to configure the key stores and the trust store for a Spark Standalone
+deployment mode is as follows:</p>
+
+<ul>
+  <li>Generate a key pair for each node</li>
+  <li>Export the public key of the key pair to a file on each node</li>
+  <li>Import all exported public keys into a single trust store</li>
+  <li>Distribute the trust store to the cluster nodes</li>
+</ul>
+
+<h3 id="yarn-mode">YARN mode<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#yarn-mode" aria-label="Anchor link for: yarn mode" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h3>
+
+<p>To provide a local trust store or key store file to drivers running in cluster mode, they can be
+distributed with the application using the <code class="language-plaintext highlighter-rouge">--files</code> command line argument (or the equivalent
+<code class="language-plaintext highlighter-rouge">spark.files</code> configuration). The files will be placed on the driver’s working directory, so the TLS
+configuration should just reference the file name with no absolute path.</p>
+
+<p>Distributing local key stores this way may require the files to be staged in HDFS (or other similar
+distributed file system used by the cluster), so it’s recommended that the underlying file system be
+configured with security in mind (e.g. by enabling authentication and wire encryption).</p>
+
+<h3 id="standalone-mode">Standalone mode<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#standalone-mode" aria-label="Anchor link for: standalone mode" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h3>
+
+<p>The user needs to provide key stores and configuration options for master and workers. They have to
+be set by attaching appropriate Java system properties in <code class="language-plaintext highlighter-rouge">SPARK_MASTER_OPTS</code> and in
+<code class="language-plaintext highlighter-rouge">SPARK_WORKER_OPTS</code> environment variables, or just in <code class="language-plaintext highlighter-rouge">SPARK_DAEMON_JAVA_OPTS</code>.</p>
+
+<p>The user may allow the executors to use the SSL settings inherited from the worker process. That
+can be accomplished by setting <code class="language-plaintext highlighter-rouge">spark.ssl.useNodeLocalConf</code> to <code class="language-plaintext highlighter-rouge">true</code>. In that case, the settings
+provided by the user on the client side are not used.</p>
+
+<h3 id="mesos-mode">Mesos mode<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#mesos-mode" aria-label="Anchor link for: mesos mode" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h3>
+
+<p>Mesos 1.3.0 and newer supports <code class="language-plaintext highlighter-rouge">Secrets</code> primitives as both file-based and environment based
+secrets. Spark allows the specification of file-based and environment variable based secrets with
+<code class="language-plaintext highlighter-rouge">spark.mesos.driver.secret.filenames</code> and <code class="language-plaintext highlighter-rouge">spark.mesos.driver.secret.envkeys</code>, respectively.</p>
+
+<p>Depending on the secret store backend secrets can be passed by reference or by value with the
+<code class="language-plaintext highlighter-rouge">spark.mesos.driver.secret.names</code> and <code class="language-plaintext highlighter-rouge">spark.mesos.driver.secret.values</code> configuration properties,
+respectively.</p>
+
+<p>Reference type secrets are served by the secret store and referred to by name, for example
+<code class="language-plaintext highlighter-rouge">/mysecret</code>. Value type secrets are passed on the command line and translated into their
+appropriate files or environment variables.</p>
+
+<h2 id="http-security-headers">HTTP Security Headers<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#http-security-headers" aria-label="Anchor link for: http security headers" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Apache Spark can be configured to include HTTP headers to aid in preventing Cross Site Scripting
+(XSS), Cross-Frame Scripting (XFS), MIME-Sniffing, and also to enforce HTTP Strict Transport
+Security.</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.ui.xXssProtection</code></td>
+  <td><code>1; mode=block</code></td>
+  <td>
+    Value for HTTP X-XSS-Protection response header. You can choose appropriate value
+    from below:
+    <ul>
+      <li><code>0</code> (Disables XSS filtering)</li>
+      <li><code>1</code> (Enables XSS filtering. If a cross-site scripting attack is detected,
+        the browser will sanitize the page.)</li>
+      <li><code>1; mode=block</code> (Enables XSS filtering. The browser will prevent rendering
+        of the page if an attack is detected.)</li>
+    </ul>
+  </td>
+  <td>2.3.0</td>
+</tr>
+<tr>
+  <td><code>spark.ui.xContentTypeOptions.enabled</code></td>
+  <td><code>true</code></td>
+  <td>
+    When enabled, X-Content-Type-Options HTTP response header will be set to "nosniff".
+  </td>
+  <td>2.3.0</td>
+</tr>
+<tr>
+  <td><code>spark.ui.strictTransportSecurity</code></td>
+  <td>None</td>
+  <td>
+    Value for HTTP Strict Transport Security (HSTS) Response Header. You can choose appropriate
+    value from below and set <code>expire-time</code> accordingly. This option is only used when
+    SSL/TLS is enabled.
+    <ul>
+      <li><code>max-age=&lt;expire-time&gt;</code></li>
+      <li><code>max-age=&lt;expire-time&gt;; includeSubDomains</code></li>
+      <li><code>max-age=&lt;expire-time&gt;; preload</code></li>
+    </ul>
+  </td>
+  <td>2.3.0</td>
+</tr>
+</tbody></table>
+
+<h1 id="configuring-ports-for-network-security">Configuring Ports for Network Security<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#configuring-ports-for-network-security" aria-label="Anchor link for: configuring ports for network security" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<p>Generally speaking, a Spark cluster and its services are not deployed on the public internet.
+They are generally private services, and should only be accessible within the network of the
+organization that deploys Spark. Access to the hosts and ports used by Spark services should
+be limited to origin hosts that need to access the services.</p>
+
+<p>Below are the primary ports that Spark uses for its communication and how to
+configure those ports.</p>
+
+<h2 id="standalone-mode-only">Standalone mode only<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#standalone-mode-only" aria-label="Anchor link for: standalone mode only" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>From</th><th>To</th><th>Default Port</th><th>Purpose</th><th>Configuration
+    Setting</th><th>Notes</th>
+  </tr>
+  </thead>
+  <tbody><tr>
+    <td>Browser</td>
+    <td>Standalone Master</td>
+    <td>8080</td>
+    <td>Web UI</td>
+    <td><code>spark.master.ui.port /<br> SPARK_MASTER_WEBUI_PORT</code></td>
+    <td>Jetty-based. Standalone mode only.</td>
+  </tr>
+  <tr>
+    <td>Browser</td>
+    <td>Standalone Worker</td>
+    <td>8081</td>
+    <td>Web UI</td>
+    <td><code>spark.worker.ui.port /<br> SPARK_WORKER_WEBUI_PORT</code></td>
+    <td>Jetty-based. Standalone mode only.</td>
+  </tr>
+  <tr>
+    <td>Driver /<br> Standalone Worker</td>
+    <td>Standalone Master</td>
+    <td>7077</td>
+    <td>Submit job to cluster /<br> Join cluster</td>
+    <td><code>SPARK_MASTER_PORT</code></td>
+    <td>Set to "0" to choose a port randomly. Standalone mode only.</td>
+  </tr>
+  <tr>
+    <td>External Service</td>
+    <td>Standalone Master</td>
+    <td>6066</td>
+    <td>Submit job to cluster via REST API</td>
+    <td><code>spark.master.rest.port</code></td>
+    <td>Use <code>spark.master.rest.enabled</code> to enable/disable this service. Standalone mode only.</td>
+  </tr>
+  <tr>
+    <td>Standalone Master</td>
+    <td>Standalone Worker</td>
+    <td>(random)</td>
+    <td>Schedule executors</td>
+    <td><code>SPARK_WORKER_PORT</code></td>
+    <td>Set to "0" to choose a port randomly. Standalone mode only.</td>
+  </tr>
+</tbody></table>
+
+<h2 id="all-cluster-managers">All cluster managers<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#all-cluster-managers" aria-label="Anchor link for: all cluster managers" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>From</th><th>To</th><th>Default Port</th><th>Purpose</th><th>Configuration
+    Setting</th><th>Notes</th>
+  </tr>
+  </thead>
+  <tbody><tr>
+    <td>Browser</td>
+    <td>Application</td>
+    <td>4040</td>
+    <td>Web UI</td>
+    <td><code>spark.ui.port</code></td>
+    <td>Jetty-based</td>
+  </tr>
+  <tr>
+    <td>Browser</td>
+    <td>History Server</td>
+    <td>18080</td>
+    <td>Web UI</td>
+    <td><code>spark.history.ui.port</code></td>
+    <td>Jetty-based</td>
+  </tr>
+  <tr>
+    <td>Executor /<br> Standalone Master</td>
+    <td>Driver</td>
+    <td>(random)</td>
+    <td>Connect to application /<br> Notify executor state changes</td>
+    <td><code>spark.driver.port</code></td>
+    <td>Set to "0" to choose a port randomly.</td>
+  </tr>
+  <tr>
+    <td>Executor / Driver</td>
+    <td>Executor / Driver</td>
+    <td>(random)</td>
+    <td>Block Manager port</td>
+    <td><code>spark.blockManager.port</code></td>
+    <td>Raw socket via ServerSocketChannel</td>
+  </tr>
+</tbody></table>
+
+<h1 id="kerberos">Kerberos<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#kerberos" aria-label="Anchor link for: kerberos" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<p>Spark supports submitting applications in environments that use Kerberos for authentication.
+In most cases, Spark relies on the credentials of the current logged in user when authenticating
+to Kerberos-aware services. Such credentials can be obtained by logging in to the configured KDC
+with tools like <code class="language-plaintext highlighter-rouge">kinit</code>.</p>
+
+<p>When talking to Hadoop-based services, Spark needs to obtain delegation tokens so that non-local
+processes can authenticate. Spark ships with support for HDFS and other Hadoop file systems, Hive
+and HBase.</p>
+
+<p>When using a Hadoop filesystem (such HDFS or WebHDFS), Spark will acquire the relevant tokens
+for the service hosting the user’s home directory.</p>
+
+<p>An HBase token will be obtained if HBase is in the application’s classpath, and the HBase
+configuration has Kerberos authentication turned (<code class="language-plaintext highlighter-rouge">hbase.security.authentication=kerberos</code>).</p>
+
+<p>Similarly, a Hive token will be obtained if Hive is in the classpath, and the configuration includes
+URIs for remote metastore services (<code class="language-plaintext highlighter-rouge">hive.metastore.uris</code> is not empty).</p>
+
+<p>If an application needs to interact with other secure Hadoop filesystems, their URIs need to be
+explicitly provided to Spark at launch time. This is done by listing them in the
+<code class="language-plaintext highlighter-rouge">spark.kerberos.access.hadoopFileSystems</code> property, described in the configuration section below.</p>
+
+<p>Spark also supports custom delegation token providers using the Java Services
+mechanism (see <code class="language-plaintext highlighter-rouge">java.util.ServiceLoader</code>). Implementations of
+<code class="language-plaintext highlighter-rouge">org.apache.spark.security.HadoopDelegationTokenProvider</code> can be made available to Spark
+by listing their names in the corresponding file in the jar’s <code class="language-plaintext highlighter-rouge">META-INF/services</code> directory.</p>
+
+<p>Delegation token support is currently only supported in YARN and Mesos modes. Consult the
+deployment-specific page for more information.</p>
+
+<p>The following options provides finer-grained control for this feature:</p>
+
+<table>
+<thead><tr><th>Property Name</th><th>Default</th><th>Meaning</th><th>Since Version</th></tr></thead>
+<tbody><tr>
+  <td><code>spark.security.credentials.${service}.enabled</code></td>
+  <td><code>true</code></td>
+  <td>
+    Controls whether to obtain credentials for services when security is enabled.
+    By default, credentials for all supported services are retrieved when those services are
+    configured, but it's possible to disable that behavior if it somehow conflicts with the
+    application being run.
+  </td>
+  <td>2.3.0</td>
+</tr>
+<tr>
+  <td><code>spark.kerberos.access.hadoopFileSystems</code></td>
+  <td>(none)</td>
+  <td>
+    A comma-separated list of secure Hadoop filesystems your Spark application is going to access. For
+    example, <code>spark.kerberos.access.hadoopFileSystems=hdfs://nn1.com:8032,hdfs://nn2.com:8032,
+    webhdfs://nn3.com:50070</code>. The Spark application must have access to the filesystems listed
+    and Kerberos must be properly configured to be able to access them (either in the same realm
+    or in a trusted realm). Spark acquires security tokens for each of the filesystems so that
+    the Spark application can access those remote Hadoop filesystems.
+  </td>
+  <td>3.0.0</td>
+</tr>
+</tbody></table>
+
+<p>Users can exclude Kerberos delegation token renewal at resource scheduler. Currently it is only supported
+on YARN. The configuration is covered in the <a href="https://spark.apache.org/docs/latest/running-on-yarn.html#yarn-specific-kerberos-configuration">Running Spark on YARN</a> page.</p>
+
+<h2 id="long-running-applications">Long-Running Applications<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#long-running-applications" aria-label="Anchor link for: long running applications" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>Long-running applications may run into issues if their run time exceeds the maximum delegation
+token lifetime configured in services it needs to access.</p>
+
+<p>This feature is not available everywhere. In particular, it’s only implemented
+on YARN and Kubernetes (both client and cluster modes), and on Mesos when using client mode.</p>
+
+<p>Spark supports automatically creating new tokens for these applications. There are two ways to
+enable this functionality.</p>
+
+<h3 id="using-a-keytab">Using a Keytab<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#using-a-keytab" aria-label="Anchor link for: using a keytab" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h3>
+
+<p>By providing Spark with a principal and keytab (e.g. using <code class="language-plaintext highlighter-rouge">spark-submit</code> with <code class="language-plaintext highlighter-rouge">--principal</code>
+and <code class="language-plaintext highlighter-rouge">--keytab</code> parameters), the application will maintain a valid Kerberos login that can be
+used to retrieve delegation tokens indefinitely.</p>
+
+<p>Note that when using a keytab in cluster mode, it will be copied over to the machine running the
+Spark driver. In the case of YARN, this means using HDFS as a staging area for the keytab, so it’s
+strongly recommended that both YARN and HDFS be secured with encryption, at least.</p>
+
+<h3 id="using-a-ticket-cache">Using a ticket cache<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#using-a-ticket-cache" aria-label="Anchor link for: using a ticket cache" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h3>
+
+<p>By setting <code class="language-plaintext highlighter-rouge">spark.kerberos.renewal.credentials</code> to <code class="language-plaintext highlighter-rouge">ccache</code> in Spark’s configuration, the local
+Kerberos ticket cache will be used for authentication. Spark will keep the ticket renewed during its
+renewable life, but after it expires a new ticket needs to be acquired (e.g. by running <code class="language-plaintext highlighter-rouge">kinit</code>).</p>
+
+<p>It’s up to the user to maintain an updated ticket cache that Spark can use.</p>
+
+<p>The location of the ticket cache can be customized by setting the <code class="language-plaintext highlighter-rouge">KRB5CCNAME</code> environment
+variable.</p>
+
+<h2 id="secure-interaction-with-kubernetes">Secure Interaction with Kubernetes<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#secure-interaction-with-kubernetes" aria-label="Anchor link for: secure interaction with kubernetes" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h2>
+
+<p>When talking to Hadoop-based services behind Kerberos, it was noted that Spark needs to obtain delegation tokens
+so that non-local processes can authenticate. These delegation tokens in Kubernetes are stored in Secrets that are
+shared by the Driver and its Executors. As such, there are three ways of submitting a Kerberos job:</p>
+
+<p>In all cases you must define the environment variable: <code class="language-plaintext highlighter-rouge">HADOOP_CONF_DIR</code> or
+<code class="language-plaintext highlighter-rouge">spark.kubernetes.hadoop.configMapName.</code></p>
+
+<p>It also important to note that the KDC needs to be visible from inside the containers.</p>
+
+<p>If a user wishes to use a remote HADOOP_CONF directory, that contains the Hadoop configuration files, this could be
+achieved by setting <code class="language-plaintext highlighter-rouge">spark.kubernetes.hadoop.configMapName</code> to a pre-existing ConfigMap.</p>
+
+<ol>
+  <li>Submitting with a $kinit that stores a TGT in the Local Ticket Cache:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/bin/kinit <span class="nt">-kt</span> &lt;keytab_file&gt; &lt;username&gt;/&lt;krb5 realm&gt;
+/opt/spark/bin/spark-submit <span class="se">\</span>
+ <span class="nt">--deploy-mode</span> cluster <span class="se">\</span>
+ <span class="nt">--class</span> org.apache.spark.examples.HdfsTest <span class="se">\</span>
+ <span class="nt">--master</span> k8s://&lt;KUBERNETES_MASTER_ENDPOINT&gt; <span class="se">\</span>
+ <span class="nt">--conf</span> spark.executor.instances<span class="o">=</span>1 <span class="se">\</span>
+ <span class="nt">--conf</span> spark.app.name<span class="o">=</span>spark-hdfs <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.container.image<span class="o">=</span>spark:latest <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.kerberos.krb5.path<span class="o">=</span>/etc/krb5.conf <span class="se">\</span>
+ <span class="nb">local</span>:///opt/spark/examples/jars/spark-examples_&lt;VERSION&gt;.jar <span class="se">\</span>
+ &lt;HDFS_FILE_LOCATION&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Submitting with a local Keytab and Principal
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/spark/bin/spark-submit <span class="se">\</span>
+ <span class="nt">--deploy-mode</span> cluster <span class="se">\</span>
+ <span class="nt">--class</span> org.apache.spark.examples.HdfsTest <span class="se">\</span>
+ <span class="nt">--master</span> k8s://&lt;KUBERNETES_MASTER_ENDPOINT&gt; <span class="se">\</span>
+ <span class="nt">--conf</span> spark.executor.instances<span class="o">=</span>1 <span class="se">\</span>
+ <span class="nt">--conf</span> spark.app.name<span class="o">=</span>spark-hdfs <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.container.image<span class="o">=</span>spark:latest <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kerberos.keytab<span class="o">=</span>&lt;KEYTAB_FILE&gt; <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kerberos.principal<span class="o">=</span>&lt;PRINCIPAL&gt; <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.kerberos.krb5.path<span class="o">=</span>/etc/krb5.conf <span class="se">\</span>
+ <span class="nb">local</span>:///opt/spark/examples/jars/spark-examples_&lt;VERSION&gt;.jar <span class="se">\</span>
+ &lt;HDFS_FILE_LOCATION&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Submitting with pre-populated secrets, that contain the Delegation Token, already existing within the namespace
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/spark/bin/spark-submit <span class="se">\</span>
+ <span class="nt">--deploy-mode</span> cluster <span class="se">\</span>
+ <span class="nt">--class</span> org.apache.spark.examples.HdfsTest <span class="se">\</span>
+ <span class="nt">--master</span> k8s://&lt;KUBERNETES_MASTER_ENDPOINT&gt; <span class="se">\</span>
+ <span class="nt">--conf</span> spark.executor.instances<span class="o">=</span>1 <span class="se">\</span>
+ <span class="nt">--conf</span> spark.app.name<span class="o">=</span>spark-hdfs <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.container.image<span class="o">=</span>spark:latest <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.kerberos.tokenSecret.name<span class="o">=</span>&lt;SECRET_TOKEN_NAME&gt; <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.kerberos.tokenSecret.itemKey<span class="o">=</span>&lt;SECRET_ITEM_KEY&gt; <span class="se">\</span>
+ <span class="nt">--conf</span> spark.kubernetes.kerberos.krb5.path<span class="o">=</span>/etc/krb5.conf <span class="se">\</span>
+ <span class="nb">local</span>:///opt/spark/examples/jars/spark-examples_&lt;VERSION&gt;.jar <span class="se">\</span>
+ &lt;HDFS_FILE_LOCATION&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>3b. Submitting like in (3) however specifying a pre-created krb5 ConfigMap and pre-created <code class="language-plaintext highlighter-rouge">HADOOP_CONF_DIR</code> ConfigMap</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/spark/bin/spark-submit <span class="se">\</span>
+    <span class="nt">--deploy-mode</span> cluster <span class="se">\</span>
+    <span class="nt">--class</span> org.apache.spark.examples.HdfsTest <span class="se">\</span>
+    <span class="nt">--master</span> k8s://&lt;KUBERNETES_MASTER_ENDPOINT&gt; <span class="se">\</span>
+    <span class="nt">--conf</span> spark.executor.instances<span class="o">=</span>1 <span class="se">\</span>
+    <span class="nt">--conf</span> spark.app.name<span class="o">=</span>spark-hdfs <span class="se">\</span>
+    <span class="nt">--conf</span> spark.kubernetes.container.image<span class="o">=</span>spark:latest <span class="se">\</span>
+    <span class="nt">--conf</span> spark.kubernetes.kerberos.tokenSecret.name<span class="o">=</span>&lt;SECRET_TOKEN_NAME&gt; <span class="se">\</span>
+    <span class="nt">--conf</span> spark.kubernetes.kerberos.tokenSecret.itemKey<span class="o">=</span>&lt;SECRET_ITEM_KEY&gt; <span class="se">\</span>
+    <span class="nt">--conf</span> spark.kubernetes.hadoop.configMapName<span class="o">=</span>&lt;HCONF_CONFIG_MAP_NAME&gt; <span class="se">\</span>
+    <span class="nt">--conf</span> spark.kubernetes.kerberos.krb5.configMapName<span class="o">=</span>&lt;KRB_CONFIG_MAP_NAME&gt; <span class="se">\</span>
+    <span class="nb">local</span>:///opt/spark/examples/jars/spark-examples_&lt;VERSION&gt;.jar <span class="se">\</span>
+    &lt;HDFS_FILE_LOCATION&gt;
+</code></pre></div></div>
+<h1 id="event-logging">Event Logging<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#event-logging" aria-label="Anchor link for: event logging" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<p>If your applications are using event logging, the directory where the event logs go
+(<code class="language-plaintext highlighter-rouge">spark.eventLog.dir</code>) should be manually created with proper permissions. To secure the log files,
+the directory permissions should be set to <code class="language-plaintext highlighter-rouge">drwxrwxrwxt</code>. The owner and group of the directory
+should correspond to the super user who is running the Spark History Server.</p>
+
+<p>This will allow all users to write to the directory but will prevent unprivileged users from
+reading, removing or renaming a file unless they own it. The event log files will be created by
+Spark with permissions such that only the user and group have read and write access.</p>
+
+<h1 id="persisting-driver-logs-in-client-mode">Persisting driver logs in client mode<a class="anchorjs-link " href="https://spark.apache.org/docs/latest/security.html#persisting-driver-logs-in-client-mode" aria-label="Anchor link for: persisting driver logs in client mode" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; padding-left: 0.375em;"></a></h1>
+
+<p>If your applications persist driver logs in client mode by enabling <code class="language-plaintext highlighter-rouge">spark.driver.log.persistToDfs.enabled</code>,
+the directory where the driver logs go (<code class="language-plaintext highlighter-rouge">spark.driver.log.dfsDir</code>) should be manually created with proper
+permissions. To secure the log files, the directory permissions should be set to <code class="language-plaintext highlighter-rouge">drwxrwxrwxt</code>. The owner
+and group of the directory should correspond to the super user who is running the Spark History Server.</p>
+
+<p>This will allow all users to write to the directory but will prevent unprivileged users from
+reading, removing or renaming a file unless they own it. The driver log files will be created by
+Spark with permissions such that only the user and group have read and write access.</p>
+
+                </div>
+            
+             <!-- /container -->
+        </div>
+
+        <script src="./Security - Spark 3.5.1 Documentation_files/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="./Security - Spark 3.5.1 Documentation_files/jquery.js"></script>
+
+        <script src="./Security - Spark 3.5.1 Documentation_files/anchor.min.js"></script>
+        <script src="./Security - Spark 3.5.1 Documentation_files/main.js"></script>
+
+        <script type="text/javascript" src="./Security - Spark 3.5.1 Documentation_files/docsearch.min.js"></script>
+        <script type="text/javascript">
+            // DocSearch is entirely free and automated. DocSearch is built in two parts:
+            // 1. a crawler which we run on our own infrastructure every 24 hours. It follows every link
+            //    in your website and extract content from every page it traverses. It then pushes this
+            //    content to an Algolia index.
+            // 2. a JavaScript snippet to be inserted in your website that will bind this Algolia index
+            //    to your search input and display its results in a dropdown UI. If you want to find more
+            //    details on how works DocSearch, check the docs of DocSearch.
+            docsearch({
+    apiKey: 'd62f962a82bc9abb53471cb7b89da35e',
+    appId: 'RAI69RXRSK',
+    indexName: 'apache_spark',
+    inputSelector: '#docsearch-input',
+    enhancedSearchInput: true,
+    algoliaOptions: {
+      'facetFilters': ["version:3.5.1"]
+    },
+    debug: false // Set debug to true if you want to inspect the dropdown
+});
+
+        </script>
+
+        <!-- MathJax Section -->
+        <script type="text/x-mathjax-config;executed=true">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });
+        </script>
+        <script>
+            // Note that we load MathJax this way to work with local file (file://), HTTP and HTTPS.
+            // We could use "//cdn.mathjax...", but that won't support "file://".
+            (function(d, script) {
+                script = d.createElement('script');
+                script.type = 'text/javascript';
+                script.async = true;
+                script.onload = function(){
+                    MathJax.Hub.Config({
+                        tex2jax: {
+                            inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ],
+                            displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+                            processEscapes: true,
+                            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                        }
+                    });
+                };
+                script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +
+                    'cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js' +
+                    '?config=TeX-AMS-MML_HTMLorMML';
+                d.getElementsByTagName('head')[0].appendChild(script);
+            }(document));
+        </script>
+    
+
+</body></html>

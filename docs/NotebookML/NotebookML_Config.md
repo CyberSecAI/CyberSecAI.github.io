@@ -791,6 +791,7 @@ Note that Config Namespace placeholders are used for some security configuration
 
     1. NotebookML and ChatGPT4o did reasonably well at extracting the config parameters related to security - with NotebookML performing better, missing just 1, and finding 18 more than the human-generated answer.
     2. Overall, with everything-as-code (infrastructure, policy, LLM answers, ....), and LLMs being able to process code, there's a lot of benefit and promise in applying LLMs.
+    3. The feedback to CoGuard is via https://github.com/coguardio/coguard_openai_rule_auto_generation_research/issues/2 
 
 
   
