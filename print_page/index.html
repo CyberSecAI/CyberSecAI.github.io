@@ -557,6 +557,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt_engineering/Fabric/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fabric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -615,6 +636,27 @@
   
   <span class="md-ellipsis">
     Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/research/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Talks & Research
   </span>
   
 
@@ -767,6 +809,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#prompt_engineering-fabric" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Fabric
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -785,7 +836,16 @@
           <li class="md-nav__item">
   <a href="#annex-glossary" class="md-nav__link">
     <span class="md-ellipsis">
-      9. Glossary
+      10. Glossary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Talks & Research
     </span>
   </a>
   
@@ -830,11 +890,11 @@
 <p>Large Language Models (hosted and open source), and BERT-based language models tools will be covered e.g.</p>
 <ol>
 <li>NotebookML </li>
+<li>Prompts and Prompt Techniques applied to Cybersecurity </li>
 <li>Embeddings for CyberSecurity</li>
 <li>BERTopic</li>
 <li>SetFIT + LAGoNN</li>
 <li>Named Entity Recognition GliNER and CyberSecurity NER models</li>
-<li>Prompts and Prompt Techniques applied to Cybersecurity </li>
 <li>AI Agents for orchestrated workflows</li>
 </ol>
 </div></section>
@@ -907,6 +967,10 @@
 <ul>
 <li>Both tools use LLMs, but NoteBookLM uses a "Closed System" (only the document sources you provide), versus ChatGPT4o which bases it answers on the open internet content at the time it was trained, and adittionally the documents you provide.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Your responses from NotebookLM may be different than the examples shown here. LLMs will give different responses to the same question.</p>
+</div>
 </div>
 <h2 id="notebookml-notebookml-notebooklm"><a href="https://notebooklm.google.com/">NotebookLM</a><a class="headerlink" href="#notebookml-notebookml-notebooklm" title="Permanent link">&para;</a></h2>
 <div class="admonition quote">
@@ -915,17 +979,33 @@
 </div>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
-<p>It runs on the company’s Gemini 1.5 Pro model, the same AI that powers the Gemini Advanced chatbot. 
+<p>It runs on the company’s Gemini 1.5 Pro model (<a href="https://en.wikipedia.org/wiki/Gemini_(language_model)">released Dec 2023</a>), the same AI that powers the Gemini Advanced chatbot. 
 (<a href="https://www.techradar.com/computing/artificial-intelligence/googles-notebooklm-is-now-an-even-smarter-assistant-and-better-fact-checker">ref</a>)</p>
 </div>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p><strong>“source-grounded AI”</strong>: you define a set of documents that are important to your work—called “sources” in the NotebookLM parlance—and from that point on, you can have an open-ended conversation with the language model where its answers will be “grounded” in the information you’ve selected. It is as if you are giving the AI instant expertise in whatever domain you happen to be working in. (<a href="https://adjacentpossible.substack.com/p/introducing-notebooklm">ref</a>)</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Your responses from NotebookLM may be different than the examples shown here. LLMs will give different responses to the same question.</p>
-</div>
+<h3 id="notebookml-notebookml-key-features-and-benefits-of-gemini-15-models">Key Features and Benefits of Gemini 1.5 Models<a class="headerlink" href="#notebookml-notebookml-key-features-and-benefits-of-gemini-15-models" title="Permanent link">&para;</a></h3>
+<p>Per <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf">Gemini 1.5 Technical Report</a>, the Key Features and Benefits of Gemini 1.5 Models are</p>
+<ol>
+<li><strong>Highly Compute-Efficient Multimodal Models</strong><ol>
+<li>Capable of recalling and reasoning over fine-grained information from millions of tokens of context, including long documents, videos, and audio.</li>
+</ol>
+</li>
+<li><strong>Benchmark Performance</strong><ol>
+<li>Outperforms other models such as Claude 3.0 (200k tokens) and GPT-4 Turbo (128k tokens) in next-token prediction and retrieval up to 10M tokens (approximately 7M words).</li>
+</ol>
+</li>
+<li><strong>Unprecedented Context Handling</strong><ol>
+<li>Handles extremely long contexts, up to at least 10M tokens (approximately 7M words).</li>
+<li>Capable of processing long-form mixed-modality inputs, including entire document collections, multiple hours of video, and almost five days of audio.</li>
+<li>Near-perfect recall on long-context retrieval tasks across various modalities.</li>
+</ol>
+</li>
+<li><strong>Realistic Multimodal Long-Context Benchmarks</strong><ol>
+<li>Excels in tasks requiring retrieval and reasoning over multiple parts of the context.</li>
+<li>Outperforms all competing models across all modalities, even those augmented with external retrieval methods.</li>
+</ol>
+</li>
+</ol>
+<p>These features make Gemini 1.5 models a generational leap over existing models, offering unparalleled performance in processing and understanding extensive and complex multimodal information.</p>
 <h3 id="notebookml-notebookml-document-loading">Document Loading<a class="headerlink" href="#notebookml-notebookml-document-loading" title="Permanent link">&para;</a></h3>
 <p>Documents are loaded via GoogleDrive, PDFs, Text files, Copied text, Web page URL.</p>
 <div class="admonition tip">
@@ -939,6 +1019,10 @@
 <p class="admonition-title">Quote</p>
 <p>“NotebookLM is a closed system.” This means the AI won’t perform any web searches beyond what you, the user, give it in a prompt. Every response it generates pertains only to the information it has on hand.
 (<a href="https://www.techradar.com/computing/artificial-intelligence/googles-notebooklm-is-now-an-even-smarter-assistant-and-better-fact-checker">ref</a>)</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p><strong>“source-grounded AI”</strong>: you define a set of documents that are important to your work—called “sources” in the NotebookLM parlance—and from that point on, you can have an open-ended conversation with the language model where its answers will be “grounded” in the information you’ve selected. It is as if you are giving the AI instant expertise in whatever domain you happen to be working in. (<a href="https://adjacentpossible.substack.com/p/introducing-notebooklm">ref</a>)</p>
 </div>
 <h3 id="notebookml-notebookml-sharing">Sharing<a class="headerlink" href="#notebookml-notebookml-sharing" title="Permanent link">&para;</a></h3>
 <p>Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing is done directly via email addresses.</p>
@@ -959,6 +1043,7 @@
 <p class="admonition-title">Takeaways</p>
 <ol>
 <li>NotebookML is a powerful free solution from Google that allows users to quickly and easily build a source-grounded AI (where users define the set of documents) and then have an open-ended conversation with the language model where its answers will be “grounded” in the information users selected.</li>
+<li>The support for large contexts means that large documents can be processed - as demonstrated in the following sections.</li>
 <li>I found it a useful tool / companion for the research I was doing on vulnerability management to augment my knowledge and capabilities.</li>
 </ol>
 </div></section><section class="print-page" id="notebookml-notebookml_vulnerabilitystandards"><h1 id="notebookml-notebookml_vulnerabilitystandards-notebookml">NotebookML<a class="headerlink" href="#notebookml-notebookml_vulnerabilitystandards-notebookml" title="Permanent link">&para;</a></h1>
@@ -1153,9 +1238,6 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 <figure>
 <p><img alt="" src="../assets/images/NotebookML_6.png" /></p>
 </figure>
-<figure>
-<p><img alt="" src="../NotebookML/assets/images/NotebookML_7.png" /></p>
-</figure>
 <h2 id="notebookml-notebookml_cwe-what-is-the-cwe-associated-with-cve-2019-1653-cisco-small-business-rv320-and-rv325-routers-information-disclosure-vulnerability">what is the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> associated with <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-2019-1653 "Cisco Small Business RV320 and RV325 Routers Information Disclosure Vulnerability"<a class="headerlink" href="#notebookml-notebookml_cwe-what-is-the-cwe-associated-with-cve-2019-1653-cisco-small-business-rv320-and-rv325-routers-information-disclosure-vulnerability" title="Permanent link">&para;</a></h2>
 <figure>
 <p><img alt="" src="../assets/images/NotebookML_8.png" /></p>
@@ -1171,12 +1253,12 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 <ol>
 <li>I found it useful, quick, and convenient to be able to ask questions of the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> list, as a compliment to the traditional search method I've used in the past.</li>
 <li>The large <abbr title="CWE Common Weakness Enumeration">CWE</abbr> document could not be uploaded to NoteBookLM as one PDF document, but had to be split into smaller PDFs.<ol>
-<li>The same document could be uploaded to ChatGPT4o.</li>
+<li>The same document could be uploaded to ChatGPT4o (without splitting).</li>
 </ol>
 </li>
 <li>Based on the extremely limited test cases here (your experience may vary):<ol>
 <li>NoteBookAI provides better answers on the provided source documents.</li>
-<li>ChatGPT provides richer answers to questions that can be answered outside of the provided source documents (based on the extremely limited test cases here!).</li>
+<li>ChatGPT provides richer answers to questions that can be answered outside of the provided source documents.</li>
 </ol>
 </li>
 </ol>
@@ -1553,7 +1635,7 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <p>"list the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values and repeated patterns" in the prompt.</p>
 </div>
 </div>
-<p><a href="../data/NotebookML_Config/security_parameters_ns.json">security_parameters_ns.json</a> is the resulting file that has 96 config parameters - more than the expected answer config parameters as generated by humans.</p>
+<p>security_parameters_ns.json is the resulting file that has 96 config parameters - more than the expected answer config parameters as generated by humans.</p>
 <h3 id="notebookml-notebookml_config-save-the-result_1">Save The Result<a class="headerlink" href="#notebookml-notebookml_config-save-the-result_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click the Copy button.</li>
@@ -2070,7 +2152,17 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <figure>
 <p><img alt="Guide" src="../assets/images/prompting_classification2.png" /></p>
 </figure>
-<h2 id="prompt_engineering-prompt_engineering-fabric-prompt-collection-and-framework">Fabric Prompt Collection and Framework<a class="headerlink" href="#prompt_engineering-prompt_engineering-fabric-prompt-collection-and-framework" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<ol>
+<li>ToDo</li>
+</ol>
+</div></section><section class="print-page" id="prompt_engineering-fabric"><h1 id="prompt_engineering-fabric-fabric">Fabric<a class="headerlink" href="#prompt_engineering-fabric-fabric" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>One of Fabric's primary features is helping people collect and integrate prompts</p>
+</div>
+<h2 id="prompt_engineering-fabric-fabric-prompt-collection-and-framework">Fabric Prompt Collection and Framework<a class="headerlink" href="#prompt_engineering-fabric-fabric-prompt-collection-and-framework" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/danielmiessler/fabric/tree/main">https://github.com/danielmiessler/fabric/tree/main</a> </p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
@@ -2079,11 +2171,20 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 Fabric was created to address this by enabling everyone to granularly apply AI to everyday challenges.</p>
 <p>One of fabric's primary features is helping people collect and integrate prompts, which we call Patterns, into various parts of their lives.</p>
 </div>
-<h3 id="prompt_engineering-prompt_engineering-fabric-prompts">Fabric Prompts<a class="headerlink" href="#prompt_engineering-prompt_engineering-fabric-prompts" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/danielmiessler/fabric/tree/main/patterns">https://github.com/danielmiessler/fabric/tree/main/patterns</a></p>
-<h3 id="prompt_engineering-prompt_engineering-fabric-prompt-to-improve-prompts">Fabric Prompt to Improve Prompts<a class="headerlink" href="#prompt_engineering-prompt_engineering-fabric-prompt-to-improve-prompts" title="Permanent link">&para;</a></h3>
+<p>The prompts (aka Patterns) are available at <a href="https://github.com/danielmiessler/fabric/tree/main/patterns">https://github.com/danielmiessler/fabric/tree/main/patterns</a></p>
+<h3 id="prompt_engineering-fabric-fabric-prompts-for-cybersecurity">Fabric Prompts for CyberSecurity<a class="headerlink" href="#prompt_engineering-fabric-fabric-prompts-for-cybersecurity" title="Permanent link">&para;</a></h3>
+<p>Fabric has Prompts that are specific to CyberSecurity e.g.</p>
+<ul>
+<li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_logs/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_logs/system.md</a></li>
+<li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_malware/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_malware/system.md</a></li>
+<li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_threat_report/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_threat_report/system.md</a></li>
+<li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_threat_report_trends/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_threat_report_trends/system.md</a></li>
+<li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/write_hackerone_report/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/write_hackerone_report/system.md</a></li>
+<li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/write_semgrep_rule/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/write_semgrep_rule/system.md</a> </li>
+</ul>
+<h3 id="prompt_engineering-fabric-fabric-prompt-to-improve-prompts">Fabric Prompt to Improve Prompts<a class="headerlink" href="#prompt_engineering-fabric-fabric-prompt-to-improve-prompts" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/improve_prompt/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/improve_prompt/system.md</a></p>
-<h2 id="prompt_engineering-prompt_engineering-takeaways">Takeaways<a class="headerlink" href="#prompt_engineering-prompt_engineering-takeaways" title="Permanent link">&para;</a></h2>
+<h2 id="prompt_engineering-fabric-takeaways">Takeaways<a class="headerlink" href="#prompt_engineering-fabric-takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
 <ol>
@@ -2094,7 +2195,29 @@ Fabric was created to address this by enabling everyone to granularly apply AI t
                             Annex <a class='headerlink' href='#section-annex' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="annex-glossary"><p><strong>~</strong>: shorthand for "approximately"</p>
-<p><strong>~~</strong>: shorthand for "very approximately"</p></section><h1 class='nav-section-title-end'>Ended: Annex</h1></div>
+<p><strong>~~</strong>: shorthand for "very approximately"</p></section><section class="print-page" id="research-research"><h1 id="research-research-talks-and-research">Talks and Research<a class="headerlink" href="#research-research-talks-and-research" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>This section highlights relevant talks and research.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th><strong>Title</strong></th>
+<th><strong>Venue</strong></th>
+<th><strong>Author(s)</strong></th>
+<th><strong>Date</strong> (YYYY/M)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.microsoft.com/en-us/research/uploads/prod/2023/12/NFWReport2023_v5.pdf">Microsoft New Future of Work Report 2023</a></td>
+<td>Report</td>
+<td>Microsoft</td>
+<td>2023/12</td>
+</tr>
+</tbody>
+</table></section><h1 class='nav-section-title-end'>Ended: Annex</h1></div>
 
 
 
