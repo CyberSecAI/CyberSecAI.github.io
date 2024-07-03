@@ -15,6 +15,7 @@ nav:
     - NotebookML Config: NotebookML/NotebookML_Config.md
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
+    - Fabric: prompt_engineering/Fabric.md    
   - Annex:
     - Glossary: annex/Glossary.md
     - Talks & Research: research/research.md

@@ -10,9 +10,9 @@
     
     * Both tools use LLMs, but NoteBookLM uses a "Closed System" (only the document sources you provide), versus ChatGPT4o which bases it answers on the open internet content at the time it was trained, and adittionally the documents you provide.
     
-  
 
-
+    !!! tip
+        Your responses from NotebookLM may be different than the examples shown here. LLMs will give different responses to the same question.
 
 
 ## [NotebookLM](https://notebooklm.google.com/)
@@ -22,16 +22,32 @@
     [NotebookLM](https://notebooklm.google.com/) lets you read, take notes, ask questions, organize your ideas, and much more -- all with the power of Google AI helping you at every step of the way.
 
 !!! quote
-    It runs on the company’s Gemini 1.5 Pro model, the same AI that powers the Gemini Advanced chatbot. 
+    It runs on the company’s Gemini 1.5 Pro model ([released Dec 2023](https://en.wikipedia.org/wiki/Gemini_(language_model))), the same AI that powers the Gemini Advanced chatbot. 
     ([ref](https://www.techradar.com/computing/artificial-intelligence/googles-notebooklm-is-now-an-even-smarter-assistant-and-better-fact-checker))
 
-!!! quote 
-    
-    **“source-grounded AI”**: you define a set of documents that are important to your work—called “sources” in the NotebookLM parlance—and from that point on, you can have an open-ended conversation with the language model where its answers will be “grounded” in the information you’ve selected. It is as if you are giving the AI instant expertise in whatever domain you happen to be working in. ([ref](https://adjacentpossible.substack.com/p/introducing-notebooklm))
+### Key Features and Benefits of Gemini 1.5 Models
+
+Per [Gemini 1.5 Technical Report](https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf), the Key Features and Benefits of Gemini 1.5 Models are
+
+1. **Highly Compute-Efficient Multimodal Models**
+      1. Capable of recalling and reasoning over fine-grained information from millions of tokens of context, including long documents, videos, and audio.
+2. **Benchmark Performance**
+      1. Outperforms other models such as Claude 3.0 (200k tokens) and GPT-4 Turbo (128k tokens) in next-token prediction and retrieval up to 10M tokens (approximately 7M words).
+3. **Unprecedented Context Handling**
+      1. Handles extremely long contexts, up to at least 10M tokens (approximately 7M words).
+      2. Capable of processing long-form mixed-modality inputs, including entire document collections, multiple hours of video, and almost five days of audio.
+      3. Near-perfect recall on long-context retrieval tasks across various modalities.
+4. **Realistic Multimodal Long-Context Benchmarks**
+      1. Excels in tasks requiring retrieval and reasoning over multiple parts of the context.
+      2. Outperforms all competing models across all modalities, even those augmented with external retrieval methods.
+
+These features make Gemini 1.5 models a generational leap over existing models, offering unparalleled performance in processing and understanding extensive and complex multimodal information.
 
 
-!!! tip
-    Your responses from NotebookLM may be different than the examples shown here. LLMs will give different responses to the same question.
+
+
+
+
 
 ### Document Loading
 
@@ -50,6 +66,9 @@ These documents become the corpus where information is retrieved from, with refe
     “NotebookLM is a closed system.” This means the AI won’t perform any web searches beyond what you, the user, give it in a prompt. Every response it generates pertains only to the information it has on hand.
     ([ref](https://www.techradar.com/computing/artificial-intelligence/googles-notebooklm-is-now-an-even-smarter-assistant-and-better-fact-checker))
 
+!!! quote 
+    
+    **“source-grounded AI”**: you define a set of documents that are important to your work—called “sources” in the NotebookLM parlance—and from that point on, you can have an open-ended conversation with the language model where its answers will be “grounded” in the information you’ve selected. It is as if you are giving the AI instant expertise in whatever domain you happen to be working in. ([ref](https://adjacentpossible.substack.com/p/introducing-notebooklm))
 
 ### Sharing
 Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing is done directly via email addresses.
@@ -76,6 +95,7 @@ Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing 
 !!! success "Takeaways" 
 
     1. NotebookML is a powerful free solution from Google that allows users to quickly and easily build a source-grounded AI (where users define the set of documents) and then have an open-ended conversation with the language model where its answers will be “grounded” in the information users selected.
-    2. I found it a useful tool / companion for the research I was doing on vulnerability management to augment my knowledge and capabilities.
+    2. The support for large contexts means that large documents can be processed - as demonstrated in the following sections.
+    3. I found it a useful tool / companion for the research I was doing on vulnerability management to augment my knowledge and capabilities.
 
   

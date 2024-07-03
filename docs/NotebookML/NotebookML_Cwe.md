@@ -88,10 +88,6 @@ ChatGPT4o provided the same types - but gave a much richer answer than NotebookL
 ![](../assets/images/NotebookML_6.png)
 </figure>
 
-<figure markdown>
-![](../assets/images/NotebookML_7.png)
-</figure>
-
 ## what is the CWE associated with CVE-2019-1653 "Cisco Small Business RV320 and RV325 Routers Information Disclosure Vulnerability"
 
 <figure markdown>
@@ -113,7 +109,7 @@ ChatGPT4o provided the same types - but gave a much richer answer than NotebookL
 
     1. I found it useful, quick, and convenient to be able to ask questions of the CWE list, as a compliment to the traditional search method I've used in the past.
     1. The large CWE document could not be uploaded to NoteBookLM as one PDF document, but had to be split into smaller PDFs.
-        1. The same document could be uploaded to ChatGPT4o.
+        1. The same document could be uploaded to ChatGPT4o (without splitting).
     2. Based on the extremely limited test cases here (your experience may vary):
         1. NoteBookAI provides better answers on the provided source documents.
-        1. ChatGPT provides richer answers to questions that can be answered outside of the provided source documents (based on the extremely limited test cases here!).
+        2. ChatGPT provides richer answers to questions that can be answered outside of the provided source documents.
