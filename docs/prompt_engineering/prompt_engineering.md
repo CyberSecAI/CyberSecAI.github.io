@@ -6,6 +6,7 @@
 
     ChatGPTo will be used here but the techniques apply in general to any LLM.
 
+
 ## Prompt Guides
 There are many books, guides, and articles on Prompt Engineering. Some of the better ones are listed here:
 
@@ -19,14 +20,19 @@ There are many books, guides, and articles on Prompt Engineering. Some of the be
 7. [Anthropic Prompt Engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) 
 
 
+## Prompt Taxonomy
+<figure markdown>
+![Guide](../assets/images/promptTaxonomy.png)
+</figure>
+The above proposed Prompt Taxonomy is TELeR: Turn, Expression, Level of Details, Role from  [TELeR: A General Taxonomy of LLM Prompts for Benchmarking Complex Tasks](https://arxiv.org/pdf/2305.11430)
 
 
-## Useful Prompt Tactics
+## Prompt Tactics
 
 Some tactics I find particularly useful:
 
 1. Ask the LLM to generate the prompt.
-      1. Do this in 2 parts (task decomposition, )
+      1. Do this in 2 parts (task decomposition)
          1. Ask the LLM what techniques are best to use for effective prompt engineering
          2. Ask the LLM to create a prompt using these techniques for the objective and example you specify
 3. Ask the LLM to provide a confidence score for their answer. 
@@ -36,9 +42,9 @@ Some tactics I find particularly useful:
 4. Ask the LLM (or a different LLM) to review the answer and provide improvements.
 
 
-## Ask the LLM to generate the prompt
+### Ask the LLM to generate the prompt
 
-### Ask the LLM what techniques are best to use for effective prompt engineering?
+#### Ask the LLM what techniques are best to use for effective prompt engineering?
 
 
 <figure markdown>
@@ -47,7 +53,7 @@ Some tactics I find particularly useful:
 </figure>
 
 
-### Ask the LLM to create a prompt using these techniques for the objective and example you specify
+#### Ask the LLM to create a prompt using these techniques for the objective and example you specify
 
 <figure markdown>
 ![Guide](../assets/images/prompting3.png)
