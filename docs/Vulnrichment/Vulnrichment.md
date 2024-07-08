@@ -17,7 +17,7 @@ icon: material/play-box-edit-outline
 
     * These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by CISA ADP.
     * The consensus output was then reviewed by a human (me).
-    * I created [3 Issues initially](https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind) (though there are a lot more) 
+    * I created [3 Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) (though there are a lot more) and these were accepted by CISA Vulnrichment and resolved promptly!
 
     This section shows the different approaches used (and the subscription plan used):
 
@@ -39,16 +39,17 @@ icon: material/play-box-edit-outline
 I have great admiration for CISA and their pragmatic initiatives like [CISA KEV](https://riskbasedprioritization.github.io/cisa_kev/cisa_kev/) and [SSVC](https://riskbasedprioritization.github.io/ssvc/SSVC/) and have [spoken about them](https://riskbasedprioritization.github.io/talks/talks/) and applied them in production.
 
 !!! Tip
-    One of the many benefits of this Vulnrichment project is that feedback can be provided as GitHub issues and the team is responsive.
+    One of the many benefits of this Vulnrichment project is that feedback can be provided as GitHub issues and **the team is VERY responsive** ✅ :clap: 🙌
     
-    * The 'Bug' label was assigned same day to the 3 issues I submitted: https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind 
+    * The 'Bug' label was assigned same day to the 3 issues I submitted same day: https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed.
+    * The changes were accepted and applied next working day and a comment was added to the ticket which was then closed.
 
     My overall goal here was to 
 
     * Show that LLMs could augment human analysts where vulnerability enrichment today is largely done manually.
     * Show how to use them for this purpose.
     * Get people to use LLMs to improve the quality of the CVE data in general, and in this specific example case, the CWE data.
-    * Maximize the quality and value of the CISA ADP data and enrichment.
+    * Maximize the value of the CISA ADP data and enrichment by improving CWE-assignment quality.
 
 ## Get CVEs Enriched by CISA ADP
 
@@ -61,7 +62,7 @@ The recipe focuses on Time-To-Value - and minimization of human effort - to find
 ### Don't Train A Model On Bad Data!
 It is possible to train a Language Model as a Classifier to assign CWEs to a CVE - and there are several research papers that took that approach (with limited success).
 
-This approach is delusional based on my research and experience of assigned CWEs.
+* This approach is delusional based on my research and experience of assigned CWEs.
 
 Per [Steve Christey Coley, CWE tech lead](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29):
 
@@ -104,7 +105,9 @@ To minimize human effort, 3 LLMs are used and the consensus is reviewed
 2. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
       1. ~700 (No) of ~1.5K 
       2. Sort these by Confidence score i.e. start with the highest Confidence ones.
-3. For the subset where ChatGPT4o disagrees, ask Gemini and Claude.
+3. Then ask Gemini and Claude to review. This can be done in several ways e.g. 
+   1. For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs
+   2. Ask each LLM in turn to review the previous assessments by LLMs
 
 ### Create a Prompt
 #### Chat Interface - Table Output
@@ -218,6 +221,6 @@ The ~1500 ADP CVE-CWE pairs were split into 15 files of 100 CVE-CWE pair prompts
     1. The value of CVE data depends on its quality. 
     2. For all published CVEs to date, [the quality of CWEs assigned is questionable](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29).
     3. A large part of that is that humans can't grok 1000+ CWEs. LLMs can.
-    4. Using LLMs to suggest or validate CWEs can reduce the manual effort and error in CVE assignment.
+    4. Using LLMs to suggest or validate CWEs can reduce the manual effort and error in CWE assignment.
     5. LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.
     6. LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.
