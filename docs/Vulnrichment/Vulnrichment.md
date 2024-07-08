@@ -41,8 +41,8 @@ I have great admiration for CISA and their pragmatic initiatives like [CISA KEV]
 !!! Tip
     One of the many benefits of this Vulnrichment project is that feedback can be provided as GitHub issues and **the team is VERY responsive** ✅ :clap: 🙌
     
-    * The 'Bug' label was assigned same day to the 3 issues I submitted same day: https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed.
-    * The changes were accepted and applied next working day and a comment was added to the ticket which was then closed.
+    * The 'Bug' label was assigned the same day to the 3 issues I submitted: https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed.
+    * The changes were accepted and applied the next working day and a comment was added to the ticket which was then closed.
 
     My overall goal here was to 
 
