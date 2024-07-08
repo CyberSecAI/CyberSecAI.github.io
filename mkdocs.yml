@@ -7,6 +7,7 @@ nav:
   - Home: index.md
   - Introduction: 
     - Introduction: introduction/Introduction.md
+    - Preface: introduction/Preface.md
   - NotebookML:
     - NotebookML: NotebookML/NotebookML.md
     - NotebookML Vulnerability Standards: NotebookML/NotebookML_VulnerabilityStandards.md
