@@ -1,0 +1,1579 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/Vulnrichment/Vulnrichment/">
+      
+      
+        <link rel="prev" href="../../prompt_engineering/Fabric/">
+      
+      
+        <link rel="next" href="../../annex/Glossary/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+    
+    
+      
+        <title>CISA Vulnrichment - CyberSecAI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-NMMB0KXVGQ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-NMMB0KXVGQ",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-NMMB0KXVGQ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cisa-vulnrichment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CyberSecAI" class="md-header__button md-logo" aria-label="CyberSecAI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3C9.2 3 6.2 5.9 6 9.7l-1.9 2.5c-.2.3 0 .8.4.8H6v3c0 1.1.9 2 2 2h1v3h7v-4.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7m4 7h-3v3h-2v-3H9V8h3V5h2v3h3v2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CyberSecAI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CISA Vulnrichment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CyberSecAI" class="md-nav__button md-logo" aria-label="CyberSecAI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3C9.2 3 6.2 5.9 6 9.7l-1.9 2.5c-.2.3 0 .8.4.8H6v3c0 1.1.9 2 2 2h1v3h7v-4.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7m4 7h-3v3h-2v-3H9V8h3V5h2v3h3v2Z"/></svg>
+
+    </a>
+    CyberSecAI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NotebookML
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            NotebookML
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NotebookML/NotebookML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NotebookML/NotebookML_VulnerabilityStandards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookML Vulnerability Standards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NotebookML/NotebookML_Cwe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookML CWE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NotebookML/NotebookML_Capec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookML CAPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NotebookML/NotebookML_Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookML Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Prompting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Prompting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_engineering/prompt_engineering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_engineering/Fabric/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fabric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vulnrichment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Vulnrichment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 18.9 6.1-6.1 2.1 2.1-6.1 6.1H13v-2.1m8.4-7.6 1.3 1.3c.2.2.2.5 0 .7l-1 1-2.1-2 1-1c.1-.1.2-.2.4-.2s.3 0 .4.2M11 21H5c-.5 0-1-.2-1.4-.6-.4-.4-.6-.9-.6-1.4V5c0-.5.2-1 .6-1.4C4 3.2 4.5 3 5 3h14c1.1 0 2 .9 2 2v4h-2V5H5v14h6v2m4-9-5-4v8l5-4Z"/></svg>
+  
+  <span class="md-ellipsis">
+    CISA Vulnrichment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 18.9 6.1-6.1 2.1 2.1-6.1 6.1H13v-2.1m8.4-7.6 1.3 1.3c.2.2.2.5 0 .7l-1 1-2.1-2 1-1c.1-.1.2-.2.4-.2s.3 0 .4.2M11 21H5c-.5 0-1-.2-1.4-.6-.4-.4-.6-.9-.6-1.4V5c0-.5.2-1 .6-1.4C4 3.2 4.5 3 5 3h14c1.1 0 2 .9 2 2v4h-2V5H5v14h6v2m4-9-5-4v8l5-4Z"/></svg>
+  
+  <span class="md-ellipsis">
+    CISA Vulnrichment
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cisa-vulnrichment_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      CISA Vulnrichment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-cves-enriched-by-cisa-adp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get CVEs Enriched by CISA ADP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-to-using-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach to using LLMs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach to using LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dont-train-a-model-on-bad-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Don't Train A Model On Bad Data!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-with-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate with LLMs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consensus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consensus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Prompt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-interface-table-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat Interface - Table Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-api-interface-json-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch API Interface - JSON Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt LLMs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gemini-15-pro-browser-chat-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gemini 1.5 Pro Browser Chat Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-35-sonnet-browser-chat-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claude 3.5 Sonnet Browser Chat Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Claude 3.5 Sonnet Browser Chat Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-batch-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAI Batch API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenAI Batch API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Annex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Annex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../annex/Glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/research/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Talks & Research
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cisa-vulnrichment_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      CISA Vulnrichment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-cves-enriched-by-cisa-adp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get CVEs Enriched by CISA ADP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-to-using-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approach to using LLMs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach to using LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dont-train-a-model-on-bad-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Don't Train A Model On Bad Data!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-with-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validate with LLMs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consensus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consensus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Prompt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat-interface-table-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat Interface - Table Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-api-interface-json-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch API Interface - JSON Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt LLMs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gemini-15-pro-browser-chat-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gemini 1.5 Pro Browser Chat Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-35-sonnet-browser-chat-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claude 3.5 Sonnet Browser Chat Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Claude 3.5 Sonnet Browser Chat Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-batch-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAI Batch API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenAI Batch API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="cisa-vulnrichment"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment<a class="headerlink" href="#cisa-vulnrichment" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>I was reading a <a href="https://www.linkedin.com/feed/update/urn:li:activity:7214295735440187393?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7214295735440187393%2C7214365350828613632%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287214365350828613632%2Curn%3Ali%3Aactivity%3A7214295735440187393%29">post on LinkedIn</a> and the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP looked wrong so...</p>
+<ul>
+<li>I used my NotebookML <abbr title="CWE Common Weakness Enumeration">CWE</abbr> notebook, and other LLMs, to determine the appropriate <abbr title="CWE Common Weakness Enumeration">CWE</abbr>.</li>
+<li>I then raised an issue: <a href="https://github.com/cisagov/vulnrichment/issues/84">https://github.com/cisagov/vulnrichment/issues/84</a>.</li>
+</ul>
+<p>I then decided to dig a bit more into this... specifically the CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</p>
+<p>I used a consensus of LLMs to review all CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP to find issues:</p>
+<ul>
+<li>These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</li>
+<li>The consensus output was then reviewed by a human (me).</li>
+<li>I created <a href="https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind">3 Issues initially</a> (though there are a lot more) </li>
+</ul>
+<p>This section shows the different approaches used (and the subscription plan used):</p>
+<ol>
+<li>no-code using the browser chat interface: <ol>
+<li>Gemini 1.5 Pro (subscription)</li>
+<li>Claude 3.5 Sonnet (no subscription)</li>
+</ol>
+</li>
+<li>code: <ol>
+<li>ChatGPT4o <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> (Plus Plan)</li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 id="cisa-vulnrichment_1"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment<a class="headerlink" href="#cisa-vulnrichment_1" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>The <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment project is the public repository of <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr>'s enrichment of public <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> records through <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr>'s ADP (Authorized Data Publisher) container. In this phase of the project, <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> is assessing new and recent CVEs and adding key <abbr title="SSVC Stakeholder-Specific Vulnerability Categorization">SSVC</abbr> decision points. Once scored, some higher-risk CVEs will also receive enrichment of <abbr title="CWE Common Weakness Enumeration">CWE</abbr>, <abbr title="Common Vulnerability Scoring System Standard. A framework for scoring the severity of vulnerabilities based on factors such as exploitability and impact.">CVSS</abbr>, and CPE data points, where possible.</p>
+<p><a href="https://github.com/cisagov/vulnrichment">https://github.com/cisagov/vulnrichment</a></p>
+</div>
+<p>I have great admiration for <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> and their pragmatic initiatives like <a href="https://riskbasedprioritization.github.io/cisa_kev/cisa_kev/"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> <abbr title="Known Exploited Vulnerability">KEV</abbr></a> and <a href="https://riskbasedprioritization.github.io/ssvc/SSVC/"><abbr title="SSVC Stakeholder-Specific Vulnerability Categorization">SSVC</abbr></a> and have <a href="https://riskbasedprioritization.github.io/talks/talks/">spoken about them</a> and applied them in production.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>One of the many benefits of this Vulnrichment project is that feedback can be provided as GitHub issues and the team is responsive.</p>
+<ul>
+<li>The 'Bug' label was assigned same day to the 3 issues I submitted: <a href="https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind">https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind</a> </li>
+</ul>
+<p>My overall goal here was to </p>
+<ul>
+<li>Show that LLMs could augment human analysts where vulnerability enrichment today is largely done manually.</li>
+<li>Show how to use them for this purpose.</li>
+<li>Get people to use LLMs to improve the quality of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> data in general, and in this specific example case, the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> data.</li>
+<li>Maximize the quality and value of the <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP data and enrichment.</li>
+</ul>
+</div>
+<h2 id="get-cves-enriched-by-cisa-adp">Get CVEs Enriched by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP<a class="headerlink" href="#get-cves-enriched-by-cisa-adp" title="Permanent link">&para;</a></h2>
+<h2 id="approach-to-using-llms">Approach to using LLMs<a class="headerlink" href="#approach-to-using-llms" title="Permanent link">&para;</a></h2>
+<p>The recipe focuses on Time-To-Value - and minimization of human effort - to find the most inappropriate assigned CWEs ASAP.</p>
+<ul>
+<li>A more complete and costly approach would be to submit all <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions to all 3 LLMs.</li>
+</ul>
+<h3 id="dont-train-a-model-on-bad-data">Don't Train A Model On Bad Data!<a class="headerlink" href="#dont-train-a-model-on-bad-data" title="Permanent link">&para;</a></h3>
+<p>It is possible to train a Language Model as a Classifier to assign CWEs to a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> - and there are several research papers that took that approach (with limited success).</p>
+<p>This approach is delusional based on my research and experience of assigned CWEs.</p>
+<p>Per <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">Steve Christey Coley, <abbr title="CWE Common Weakness Enumeration">CWE</abbr> tech lead</a>:</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>There has been significant interest in using AI/ML in various applications to use and/or map to <abbr title="CWE Common Weakness Enumeration">CWE</abbr>, but in my opinion there are a number of significant hurdles, e.g. you can't train on "bad mappings" to learn how to do good mappings.</p>
+</div>
+<p>So, rather than train a model on bad data, we can ask a model to assign / validate a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> based on its understanding of the CWEs available e.g.</p>
+<ol>
+<li>a closed-model with access to the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification only (and no other data)</li>
+<li>an open-model with access to the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification and other data</li>
+</ol>
+<h3 id="validate-with-llms">Validate with LLMs<a class="headerlink" href="#validate-with-llms" title="Permanent link">&para;</a></h3>
+<p>Different approaches are possible when providing the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description to the LLM:</p>
+<ol>
+<li>provide the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assigned as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>, and ask the LLM if it agrees or not, and if not why</li>
+<li>ask the LLM to assign one or more CWEs</li>
+</ol>
+<p>The first approach is easier and simpler and cheaper (in terms of token use i.e. shorter response output), and better as a first pass option to get the low hanging fruit.</p>
+<p>The second approach could be used at the time of <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment to get a second opinion.</p>
+<h3 id="consensus">Consensus<a class="headerlink" href="#consensus" title="Permanent link">&para;</a></h3>
+<p>To minimize human effort, 3 LLMs are used and the consensus is reviewed</p>
+<ul>
+<li>The LLMs are state-of-the-art models from different providers i.e. the best available and reasonably independent.</li>
+<li>The results are sorted by consensus i.e. 3 models in agreement, then 2 models in agreement,....</li>
+<li>A Human (me) then reviewed (sorted by consensus) and made the final decision.</li>
+</ul>
+<h3 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Get the Vulnrichment subset of CVEs where <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP assigned a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (regardless of whether the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> was the same or different than that assigned by the CNA)<ol>
+<li>~1.5K (<abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP Assigned CWEs) of ~~8K CVEs (in Vulnrichment)</li>
+</ol>
+</li>
+<li>Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (and provide a Confidence score, and rationale if not)<ol>
+<li>~700 (No) of ~1.5K </li>
+<li>Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
+</ol>
+</li>
+<li>For the subset where ChatGPT4o disagrees, ask Gemini and Claude.</li>
+</ol>
+<h3 id="create-a-prompt">Create a Prompt<a class="headerlink" href="#create-a-prompt" title="Permanent link">&para;</a></h3>
+<h4 id="chat-interface-table-output">Chat Interface - Table Output<a class="headerlink" href="#chat-interface-table-output" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>caption_system_prompt =
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>You are a cybersecurity expert specializing in identifying Common Weakness Enumeration (CWE) IDs from CVE descriptions.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Your goal is is to say if you Agree with the assigned CWE ID or not.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>You will be provided with a CVE ID and description amd a CWE ID that has been assigned to that CVE description.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Please provide the response in a table &#39;cve_id&#39;, &#39;CWE_ID&#39;, &#39;Agree&#39;. &quot;Rationale&quot;, Confidence&#39; where
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>1. Agree: string // Yes or No
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>2. Rationale: string // Only if you do not Agree, provide a rationale why not
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>3. Confidence: string // a confidence score between 0 and 1
+</code></pre></div>
+<p>The table output allows copy-and-pasting by a human into a sheet.</p>
+<h4 id="batch-api-interface-json-output">Batch API Interface - JSON Output<a class="headerlink" href="#batch-api-interface-json-output" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>caption_system_prompt =
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>You are a cybersecurity expert specializing in identifying Common Weakness Enumeration (CWE) IDs from CVE descriptions.
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Your goal is is to say if you Agree with the assigned CWE ID or not.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>You will be provided with a CVE ID and description amd a CWE ID that has been assigned to that CVE description.
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>You will output a json object containing the following information:
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>{
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    Agree: string // Yes or No
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    Rationale: string // Only if you do not Agree, provide a rationale why not
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    Confidence: string // a confidence score between 0 and 1
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>}
+</code></pre></div>
+The JSON output allows processing by machines.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to submit multiple CVEs in one prompt for each batch entry i.e. similar to what is done when using the Chat interface.</p>
+<ul>
+<li>But this is not done in this example; each batch request contains a single <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> only (per the <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> example)</li>
+</ul>
+</div>
+<p>The prompt consists of these parts:</p>
+<ol>
+<li>Role + Task: which is the same for the Chat and API interface</li>
+<li>Output format: which is different for the Chat and API interface</li>
+<li>A binary value Agree is requested</li>
+<li>The rationale only if there is disagreement. This saves on output tokens.</li>
+<li>A Confidence score to limit impacts of hallucinations, and as a way to assess and prioritize responses by confidence.</li>
+<li>No (Few-shot) examples are provided. Based on the results, these were not necessary.<ol>
+<li>If Few-shot examples were required, I'd submit multiple CVEs in a single batch request (because putting the examples in each single <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> request would add a LOT of input tokens)</li>
+</ol>
+</li>
+</ol>
+<h3 id="prompt-llms">Prompt LLMs<a class="headerlink" href="#prompt-llms" title="Permanent link">&para;</a></h3>
+<h4 id="gemini-15-pro-browser-chat-interface">Gemini 1.5 Pro Browser Chat Interface<a class="headerlink" href="#gemini-15-pro-browser-chat-interface" title="Permanent link">&para;</a></h4>
+<p>The chat interface was used in this example submitting multiple CVEs in one prompt.</p>
+<h4 id="claude-35-sonnet-browser-chat-interface">Claude 3.5 Sonnet Browser Chat Interface<a class="headerlink" href="#claude-35-sonnet-browser-chat-interface" title="Permanent link">&para;</a></h4>
+<h5 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h5>
+<p>Currently: Claude 3.5 Sonnet was used as it has the best performance vs cost for Claude models.</p>
+<figure>
+<p><img alt="" src="../../assets/images/claude.png" />
+<a href="https://docs.anthropic.com/en/docs/welcome">https://docs.anthropic.com/en/docs/welcome</a> </p>
+</figure>
+<h5 id="interface">Interface<a class="headerlink" href="#interface" title="Permanent link">&para;</a></h5>
+<p>Currently: Claude does not support a native <a href="https://www.anthropic.com/pricing#anthropic-api">Batch API interface</a> - though 
+<a href="https://aws.amazon.com/bedrock/pricing/">Amazon Bedrock</a> supports batching of prompts to models including Claude.</p>
+<p>The chat interface was used in this example submitting multiple CVEs in one prompt.</p>
+<h4 id="openai-batch-api"><a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a><a class="headerlink" href="#openai-batch-api" title="Permanent link">&para;</a></h4>
+<h5 id="model_1">Model<a class="headerlink" href="#model_1" title="Permanent link">&para;</a></h5>
+<p>gpt-4o</p>
+<h5 id="plan">Plan<a class="headerlink" href="#plan" title="Permanent link">&para;</a></h5>
+<p>The Plus plan subscription was used.</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>There are some restrictions:</p>
+<ul>
+<li>The file can contain up to 50,000 requests.</li>
+<li>The file cannot be more than 100 MB in size.</li>
+</ul>
+<p>Enqueued token limit reached for gpt-4o in organization XYZ. Limit: 90,000 enqueued tokens. Please try again once some in_progress batches have been completed.'</p>
+</div>
+<h5 id="interface_1">Interface<a class="headerlink" href="#interface_1" title="Permanent link">&para;</a></h5>
+<p>Batch Interface API.</p>
+<p>The ~1500 ADP <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pairs were split into 15 files of 100 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pair prompts to comfortably fit under this token limit.</p>
+<ul>
+<li>very little effort was spent to optimize the file size (number of prompts per batch), or the prompt size.</li>
+<li>The cost to process the ~1500 ADP <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pairs: ~$1.50.</li>
+</ul>
+<h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<ol>
+<li>The value of <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> data depends on its quality. </li>
+<li>For all published CVEs to date, <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">the quality of CWEs assigned is questionable</a>.</li>
+<li>A large part of that is that humans can't grok 1000+ CWEs. LLMs can.</li>
+<li>Using LLMs to suggest or validate CWEs can reduce the manual effort and error in <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> assignment.</li>
+<li>LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.</li>
+<li>LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../prompt_engineering/Fabric/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fabric">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Fabric
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../annex/Glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Contributors to the CyberSecAI Guide.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io" target="_blank" rel="noopener" title="Guide" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2 0-3.3-.1-1.4.1-2.8.1-4.2.1H392c-22.1 0-40-17.9-40-40v-88c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v88c0 22.1-17.9 40-40 40h-55.9c-1.5 0-3-.1-4.5-.2-1.2.1-2.4.2-3.6.2h-16c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9.1-2.8v-69.6H32c-18 0-32-14-32-32.1 0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.4 224.5c8 7 12 15 11 24z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io/issues/" target="_blank" rel="noopener" title="Report an Issue or Suggest a Change" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7.7 1.3 1.4 1.9 2.1 14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7.7-1.4 1.3-2.1 1.9 6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c0 24.6-5.5 47.8-15.4 68.6 2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16v239.2c-34.5-3.4-65.8-17.8-90.3-39.6l-63 63c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h64.3c1.1-14.1 5-27.5 11.1-39.5-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io" target="_blank" rel="noopener" title="source on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io/print_page/" target="_blank" rel="noopener" title="Save as HTML or print to PDF / paper" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.footer", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.caa56a14.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
