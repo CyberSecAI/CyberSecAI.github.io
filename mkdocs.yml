@@ -19,6 +19,8 @@ nav:
     - Fabric: prompt_engineering/Fabric.md    
   - Vulnrichment:
     - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
+  - TopicModeling:
+    - BertTopic: TopicModeling/BertTopic.md
   - Annex:
     - Glossary: annex/Glossary.md
     - Talks & Research: research/research.md

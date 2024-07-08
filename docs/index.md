@@ -12,8 +12,8 @@
     
     1. NotebookML 
     2. Prompts and Prompt Techniques applied to Cybersecurity 
-    3. Embeddings for CyberSecurity
-    4. BERTopic
+    3. BERTopic
+    4. Embeddings for CyberSecurity
     5. SetFIT + LAGoNN
     6. Named Entity Recognition GliNER and CyberSecurity NER models
     7. AI Agents for orchestrated workflows
