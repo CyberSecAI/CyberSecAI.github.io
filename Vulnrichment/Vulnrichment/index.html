@@ -1346,7 +1346,7 @@
 <ul>
 <li>These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</li>
 <li>The consensus output was then reviewed by a human (me).</li>
-<li>I created <a href="https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind">3 Issues initially</a> (though there are a lot more) </li>
+<li>I created <a href="https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed">3 Issues initially</a> (though there are a lot more) and these were accepted by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment and resolved promptly!</li>
 </ul>
 <p>This section shows the different approaches used (and the subscription plan used):</p>
 <ol>
@@ -1370,16 +1370,17 @@
 <p>I have great admiration for <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> and their pragmatic initiatives like <a href="https://riskbasedprioritization.github.io/cisa_kev/cisa_kev/"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> <abbr title="Known Exploited Vulnerability">KEV</abbr></a> and <a href="https://riskbasedprioritization.github.io/ssvc/SSVC/"><abbr title="SSVC Stakeholder-Specific Vulnerability Categorization">SSVC</abbr></a> and have <a href="https://riskbasedprioritization.github.io/talks/talks/">spoken about them</a> and applied them in production.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>One of the many benefits of this Vulnrichment project is that feedback can be provided as GitHub issues and the team is responsive.</p>
+<p>One of the many benefits of this Vulnrichment project is that feedback can be provided as GitHub issues and <strong>the team is VERY responsive</strong> ✅ <img alt="👏" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f44f.svg" title=":clap:" /> 🙌</p>
 <ul>
-<li>The 'Bug' label was assigned same day to the 3 issues I submitted: <a href="https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind">https://github.com/cisagov/vulnrichment/issues/created_by/Crashedmind</a> </li>
+<li>The 'Bug' label was assigned same day to the 3 issues I submitted same day: <a href="https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed">https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed</a>.</li>
+<li>The changes were accepted and applied next working day and a comment was added to the ticket which was then closed.</li>
 </ul>
 <p>My overall goal here was to </p>
 <ul>
 <li>Show that LLMs could augment human analysts where vulnerability enrichment today is largely done manually.</li>
 <li>Show how to use them for this purpose.</li>
 <li>Get people to use LLMs to improve the quality of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> data in general, and in this specific example case, the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> data.</li>
-<li>Maximize the quality and value of the <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP data and enrichment.</li>
+<li>Maximize the value of the <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP data and enrichment by improving <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-assignment quality.</li>
 </ul>
 </div>
 <h2 id="get-cves-enriched-by-cisa-adp">Get CVEs Enriched by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP<a class="headerlink" href="#get-cves-enriched-by-cisa-adp" title="Permanent link">&para;</a></h2>
@@ -1390,7 +1391,9 @@
 </ul>
 <h3 id="dont-train-a-model-on-bad-data">Don't Train A Model On Bad Data!<a class="headerlink" href="#dont-train-a-model-on-bad-data" title="Permanent link">&para;</a></h3>
 <p>It is possible to train a Language Model as a Classifier to assign CWEs to a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> - and there are several research papers that took that approach (with limited success).</p>
-<p>This approach is delusional based on my research and experience of assigned CWEs.</p>
+<ul>
+<li>This approach is delusional based on my research and experience of assigned CWEs.</li>
+</ul>
 <p>Per <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">Steve Christey Coley, <abbr title="CWE Common Weakness Enumeration">CWE</abbr> tech lead</a>:</p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
@@ -1427,7 +1430,9 @@
 <li>Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
 </ol>
 </li>
-<li>For the subset where ChatGPT4o disagrees, ask Gemini and Claude.</li>
+<li>Then ask Gemini and Claude to review. This can be done in several ways e.g. </li>
+<li>For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs</li>
+<li>Ask each LLM in turn to review the previous assessments by LLMs</li>
 </ol>
 <h3 id="create-a-prompt">Create a Prompt<a class="headerlink" href="#create-a-prompt" title="Permanent link">&para;</a></h3>
 <h4 id="chat-interface-table-output">Chat Interface - Table Output<a class="headerlink" href="#chat-interface-table-output" title="Permanent link">&para;</a></h4>
@@ -1517,7 +1522,7 @@ The JSON output allows processing by machines.</p>
 <li>The value of <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> data depends on its quality. </li>
 <li>For all published CVEs to date, <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">the quality of CWEs assigned is questionable</a>.</li>
 <li>A large part of that is that humans can't grok 1000+ CWEs. LLMs can.</li>
-<li>Using LLMs to suggest or validate CWEs can reduce the manual effort and error in <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> assignment.</li>
+<li>Using LLMs to suggest or validate CWEs can reduce the manual effort and error in <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.</li>
 <li>LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.</li>
 <li>LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.</li>
 </ol>
