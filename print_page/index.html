@@ -700,7 +700,7 @@
             
   
   <span class="md-ellipsis">
-    Annex
+    TopicModeling
   </span>
   
 
@@ -709,6 +709,75 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            TopicModeling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TopicModeling/BertTopic/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 18.9 6.1-6.1 2.1 2.1-6.1 6.1H13v-2.1m8.4-7.6 1.3 1.3c.2.2.2.5 0 .7l-1 1-2.1-2 1-1c.1-.1.2-.2.4-.2s.3 0 .4.2M11 21H5c-.5 0-1-.2-1.4-.6-.4-.4-.6-.9-.6-1.4V5c0-.5.2-1 .6-1.4C4 3.2 4.5 3 5 3h14c1.1 0 2 .9 2 2v4h-2V5H5v14h6v2m4-9-5-4v8l5-4Z"/></svg>
+  
+  <span class="md-ellipsis">
+    BertTopic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Annex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Annex
           </label>
@@ -947,19 +1016,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#section-annex" class="md-nav__link">
+  <a href="#section-topicmodeling" class="md-nav__link">
     <span class="md-ellipsis">
-      V. Annex
+      V. TopicModeling
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="V. Annex">
+    <nav class="md-nav" aria-label="V. TopicModeling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topicmodeling-berttopic" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. BertTopic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-annex" class="md-nav__link">
+    <span class="md-ellipsis">
+      VI. Annex
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VI. Annex">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#annex-glossary" class="md-nav__link">
     <span class="md-ellipsis">
-      12. Glossary
+      13. Glossary
     </span>
   </a>
   
@@ -968,7 +1061,7 @@
           <li class="md-nav__item">
   <a href="#research-research" class="md-nav__link">
     <span class="md-ellipsis">
-      13. Talks & Research
+      14. Talks & Research
     </span>
   </a>
   
@@ -1014,8 +1107,8 @@
 <ol>
 <li>NotebookML </li>
 <li>Prompts and Prompt Techniques applied to Cybersecurity </li>
-<li>Embeddings for CyberSecurity</li>
 <li>BERTopic</li>
+<li>Embeddings for CyberSecurity</li>
 <li>SetFIT + LAGoNN</li>
 <li>Named Entity Recognition GliNER and CyberSecurity NER models</li>
 <li>AI Agents for orchestrated workflows</li>
@@ -2524,6 +2617,58 @@ The JSON output allows processing by machines.</p>
 <li>LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.</li>
 </ol>
 </div></section><h1 class='nav-section-title-end'>Ended: Vulnrichment</h1>
+                        <h1 class='nav-section-title' id='section-topicmodeling'>
+                            TopicModeling <a class='headerlink' href='#section-topicmodeling' title='Permanent link'>↵</a>
+                        </h1>
+                        <section class="print-page" id="topicmodeling-berttopic"><h1 id="topicmodeling-berttopic-bertopic">BERTopic<a class="headerlink" href="#topicmodeling-berttopic-bertopic" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>Topic modeling can be used to discover the underlying themes and patterns in a collection of documents (e.g. <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions, or <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Descriptions,...).</p>
+<p>It is an unsupervised machine learning technique that’s capable of scanning a set of documents, detecting word and phrase patterns within them, and automatically clustering word groups and similar expressions that best characterize the set of documents.</p>
+<p>The output is collections of documents that the algorithm has grouped together, as well as clusters of words and expressions that it used to infer these relations.</p>
+</div>
+<h2 id="topicmodeling-berttopic-bertopic_1">BERTopic<a class="headerlink" href="#topicmodeling-berttopic-bertopic_1" title="Permanent link">&para;</a></h2>
+<p>BERTopic is a topic modeling technique that leverages 🤗 transformers and c-TF-IDF. In general, it outperforms other methods (statistical vs Language Model based) e.g. LSA, LDA. </p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>Before diving into a classification task, text clustering allows for getting an intuitive understanding of the task but also of its complexity.</p>
+<p>BERTopic is a topic modeling technique that assumes that clusters of semantically similar documents are a powerful way of generating and describing clusters. The documents in each cluster are expected to describe a major theme and combined they might represent a topic.</p>
+<p>Extracts from book co-authored by BertTopic creator: <a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/</a></p>
+</div>
+<h2 id="topicmodeling-berttopic-topic-model-cwes">Topic Model CWEs<a class="headerlink" href="#topicmodeling-berttopic-topic-model-cwes" title="Permanent link">&para;</a></h2>
+<p>I've used BERTopic to Topic Model lots of datasets to quickly get an intuition for the data.</p>
+<p>In this example, we'll look at CWEs. </p>
+<ul>
+<li>Specifically, generate a Topic Model of the ~1400 CWEs in <a href="https://cwe.mitre.org/data/definitions/1400.html">1400 View</a>, so we can better understand the underlying patterns and themes.</li>
+</ul>
+<p>I did this initially as part of a <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186485198996353024%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186485198996353024%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">Linked Thread</a>, to illustrate Topic Modeling as a solution, but also the ease and speed at which it could be done.</p>
+<h2 id="topicmodeling-berttopic-code">Code<a class="headerlink" href="#topicmodeling-berttopic-code" title="Permanent link">&para;</a></h2>
+<p>The starting point code is deliberately chosen as unrelated to CyberSecurity: <a href="https://github.com/splevine/harnessing-nlp-cx-demo">https://github.com/splevine/harnessing-nlp-cx-demo</a> Mar 2024 (where this repo gives an excellent overview of NLP and BERTopic and SetFit).</p>
+<p>The main changes I made were:</p>
+<ol>
+<li>Don't use wandb (Weights and Balances) service as it was not needed for the demo</li>
+<li>Use the 1400 <abbr title="CWE Common Weakness Enumeration">CWE</abbr> view <a href="https://cwe.mitre.org/data/csv/1400.csv.zip">1400.csv</a> as the input Data</li>
+<li>Use SentenceTransformer("basel/ATTACK-BERT") as the embedding_model so that CyberSecurity embeddings are used.</li>
+</ol>
+<p>The code and visualizations is available here: <a href="https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing">https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing</a>
+No effort was made to optimize the topic modeling i.e. it was completely unsupervised.</p>
+<h2 id="topicmodeling-berttopic-topic-model-of-the-1400-cwes-in-1400-view">Topic Model of the ~1400 CWEs in 1400 View<a class="headerlink" href="#topicmodeling-berttopic-topic-model-of-the-1400-cwes-in-1400-view" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../assets/images/1400_classes.png" />
+The top level categorizations of <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> 1400 per <a href="https://cwe.mitre.org/data/definitions/1400.html">https://cwe.mitre.org/data/definitions/1400.html</a>.</p>
+</figure>
+<figure>
+<p><img alt="" src="../assets/images/1400_topic_model_data_map.png" />
+The Topic Model of 1400 <abbr title="CWE Common Weakness Enumeration">CWE</abbr> view <a href="https://cwe.mitre.org/data/csv/1400.csv.zip">1400.csv</a> with the top level categorizations overlayed in bold to allow comparison of the top level groupings assigned by MITRE and the Topic Modeling.</p>
+</figure>
+<p>Other visualizations are available in the <a href="https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing">Colab Notebook</a>.</p>
+<h2 id="topicmodeling-berttopic-takeaways">Takeaways<a class="headerlink" href="#topicmodeling-berttopic-takeaways" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<ol>
+<li>Topic Modeling with BERTopic is a powerful unsupervised learning approach to quickly and easily get an intuition for a set of documents.</li>
+</ol>
+</div></section><h1 class='nav-section-title-end'>Ended: TopicModeling</h1>
                         <h1 class='nav-section-title' id='section-annex'>
                             Annex <a class='headerlink' href='#section-annex' title='Permanent link'>↵</a>
                         </h1>
