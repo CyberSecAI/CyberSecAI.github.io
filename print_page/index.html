@@ -1200,7 +1200,7 @@
 <p>In this section, we'll use <a href="https://notebooklm.google.com/">NotebookLM</a>, and we just need to import our documents to be able to chat with them. </p>
 <p>ChatGPT4o is also used for comparison to highlight where one is better applied than the other depending on the context.</p>
 <ul>
-<li>Both tools use LLMs, but NoteBookLM uses a "Closed System" (only the document sources you provide), versus ChatGPT4o which bases it answers on the open internet content at the time it was trained, and adittionally the documents you provide.</li>
+<li>Both tools use LLMs, but NoteBookLM uses a "Closed System" (only the document sources you provide), versus ChatGPT4o which bases it answers on the open internet content at the time it was trained, and additionally the documents you provide.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2343,12 +2343,19 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <li><a href="https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/">Prompt Engineering for Generative AI Book</a>, May 2024</li>
 <li><a href="https://ai.google.dev/gemini-api/docs/prompting-strategies">Google Prompt design strategies</a> </li>
 <li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview">Anthropic Prompt Engineering overview</a> </li>
+<li><a href="https://medium.com/the-modern-scientist/best-prompt-techniques-for-best-llm-responses-24d2ff4f6bca">Best Prompt Techniques for Best LLM Responses</a>, Feb 2024</li>
 </ol>
 <h2 id="prompt_engineering-prompt_engineering-prompt-taxonomy">Prompt Taxonomy<a class="headerlink" href="#prompt_engineering-prompt_engineering-prompt-taxonomy" title="Permanent link">&para;</a></h2>
+<h3 id="prompt_engineering-prompt_engineering-prompt-taxonomy-turn-expression-level-of-details-role">Prompt Taxonomy Turn, Expression, Level of Details, Role<a class="headerlink" href="#prompt_engineering-prompt_engineering-prompt-taxonomy-turn-expression-level-of-details-role" title="Permanent link">&para;</a></h3>
 <figure>
 <p><img alt="Guide" src="../assets/images/promptTaxonomy.png" /></p>
 </figure>
 <p>The above proposed Prompt Taxonomy is TELeR: Turn, Expression, Level of Details, Role from  <a href="https://arxiv.org/pdf/2305.11430">TELeR: A General Taxonomy of LLM Prompts for Benchmarking Complex Tasks</a></p>
+<h3 id="prompt_engineering-prompt_engineering-prompt-taxonomy-26-guiding-principles">Prompt Taxonomy 26 Guiding Principles<a class="headerlink" href="#prompt_engineering-prompt_engineering-prompt-taxonomy-26-guiding-principles" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="Guide" src="../assets/images/prompt_principles_cat.png" /> </p>
+</figure>
+<p>The above "26 guiding principles designed to streamline the process of querying and prompting large language models" is from <a href="https://arxiv.org/pdf/2312.16171">Principled Instructions Are All You Need for Questioning LLaMA-1/2, GPT-3.5/4</a></p>
 <h2 id="prompt_engineering-prompt_engineering-prompt-tactics">Prompt Tactics<a class="headerlink" href="#prompt_engineering-prompt_engineering-prompt-tactics" title="Permanent link">&para;</a></h2>
 <p>Some tactics I find particularly useful:</p>
 <ol>
@@ -2396,6 +2403,16 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <figure>
 <p><img alt="Guide" src="../assets/images/prompting_classification2.png" /></p>
 </figure>
+<h3 id="prompt_engineering-prompt_engineering-llm-tools-to-improve-prompts">LLM Tools to Improve Prompts<a class="headerlink" href="#prompt_engineering-prompt_engineering-llm-tools-to-improve-prompts" title="Permanent link">&para;</a></h3>
+<p>In addition to using LLMs to generate prompts (aka Meta Prompts), and review prompts in an adhoc manner via the chat interface, there are various tools that use LLMs to improve prompts:</p>
+<ol>
+<li><a href="#prompt_engineering-fabric-fabric-prompt-to-improve-prompts">Fabric Prompt to Improve Prompts</a></li>
+<li><a href="https://www.anthropic.com/news/evaluate-prompts">Anthropic Console supports testing and improving prompts</a> (for Anthropic - but likely the resulting prompt would be portable to other LLMs)<ol>
+<li>Claude can generate prompts, create test variables, and show you the outputs of prompts side by side.</li>
+<li><a href="https://x.com/AnthropicAI/status/1810747792807342395">https://x.com/AnthropicAI/status/1810747792807342395</a></li>
+</ol>
+</li>
+</ol>
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
 <ol>
@@ -2419,6 +2436,7 @@ Fabric was created to address this by enabling everyone to granularly apply AI t
 <h3 id="prompt_engineering-fabric-fabric-prompts-for-cybersecurity">Fabric Prompts for CyberSecurity<a class="headerlink" href="#prompt_engineering-fabric-fabric-prompts-for-cybersecurity" title="Permanent link">&para;</a></h3>
 <p>Fabric has Prompts that are specific to CyberSecurity e.g.</p>
 <ul>
+<li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/create_threat_model/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/create_threat_model/system.md</a></li>
 <li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_logs/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_logs/system.md</a></li>
 <li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_malware/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_malware/system.md</a></li>
 <li><a href="https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_threat_report/system.md">https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_threat_report/system.md</a></li>
