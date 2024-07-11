@@ -18,13 +18,22 @@ There are many books, guides, and articles on Prompt Engineering. Some of the be
 5. [Prompt Engineering for Generative AI Book](https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/), May 2024
 6. [Google Prompt design strategies](https://ai.google.dev/gemini-api/docs/prompting-strategies) 
 7. [Anthropic Prompt Engineering overview](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) 
+8. [Best Prompt Techniques for Best LLM Responses](https://medium.com/the-modern-scientist/best-prompt-techniques-for-best-llm-responses-24d2ff4f6bca), Feb 2024
 
 
 ## Prompt Taxonomy
+### Prompt Taxonomy Turn, Expression, Level of Details, Role
+
 <figure markdown>
 ![Guide](../assets/images/promptTaxonomy.png)
 </figure>
 The above proposed Prompt Taxonomy is TELeR: Turn, Expression, Level of Details, Role from  [TELeR: A General Taxonomy of LLM Prompts for Benchmarking Complex Tasks](https://arxiv.org/pdf/2305.11430)
+
+### Prompt Taxonomy 26 Guiding Principles
+<figure markdown>
+![Guide](../assets/images/prompt_principles_cat.png) 
+</figure>
+The above "26 guiding principles designed to streamline the process of querying and prompting large language models" is from [Principled Instructions Are All You Need for Questioning LLaMA-1/2, GPT-3.5/4](https://arxiv.org/pdf/2312.16171)
 
 
 ## Prompt Tactics
@@ -86,6 +95,14 @@ _functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect b
 ![Guide](../assets/images/prompting_classification2.png)
 </figure>
 
+### LLM Tools to Improve Prompts
+
+In addition to using LLMs to generate prompts (aka Meta Prompts), and review prompts in an adhoc manner via the chat interface, there are various tools that use LLMs to improve prompts:
+
+1. [Fabric Prompt to Improve Prompts](./Fabric.md#fabric-prompt-to-improve-prompts)
+2. [Anthropic Console supports testing and improving prompts](https://www.anthropic.com/news/evaluate-prompts) (for Anthropic - but likely the resulting prompt would be portable to other LLMs)
+    1. Claude can generate prompts, create test variables, and show you the outputs of prompts side by side.
+    2. https://x.com/AnthropicAI/status/1810747792807342395
 
   
 !!! success "Takeaways" 

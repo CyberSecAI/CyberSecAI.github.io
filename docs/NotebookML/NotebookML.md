@@ -8,7 +8,7 @@
 
     ChatGPT4o is also used for comparison to highlight where one is better applied than the other depending on the context.
     
-    * Both tools use LLMs, but NoteBookLM uses a "Closed System" (only the document sources you provide), versus ChatGPT4o which bases it answers on the open internet content at the time it was trained, and adittionally the documents you provide.
+    * Both tools use LLMs, but NoteBookLM uses a "Closed System" (only the document sources you provide), versus ChatGPT4o which bases it answers on the open internet content at the time it was trained, and additionally the documents you provide.
     
 
     !!! tip

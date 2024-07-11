@@ -25,6 +25,7 @@ The prompts (aka Patterns) are available at https://github.com/danielmiessler/fa
 
 Fabric has Prompts that are specific to CyberSecurity e.g.
 
+* https://github.com/danielmiessler/fabric/blob/main/patterns/create_threat_model/system.md
 * https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_logs/system.md
 * https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_malware/system.md
 * https://github.com/danielmiessler/fabric/blob/main/patterns/analyze_threat_report/system.md
