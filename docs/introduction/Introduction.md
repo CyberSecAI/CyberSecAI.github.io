@@ -30,8 +30,9 @@ A basic knowledge of Jupyter Python is required to run the code (with the data p
 
  You can contribute content or suggest changes:
 
-* :fontawesome-solid-lightbulb: [Suggest content](https://github.com/CyberSecAI/CyberSecAI.github.io/issues/)
-* :fontawesome-solid-bug: [Report Errors, typos](https://github.com/CyberSecAI/CyberSecAI.github.io/issues/)
+* 💬 [Discuss content](https://github.com/CyberSecAI/CyberSecAI.github.io/discussions)
+* 💡 [Suggest content](https://github.com/CyberSecAI/CyberSecAI.github.io/issues/)
+* 🪲 [Report Errors, typos](https://github.com/CyberSecAI/CyberSecAI.github.io/issues/)
 
 ## Writing Style
 The "writing style" in this guide is succinct, and leads with an opinion, with data and code to back it up i.e. data analysis plots (with source code where possible) and observations and takeaways that you can assess - and apply to your data and environment. This allows the reader to assess the opinion and the code/data and rationale behind it.

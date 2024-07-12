@@ -14,9 +14,6 @@
     1. without uploading any documents to it.
     2. uploading a document to it.
 
-    **Note that MITRE ATT&CK appears a lot less than CWE on the internet so an LLM will have a lot less context for CAPEC.**
-
-
 ## Data Sources
 
 The MITRE ATTACK Tactics and Techniques are available online at https://attack.mitre.org/tactics/enterprise/ as 1 webpage for each of the 14 Tactics.
