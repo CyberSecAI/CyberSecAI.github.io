@@ -70,6 +70,20 @@ These documents become the corpus where information is retrieved from, with refe
     
     **“source-grounded AI”**: you define a set of documents that are important to your work—called “sources” in the NotebookLM parlance—and from that point on, you can have an open-ended conversation with the language model where its answers will be “grounded” in the information you’ve selected. It is as if you are giving the AI instant expertise in whatever domain you happen to be working in. ([ref](https://adjacentpossible.substack.com/p/introducing-notebooklm))
 
+
+#### What is a dog?
+
+This is illustrated with a simple example of asking our [Notebook on CWEs](../NotebookML_Cwe.md) "what is a dog?":
+
+!!! quote
+    The sources provided do not contain any information about dogs. Therefore, the query "what is a dog?" cannot be answered from the given sources.
+
+<figure markdown>
+![Guide](../assets/images/what_is_a_dog.png)
+<figcaption></figcaption>
+</figure>
+
+
 ### Sharing
 Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing is done directly via email addresses.
 

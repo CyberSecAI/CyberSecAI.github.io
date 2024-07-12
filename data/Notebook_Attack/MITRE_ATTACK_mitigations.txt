@@ -1,0 +1,344 @@
+Entry M1036:
+
+ID: M1036
+name: Account Use Policies
+description: Configure features related to account use like login attempt lockouts, specific login times, etc.
+
+--------------------------------------------------
+
+Entry M1015:
+
+ID: M1015
+name: Active Directory Configuration
+description: Configure Active Directory to prevent use of certain techniques; use SID Filtering, etc.
+
+--------------------------------------------------
+
+Entry M1049:
+
+ID: M1049
+name: Antivirus/Antimalware
+description: Use signatures or heuristics to detect malicious software.
+
+--------------------------------------------------
+
+Entry M1013:
+
+ID: M1013
+name: Application Developer Guidance
+description: This mitigation describes any guidance or training given to developers of applications to avoid introducing security weaknesses that an adversary may be able to take advantage of.
+
+--------------------------------------------------
+
+Entry M1048:
+
+ID: M1048
+name: Application Isolation and Sandboxing
+description: Restrict execution of code to a virtual environment on or in transit to an endpoint system.
+
+--------------------------------------------------
+
+Entry M1047:
+
+ID: M1047
+name: Audit
+description: Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses.
+
+--------------------------------------------------
+
+Entry M1040:
+
+ID: M1040
+name: Behavior Prevention on Endpoint
+description: Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior.
+
+--------------------------------------------------
+
+Entry M1046:
+
+ID: M1046
+name: Boot Integrity
+description: Use secure methods to boot a system and verify the integrity of the operating system and loading mechanisms.
+
+--------------------------------------------------
+
+Entry M1045:
+
+ID: M1045
+name: Code Signing
+description: Enforce binary and application integrity with digital signature verification to prevent untrusted code from executing.
+
+--------------------------------------------------
+
+Entry M1043:
+
+ID: M1043
+name: Credential Access Protection
+description: Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping.
+
+--------------------------------------------------
+
+Entry M1053:
+
+ID: M1053
+name: Data Backup
+description: Take and store data backups from end user systems and critical servers. Ensure backup and storage systems are hardened and kept separate from the corporate network to prevent compromise.
+
+--------------------------------------------------
+
+Entry M1057:
+
+ID: M1057
+name: Data Loss Prevention
+description: Use a data loss prevention (DLP) strategy to categorize sensitive data, identify data formats indicative of personal identifiable information (PII), and restrict exfiltration of sensitive data.(Citation: PurpleSec Data Loss Prevention)
+
+--------------------------------------------------
+
+Entry M1042:
+
+ID: M1042
+name: Disable or Remove Feature or Program
+description: Remove or deny access to unnecessary and potentially vulnerable software to prevent abuse by adversaries.
+
+--------------------------------------------------
+
+Entry M1055:
+
+ID: M1055
+name: Do Not Mitigate
+description: This category is to associate techniques that mitigation might increase risk of compromise and therefore mitigation is not recommended.
+
+--------------------------------------------------
+
+Entry M1041:
+
+ID: M1041
+name: Encrypt Sensitive Information
+description: Protect sensitive information with strong encryption.
+
+--------------------------------------------------
+
+Entry M1039:
+
+ID: M1039
+name: Environment Variable Permissions
+description: Prevent modification of environment variables by unauthorized users and groups.
+
+--------------------------------------------------
+
+Entry M1038:
+
+ID: M1038
+name: Execution Prevention
+description: Block execution of code on a system through application control, and/or script blocking.
+
+--------------------------------------------------
+
+Entry M1050:
+
+ID: M1050
+name: Exploit Protection
+description: Use capabilities to detect and block conditions that may lead to or be indicative of a software exploit occurring.
+
+--------------------------------------------------
+
+Entry M1037:
+
+ID: M1037
+name: Filter Network Traffic
+description: Use network appliances to filter ingress or egress traffic and perform protocol-based filtering. Configure software on endpoints to filter network traffic.
+
+--------------------------------------------------
+
+Entry M1035:
+
+ID: M1035
+name: Limit Access to Resource Over Network
+description: Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc.
+
+--------------------------------------------------
+
+Entry M1034:
+
+ID: M1034
+name: Limit Hardware Installation
+description: Block users or groups from installing or using unapproved hardware on systems, including USB devices.
+
+--------------------------------------------------
+
+Entry M1033:
+
+ID: M1033
+name: Limit Software Installation
+description: Block users or groups from installing unapproved software.
+
+--------------------------------------------------
+
+Entry M1032:
+
+ID: M1032
+name: Multi-factor Authentication
+description: Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.
+
+--------------------------------------------------
+
+Entry M1031:
+
+ID: M1031
+name: Network Intrusion Prevention
+description: Use intrusion detection signatures to block traffic at network boundaries.
+
+--------------------------------------------------
+
+Entry M1030:
+
+ID: M1030
+name: Network Segmentation
+description: Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.
+
+--------------------------------------------------
+
+Entry M1028:
+
+ID: M1028
+name: Operating System Configuration
+description: Make configuration changes related to the operating system or a common feature of the operating system that result in system hardening against techniques.
+
+--------------------------------------------------
+
+Entry M1027:
+
+ID: M1027
+name: Password Policies
+description: Set and enforce secure password policies for accounts.
+
+--------------------------------------------------
+
+Entry M1056:
+
+ID: M1056
+name: Pre-compromise
+description: This category is used for any applicable mitigation activities that apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques.
+
+--------------------------------------------------
+
+Entry M1026:
+
+ID: M1026
+name: Privileged Account Management
+description: Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.
+
+--------------------------------------------------
+
+Entry M1025:
+
+ID: M1025
+name: Privileged Process Integrity
+description: Protect processes with high privileges that can be used to interact with critical system components through use of protected process light, anti-process injection defenses, or other process integrity enforcement measures.
+
+--------------------------------------------------
+
+Entry M1029:
+
+ID: M1029
+name: Remote Data Storage
+description: Use remote security log and sensitive file storage where access can be controlled better to prevent exposure of intrusion detection log data or sensitive information.
+
+--------------------------------------------------
+
+Entry M1022:
+
+ID: M1022
+name: Restrict File and Directory Permissions
+description: Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.
+
+--------------------------------------------------
+
+Entry M1044:
+
+ID: M1044
+name: Restrict Library Loading
+description: Prevent abuse of library loading mechanisms in the operating system and software to load untrusted code by configuring appropriate library loading mechanisms and investigating potential vulnerable software.
+
+--------------------------------------------------
+
+Entry M1024:
+
+ID: M1024
+name: Restrict Registry Permissions
+description: Restrict the ability to modify certain hives or keys in the Windows Registry.
+
+--------------------------------------------------
+
+Entry M1021:
+
+ID: M1021
+name: Restrict Web-Based Content
+description: Restrict use of certain websites, block downloads/attachments, block Javascript, restrict browser extensions, etc.
+
+--------------------------------------------------
+
+Entry M1020:
+
+ID: M1020
+name: SSL/TLS Inspection
+description: Break and inspect SSL/TLS sessions to look at encrypted web traffic for adversary activity.
+
+--------------------------------------------------
+
+Entry M1054:
+
+ID: M1054
+name: Software Configuration
+description: Implement configuration changes to software (other than the operating system) to mitigate security risks associated to how the software operates.
+
+--------------------------------------------------
+
+Entry M1019:
+
+ID: M1019
+name: Threat Intelligence Program
+description: A threat intelligence program helps an organization generate their own threat intelligence information and track trends to inform defensive priorities to mitigate risk.
+
+--------------------------------------------------
+
+Entry M1051:
+
+ID: M1051
+name: Update Software
+description: Perform regular software updates to mitigate exploitation risk.
+
+--------------------------------------------------
+
+Entry M1052:
+
+ID: M1052
+name: User Account Control
+description: Configure Windows User Account Control to mitigate risk of adversaries obtaining elevated process access.
+
+--------------------------------------------------
+
+Entry M1018:
+
+ID: M1018
+name: User Account Management
+description: Manage the creation, modification, use, and permissions associated to user accounts.
+
+--------------------------------------------------
+
+Entry M1017:
+
+ID: M1017
+name: User Training
+description: Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.
+
+--------------------------------------------------
+
+Entry M1016:
+
+ID: M1016
+name: Vulnerability Scanning
+description: Vulnerability scanning is used to find potentially exploitable software vulnerabilities to remediate them.
+
+--------------------------------------------------
+
