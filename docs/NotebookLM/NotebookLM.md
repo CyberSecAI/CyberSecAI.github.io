@@ -73,7 +73,7 @@ These documents become the corpus where information is retrieved from, with refe
 
 #### What is a dog?
 
-This is illustrated with a simple example of asking our [Notebook on CWEs](../NotebookLM_Cwe.md) "what is a dog?":
+This is illustrated with a simple example of asking our [Notebook on CWEs](./NotebookLM_Cwe.md) "what is a dog?":
 
 !!! quote
     The sources provided do not contain any information about dogs. Therefore, the query "what is a dog?" cannot be answered from the given sources.

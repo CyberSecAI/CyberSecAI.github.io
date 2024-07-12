@@ -143,7 +143,7 @@ New NotebookLM.
 Sources - Upload from - Web page URL for the 2 Data Sources listed above.
 
 <figure markdown>
-![](../assets/images/NotebookLM_Config_2.png)
+![](../assets/images/notebooklm_config_2.png)
 </figure>
 
 ### Submit the prompt
