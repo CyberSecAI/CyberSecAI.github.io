@@ -23,9 +23,10 @@ icon: material/play-box-edit-outline
 
     1. no-code using the browser chat interface: 
         1. Gemini 1.5 Pro (subscription)
-        2. Claude 3.5 Sonnet (no subscription)
+        2. Claude 3.5 Sonnet (prepay)
     2. code: 
         1. ChatGPT4o [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview) (Plus Plan)
+        2. langchain calling 3 LLMs via APIs: Gemini 1.5 Pro, Claude 3.5 Sonnet, ChatGPT4
 
 
 
