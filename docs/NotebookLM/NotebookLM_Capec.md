@@ -1,4 +1,4 @@
-# NotebookML
+# NotebookLM
 
 !!! abstract "Overview"
 
@@ -7,7 +7,7 @@
     * In the current version (CAPEC List Version 3.9 as at June 2024), there are 559 Total Attack Patterns. 
     * It can be unwieldy to navigate or assimilate this information. 
 
-    Using NotebookML, we can chat with the CAPEC document and ask questions, so that **the information comes to us** in the form of an answer. 
+    Using NotebookLM, we can chat with the CAPEC document and ask questions, so that **the information comes to us** in the form of an answer. 
 
     For comparison, we will also ask some of the same questions of ChatGPT4o covering 2 cases:
 
@@ -25,7 +25,7 @@ https://capec.mitre.org/data/downloads.html offers various formats (XML, CSV, HT
 * Domains of Attack: https://capec.mitre.org/data/slices/3000.html
     * We'll use this one.
 
-NotebookML - Upload from - Web page URL - Paste website link - https://capec.mitre.org/data/slices/3000.html
+NotebookLM - Upload from - Web page URL - Paste website link - https://capec.mitre.org/data/slices/3000.html
 
 
 

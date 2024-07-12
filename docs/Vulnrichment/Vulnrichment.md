@@ -8,7 +8,7 @@ icon: material/play-box-edit-outline
 
     I was reading a [post on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7214295735440187393?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7214295735440187393%2C7214365350828613632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287214365350828613632%2Curn%3Ali%3Aactivity%3A7214295735440187393%29) and the CWE assigned by CISA ADP looked wrong so...
 
-    * I used my NotebookML CWE notebook, and other LLMs, to determine the appropriate CWE.
+    * I used my NotebookLM CWE notebook, and other LLMs, to determine the appropriate CWE.
     * I then raised an issue: https://github.com/cisagov/vulnrichment/issues/84.
 
     I then decided to dig a bit more into this... specifically the CWEs assigned by CISA ADP.

@@ -1,4 +1,4 @@
-# NotebookML
+# NotebookLM
 
 !!! abstract "Overview"
     
@@ -128,11 +128,11 @@ The data sources are per above:
 ## Setup
 
 ### Prepare Validation File
-1. CopyNPaste the Expected answer to a text file ./data/NotebookML_Config/security_parameters_manual.txt.
+1. CopyNPaste the Expected answer to a text file ./data/NotebookLM_Config/security_parameters_manual.txt.
 2. Sort alphabetically to allow diff comparison with answer from NotebookLM.
 
 ````
-    cat ./data/NotebookML_Config/security_parameters_manual.txt | sort > ./data/NotebookML_Config/security_parameters_manual_sorted.txt
+    cat ./data/NotebookLM_Config/security_parameters_manual.txt | sort > ./data/NotebookLM_Config/security_parameters_manual_sorted.txt
 ````
 
 
@@ -143,7 +143,7 @@ New NotebookLM.
 Sources - Upload from - Web page URL for the 2 Data Sources listed above.
 
 <figure markdown>
-![](../assets/images/notebookml_config_2.png)
+![](../assets/images/NotebookLM_Config_2.png)
 </figure>
 
 ### Submit the prompt
@@ -161,7 +161,7 @@ Sources - Upload from - Web page URL for the 2 Data Sources listed above.
 3. Sort the answer
 
 ````
-jq -r '.[]' ./data/NotebookML_Config/security_parameters.json | sort > ./data/NotebookML_Config/security_parameters.txt
+jq -r '.[]' ./data/NotebookLM_Config/security_parameters.json | sort > ./data/NotebookLM_Config/security_parameters.txt
 ````
 
 ### Compare The Answer With The Expected Answer
@@ -171,10 +171,10 @@ jq -r '.[]' ./data/NotebookML_Config/security_parameters.json | sort > ./data/No
 2. We can see that the main difference relates to "spark.ssl." parameters.
 3. Searching manually in the 2 Data Sources above reveals that these config strings are not actually listed in the documentation e.g. "spark.ssl.ui.needClientAuth" directly - but using placeholders.
 4. The LLM didn't understand that - so we'll let it know - then ask it again.
-5. diff data/NotebookML_Config/security_parameters_manual.txt data/NotebookML_Config/security_parameters.txt   
+5. diff data/NotebookLM_Config/security_parameters_manual.txt data/NotebookLM_Config/security_parameters.txt   
 
 ````
-diff data/NotebookML_Config/security_parameters_manual.txt data/NotebookML_Config/security_parameters.txt                 
+diff data/NotebookLM_Config/security_parameters_manual.txt data/NotebookLM_Config/security_parameters.txt                 
 1c1,4
 < spark.yarn.shuffle.server.recovery.disabled
 ---
@@ -336,21 +336,21 @@ security_parameters_ns.json is the resulting file that has 96 config parameters 
 3. Sort the answer and ensure there's no duplicates.
 
 ````
-jq -r '.[]' ./data/NotebookML_Config/security_parameters_ns.json | sort | uniq > ./data/NotebookML_Config/security_parameters_ns.txt
+jq -r '.[]' ./data/NotebookLM_Config/security_parameters_ns.json | sort | uniq > ./data/NotebookLM_Config/security_parameters_ns.txt
 ````
 
 ### Compare The Answer With The Expected Answer
 
 In this case, we use ChatGPT4o to do the diff, copy and pasting the values from each file:
 
-* ./data/NotebookML_Config/security_parameters_manual.txt: the expected answers
-* ./data/NotebookML_Config/security_parameters_ns.txt: the actual answers
+* ./data/NotebookLM_Config/security_parameters_manual.txt: the expected answers
+* ./data/NotebookLM_Config/security_parameters_ns.txt: the actual answers
 
 #### Prompt
 
 ```
-List the values that are in ===manual===  but not in ===notebookml===
-List the values that are in ===notebookml===  but not in ===manual===
+List the values that are in ===manual===  but not in ===notebooklm===
+List the values that are in ===notebooklm===  but not in ===manual===
 
 ===manual=== 
 spark.yarn.shuffle.server.recovery.disabled
@@ -434,7 +434,7 @@ spark.ui.xContentTypeOptions.enabled
 spark.ui.strictTransportSecurity
 
 
-===notebookml===
+===notebooklm===
 hadoop.security.credential.provider.path
 spark.acls.enable
 spark.admin.acls
@@ -541,9 +541,9 @@ spark.user.groups.mapping
 
 
 ```
-Values in ===manual=== but not in ===notebookml===
+Values in ===manual=== but not in ===notebooklm===
 spark.yarn.shuffle.server.recovery.disabled
-Values in ===notebookml=== but not in ===manual===
+Values in ===notebooklm=== but not in ===manual===
 hadoop.security.credential.provider.path
 spark.kerberos.access.hadoopFileSystems
 spark.kerberos.keytab
@@ -566,10 +566,10 @@ spark.ssl.useNodeLocalConf
 
 !!! observation
 
-    1. NotebookML did not understand the concept of placeholder config parameters from the source documents. Since there are several config parameters per placeholder, it missed many config parameters (Attempt 1).
+    1. NotebookLM did not understand the concept of placeholder config parameters from the source documents. Since there are several config parameters per placeholder, it missed many config parameters (Attempt 1).
     2. **When the prompt explained about placeholder config parameters, NotebookLM found all but 1 of the 79 configuration parameters related to security (Attempt 2).**
-          1. **NotebookML found 18 config parameters related to security that were not found by humans as part of the expected answers** and these appear to be valid configuration parameters related to security based on my review.
-    3. 1 config parameter was not found by NotebookML, and it's not obvious why: `spark.yarn.shuffle.server.recovery.disabled`
+          1. **NotebookLM found 18 config parameters related to security that were not found by humans as part of the expected answers** and these appear to be valid configuration parameters related to security based on my review.
+    3. 1 config parameter was not found by NotebookLM, and it's not obvious why: `spark.yarn.shuffle.server.recovery.disabled`
         <figure markdown>
         ![](../assets/images/apache_spark_chatgpt_miss.png)
         </figure>
@@ -776,7 +776,7 @@ Note that Config Namespace placeholders are used for some security configuration
 
 !!! observation
 
-    1. `spark.yarn.shuffle.server.recovery.disabled` was not found by ChatGPT4o (or NotebookML).     
+    1. `spark.yarn.shuffle.server.recovery.disabled` was not found by ChatGPT4o (or NotebookLM).     
     2. ChatGPT4o found 44 parameters in the first prompt.
     3. When the concept of placeholder config parameters was explained in the second prompt, ChatGPT made 2 mistakes and thereby got many config parameters wrong
           1. it did not extend the example to all the placeholder config parameters
@@ -789,7 +789,7 @@ Note that Config Namespace placeholders are used for some security configuration
   
 !!! success "Takeaways" 
 
-    1. NotebookML and ChatGPT4o did reasonably well at extracting the config parameters related to security - with NotebookML performing better, missing just 1, and finding 18 more than the human-generated answer.
+    1. NotebookLM and ChatGPT4o did reasonably well at extracting the config parameters related to security - with NotebookLM performing better, missing just 1, and finding 18 more than the human-generated answer.
     2. Overall, with everything-as-code (infrastructure, policy, LLM answers, ....), and LLMs being able to process code, there's a lot of benefit and promise in applying LLMs.
     3. The feedback to CoGuard is via https://github.com/coguardio/coguard_openai_rule_auto_generation_research/issues/2 
 

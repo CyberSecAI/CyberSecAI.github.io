@@ -1,4 +1,4 @@
-# NotebookML
+# NotebookLM
 
 !!! abstract "Overview"
 
@@ -73,7 +73,7 @@ These documents become the corpus where information is retrieved from, with refe
 
 #### What is a dog?
 
-This is illustrated with a simple example of asking our [Notebook on CWEs](../NotebookML_Cwe.md) "what is a dog?":
+This is illustrated with a simple example of asking our [Notebook on CWEs](../NotebookLM_Cwe.md) "what is a dog?":
 
 !!! quote
     The sources provided do not contain any information about dogs. Therefore, the query "what is a dog?" cannot be answered from the given sources.
@@ -108,7 +108,7 @@ Unlike Google Docs, it is not possible to share a NotebookLM publicly - sharing 
   
 !!! success "Takeaways" 
 
-    1. NotebookML is a powerful free solution from Google that allows users to quickly and easily build a source-grounded AI (where users define the set of documents) and then have an open-ended conversation with the language model where its answers will be “grounded” in the information users selected.
+    1. NotebookLM is a powerful free solution from Google that allows users to quickly and easily build a source-grounded AI (where users define the set of documents) and then have an open-ended conversation with the language model where its answers will be “grounded” in the information users selected.
     2. The support for large contexts means that large documents can be processed - as demonstrated in the following sections.
     3. I found it a useful tool / companion for the research I was doing on vulnerability management to augment my knowledge and capabilities.
 

@@ -1,4 +1,4 @@
-# NotebookML
+# NotebookLM
 
 !!! abstract "Overview"
 
@@ -7,7 +7,7 @@
     * In the current version (CWE Version 4.14 2024-02-29 as at June 2024), there are over 1400 CWEs, and 2789 pages in the PDF version of the list. 
     * It can be unwieldy to navigate or assimilate this information. 
 
-    Using NotebookML, we can chat with the CWE document and ask questions, so that **the information comes to us** in the form of an answer. 
+    Using NotebookLM, we can chat with the CWE document and ask questions, so that **the information comes to us** in the form of an answer. 
 
     For comparison, we will also ask some of the same questions of ChatGPT4o covering 2 cases:
 
@@ -19,23 +19,23 @@
 ## Data Sources
 [cwe_latest.pdf ](https://cwe.mitre.org/data/published/cwe_latest.pdf) from https://cwe.mitre.org/data/downloads.html has 2789 pages (version CWE Version 4.14 2024-02-29).
 
-* This is too big for NotebookML to ingest.
+* This is too big for NotebookLM to ingest.
 * So the PDF is split into 10 smaller PDFs of 280 pages each using this script.
 * These 10 smaller PDFs are then ingested into [NotebookLM](https://notebooklm.google.com/).
 
 ````
-pagesper=280 file=./data/NotebookML_CweCapec/cwe_latest.pdf ./pdfsplit.sh  
+pagesper=280 file=./data/NotebookLM_CweCapec/cwe_latest.pdf ./pdfsplit.sh  
 ````
 
 
 <figure markdown>
-![](../assets/images/NotebookML_1.png)
+![](../assets/images/NotebookLM_1.png)
 </figure>
 
 ## CWE assigned to CVE-2024-0042 
 I was reading a [post on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7214295735440187393?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7214295735440187393%2C7214365350828613632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287214365350828613632%2Curn%3Ali%3Aactivity%3A7214295735440187393%29) and the CWE assigned by CISA ADP looked wrong.
 
-So I used my NotebookML CWE notebook, and other GPTs, to determine the appropriate CWE.
+So I used my NotebookLM CWE notebook, and other GPTs, to determine the appropriate CWE.
 
 I then raised an issue: https://github.com/cisagov/vulnrichment/issues/84.
 
@@ -65,20 +65,20 @@ ChatGPT4o required some additional prompting to provide a comparable list of CWE
 ## what cwe ids are associated with xss?
 
 <figure markdown>
-![](../assets/images/NotebookML_3.png)
+![](../assets/images/NotebookLM_3.png)
 <figcaption>The Sources sidebar is no longer shown in this and the following examples</figcaption>
 </figure>
 
 ## what is the parent weakness or cwe for xss and csrf?
 
 <figure markdown>
-![](../assets/images/NotebookML_4.png)
+![](../assets/images/NotebookLM_4.png)
 </figure>
 
 ## what are the different types of xss?
 
 <figure markdown>
-![](../assets/images/NotebookML_5.png)
+![](../assets/images/NotebookLM_5.png)
 </figure>
 
 ### ChatGPT4o Answer
@@ -93,13 +93,13 @@ ChatGPT4o provided the same types - but gave a much richer answer than NotebookL
 ## what is the CWE associated with CVE-2021-27104 "Accellion FTA OS Command Injection Vulnerability"
 
 <figure markdown>
-![](../assets/images/NotebookML_6.png)
+![](../assets/images/NotebookLM_6.png)
 </figure>
 
 ## what is the CWE associated with CVE-2019-1653 "Cisco Small Business RV320 and RV325 Routers Information Disclosure Vulnerability"
 
 <figure markdown>
-![](../assets/images/NotebookML_8.png)
+![](../assets/images/NotebookLM_8.png)
 </figure>
 
 ### ChatGPT4o Answer

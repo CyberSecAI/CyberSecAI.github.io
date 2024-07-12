@@ -8,13 +8,13 @@ nav:
   - Introduction: 
     - Introduction: introduction/Introduction.md
     - Preface: introduction/Preface.md
-  - NotebookML:
-    - NotebookML: NotebookML/NotebookML.md
-    - NotebookML Vulnerability Standards: NotebookML/NotebookML_VulnerabilityStandards.md
-    - NotebookML CWE: NotebookML/NotebookML_Cwe.md
-    - NotebookML CAPEC: NotebookML/NotebookML_Capec.md
-    - NotebookML ATTACK: NotebookML/NotebookML_Attack.md
-    - NotebookML Config: NotebookML/NotebookML_Config.md
+  - NotebookLM:
+    - NotebookLM: NotebookLM/NotebookLM.md
+    - NotebookLM Vulnerability Standards: NotebookLM/NotebookLM_VulnerabilityStandards.md
+    - NotebookLM CWE: NotebookLM/NotebookLM_Cwe.md
+    - NotebookLM CAPEC: NotebookLM/NotebookLM_Capec.md
+    - NotebookLM ATTACK: NotebookLM/NotebookLM_Attack.md
+    - NotebookLM Config: NotebookLM/NotebookLM_Config.md
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    

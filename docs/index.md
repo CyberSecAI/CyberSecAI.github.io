@@ -10,7 +10,7 @@
     
     Large Language Models (hosted and open source), and BERT-based language models tools will be covered e.g.
     
-    1. NotebookML 
+    1. NotebookLM
     2. Prompts and Prompt Techniques applied to Cybersecurity 
     3. BERTopic
     4. Embeddings for CyberSecurity
