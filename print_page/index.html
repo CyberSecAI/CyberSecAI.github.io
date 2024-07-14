@@ -1624,7 +1624,6 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 <li>It can be unwieldy to navigate or assimilate this information. </li>
 </ul>
 <p>Using NotebookLM, we can chat with the MITRE ATT&amp;CK Matrix and ask questions, so that <strong>the information comes to us</strong> in the form of an answer. </p>
-<p>For comparison, we will also ask some of the same questions of ChatGPT4o covering 2 cases:</p>
 <ol>
 <li>without uploading any documents to it.</li>
 <li>uploading a document to it.</li>
@@ -1633,13 +1632,14 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 <h2 id="notebooklm-notebooklm_attack-data-sources">Data Sources<a class="headerlink" href="#notebooklm-notebooklm_attack-data-sources" title="Permanent link">&para;</a></h2>
 <p>The MITRE ATTACK Tactics and Techniques are available online at <a href="https://attack.mitre.org/tactics/enterprise/">https://attack.mitre.org/tactics/enterprise/</a> as 1 webpage for each of the 14 Tactics.</p>
 <ul>
-<li>However, loading these webpages (or the "Version Permalink" pages did not work).</li>
+<li>However, loading these webpages (or the "Version Permalink" pages) into NotebookLM did not work.</li>
 </ul>
 <p>MITRE ATTACK is also available as an Excel file from <a href="https://attack.mitre.org/resources/attack-data-and-tools/">https://attack.mitre.org/resources/attack-data-and-tools/</a></p>
 <ul>
 <li><a href="https://attack.mitre.org/docs/enterprise-attack-v15.1/enterprise-attack-v15.1.xlsx">https://attack.mitre.org/docs/enterprise-attack-v15.1/enterprise-attack-v15.1.xlsx</a></li>
+<li>Note: The data is also available as <a href="https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json">JSON</a>. </li>
 </ul>
-<p>So we can convert that to a text file as follows:</p>
+<p>So we can convert that to a text file and load those as follows:</p>
 <ol>
 <li>Open the <a href="https://attack.mitre.org/docs/enterprise-attack-v15.1/enterprise-attack-v15.1.xlsx">Excel file</a></li>
 <li>For the tabs we want (e.g. Tactics, Techniques, Mitigations), delete the columns we don't want </li>
@@ -1647,7 +1647,6 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 <li>Transpose the data to a text file</li>
 <li>Import the text files</li>
 </ol>
-<p>Note: The data is also available as JSON: <a href="https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json">https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json</a>.</p>
 <h3 id="notebooklm-notebooklm_attack-convert-mitre-attack-to-a-text-file-for-import">Convert MITRE ATTACK to a Text File for Import<a class="headerlink" href="#notebooklm-notebooklm_attack-convert-mitre-attack-to-a-text-file-for-import" title="Permanent link">&para;</a></h3>
 <p>Claude 3.5 Sonnet Prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#notebooklm-notebooklm_attack-__codelineno-0-1"></a>i have a csv file with these columns ID    name description    tactics    detection    &quot;data sources&quot;    &quot;is sub-technique&quot;    &quot;sub-technique of&quot;
