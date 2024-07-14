@@ -9,8 +9,6 @@
 
     Using NotebookLM, we can chat with the MITRE ATT&CK Matrix and ask questions, so that **the information comes to us** in the form of an answer. 
 
-    For comparison, we will also ask some of the same questions of ChatGPT4o covering 2 cases:
-
     1. without uploading any documents to it.
     2. uploading a document to it.
 
@@ -18,13 +16,15 @@
 
 The MITRE ATTACK Tactics and Techniques are available online at https://attack.mitre.org/tactics/enterprise/ as 1 webpage for each of the 14 Tactics.
 
-* However, loading these webpages (or the "Version Permalink" pages did not work).
+* However, loading these webpages (or the "Version Permalink" pages) into NotebookLM did not work.
 
 MITRE ATTACK is also available as an Excel file from https://attack.mitre.org/resources/attack-data-and-tools/
 
  * https://attack.mitre.org/docs/enterprise-attack-v15.1/enterprise-attack-v15.1.xlsx
+ * Note: The data is also available as [JSON](https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json). 
 
-So we can convert that to a text file as follows:
+
+So we can convert that to a text file and load those as follows:
 
 1. Open the [Excel file](https://attack.mitre.org/docs/enterprise-attack-v15.1/enterprise-attack-v15.1.xlsx)
 2. For the tabs we want (e.g. Tactics, Techniques, Mitigations), delete the columns we don't want 
@@ -33,7 +33,6 @@ So we can convert that to a text file as follows:
 5. Import the text files
 
 
-Note: The data is also available as JSON: https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json.
 
 
 ### Convert MITRE ATTACK to a Text File for Import
