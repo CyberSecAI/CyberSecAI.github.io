@@ -107,5 +107,9 @@ In addition to using LLMs to generate prompts (aka Meta Prompts), and review pro
   
 !!! success "Takeaways" 
 
-    1. ToDo
-  
+    1. Getting the right prompt to get what you want out of an LLM can sometimes feel like art or interrogation. There are several options:
+       1. Prompt Templates
+       3. Prompt Frameworks
+       4. Ask an LLM to generate a prompt
+       5. LLM-based tools for prompt refinement
+

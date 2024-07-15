@@ -43,5 +43,5 @@ https://github.com/danielmiessler/fabric/blob/main/patterns/improve_prompt/syste
   
 !!! success "Takeaways" 
 
-    1. ToDo
+    1. Fabric is a good resource for prompts with many being related to CyberSecurity.
   

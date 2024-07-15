@@ -7,7 +7,8 @@
       But you might find it useful.
 
 !!! success "After reading this guide you should be able to"
-    1. ....
+    1. Apply Language Models to augment and amplify your skills.
+    2. Understand the types of problems that suit Language Models, and those that don't
 
 ## Overview
 

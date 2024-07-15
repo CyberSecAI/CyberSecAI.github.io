@@ -81,4 +81,4 @@ So we can just load each one to NoteBookLM as a text file:
   
 !!! success "Takeaways" 
 
-    1. 
+    1. Any data or document in text format can be converted to a format suitable for import to an LM.
