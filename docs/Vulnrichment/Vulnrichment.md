@@ -51,6 +51,9 @@ icon: material/play-box-edit-outline
         1. This is relatively easy to do automatically
         2. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone 
         3. Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of CWE assignment.
+    3. For bulk processing, it is possible to submit multiple CVEs for assignment or review in one prompt via the API (what I do if using the Chat UI)
+        1. This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per CVE-CWE pair.
+        2. This mitigates hitting API rate limits.
 
 
 ## CISA Vulnrichment
@@ -93,7 +96,7 @@ Per [Steve Christey Coley, CWE tech lead](https://www.linkedin.com/feed/update/u
 !!! quote 
     There has been significant interest in using AI/ML in various applications to use and/or map to CWE, but in my opinion there are a number of significant hurdles, e.g. you can't train on "bad mappings" to learn how to do good mappings.
 
-So, rather than train a model on bad data, we can ask a model to assign / validate a CWE based on its understanding of the CWEs available e.g.
+So, rather than train a model on bad data, we can ask a model to assign / validate a CWE based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each CWE in the standard) e.g.
 
 1. a closed-model with access to the CWE specification only (and no other data)
 2. an open-model with access to the CWE specification and other data
@@ -176,7 +179,7 @@ You will output a json object containing the following information:
 ````
 The JSON output allows processing by machines.
 
-!!! tip
+!!! tip "Use JSON Mode"
     [ChatGPT](https://platform.openai.com/docs/guides/text-generation/json-mode) and [Gemini 1.5](https://ai.google.dev/gemini-api/docs/json-mode?lang=python) support JSON mode that always outputs valid JSON. Use it!
     * See [details of Latest Gemini features support in LangChain4j 0.32.0](https://medium.com/google-cloud/latest-gemini-features-support-in-langchain4j-0-32-0-732791e4c34c).
 
