@@ -301,4 +301,4 @@ NotebookLM works very well for suggesting a relevant CWE for a given CVE Descrip
     4. Using LLMs to suggest or validate CWEs can reduce the manual effort and error in CWE assignment.
     5. LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.
     6. LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.
-    7. A closed-system that is grounded on the CWE standard only e.g. NotebookLM, performs very well for assigning CWEs, or reviewing assigned CWEs (though it does not have an API so can't do this at scale)
+    7. A closed-system that is grounded on the CWE standard only e.g. NotebookLM, performs very well for assigning CWEs, or reviewing assigned CWEs (though it does not have an API so can't do this at scale), and no hallucinations were observed.
