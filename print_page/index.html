@@ -2967,8 +2967,10 @@ Fabric was created to address this by enabling everyone to granularly apply AI t
 The JSON output allows processing by machines.</p>
 <div class="admonition tip">
 <p class="admonition-title">Use JSON Mode</p>
-<p><a href="https://platform.openai.com/docs/guides/text-generation/json-mode">ChatGPT</a> and <a href="https://ai.google.dev/gemini-api/docs/json-mode?lang=python">Gemini 1.5</a> support JSON mode that always outputs valid JSON. Use it!
-* See <a href="https://medium.com/google-cloud/latest-gemini-features-support-in-langchain4j-0-32-0-732791e4c34c">details of Latest Gemini features support in LangChain4j 0.32.0</a>.</p>
+<p><a href="https://platform.openai.com/docs/guides/text-generation/json-mode">ChatGPT</a> and <a href="https://ai.google.dev/gemini-api/docs/json-mode?lang=python">Gemini 1.5</a> support JSON mode that always outputs valid JSON. Use it!</p>
+<ul>
+<li>See <a href="https://medium.com/google-cloud/latest-gemini-features-support-in-langchain4j-0-32-0-732791e4c34c">details of Latest Gemini features support in LangChain4j 0.32.0</a>.</li>
+</ul>
 <p>While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)</p>
 <p><a href="https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb">Claude doesn't have a formal "JSON Mode"</a> though in my usage, it produced valid JSON.</p>
 </div>
@@ -3028,12 +3030,11 @@ The JSON output allows processing by machines.</p>
 </ul>
 <h2 id="vulnrichment-vulnrichment-observations">Observations<a class="headerlink" href="#vulnrichment-vulnrichment-observations" title="Permanent link">&para;</a></h2>
 <h3 id="vulnrichment-vulnrichment-gemini-15-pro-hallucinations">Gemini 1.5 Pro Hallucinations<a class="headerlink" href="#vulnrichment-vulnrichment-gemini-15-pro-hallucinations" title="Permanent link">&para;</a></h3>
-<p>From a sample of 30 identified incorrectly assigned CWEs, it had 3 hallucinations (response text shown below, with hallucination in <strong>bold</strong>).</p>
-<ul>
-<li>While Gemini 1.5 Pro is the backend for NotebookLM, no hallucinations were detected in NotebookLM (the benefit of a source-grounded closed system).</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p>From a sample of 30 identified incorrectly assigned CWEs, Gemini 1.5 Pro had 3 hallucinations when asked to provide a rationale for its response (response text shown below, with hallucination in <strong>bold</strong>).</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
 <ol>
 <li>While <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-400 (Uncontrolled Resource Consumption) could be a potential consequence, the core issue described in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> is about improper handling of the Python crash handler within a chroot environment. This misconfiguration could allow an attacker to potentially escape the chroot and execute code in the context of the Apport process.  A more appropriate <abbr title="CWE Common Weakness Enumeration">CWE</abbr> might be <strong><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-247 (Improper Handling of Chroot Environments)</strong> or <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-22 (Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')).<ol>
 <li><a href="https://cwe.mitre.org/data/definitions/247.html"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-247: DEPRECATED: Reliance on DNS Lookups in a Security Decision</a></li>
@@ -3044,20 +3045,30 @@ The JSON output allows processing by machines.</p>
 <li><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-116 is the correct <abbr title="CWE Common Weakness Enumeration">CWE</abbr>: <a href="https://cwe.mitre.org/data/definitions/116.html"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-116: Improper Encoding or Escaping of Output</a></li>
 </ol>
 </li>
-<li>While <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-57 (Relative Path Traversal) could be a factor in exploiting this vulnerability, the description more directly aligns with <strong><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664: Improper Control of File Deletion or Renaming Operations</strong>. The vulnerability allows attackers to delete arbitrary files, which is the core characteristic of <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664. Relative path traversal might be a means to reach different files, but the primary issue is the improper control over file deletion.</li>
+<li>While <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-57 (Relative Path Traversal) could be a factor in exploiting this vulnerability, the description more directly aligns with <strong><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664: Improper Control of File Deletion or Renaming Operations</strong>. The vulnerability allows attackers to delete arbitrary files, which is the core characteristic of <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664. Relative path traversal might be a means to reach different files, but the primary issue is the improper control over file deletion.<ol>
 <li><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664 correct title is <a href="https://cwe.mitre.org/data/definitions/664.html"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664: Improper Control of a Resource Through its Lifetime</a></li>
 </ol>
+</li>
+</ol>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While Gemini 1.5 Pro is the backend for NotebookLM, no hallucinations were detected in NotebookLM (the benefit of a source-grounded closed system).</p>
 </div>
 <h2 id="vulnrichment-vulnrichment-notebooklm">NotebookLM<a class="headerlink" href="#vulnrichment-vulnrichment-notebooklm" title="Permanent link">&para;</a></h2>
 <p>NotebookLM works very well for suggesting a relevant <abbr title="CWE Common Weakness Enumeration">CWE</abbr> for a given <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description (or reviewing an assigned <abbr title="CWE Common Weakness Enumeration">CWE</abbr>)</p>
 <ul>
 <li>It suggests related CVEs to support the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> it suggests (sometimes prompting is required). These CVEs are part of the "Observed Examples" CVEs that are listed under a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> in the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard.</li>
+<li>The numbered grey circles in the diagram below are links to references from the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard.</li>
 </ul>
 <figure>
-<p><img alt="" src="../assets/images/notebooklm_pickle.png" /></p>
+<p><img alt="" src="../assets/images/notebooklm_pickle.png" />
+<abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-2024-35059</p>
 </figure>
 <figure>
-<p><img alt="" src="../assets/images/vulnrichment_notebooklm.png" /></p>
+<p><img alt="" src="../assets/images/vulnrichment_notebooklm.png" />
+<abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-2023-49224</p>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
