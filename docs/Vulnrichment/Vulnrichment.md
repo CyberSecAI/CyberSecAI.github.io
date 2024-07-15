@@ -8,7 +8,7 @@ icon: material/play-box-edit-outline
 
     I was reading a [post on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7214295735440187393?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7214295735440187393%2C7214365350828613632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287214365350828613632%2Curn%3Ali%3Aactivity%3A7214295735440187393%29) and the CWE assigned by CISA ADP looked wrong so...
 
-    * I used my NotebookLM CWE notebook, and other LLMs, to determine the appropriate CWE.
+    * I used my [NotebookLM CWE notebook](../NotebookLM/NotebookLM.md), and other LLMs, to determine the appropriate CWE.
     * I then raised an issue: https://github.com/cisagov/vulnrichment/issues/84.
     * I then decided to dig a bit more into this... specifically the CWEs assigned by CISA ADP.
 
@@ -17,16 +17,16 @@ icon: material/play-box-edit-outline
     * These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by CISA ADP.
     * The consensus output was then reviewed by a human (me).
   
-    I created [3 Vulnrichment Github Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) and these were accepted by CISA Vulnrichment and resolved promptly!
+    * I created [3 Vulnrichment Github Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) and these were accepted by CISA Vulnrichment and resolved promptly!
     
     * I then provided a report to CISA Vulnrichment for all CWEs that were incorrect based on the consensus.
 
 
-    Finally, I show how NotebookLM can be used for CWE assignment
+    Finally, I showed how NotebookLM can be used for CWE assignment
 
     * It avoids the problem of
         * training language models on bad data (existing CVE CWE assignments)
-        * training humans on the detailed CWE standard
+        * training humans on the detailed CWE standard (though a basic understanding is still required)
     * NotebookLM did well in recommending a CWE given a CVE Description.... and providing a supporting CVE from the CWE Observed Examples in the CWE standard.
         *  NotebookLM has a large context window which allows it to digest the large CWE standard, and it is source-grounded as described in the [NotebookLM chapter](../NotebookLM/NotebookLM.md).
         *  [./NotebookLM/NotebookLM_Cwe.md](NotebookLM_Cwe) describes how to create this NotebookLM for CWEs
@@ -43,11 +43,14 @@ icon: material/play-box-edit-outline
             2. Claude 3.5 Sonnet
             3. ChatGPT4
 
-!!! notes
+!!! notes "Note: Some refinements are possible, but were not implemented"
     1. The full CWE standard was used here for illustration purposes
-       1. A subset of CWEs could be used if that is desired. 
-       2. In practice, several hundred CWEs are assigned to CVEs.
-    2. 
+        1. A subset of CWEs could be used if that is desired. 
+        2. In practice, several hundred CWEs are assigned to CVEs.
+    2. The text from the references in the CVE "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the CVE Description for CWE review or assignment.
+        1. This is relatively easy to do automatically
+        2. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone 
+        3. Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of CWE assignment.
 
 
 ## CISA Vulnrichment
