@@ -28,7 +28,7 @@ icon: material/play-box-edit-outline
         * training language models on bad data (existing CVE CWE assignments)
         * training humans on the detailed CWE standard
     * NotebookLM did well in recommending a CWE given a CVE Description.... and providing a supporting CVE from the CWE Observed Examples in the CWE standard.
-        *  NotebookLM has a large context window (uses Gemini Pro 1.5) which allows it to digest the large CWE standard, and it is source-grounded
+        *  NotebookLM has a large context window which allows it to digest the large CWE standard, and it is source-grounded as described in the [NotebookLM chapter](../NotebookLM/NotebookLM.md).
         *  [./NotebookLM/NotebookLM_Cwe.md](NotebookLM_Cwe) describes how to create this NotebookLM for CWEs
 
     This section shows the different approaches used (and the subscription plan used):
