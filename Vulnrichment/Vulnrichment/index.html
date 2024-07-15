@@ -1477,7 +1477,8 @@
 <li><a href="https://www.langchain.com/">langchain</a> calling 3 LLMs via APIs: <ol>
 <li>Gemini 1.5 Pro</li>
 <li>Claude 3.5 Sonnet</li>
-<li>ChatGPT4</li>
+<li>ChatGPT4 </li>
+<li>I'd already used ChatGPT4o in batch mode per above, so when showing the same code could invoke 3 different models, I chose ChatGPT4 instead of ChatGPT4o.</li>
 </ol>
 </li>
 </ol>
@@ -1496,6 +1497,11 @@
 <li>This is relatively easy to do automatically</li>
 <li>In some cases, this has additional text available that can inform the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment beyond the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description alone </li>
 <li>Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.</li>
+</ol>
+</li>
+<li>For bulk processing, it is possible to submit multiple CVEs for assignment or review in one prompt via the API (what I do if using the Chat UI)<ol>
+<li>This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pair.</li>
+<li>This mitigates hitting API rate limits.</li>
 </ol>
 </li>
 </ol>
@@ -1538,7 +1544,7 @@
 <p class="admonition-title">Quote</p>
 <p>There has been significant interest in using AI/ML in various applications to use and/or map to <abbr title="CWE Common Weakness Enumeration">CWE</abbr>, but in my opinion there are a number of significant hurdles, e.g. you can't train on "bad mappings" to learn how to do good mappings.</p>
 </div>
-<p>So, rather than train a model on bad data, we can ask a model to assign / validate a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> based on its understanding of the CWEs available e.g.</p>
+<p>So, rather than train a model on bad data, we can ask a model to assign / validate a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each <abbr title="CWE Common Weakness Enumeration">CWE</abbr> in the standard) e.g.</p>
 <ol>
 <li>a closed-model with access to the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification only (and no other data)</li>
 <li>an open-model with access to the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification and other data</li>
@@ -1608,7 +1614,7 @@
 </code></pre></div>
 The JSON output allows processing by machines.</p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">Use JSON Mode</p>
 <p><a href="https://platform.openai.com/docs/guides/text-generation/json-mode">ChatGPT</a> and <a href="https://ai.google.dev/gemini-api/docs/json-mode?lang=python">Gemini 1.5</a> support JSON mode that always outputs valid JSON. Use it!
 * See <a href="https://medium.com/google-cloud/latest-gemini-features-support-in-langchain4j-0-32-0-732791e4c34c">details of Latest Gemini features support in LangChain4j 0.32.0</a>.</p>
 <p>While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)</p>
