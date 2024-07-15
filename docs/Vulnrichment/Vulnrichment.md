@@ -160,6 +160,7 @@ The JSON output allows processing by machines.
 
 !!! tip
     [ChatGPT](https://platform.openai.com/docs/guides/text-generation/json-mode) and [Gemini 1.5](https://ai.google.dev/gemini-api/docs/json-mode?lang=python) support JSON mode that always outputs valid JSON. Use it!
+    * See [details of Latest Gemini features support in LangChain4j 0.32.0](https://medium.com/google-cloud/latest-gemini-features-support-in-langchain4j-0-32-0-732791e4c34c).
 
     While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)
 
@@ -251,6 +252,23 @@ From a sample of 30 identified incorrectly assigned CWEs, it had 3 hallucination
         1. CWE-116 is the correct CWE: [CWE-116: Improper Encoding or Escaping of Output](https://cwe.mitre.org/data/definitions/116.html)
     2. While CWE-57 (Relative Path Traversal) could be a factor in exploiting this vulnerability, the description more directly aligns with **CWE-664: Improper Control of File Deletion or Renaming Operations**. The vulnerability allows attackers to delete arbitrary files, which is the core characteristic of CWE-664. Relative path traversal might be a means to reach different files, but the primary issue is the improper control over file deletion.
        1. CWE-664 correct title is [CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)
+
+## NotebookLM
+NotebookLM works very well for suggesting a relevant CWE for a given CVE Description (or reviewing an assigned CWE)
+
+* It suggests related CVEs to support the CWE it suggests (sometimes prompting is required). These CVEs are part of the "Observed Examples" CVEs that are listed under a CWE in the CWE standard.
+
+<figure markdown>
+![](../assets/images/notebooklm_pickle.png)
+</figure>
+
+<figure markdown>
+![](../assets/images/vulnrichment_notebooklm.png)
+</figure>
+
+!!! note
+    The NotebookLM prompts above are deliberately not applying [prompt engineering principles](../prompt_engineering/prompt_engineering.md) to show that NotebookLM still provides a useful response.
+
 ## Takeaways
   
 !!! success "Takeaways" 
@@ -261,3 +279,4 @@ From a sample of 30 identified incorrectly assigned CWEs, it had 3 hallucination
     4. Using LLMs to suggest or validate CWEs can reduce the manual effort and error in CWE assignment.
     5. LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.
     6. LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.
+    7. A closed-system that is grounded on the CWE standard only e.g. NotebookLM, performs very well for assigning CWEs, or reviewing assigned CWEs (though it does not have an API so can't do this at scale)
