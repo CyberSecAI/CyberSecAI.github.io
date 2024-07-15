@@ -27,6 +27,10 @@
 pagesper=280 file=./data/NotebookLM_CweCapec/cwe_latest.pdf ./pdfsplit.sh  
 ````
 
+!!! experiment "Data Sources"
+    A copy of the original cwe_latest.pdf, and the 10 smaller PDFs it is split into, are available in
+    https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/NotebookLM_Cwe/
+
 
 <figure markdown>
 ![](../assets/images/NotebookLM_1.png)
