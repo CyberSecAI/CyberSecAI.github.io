@@ -932,6 +932,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gemini-15-pro-hallucinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gemini 1.5 Pro Hallucinations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
@@ -1341,6 +1365,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gemini-15-pro-hallucinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gemini 1.5 Pro Hallucinations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
@@ -1371,13 +1419,16 @@
 <ul>
 <li>I used my NotebookLM <abbr title="CWE Common Weakness Enumeration">CWE</abbr> notebook, and other LLMs, to determine the appropriate <abbr title="CWE Common Weakness Enumeration">CWE</abbr>.</li>
 <li>I then raised an issue: <a href="https://github.com/cisagov/vulnrichment/issues/84">https://github.com/cisagov/vulnrichment/issues/84</a>.</li>
+<li>I then decided to dig a bit more into this... specifically the CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</li>
 </ul>
-<p>I then decided to dig a bit more into this... specifically the CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</p>
-<p>I used a consensus of LLMs to review all CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP to find issues:</p>
+<p>I used <a href="https://www.langchain.com/">langchain</a> to create a consensus of LLMs to review all CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP to find issues:</p>
 <ul>
 <li>These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</li>
 <li>The consensus output was then reviewed by a human (me).</li>
-<li>I created <a href="https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed">3 Issues initially</a> (though there are a lot more) and these were accepted by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment and resolved promptly!</li>
+</ul>
+<p>I created <a href="https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed">3 Vulnrichment Github Issues initially</a> and these were accepted by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment and resolved promptly!</p>
+<ul>
+<li>I then provided a report to <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment for all CWEs that were incorrect based on the consensus.</li>
 </ul>
 <p>This section shows the different approaches used (and the subscription plan used):</p>
 <ol>
@@ -1388,7 +1439,12 @@
 </li>
 <li>code: <ol>
 <li>ChatGPT4o <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> (Plus Plan)</li>
-<li>langchain calling 3 LLMs via APIs: Gemini 1.5 Pro, Claude 3.5 Sonnet, ChatGPT4</li>
+<li>langchain calling 3 LLMs via APIs: <ol>
+<li>Gemini 1.5 Pro</li>
+<li>Claude 3.5 Sonnet</li>
+<li>ChatGPT4</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -1462,10 +1518,17 @@
 <li>Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
 </ol>
 </li>
-<li>Then ask Gemini and Claude to review. This can be done in several ways e.g. </li>
+<li>Ask Gemini and Claude to review. </li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As I was interested in comparing LLM responses, I did not optimize the LLM usage.</p>
+<p>This can be done in several ways e.g. </p>
+<ol>
 <li>For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs</li>
 <li>Ask each LLM in turn to review the previous assessments by LLMs</li>
 </ol>
+</div>
 <h3 id="create-a-prompt">Create a Prompt<a class="headerlink" href="#create-a-prompt" title="Permanent link">&para;</a></h3>
 <h4 id="chat-interface-table-output">Chat Interface - Table Output<a class="headerlink" href="#chat-interface-table-output" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>caption_system_prompt =
@@ -1493,6 +1556,12 @@
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>}
 </code></pre></div>
 The JSON output allows processing by machines.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a href="https://platform.openai.com/docs/guides/text-generation/json-mode">ChatGPT</a> and <a href="https://ai.google.dev/gemini-api/docs/json-mode?lang=python">Gemini 1.5</a> support JSON mode that always outputs valid JSON. Use it!</p>
+<p>While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)</p>
+<p><a href="https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb">Claude doesn't have a formal "JSON Mode"</a> though in my usage, it produced valid JSON.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to submit multiple CVEs in one prompt for each batch entry i.e. similar to what is done when using the Chat interface.</p>
@@ -1547,6 +1616,28 @@ The JSON output allows processing by machines.</p>
 <li>very little effort was spent to optimize the file size (number of prompts per batch), or the prompt size.</li>
 <li>The cost to process the ~1500 ADP <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pairs: ~$1.50.</li>
 </ul>
+<h2 id="observations">Observations<a class="headerlink" href="#observations" title="Permanent link">&para;</a></h2>
+<h3 id="gemini-15-pro-hallucinations">Gemini 1.5 Pro Hallucinations<a class="headerlink" href="#gemini-15-pro-hallucinations" title="Permanent link">&para;</a></h3>
+<p>From a sample of 30 identified incorrectly assigned CWEs, it had 3 hallucinations (response text shown below, with hallucination in <strong>bold</strong>).</p>
+<ul>
+<li>While Gemini 1.5 Pro is the backend for NotebookLM, no hallucinations were detected in NotebookLM (the benefit of a source-grounded closed system).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol>
+<li>While <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-400 (Uncontrolled Resource Consumption) could be a potential consequence, the core issue described in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> is about improper handling of the Python crash handler within a chroot environment. This misconfiguration could allow an attacker to potentially escape the chroot and execute code in the context of the Apport process.  A more appropriate <abbr title="CWE Common Weakness Enumeration">CWE</abbr> might be <strong><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-247 (Improper Handling of Chroot Environments)</strong> or <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-22 (Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')).<ol>
+<li><a href="https://cwe.mitre.org/data/definitions/247.html"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-247: DEPRECATED: Reliance on DNS Lookups in a Security Decision</a></li>
+<li><a href="https://cwe.mitre.org/data/definitions/243.html"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-243: Creation of chroot Jail Without Changing Working Directory</a> is the closest to "Improper Handling of Chroot Environments"</li>
+</ol>
+</li>
+<li>The assigned <strong><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-436 (Unspecified Encoding or Escaping of Output)</strong> doesn't fit well. The description argues that the plugin itself doesn't handle file uploads, making it a matter of what WordPress allows to be uploaded. If the core WordPress installation doesn't prevent polyglot files, it's not directly the plugin's fault. A more suitable <abbr title="CWE Common Weakness Enumeration">CWE</abbr> might be <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-284 (Improper Access Control) if the plugin fails to restrict access to already uploaded polyglot files, allowing unauthorized viewing or download.<ol>
+<li><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-116 is the correct <abbr title="CWE Common Weakness Enumeration">CWE</abbr>: <a href="https://cwe.mitre.org/data/definitions/116.html"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-116: Improper Encoding or Escaping of Output</a></li>
+</ol>
+</li>
+<li>While <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-57 (Relative Path Traversal) could be a factor in exploiting this vulnerability, the description more directly aligns with <strong><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664: Improper Control of File Deletion or Renaming Operations</strong>. The vulnerability allows attackers to delete arbitrary files, which is the core characteristic of <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664. Relative path traversal might be a means to reach different files, but the primary issue is the improper control over file deletion.</li>
+<li><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664 correct title is <a href="https://cwe.mitre.org/data/definitions/664.html"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-664: Improper Control of a Resource Through its Lifetime</a></li>
+</ol>
+</div>
 <h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
