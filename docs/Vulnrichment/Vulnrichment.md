@@ -14,7 +14,7 @@ icon: material/play-box-edit-outline
 
     I used [langchain](https://www.langchain.com/) to create a consensus of LLMs to review all CWEs assigned by CISA ADP to find issues:
 
-    * These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by CISA ADP.
+    * These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs by CISA ADP.
     * The consensus output was then reviewed by a human (me).
   
     * I created [3 Vulnrichment Github Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) and these were accepted by CISA Vulnrichment and resolved promptly!
@@ -29,7 +29,7 @@ icon: material/play-box-edit-outline
         * training humans on the detailed CWE standard (though a basic understanding is still required)
     * NotebookLM did well in recommending a CWE given a CVE Description.... and providing a supporting CVE from the CWE Observed Examples in the CWE standard.
         *  NotebookLM has a large context window which allows it to digest the large CWE standard, and it is source-grounded as described in the [NotebookLM chapter](../NotebookLM/NotebookLM.md).
-        *  [./NotebookLM/NotebookLM_Cwe.md](NotebookLM_Cwe) describes how to create this NotebookLM for CWEs
+        *  [NotebookLM_Cwe](../NotebookLM/NotebookLM_Cwe.md) describes how to create this NotebookLM for CWEs
 
     This section shows the different approaches used (and the subscription plan used):
 

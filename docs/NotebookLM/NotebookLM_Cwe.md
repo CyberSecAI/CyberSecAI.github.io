@@ -1,4 +1,4 @@
-# NotebookLM
+# NotebookLM CWE
 
 !!! abstract "Overview"
 

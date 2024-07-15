@@ -1,4 +1,4 @@
-# NotebookLM
+# NotebookLM Config
 
 !!! abstract "Overview"
     

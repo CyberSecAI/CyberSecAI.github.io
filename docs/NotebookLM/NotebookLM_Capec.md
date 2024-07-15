@@ -1,4 +1,4 @@
-# NotebookLM
+# NotebookLM CAPEC
 
 !!! abstract "Overview"
 
