@@ -182,6 +182,7 @@ The JSON output allows processing by machines.
 
 !!! tip "Use JSON Mode"
     [ChatGPT](https://platform.openai.com/docs/guides/text-generation/json-mode) and [Gemini 1.5](https://ai.google.dev/gemini-api/docs/json-mode?lang=python) support JSON mode that always outputs valid JSON. Use it!
+    
     * See [details of Latest Gemini features support in LangChain4j 0.32.0](https://medium.com/google-cloud/latest-gemini-features-support-in-langchain4j-0-32-0-732791e4c34c).
 
     While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)
@@ -260,32 +261,38 @@ The ~1500 ADP CVE-CWE pairs were split into 15 files of 100 CVE-CWE pair prompts
 
 ### Gemini 1.5 Pro Hallucinations
 
-From a sample of 30 identified incorrectly assigned CWEs, it had 3 hallucinations (response text shown below, with hallucination in **bold**).
+
+
+!!! failure
+    From a sample of 30 identified incorrectly assigned CWEs, Gemini 1.5 Pro had 3 hallucinations when asked to provide a rationale for its response (response text shown below, with hallucination in **bold**).
       
-* While Gemini 1.5 Pro is the backend for NotebookLM, no hallucinations were detected in NotebookLM (the benefit of a source-grounded closed system).
+    !!! quote
 
-!!! warning
+         1. While CWE-400 (Uncontrolled Resource Consumption) could be a potential consequence, the core issue described in the CVE is about improper handling of the Python crash handler within a chroot environment. This misconfiguration could allow an attacker to potentially escape the chroot and execute code in the context of the Apport process.  A more appropriate CWE might be **CWE-247 (Improper Handling of Chroot Environments)** or CWE-22 (Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')).
+            1. [CWE-247: DEPRECATED: Reliance on DNS Lookups in a Security Decision](https://cwe.mitre.org/data/definitions/247.html)
+            2. [CWE-243: Creation of chroot Jail Without Changing Working Directory](https://cwe.mitre.org/data/definitions/243.html) is the closest to "Improper Handling of Chroot Environments"
+        1. The assigned **CWE-436 (Unspecified Encoding or Escaping of Output)** doesn't fit well. The description argues that the plugin itself doesn't handle file uploads, making it a matter of what WordPress allows to be uploaded. If the core WordPress installation doesn't prevent polyglot files, it's not directly the plugin's fault. A more suitable CWE might be CWE-284 (Improper Access Control) if the plugin fails to restrict access to already uploaded polyglot files, allowing unauthorized viewing or download.
+            1. CWE-116 is the correct CWE: [CWE-116: Improper Encoding or Escaping of Output](https://cwe.mitre.org/data/definitions/116.html)
+        2. While CWE-57 (Relative Path Traversal) could be a factor in exploiting this vulnerability, the description more directly aligns with **CWE-664: Improper Control of File Deletion or Renaming Operations**. The vulnerability allows attackers to delete arbitrary files, which is the core characteristic of CWE-664. Relative path traversal might be a means to reach different files, but the primary issue is the improper control over file deletion.
+            1. CWE-664 correct title is [CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)
 
-
-     1. While CWE-400 (Uncontrolled Resource Consumption) could be a potential consequence, the core issue described in the CVE is about improper handling of the Python crash handler within a chroot environment. This misconfiguration could allow an attacker to potentially escape the chroot and execute code in the context of the Apport process.  A more appropriate CWE might be **CWE-247 (Improper Handling of Chroot Environments)** or CWE-22 (Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')).
-        1. [CWE-247: DEPRECATED: Reliance on DNS Lookups in a Security Decision](https://cwe.mitre.org/data/definitions/247.html)
-        2. [CWE-243: Creation of chroot Jail Without Changing Working Directory](https://cwe.mitre.org/data/definitions/243.html) is the closest to "Improper Handling of Chroot Environments"
-    1. The assigned **CWE-436 (Unspecified Encoding or Escaping of Output)** doesn't fit well. The description argues that the plugin itself doesn't handle file uploads, making it a matter of what WordPress allows to be uploaded. If the core WordPress installation doesn't prevent polyglot files, it's not directly the plugin's fault. A more suitable CWE might be CWE-284 (Improper Access Control) if the plugin fails to restrict access to already uploaded polyglot files, allowing unauthorized viewing or download.
-        1. CWE-116 is the correct CWE: [CWE-116: Improper Encoding or Escaping of Output](https://cwe.mitre.org/data/definitions/116.html)
-    2. While CWE-57 (Relative Path Traversal) could be a factor in exploiting this vulnerability, the description more directly aligns with **CWE-664: Improper Control of File Deletion or Renaming Operations**. The vulnerability allows attackers to delete arbitrary files, which is the core characteristic of CWE-664. Relative path traversal might be a means to reach different files, but the primary issue is the improper control over file deletion.
-       1. CWE-664 correct title is [CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)
+!!! tip
+    While Gemini 1.5 Pro is the backend for NotebookLM, no hallucinations were detected in NotebookLM (the benefit of a source-grounded closed system).
 
 ## NotebookLM
 NotebookLM works very well for suggesting a relevant CWE for a given CVE Description (or reviewing an assigned CWE)
 
 * It suggests related CVEs to support the CWE it suggests (sometimes prompting is required). These CVEs are part of the "Observed Examples" CVEs that are listed under a CWE in the CWE standard.
+* The numbered grey circles in the diagram below are links to references from the CWE standard.
 
 <figure markdown>
 ![](../assets/images/notebooklm_pickle.png)
+CVE-2024-35059
 </figure>
 
 <figure markdown>
 ![](../assets/images/vulnrichment_notebooklm.png)
+CVE-2023-49224
 </figure>
 
 !!! note
