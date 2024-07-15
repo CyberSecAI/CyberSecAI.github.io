@@ -107,7 +107,7 @@ ChatGPT4o provided the same types - but gave a much richer answer than NotebookL
 </figure>
 
 ### ChatGPT4o Answer
-ChatGPT4o provided the same types - but gave a much richer answer than NotebookLM did because it has access to a lot more documents on XSS.
+ChatGPT4o provided one CWE ID.
 
 <figure markdown>
 ![](../assets/images/cve.png)
