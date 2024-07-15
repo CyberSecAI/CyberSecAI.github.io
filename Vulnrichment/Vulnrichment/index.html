@@ -1448,6 +1448,19 @@
 <ul>
 <li>I then provided a report to <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment for all CWEs that were incorrect based on the consensus.</li>
 </ul>
+<p>Finally, I show how NotebookLM can be used for <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment</p>
+<ul>
+<li>It avoids the problem of<ul>
+<li>training language models on bad data (existing <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments)</li>
+<li>training humans on the detailed <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard</li>
+</ul>
+</li>
+<li>NotebookLM did well in recommending a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> given a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description.... and providing a supporting <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> from the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Observed Examples in the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard.<ul>
+<li>NotebookLM has a large context window (uses Gemini Pro 1.5) which allows it to digest the large <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard, and it is source-grounded</li>
+<li><a href="NotebookLM_Cwe">./NotebookLM/NotebookLM_Cwe.md</a> describes how to create this NotebookLM for CWEs</li>
+</ul>
+</li>
+</ul>
 <p>This section shows the different approaches used (and the subscription plan used):</p>
 <ol>
 <li>no-code using the browser chat interface: <ol>
@@ -1457,7 +1470,7 @@
 </li>
 <li>code: <ol>
 <li>ChatGPT4o <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> (Plus Plan)</li>
-<li>langchain calling 3 LLMs via APIs: <ol>
+<li><a href="https://www.langchain.com/">langchain</a> calling 3 LLMs via APIs: <ol>
 <li>Gemini 1.5 Pro</li>
 <li>Claude 3.5 Sonnet</li>
 <li>ChatGPT4</li>
@@ -1465,6 +1478,15 @@
 </li>
 </ol>
 </li>
+</ol>
+</div>
+<div class="admonition notes">
+<p class="admonition-title">Notes</p>
+<ol>
+<li>The full <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard was used here for illustration purposes</li>
+<li>A subset of CWEs could be used if that is desired. </li>
+<li>In practice, several hundred CWEs are assigned to CVEs.</li>
+<li></li>
 </ol>
 </div>
 <h2 id="cisa-vulnrichment_1"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment<a class="headerlink" href="#cisa-vulnrichment_1" title="Permanent link">&para;</a></h2>
