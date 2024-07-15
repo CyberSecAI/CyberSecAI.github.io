@@ -42,7 +42,7 @@ icon: material/play-box-edit-outline
             1. Gemini 1.5 Pro
             2. Claude 3.5 Sonnet
             3. ChatGPT4 
-               1. I'd already used ChatGPT4o in batch mode per above, so when showing the same code could invoke 3 different models, I chose ChatGPT4 instead of ChatGPT4o.
+                1. I'd already used ChatGPT4o in batch mode per above, so when showing the same code could invoke 3 different models, I chose ChatGPT4 instead of ChatGPT4o.
 
 !!! notes "Note: Some refinements are possible, but were not implemented"
     1. The full CWE standard was used here for illustration purposes
