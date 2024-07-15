@@ -38,7 +38,7 @@ So we can convert that to a text file and load those as follows:
 5. Import the text files
 
 !!! experiment "Data Sources"
-    The MITRE ATTACK csv and text files are available in
+    The MITRE ATTACK csv and text files, and script to convert, are available in
     https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/Notebook_Attack
 
 
