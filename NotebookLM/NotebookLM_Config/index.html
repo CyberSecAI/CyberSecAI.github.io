@@ -806,6 +806,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#claude-sonnet-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claude Sonnet 3.5
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Claude Sonnet 3.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-prompt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Original Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-explaining-config-namespace-placeholders_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Explaining Config Namespace placeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-the-answer-with-the-expected-answer_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compare The Answer With The Expected Answer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
@@ -1405,6 +1447,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#claude-sonnet-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Claude Sonnet 3.5
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Claude Sonnet 3.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-prompt_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Original Prompt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-explaining-config-namespace-placeholders_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Explaining Config Namespace placeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-the-answer-with-the-expected-answer_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compare The Answer With The Expected Answer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
@@ -1542,6 +1626,11 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <li><a href="https://spark.apache.org/docs/latest/configuration.html">https://spark.apache.org/docs/latest/configuration.html</a></li>
 <li><a href="https://spark.apache.org/docs/latest/security.html">https://spark.apache.org/docs/latest/security.html</a></li>
 </ol>
+<div class="admonition experiment">
+<p class="admonition-title">Data Sources</p>
+<p>Copies of the html files are available in
+<a href="https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/Notebook_Attack">https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/Notebook_Attack</a></p>
+</div>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <h3 id="prepare-validation-file">Prepare Validation File<a class="headerlink" href="#prepare-validation-file" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2168,11 +2257,200 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 </li>
 </ol>
 </div>
+<h2 id="claude-sonnet-35">Claude Sonnet 3.5<a class="headerlink" href="#claude-sonnet-35" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Claude Sonnet 3.5 Pro was used as both documents were too large for the free version.</p>
+</div>
+<h3 id="original-prompt_2">Original Prompt<a class="headerlink" href="#original-prompt_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>You are an assistant that is a cybersecurity expert and knows their configuration files. Your response here should be a JSON list of strings
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Using only the documentation of Apache Spark from the URLs below (and no other source), which configuration parameters are relevant from a security perspective?
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>The data sources are :
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>1. https://spark.apache.org/docs/latest/configuration.html
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>2. https://spark.apache.org/docs/latest/security.html
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Based on my analysis of the Apache Spark documentation, here is a JSON list of configuration parameters that are relevant from a security perspective:
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>[
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>&quot;spark.authenticate&quot;,
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>&quot;spark.authenticate.secret&quot;,
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>&quot;spark.network.crypto.enabled&quot;,
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>&quot;spark.network.crypto.saslFallback&quot;,
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>&quot;spark.authenticate.enableSaslEncryption&quot;,
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>&quot;spark.network.sasl.serverAlwaysEncrypt&quot;,
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>&quot;spark.io.encryption.enabled&quot;,
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>&quot;spark.io.encryption.keySizeBits&quot;,
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>&quot;spark.io.encryption.keygen.algorithm&quot;,
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>&quot;spark.ssl.enabled&quot;,
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>&quot;spark.ssl.keyStore&quot;,
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>&quot;spark.ssl.keyStorePassword&quot;,
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>&quot;spark.ssl.keyPassword&quot;,
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>&quot;spark.ssl.trustStore&quot;,
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>&quot;spark.ssl.trustStorePassword&quot;,
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>&quot;spark.ssl.protocol&quot;,
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>&quot;spark.ssl.enabledAlgorithms&quot;,
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>&quot;spark.ui.filters&quot;,
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>&quot;spark.acls.enable&quot;,
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>&quot;spark.admin.acls&quot;,
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>&quot;spark.admin.acls.groups&quot;,
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>&quot;spark.modify.acls&quot;,
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>&quot;spark.modify.acls.groups&quot;,
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>&quot;spark.ui.view.acls&quot;,
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>&quot;spark.ui.view.acls.groups&quot;,
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>&quot;spark.eventLog.enabled&quot;,
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>&quot;spark.eventLog.dir&quot;,
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>&quot;spark.history.kerberos.enabled&quot;,
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>&quot;spark.history.kerberos.principal&quot;,
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>&quot;spark.history.kerberos.keytab&quot;,
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>&quot;spark.kerberos.principal&quot;,
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>&quot;spark.kerberos.keytab&quot;,
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>&quot;spark.hadoop.security.authentication&quot;,
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>&quot;spark.yarn.security.tokens.hbase.enabled&quot;,
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a>&quot;spark.yarn.security.tokens.hive.enabled&quot;,
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a>&quot;spark.yarn.security.credentials.hadoop.enabled&quot;,
+<a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>&quot;spark.redaction.regex&quot;,
+<a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a>&quot;spark.ui.proxyRedirectUri&quot;,
+<a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a>&quot;spark.driver.log.dfsDir&quot;
+<a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a>]
+</code></pre></div>
+<h3 id="prompt-explaining-config-namespace-placeholders_1">Prompt Explaining Config Namespace placeholders<a class="headerlink" href="#prompt-explaining-config-namespace-placeholders_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Note that Config Namespace placeholders are used for some security configurations. These are placeholders &quot;${ns}&quot; that can take values listed under Config Namespace. For these security configurations placeholders list all possible security configurations for each Config Namespace e.g. For Property Name: &quot;${ns}.enabled&quot;, &quot;spark.ssl.enabled&quot; and &quot;spark.ssl.historyServer&quot; would be some possible configurations now that you understand namespace placeholders, list all the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values. Your response here should be a JSON list of strings only. list the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values and repeated patterns
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>I understand. Here&#39;s a revised JSON list of configuration parameters relevant from a security perspective, with namespace placeholders expanded and repeated patterns included:
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>[
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>&quot;spark.authenticate&quot;,
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>&quot;spark.authenticate.secret&quot;,
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>&quot;spark.network.crypto.enabled&quot;,
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>&quot;spark.network.crypto.saslFallback&quot;,
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>&quot;spark.authenticate.enableSaslEncryption&quot;,
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>&quot;spark.network.sasl.serverAlwaysEncrypt&quot;,
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>&quot;spark.io.encryption.enabled&quot;,
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>&quot;spark.io.encryption.keySizeBits&quot;,
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>&quot;spark.io.encryption.keygen.algorithm&quot;,
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>&quot;spark.ssl.enabled&quot;,
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>&quot;spark.ssl.ui.enabled&quot;,
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>&quot;spark.ssl.standalone.enabled&quot;,
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>&quot;spark.ssl.historyServer.enabled&quot;,
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>&quot;spark.ssl.keyStore&quot;,
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>&quot;spark.ssl.ui.keyStore&quot;,
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>&quot;spark.ssl.standalone.keyStore&quot;,
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>&quot;spark.ssl.historyServer.keyStore&quot;,
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>&quot;spark.ssl.keyStorePassword&quot;,
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>&quot;spark.ssl.ui.keyStorePassword&quot;,
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>&quot;spark.ssl.standalone.keyStorePassword&quot;,
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>&quot;spark.ssl.historyServer.keyStorePassword&quot;,
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>&quot;spark.ssl.keyPassword&quot;,
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>&quot;spark.ssl.ui.keyPassword&quot;,
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>&quot;spark.ssl.standalone.keyPassword&quot;,
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>&quot;spark.ssl.historyServer.keyPassword&quot;,
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>&quot;spark.ssl.trustStore&quot;,
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>&quot;spark.ssl.ui.trustStore&quot;,
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>&quot;spark.ssl.standalone.trustStore&quot;,
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>&quot;spark.ssl.historyServer.trustStore&quot;,
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>&quot;spark.ssl.trustStorePassword&quot;,
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>&quot;spark.ssl.ui.trustStorePassword&quot;,
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>&quot;spark.ssl.standalone.trustStorePassword&quot;,
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>&quot;spark.ssl.historyServer.trustStorePassword&quot;,
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>&quot;spark.ssl.protocol&quot;,
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>&quot;spark.ssl.ui.protocol&quot;,
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>&quot;spark.ssl.standalone.protocol&quot;,
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>&quot;spark.ssl.historyServer.protocol&quot;,
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>&quot;spark.ssl.enabledAlgorithms&quot;,
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>&quot;spark.ssl.ui.enabledAlgorithms&quot;,
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a>&quot;spark.ssl.standalone.enabledAlgorithms&quot;,
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>&quot;spark.ssl.historyServer.enabledAlgorithms&quot;,
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>&quot;spark.ui.filters&quot;,
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>&quot;spark.acls.enable&quot;,
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>&quot;spark.admin.acls&quot;,
+<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a>&quot;spark.admin.acls.groups&quot;,
+<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>&quot;spark.modify.acls&quot;,
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a>&quot;spark.modify.acls.groups&quot;,
+<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a>&quot;spark.ui.view.acls&quot;,
+<a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a>&quot;spark.ui.view.acls.groups&quot;,
+<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>&quot;spark.eventLog.enabled&quot;,
+<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a>&quot;spark.eventLog.dir&quot;,
+<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a>&quot;spark.history.kerberos.enabled&quot;,
+<a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a>&quot;spark.history.kerberos.principal&quot;,
+<a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a>&quot;spark.history.kerberos.keytab&quot;,
+<a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a>&quot;spark.kerberos.principal&quot;,
+<a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>&quot;spark.kerberos.keytab&quot;,
+<a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a>&quot;spark.hadoop.security.authentication&quot;,
+<a id="__codelineno-15-60" name="__codelineno-15-60" href="#__codelineno-15-60"></a>&quot;spark.yarn.security.tokens.hbase.enabled&quot;,
+<a id="__codelineno-15-61" name="__codelineno-15-61" href="#__codelineno-15-61"></a>&quot;spark.yarn.security.tokens.hive.enabled&quot;,
+<a id="__codelineno-15-62" name="__codelineno-15-62" href="#__codelineno-15-62"></a>&quot;spark.yarn.security.credentials.hadoop.enabled&quot;,
+<a id="__codelineno-15-63" name="__codelineno-15-63" href="#__codelineno-15-63"></a>&quot;spark.redaction.regex&quot;,
+<a id="__codelineno-15-64" name="__codelineno-15-64" href="#__codelineno-15-64"></a>&quot;spark.ui.proxyRedirectUri&quot;,
+<a id="__codelineno-15-65" name="__codelineno-15-65" href="#__codelineno-15-65"></a>&quot;spark.driver.log.dfsDir&quot;,
+<a id="__codelineno-15-66" name="__codelineno-15-66" href="#__codelineno-15-66"></a>&quot;spark.ssl.keyStoreType&quot;,
+<a id="__codelineno-15-67" name="__codelineno-15-67" href="#__codelineno-15-67"></a>&quot;spark.ssl.ui.keyStoreType&quot;,
+<a id="__codelineno-15-68" name="__codelineno-15-68" href="#__codelineno-15-68"></a>&quot;spark.ssl.standalone.keyStoreType&quot;,
+<a id="__codelineno-15-69" name="__codelineno-15-69" href="#__codelineno-15-69"></a>&quot;spark.ssl.historyServer.keyStoreType&quot;,
+<a id="__codelineno-15-70" name="__codelineno-15-70" href="#__codelineno-15-70"></a>&quot;spark.ssl.trustStoreType&quot;,
+<a id="__codelineno-15-71" name="__codelineno-15-71" href="#__codelineno-15-71"></a>&quot;spark.ssl.ui.trustStoreType&quot;,
+<a id="__codelineno-15-72" name="__codelineno-15-72" href="#__codelineno-15-72"></a>&quot;spark.ssl.standalone.trustStoreType&quot;,
+<a id="__codelineno-15-73" name="__codelineno-15-73" href="#__codelineno-15-73"></a>&quot;spark.ssl.historyServer.trustStoreType&quot;,
+<a id="__codelineno-15-74" name="__codelineno-15-74" href="#__codelineno-15-74"></a>&quot;spark.ssl.needClientAuth&quot;,
+<a id="__codelineno-15-75" name="__codelineno-15-75" href="#__codelineno-15-75"></a>&quot;spark.ssl.ui.needClientAuth&quot;,
+<a id="__codelineno-15-76" name="__codelineno-15-76" href="#__codelineno-15-76"></a>&quot;spark.ssl.standalone.needClientAuth&quot;,
+<a id="__codelineno-15-77" name="__codelineno-15-77" href="#__codelineno-15-77"></a>&quot;spark.ssl.historyServer.needClientAuth&quot;,
+<a id="__codelineno-15-78" name="__codelineno-15-78" href="#__codelineno-15-78"></a>&quot;spark.ui.allowFramingFrom&quot;,
+<a id="__codelineno-15-79" name="__codelineno-15-79" href="#__codelineno-15-79"></a>&quot;spark.ui.xXssProtection&quot;,
+<a id="__codelineno-15-80" name="__codelineno-15-80" href="#__codelineno-15-80"></a>&quot;spark.ui.xContentTypeOptions.enabled&quot;,
+<a id="__codelineno-15-81" name="__codelineno-15-81" href="#__codelineno-15-81"></a>&quot;spark.ui.strictTransportSecurity&quot;
+<a id="__codelineno-15-82" name="__codelineno-15-82" href="#__codelineno-15-82"></a>]
+</code></pre></div>
+<h3 id="compare-the-answer-with-the-expected-answer_3">Compare The Answer With The Expected Answer<a class="headerlink" href="#compare-the-answer-with-the-expected-answer_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Values in ===manual=== but not in ===claude35===:
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>spark.yarn.shuffle.server.recovery.disabled
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>spark.authenticate.secret.file
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>spark.authenticate.secret.driver.file
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>spark.authenticate.secret.executor.file
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>spark.network.crypto.config.*
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>spark.io.encryption.commons.config.*
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>spark.user.groups.mapping
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>spark.history.ui.acls.enable
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>spark.history.ui.admin.acls
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>spark.history.ui.admin.acls.groups
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>spark.ssl.port
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>spark.ssl.ui.port
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>spark.ssl.standalone.port
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>spark.ssl.historyServer.port
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>Values in ===claude35=== but not in ===manual===:
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>spark.eventLog.enabled
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>spark.eventLog.dir
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>spark.history.kerberos.enabled
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>spark.history.kerberos.principal
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>spark.history.kerberos.keytab
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>spark.kerberos.principal
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>spark.kerberos.keytab
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>spark.hadoop.security.authentication
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>spark.yarn.security.tokens.hbase.enabled
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>spark.yarn.security.tokens.hive.enabled
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>spark.yarn.security.credentials.hadoop.enabled
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>spark.redaction.regex
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>spark.ui.proxyRedirectUri
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>spark.driver.log.dfsDir
+</code></pre></div>
+<div class="admonition observation">
+<p class="admonition-title">Observation</p>
+<ol>
+<li><code>spark.yarn.shuffle.server.recovery.disabled</code> was not found by Claude3.5 (or ChatGPT4o or NotebookLM).     </li>
+<li>Claude3.5 found 39 parameters in the first prompt.</li>
+<li>When the concept of placeholder config parameters was explained in the second prompt, Claude3.5 understood it.</li>
+<li>Claude3.5 found 14 parameters more than the human-generated answer, including several parameters that the other LLMs did not find.</li>
+</ol>
+</div>
 <h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
 <ol>
-<li>NotebookLM and ChatGPT4o did reasonably well at extracting the config parameters related to security - with NotebookLM performing better, missing just 1, and finding 18 more than the human-generated answer.</li>
+<li>NotebookLM, ChatGPT4o and Claude3.5 Pro did reasonably well at extracting the config parameters related to security</li>
+<li>NotebookLM performed best, missing just 1, and finding 18 more than the human-generated answer.</li>
+<li>Claude3.5 found 79 parameters, missed 14, and found 14 more than the human-generated answer.</li>
+<li>ChatGPT 4o found 71 parameters.</li>
 <li>Overall, with everything-as-code (infrastructure, policy, LLM answers, ....), and LLMs being able to process code, there's a lot of benefit and promise in applying LLMs.</li>
 <li>The feedback to CoGuard is via <a href="https://github.com/coguardio/coguard_openai_rule_auto_generation_research/issues/2">https://github.com/coguardio/coguard_openai_rule_auto_generation_research/issues/2</a> </li>
 </ol>
