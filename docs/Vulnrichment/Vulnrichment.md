@@ -10,14 +10,16 @@ icon: material/play-box-edit-outline
 
     * I used my NotebookLM CWE notebook, and other LLMs, to determine the appropriate CWE.
     * I then raised an issue: https://github.com/cisagov/vulnrichment/issues/84.
+    * I then decided to dig a bit more into this... specifically the CWEs assigned by CISA ADP.
 
-    I then decided to dig a bit more into this... specifically the CWEs assigned by CISA ADP.
-
-    I used a consensus of LLMs to review all CWEs assigned by CISA ADP to find issues:
+    I used [langchain](https://www.langchain.com/) to create a consensus of LLMs to review all CWEs assigned by CISA ADP to find issues:
 
     * These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by CISA ADP.
     * The consensus output was then reviewed by a human (me).
-    * I created [3 Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) (though there are a lot more) and these were accepted by CISA Vulnrichment and resolved promptly!
+  
+    I created [3 Vulnrichment Github Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) and these were accepted by CISA Vulnrichment and resolved promptly!
+    
+    * I then provided a report to CISA Vulnrichment for all CWEs that were incorrect based on the consensus.
 
     This section shows the different approaches used (and the subscription plan used):
 
@@ -26,7 +28,10 @@ icon: material/play-box-edit-outline
         2. Claude 3.5 Sonnet (prepay)
     2. code: 
         1. ChatGPT4o [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview) (Plus Plan)
-        2. langchain calling 3 LLMs via APIs: Gemini 1.5 Pro, Claude 3.5 Sonnet, ChatGPT4
+        2. langchain calling 3 LLMs via APIs: 
+            1. Gemini 1.5 Pro
+            2. Claude 3.5 Sonnet
+            3. ChatGPT4
 
 
 
@@ -106,9 +111,17 @@ To minimize human effort, 3 LLMs are used and the consensus is reviewed
 2. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
       1. ~700 (No) of ~1.5K 
       2. Sort these by Confidence score i.e. start with the highest Confidence ones.
-3. Then ask Gemini and Claude to review. This can be done in several ways e.g. 
-   1. For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs
-   2. Ask each LLM in turn to review the previous assessments by LLMs
+3. Ask Gemini and Claude to review. 
+
+!!! note
+    As I was interested in comparing LLM responses, I did not optimize the LLM usage.
+
+    This can be done in several ways e.g. 
+
+    1. For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs
+    2. Ask each LLM in turn to review the previous assessments by LLMs
+
+
 
 ### Create a Prompt
 #### Chat Interface - Table Output
@@ -144,6 +157,13 @@ You will output a json object containing the following information:
 }
 ````
 The JSON output allows processing by machines.
+
+!!! tip
+    [ChatGPT](https://platform.openai.com/docs/guides/text-generation/json-mode) and [Gemini 1.5](https://ai.google.dev/gemini-api/docs/json-mode?lang=python) support JSON mode that always outputs valid JSON. Use it!
+
+    While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)
+
+    [Claude doesn't have a formal "JSON Mode"](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb) though in my usage, it produced valid JSON.
 
 
 !!! note
@@ -213,8 +233,24 @@ The ~1500 ADP CVE-CWE pairs were split into 15 files of 100 CVE-CWE pair prompts
 * very little effort was spent to optimize the file size (number of prompts per batch), or the prompt size.
 * The cost to process the ~1500 ADP CVE-CWE pairs: ~$1.50.
 
+## Observations
+
+### Gemini 1.5 Pro Hallucinations
+
+From a sample of 30 identified incorrectly assigned CWEs, it had 3 hallucinations (response text shown below, with hallucination in **bold**).
+      
+* While Gemini 1.5 Pro is the backend for NotebookLM, no hallucinations were detected in NotebookLM (the benefit of a source-grounded closed system).
+
+!!! warning
 
 
+     1. While CWE-400 (Uncontrolled Resource Consumption) could be a potential consequence, the core issue described in the CVE is about improper handling of the Python crash handler within a chroot environment. This misconfiguration could allow an attacker to potentially escape the chroot and execute code in the context of the Apport process.  A more appropriate CWE might be **CWE-247 (Improper Handling of Chroot Environments)** or CWE-22 (Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')).
+        1. [CWE-247: DEPRECATED: Reliance on DNS Lookups in a Security Decision](https://cwe.mitre.org/data/definitions/247.html)
+        2. [CWE-243: Creation of chroot Jail Without Changing Working Directory](https://cwe.mitre.org/data/definitions/243.html) is the closest to "Improper Handling of Chroot Environments"
+    1. The assigned **CWE-436 (Unspecified Encoding or Escaping of Output)** doesn't fit well. The description argues that the plugin itself doesn't handle file uploads, making it a matter of what WordPress allows to be uploaded. If the core WordPress installation doesn't prevent polyglot files, it's not directly the plugin's fault. A more suitable CWE might be CWE-284 (Improper Access Control) if the plugin fails to restrict access to already uploaded polyglot files, allowing unauthorized viewing or download.
+        1. CWE-116 is the correct CWE: [CWE-116: Improper Encoding or Escaping of Output](https://cwe.mitre.org/data/definitions/116.html)
+    2. While CWE-57 (Relative Path Traversal) could be a factor in exploiting this vulnerability, the description more directly aligns with **CWE-664: Improper Control of File Deletion or Renaming Operations**. The vulnerability allows attackers to delete arbitrary files, which is the core characteristic of CWE-664. Relative path traversal might be a means to reach different files, but the primary issue is the improper control over file deletion.
+       1. CWE-664 correct title is [CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)
 ## Takeaways
   
 !!! success "Takeaways" 
