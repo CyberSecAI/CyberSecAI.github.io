@@ -2,6 +2,11 @@
 
 !!! abstract "Overview"
 
+
+    As part of [Proactive Software Supply Chain Risk Management (P-SSCRM) Framework that I've been collaborating on](https://www.linkedin.com/feed/update/urn:li:activity:7189303367423156224/), we wanted to apply MITRE ATT&CK. It's a detailed specification, so NotebookLM can help us.
+
+    
+
     In this chapter, we'll use [NotebookLM](https://notebooklm.google.com/) to ingest the [MITRE ATT&CK Enterprise Tactics](https://attack.mitre.org/tactics/enterprise/). 
 
     * In the current version, MITRE ATT&CK Matrix for Enterprise consists of 14 tactics, 559 Total Attack Patterns. 
