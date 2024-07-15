@@ -21,6 +21,16 @@ icon: material/play-box-edit-outline
     
     * I then provided a report to CISA Vulnrichment for all CWEs that were incorrect based on the consensus.
 
+
+    Finally, I show how NotebookLM can be used for CWE assignment
+
+    * It avoids the problem of
+        * training language models on bad data (existing CVE CWE assignments)
+        * training humans on the detailed CWE standard
+    * NotebookLM did well in recommending a CWE given a CVE Description.... and providing a supporting CVE from the CWE Observed Examples in the CWE standard.
+        *  NotebookLM has a large context window (uses Gemini Pro 1.5) which allows it to digest the large CWE standard, and it is source-grounded
+        *  [./NotebookLM/NotebookLM_Cwe.md](NotebookLM_Cwe) describes how to create this NotebookLM for CWEs
+
     This section shows the different approaches used (and the subscription plan used):
 
     1. no-code using the browser chat interface: 
@@ -28,11 +38,16 @@ icon: material/play-box-edit-outline
         2. Claude 3.5 Sonnet (prepay)
     2. code: 
         1. ChatGPT4o [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview) (Plus Plan)
-        2. langchain calling 3 LLMs via APIs: 
+        2. [langchain](https://www.langchain.com/) calling 3 LLMs via APIs: 
             1. Gemini 1.5 Pro
             2. Claude 3.5 Sonnet
             3. ChatGPT4
 
+!!! notes
+    1. The full CWE standard was used here for illustration purposes
+       1. A subset of CWEs could be used if that is desired. 
+       2. In practice, several hundred CWEs are assigned to CVEs.
+    2. 
 
 
 ## CISA Vulnrichment
