@@ -36,7 +36,29 @@ Fabric has Prompts that are specific to CyberSecurity e.g.
 ### Fabric Prompt to Improve Prompts 
 https://github.com/danielmiessler/fabric/blob/main/patterns/improve_prompt/system.md
 
+### Process Youtube Transcripts
 
+Fabric, and LLMs in general, can process Youtube Transcripts (which are text).
+
+The Youtube Transcript for a video can be retrieved in different ways e.g. https://www.youtube.com/watch?v=oMZN810xfck:
+
+* Click the Transcript button under a video and copy and paste, or download, to a text file
+* Use Fabric helper function: [installer/client/cli/yt.py](https://github.com/danielmiessler/fabric/blob/main/installer/client/cli/yt.py) (or other tool)
+
+````
+yt --transcript https://www.youtube.com/watch?v=oMZN810xfck
+````
+The text can then be processed with an LLM.
+
+This download and processing can be done in one command with Fabric
+````
+yt --transcript https://www.youtube.com/watch?v=oMZN810xfck | fabric -sp extract_wisdom
+````
+where
+
+* -s is for streaming
+* -p is for pattern
+* [extract_wisdom](https://github.com/danielmiessler/fabric/tree/main/patterns/extract_wisdom) is the Fabric prompt that extracts wisdom from any text. It addresses the problem of too much content and too little time.
 
 
 ## Takeaways
