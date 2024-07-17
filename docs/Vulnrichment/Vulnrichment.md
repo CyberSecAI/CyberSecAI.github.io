@@ -49,20 +49,6 @@ icon: material/play-box-edit-outline
             3. ChatGPT4 
                 1. I'd already used ChatGPT4o in batch mode per above, so when showing the same code could invoke 3 different models, I chose ChatGPT4 instead of ChatGPT4o.
 
-!!! notes "Note: Some refinements are possible, but were not implemented in this first pass to minimize Time-To-Value"
-    1. The full CWE standard was used here for illustration purposes (and to take on the harder problem of a large specification)
-        1. A subset of CWEs could be used if that is desired. 
-        2. In practice, several hundred CWEs are assigned to CVEs.
-    2. The text from the references in the CVE "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the CVE Description for CWE review or assignment.
-        1. These references were reviewed manually (for the consensus of incorrect CWE assignments)
-        2. This is relatively easy to do automatically
-        3. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone
-        4. Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of CWE assignment.
-    3. For bulk processing, it is possible to submit multiple CVEs for assignment, or review, in one prompt via the API (what I do if using the chat UI)
-        1. This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per CVE-CWE pair.
-        2. This mitigates hitting API rate limits.
-
-
 ## CISA Vulnrichment
 
 !!! quote
@@ -91,7 +77,7 @@ I have great admiration for CISA and their pragmatic initiatives like [CISA KEV]
 ## Approach to using Language Models
 
 
-### Classifier: Don't Train A Model On Bad Data!
+### Don't Train A Model On Bad Data!
 
 It is possible to train a Language Model as a Classifier to assign CWEs to a CVE - and there are several research papers that took that approach e.g.
 
@@ -117,6 +103,7 @@ We can "train" on "good mappings".
     1. The count of these CVE Observed Examples varies significantly per CWE. 
     2. There's ~3000 CVE Observed Examples in the CWE standard.
 2. We can use the full CWE standard and associated known good CVE assignments in the standard (CVE Observed Examples for a given CWE) as the target, allowing an LLM to compare the CVE Description (and other data) to this.
+    1. And moreover, prompt the LLM to provide similar CVEs to support its rationale for the CWE assignment
 
 !!! tip
     Rather than train a model on bad data, we can ask a model to assign / validate a CWE based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each CWE in the standard)
@@ -159,15 +146,6 @@ To minimize human effort, 3 LLMs are used and the consensus is reviewed
       1. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
             1. Sort these by Confidence score i.e. start with the highest Confidence ones.
       2. Assign the same task to Gemini and Claude via APIs driven by langchain
-
-!!! note
-    As I was interested in comparing LLM responses, I did not optimize the LLM usage.
-
-    This can be done in several ways e.g. 
-
-    1. For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs
-    2. Ask each LLM in turn to review the previous assessments by LLMs
-
 
 
 ### Create a Prompt
@@ -232,13 +210,13 @@ The JSON output allows processing by machines.
 
 
 
-### Prompt LLMs
+### LLMs
 
-#### Gemini 1.5 Pro Browser Chat Interface
+#### Gemini 1.5 Pro API via Langchain
 
 The chat interface was used in this example submitting multiple CVEs in one prompt.
 
-#### Claude 3.5 Sonnet Browser Chat Interface
+#### Claude 3.5 Sonnet API via Langchain
 
 ##### Model
 Currently: Claude 3.5 Sonnet was used as it has the best performance vs cost for Claude models.
@@ -252,7 +230,6 @@ https://docs.anthropic.com/en/docs/welcome
 Currently: Claude does not support a native [Batch API interface](https://www.anthropic.com/pricing#anthropic-api) - though 
 [Amazon Bedrock](https://aws.amazon.com/bedrock/pricing/) supports batching of prompts to models including Claude.
 
-The chat interface was used in this example submitting multiple CVEs in one prompt.
 
 
 
@@ -285,6 +262,10 @@ The ~1500 ADP CVE-CWE pairs were split into 15 files of 100 CVE-CWE pair prompts
 
 ## Observations
 
+### Leak 
+Several CVE Descriptions that include "leak" were incorrectly assigned "CWE-200 Exposure of Sensitive Information to an Unauthorized Actor".
+
+These were actually resource leaks (memory, program objects like handles etc...), not leakage of sensitive data.
 ### Gemini 1.5 Pro Hallucinations
 
 
@@ -324,6 +305,27 @@ CVE-2023-49224
 !!! note
     The NotebookLM prompts above are deliberately not applying [prompt engineering principles](../prompt_engineering/prompt_engineering.md) to show that NotebookLM still provides a useful response.
 
+
+## Refinements
+
+!!! notes "Note: Some refinements are possible, but were not implemented in this first pass to minimize Time-To-Value"
+    1. The full CWE standard was used here for illustration purposes (and to take on the harder problem of a large specification)
+        1. A subset of CWEs could be used if that is desired. 
+        2. In practice, several hundred CWEs are assigned to CVEs.
+    2. The text from the references in the CVE "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the CVE Description for CWE review or assignment.
+        1. These references were reviewed manually (for the consensus of incorrect CWE assignments)
+        2. This is relatively easy to do automatically
+        3. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone
+        4. Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of CWE assignment.
+    3. For bulk processing, it is possible to submit multiple CVEs for assignment, or review, in one prompt via the API (what I do if using the chat UI)
+        1. This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per CVE-CWE pair.
+        2. This mitigates hitting API rate limits.
+     4. As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all CVE-CWEs)
+        1. This can be done in several ways e.g. 
+              2. Ask each LLM in turn to review the previous assessments by LLMs
+              3. Sampling
+
+
 ## Takeaways
   
 !!! success "Takeaways" 
@@ -335,3 +337,4 @@ CVE-2023-49224
     5. LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.
     6. LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.
     7. A closed-system that is grounded on the CWE standard only e.g. NotebookLM, performs very well for assigning CWEs, or reviewing assigned CWEs (though it does not have an API so can't do this at scale), and no hallucinations were observed.
+
