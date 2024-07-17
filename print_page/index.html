@@ -2930,8 +2930,11 @@ where</p>
 <h3 id="vulnrichment-vulnrichment-what-to-ask-the-llms">What to ask the LLMs?<a class="headerlink" href="#vulnrichment-vulnrichment-what-to-ask-the-llms" title="Permanent link">&para;</a></h3>
 <p>Different approaches are possible when providing the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description to the LLM:</p>
 <ol>
-<li>provide the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assigned as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>, and ask the LLM if it agrees or not, and only if not, why</li>
-<li>ask the LLM to assign one or more CWEs</li>
+<li>provide the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assigned as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>, and ask the LLM if it agrees or not, and only if not, why<ol>
+<li>This reduces the output token count/cost by only outputting the verbose rationale in case of disagreement</li>
+</ol>
+</li>
+<li>ask the LLM to assign one or more CWEs, with rationale</li>
 </ol>
 <p>The first approach is easier and simpler and cheaper (in terms of token use i.e. shorter response output), and better as a first pass option to get the low hanging fruit.</p>
 <p>The second approach could be used at the time of <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment to get a second opinion.</p>
@@ -2950,8 +2953,10 @@ where</p>
 </li>
 <li>As a dry-run submit e.g. 50 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions, CWEs to each of the 3 LLMs to review via the chat UI in one prompt</li>
 <li>For all <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP Assigned CWEs<ol>
-<li>Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (and provide a Confidence score, and rationale if not)
-        1. Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
+<li>Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (and provide a Confidence score, and rationale if not)<ol>
+<li>Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
+</ol>
+</li>
 <li>Assign the same task to Gemini and Claude via APIs driven by langchain</li>
 </ol>
 </li>
@@ -3024,7 +3029,7 @@ The JSON output allows processing by machines.</p>
 <h5 id="vulnrichment-vulnrichment-interface">Interface<a class="headerlink" href="#vulnrichment-vulnrichment-interface" title="Permanent link">&para;</a></h5>
 <p>Currently: Claude does not support a native <a href="https://www.anthropic.com/pricing#anthropic-api">Batch API interface</a> - though 
 <a href="https://aws.amazon.com/bedrock/pricing/">Amazon Bedrock</a> supports batching of prompts to models including Claude.</p>
-<h4 id="vulnrichment-vulnrichment-openai-batch-api"><a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a><a class="headerlink" href="#vulnrichment-vulnrichment-openai-batch-api" title="Permanent link">&para;</a></h4>
+<h4 id="vulnrichment-vulnrichment-chatgpt4o-batch-api"><a href="https://platform.openai.com/docs/guides/batch/overview">ChatGPT4o Batch API</a><a class="headerlink" href="#vulnrichment-vulnrichment-chatgpt4o-batch-api" title="Permanent link">&para;</a></h4>
 <h5 id="vulnrichment-vulnrichment-model_1">Model<a class="headerlink" href="#vulnrichment-vulnrichment-model_1" title="Permanent link">&para;</a></h5>
 <p>gpt-4o</p>
 <h5 id="vulnrichment-vulnrichment-plan">Plan<a class="headerlink" href="#vulnrichment-vulnrichment-plan" title="Permanent link">&para;</a></h5>
