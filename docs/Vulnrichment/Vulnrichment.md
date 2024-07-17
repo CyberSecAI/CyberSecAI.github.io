@@ -235,7 +235,7 @@ Currently: Claude does not support a native [Batch API interface](https://www.an
 
 
 
-#### [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview)
+#### [ChatGPT4o Batch API](https://platform.openai.com/docs/guides/batch/overview)
 
 ##### Model
 gpt-4o
