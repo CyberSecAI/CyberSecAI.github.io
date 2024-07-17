@@ -749,28 +749,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#approach-to-using-llms" class="md-nav__link">
+  <a href="#approach-to-using-language-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Approach to using LLMs
+      Approach to using Language Models
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Approach to using LLMs">
+    <nav class="md-nav" aria-label="Approach to using Language Models">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dont-train-a-model-on-bad-data" class="md-nav__link">
+  <a href="#classifier-dont-train-a-model-on-bad-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Don't Train A Model On Bad Data!
+      Classifier: Don't Train A Model On Bad Data!
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#validate-with-llms" class="md-nav__link">
+  <a href="#train-on-good-data-and-the-full-standard" class="md-nav__link">
     <span class="md-ellipsis">
-      Validate with LLMs
+      Train on Good Data and the Full Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-ask-the-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to ask the LLMs?
     </span>
   </a>
   
@@ -1191,28 +1200,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#approach-to-using-llms" class="md-nav__link">
+  <a href="#approach-to-using-language-models" class="md-nav__link">
     <span class="md-ellipsis">
-      Approach to using LLMs
+      Approach to using Language Models
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Approach to using LLMs">
+    <nav class="md-nav" aria-label="Approach to using Language Models">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dont-train-a-model-on-bad-data" class="md-nav__link">
+  <a href="#classifier-dont-train-a-model-on-bad-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Don't Train A Model On Bad Data!
+      Classifier: Don't Train A Model On Bad Data!
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#validate-with-llms" class="md-nav__link">
+  <a href="#train-on-good-data-and-the-full-standard" class="md-nav__link">
     <span class="md-ellipsis">
-      Validate with LLMs
+      Train on Good Data and the Full Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-ask-the-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to ask the LLMs?
     </span>
   </a>
   
@@ -1433,15 +1451,17 @@
 <h1 id="cisa-vulnrichment"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment<a class="headerlink" href="#cisa-vulnrichment" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Overview</p>
+<p><strong>An incorrect <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment caught my eye while reading a post</strong></p>
 <p>I was reading a <a href="https://www.linkedin.com/feed/update/urn:li:activity:7214295735440187393?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7214295735440187393%2C7214365350828613632%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287214365350828613632%2Curn%3Ali%3Aactivity%3A7214295735440187393%29">post on LinkedIn</a> and the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP looked wrong so...</p>
 <ul>
 <li>I used my <a href="../../NotebookLM/NotebookLM/">NotebookLM <abbr title="CWE Common Weakness Enumeration">CWE</abbr> notebook</a>, and other LLMs, to determine the appropriate <abbr title="CWE Common Weakness Enumeration">CWE</abbr>.</li>
 <li>I then raised an issue: <a href="https://github.com/cisagov/vulnrichment/issues/84">https://github.com/cisagov/vulnrichment/issues/84</a>.</li>
 <li>I then decided to dig a bit more into this... specifically the CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</li>
 </ul>
+<p><strong>Using LLMs to find incorrect <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments at scale</strong></p>
 <p>I used <a href="https://www.langchain.com/">langchain</a> to create a consensus of LLMs to review all CWEs assigned by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP to find issues:</p>
 <ul>
-<li>These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</li>
+<li>These issues were found automatically by a consensus of 3 LLMs: (current state-of-the-art) ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP.</li>
 <li>
 <p>The consensus output was then reviewed by a human (me).</p>
 </li>
@@ -1452,6 +1472,7 @@
 <p>I then provided a report to <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment for all CWEs that were incorrect based on the consensus.</p>
 </li>
 </ul>
+<p><strong>Using LLMs to assign correct CWEs</strong></p>
 <p>Finally, I showed how NotebookLM can be used for <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment</p>
 <ul>
 <li>It avoids the problem of<ul>
@@ -1459,7 +1480,7 @@
 <li>training humans on the detailed <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard (though a basic understanding is still required)</li>
 </ul>
 </li>
-<li>NotebookLM did well in recommending a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> given a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description.... and providing a supporting <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> from the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Observed Examples in the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard.<ul>
+<li><strong>NotebookLM did well in recommending a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> given a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description.... and providing a supporting <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> from the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Observed Examples in the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard</strong>.<ul>
 <li>NotebookLM has a large context window which allows it to digest the large <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard, and it is source-grounded as described in the <a href="../../NotebookLM/NotebookLM/">NotebookLM chapter</a>.</li>
 <li><a href="../../NotebookLM/NotebookLM_Cwe/">NotebookLM_Cwe</a> describes how to create this NotebookLM for CWEs</li>
 </ul>
@@ -1488,20 +1509,21 @@
 </ol>
 </div>
 <div class="admonition notes">
-<p class="admonition-title">Note: Some refinements are possible, but were not implemented</p>
+<p class="admonition-title">Note: Some refinements are possible, but were not implemented in this first pass to minimize Time-To-Value</p>
 <ol>
-<li>The full <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard was used here for illustration purposes<ol>
+<li>The full <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard was used here for illustration purposes (and to take on the harder problem of a large specification)<ol>
 <li>A subset of CWEs could be used if that is desired. </li>
 <li>In practice, several hundred CWEs are assigned to CVEs.</li>
 </ol>
 </li>
 <li>The text from the references in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description for <abbr title="CWE Common Weakness Enumeration">CWE</abbr> review or assignment.<ol>
+<li>These references were reviewed manually (for the consensus of incorrect <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments)</li>
 <li>This is relatively easy to do automatically</li>
-<li>In some cases, this has additional text available that can inform the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment beyond the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description alone </li>
+<li>In some cases, this has additional text available that can inform the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment beyond the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description alone</li>
 <li>Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.</li>
 </ol>
 </li>
-<li>For bulk processing, it is possible to submit multiple CVEs for assignment or review in one prompt via the API (what I do if using the Chat UI)<ol>
+<li>For bulk processing, it is possible to submit multiple CVEs for assignment, or review, in one prompt via the API (what I do if using the chat UI)<ol>
 <li>This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pair.</li>
 <li>This mitigates hitting API rate limits.</li>
 </ol>
@@ -1531,30 +1553,52 @@
 </ul>
 </div>
 <h2 id="get-cves-enriched-by-cisa-adp">Get CVEs Enriched by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP<a class="headerlink" href="#get-cves-enriched-by-cisa-adp" title="Permanent link">&para;</a></h2>
-<h2 id="approach-to-using-llms">Approach to using LLMs<a class="headerlink" href="#approach-to-using-llms" title="Permanent link">&para;</a></h2>
-<p>The recipe focuses on Time-To-Value - and minimization of human effort - to find the most inappropriate assigned CWEs ASAP.</p>
+<h2 id="approach-to-using-language-models">Approach to using Language Models<a class="headerlink" href="#approach-to-using-language-models" title="Permanent link">&para;</a></h2>
+<h3 id="classifier-dont-train-a-model-on-bad-data">Classifier: Don't Train A Model On Bad Data!<a class="headerlink" href="#classifier-dont-train-a-model-on-bad-data" title="Permanent link">&para;</a></h3>
+<p>It is possible to train a Language Model as a Classifier to assign CWEs to a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> - and there are several research papers that took that approach e.g.</p>
 <ul>
-<li>A more complete and costly approach would be to submit all <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions to all 3 LLMs.</li>
+<li><a href="https://arxiv.org/pdf/2102.11498v1.pdf">V2W-BERT: A Framework for Effective Hierarchical Multiclass Classification of Software Vulnerabilities</a> </li>
+<li><a href="https://arxiv.org/pdf/2304.11130.pdf">Automated Mapping of <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Vulnerability Records to MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Weaknesses</a></li>
 </ul>
-<h3 id="dont-train-a-model-on-bad-data">Don't Train A Model On Bad Data!<a class="headerlink" href="#dont-train-a-model-on-bad-data" title="Permanent link">&para;</a></h3>
-<p>It is possible to train a Language Model as a Classifier to assign CWEs to a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> - and there are several research papers that took that approach (with limited success).</p>
-<ul>
-<li>This approach is delusional based on my research and experience of assigned CWEs.</li>
-</ul>
-<p>Per <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">Steve Christey Coley, <abbr title="CWE Common Weakness Enumeration">CWE</abbr> tech lead</a>:</p>
+<p>The problems with this approach:</p>
+<ol>
+<li>
+<p>It's delusional based on my research and experience of incorrect assigned CWEs in general - Garbage In Garbage Out</p>
+<ol>
+<li>Per <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">Steve Christey Coley, <abbr title="CWE Common Weakness Enumeration">CWE</abbr> tech lead</a>: </li>
+</ol>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>There has been significant interest in using AI/ML in various applications to use and/or map to <abbr title="CWE Common Weakness Enumeration">CWE</abbr>, but in my opinion there are a number of significant hurdles, e.g. you can't train on "bad mappings" to learn how to do good mappings.</p>
 </div>
-<p>So, rather than train a model on bad data, we can ask a model to assign / validate a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each <abbr title="CWE Common Weakness Enumeration">CWE</abbr> in the standard) e.g.</p>
+</li>
+<li>
+<p>It removes a lot of the context that could be available to an LM by reducing the reference target down to a set of values or classes (for the given input <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions)</p>
+</li>
+</ol>
+<h3 id="train-on-good-data-and-the-full-standard">Train on Good Data and the Full Standard<a class="headerlink" href="#train-on-good-data-and-the-full-standard" title="Permanent link">&para;</a></h3>
+<p>We can "train" on "good mappings".</p>
 <ol>
-<li>a closed-model with access to the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification only (and no other data)</li>
+<li>The <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard includes known "good mappings" e.g. <a href="https://riskbasedprioritization.github.io/risk/Log4Shell/#mitre-cwe-917"><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-917 Observed Examples</a> includes <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-2021-44228 and its Description.<ol>
+<li>The count of these <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Observed Examples varies significantly per <abbr title="CWE Common Weakness Enumeration">CWE</abbr>. </li>
+<li>There's ~3000 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Observed Examples in the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard.</li>
+</ol>
+</li>
+<li>We can use the full <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard and associated known good <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> assignments in the standard (<abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Observed Examples for a given <abbr title="CWE Common Weakness Enumeration">CWE</abbr>) as the target, allowing an LLM to compare the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description (and other data) to this.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Rather than train a model on bad data, we can ask a model to assign / validate a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each <abbr title="CWE Common Weakness Enumeration">CWE</abbr> in the standard)</p>
+</div>
+<p>We can use a Closed or Open Model:</p>
+<ol>
+<li>a closed-model with access to the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification only (and no other data) e.g. NotebookLM</li>
 <li>an open-model with access to the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification and other data</li>
 </ol>
-<h3 id="validate-with-llms">Validate with LLMs<a class="headerlink" href="#validate-with-llms" title="Permanent link">&para;</a></h3>
+<h3 id="what-to-ask-the-llms">What to ask the LLMs?<a class="headerlink" href="#what-to-ask-the-llms" title="Permanent link">&para;</a></h3>
 <p>Different approaches are possible when providing the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description to the LLM:</p>
 <ol>
-<li>provide the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assigned as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>, and ask the LLM if it agrees or not, and if not why</li>
+<li>provide the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assigned as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>, and ask the LLM if it agrees or not, and only if not, why</li>
 <li>ask the LLM to assign one or more CWEs</li>
 </ol>
 <p>The first approach is easier and simpler and cheaper (in terms of token use i.e. shorter response output), and better as a first pass option to get the low hanging fruit.</p>
@@ -1568,16 +1612,17 @@
 </ul>
 <h3 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Get the Vulnrichment subset of CVEs where <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP assigned a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (regardless of whether the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> was the same or different than that assigned by the CNA)<ol>
+<li>Get the Vulnrichment subset of CVEs where <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP assigned a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (regardless of whether the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> was the same or different than that assigned by the CNA) into a sheet/CSV file.<ol>
 <li>~1.5K (<abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP Assigned CWEs) of ~~8K CVEs (in Vulnrichment)</li>
 </ol>
 </li>
-<li>Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (and provide a Confidence score, and rationale if not)<ol>
-<li>~700 (No) of ~1.5K </li>
-<li>Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
+<li>As a dry-run submit e.g. 50 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions, CWEs to each of the 3 LLMs to review via the chat UI in one prompt</li>
+<li>For all <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP Assigned CWEs<ol>
+<li>Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (and provide a Confidence score, and rationale if not)
+        1. Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
+<li>Assign the same task to Gemini and Claude via APIs driven by langchain</li>
 </ol>
 </li>
-<li>Ask Gemini and Claude to review. </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1601,6 +1646,18 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>3. Confidence: string // a confidence score between 0 and 1
 </code></pre></div>
 <p>The table output allows copy-and-pasting by a human into a sheet.</p>
+<p>The prompt consists of these parts:</p>
+<ol>
+<li>Role + Task: which is the same for the Chat and API interface</li>
+<li>Output format: which is different for the Chat and API interface</li>
+<li>A binary value Agree is requested</li>
+<li>The rationale only if there is disagreement. This saves on output tokens.</li>
+<li>A Confidence score to limit impacts of hallucinations, and as a way to assess and prioritize responses by confidence.</li>
+<li>No (Few-shot) examples are provided. Based on the results, these were not necessary.<ol>
+<li>If Few-shot examples were required, I'd submit multiple CVEs in a single batch request (because putting the examples in each single <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> request would add a LOT of input tokens)</li>
+</ol>
+</li>
+</ol>
 <h4 id="batch-api-interface-json-output">Batch API Interface - JSON Output<a class="headerlink" href="#batch-api-interface-json-output" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>caption_system_prompt =
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>You are a cybersecurity expert specializing in identifying Common Weakness Enumeration (CWE) IDs from CVE descriptions.
@@ -1631,18 +1688,6 @@ The JSON output allows processing by machines.</p>
 <li>But this is not done in this example; each batch request contains a single <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> only (per the <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> example)</li>
 </ul>
 </div>
-<p>The prompt consists of these parts:</p>
-<ol>
-<li>Role + Task: which is the same for the Chat and API interface</li>
-<li>Output format: which is different for the Chat and API interface</li>
-<li>A binary value Agree is requested</li>
-<li>The rationale only if there is disagreement. This saves on output tokens.</li>
-<li>A Confidence score to limit impacts of hallucinations, and as a way to assess and prioritize responses by confidence.</li>
-<li>No (Few-shot) examples are provided. Based on the results, these were not necessary.<ol>
-<li>If Few-shot examples were required, I'd submit multiple CVEs in a single batch request (because putting the examples in each single <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> request would add a LOT of input tokens)</li>
-</ol>
-</li>
-</ol>
 <h3 id="prompt-llms">Prompt LLMs<a class="headerlink" href="#prompt-llms" title="Permanent link">&para;</a></h3>
 <h4 id="gemini-15-pro-browser-chat-interface">Gemini 1.5 Pro Browser Chat Interface<a class="headerlink" href="#gemini-15-pro-browser-chat-interface" title="Permanent link">&para;</a></h4>
 <p>The chat interface was used in this example submitting multiple CVEs in one prompt.</p>
