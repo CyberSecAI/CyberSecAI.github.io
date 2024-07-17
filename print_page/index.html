@@ -3121,6 +3121,7 @@ The JSON output allows processing by machines.</p>
 </ol>
 </li>
 <li>Additional known good <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> descriptions and <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments could be incorporated into the corpus, to augment the limited <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> observed examples that are part of the standard.</li>
+<li>Reducing the set of CWEs to the desired population, or providing guidance in the prompt on what CWEs to use (e.g. "don't use <abbr title="CWE Common Weakness Enumeration">CWE</abbr>'s marked as Discouraged")</li>
 <li>As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-CWEs)<ol>
 <li>This can be done in several ways e.g. <ol>
 <li>Ask each LLM in turn to review the previous assessments by LLMs</li>
