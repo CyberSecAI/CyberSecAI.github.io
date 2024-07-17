@@ -321,10 +321,11 @@ CVE-2023-49224
     3. For bulk processing, it is possible to submit multiple CVEs for assignment, or review, in one prompt via the API (what I do if using the chat UI)
         1. This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per CVE-CWE pair.
         2. This mitigates hitting API rate limits.
-     4. As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all CVE-CWEs)
+    4. Additional known good CVE descriptions and CWE assignments could be incorporated into the corpus, to augment the limited CVE observed examples that are part of the standard.
+    5. As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all CVE-CWEs)
         1. This can be done in several ways e.g. 
-              2. Ask each LLM in turn to review the previous assessments by LLMs
-              3. Sampling
+              1. Ask each LLM in turn to review the previous assessments by LLMs
+              2. Sampling
 
 
 ## Takeaways
