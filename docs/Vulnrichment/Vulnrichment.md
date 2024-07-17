@@ -120,7 +120,8 @@ We can use a Closed or Open Model:
 Different approaches are possible when providing the CVE Description to the LLM:
 
 1. provide the CWE assigned as part of the CVE, and ask the LLM if it agrees or not, and only if not, why
-2. ask the LLM to assign one or more CWEs
+      1. This reduces the output token count/cost by only outputting the verbose rationale in case of disagreement
+2. ask the LLM to assign one or more CWEs, with rationale
 
 The first approach is easier and simpler and cheaper (in terms of token use i.e. shorter response output), and better as a first pass option to get the low hanging fruit.
 
@@ -144,7 +145,7 @@ To minimize human effort, 3 LLMs are used and the consensus is reviewed
 2. As a dry-run submit e.g. 50 CVE Descriptions, CWEs to each of the 3 LLMs to review via the chat UI in one prompt
 3. For all CISA ADP Assigned CWEs
       1. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
-            1. Sort these by Confidence score i.e. start with the highest Confidence ones.
+           1. Sort these by Confidence score i.e. start with the highest Confidence ones.
       2. Assign the same task to Gemini and Claude via APIs driven by langchain
 
 
