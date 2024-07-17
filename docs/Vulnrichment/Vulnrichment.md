@@ -6,28 +6,33 @@ icon: material/play-box-edit-outline
 
 !!! abstract "Overview"
 
+    **An incorrect CWE assignment caught my eye while reading a post**
+
     I was reading a [post on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7214295735440187393?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7214295735440187393%2C7214365350828613632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287214365350828613632%2Curn%3Ali%3Aactivity%3A7214295735440187393%29) and the CWE assigned by CISA ADP looked wrong so...
 
     * I used my [NotebookLM CWE notebook](../NotebookLM/NotebookLM.md), and other LLMs, to determine the appropriate CWE.
     * I then raised an issue: https://github.com/cisagov/vulnrichment/issues/84.
     * I then decided to dig a bit more into this... specifically the CWEs assigned by CISA ADP.
 
+    **Using LLMs to find incorrect CWE assignments at scale**
+
     I used [langchain](https://www.langchain.com/) to create a consensus of LLMs to review all CWEs assigned by CISA ADP to find issues:
 
-    * These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs by CISA ADP.
+    * These issues were found automatically by a consensus of 3 LLMs: (current state-of-the-art) ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs by CISA ADP.
     * The consensus output was then reviewed by a human (me).
   
     * I created [3 Vulnrichment Github Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) and these were accepted by CISA Vulnrichment and resolved promptly!
     
     * I then provided a report to CISA Vulnrichment for all CWEs that were incorrect based on the consensus.
 
+    **Using LLMs to assign correct CWEs**
 
     Finally, I showed how NotebookLM can be used for CWE assignment
 
     * It avoids the problem of
         * training language models on bad data (existing CVE CWE assignments)
         * training humans on the detailed CWE standard (though a basic understanding is still required)
-    * NotebookLM did well in recommending a CWE given a CVE Description.... and providing a supporting CVE from the CWE Observed Examples in the CWE standard.
+    * **NotebookLM did well in recommending a CWE given a CVE Description.... and providing a supporting CVE from the CWE Observed Examples in the CWE standard**.
         *  NotebookLM has a large context window which allows it to digest the large CWE standard, and it is source-grounded as described in the [NotebookLM chapter](../NotebookLM/NotebookLM.md).
         *  [NotebookLM_Cwe](../NotebookLM/NotebookLM_Cwe.md) describes how to create this NotebookLM for CWEs
 
@@ -44,15 +49,16 @@ icon: material/play-box-edit-outline
             3. ChatGPT4 
                 1. I'd already used ChatGPT4o in batch mode per above, so when showing the same code could invoke 3 different models, I chose ChatGPT4 instead of ChatGPT4o.
 
-!!! notes "Note: Some refinements are possible, but were not implemented"
-    1. The full CWE standard was used here for illustration purposes
+!!! notes "Note: Some refinements are possible, but were not implemented in this first pass to minimize Time-To-Value"
+    1. The full CWE standard was used here for illustration purposes (and to take on the harder problem of a large specification)
         1. A subset of CWEs could be used if that is desired. 
         2. In practice, several hundred CWEs are assigned to CVEs.
     2. The text from the references in the CVE "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the CVE Description for CWE review or assignment.
-        1. This is relatively easy to do automatically
-        2. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone 
-        3. Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of CWE assignment.
-    3. For bulk processing, it is possible to submit multiple CVEs for assignment or review in one prompt via the API (what I do if using the Chat UI)
+        1. These references were reviewed manually (for the consensus of incorrect CWE assignments)
+        2. This is relatively easy to do automatically
+        3. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone
+        4. Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of CWE assignment.
+    3. For bulk processing, it is possible to submit multiple CVEs for assignment, or review, in one prompt via the API (what I do if using the chat UI)
         1. This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per CVE-CWE pair.
         2. This mitigates hitting API rate limits.
 
@@ -82,33 +88,51 @@ I have great admiration for CISA and their pragmatic initiatives like [CISA KEV]
 ## Get CVEs Enriched by CISA ADP
 
 
-## Approach to using LLMs
-The recipe focuses on Time-To-Value - and minimization of human effort - to find the most inappropriate assigned CWEs ASAP.
+## Approach to using Language Models
 
-* A more complete and costly approach would be to submit all CVE Descriptions to all 3 LLMs.
 
-### Don't Train A Model On Bad Data!
-It is possible to train a Language Model as a Classifier to assign CWEs to a CVE - and there are several research papers that took that approach (with limited success).
+### Classifier: Don't Train A Model On Bad Data!
 
-* This approach is delusional based on my research and experience of assigned CWEs.
+It is possible to train a Language Model as a Classifier to assign CWEs to a CVE - and there are several research papers that took that approach e.g.
 
-Per [Steve Christey Coley, CWE tech lead](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29):
+* [V2W-BERT: A Framework for Effective Hierarchical Multiclass Classification of Software Vulnerabilities](https://arxiv.org/pdf/2102.11498v1.pdf) 
+* [Automated Mapping of CVE Vulnerability Records to MITRE CWE Weaknesses](https://arxiv.org/pdf/2304.11130.pdf)
 
-!!! quote 
-    There has been significant interest in using AI/ML in various applications to use and/or map to CWE, but in my opinion there are a number of significant hurdles, e.g. you can't train on "bad mappings" to learn how to do good mappings.
+The problems with this approach:
 
-So, rather than train a model on bad data, we can ask a model to assign / validate a CWE based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each CWE in the standard) e.g.
+1. It's delusional based on my research and experience of incorrect assigned CWEs in general - Garbage In Garbage Out
+    1. Per [Steve Christey Coley, CWE tech lead](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29): 
 
-1. a closed-model with access to the CWE specification only (and no other data)
+    !!! quote 
+        There has been significant interest in using AI/ML in various applications to use and/or map to CWE, but in my opinion there are a number of significant hurdles, e.g. you can't train on "bad mappings" to learn how to do good mappings.
+
+2. It removes a lot of the context that could be available to an LM by reducing the reference target down to a set of values or classes (for the given input CVE Descriptions)
+
+
+### Train on Good Data and the Full Standard
+
+We can "train" on "good mappings".
+
+1. The CWE standard includes known "good mappings" e.g. [CWE-917 Observed Examples](https://riskbasedprioritization.github.io/risk/Log4Shell/#mitre-cwe-917) includes CVE-2021-44228 and its Description.
+    1. The count of these CVE Observed Examples varies significantly per CWE. 
+    2. There's ~3000 CVE Observed Examples in the CWE standard.
+2. We can use the full CWE standard and associated known good CVE assignments in the standard (CVE Observed Examples for a given CWE) as the target, allowing an LLM to compare the CVE Description (and other data) to this.
+
+!!! tip
+    Rather than train a model on bad data, we can ask a model to assign / validate a CWE based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each CWE in the standard)
+
+We can use a Closed or Open Model:
+
+1. a closed-model with access to the CWE specification only (and no other data) e.g. NotebookLM
 2. an open-model with access to the CWE specification and other data
 
 
 
-### Validate with LLMs
+### What to ask the LLMs?
 
 Different approaches are possible when providing the CVE Description to the LLM:
 
-1. provide the CWE assigned as part of the CVE, and ask the LLM if it agrees or not, and if not why
+1. provide the CWE assigned as part of the CVE, and ask the LLM if it agrees or not, and only if not, why
 2. ask the LLM to assign one or more CWEs
 
 The first approach is easier and simpler and cheaper (in terms of token use i.e. shorter response output), and better as a first pass option to get the low hanging fruit.
@@ -128,12 +152,13 @@ To minimize human effort, 3 LLMs are used and the consensus is reviewed
 
 ### Recipe
 
-1. Get the Vulnrichment subset of CVEs where CISA ADP assigned a CWE (regardless of whether the CWE was the same or different than that assigned by the CNA)
+1. Get the Vulnrichment subset of CVEs where CISA ADP assigned a CWE (regardless of whether the CWE was the same or different than that assigned by the CNA) into a sheet/CSV file.
       1. ~1.5K (CISA ADP Assigned CWEs) of ~~8K CVEs (in Vulnrichment)
-2. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
-      1. ~700 (No) of ~1.5K 
-      2. Sort these by Confidence score i.e. start with the highest Confidence ones.
-3. Ask Gemini and Claude to review. 
+2. As a dry-run submit e.g. 50 CVE Descriptions, CWEs to each of the 3 LLMs to review via the chat UI in one prompt
+3. For all CISA ADP Assigned CWEs
+      1. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
+            1. Sort these by Confidence score i.e. start with the highest Confidence ones.
+      2. Assign the same task to Gemini and Claude via APIs driven by langchain
 
 !!! note
     As I was interested in comparing LLM responses, I did not optimize the LLM usage.
@@ -162,6 +187,16 @@ Please provide the response in a table 'cve_id', 'CWE_ID', 'Agree'. "Rationale",
 
 The table output allows copy-and-pasting by a human into a sheet.
 
+
+The prompt consists of these parts:
+
+1. Role + Task: which is the same for the Chat and API interface
+2. Output format: which is different for the Chat and API interface
+3. A binary value Agree is requested
+4. The rationale only if there is disagreement. This saves on output tokens.
+5. A Confidence score to limit impacts of hallucinations, and as a way to assess and prioritize responses by confidence.
+6. No (Few-shot) examples are provided. Based on the results, these were not necessary.
+      1. If Few-shot examples were required, I'd submit multiple CVEs in a single batch request (because putting the examples in each single CVE request would add a LOT of input tokens)
 #### Batch API Interface - JSON Output
 
 
@@ -195,15 +230,6 @@ The JSON output allows processing by machines.
 
     * But this is not done in this example; each batch request contains a single CVE only (per the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview) example)
 
-The prompt consists of these parts:
-
-1. Role + Task: which is the same for the Chat and API interface
-2. Output format: which is different for the Chat and API interface
-3. A binary value Agree is requested
-4. The rationale only if there is disagreement. This saves on output tokens.
-5. A Confidence score to limit impacts of hallucinations, and as a way to assess and prioritize responses by confidence.
-6. No (Few-shot) examples are provided. Based on the results, these were not necessary.
-      1. If Few-shot examples were required, I'd submit multiple CVEs in a single batch request (because putting the examples in each single CVE request would add a LOT of input tokens)
 
 
 ### Prompt LLMs
