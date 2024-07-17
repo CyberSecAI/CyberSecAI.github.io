@@ -322,7 +322,8 @@ CVE-2023-49224
         1. This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per CVE-CWE pair.
         2. This mitigates hitting API rate limits.
     4. Additional known good CVE descriptions and CWE assignments could be incorporated into the corpus, to augment the limited CVE observed examples that are part of the standard.
-    5. As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all CVE-CWEs)
+    5. Reducing the set of CWEs to the desired population, or providing guidance in the prompt on what CWEs to use (e.g. "don't use CWE's marked as Discouraged")
+    6. As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all CVE-CWEs)
         1. This can be done in several ways e.g. 
               1. Ask each LLM in turn to review the previous assessments by LLMs
               2. Sampling
