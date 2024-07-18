@@ -272,7 +272,7 @@ These were actually resource leaks (memory, program objects like handles etc...)
 
 
 !!! failure
-    From a sample of 30 identified incorrectly assigned CWEs, Gemini 1.5 Pro had 3 hallucinations when asked to provide a rationale for its response (response text shown below, with hallucination in **bold**).
+    From a sample of 30 assigned CWEs, Gemini 1.5 Pro had 3 hallucinations when asked to provide a rationale for its response (response text shown below, with hallucination in **bold**).
       
     !!! quote
 
