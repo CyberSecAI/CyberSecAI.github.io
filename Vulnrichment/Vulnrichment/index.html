@@ -1627,8 +1627,8 @@
 <p>To minimize human effort, 3 LLMs are used and the consensus is reviewed</p>
 <ul>
 <li>The LLMs are state-of-the-art models from different providers i.e. the best available and reasonably independent.</li>
-<li>The results are sorted by consensus i.e. 3 models in agreement, then 2 models in agreement,....</li>
-<li>A Human (me) then reviewed (sorted by consensus) and made the final decision.</li>
+<li>The results are sorted by consensus i.e. 3 models in agreement, then 2 models in agreement,.... and by the LLM's confidence in their responses</li>
+<li>A Human (me) then reviewed (sorted by consensus and confidence) and made the final decision.</li>
 </ul>
 <h3 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1692,7 +1692,7 @@ The JSON output allows processing by machines.</p>
 <li>See <a href="https://medium.com/google-cloud/latest-gemini-features-support-in-langchain4j-0-32-0-732791e4c34c">details of Latest Gemini features support in LangChain4j 0.32.0</a>.</li>
 </ul>
 <p>While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)</p>
-<p><a href="https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb">Claude doesn't have a formal "JSON Mode"</a> though in my usage, it produced valid JSON.</p>
+<p><a href="https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb">Claude doesn't have a formal "JSON Mode"</a> though, in my usage, it always produced valid JSON.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
