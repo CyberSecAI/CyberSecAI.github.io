@@ -133,8 +133,8 @@ The second approach could be used at the time of CWE assignment to get a second 
 To minimize human effort, 3 LLMs are used and the consensus is reviewed
       
 * The LLMs are state-of-the-art models from different providers i.e. the best available and reasonably independent.
-* The results are sorted by consensus i.e. 3 models in agreement, then 2 models in agreement,....
-* A Human (me) then reviewed (sorted by consensus) and made the final decision.
+* The results are sorted by consensus i.e. 3 models in agreement, then 2 models in agreement,.... and by the LLM's confidence in their responses
+* A Human (me) then reviewed (sorted by consensus and confidence) and made the final decision.
 
 
 
@@ -201,7 +201,7 @@ The JSON output allows processing by machines.
 
     While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)
 
-    [Claude doesn't have a formal "JSON Mode"](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb) though in my usage, it produced valid JSON.
+    [Claude doesn't have a formal "JSON Mode"](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb) though in my usage, it always produced valid JSON.
 
 
 !!! note
