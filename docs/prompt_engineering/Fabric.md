@@ -38,7 +38,7 @@ https://github.com/danielmiessler/fabric/blob/main/patterns/improve_prompt/syste
 
 ### Fabric Extract Wisdom
 
-We'll take [Goldman Sachs, Top of Mind, Gen Ai: Too Much Spend, Too Little Benefit?](https://www.goldmansachs.com/intelligence/pages/gs-research/gen-ai-too-much-spend-too-little-benefit/report.pdf), June 2024 as the example content to extract wisdom from. It's a 30 page report that is dense and varied.
+We'll take [Goldman Sachs, Top of Mind, Gen AI: Too Much Spend, Too Little Benefit?](https://www.goldmansachs.com/intelligence/pages/gs-research/gen-ai-too-much-spend-too-little-benefit/report.pdf), June 2024 as the example content to extract wisdom from. It's a 30 page report that is dense and varied.
 
 Below the summary by Claude 3.5 Sonnet using the [extract_article_wisdom prompt](https://github.com/danielmiessler/fabric/blob/main/patterns/extract_article_wisdom/system.md).   
 
