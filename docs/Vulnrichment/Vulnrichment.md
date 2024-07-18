@@ -201,7 +201,7 @@ The JSON output allows processing by machines.
 
     While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)
 
-    [Claude doesn't have a formal "JSON Mode"](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb) though in my usage, it always produced valid JSON.
+    [Claude doesn't have a formal "JSON Mode"](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb) though, in my usage, it always produced valid JSON.
 
 
 !!! note
