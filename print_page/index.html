@@ -542,6 +542,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NotebookLM/NotebookLM_Secure_Code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM Secure Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -993,6 +1014,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#notebooklm-notebooklm_secure_code" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. NotebookLM Secure Code
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1011,7 +1041,7 @@
           <li class="md-nav__item">
   <a href="#prompt_engineering-prompt_engineering" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Prompt Engineering
+      11. Prompt Engineering
     </span>
   </a>
   
@@ -1020,7 +1050,7 @@
           <li class="md-nav__item">
   <a href="#prompt_engineering-fabric" class="md-nav__link">
     <span class="md-ellipsis">
-      11. Fabric
+      12. Fabric
     </span>
   </a>
   
@@ -1044,7 +1074,7 @@
           <li class="md-nav__item">
   <a href="#vulnrichment-vulnrichment" class="md-nav__link">
     <span class="md-ellipsis">
-      12. CISA Vulnrichment
+      13. CISA Vulnrichment
     </span>
   </a>
   
@@ -1068,7 +1098,7 @@
           <li class="md-nav__item">
   <a href="#topicmodeling-berttopic" class="md-nav__link">
     <span class="md-ellipsis">
-      13. BertTopic
+      14. BertTopic
     </span>
   </a>
   
@@ -1092,7 +1122,7 @@
           <li class="md-nav__item">
   <a href="#annex-glossary" class="md-nav__link">
     <span class="md-ellipsis">
-      14. Glossary
+      15. Glossary
     </span>
   </a>
   
@@ -1101,7 +1131,7 @@
           <li class="md-nav__item">
   <a href="#research-research" class="md-nav__link">
     <span class="md-ellipsis">
-      15. Talks & Research
+      16. Talks & Research
     </span>
   </a>
   
@@ -2639,6 +2669,44 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <li>ChatGPT 4o found 71 parameters.</li>
 <li>Overall, with everything-as-code (infrastructure, policy, LLM answers, ....), and LLMs being able to process code, there's a lot of benefit and promise in applying LLMs.</li>
 <li>The feedback to CoGuard is via <a href="https://github.com/coguardio/coguard_openai_rule_auto_generation_research/issues/2">https://github.com/coguardio/coguard_openai_rule_auto_generation_research/issues/2</a> </li>
+</ol>
+</div></section><section class="print-page" id="notebooklm-notebooklm_secure_code"><h1 id="notebooklm-notebooklm_secure_code-notebooklm-secure-code">NotebookLM Secure Code<a class="headerlink" href="#notebooklm-notebooklm_secure_code-notebooklm-secure-code" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>In two separate conversations recently, the topic of using LLMs for secure coding came up.</p>
+<p>I was curious how NotebookLM would work for generating or reviewing secure code.</p>
+<p>Claude Sonnet 3.5 was also used for comparison.</p>
+</div>
+<h2 id="notebooklm-notebooklm_secure_code-data-sources">Data Sources<a class="headerlink" href="#notebooklm-notebooklm_secure_code-data-sources" title="Permanent link">&para;</a></h2>
+<p>Two books I had on Java were used:</p>
+<ol>
+<li><a href="https://www.informit.com/store/cert-oracle-secure-coding-standard-for-java-9780321803955">The CERT Oracle Secure Coding Standard for Java</a><ol>
+<li>The same material is available on <a href="https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java">https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java</a></li>
+</ol>
+</li>
+<li><a href="https://www.informit.com/store/java-coding-guidelines-75-recommendations-for-reliable-9780133439519">Java Coding Guidelines: 75 Recommendations for Reliable and Secure Programs</a></li>
+</ol>
+<h3 id="notebooklm-notebooklm_secure_code-test-data">Test Data<a class="headerlink" href="#notebooklm-notebooklm_secure_code-test-data" title="Permanent link">&para;</a></h3>
+<p>NIST <a href="https://samate.nist.gov/SARD/">Software Assurance Reference Dataset (SARD)</a> was used as the test dataset.</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>The <a href="https://samate.nist.gov/SARD/">Software Assurance Reference Dataset (SARD)</a> is a growing collection of test programs with documented weaknesses. Test cases vary from small synthetic programs to large applications. The programs are in C, C++, Java, PHP, and C#, and cover over 150 classes of weaknesses.</p>
+</div>
+<p>e.g. <abbr title="CWE Common Weakness Enumeration">CWE</abbr>: 191 Integer Underflow <a href="https://samate.nist.gov/SARD/test-cases/252126/versions/1.0.0#4">https://samate.nist.gov/SARD/test-cases/252126/versions/1.0.0#4</a></p>
+<h2 id="notebooklm-notebooklm_secure_code-setup">Setup<a class="headerlink" href="#notebooklm-notebooklm_secure_code-setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Import both PDFs into a new NotebookLM.</li>
+</ol>
+<h2 id="notebooklm-notebooklm_secure_code-test">Test<a class="headerlink" href="#notebooklm-notebooklm_secure_code-test" title="Permanent link">&para;</a></h2>
+<h3 id="notebooklm-notebooklm_secure_code-review-code">Review Code<a class="headerlink" href="#notebooklm-notebooklm_secure_code-review-code" title="Permanent link">&para;</a></h3>
+<h4 id="notebooklm-notebooklm_secure_code-claude-35">Claude 3.5<a class="headerlink" href="#notebooklm-notebooklm_secure_code-claude-35" title="Permanent link">&para;</a></h4>
+<h3 id="notebooklm-notebooklm_secure_code-generate-code">Generate Code<a class="headerlink" href="#notebooklm-notebooklm_secure_code-generate-code" title="Permanent link">&para;</a></h3>
+<h4 id="notebooklm-notebooklm_secure_code-claude-35_1">Claude 3.5<a class="headerlink" href="#notebooklm-notebooklm_secure_code-claude-35_1" title="Permanent link">&para;</a></h4>
+<h2 id="notebooklm-notebooklm_secure_code-takeaways">Takeaways<a class="headerlink" href="#notebooklm-notebooklm_secure_code-takeaways" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<ol>
+<li>I </li>
 </ol>
 </div></section><h1 class='nav-section-title-end'>Ended: NotebookLM</h1>
                         <h1 class='nav-section-title' id='section-prompting'>
