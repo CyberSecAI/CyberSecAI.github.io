@@ -44,7 +44,10 @@ Per [Gemini 1.5 Technical Report](https://storage.googleapis.com/deepmind-media/
 These features make Gemini 1.5 models a generational leap over existing models, offering unparalleled performance in processing and understanding extensive and complex multimodal information.
 
 
+!!! tip
+    Such systems map document content to vectors (numeric representations of words or tokens in multi-dimensional space).
 
+    Queries are based on similarity (proximity in vector space).
 
 
 
