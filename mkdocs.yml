@@ -15,6 +15,7 @@ nav:
     - NotebookLM CAPEC: NotebookLM/NotebookLM_Capec.md
     - NotebookLM ATTACK: NotebookLM/NotebookLM_Attack.md
     - NotebookLM Config: NotebookLM/NotebookLM_Config.md
+    - NotebookLM Secure Code: NotebookLM/NotebookLM_Secure_Code.md
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
