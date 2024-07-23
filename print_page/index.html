@@ -2678,12 +2678,13 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 </div></section><section class="print-page" id="notebooklm-notebooklm_secure_code"><h1 id="notebooklm-notebooklm_secure_code-notebooklm-secure-code">NotebookLM Secure Code<a class="headerlink" href="#notebooklm-notebooklm_secure_code-notebooklm-secure-code" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Overview</p>
-<p>In two separate conversations recently, the topic of using LLMs for secure coding came up.</p>
-<p>I was curious how NotebookLM would work for generating or reviewing secure code.</p>
+<p>In two separate conversations recently, the topic of using LLMs for secure coding came up.
+One of the concerns that is often raised is that GenAI Code is not secure because GenAI is trained on arbitrary code on the internet.</p>
+<p>I was curious how NotebookLM would work for generating or reviewing secure code i.e. A closed system that has been provide a lot of guidance on secure code (and not arbitrary examples).</p>
 <p>Claude Sonnet 3.5 was also used for comparison.</p>
 </div>
 <h2 id="notebooklm-notebooklm_secure_code-data-sources">Data Sources<a class="headerlink" href="#notebooklm-notebooklm_secure_code-data-sources" title="Permanent link">&para;</a></h2>
-<p>Two books I had on Java were used:</p>
+<p>Two books I had on Java were loaded to NotebookLM:</p>
 <ol>
 <li><a href="https://www.informit.com/store/cert-oracle-secure-coding-standard-for-java-9780321803955">The CERT Oracle Secure Coding Standard for Java</a><ol>
 <li>The same material is available on <a href="https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java">https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java</a></li>
@@ -2703,15 +2704,40 @@ Using the documentation of Apache Spark, which configuration parameters are rele
 <li>Import both PDFs into a new NotebookLM.</li>
 </ol>
 <h2 id="notebooklm-notebooklm_secure_code-test">Test<a class="headerlink" href="#notebooklm-notebooklm_secure_code-test" title="Permanent link">&para;</a></h2>
-<h3 id="notebooklm-notebooklm_secure_code-review-code">Review Code<a class="headerlink" href="#notebooklm-notebooklm_secure_code-review-code" title="Permanent link">&para;</a></h3>
+<h3 id="notebooklm-notebooklm_secure_code-test-code-cwe-191-integer-underflow">Test Code <abbr title="CWE Common Weakness Enumeration">CWE</abbr>: 191 Integer Underflow<a class="headerlink" href="#notebooklm-notebooklm_secure_code-test-code-cwe-191-integer-underflow" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="" src="../assets/images/sard_cwe-191.png" />
+<a href="https://samate.nist.gov/SARD/test-cases/252126/versions/1.0.0#4">https://samate.nist.gov/SARD/test-cases/252126/versions/1.0.0#4</a></p>
+</figure>
+<h3 id="notebooklm-notebooklm_secure_code-review-test-code">Review Test Code<a class="headerlink" href="#notebooklm-notebooklm_secure_code-review-test-code" title="Permanent link">&para;</a></h3>
+<p>Comments are removed from <a href="https://samate.nist.gov/SARD/test-cases/252126/versions/1.0.0#4">https://samate.nist.gov/SARD/test-cases/252126/versions/1.0.0#4</a> so the code fits in the prompt window.</p>
+<figure>
+<p><img alt="" src="../assets/images/java_review.png" /></p>
+</figure>
 <h4 id="notebooklm-notebooklm_secure_code-claude-35">Claude 3.5<a class="headerlink" href="#notebooklm-notebooklm_secure_code-claude-35" title="Permanent link">&para;</a></h4>
-<h3 id="notebooklm-notebooklm_secure_code-generate-code">Generate Code<a class="headerlink" href="#notebooklm-notebooklm_secure_code-generate-code" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="" src="../assets/images/java_review_claude.png" /></p>
+</figure>
+<h3 id="notebooklm-notebooklm_secure_code-generate-code-write-secure-code-to-multiply-2-numbers">Generate Code: Write Secure Code to Multiply 2 numbers<a class="headerlink" href="#notebooklm-notebooklm_secure_code-generate-code-write-secure-code-to-multiply-2-numbers" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="" src="../assets/images/java_mult.png" /></p>
+</figure>
+<h4 id="notebooklm-notebooklm_secure_code-use-biginteger-instead">Use BigInteger Instead<a class="headerlink" href="#notebooklm-notebooklm_secure_code-use-biginteger-instead" title="Permanent link">&para;</a></h4>
+<figure>
+<p><img alt="" src="../assets/images/java_bigint.png" /></p>
+</figure>
 <h4 id="notebooklm-notebooklm_secure_code-claude-35_1">Claude 3.5<a class="headerlink" href="#notebooklm-notebooklm_secure_code-claude-35_1" title="Permanent link">&para;</a></h4>
+<figure>
+<p><img alt="" src="../assets/images/java_claude.png" /></p>
+</figure>
+<figure>
+<p><img alt="" src="../assets/images/java_claude_bigint.png" /></p>
+</figure>
 <h2 id="notebooklm-notebooklm_secure_code-takeaways">Takeaways<a class="headerlink" href="#notebooklm-notebooklm_secure_code-takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
 <ol>
-<li>I </li>
+<li>NotebookLM with 2 Secure Code Java references performed well in these simple test cases.</li>
 </ol>
 </div></section><h1 class='nav-section-title-end'>Ended: NotebookLM</h1>
                         <h1 class='nav-section-title' id='section-prompting'>
