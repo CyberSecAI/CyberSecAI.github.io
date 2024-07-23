@@ -1,4 +1,4 @@
-# NotebookLM
+# NotebookLM Config
 
 !!! abstract "Overview"
     
@@ -124,6 +124,10 @@ The data sources are per above:
 1. https://spark.apache.org/docs/latest/configuration.html
 2. https://spark.apache.org/docs/latest/security.html
 
+
+!!! experiment "Data Sources"
+    Copies of the html files are available in
+    https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/Notebook_Attack
 
 ## Setup
 
@@ -783,13 +787,210 @@ Note that Config Namespace placeholders are used for some security configuration
           2. it appended the {ns} placeholder parameters to a different placeholder {service}
 
 
+## Claude Sonnet 3.5
+
+!!! note
+    Claude Sonnet 3.5 Pro was used as both documents were too large for the free version.
+### Original Prompt
+````
+You are an assistant that is a cybersecurity expert and knows their configuration files. Your response here should be a JSON list of strings
+Using only the documentation of Apache Spark from the URLs below (and no other source), which configuration parameters are relevant from a security perspective?
+
+The data sources are :
+1. https://spark.apache.org/docs/latest/configuration.html
+2. https://spark.apache.org/docs/latest/security.html
+````
+
+````
+Based on my analysis of the Apache Spark documentation, here is a JSON list of configuration parameters that are relevant from a security perspective:
+[
+"spark.authenticate",
+"spark.authenticate.secret",
+"spark.network.crypto.enabled",
+"spark.network.crypto.saslFallback",
+"spark.authenticate.enableSaslEncryption",
+"spark.network.sasl.serverAlwaysEncrypt",
+"spark.io.encryption.enabled",
+"spark.io.encryption.keySizeBits",
+"spark.io.encryption.keygen.algorithm",
+"spark.ssl.enabled",
+"spark.ssl.keyStore",
+"spark.ssl.keyStorePassword",
+"spark.ssl.keyPassword",
+"spark.ssl.trustStore",
+"spark.ssl.trustStorePassword",
+"spark.ssl.protocol",
+"spark.ssl.enabledAlgorithms",
+"spark.ui.filters",
+"spark.acls.enable",
+"spark.admin.acls",
+"spark.admin.acls.groups",
+"spark.modify.acls",
+"spark.modify.acls.groups",
+"spark.ui.view.acls",
+"spark.ui.view.acls.groups",
+"spark.eventLog.enabled",
+"spark.eventLog.dir",
+"spark.history.kerberos.enabled",
+"spark.history.kerberos.principal",
+"spark.history.kerberos.keytab",
+"spark.kerberos.principal",
+"spark.kerberos.keytab",
+"spark.hadoop.security.authentication",
+"spark.yarn.security.tokens.hbase.enabled",
+"spark.yarn.security.tokens.hive.enabled",
+"spark.yarn.security.credentials.hadoop.enabled",
+"spark.redaction.regex",
+"spark.ui.proxyRedirectUri",
+"spark.driver.log.dfsDir"
+]
+````
+
+### Prompt Explaining Config Namespace placeholders
+````
+Note that Config Namespace placeholders are used for some security configurations. These are placeholders "${ns}" that can take values listed under Config Namespace. For these security configurations placeholders list all possible security configurations for each Config Namespace e.g. For Property Name: "${ns}.enabled", "spark.ssl.enabled" and "spark.ssl.historyServer" would be some possible configurations now that you understand namespace placeholders, list all the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values. Your response here should be a JSON list of strings only. list the configuration parameters that are relevant from a security perspective replacing all placeholders with possible config namespace values and repeated patterns
+````
+
+````
+I understand. Here's a revised JSON list of configuration parameters relevant from a security perspective, with namespace placeholders expanded and repeated patterns included:
+[
+"spark.authenticate",
+"spark.authenticate.secret",
+"spark.network.crypto.enabled",
+"spark.network.crypto.saslFallback",
+"spark.authenticate.enableSaslEncryption",
+"spark.network.sasl.serverAlwaysEncrypt",
+"spark.io.encryption.enabled",
+"spark.io.encryption.keySizeBits",
+"spark.io.encryption.keygen.algorithm",
+"spark.ssl.enabled",
+"spark.ssl.ui.enabled",
+"spark.ssl.standalone.enabled",
+"spark.ssl.historyServer.enabled",
+"spark.ssl.keyStore",
+"spark.ssl.ui.keyStore",
+"spark.ssl.standalone.keyStore",
+"spark.ssl.historyServer.keyStore",
+"spark.ssl.keyStorePassword",
+"spark.ssl.ui.keyStorePassword",
+"spark.ssl.standalone.keyStorePassword",
+"spark.ssl.historyServer.keyStorePassword",
+"spark.ssl.keyPassword",
+"spark.ssl.ui.keyPassword",
+"spark.ssl.standalone.keyPassword",
+"spark.ssl.historyServer.keyPassword",
+"spark.ssl.trustStore",
+"spark.ssl.ui.trustStore",
+"spark.ssl.standalone.trustStore",
+"spark.ssl.historyServer.trustStore",
+"spark.ssl.trustStorePassword",
+"spark.ssl.ui.trustStorePassword",
+"spark.ssl.standalone.trustStorePassword",
+"spark.ssl.historyServer.trustStorePassword",
+"spark.ssl.protocol",
+"spark.ssl.ui.protocol",
+"spark.ssl.standalone.protocol",
+"spark.ssl.historyServer.protocol",
+"spark.ssl.enabledAlgorithms",
+"spark.ssl.ui.enabledAlgorithms",
+"spark.ssl.standalone.enabledAlgorithms",
+"spark.ssl.historyServer.enabledAlgorithms",
+"spark.ui.filters",
+"spark.acls.enable",
+"spark.admin.acls",
+"spark.admin.acls.groups",
+"spark.modify.acls",
+"spark.modify.acls.groups",
+"spark.ui.view.acls",
+"spark.ui.view.acls.groups",
+"spark.eventLog.enabled",
+"spark.eventLog.dir",
+"spark.history.kerberos.enabled",
+"spark.history.kerberos.principal",
+"spark.history.kerberos.keytab",
+"spark.kerberos.principal",
+"spark.kerberos.keytab",
+"spark.hadoop.security.authentication",
+"spark.yarn.security.tokens.hbase.enabled",
+"spark.yarn.security.tokens.hive.enabled",
+"spark.yarn.security.credentials.hadoop.enabled",
+"spark.redaction.regex",
+"spark.ui.proxyRedirectUri",
+"spark.driver.log.dfsDir",
+"spark.ssl.keyStoreType",
+"spark.ssl.ui.keyStoreType",
+"spark.ssl.standalone.keyStoreType",
+"spark.ssl.historyServer.keyStoreType",
+"spark.ssl.trustStoreType",
+"spark.ssl.ui.trustStoreType",
+"spark.ssl.standalone.trustStoreType",
+"spark.ssl.historyServer.trustStoreType",
+"spark.ssl.needClientAuth",
+"spark.ssl.ui.needClientAuth",
+"spark.ssl.standalone.needClientAuth",
+"spark.ssl.historyServer.needClientAuth",
+"spark.ui.allowFramingFrom",
+"spark.ui.xXssProtection",
+"spark.ui.xContentTypeOptions.enabled",
+"spark.ui.strictTransportSecurity"
+]
+
+````
+
+### Compare The Answer With The Expected Answer
+````
+Values in ===manual=== but not in ===claude35===:
+
+spark.yarn.shuffle.server.recovery.disabled
+spark.authenticate.secret.file
+spark.authenticate.secret.driver.file
+spark.authenticate.secret.executor.file
+spark.network.crypto.config.*
+spark.io.encryption.commons.config.*
+spark.user.groups.mapping
+spark.history.ui.acls.enable
+spark.history.ui.admin.acls
+spark.history.ui.admin.acls.groups
+spark.ssl.port
+spark.ssl.ui.port
+spark.ssl.standalone.port
+spark.ssl.historyServer.port
+
+Values in ===claude35=== but not in ===manual===:
+
+spark.eventLog.enabled
+spark.eventLog.dir
+spark.history.kerberos.enabled
+spark.history.kerberos.principal
+spark.history.kerberos.keytab
+spark.kerberos.principal
+spark.kerberos.keytab
+spark.hadoop.security.authentication
+spark.yarn.security.tokens.hbase.enabled
+spark.yarn.security.tokens.hive.enabled
+spark.yarn.security.credentials.hadoop.enabled
+spark.redaction.regex
+spark.ui.proxyRedirectUri
+spark.driver.log.dfsDir
+````
+
+!!! observation
+
+    1. `spark.yarn.shuffle.server.recovery.disabled` was not found by Claude3.5 (or ChatGPT4o or NotebookLM).     
+    2. Claude3.5 found 39 parameters in the first prompt.
+    3. When the concept of placeholder config parameters was explained in the second prompt, Claude3.5 understood it.
+    4. Claude3.5 found 14 parameters more than the human-generated answer, including several parameters that the other LLMs did not find.
+
 
 
 ## Takeaways
   
 !!! success "Takeaways" 
 
-    1. NotebookLM and ChatGPT4o did reasonably well at extracting the config parameters related to security - with NotebookLM performing better, missing just 1, and finding 18 more than the human-generated answer.
+    1. NotebookLM, ChatGPT4o and Claude3.5 Pro did reasonably well at extracting the config parameters related to security
+       1. NotebookLM performed best, missing just 1, and finding 18 more than the human-generated answer.
+       2. Claude3.5 found 79 parameters, missed 14, and found 14 more than the human-generated answer.
+       3. ChatGPT 4o found 71 parameters.
     2. Overall, with everything-as-code (infrastructure, policy, LLM answers, ....), and LLMs being able to process code, there's a lot of benefit and promise in applying LLMs.
     3. The feedback to CoGuard is via https://github.com/coguardio/coguard_openai_rule_auto_generation_research/issues/2 
 

@@ -1,4 +1,4 @@
-# NotebookLM
+# NotebookLM CWE
 
 !!! abstract "Overview"
 
@@ -26,6 +26,10 @@
 ````
 pagesper=280 file=./data/NotebookLM_CweCapec/cwe_latest.pdf ./pdfsplit.sh  
 ````
+
+!!! experiment "Data Sources"
+    A copy of the original cwe_latest.pdf, and the 10 smaller PDFs it is split into, are available in
+    https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/NotebookLM_Cwe/
 
 
 <figure markdown>
@@ -103,7 +107,7 @@ ChatGPT4o provided the same types - but gave a much richer answer than NotebookL
 </figure>
 
 ### ChatGPT4o Answer
-ChatGPT4o provided the same types - but gave a much richer answer than NotebookLM did because it has access to a lot more documents on XSS.
+ChatGPT4o provided one CWE ID.
 
 <figure markdown>
 ![](../assets/images/cve.png)
@@ -119,5 +123,6 @@ ChatGPT4o provided the same types - but gave a much richer answer than NotebookL
     1. The large CWE document could not be uploaded to NoteBookLM as one PDF document, but had to be split into smaller PDFs.
         1. The same document could be uploaded to ChatGPT4o (without splitting).
     2. Based on the extremely limited test cases here (your experience may vary):
-        1. NoteBookAI provides better answers on the provided source documents.
+        1. NoteBookLM provides better answers on the provided source documents.
         2. ChatGPT provides richer answers to questions that can be answered outside of the provided source documents.
+    3. The [Vulnrichment](../Vulnrichment/Vulnrichment.md) chapter covers a much more detailed use case - and NoteBookLM performed better than other LLMs.

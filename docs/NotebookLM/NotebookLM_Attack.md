@@ -1,6 +1,11 @@
-# NotebookLM
+# NotebookLM ATTACK
 
 !!! abstract "Overview"
+
+
+    As part of [Proactive Software Supply Chain Risk Management (P-SSCRM) Framework that I've been collaborating on](https://www.linkedin.com/feed/update/urn:li:activity:7189303367423156224/), we wanted to apply MITRE ATT&CK. It's a detailed specification, so NotebookLM can help us.
+
+    
 
     In this chapter, we'll use [NotebookLM](https://notebooklm.google.com/) to ingest the [MITRE ATT&CK Enterprise Tactics](https://attack.mitre.org/tactics/enterprise/). 
 
@@ -31,6 +36,10 @@ So we can convert that to a text file and load those as follows:
 3. Export each tab as a csv file
 4. Transpose the data to a text file
 5. Import the text files
+
+!!! experiment "Data Sources"
+    The MITRE ATTACK csv and text files, and script to convert, are available in
+    https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/Notebook_Attack
 
 
 
@@ -77,4 +86,4 @@ So we can just load each one to NoteBookLM as a text file:
   
 !!! success "Takeaways" 
 
-    1. 
+    1. Any data or document in text format can be converted to a format suitable for import to an LM.
