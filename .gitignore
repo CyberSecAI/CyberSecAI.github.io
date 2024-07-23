@@ -3,3 +3,4 @@ site
 .vscode
 checklinks_report.txt
 .DS_Store
+tmp

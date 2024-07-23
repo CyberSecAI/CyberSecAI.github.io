@@ -6,6 +6,7 @@ icon: material/play-box-edit-outline
 
 !!! abstract "Overview"
 
+    **An incorrect CWE assignment caught my eye while reading a post**
     I was reading a [post on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7214295735440187393?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7214295735440187393%2C7214365350828613632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287214365350828613632%2Curn%3Ali%3Aactivity%3A7214295735440187393%29) and the CWE assigned by CISA ADP looked wrong so...
 
     * I used my NotebookLM CWE notebook, and other LLMs, to determine the appropriate CWE.
@@ -13,21 +14,28 @@ icon: material/play-box-edit-outline
 
     I then decided to dig a bit more into this... specifically the CWEs assigned by CISA ADP.
 
+    **Using LLMs to find incorrect CWE assignments at scale**
+
+
+
     I used a consensus of LLMs to review all CWEs assigned by CISA ADP to find issues:
 
     * These issues were found automatically by a consensus of 3 LLMs: ChatGPT4o, Gemini 1.5 Pro, Claude 3.5 Sonnet who were asked to review CWEs assigned to CVEs assigned by CISA ADP.
     * The consensus output was then reviewed by a human (me).
     * I created [3 Issues initially](https://github.com/cisagov/vulnrichment/issues?q=is%3Aissue+author%3ACrashedmind+is%3Aclosed) (though there are a lot more) and these were accepted by CISA Vulnrichment and resolved promptly!
 
-    This section shows the different approaches used (and the subscription plan used):
+    The different approaches used (and the subscription plan used):
 
-    1. no-code using the browser chat interface: 
-        1. Gemini 1.5 Pro (subscription)
-        2. Claude 3.5 Sonnet (prepay)
     2. code: 
         1. ChatGPT4o [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview) (Plus Plan)
-        2. langchain calling 3 LLMs via APIs: Gemini 1.5 Pro, Claude 3.5 Sonnet, ChatGPT4
+        2. langchain calling 2 LLMs via APIs: Gemini 1.5 Pro, Claude 3.5 Sonnet (ChatGPT4 or ChatGPT4o is also supported in the code (but commented out) if your plan supports that)
+    1. no-code using the browser chat interface is not shown here but it is useful for initial evaluation
+        1. Gemini 1.5 Pro (subscription)
+        2. Claude 3.5 Sonnet (prepay)
 
+
+## Consensus of 3 LLMs
+![Consensus of 3 LLMs](https://github.com/CyberSecAI/CWEMap/blob/5a63ab52480d7686d308341de263ec3896f9caaf/images/ai_agreement_parcat.png?raw=true)
 
 
 ## CISA Vulnrichment
@@ -58,7 +66,7 @@ I have great admiration for CISA and their pragmatic initiatives like [CISA KEV]
 ## Approach to using LLMs
 The recipe focuses on Time-To-Value - and minimization of human effort - to find the most inappropriate assigned CWEs ASAP.
 
-* A more complete and costly approach would be to submit all CVE Descriptions to all 3 LLMs.
+* All CVE Descriptions and assigned CWEs were sent to all 3 LLMs.
 
 ### Don't Train A Model On Bad Data!
 It is possible to train a Language Model as a Classifier to assign CWEs to a CVE - and there are several research papers that took that approach (with limited success).
@@ -102,13 +110,13 @@ To minimize human effort, 3 LLMs are used and the consensus is reviewed
 ### Recipe
 
 1. Get the Vulnrichment subset of CVEs where CISA ADP assigned a CWE (regardless of whether the CWE was the same or different than that assigned by the CNA)
-      1. ~1.5K (CISA ADP Assigned CWEs) of ~~8K CVEs (in Vulnrichment)
-2. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
-      1. ~700 (No) of ~1.5K 
-      2. Sort these by Confidence score i.e. start with the highest Confidence ones.
-3. Then ask Gemini and Claude to review. This can be done in several ways e.g. 
-   1. For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs
-   2. Ask each LLM in turn to review the previous assessments by LLMs
+      1. ~1.8K (CISA ADP Assigned CWEs) of ~~10K CVEs (in Vulnrichment)
+3. Ask Gemini and Claude to review. This can be done in several ways e.g. 
+      1. For the subset where ChatGPT4o disagrees, ask Gemini and Claude to assess the human-assigned CWEs
+      2. Ask each LLM in turn to review the previous assessments by LLMs
+4. Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned CWE (and provide a Confidence score, and rationale if not)
+      1. Sort these by Confidence score i.e. start with the highest Confidence ones.
+
 
 ### Create a Prompt
 #### Chat Interface - Table Output
@@ -146,10 +154,10 @@ You will output a json object containing the following information:
 The JSON output allows processing by machines.
 
 
-!!! note
+!!! tip
     It is possible to submit multiple CVEs in one prompt for each batch entry i.e. similar to what is done when using the Chat interface.
 
-    * But this is not done in this example; each batch request contains a single CVE only (per the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview) example)
+    * This is what is done here. 10 CVE CWE assignments are sent per batch (though the [OpenAI Batch API](https://platform.openai.com/docs/guides/batch/overview) example contains 1 entry only)
 
 The prompt consists of these parts:
 
@@ -166,7 +174,7 @@ The prompt consists of these parts:
 
 #### Gemini 1.5 Pro Browser Chat Interface
 
-The chat interface was used in this example submitting multiple CVEs in one prompt.
+The API interface (via Langchain) was used in this example submitting multiple CVEs in one prompt.
 
 #### Claude 3.5 Sonnet Browser Chat Interface
 
@@ -182,7 +190,7 @@ https://docs.anthropic.com/en/docs/welcome
 Currently: Claude does not support a native [Batch API interface](https://www.anthropic.com/pricing#anthropic-api) - though 
 [Amazon Bedrock](https://aws.amazon.com/bedrock/pricing/) supports batching of prompts to models including Claude.
 
-The chat interface was used in this example submitting multiple CVEs in one prompt.
+The API interface (via Langchain) was used in this example submitting multiple CVEs in one prompt.
 
 
 
@@ -208,10 +216,10 @@ The Plus plan subscription was used.
 ##### Interface
 Batch Interface API.
 
-The ~1500 ADP CVE-CWE pairs were split into 15 files of 100 CVE-CWE pair prompts to comfortably fit under this token limit.
+The ~1800 ADP CVE-CWE pairs were split into 15 files of 100 CVE-CWE pair prompts to comfortably fit under this token limit.
 
 * very little effort was spent to optimize the file size (number of prompts per batch), or the prompt size.
-* The cost to process the ~1500 ADP CVE-CWE pairs: ~$1.50.
+* The cost to process the ~1800 ADP CVE-CWE pairs: ~$2.
 
 
 
@@ -220,8 +228,12 @@ The ~1500 ADP CVE-CWE pairs were split into 15 files of 100 CVE-CWE pair prompts
 !!! success "Takeaways" 
 
     1. The value of CVE data depends on its quality. 
-    2. For all published CVEs to date, [the quality of CWEs assigned is questionable](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29).
-    3. A large part of that is that humans can't grok 1000+ CWEs. LLMs can.
-    4. Using LLMs to suggest or validate CWEs can reduce the manual effort and error in CWE assignment.
-    5. LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.
-    6. LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.
+        1. For all published CVEs to date, [the quality of CWEs assigned is questionable](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29).
+        2. A large part of that is that humans can't grok 1000+ CWEs. LLMs can.
+    2. Using LLMs to suggest or validate CWEs can reduce the manual effort and error in CWE assignment.
+    3. LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.
+    4. LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.
+    5. Langchain makes it easier to have generic code that works across multiple LLMs.
+    6. LLM JSON Mode should be used where possible to reduce bad JSON output and subsequent cleanup.
+    7. Based on a manual review of the subset where all 3 LLMs disagreed with the CWE assignment, > 75% of these CWEs were incorrect (and a report with these was submitted to CISA Vulnrichment)
+        1. I did not dig into the subset where 2 of 3 LLMs disagreed.
