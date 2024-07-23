@@ -752,6 +752,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#consensus-of-3-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consensus of 3 LLMs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cisa-vulnrichment_1" class="md-nav__link">
     <span class="md-ellipsis">
       CISA Vulnrichment
@@ -1221,6 +1230,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#consensus-of-3-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consensus of 3 LLMs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cisa-vulnrichment_1" class="md-nav__link">
     <span class="md-ellipsis">
       CISA Vulnrichment
@@ -1543,28 +1561,22 @@
 </ul>
 </li>
 </ul>
-<p>This section shows the different approaches used (and the subscription plan used):</p>
+<p>The different approaches used (and the subscription plan used):</p>
 <ol>
-<li>no-code using the browser chat interface: <ol>
+<li>code: <ol>
+<li>ChatGPT4o <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> (Plus Plan)</li>
+<li>langchain calling 2 LLMs via APIs: Gemini 1.5 Pro, Claude 3.5 Sonnet (ChatGPT4 or ChatGPT4o is also supported in the code (but commented out) if your plan supports that)</li>
+</ol>
+</li>
+<li>no-code using the browser chat interface is not shown here but it is useful for initial evaluation<ol>
 <li>Gemini 1.5 Pro (subscription)</li>
 <li>Claude 3.5 Sonnet (prepay)</li>
 </ol>
 </li>
-<li>code: <ol>
-<li>ChatGPT4o <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> (Plus Plan)</li>
-<li><a href="https://www.langchain.com/">langchain</a> calling 3 LLMs via APIs: <ol>
-<li>Gemini 1.5 Pro</li>
-<li>Claude 3.5 Sonnet</li>
-<li>ChatGPT4 <ol>
-<li>I'd already used ChatGPT4o in batch mode per above, so when showing the same code could invoke 3 different models, I chose ChatGPT4 instead of ChatGPT4o.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
 </ol>
 </div>
+<h2 id="consensus-of-3-llms">Consensus of 3 LLMs<a class="headerlink" href="#consensus-of-3-llms" title="Permanent link">&para;</a></h2>
+<p><img alt="Consensus of 3 LLMs" src="https://github.com/CyberSecAI/CWEMap/blob/5a63ab52480d7686d308341de263ec3896f9caaf/images/ai_agreement_parcat.png?raw=true" /></p>
 <h2 id="cisa-vulnrichment_1"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment<a class="headerlink" href="#cisa-vulnrichment_1" title="Permanent link">&para;</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
@@ -1589,6 +1601,9 @@
 </div>
 <h2 id="get-cves-enriched-by-cisa-adp">Get CVEs Enriched by <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP<a class="headerlink" href="#get-cves-enriched-by-cisa-adp" title="Permanent link">&para;</a></h2>
 <h2 id="approach-to-using-language-models">Approach to using Language Models<a class="headerlink" href="#approach-to-using-language-models" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions and assigned CWEs were sent to all 3 LLMs.</li>
+</ul>
 <h3 id="dont-train-a-model-on-bad-data">Don't Train A Model On Bad Data!<a class="headerlink" href="#dont-train-a-model-on-bad-data" title="Permanent link">&para;</a></h3>
 <p>It is possible to train a Language Model as a Classifier to assign CWEs to a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> - and there are several research papers that took that approach e.g.</p>
 <ul>
@@ -1654,18 +1669,15 @@
 <h3 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Get the Vulnrichment subset of CVEs where <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP assigned a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (regardless of whether the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> was the same or different than that assigned by the CNA) into a sheet/CSV file.<ol>
-<li>~1.5K (<abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP Assigned CWEs) of ~~8K CVEs (in Vulnrichment)</li>
+<li>~1.8K (<abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP Assigned CWEs) of ~~10K CVEs (in Vulnrichment)</li>
 </ol>
 </li>
 <li>As a dry-run submit e.g. 50 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Descriptions, CWEs to each of the 3 LLMs to review via the chat UI in one prompt</li>
-<li>For all <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> ADP Assigned CWEs<ol>
 <li>Ask ChatGPT4o (via Batch API) to Agree (Yes/No) with the assigned <abbr title="CWE Common Weakness Enumeration">CWE</abbr> (and provide a Confidence score, and rationale if not)<ol>
 <li>Sort these by Confidence score i.e. start with the highest Confidence ones.</li>
 </ol>
 </li>
 <li>Assign the same task to Gemini and Claude via APIs driven by langchain</li>
-</ol>
-</li>
 </ol>
 <h3 id="create-a-prompt">Create a Prompt<a class="headerlink" href="#create-a-prompt" title="Permanent link">&para;</a></h3>
 <h4 id="chat-interface-table-output">Chat Interface - Table Output<a class="headerlink" href="#chat-interface-table-output" title="Permanent link">&para;</a></h4>
@@ -1715,16 +1727,16 @@ The JSON output allows processing by machines.</p>
 <p>While you can prompt an LLM to output JSON, it may not always output valid JSON and you're left with a cleanup exercise (a friend of mine had that experience when they first tried this 😉)</p>
 <p><a href="https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb">Claude doesn't have a formal "JSON Mode"</a> though, in my usage, it always produced valid JSON.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>It is possible to submit multiple CVEs in one prompt for each batch entry i.e. similar to what is done when using the Chat interface.</p>
 <ul>
-<li>But this is not done in this example; each batch request contains a single <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> only (per the <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> example)</li>
+<li>This is what is done here. 10 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments are sent per batch (though the <a href="https://platform.openai.com/docs/guides/batch/overview">OpenAI Batch API</a> example contains 1 entry only)</li>
 </ul>
 </div>
 <h3 id="llms">LLMs<a class="headerlink" href="#llms" title="Permanent link">&para;</a></h3>
 <h4 id="gemini-15-pro-api-via-langchain">Gemini 1.5 Pro API via Langchain<a class="headerlink" href="#gemini-15-pro-api-via-langchain" title="Permanent link">&para;</a></h4>
-<p>The chat interface was used in this example submitting multiple CVEs in one prompt.</p>
+<p>The API interface (via Langchain) was used in this example submitting multiple CVEs in one prompt.</p>
 <h4 id="claude-35-sonnet-api-via-langchain">Claude 3.5 Sonnet API via Langchain<a class="headerlink" href="#claude-35-sonnet-api-via-langchain" title="Permanent link">&para;</a></h4>
 <h5 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h5>
 <p>Currently: Claude 3.5 Sonnet was used as it has the best performance vs cost for Claude models.</p>
@@ -1735,6 +1747,7 @@ The JSON output allows processing by machines.</p>
 <h5 id="interface">Interface<a class="headerlink" href="#interface" title="Permanent link">&para;</a></h5>
 <p>Currently: Claude does not support a native <a href="https://www.anthropic.com/pricing#anthropic-api">Batch API interface</a> - though 
 <a href="https://aws.amazon.com/bedrock/pricing/">Amazon Bedrock</a> supports batching of prompts to models including Claude.</p>
+<p>The API interface (via Langchain) was used in this example submitting multiple CVEs in one prompt.</p>
 <h4 id="chatgpt4o-batch-api"><a href="https://platform.openai.com/docs/guides/batch/overview">ChatGPT4o Batch API</a><a class="headerlink" href="#chatgpt4o-batch-api" title="Permanent link">&para;</a></h4>
 <h5 id="model_1">Model<a class="headerlink" href="#model_1" title="Permanent link">&para;</a></h5>
 <p>gpt-4o</p>
@@ -1751,10 +1764,10 @@ The JSON output allows processing by machines.</p>
 </div>
 <h5 id="interface_1">Interface<a class="headerlink" href="#interface_1" title="Permanent link">&para;</a></h5>
 <p>Batch Interface API.</p>
-<p>The ~1500 ADP <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pairs were split into 15 files of 100 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pair prompts to comfortably fit under this token limit.</p>
+<p>The ~1800 ADP <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pairs were split into 15 files of 100 <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pair prompts to comfortably fit under this token limit.</p>
 <ul>
 <li>very little effort was spent to optimize the file size (number of prompts per batch), or the prompt size.</li>
-<li>The cost to process the ~1500 ADP <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pairs: ~$1.50.</li>
+<li>The cost to process the ~1800 ADP <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pairs: ~$2.</li>
 </ul>
 <h2 id="observations">Observations<a class="headerlink" href="#observations" title="Permanent link">&para;</a></h2>
 <h3 id="leak">Leak<a class="headerlink" href="#leak" title="Permanent link">&para;</a></h3>
@@ -1842,12 +1855,25 @@ The JSON output allows processing by machines.</p>
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
 <ol>
-<li>The value of <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> data depends on its quality. </li>
+<li>
+<p>The value of <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> data depends on its quality. </p>
+<ol>
 <li>For all published CVEs to date, <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">the quality of CWEs assigned is questionable</a>.</li>
 <li>A large part of that is that humans can't grok 1000+ CWEs. LLMs can.</li>
-<li>Using LLMs to suggest or validate CWEs can reduce the manual effort and error in <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.</li>
+</ol>
+</li>
+<li>
+<p>Using LLMs to suggest or validate CWEs can reduce the manual effort and error in <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.</p>
+</li>
 <li>LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.</li>
 <li>LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.</li>
+<li>Langchain makes it easier to have generic code that works across multiple LLMs.</li>
+<li>LLM JSON Mode should be used where possible to reduce bad JSON output and subsequent cleanup.</li>
+<li>Based on a manual review of the subset where all 3 LLMs disagreed with the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment, &gt; 75% of these CWEs were incorrect (and a report with these was submitted to <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment)<ol>
+<li>I did not dig into the subset where 2 of 3 LLMs disagreed.</li>
+</ol>
+</li>
+<li>Using LLMs to suggest or validate CWEs can reduce the manual effort and error in <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.</li>
 <li>A closed-system that is grounded on the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard only e.g. NotebookLM, performs very well for assigning CWEs, or reviewing assigned CWEs (though it does not have an API so can't do this at scale), and no hallucinations were observed.</li>
 </ol>
 </div>
