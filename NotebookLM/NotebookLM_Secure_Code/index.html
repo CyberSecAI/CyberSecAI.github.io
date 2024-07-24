@@ -593,6 +593,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#vulnerability-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#data-sources" class="md-nav__link">
     <span class="md-ellipsis">
       Data Sources
@@ -1072,6 +1081,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#vulnerability-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnerability Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#data-sources" class="md-nav__link">
     <span class="md-ellipsis">
       Data Sources
@@ -1217,6 +1235,13 @@ One of the concerns that is often raised is that GenAI Code is not secure becaus
 <p>I was curious how NotebookLM would work for generating or reviewing secure code i.e. A closed system that has been provide a lot of guidance on secure code (and not arbitrary examples).</p>
 <p>Claude Sonnet 3.5 was also used for comparison.</p>
 </div>
+<h2 id="vulnerability-types">Vulnerability Types<a class="headerlink" href="#vulnerability-types" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.amazon.com/Secure-Programming-Static-Analysis-Brian/dp/0321424778/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1345459967&amp;sr=1-1&amp;keywords=Secure+Programming+with+Static+Analysis">Secure Programming with Static Analysis</a>, classifies vulnerability types as follows:</p>
+<figure>
+<p><img alt="" src="../../assets/images/Secure_programming_with_Static_Analysis.png" /></p>
+</figure>
+<p>LLMs go beyond understanding syntax to understanding semantics and may be effective in the 3 quadrants that traditional static analysis isn't.</p>
+<p>But in this simple test case below, the focus is on Generic defects visible in the code, as an initial proof of concept.</p>
 <h2 id="data-sources">Data Sources<a class="headerlink" href="#data-sources" title="Permanent link">&para;</a></h2>
 <p>Two books I had on Java were loaded to NotebookLM:</p>
 <ol>
