@@ -9,6 +9,18 @@
 
     Claude Sonnet 3.5 was also used for comparison.
 
+## Vulnerability Types
+
+[Secure Programming with Static Analysis](http://www.amazon.com/Secure-Programming-Static-Analysis-Brian/dp/0321424778/ref=sr_1_1?s=books&ie=UTF8&qid=1345459967&sr=1-1&keywords=Secure+Programming+with+Static+Analysis), classifies vulnerability types as follows:
+
+<figure markdown>
+![](../assets/images/Secure_programming_with_Static_Analysis.png)
+</figure>
+
+LLMs go beyond understanding syntax to understanding semantics and may be effective in the 3 quadrants that traditional static analysis isn't.
+
+But in this simple test case below, the focus is on Generic defects visible in the code, as an initial proof of concept.
+
 ## Data Sources
 
 Two books I had on Java were loaded to NotebookLM:
