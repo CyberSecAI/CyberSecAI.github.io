@@ -331,8 +331,8 @@ CVE-2023-49224
         2. In practice, several hundred CWEs are assigned to CVEs.
     2. The text from the references in the CVE "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the CVE Description for CWE review or assignment.
         1. These references were reviewed manually (for the consensus of incorrect CWE assignments)
-        2. It is relatively easy to retrieve this content automatically but this content varies significantly by type (text, image, pdf), quality, structure.
         3. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone
+        2. It is relatively easy to retrieve this content automatically but this content varies significantly by type (text, image, pdf), quality, structure.
         4. Separately, it is common that these links break because the original website or post is removed, or it's not in the latest version in Github,... - so it would be useful to have the extracted text at the time of CWE assignment.  
     3. Additional known good CVE descriptions and CWE assignments could be incorporated into the corpus, to augment the limited CVE observed examples that are part of the CWE standard.
     4. Reducing the set of CWEs to the desired population, or providing guidance in the prompt on what CWEs to use (e.g. "don't use CWE's marked as Discouraged")
