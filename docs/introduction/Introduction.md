@@ -2,9 +2,19 @@
 
 !!! abstract "About this Guide"
 
-      This guide is in an initial raw state currently and is largely written by me for me... to organize my play time as I play with, and apply, these tools.
+      This guide is in an initial early access state currently and is written to organize my play time as I play with, and apply, these tools.
 
-      But you might find it useful.
+      The content is about solving real problems e.g. how to 
+      
+      * view the main topics in a set of documents
+      * validate assigned [CWEs](https://cwe.mitre.org/), and suggest [CWEs](https://cwe.mitre.org/) to assign 
+      * chat with large documents 
+      * extract configuration parameters from user manuals.
+
+      These examples were driven by a user need. 
+
+      While the examples focus on specific areas, they can be applied in general to many areas.
+      
 
 !!! success "After reading this guide you should be able to"
     1. Apply Language Models to augment and amplify your skills.
