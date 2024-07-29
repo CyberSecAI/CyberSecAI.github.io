@@ -1172,7 +1172,6 @@
 <div class="admonition tip">
 <p class="admonition-title">Why Read this Guide?</p>
 <p>This guide shows how cybersecurity professionals can get up and running quickly with AI tools.</p>
-<p>It's in an initial raw state currently and is largely written by me for me... to organize my play time as I play with, and apply, these tools.</p>
 <p>Large Language Models (hosted and open source), and BERT-based language models tools will be covered e.g.</p>
 <ol>
 <li>NotebookLM</li>
@@ -1190,8 +1189,16 @@
                         <section class="print-page" id="introduction-introduction"><h1 id="introduction-introduction-introduction">Introduction<a class="headerlink" href="#introduction-introduction-introduction" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">About this Guide</p>
-<p>This guide is in an initial raw state currently and is largely written by me for me... to organize my play time as I play with, and apply, these tools.</p>
-<p>But you might find it useful.</p>
+<p>This guide is in an initial early access state currently and is written to organize my play time as I play with, and apply, these tools.</p>
+<p>The content is about solving real problems e.g. how to </p>
+<ul>
+<li>view the main topics in a set of documents</li>
+<li>validate assigned <a href="https://cwe.mitre.org/">CWEs</a>, and suggest <a href="https://cwe.mitre.org/">CWEs</a> to assign </li>
+<li>chat with large documents </li>
+<li>extract configuration parameters from user manuals.</li>
+</ul>
+<p>These examples were driven by a user need. </p>
+<p>While the examples focus on specific areas, they can be applied in general to many areas.</p>
 </div>
 <div class="admonition success">
 <p class="admonition-title">After reading this guide you should be able to</p>
@@ -1247,10 +1254,11 @@
 <p>I enjoy learning about, playing with, and applying these tools to better solve problems:</p>
 <ul>
 <li>I wrote this guide for me, to organize my thoughts and my play time as I play with, and apply, Language Models.</li>
-<li>You may find it useful.</li>
 <li>I've found by putting something out there, you get something back.</li>
+<li>It's the guide I wish existed already.</li>
 </ul>
 <p>This approach worked well for the <a href="https://www.linkedin.com/posts/chrisamadden_cybersecurity-riskmanagement-vulnerabilitymanagement-activity-7179915292775452673-5ucc/"><abbr title="The likelihood of a vulnerability being exploited and the potential impact of such an exploit on an organization.">Risk</abbr>-Based Prioritization guide</a>...</p>
+<p>You may find it useful.</p>
 <p><a href="https://www.linkedin.com/in/chrisamadden/">Chris Madden</a></p></section><h1 class='nav-section-title-end'>Ended: Introduction</h1>
                         <h1 class='nav-section-title' id='section-notebooklm'>
                             NotebookLM <a class='headerlink' href='#section-notebooklm' title='Permanent link'>↵</a>
@@ -1506,6 +1514,11 @@ Remediation Level (RL) is NOT part of the Exploitability Metrics</p>
 <li>without uploading any documents to it.</li>
 <li>uploading a document to it.</li>
 </ol>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>This content and approach was presented to the <a href="https://github.com/Root-Cause-Mapping-Working-Group/RCM-WG"><abbr title="CWE Common Weakness Enumeration">CWE</abbr> Root Cause Mapping Working Group</a> mid July.</p>
+<p>The feedback was very positive!</p>
 </div>
 <h2 id="notebooklm-notebooklm_cwe-data-sources">Data Sources<a class="headerlink" href="#notebooklm-notebooklm_cwe-data-sources" title="Permanent link">&para;</a></h2>
 <p><a href="https://cwe.mitre.org/data/published/cwe_latest.pdf">cwe_latest.pdf </a> from <a href="https://cwe.mitre.org/data/downloads.html">https://cwe.mitre.org/data/downloads.html</a> has 2789 pages (version <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Version 4.14 2024-02-29).</p>
@@ -3312,17 +3325,12 @@ The JSON output allows processing by machines.</p>
 </li>
 <li>The text from the references in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description for <abbr title="CWE Common Weakness Enumeration">CWE</abbr> review or assignment.<ol>
 <li>These references were reviewed manually (for the consensus of incorrect <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments)</li>
-<li>This is relatively easy to do automatically</li>
+<li>It is relatively easy to retrieve this content automatically but this content varies significantly by type (text, image, pdf), quality, structure.</li>
 <li>In some cases, this has additional text available that can inform the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment beyond the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description alone</li>
-<li>Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.</li>
+<li>Separately, it is common that these links break because the original website or post is removed, or it's not in the latest version in Github,... - so it would be useful to have the extracted text at the time of <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.  </li>
 </ol>
 </li>
-<li>For bulk processing, it is possible to submit multiple CVEs for assignment, or review, in one prompt via the API (what I do if using the chat UI)<ol>
-<li>This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-<abbr title="CWE Common Weakness Enumeration">CWE</abbr> pair.</li>
-<li>This mitigates hitting API rate limits.</li>
-</ol>
-</li>
-<li>Additional known good <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> descriptions and <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments could be incorporated into the corpus, to augment the limited <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> observed examples that are part of the standard.</li>
+<li>Additional known good <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> descriptions and <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments could be incorporated into the corpus, to augment the limited <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> observed examples that are part of the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard.</li>
 <li>Reducing the set of CWEs to the desired population, or providing guidance in the prompt on what CWEs to use (e.g. "don't use <abbr title="CWE Common Weakness Enumeration">CWE</abbr>'s marked as Discouraged")</li>
 <li>As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-CWEs)<ol>
 <li>This can be done in several ways e.g. <ol>
