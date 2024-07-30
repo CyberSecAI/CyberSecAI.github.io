@@ -36,16 +36,17 @@ I did this initially as part of a [Linked Thread](https://www.linkedin.com/feed/
 
 ## Code
 
-The starting point code is deliberately chosen as unrelated to CyberSecurity: https://github.com/splevine/harnessing-nlp-cx-demo Mar 2024 (where this repo gives an excellent overview of NLP and BERTopic and SetFit).
+!!! example "Source Code"
+    The starting point code is deliberately chosen as unrelated to CyberSecurity: https://github.com/splevine/harnessing-nlp-cx-demo Mar 2024 (where this repo gives an excellent overview of NLP and BERTopic and SetFit).
 
-The main changes I made were:
+    The main changes I made were:
 
-1. Don't use wandb (Weights and Balances) service as it was not needed for the demo
-2. Use the 1400 CWE view [1400.csv](https://cwe.mitre.org/data/csv/1400.csv.zip) as the input Data
-3. Use SentenceTransformer("basel/ATTACK-BERT") as the embedding_model so that CyberSecurity embeddings are used.
+    1. Don't use wandb (Weights and Balances) service as it was not needed for the demo
+    2. Use the 1400 CWE view [1400.csv](https://cwe.mitre.org/data/csv/1400.csv.zip) as the input Data
+    3. Use SentenceTransformer("basel/ATTACK-BERT") as the embedding_model so that CyberSecurity embeddings are used.
 
-The code and visualizations is available here: https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing
-No effort was made to optimize the topic modeling i.e. it was completely unsupervised.
+    The code and visualizations are available here: https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing
+    No effort was made to optimize the topic modeling i.e. it was completely unsupervised.
 
 
 

@@ -24,7 +24,6 @@
 
 
 
-
 ## Data Sources
 [cwe_latest.pdf ](https://cwe.mitre.org/data/published/cwe_latest.pdf) from https://cwe.mitre.org/data/downloads.html has 2789 pages (version CWE Version 4.14 2024-02-29).
 

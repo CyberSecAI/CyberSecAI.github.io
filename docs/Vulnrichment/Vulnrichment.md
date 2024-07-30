@@ -53,6 +53,9 @@ icon: material/play-box-edit-outline
 ![Consensus of 3 LLMs](https://github.com/CyberSecAI/CWEMap/blob/5a63ab52480d7686d308341de263ec3896f9caaf/images/ai_agreement_parcat.png?raw=true)
 
 
+!!! example "Source Code"
+    https://github.com/CyberSecAI/CWEMap
+
 
 ## CISA Vulnrichment
 
