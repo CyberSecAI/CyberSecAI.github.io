@@ -49,6 +49,12 @@ icon: material/play-box-edit-outline
         2. Claude 3.5 Sonnet (prepay)
 
 
+!!! success  
+
+    The approach described here resulted in successfully identifying incorrectly assigned CWEs, and identifying the correct CWEs, and a report to CISA Vulnrichment.
+
+    
+
 ## Consensus of 3 LLMs
 ![Consensus of 3 LLMs](https://github.com/CyberSecAI/CWEMap/blob/5a63ab52480d7686d308341de263ec3896f9caaf/images/ai_agreement_parcat.png?raw=true)
 
