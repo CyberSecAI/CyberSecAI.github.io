@@ -3071,8 +3071,16 @@ where</p>
 </li>
 </ol>
 </div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The approach described here resulted in successfully identifying incorrectly assigned CWEs, and identifying the correct CWEs, and a report to <abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment.</p>
+</div>
 <h2 id="vulnrichment-vulnrichment-consensus-of-3-llms">Consensus of 3 LLMs<a class="headerlink" href="#vulnrichment-vulnrichment-consensus-of-3-llms" title="Permanent link">&para;</a></h2>
 <p><img alt="Consensus of 3 LLMs" src="https://github.com/CyberSecAI/CWEMap/blob/5a63ab52480d7686d308341de263ec3896f9caaf/images/ai_agreement_parcat.png?raw=true" /></p>
+<div class="admonition example">
+<p class="admonition-title">Source Code</p>
+<p><a href="https://github.com/CyberSecAI/CWEMap">https://github.com/CyberSecAI/CWEMap</a></p>
+</div>
 <h2 id="vulnrichment-vulnrichment-cisa-vulnrichment_1"><abbr title="Cybersecurity &amp; Infrastructure Security Agency">CISA</abbr> Vulnrichment<a class="headerlink" href="#vulnrichment-vulnrichment-cisa-vulnrichment_1" title="Permanent link">&para;</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
@@ -3325,8 +3333,8 @@ The JSON output allows processing by machines.</p>
 </li>
 <li>The text from the references in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description for <abbr title="CWE Common Weakness Enumeration">CWE</abbr> review or assignment.<ol>
 <li>These references were reviewed manually (for the consensus of incorrect <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignments)</li>
-<li>It is relatively easy to retrieve this content automatically but this content varies significantly by type (text, image, pdf), quality, structure.</li>
 <li>In some cases, this has additional text available that can inform the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment beyond the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description alone</li>
+<li>It is relatively easy to retrieve this content automatically but this content varies significantly by type (text, image, pdf), quality, structure.</li>
 <li>Separately, it is common that these links break because the original website or post is removed, or it's not in the latest version in Github,... - so it would be useful to have the extracted text at the time of <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment.  </li>
 </ol>
 </li>
@@ -3394,6 +3402,8 @@ The JSON output allows processing by machines.</p>
 </ul>
 <p>I did this initially as part of a <a href="https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186485198996353024%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186485198996353024%2Curn%3Ali%3Aactivity%3A7186373368344920064%29">Linked Thread</a>, to illustrate Topic Modeling as a solution, but also the ease and speed at which it could be done.</p>
 <h2 id="topicmodeling-berttopic-code">Code<a class="headerlink" href="#topicmodeling-berttopic-code" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Source Code</p>
 <p>The starting point code is deliberately chosen as unrelated to CyberSecurity: <a href="https://github.com/splevine/harnessing-nlp-cx-demo">https://github.com/splevine/harnessing-nlp-cx-demo</a> Mar 2024 (where this repo gives an excellent overview of NLP and BERTopic and SetFit).</p>
 <p>The main changes I made were:</p>
 <ol>
@@ -3401,8 +3411,9 @@ The JSON output allows processing by machines.</p>
 <li>Use the 1400 <abbr title="CWE Common Weakness Enumeration">CWE</abbr> view <a href="https://cwe.mitre.org/data/csv/1400.csv.zip">1400.csv</a> as the input Data</li>
 <li>Use SentenceTransformer("basel/ATTACK-BERT") as the embedding_model so that CyberSecurity embeddings are used.</li>
 </ol>
-<p>The code and visualizations is available here: <a href="https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing">https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing</a>
+<p>The code and visualizations are available here: <a href="https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing">https://colab.research.google.com/drive/168i3oHekL4Cva2s2w01KMq6mnffDgxIS?usp=sharing</a>
 No effort was made to optimize the topic modeling i.e. it was completely unsupervised.</p>
+</div>
 <h2 id="topicmodeling-berttopic-topic-model-of-the-1400-cwes-in-1400-view">Topic Model of the ~1400 CWEs in 1400 View<a class="headerlink" href="#topicmodeling-berttopic-topic-model-of-the-1400-cwes-in-1400-view" title="Permanent link">&para;</a></h2>
 <figure>
 <p><img alt="" src="../assets/images/1400_classes.png" />
