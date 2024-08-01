@@ -93,7 +93,7 @@ Comments are removed from https://samate.nist.gov/SARD/test-cases/252126/version
 
 ## Llama 3.1 405B Code Training
 
-Llama 3.1 405B was was released July 2024.
+Llama 3.1 405B was released July 2024.
 
 The training process to generate good code is described in https://www.deeplearning.ai/the-batch/issue-260/.
 

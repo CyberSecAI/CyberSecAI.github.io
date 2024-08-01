@@ -9,3 +9,7 @@
 * [Natural Language Processing in Action, 2nd ed.](https://www.manning.com/books/natural-language-processing-in-action-second-edition)
 * [Data Storytelling with Generative AI using Altair and Python](https://www.manning.com/books/data-storytelling-with-generative-ai)
 * langchain in your pocket
+
+## Newsletters
+
+* https://www.deeplearning.ai/the-batch/issue-260/
