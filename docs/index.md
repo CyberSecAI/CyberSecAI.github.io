@@ -5,9 +5,7 @@
 
 !!! tip "Why Read this Guide?"
     This guide shows how cybersecurity professionals can get up and running quickly with AI tools.
-
-    It's in an initial raw state currently and is largely written by me for me... to organize my play time as I play with, and apply, these tools.
-    
+  
     Large Language Models (hosted and open source), and BERT-based language models tools will be covered e.g.
     
     1. NotebookLM

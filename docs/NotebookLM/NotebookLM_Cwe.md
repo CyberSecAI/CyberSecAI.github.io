@@ -14,6 +14,14 @@
     1. without uploading any documents to it.
     2. uploading a document to it.
     
+!!! success  
+
+    This content and approach was presented to the [CWE Root Cause Mapping Working Group](https://github.com/Root-Cause-Mapping-Working-Group/RCM-WG) mid July.
+
+    The feedback was very positive!
+    
+    
+
 
 
 ## Data Sources

@@ -49,9 +49,18 @@ icon: material/play-box-edit-outline
         2. Claude 3.5 Sonnet (prepay)
 
 
+!!! success  
+
+    The approach described here resulted in successfully identifying incorrectly assigned CWEs, and identifying the correct CWEs, and a report to CISA Vulnrichment.
+
+    
+
 ## Consensus of 3 LLMs
 ![Consensus of 3 LLMs](https://github.com/CyberSecAI/CWEMap/blob/5a63ab52480d7686d308341de263ec3896f9caaf/images/ai_agreement_parcat.png?raw=true)
 
+
+!!! example "Source Code"
+    https://github.com/CyberSecAI/CWEMap
 
 
 ## CISA Vulnrichment
@@ -331,15 +340,12 @@ CVE-2023-49224
         2. In practice, several hundred CWEs are assigned to CVEs.
     2. The text from the references in the CVE "References to Advisories, Solutions, and Tools" was not retrieved and fed to the LLM as part of the CVE Description for CWE review or assignment.
         1. These references were reviewed manually (for the consensus of incorrect CWE assignments)
-        2. This is relatively easy to do automatically
         3. In some cases, this has additional text available that can inform the CWE assignment beyond the CVE Description alone
-        4. Separately, it is common that these links break because the original website or post is removed - so it would be useful to have the extracted text at the time of CWE assignment.
-    3. For bulk processing, it is possible to submit multiple CVEs for assignment, or review, in one prompt via the API (what I do if using the chat UI)
-        1. This reduces the input token usage/cost because the verbose prompt instructions are required once - not once per CVE-CWE pair.
-        2. This mitigates hitting API rate limits.
-    4. Additional known good CVE descriptions and CWE assignments could be incorporated into the corpus, to augment the limited CVE observed examples that are part of the standard.
-    5. Reducing the set of CWEs to the desired population, or providing guidance in the prompt on what CWEs to use (e.g. "don't use CWE's marked as Discouraged")
-    6. As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all CVE-CWEs)
+        2. It is relatively easy to retrieve this content automatically but this content varies significantly by type (text, image, pdf), quality, structure.
+        4. Separately, it is common that these links break because the original website or post is removed, or it's not in the latest version in Github,... - so it would be useful to have the extracted text at the time of CWE assignment.  
+    3. Additional known good CVE descriptions and CWE assignments could be incorporated into the corpus, to augment the limited CVE observed examples that are part of the CWE standard.
+    4. Reducing the set of CWEs to the desired population, or providing guidance in the prompt on what CWEs to use (e.g. "don't use CWE's marked as Discouraged")
+    5. As I was interested in comparing LLM responses, I did not optimize the LLM usage (all LLMs were fed all CVE-CWEs)
         1. This can be done in several ways e.g. 
               1. Ask each LLM in turn to review the previous assessments by LLMs
               2. Sampling
