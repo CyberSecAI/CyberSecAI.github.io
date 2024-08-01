@@ -32,7 +32,7 @@ In this example, we'll look at CWEs.
 
 * Specifically, generate a Topic Model of the ~1400 CWEs in [1400 View](https://cwe.mitre.org/data/definitions/1400.html), so we can better understand the underlying patterns and themes.
 
-I did this initially as part of a [Linked Thread](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186485198996353024%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186485198996353024%2Curn%3Ali%3Aactivity%3A7186373368344920064%29), to illustrate Topic Modeling as a solution, but also the ease and speed at which it could be done.
+I did this initially as part of a [LinkedIn Thread](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186485198996353024%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186485198996353024%2Curn%3Ali%3Aactivity%3A7186373368344920064%29), to illustrate Topic Modeling as a solution, but also the ease and speed at which it could be done.
 
 ## Code
 

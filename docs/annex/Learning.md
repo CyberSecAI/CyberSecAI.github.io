@@ -13,3 +13,7 @@
 ## Newsletters
 
 * https://www.deeplearning.ai/the-batch/issue-260/
+
+
+## Lists
+1. https://joelbooks.medium.com/top-8-books-about-generative-ai-2024-llms-gpts-diffusion-models-b70663f72686
