@@ -5,13 +5,13 @@
     In two separate conversations recently, the topic of using LLMs for secure coding came up.
     One of the concerns that is often raised is that GenAI Code is not secure because GenAI is trained on arbitrary code on the internet.
 
-    I was curious how NotebookLM would work for generating or reviewing secure code i.e. A closed system that has been provide a lot of guidance on secure code (and not arbitrary examples).
+    I was curious how NotebookLM would work for generating or reviewing secure code i.e. a closed system that has been provided a lot of guidance on secure code (and not arbitrary examples).
 
     Claude Sonnet 3.5 was also used for comparison.
 
 ## Vulnerability Types
 
-[Secure Programming with Static Analysis](http://www.amazon.com/Secure-Programming-Static-Analysis-Brian/dp/0321424778/ref=sr_1_1?s=books&ie=UTF8&qid=1345459967&sr=1-1&keywords=Secure+Programming+with+Static+Analysis), classifies vulnerability types as follows:
+[Secure Programming with Static Analysis](http://www.amazon.com/Secure-Programming-Static-Analysis-Brian/dp/0321424778/ref=sr_1_1?s=books&ie=UTF8&qid=1345459967&sr=1-1&keywords=Secure+Programming+with+Static+Analysis) classifies vulnerability types as follows:
 
 <figure markdown>
 ![](../assets/images/Secure_programming_with_Static_Analysis.png)

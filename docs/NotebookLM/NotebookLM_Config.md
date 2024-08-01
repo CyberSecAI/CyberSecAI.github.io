@@ -127,7 +127,7 @@ The data sources are per above:
 
 !!! experiment "Data Sources"
     Copies of the html files are available in
-    https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/Notebook_Attack
+    https://github.com/CyberSecAI/CyberSecAI.github.io/tree/main/data/NotebookLM_Config
 
 ## Setup
 
