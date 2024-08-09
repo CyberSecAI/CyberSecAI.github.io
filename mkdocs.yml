@@ -16,14 +16,14 @@ nav:
     - NotebookLM ATTACK: NotebookLM/NotebookLM_Attack.md
     - NotebookLM Config: NotebookLM/NotebookLM_Config.md
     - NotebookLM Secure Code: NotebookLM/NotebookLM_Secure_Code.md
+  - Closed Grounded System: 
+    - Grounding: Grounded/grounding.md
+    - ChatGPT CWE GPT: Grounded/cwe_gpt.md
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
   - Vulnrichment:
     - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
-  - Closed Grounded System: 
-    - Grounding: Grounded/grounding.md
-    - ChatGPT CWE GPT: Grounded/cwe_gpt.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
   - Annex:
