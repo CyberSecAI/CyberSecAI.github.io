@@ -9,9 +9,9 @@
     Here we'll use ChatGPT with the MITRE CWE specification to aid mapping CWEs to vulnerability descriptions.
 
 ## Recipe
-    1. use ChatGPT GPTs ["custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."](https://chatgpt.com/gpts) 
-    2. provide the MITRE CWE specification as the "extra knowledge" in JSON format (not PDF)
-    3. limit the GPT to that knowledge only i.e. disable web search.
+    1. Use ChatGPT GPTs ["custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."](https://chatgpt.com/gpts) 
+    2. Provide the MITRE CWE specification as the "extra knowledge" in JSON format (not PDF)
+    3. Limit the GPT to that knowledge only i.e. disable web search.
 
 
 ## MITRE CWE Specification
@@ -24,6 +24,15 @@
    1. because the single file is too large to import
    2. use Claude 3.5 to generate the python code to do this
    
+## Configure ChatGPT CWE GPT
+1. Import the MITRE CWE Specification as split JSON files
+2. Disable all capabilities.
+   1. Web browsing is disabled so the answers come from the imported MITRE CWE Specification
+3. Provide example starter prompts
+   1. what is the best CWE to describe the root cause weakness in CVE "an issue in the Pickle Python library of some product allows attackers to execute arbitrary commands". Provide CVEs with the most similar root cause to support your answer.
+   2. what is the best CWE to describe the root cause weakness in CVE "ProductX contains a default SSH public key in the authorized_keys file. A remote attacker could use this key to gain root privileges.". Provide CVEs with the most similar root cause to support your answer.
+   3. what cwe ids are associated with xss. list them all
+   4. what cwe ids are associated with path or directory traversal. list them all
 
 <figure markdown>
 ![](../assets/images/chatgpt_cwe_gpt.png)
