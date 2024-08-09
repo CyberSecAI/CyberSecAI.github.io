@@ -8,6 +8,8 @@
 
     Here we'll use ChatGPT with the MITRE CWE specification to aid mapping CWEs to vulnerability descriptions.
 
+    This is a no-code option.
+
 ## Recipe
     1. Use ChatGPT GPTs ["custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."](https://chatgpt.com/gpts) 
     2. Provide the MITRE CWE specification as the "extra knowledge" in JSON format (not PDF)
@@ -38,3 +40,7 @@
 ![](../assets/images/chatgpt_cwe_gpt.png)
 </figure>
 
+  
+!!! success "Takeaways" 
+
+    1.

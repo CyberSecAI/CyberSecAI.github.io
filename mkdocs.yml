@@ -21,6 +21,8 @@ nav:
     - Fabric: prompt_engineering/Fabric.md    
   - Vulnrichment:
     - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
+  - Closed Grounded System: 
+    - ChatGPT CWE GPT: Grounded/cwe_gpt.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
   - Annex:
