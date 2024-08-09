@@ -22,6 +22,7 @@ nav:
   - Vulnrichment:
     - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
   - Closed Grounded System: 
+    - Grounding: Grounded/grounding.md
     - ChatGPT CWE GPT: Grounded/cwe_gpt.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md

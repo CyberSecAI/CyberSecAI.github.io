@@ -17,3 +17,9 @@
 
 ## Lists
 1. https://joelbooks.medium.com/top-8-books-about-generative-ai-2024-llms-gpts-diffusion-models-b70663f72686
+
+https://emt.gartnerweb.com/ngw/globalassets/en/cybersecurity/documents/predicts-2024-cybersecurity-ai.pdf
+https://www.wardsauto.com/industry/gartner-predicts-highs-and-lows-of-ai-in-cybersecurity
+
+
+HF courses
