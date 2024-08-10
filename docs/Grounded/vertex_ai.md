@@ -6,13 +6,15 @@
 
     This is a no-code option.
 
-    We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)
+    We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)cwe_gpt
 
     2. **Grounded**: content is provided to inform the answers
     1. **Closed system**: answers come from only the documents you provide
 
 !!! success "Result"
     The result is that we have a grounded closed system.
+
+    But we don't have reference links to the source content in the response.
 
 
 ## Grounding Confidence
@@ -31,7 +33,7 @@
 
 
 ## Recipe
-Same recipe as [before](./cwe_gpt.md#recipe) but we'll use [Google Vertex AI Agent Builder ](https://cloud.google.com/products/agent-builder).
+Same recipe as [before](./cwe_gpt.md#recipe) but we'll use [Google Vertex AI Agent Builder](https://cloud.google.com/products/agent-builder)
 
 
 
@@ -42,11 +44,12 @@ Same [MITRE CWE Specification](./cwe_gpt.md#mitre-cwe-specification) as the data
    
 ## Build Vertex AI Agent 
 
-1. Vertex AI Agent Builder https://cloud.google.com/products/agent-builder?hl=en 
+1. [Vertex AI Agent Builder](https://cloud.google.com/products/agent-builder?hl=en) 
 2. Create App 
 3. Select app type
       1. Agent (preview) "Built using natural language, agents can answer questions from data, connect with business systems through tools and more"
 4. Configure [Data Store in Tools ](https://cloud.google.com/dialogflow/vertex/docs/concept/tools#data-store)
+      1. [Chunking is not used because it is not currently supported by grounding](https://github.com/GoogleCloudPlatform/generative-ai/issues/694#issuecomment-2148309711).  
 5. I used both the local Data Store and the MITRE CWE website for evaluation purposes.
 6. There are lots of other Settings available like Logging, Git integration to push/pull agents from a Github repo, or just download the JSON file that represents the agent.
 7. The built agent supports [Interactions with the API ](https://cloud.google.com/dialogflow/vertex/docs/quick/api).
@@ -145,10 +148,18 @@ Same [MITRE CWE Specification](./cwe_gpt.md#mitre-cwe-specification) as the data
 
 There were not used or required but listing here as I found them informative.
 
-1. https://cloud.google.com/generative-ai-app-builder/docs/samples?language=python
-2. https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-multi-turn-search?hl=en
-3. https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-import-documents?hl=en
-4. https://www.googlecloudcommunity.com/gc/Community-Blogs/Building-and-Deploying-AI-Agents-with-LangChain-on-Vertex-AI/bc-p/750793#M415
+1. https://codelabs.developers.google.com/codelabs/vertex-ai-conversation#0
+2. https://codelabs.developers.google.com/build-google-quality-rag#0
+3. https://github.com/GoogleCloudPlatform/generative-ai/tree/main
+4. https://github.com/GoogleCloudPlatform/generative-ai/tree/main/conversation/chat-app
+5. https://cloud.google.com/generative-ai-app-builder/docs/samples?language=python
+6. https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-multi-turn-search?hl=en
+7. https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-import-documents?hl=en
+8. https://www.googlecloudcommunity.com/gc/Community-Blogs/Building-and-Deploying-AI-Agents-with-LangChain-on-Vertex-AI/bc-p/750793#M415
+9. https://medium.com/google-cloud/gen-ai-grounding-with-vertex-ai-llm-3cb1cbe9f9d2
+10. https://medium.com/google-cloud/designing-data-store-hybrid-agents-with-dialogflow-cx-vertex-ai-agents-070082f07cb4
+11. https://www.cloudskillsboost.google/paths/236/course_templates/978/labs/488165
+12. https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/
 
 ## Takeaways
 
