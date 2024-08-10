@@ -6,12 +6,19 @@
 
     This is a no-code option.
 
-    We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations).
+    We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)
+
+    2. **Grounded**: content is provided to inform the ansers
+    1. **Closed system**: answers come from only the documents you provide
+
+!!! warning "Result"
+    The result is that we can ground - but can't create a closed system - and we still get hallucinations in some cases.
 
 ## Recipe
-1. Use ChatGPT GPTs ["custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."](https://chatgpt.com/gpts) 
-2. Grounding: Provide the MITRE CWE specification as the "extra knowledge" in JSON format (not PDF).
-3. Closed: Limit the GPT to that knowledge only i.e. disable web search.
+1. Use ChatGPT GPTs which are ["custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."](https://chatgpt.com/gpts) 
+2. **Grounded**: Provide the MITRE CWE specification as the "extra knowledge" in JSON format (not PDF).
+3. **Closed system**: Limit the GPT to that knowledge only i.e. disable web search 
+      1. but we see that the GPT still has knowledge from its training data 
 
 
 ## MITRE CWE Specification
@@ -46,20 +53,18 @@
    
       What is a dog?
 
-The system is not closed because the GPT can answer the question even though there is no information about dogs in the MITRE CWE specification.
 
 !!! failure
-
-
-
 
       <figure markdown>
       ![](../assets/images/chatgpt_what_is_a_dog.png)
       </figure>
 
+!!! Observations
+      The system is not closed because the GPT can answer the question even though there is no information about dogs in the MITRE CWE specification.
 
 ## Example Usage: CWE-502
-
+ 
 !!! quote
       what is the best CWE to describe the root cause weakness in CVE "an issue in the Pickle Python library of some product allows attackers to execute arbitrary commands". 
 
@@ -122,6 +127,9 @@ CWE-1394 includes this as part of the ObservedExamples
 
 !!! observations
       Hallucinations happened for the CVE IDs that the GPT gave as supporting examples whether the "Web Browsing" Capability was enabled or not.
+
+
+## Takeaways
 
 !!! success "Takeaways" 
 
