@@ -159,7 +159,9 @@ There were not used or required but listing here as I found them informative.
 9. https://medium.com/google-cloud/gen-ai-grounding-with-vertex-ai-llm-3cb1cbe9f9d2
 10. https://medium.com/google-cloud/designing-data-store-hybrid-agents-with-dialogflow-cx-vertex-ai-agents-070082f07cb4
 11. https://www.cloudskillsboost.google/paths/236/course_templates/978/labs/488165
-12. https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/
+12. https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/2d22382cf72840dcde313db2f2feb2115f9fbd70/gemini/grounding/intro-grounding-gemini.ipynb?hl=es-419
+13. https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/
+14. https://saschaheyer.medium.com/vertex-ai-grounding-large-language-models-8335f838990f
 
 ## Takeaways
 

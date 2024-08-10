@@ -19,7 +19,7 @@ nav:
   - Grounded Closed System: 
     - Grounding: Grounded/grounding.md
     - ChatGPT CWE GPT: Grounded/cwe_gpt.md
-    - Vertex AI Agent: Grounded/vertex_ai.md
+    - Vertex AI CWE Agent: Grounded/vertex_ai.md
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
