@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/prompt_engineering/prompt_engineering/">
+        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/Grounded/cwe_gpt/">
       
       
-        <link rel="prev" href="../../Grounded/vertex_ai/">
+        <link rel="prev" href="../grounding/">
       
       
-        <link rel="next" href="../Fabric/">
+        <link rel="next" href="../vertex_ai/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Prompt Engineering - CyberSecAI</title>
+        <title>ChatGPT CWE GPT - CyberSecAI</title>
       
     
     
@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prompt-engineering" class="md-skip">
+        <a href="#chatgpt-cwe-gpt" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prompt Engineering
+              ChatGPT CWE GPT
             
           </span>
         </div>
@@ -572,21 +572,21 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -600,7 +600,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Grounded Closed System
@@ -614,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Grounded/grounding/" class="md-nav__link">
+      <a href="../grounding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,10 +632,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Grounded/cwe_gpt/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ChatGPT CWE GPT
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -644,6 +664,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitre-cwe-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      MITRE CWE Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-chatgpt-cwe-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure ChatGPT CWE GPT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-the-system-is-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check if the System is Closed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-502" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage: CWE-502
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-1394" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage: CWE-1394
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-1394-with-example-cves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage: CWE-1394 with Example CVEs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -656,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Grounded/vertex_ai/" class="md-nav__link">
+      <a href="../vertex_ai/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,21 +793,21 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -709,7 +821,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Prompting
@@ -720,30 +832,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Prompt Engineering
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../prompt_engineering/prompt_engineering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,134 +844,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Guides
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-taxonomy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Taxonomy
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prompt Taxonomy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prompt-taxonomy-turn-expression-level-of-details-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Taxonomy Turn, Expression, Level of Details, Role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prompt-taxonomy-26-guiding-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Taxonomy 26 Guiding Principles
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-tactics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Tactics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prompt Tactics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-to-generate-the-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ask the LLM to generate the prompt
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Ask the LLM to generate the prompt">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-what-techniques-are-best-to-use-for-effective-prompt-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ask the LLM what techniques are best to use for effective prompt engineering?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-to-create-a-prompt-using-these-techniques-for-the-objective-and-example-you-specify" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ask the LLM to create a prompt using these techniques for the objective and example you specify
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-to-review-the-answer-and-provide-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ask the LLM to review the answer and provide improvements.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#llm-tools-to-improve-prompts" class="md-nav__link">
-    <span class="md-ellipsis">
-      LLM Tools to Improve Prompts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -892,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Fabric/" class="md-nav__link">
+      <a href="../../prompt_engineering/Fabric/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1166,110 +1130,74 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prompt-guides" class="md-nav__link">
+  <a href="#recipe" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt Guides
+      Recipe
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prompt-taxonomy" class="md-nav__link">
+  <a href="#mitre-cwe-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt Taxonomy
+      MITRE CWE Specification
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Prompt Taxonomy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prompt-taxonomy-turn-expression-level-of-details-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Taxonomy Turn, Expression, Level of Details, Role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prompt-taxonomy-26-guiding-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt Taxonomy 26 Guiding Principles
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prompt-tactics" class="md-nav__link">
+  <a href="#configure-chatgpt-cwe-gpt" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt Tactics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prompt Tactics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-to-generate-the-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ask the LLM to generate the prompt
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Ask the LLM to generate the prompt">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-what-techniques-are-best-to-use-for-effective-prompt-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ask the LLM what techniques are best to use for effective prompt engineering?
+      Configure ChatGPT CWE GPT
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-to-create-a-prompt-using-these-techniques-for-the-objective-and-example-you-specify" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#check-if-the-system-is-closed" class="md-nav__link">
     <span class="md-ellipsis">
-      Ask the LLM to create a prompt using these techniques for the objective and example you specify
+      Check if the System is Closed
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ask-the-llm-to-review-the-answer-and-provide-improvements" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-502" class="md-nav__link">
     <span class="md-ellipsis">
-      Ask the LLM to review the answer and provide improvements.
+      Example Usage: CWE-502
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#llm-tools-to-improve-prompts" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-1394" class="md-nav__link">
     <span class="md-ellipsis">
-      LLM Tools to Improve Prompts
+      Example Usage: CWE-1394
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-1394-with-example-cves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage: CWE-1394 with Example CVEs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
+    </span>
+  </a>
   
 </li>
       
@@ -1288,103 +1216,141 @@
                   
 
 
-<h1 id="prompt-engineering">Prompt Engineering<a class="headerlink" href="#prompt-engineering" title="Permanent link">&para;</a></h1>
+<h1 id="chatgpt-cwe-gpt">ChatGPT <abbr title="CWE Common Weakness Enumeration">CWE</abbr> GPT<a class="headerlink" href="#chatgpt-cwe-gpt" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Overview</p>
-<p>A large part of working LLMs is knowing how to prompt them to get the information you want.</p>
-<p>ChatGPTo will be used here but the techniques apply in general to any LLM.</p>
+<p>Here we'll use ChatGPT with the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification to aid mapping CWEs to vulnerability descriptions.</p>
+<p>This is a no-code option.</p>
+<p>We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)</p>
+<ol>
+<li><strong>Grounded</strong>: content is provided to inform the ansers</li>
+<li><strong>Closed system</strong>: answers come from only the documents you provide</li>
+</ol>
 </div>
-<h2 id="prompt-guides">Prompt Guides<a class="headerlink" href="#prompt-guides" title="Permanent link">&para;</a></h2>
-<p>There are many books, guides, and articles on Prompt Engineering. Some of the better ones are listed here:</p>
+<div class="admonition warning">
+<p class="admonition-title">Result</p>
+<p>The result is a Grounded Open-System i.e. we can ground - but can't create a closed system - and we still get hallucinations in some cases.</p>
+</div>
+<h2 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="https://www.promptingguide.ai/">Prompt Engineering Guide</a> </li>
-<li><a href="https://platform.openai.com/docs/guides/prompt-engineering">OpenAI Prompt Engineering Guide</a> </li>
-<li><a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api">Best practices for prompt Engineering with the OpenAI API</a></li>
-<li><a href="https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf">Google Gemini Prompting guide 101 - A quick-start handbook for effective prompts, April 2024 edition</a></li>
-<li><a href="https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41">How I Won Singapore’s GPT-4 Prompt Engineering Competition</a>, Dec 2023</li>
-<li><a href="https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/">Prompt Engineering for Generative AI Book</a>, May 2024</li>
-<li><a href="https://ai.google.dev/gemini-api/docs/prompting-strategies">Google Prompt design strategies</a> </li>
-<li><a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview">Anthropic Prompt Engineering overview</a> </li>
-<li><a href="https://medium.com/the-modern-scientist/best-prompt-techniques-for-best-llm-responses-24d2ff4f6bca">Best Prompt Techniques for Best LLM Responses</a>, Feb 2024</li>
+<li>Use ChatGPT GPTs which are <a href="https://chatgpt.com/gpts">"custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."</a> </li>
+<li><strong>Grounded</strong>: Provide the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification as the "extra knowledge" in JSON format (not PDF).</li>
+<li><strong>Closed system</strong>: Limit the GPT to that knowledge only i.e. disable web search <ol>
+<li>but we see that the GPT still has knowledge from its training data </li>
 </ol>
-<h2 id="prompt-taxonomy">Prompt Taxonomy<a class="headerlink" href="#prompt-taxonomy" title="Permanent link">&para;</a></h2>
-<h3 id="prompt-taxonomy-turn-expression-level-of-details-role">Prompt Taxonomy Turn, Expression, Level of Details, Role<a class="headerlink" href="#prompt-taxonomy-turn-expression-level-of-details-role" title="Permanent link">&para;</a></h3>
-<figure>
-<p><img alt="Guide" src="../../assets/images/promptTaxonomy.png" /></p>
-</figure>
-<p>The above proposed Prompt Taxonomy is TELeR: Turn, Expression, Level of Details, Role from  <a href="https://arxiv.org/pdf/2305.11430">TELeR: A General Taxonomy of LLM Prompts for Benchmarking Complex Tasks</a></p>
-<h3 id="prompt-taxonomy-26-guiding-principles">Prompt Taxonomy 26 Guiding Principles<a class="headerlink" href="#prompt-taxonomy-26-guiding-principles" title="Permanent link">&para;</a></h3>
-<figure>
-<p><img alt="Guide" src="../../assets/images/prompt_principles_cat.png" /> </p>
-</figure>
-<p>The above "26 guiding principles designed to streamline the process of querying and prompting large language models" is from <a href="https://arxiv.org/pdf/2312.16171">Principled Instructions Are All You Need for Questioning LLaMA-1/2, GPT-3.5/4</a></p>
-<h2 id="prompt-tactics">Prompt Tactics<a class="headerlink" href="#prompt-tactics" title="Permanent link">&para;</a></h2>
-<p>Some tactics I find particularly useful:</p>
+</li>
+</ol>
+<h2 id="mitre-cwe-specification">MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Specification<a class="headerlink" href="#mitre-cwe-specification" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Ask the LLM to generate the prompt.<ol>
-<li>Do this in 2 parts (task decomposition)<ol>
-<li>Ask the LLM what techniques are best to use for effective prompt engineering</li>
-<li>Ask the LLM to create a prompt using these techniques for the objective and example you specify</li>
+<li>Use a JSON text version instead of PDF <ol>
+<li>ensures all the relevant text we want is fed to the model (e.g. text extraction from PDFs can be lossy for tables)</li>
+<li>allows us to remove content that is not relevant e.g. "ContentHistory" can contain a lot of text that is not relevant to <abbr title="CWE Common Weakness Enumeration">CWE</abbr> assignment</li>
+</ol>
+</li>
+<li>Get the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Specification as JSON from <a href="https://github.com/CWE-CAPEC/REST-API-wg/blob/main/json_repo/cwe.json">https://github.com/CWE-CAPEC/REST-API-wg/blob/main/json_repo/cwe.json</a></li>
+<li>Remove the "ContentHistory" entries as this is not useful to assign CWEs and is a lot of content<ol>
+<li>use Claude 3.5 to generate the python code to do this</li>
+</ol>
+</li>
+<li>Split it into smaller files<ol>
+<li>because the single file is too large to import</li>
+<li>use Claude 3.5 to generate the python code to do this</li>
 </ol>
 </li>
 </ol>
-</li>
-<li>Ask the LLM to provide a confidence score for their answer. <ol>
-<li>People can be fooled by the fluency of LLMs aka hallucinations </li>
-<li>LLMs know how confident they are in their answer.</li>
-<li>So asking an LLM to rate their confidence in the answer can reduce blind trust.</li>
-</ol>
-</li>
-<li>Ask the LLM (or a different LLM) to review the answer and provide improvements.</li>
-</ol>
-<h3 id="ask-the-llm-to-generate-the-prompt">Ask the LLM to generate the prompt<a class="headerlink" href="#ask-the-llm-to-generate-the-prompt" title="Permanent link">&para;</a></h3>
-<h4 id="ask-the-llm-what-techniques-are-best-to-use-for-effective-prompt-engineering">Ask the LLM what techniques are best to use for effective prompt engineering?<a class="headerlink" href="#ask-the-llm-what-techniques-are-best-to-use-for-effective-prompt-engineering" title="Permanent link">&para;</a></h4>
-<figure>
-<p><img alt="Guide" src="../../assets/images/prompting1.png" />
-<img alt="Guide" src="../../assets/images/prompting1_2.png" /></p>
-</figure>
-<h4 id="ask-the-llm-to-create-a-prompt-using-these-techniques-for-the-objective-and-example-you-specify">Ask the LLM to create a prompt using these techniques for the objective and example you specify<a class="headerlink" href="#ask-the-llm-to-create-a-prompt-using-these-techniques-for-the-objective-and-example-you-specify" title="Permanent link">&para;</a></h4>
-<figure>
-<p><img alt="Guide" src="../../assets/images/prompting3.png" /></p>
-</figure>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>_functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is called directly, which allows remote attackers to bypass a protection mechanism to conduct remote file inclusion and directory traversal attacks, execute arbitrary PHP code, or read arbitrary files via the GLOBALS[prefix] parameter, a different vector than CVE-2003-1500.
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>#CVE# _functions.php in cpCommerce 1.2.x, possibly including 1.2.9, sends a redirect but does not exit when it is called directly, which allows remote attackers to bypass a protection mechanism to conduct remote file inclusion and directory traversal attacks, execute arbitrary PHP code, or read arbitrary files via the GLOBALS[prefix] parameter, a different vector than CVE-2003-1500.
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>#IMPACT# Remote Code Execution, Information Disclosure, Security Bypass
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>#RATIONALE# The description specifies multiple potential impacts:
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>1. **Remote Code Execution**: The ability to &quot;execute arbitrary PHP code&quot; directly implies a high severity impact where an attacker can run malicious code on the affected system.
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>2. **Information Disclosure**: The mention of &quot;read arbitrary files&quot; suggests that attackers can access sensitive information stored in files.
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>3. **Security Bypass**: The bypass of a protection mechanism to conduct remote file inclusion and directory traversal attacks implies that security controls are being circumvented.
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>#CONFIDENCE# 95
-</code></pre></div>
-<figure>
-<p><img alt="Guide" src="../../assets/images/prompting_classification1.png" /></p>
-</figure>
-<h3 id="ask-the-llm-to-review-the-answer-and-provide-improvements">Ask the LLM to review the answer and provide improvements.<a class="headerlink" href="#ask-the-llm-to-review-the-answer-and-provide-improvements" title="Permanent link">&para;</a></h3>
-<figure>
-<p><img alt="Guide" src="../../assets/images/prompting_classification2.png" /></p>
-</figure>
-<h3 id="llm-tools-to-improve-prompts">LLM Tools to Improve Prompts<a class="headerlink" href="#llm-tools-to-improve-prompts" title="Permanent link">&para;</a></h3>
-<p>In addition to using LLMs to generate prompts (aka Meta Prompts), and review prompts in an adhoc manner via the chat interface, there are various tools that use LLMs to improve prompts:</p>
+<h2 id="configure-chatgpt-cwe-gpt">Configure ChatGPT <abbr title="CWE Common Weakness Enumeration">CWE</abbr> GPT<a class="headerlink" href="#configure-chatgpt-cwe-gpt" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="../Fabric/#fabric-prompt-to-improve-prompts">Fabric Prompt to Improve Prompts</a></li>
-<li><a href="https://www.anthropic.com/news/evaluate-prompts">Anthropic Console supports testing and improving prompts</a> (for Anthropic - but likely the resulting prompt would be portable to other LLMs)<ol>
-<li>Claude can generate prompts, create test variables, and show you the outputs of prompts side by side.</li>
-<li><a href="https://x.com/AnthropicAI/status/1810747792807342395">https://x.com/AnthropicAI/status/1810747792807342395</a></li>
+<li>Import the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Specification as split JSON files</li>
+<li>Disable all capabilities:<ol>
+<li>Web browsing is disabled so the answers come from the imported MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Specification</li>
 </ol>
 </li>
+<li>Provide example starter prompts:<ol>
+<li>what is the best <abbr title="CWE Common Weakness Enumeration">CWE</abbr> to describe the root cause weakness in <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "an issue in the Pickle Python library of some product allows attackers to execute arbitrary commands". Provide CVEs with the most similar root cause to support your answer.</li>
+<li>what is the best <abbr title="CWE Common Weakness Enumeration">CWE</abbr> to describe the root cause weakness in <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "ProductX contains a default SSH public key in the authorized_keys file. A remote attacker could use this key to gain root privileges.". Provide CVEs with the most similar.  root cause to support your answer.</li>
+<li>what cwe ids are associated with xss. list them all</li>
+<li>what cwe ids are associated with path or directory traversal. list them all</li>
 </ol>
+</li>
+<li>Publish it so others can use it: <a href="https://chatgpt.com/g/g-d8guurMPs-cwe-map">https://chatgpt.com/g/g-d8guurMPs-cwe-map</a> </li>
+</ol>
+<figure>
+<p><img alt="" src="../../assets/images/chatgpt_cwe_gpt.png" /></p>
+</figure>
+<h2 id="check-if-the-system-is-closed">Check if the System is Closed<a class="headerlink" href="#check-if-the-system-is-closed" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>What is a dog?</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p><figure markdown>
+  <img alt="" src="../../assets/images/chatgpt_what_is_a_dog.png" />
+  </figure></p>
+</div>
+<div class="admonition observations">
+<p class="admonition-title">Observations</p>
+<p>The system is not closed because the GPT can answer the question even though there is no information about dogs in the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification.</p>
+</div>
+<h2 id="example-usage-cwe-502">Example Usage: <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-502<a class="headerlink" href="#example-usage-cwe-502" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>what is the best <abbr title="CWE Common Weakness Enumeration">CWE</abbr> to describe the root cause weakness in <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "an issue in the Pickle Python library of some product allows attackers to execute arbitrary commands". </p>
+<p>let's think this out step by step. Before you answer, validate your answer by checking that at least one of ObservedExamples for that <abbr title="CWE Common Weakness Enumeration">CWE</abbr> is similar to the description I provided.</p>
+</div>
+<figure>
+<p><img alt="" src="../../assets/images/chatgpt_cwe_gpt_example2.png" /></p>
+</figure>
+<p><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-502 includes this as part of the ObservedExamples
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>        {
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>          &quot;Reference&quot;: &quot;CVE-2011-2520&quot;,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>          &quot;Description&quot;: &quot;Python script allows local users to execute code via pickled data.&quot;,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>          &quot;Link&quot;: &quot;https://www.cve.org/CVERecord?id=CVE-2011-2520&quot;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        },
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        {
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>          &quot;Reference&quot;: &quot;CVE-2012-4406&quot;,
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>          &quot;Description&quot;: &quot;Unsafe deserialization using pickle in a Python script.&quot;,
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>          &quot;Link&quot;: &quot;https://www.cve.org/CVERecord?id=CVE-2012-4406&quot;
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        },
+</code></pre></div></p>
+<h2 id="example-usage-cwe-1394">Example Usage: <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-1394<a class="headerlink" href="#example-usage-cwe-1394" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>what is the best <abbr title="CWE Common Weakness Enumeration">CWE</abbr> to describe the root cause weakness in <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "ProductX contains a default SSH public key in the authorized_keys file. A remote attacker could use this key to gain root privileges."</p>
+<p>let's think this out step by step. Before you answer, validate your answer by checking that at least one of ObservedExamples for that <abbr title="CWE Common Weakness Enumeration">CWE</abbr> is similar to the description I provided.</p>
+</div>
+<figure>
+<p><img alt="" src="../../assets/images/chatgpt_cwe_gpt_example1.png" /></p>
+</figure>
+<p><abbr title="CWE Common Weakness Enumeration">CWE</abbr>-1394 includes this as part of the ObservedExamples
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>        {
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>          &quot;Reference&quot;: &quot;CVE-2016-1561&quot;,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>          &quot;Description&quot;: &quot;backup storage product has a default SSH public key in the authorized_keys file, allowing root access&quot;,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>          &quot;Link&quot;: &quot;https://www.cve.org/CVERecord?id=CVE-2016-1561&quot;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        },
+</code></pre></div></p>
+<h2 id="example-usage-cwe-1394-with-example-cves">Example Usage: <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-1394 with Example CVEs<a class="headerlink" href="#example-usage-cwe-1394-with-example-cves" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../../assets/images/chatgpt_gpt_hallucination2.png" /></p>
+</figure>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p>"<abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-2013-0138: Network device with a default SSH key that can be exploited to gain unauthorized access."</p>
+<p>This is not the description for <a href="https://nvd.nist.gov/vuln/detail/CVE-2013-0138">https://nvd.nist.gov/vuln/detail/CVE-2013-0138</a>.</p>
+<p><abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-2013-0138 is not listed in the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification.</p>
+<p>Note: <a href="https://nvd.nist.gov/vuln/detail/CVE-2013-0137">https://nvd.nist.gov/vuln/detail/CVE-2013-0137</a> relates to a known SSH key.</p>
+</div>
+<div class="admonition observations">
+<p class="admonition-title">Observations</p>
+<p>Hallucinations happened for the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> IDs that the GPT gave as supporting examples whether the "Web Browsing" Capability was enabled or not.</p>
+</div>
+<h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Takeaways</p>
 <ol>
-<li>Getting the right prompt to get what you want out of an LLM can sometimes feel like art or interrogation. There are several options covered here:<ol>
-<li>Prompt Templates</li>
-<li>Prompt Frameworks</li>
-<li>Ask an LLM to generate a prompt</li>
-<li>LLM-based tools for prompt refinement</li>
-</ol>
-</li>
+<li>Grounding ChatGPT with the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification helps reduce hallucinations but does not eliminate them.</li>
+<li>Hallucinations happened for the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> IDs that the GPT gave as supporting examples whether the "Web Browsing" Capability was enabled or not.</li>
+<li>It is not possible to make ChatGPT GPT a closed system because it has knowledge outside the provided content and will answer from that.</li>
 </ol>
 </div>
 
@@ -1418,7 +1384,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Grounded/vertex_ai/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vertex AI CWE Agent">
+          <a href="../grounding/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Grounding">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1428,20 +1394,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Vertex AI CWE Agent
+                Grounding
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Fabric/" class="md-footer__link md-footer__link--next" aria-label="Next: Fabric">
+          <a href="../vertex_ai/" class="md-footer__link md-footer__link--next" aria-label="Next: Vertex AI CWE Agent">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Fabric
+                Vertex AI CWE Agent
               </div>
             </div>
             <div class="md-footer__button md-icon">
