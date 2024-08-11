@@ -6,7 +6,7 @@
 
     This is a no-code option.
 
-    We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)cwe_gpt
+    We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)
 
     2. **Grounded**: content is provided to inform the answers
     1. **Closed system**: answers come from only the documents you provide
@@ -41,30 +41,74 @@ Same recipe as [before](./cwe_gpt.md#recipe) but we'll use [Google Vertex AI Age
 
 ## MITRE CWE Specification
 Same [MITRE CWE Specification](./cwe_gpt.md#mitre-cwe-specification) as the data source.
-   
+
+
+
+
+
 ## Build Vertex AI Agent 
+
+This [link](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/ground-gemini#private-ground-gemini) gives the steps with links to the details, summarized here:
 
 1. [Vertex AI Agent Builder](https://cloud.google.com/products/agent-builder?hl=en) 
 2. Create App 
 3. Select app type
       1. Agent (preview) "Built using natural language, agents can answer questions from data, connect with business systems through tools and more"
-4. Configure [Data Store in Tools ](https://cloud.google.com/dialogflow/vertex/docs/concept/tools#data-store)
-      1. [Chunking is not used because it is not currently supported by grounding](https://github.com/GoogleCloudPlatform/generative-ai/issues/694#issuecomment-2148309711).  
-5. I used both the local Data Store and the MITRE CWE website for evaluation purposes.
-6. There are lots of other Settings available like Logging, Git integration to push/pull agents from a Github repo, or just download the JSON file that represents the agent.
-7. The built agent supports [Interactions with the API ](https://cloud.google.com/dialogflow/vertex/docs/quick/api).
+4. Create Data Store
+      1. The MITRE CWE JSON data is converted to jsonl format for import
+      2. It takes ~5 minutes to ingest (create embeddings for) the jsonl file
+5. There are lots of other Settings available like Logging, Git integration to push/pull agents from a Github repo, or just download the JSON file that represents the agent.
+6. The built agent supports [Interactions with the API ](https://cloud.google.com/dialogflow/vertex/docs/quick/api).
 
+
+!!! tip
+
+      To create an Grounded **Open** system, select "search" app type.
+      
+      The agent will retrieve information from the local documents you provide and via web search.
+
+
+!!! note
+      Alternatively these steps can be implemented with code e.g. 
+      https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/ground-gemini#generative-ai-gemini-grounding-python_vertex_ai_sdk
 
 !!! quote
       Note: Conversation history is used as context during tool invocation. Learn more
+
+## Data Preprocessing
+
+Remove unneeded sections from the json
+
+* content_history
+* views
+* categories
+
+```` 
+python3 ./trim_json.py # cwe.json -> cwe_trimmed.json
+```` 
+
+Convert to jsonl for import
+```` 
+python3 ./json_to_jsonl.py # cwe_trimmed.json -> cwe_trimmed.jsonl
+````
+
+
+## Data Import
+
+<figure markdown>
+![](../assets/images/vertexai_datastore.png)
+</figure>
+
 
 
 <figure markdown>
 ![](../assets/images/vertex_ai_agent1.png)
 </figure>
 
+
+
 <figure markdown>
-![](../assets/images/vertex_ai_agent2.png)
+![](../assets/images/vertexai_jsonl.png)
 </figure>
 
 
@@ -134,19 +178,9 @@ Same [MITRE CWE Specification](./cwe_gpt.md#mitre-cwe-specification) as the data
 </figure>
 
 
-## Example Usage: CWE-502
-
-!!! quote
-      
-      what is the best CWE to describe the root cause weakness in CVE "an issue in the Pickle Python library of some product allows attackers to execute arbitrary commands". 
-
-<figure markdown>
-![](../assets/images/vertex_ai_pickle.png)
-</figure>
-
 ## Other App Builder Docs 
 
-There were not used or required but listing here as I found them informative.
+These were not used or required but listing here as I found them informative.
 
 1. https://codelabs.developers.google.com/codelabs/vertex-ai-conversation#0
 2. https://codelabs.developers.google.com/build-google-quality-rag#0
@@ -168,7 +202,7 @@ There were not used or required but listing here as I found them informative.
 !!! success "Takeaways" 
 
     1. Google Vertex AI Agent Builder allows/requires more control over the agent than the [ChatGPT GPTs](./cwe_gpt.md) currently. 
-    2. Google Vertex AI Agent Builder supports a Closed System with Grounding and [Grounding Confidence threshold](./vertex_ai.md#grounding-confidence) unlike [ChatGPT GPTs](./cwe_gpt.md) currently.
+    2. Google Vertex AI Agent Builder supports a Closed (or Open) System with Grounding and [Grounding Confidence threshold](./vertex_ai.md#grounding-confidence) unlike [ChatGPT GPTs](./cwe_gpt.md) currently.
     3. This comes close to [NotebookLM](../NotebookLM/NotebookLM.md) but 
           1. does not provide references from the original documents from which the answer was determined.
-          2. NotebookLM responses were more detailed and felt better overall
+

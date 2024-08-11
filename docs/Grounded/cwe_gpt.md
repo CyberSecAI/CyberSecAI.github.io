@@ -12,7 +12,7 @@
     1. **Closed system**: answers come from only the documents you provide
 
 !!! warning "Result"
-    The result is that we can ground - but can't create a closed system - and we still get hallucinations in some cases.
+    The result is a Grounded Open-System i.e. we can ground - but can't create a closed system - and we still get hallucinations in some cases.
 
 ## Recipe
 1. Use ChatGPT GPTs which are ["custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."](https://chatgpt.com/gpts) 
