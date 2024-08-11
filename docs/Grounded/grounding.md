@@ -3,7 +3,9 @@
 
 !!! abstract "Overview"
 
-    NotebookLM highlights the benefits of a grounded closed system - and it provides links to the content it references in the data sources.
+    The accurate answers from [NotebookLM](../NotebookLM/NotebookLM.md) highlight the benefits of a grounded closed system.
+    
+    NotebookLM also provides links to the content it references in the data sources.
 
     There are many tools that can be used to build such a system.
 
