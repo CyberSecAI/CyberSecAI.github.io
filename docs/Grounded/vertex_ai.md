@@ -6,15 +6,22 @@
 
     This is a no-code option.
 
-    We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)
+    We'll implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)
 
-    2. **Grounded**: content is provided to inform the answers
-    1. **Closed system**: answers come from only the documents you provide
+    1. **Grounded**: content is provided to inform the answers
+    2. **Closed system**: answers come from only the documents you provide
+
+    !!! tip
+
+        In other words, we'll build [NotebookLM](../NotebookLM/NotebookLM.md).
+        
+        * where NotebookLM is basically a combination of Vertex AI Search for Unstructured (PDFs, HTML, etc.), [Vertex AI Grounding](https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview), and a custom UX/UI.
+        * But we'll take advantage of the structured data (JSON) that we have for MITRE CWE list, instead of using the unstructured data from the MITRE CWE list PDF.
 
 !!! success "Result"
-    The result is that we have a grounded closed system.
+    The result is that we have a grounded closed system (that compares in performance and accuracy to [NotebookLM](../NotebookLM/NotebookLM.md).
 
-    But we don't have reference links to the source content in the response.
+    But we don't have reference links to the source content in the response i.e. I didn't add that part yet but it's standard functionality that is easy in Vertex AI.
 
 
 ## Grounding Confidence
