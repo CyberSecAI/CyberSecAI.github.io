@@ -3146,16 +3146,24 @@ One of the concerns that is often raised is that GenAI Code is not secure becaus
 <p class="admonition-title">Overview</p>
 <p>Here we'll use Vertex AI Agent Builder with the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification to aid mapping CWEs to vulnerability descriptions.</p>
 <p>This is a no-code option.</p>
-<p>We'll attempt to implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)</p>
+<p>We'll implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)</p>
 <ol>
 <li><strong>Grounded</strong>: content is provided to inform the answers</li>
 <li><strong>Closed system</strong>: answers come from only the documents you provide</li>
 </ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In other words, we'll build <a href="#notebooklm-notebooklm">NotebookLM</a>.</p>
+<ul>
+<li>where NotebookLM is basically a combination of Vertex AI Search for Unstructured (PDFs, HTML, etc.), <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview">Vertex AI Grounding</a>, and a custom UX/UI.</li>
+<li>But we'll take advantage of the structured data (JSON) that we have for MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> list, instead of using the unstructured data from the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> list PDF.</li>
+</ul>
+</div>
 </div>
 <div class="admonition success">
 <p class="admonition-title">Result</p>
-<p>The result is that we have a grounded closed system.</p>
-<p>But we don't have reference links to the source content in the response.</p>
+<p>The result is that we have a grounded closed system (that compares in performance and accuracy to <a href="#notebooklm-notebooklm">NotebookLM</a>.</p>
+<p>But we don't have reference links to the source content in the response i.e. I didn't add that part yet but it's standard functionality that is easy in Vertex AI.</p>
 </div>
 <h2 id="grounded-vertex_ai-grounding-confidence">Grounding Confidence<a class="headerlink" href="#grounded-vertex_ai-grounding-confidence" title="Permanent link">&para;</a></h2>
 <div class="admonition quote">
