@@ -103,6 +103,7 @@ In addition to using LLMs to generate prompts (aka Meta Prompts), and review pro
 2. [Anthropic Console supports testing and improving prompts](https://www.anthropic.com/news/evaluate-prompts) (for Anthropic - but likely the resulting prompt would be portable to other LLMs)
     1. Claude can generate prompts, create test variables, and show you the outputs of prompts side by side.
     2. https://x.com/AnthropicAI/status/1810747792807342395
+3. [Google Prompt Gallery](https://aistudio.google.com/app/gallery) 
 
   
 !!! success "Takeaways" 
