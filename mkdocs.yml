@@ -25,6 +25,8 @@ nav:
     - Fabric: prompt_engineering/Fabric.md    
   - Vulnrichment:
     - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
+  - Agents:
+    - Agents: agents/Agents.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
   - Multi Agent:
