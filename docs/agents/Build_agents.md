@@ -4,9 +4,9 @@
 !!! Overview
     Here we will discuss how to build a multi agent system using Langchain.
 
-    We will illustrate the architecture of the system using Mermaid diagram (generated via a GPT).
+    We will illustrate the architecture of the system using a Mermaid diagram (generated via a GPT).
 
-    We will then get a GPT to convert the diagram to Langchain code.
+    We will then convert the diagram to Langchain code (using a GPT)
 
 !!! tip
     Langraph Studio could also be used https://github.com/langchain-ai/langgraph-studio
