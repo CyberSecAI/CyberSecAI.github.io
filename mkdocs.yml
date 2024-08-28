@@ -27,6 +27,8 @@ nav:
     - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
+  - Multi Agent:
+    - Agents: agents/agents.md
   - Annex:
     - Glossary: annex/Glossary.md
     - Talks & Research: research/research.md
