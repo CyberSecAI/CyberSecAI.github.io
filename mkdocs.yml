@@ -27,10 +27,11 @@ nav:
     - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
   - Agents:
     - Agents: agents/Agents.md
+    - Build Agents: agents/Build_agents.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
   - Multi Agent:
-    - Agents: agents/agents.md
+    - Agents: agents/Agents.md
   - Annex:
     - Glossary: annex/Glossary.md
     - Talks & Research: research/research.md
@@ -99,6 +100,12 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
+  - pymdownx.superfences:
+        # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
 
 
 
@@ -136,5 +143,8 @@ copyright: Copyright &copy; Contributors to the CyberSecAI Guide.
 
 plugins:
   - search
+  - mermaid2
   - print-site 
+
+
 
