@@ -5,7 +5,17 @@
 
 ## Why Agents?
 
+!!! quote "Benefits of multi-agent designs"
 
+    "If one agent can't work well, then why is multi-agent useful?"
+
+    * Grouping tools/responsibilities can give better results. An agent is more likely to succeed on a focused task than if it has to select from dozens of tools.
+    * Separate prompts can give better results. Each prompt can have its own instructions and few-shot examples. Each agent could even be powered by a separate fine-tuned LLM!
+    * Helpful conceptual model to develop. You can evaluate and improve each agent individually without breaking the larger application.
+    
+    Multi-agent designs allow you to divide complicated problems into tractable units of work that can be targeted by specialized agents and LLM programs.
+
+    https://blog.langchain.dev/langgraph-multi-agent-workflows/
 
 
 
@@ -40,3 +50,15 @@
     Like the design pattern of Planning, I find the output quality of multi-agent collaboration hard to predict, especially when allowing agents to interact freely and providing them with multiple tools. The more mature patterns of Reflection and Tool Use are more reliable.
     
     https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/
+
+
+
+    ## References
+
+    * https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance
+    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection
+    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use
+    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning
+    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration
+    * https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
+    * https://blog.langchain.dev/langgraph-multi-agent-workflows/
