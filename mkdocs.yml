@@ -30,8 +30,6 @@ nav:
     - Build Agents: agents/Build_agents.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
-  - Multi Agent:
-    - Agents: agents/Agents.md
   - Annex:
     - Glossary: annex/Glossary.md
     - Talks & Research: research/research.md

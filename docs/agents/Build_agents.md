@@ -2,14 +2,39 @@
 # Building Multi Agent Systems
 
 !!! Overview
-    Here we will discuss how to build a multi agent system using Langchain.
+    Here we will discuss how to build a multi agent system using LangChain and LangGraph.
 
     We will illustrate the architecture of the system using a Mermaid diagram (generated via a GPT).
 
-    We will then convert the diagram to Langchain code (using a GPT)
+    We will then convert the diagram to LangChain and LangGraph code (using a GPT)
 
 !!! tip
-    Langraph Studio could also be used https://github.com/langchain-ai/langgraph-studio
+    LangGraph Studio could also be used https://github.com/LangChain-ai/langgraph-studio
+
+
+# Multi Agent Systems
+There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.
+
+[CrewAI](https://www.crewai.com/) (built on LangChain), and [AutoGen](https://microsoft.github.io/autogen/) (by Microsoft), are two popular frameworks.
+
+* these are best suited to more complex multi agent use cases - where autonomy and conversation is required. 
+  * Chatty can be expensive in time and money as its more LLM calls.
+* they can also be useful for rapid prototyping and development of Multi Agent Systems - getting a working system quickly, that can then be optimized and customized with a lower level framework.
+
+For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph.
+
+* LangChain does have [LCEL (LangChain Expression Language)](https://python.langchain.com/v0.1/docs/expression_language/) but [LangGraph on LangChain may be a better option](https://www.youtube.com/watch?v=_yFfc5YB5Xc).  
+* Another option again is to write (and maintain) your own plumbing to get a simpler Multi Agent System. And it seems like lots of people are rolling their own.
+
+My requirements here are:
+1. Minimal Time-To-Value and Time-To-Learning from the initial solution
+2. Representation and support by tools
+   1. including Observability tooling e.g. [LangFuse](https://langfuse.com/), [LangSmith](https://www.langchain.com/langsmith) 
+3. Representation and support for production Deployment on Cloud platforms (AWS, GCP)
+
+So I'll use LangGraph on LangChain. YMMV!
+
+
 
 ## Architecture
 
@@ -59,7 +84,7 @@ graph TD
 ## Architecture to Code
 
 ````
-I want to create a langraph multi agent system based on this diagram
+I want to create a LangGraph multi agent system based on this diagram
 
 ````
 Claude 3.5 Sonnet
