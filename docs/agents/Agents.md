@@ -62,3 +62,8 @@
     * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration
     * https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
     * https://blog.langchain.dev/langgraph-multi-agent-workflows/
+    * [Mixture-of-Agents Enhances Large Language Model Capabilities](https://arxiv.org/abs/2406.04692)
+    * [Data Interpreter: An LLM Agent For Data Science](https://arxiv.org/abs/2402.18679) 
+    * [AgentCoder: Multi-Agent Code Generation with Effective Testing and Self-optimisation](https://arxiv.org/html/2312.13010v3) 
+    * [The COMPLETE TRUTH About AI Agents (2024)](https://www.youtube.com/watch?v=HGS5LfyxLUU)
+    

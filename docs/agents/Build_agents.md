@@ -18,7 +18,7 @@ There are several frameworks for building Multi Agent Systems (MAS), and many mo
 [CrewAI](https://www.crewai.com/) (built on LangChain), and [AutoGen](https://microsoft.github.io/autogen/) (by Microsoft), are two popular frameworks.
 
 * these are best suited to more complex multi agent use cases - where autonomy and conversation is required. 
-  * Chatty can be expensive in time and money as its more LLM calls.
+    * Chatty can be expensive in time and money as its more LLM calls.
 * they can also be useful for rapid prototyping and development of Multi Agent Systems - getting a working system quickly, that can then be optimized and customized with a lower level framework.
 
 For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph.
@@ -27,6 +27,7 @@ For simpler use cases, where we want to prescribe/control how agents interact wi
 * Another option again is to write (and maintain) your own plumbing to get a simpler Multi Agent System. And it seems like lots of people are rolling their own.
 
 My requirements here are:
+
 1. Minimal Time-To-Value and Time-To-Learning from the initial solution
 2. Representation and support by tools
    1. including Observability tooling e.g. [LangFuse](https://langfuse.com/), [LangSmith](https://www.langchain.com/langsmith) 
