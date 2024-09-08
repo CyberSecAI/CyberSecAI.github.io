@@ -28,6 +28,7 @@ nav:
   - Agents:
     - Agents: agents/Agents.md
     - Build Agents: agents/Build_agents.md
+    - CrewAI: agents/Crewai.md
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
   - Annex:

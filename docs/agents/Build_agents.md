@@ -43,41 +43,33 @@ So I'll use LangGraph on LangChain. YMMV!
 ```mermaid
 
 graph TD
-    Start((Start)) --> A[Get Vulnerability Description and CVE ID]
-    A --> |Vulnerability Description| B[Assign CWEs based on Vulnerability Description]
-    A --> |Vulnerability Description| C[Extract weakness keyphrases from description]
-    A --> |CVE ID| D[Get CVE References from NVD]
-    C --> I[Get CVEs with similar weakness keyphrases \nfrom Known-Good CVE-CWE mappings]
-    C --> E[Get CVEs with similar weakness keyphrases \nfrom NVD]
-    B --> R[Assign CWEs based on all data]
-    C --> R
-    D --> R
-    E --> R
-    I --> R
-    R --> F[Create report]
-    F --> G[Update report based on human feedback]
+    Start((Start)) --> A[Vulnerability Description]
+    A --> |Vulnerability Description| C[Extract vulnerability keyphrases from Vulnerability Description]
+    C --> |Vulnerability Description\nVulnerability KeyPhrases| D[Get CVEs with similar weakness keyphrases \nfrom CWE Observed Examples]
+    C --> |Vulnerability Description\nVulnerability KeyPhrases| E[Get CVEs with similar weakness keyphrases \nfrom Top25 CWE Mappings]
+    C --> |Vulnerability Description\nVulnerability KeyPhrases| I[Get CVEs with similar weakness keyphrases \nfrom NVD]
+    D --> R[Create report]
+    E --> R[Create report]
+    I --> R[Create report]
+    R --> |Draft Report|G[Review Report]
     G -->|Human feedback| G
-    G --> End((End))
+    G --> |Final Report|End((End))
 ```
 
 Diagram Code
 ````
 graph TD
-    Start((Start)) --> A[Get Vulnerability Description and CVE ID]
-    A --> |Vulnerability Description| B[Assign CWEs based on Vulnerability Description]
-    A --> |Vulnerability Description| C[Extract weakness keyphrases from description]
-    A --> |CVE ID| D[Get CVE References from NVD]
-    C --> I[Get CVEs with similar weakness keyphrases \nfrom Known-Good CVE-CWE mappings]
-    C --> E[Get CVEs with similar weakness keyphrases \nfrom NVD]
-    B --> R[Assign CWEs based on all data]
-    C --> R
-    D --> R
-    E --> R
-    I --> R
-    R --> F[Create report]
-    F --> G[Update report based on human feedback]
+    Start((Start)) --> A[Vulnerability Description]
+    A --> |Vulnerability Description| C[Extract vulnerability keyphrases from Vulnerability Description]
+    C --> |Vulnerability Description\nVulnerability KeyPhrases| D[Get CVEs with similar weakness keyphrases \nfrom CWE Observed Examples]
+    C --> |Vulnerability Description\nVulnerability KeyPhrases| E[Get CVEs with similar weakness keyphrases \nfrom Top25 CWE Mappings]
+    C --> |Vulnerability Description\nVulnerability KeyPhrases| I[Get CVEs with similar weakness keyphrases \nfrom NVD]
+    D --> R[Create report]
+    E --> R[Create report]
+    I --> R[Create report]
+    R --> |Draft Report|G[Review Report]
     G -->|Human feedback| G
-    G --> End((End))
+    G --> |Final Report|End((End))
 ````
 
 
@@ -88,6 +80,11 @@ graph TD
 I want to create a LangGraph multi agent system based on this diagram
 
 ````
+
+````
+I want to create a CrewAI multi agent system based on this diagram
+
+````
 Claude 3.5 Sonnet
 
 
@@ -95,68 +92,107 @@ Claude 3.5 Sonnet
 ## Multi Agent System Skeleton Code
 
 ````
-# Initialize our language model
-llm = ChatOpenAI(model="gpt-3.5-turbo")
+#from typing import TypedDict, Annotated, Sequence
+from langchain_core.messages import BaseMessage
+from langgraph.graph import StateGraph, Graph
+from langchain_core.runnables import RunnableBinding
+from langchain.pydantic_v1 import BaseModel, Field
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
+import asyncio
 
-# Define our agents
-def create_agent(name: str, description: str, tools: Sequence[Tool] = []):
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", f"You are {name}. {description}"),
-        ("human", "{input}"),
-        ("human", "Relevant information: {agent_scratchpad}")
-    ])
-    agent = create_react_agent(llm, tools, prompt)
-    return AgentExecutor(agent=agent, tools=tools)
+# Define the state
+class AgentState(TypedDict):
+    messages: Annotated[Sequence[BaseMessage], "The messages in the conversation"]
+    vulnerability_description: Annotated[str, "The original vulnerability description"]
+    vulnerability_keyphrases: Annotated[list, "Extracted keyphrases from the vulnerability description"]
+    cwe_observed_cves: Annotated[list, "CVEs from CWE Observed Examples"]
+    top25_cwe_cves: Annotated[list, "CVEs from Top25 CWE Mappings"]
+    nvd_cves: Annotated[list, "CVEs from NVD"]
+    draft_report: Annotated[str, "The draft report"]
+    final_report: Annotated[str, "The final report"]
 
-# Define our agent nodes
-get_vuln_description = create_agent("Vulnerability Description Extractor", "Extract the vulnerability description and CVE ID from the input.")
-assign_initial_cwes = create_agent("Initial CWE Assigner", "Assign initial CWEs based on the vulnerability description.")
-extract_keyphrases = create_agent("Keyphrase Extractor", "Extract weakness keyphrases from the description.")
-get_similar_cves_known_good = create_agent("Known-Good CVE Retriever", "Get CVEs with similar weakness keyphrases from Known-Good mappings.")
-get_similar_cves_nvd = create_agent("NVD CVE Retriever", "Get CVEs with similar weakness keyphrases from NVD.")
-get_cve_references = create_agent("CVE Reference Retriever", "Get CVE References from NVD.")
-assign_final_cwes = create_agent("Final CWE Assigner", "Assign final CWEs based on all collected data.")
-create_report = create_agent("Report Creator", "Create a comprehensive report based on all the collected and analyzed data.")
-update_report = create_agent("Report Updater", "Update the report based on human feedback.")
+# Initialize the language model
+llm = ChatOpenAI(temperature=0)
 
-# Create our graph
+# Define the agents
+
+def extract_keyphrases(state):
+    prompt = ChatPromptTemplate.from_template(
+        "Extract key phrases related to the vulnerability from the following description: {vulnerability_description}"
+    )
+    chain = prompt | llm
+    response = chain.invoke({"vulnerability_description": state["vulnerability_description"]})
+    keyphrases = response.content.split(", ")
+    return {"vulnerability_keyphrases": keyphrases}
+
+async def get_cwe_observed_cves(state):
+    # Simulating an asynchronous API call
+    await asyncio.sleep(1)
+    # In a real scenario, you would query a CVE database here
+    return {"cwe_observed_cves": ["CVE-2021-1234", "CVE-2022-5678"]}
+
+async def get_top25_cwe_cves(state):
+    await asyncio.sleep(1)
+    return {"top25_cwe_cves": ["CVE-2020-9876", "CVE-2023-4321"]}
+
+async def get_nvd_cves(state):
+    await asyncio.sleep(1)
+    return {"nvd_cves": ["CVE-2019-8765", "CVE-2024-1111"]}
+
+def create_report(state):
+    prompt = ChatPromptTemplate.from_template(
+        "Create a comprehensive report based on the following information:\n"
+        "Vulnerability Description: {vulnerability_description}\n"
+        "Key Phrases: {vulnerability_keyphrases}\n"
+        "CVEs from CWE Observed Examples: {cwe_observed_cves}\n"
+        "CVEs from Top25 CWE Mappings: {top25_cwe_cves}\n"
+        "CVEs from NVD: {nvd_cves}\n"
+        "Provide a detailed analysis and recommendations."
+    )
+    chain = prompt | llm
+    response = chain.invoke(state)
+    return {"draft_report": response.content}
+
+def review_report(state):
+    prompt = ChatPromptTemplate.from_template(
+        "Review and improve the following report:\n{draft_report}\n"
+        "Provide any necessary corrections or additions."
+    )
+    chain = prompt | llm
+    response = chain.invoke(state)
+    return {"final_report": response.content}
+
+# Define the graph
 workflow = StateGraph(AgentState)
 
-# Add our nodes to the graph
-workflow.add_node("get_vuln_description", get_vuln_description)
-workflow.add_node("assign_initial_cwes", assign_initial_cwes)
+# Add nodes
 workflow.add_node("extract_keyphrases", extract_keyphrases)
-workflow.add_node("get_similar_cves_known_good", get_similar_cves_known_good)
-workflow.add_node("get_similar_cves_nvd", get_similar_cves_nvd)
-workflow.add_node("get_cve_references", get_cve_references)
-workflow.add_node("assign_final_cwes", assign_final_cwes)
+workflow.add_node("get_cwe_observed_cves", get_cwe_observed_cves)
+workflow.add_node("get_top25_cwe_cves", get_top25_cwe_cves)
+workflow.add_node("get_nvd_cves", get_nvd_cves)
 workflow.add_node("create_report", create_report)
-workflow.add_node("update_report", update_report)
+workflow.add_node("review_report", review_report)
 
-# Define our edges
-workflow.add_edge("get_vuln_description", "assign_initial_cwes")
-workflow.add_edge("get_vuln_description", "extract_keyphrases")
-workflow.add_edge("get_vuln_description", "get_similar_cves_known_good")
-workflow.add_edge("extract_keyphrases", "get_similar_cves_nvd")
-workflow.add_edge("extract_keyphrases", "get_cve_references")
-workflow.add_edge("assign_initial_cwes", "assign_final_cwes")
-workflow.add_edge("extract_keyphrases", "assign_final_cwes")
-workflow.add_edge("get_similar_cves_known_good", "assign_final_cwes")
-workflow.add_edge("get_similar_cves_nvd", "assign_final_cwes")
-workflow.add_edge("get_cve_references", "assign_final_cwes")
-workflow.add_edge("assign_final_cwes", "create_report")
-workflow.add_edge("create_report", "update_report")
-workflow.add_edge("update_report", END)
+# Add edges
+workflow.add_edge("extract_keyphrases", "get_cwe_observed_cves")
+workflow.add_edge("extract_keyphrases", "get_top25_cwe_cves")
+workflow.add_edge("extract_keyphrases", "get_nvd_cves")
+workflow.add_edge("get_cwe_observed_cves", "create_report")
+workflow.add_edge("get_top25_cwe_cves", "create_report")
+workflow.add_edge("get_nvd_cves", "create_report")
+workflow.add_edge("create_report", "review_report")
+
+# Set entry point
+workflow.set_entry_point("extract_keyphrases")
 
 # Compile the graph
 app = workflow.compile()
 
 # Run the graph
-inputs = {
-    "input": "A buffer overflow vulnerability in XYZ software allows remote attackers to execute arbitrary code.",
-    "cve_id": "CVE-2023-12345"
-}
-for output in app.stream(inputs):
-    print(output)
+config = {"vulnerability_description": "A buffer overflow vulnerability in the XYZ software allows remote attackers to execute arbitrary code."}
+result = app.invoke(config)
+
+print(result["final_report"])
 ````
 
