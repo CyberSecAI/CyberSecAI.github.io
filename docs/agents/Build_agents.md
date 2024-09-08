@@ -43,11 +43,13 @@ So I'll use LangGraph on LangChain. YMMV!
 ```mermaid
 
 graph TD
-    Start((Start)) --> A[Vulnerability Description]
+    Start((Start)) --> A[Get Vulnerability Description]
     A --> |Vulnerability Description| C[Extract vulnerability keyphrases from Vulnerability Description]
-    C --> |Vulnerability Description\nVulnerability KeyPhrases| D[Get CVEs with similar weakness keyphrases \nfrom CWE Observed Examples]
-    C --> |Vulnerability Description\nVulnerability KeyPhrases| E[Get CVEs with similar weakness keyphrases \nfrom Top25 CWE Mappings]
-    C --> |Vulnerability Description\nVulnerability KeyPhrases| I[Get CVEs with similar weakness keyphrases \nfrom NVD]
+    C --> |Vulnerability KeyPhrases| D[Get CVEs with similar weakness keyphrases \nfrom CWE Observed Examples]
+    C --> |Vulnerability KeyPhrases| E[Get CVEs with similar weakness keyphrases \nfrom Top25 CWE Mappings]
+    C --> |Vulnerability KeyPhrases| I[Get CVEs with similar weakness keyphrases \nfrom NVD]
+    A-. Vulnerability Description .-> R
+
     D --> R[Create report]
     E --> R[Create report]
     I --> R[Create report]
