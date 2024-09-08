@@ -11,6 +11,15 @@
 !!! tip
     LangGraph Studio could also be used https://github.com/LangChain-ai/langgraph-studio
 
+!!! tip "The building/coding of these agents was AI-assisted"
+
+    1. **Architecture Diagram**: Bootstrap Mermaid diagram was created (using Claude 3.5 Sonnet)
+    2. **Code**: Bootstrap code was generated from the Architecture Diagram (using Claude 3.5 Sonnet)
+    3. **Code Editor**: Cursor AI was used (with Claude 3.5 Sonnet)
+    4. **Documentation**: CrewAI.com [Chat with our docs](https://chatg.pt/DWjSBZn) link (ChatGPT agent). This was also used to generate code snippets as an answer to a question.
+   
+
+
 
 # Multi Agent Systems
 There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.
@@ -34,6 +43,7 @@ My requirements here are:
 3. Representation and support for production Deployment on Cloud platforms (AWS, GCP)
 
 So I'll use LangGraph on LangChain. YMMV!
+
 
 
 
