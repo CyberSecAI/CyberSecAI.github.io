@@ -5,6 +5,7 @@
 
 ## Why Agents?
 
+[Why agents are the next frontier of generative AI, July 2024](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai)
 
 
 
