@@ -11,6 +11,10 @@ I enjoy learning about, playing with, and applying these tools to better solve p
 
 This approach worked well for the [Risk-Based Prioritization guide](https://www.linkedin.com/posts/chrisamadden_cybersecurity-riskmanagement-vulnerabilitymanagement-activity-7179915292775452673-5ucc/)...
 
+
+
+
+
 You may find it useful.
 
 [Chris Madden](https://www.linkedin.com/in/chrisamadden/)

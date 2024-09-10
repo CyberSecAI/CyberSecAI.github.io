@@ -10,6 +10,8 @@
 
 !!! tip "No code solutions to building Multi Agent Systems are also available"
     
+    Some examples:
+    
     * [LangGraph Studio](https://github.com/LangChain-ai/langgraph-studio) 
     * [Flowise](https://github.com/FlowiseAI/Flowise) 
 
@@ -32,13 +34,17 @@ But for smaller Problem and Solution Spaces (more bounded), agents and their too
 
 There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.
 
-[CrewAI](https://www.crewai.com/) (built on LangChain), and [AutoGen](https://microsoft.github.io/autogen/) (by Microsoft), are two popular frameworks.
+Example popular frameworks:
 
-* these are best suited to more complex multi agent use cases - where autonomy and conversation is required. 
+* [CrewAI](https://www.crewai.com/) (built on LangChain)
+* [AutoGen](https://microsoft.github.io/autogen/) (by Microsoft)
+* [Swarms](https://github.com/kyegomez/swarms)
+
+Some frameworks are best suited to more complex multi agent use cases - where autonomy and conversation is required. 
     * Chatty can be expensive in time and money as its more LLM calls.
 * they can also be useful for rapid prototyping and development of Multi Agent Systems - getting a working system quickly, that can then be optimized and customized with a lower level framework.
 
-For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph.
+For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph (or no-code solution based on LangGraph).
 
 * LangChain does have [LCEL (LangChain Expression Language)](https://python.langchain.com/v0.1/docs/expression_language/) but [LangGraph on LangChain may be a better option](https://www.youtube.com/watch?v=_yFfc5YB5Xc).  
 * Another option again is to write (and maintain) your own plumbing to get a simpler Multi Agent System. And it seems like lots of people are rolling their own.
@@ -46,11 +52,11 @@ For simpler use cases, where we want to prescribe/control how agents interact wi
 My requirements here are:
 
 1. Minimal Time-To-Value and Time-To-Learning from the initial solution
-2. Representation and support by tools
-   1. including Observability tooling e.g. [LangFuse](https://langfuse.com/), [LangSmith](https://www.langchain.com/langsmith) 
+2. Support by tools
+   1. including Observability tooling e.g. [LangFuse](https://langfuse.com/), [LangSmith](https://www.langchain.com/langsmith), [LangTrace](https://www.langtrace.ai/) 
 3. Representation and support for production Deployment on Cloud platforms (AWS, GCP)
 
-So I'll use LangGraph on LangChain. YMMV!
+
 
 
 

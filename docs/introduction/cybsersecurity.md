@@ -8,3 +8,4 @@ https://cloudsecurityalliance.org/artifacts/using-ai-for-offensive-security?
 ## Overview
 
 https://artificialanalysis.ai/
+https://llmpricecheck.com/
