@@ -21,7 +21,14 @@
 
 
 
-# Multi Agent Systems
+# Multi Agent Systems Problem and Solution Space
+For open-ended problems, ReAct is appropriate.
+
+But for smaller Problem and Solution Spaces (more bounded), agents and their tools can be more defined and deterministic, and this allows for more optimization.
+
+
+# Multi Agent Systems Frameworks
+
 There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.
 
 [CrewAI](https://www.crewai.com/) (built on LangChain), and [AutoGen](https://microsoft.github.io/autogen/) (by Microsoft), are two popular frameworks.

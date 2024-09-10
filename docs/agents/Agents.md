@@ -5,7 +5,7 @@
 
 ## Why Agents?
 
-!!! quote "Benefits of multi-agent designs"
+[Why agents are the next frontier of generative AI, July 2024](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai)
 
     "If one agent can't work well, then why is multi-agent useful?"
 
