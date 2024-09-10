@@ -57,14 +57,14 @@
 ## References
 
  1. https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance
- 2. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection
- 3. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use
- 4. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning
- 5. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration
- 6. https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
- 7. https://blog.langchain.dev/langgraph-multi-agent-workflows/
- 8. Mixture-of-Agents Enhances Large Language Model Capabilities, June 2024, https://arxiv.org/abs/2406.04692
- 9. Data Interpreter: An LLM Agent For Data Science, Mar 2024, https://arxiv.org/abs/2402.18679
- 10. AgentCoder: Multi-Agent Code Generation with Effective Testing and Self-optimisation, May 2024, https://arxiv.org/html/2312.13010v3 
- 11. The COMPLETE TRUTH About AI Agents (2024) https://www.youtube.com/watch?v=HGS5LfyxLUU
+    1. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection
+    2. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use
+    3. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning
+    4. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration
+ 4. https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
+ 5. https://blog.langchain.dev/langgraph-multi-agent-workflows/
+ 6. Mixture-of-Agents Enhances Large Language Model Capabilities, June 2024, https://arxiv.org/abs/2406.04692
+ 7. Data Interpreter: An LLM Agent For Data Science, Mar 2024, https://arxiv.org/abs/2402.18679
+ 8.  AgentCoder: Multi-Agent Code Generation with Effective Testing and Self-optimisation, May 2024, https://arxiv.org/html/2312.13010v3 
+ 9.  The COMPLETE TRUTH About AI Agents (2024) https://www.youtube.com/watch?v=HGS5LfyxLUU
     
