@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://github.com/CyberSecAI/CyberSecAI.github.io/agents/Build_agents/" rel="canonical"/>
 <link href="../Agents/" rel="prev"/>
-<link href="../../TopicModeling/BertTopic/" rel="next"/>
+<link href="../Crewai/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.33" name="generator"/>
 <title>Build Agents - CyberSecAI</title>
@@ -354,9 +354,65 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Build Agents
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Build Agents
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-agent-systems-problem-and-solution-space">
+<span class="md-ellipsis">
+      Multi Agent Systems Problem and Solution Space
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-agent-systems-frameworks">
+<span class="md-ellipsis">
+      Multi Agent Systems Frameworks
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#architecture">
+<span class="md-ellipsis">
+      Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#architecture-to-code">
+<span class="md-ellipsis">
+      Architecture to Code
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-agent-system-skeleton-code">
+<span class="md-ellipsis">
+      Multi Agent System Skeleton Code
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Crewai/">
+<span class="md-ellipsis">
+    CrewAI
   </span>
 </a>
 </li>
@@ -428,6 +484,47 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-agent-systems-problem-and-solution-space">
+<span class="md-ellipsis">
+      Multi Agent Systems Problem and Solution Space
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-agent-systems-frameworks">
+<span class="md-ellipsis">
+      Multi Agent Systems Frameworks
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#architecture">
+<span class="md-ellipsis">
+      Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#architecture-to-code">
+<span class="md-ellipsis">
+      Architecture to Code
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multi-agent-system-skeleton-code">
+<span class="md-ellipsis">
+      Multi Agent System Skeleton Code
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -442,15 +539,32 @@
 <p>We will then convert the diagram to LangChain and LangGraph code (using a GPT)</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>LangGraph Studio could also be used <a href="https://github.com/LangChain-ai/langgraph-studio">https://github.com/LangChain-ai/langgraph-studio</a></p>
+<p class="admonition-title">No code solutions to building Multi Agent Systems are also available</p>
+<ul>
+<li><a href="https://github.com/LangChain-ai/langgraph-studio">LangGraph Studio</a> </li>
+<li><a href="https://github.com/FlowiseAI/Flowise">Flowise</a> </li>
+</ul>
 </div>
-<h1 id="multi-agent-systems">Multi Agent Systems<a class="headerlink" href="#multi-agent-systems" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">The building/coding of these agents was AI-assisted</p>
+<ol>
+<li><strong>Architecture Diagram</strong>: Bootstrap Mermaid diagram was created (using Claude 3.5 Sonnet)</li>
+<li><strong>Code</strong>: Bootstrap code was generated from the Architecture Diagram (using Claude 3.5 Sonnet)</li>
+<li><strong>Code Editor</strong>: Cursor AI was used (with Claude 3.5 Sonnet)</li>
+<li><strong>Documentation</strong>: CrewAI.com <a href="https://chatg.pt/DWjSBZn">Chat with our docs</a> link (ChatGPT agent). This was also used to generate code snippets as an answer to a question.</li>
+</ol>
+</div>
+<h2 id="multi-agent-systems-problem-and-solution-space">Multi Agent Systems Problem and Solution Space<a class="headerlink" href="#multi-agent-systems-problem-and-solution-space" title="Permanent link">¶</a></h2>
+<p>For open-ended problems, <a href="https://react-lm.github.io/">ReAct</a> is appropriate.</p>
+<p>But for smaller Problem and Solution Spaces (more bounded), agents and their tools can be more defined and deterministic, and this allows for more optimization.</p>
+<h2 id="multi-agent-systems-frameworks">Multi Agent Systems Frameworks<a class="headerlink" href="#multi-agent-systems-frameworks" title="Permanent link">¶</a></h2>
 <p>There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.</p>
 <p><a href="https://www.crewai.com/">CrewAI</a> (built on LangChain), and <a href="https://microsoft.github.io/autogen/">AutoGen</a> (by Microsoft), are two popular frameworks.</p>
 <ul>
-<li>these are best suited to more complex multi agent use cases - where autonomy and conversation is required. </li>
+<li>these are best suited to more complex multi agent use cases - where autonomy and conversation is required. <ul>
 <li>Chatty can be expensive in time and money as its more LLM calls.</li>
+</ul>
+</li>
 <li>they can also be useful for rapid prototyping and development of Multi Agent Systems - getting a working system quickly, that can then be optimized and customized with a lower level framework.</li>
 </ul>
 <p>For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph.</p>
@@ -458,117 +572,159 @@
 <li>LangChain does have <a href="https://python.langchain.com/v0.1/docs/expression_language/">LCEL (LangChain Expression Language)</a> but <a href="https://www.youtube.com/watch?v=_yFfc5YB5Xc">LangGraph on LangChain may be a better option</a>.  </li>
 <li>Another option again is to write (and maintain) your own plumbing to get a simpler Multi Agent System. And it seems like lots of people are rolling their own.</li>
 </ul>
-<p>My requirements here are:
-1. Minimal Time-To-Value and Time-To-Learning from the initial solution
-2. Representation and support by tools
-   1. including Observability tooling e.g. <a href="https://langfuse.com/">LangFuse</a>, <a href="https://www.langchain.com/langsmith">LangSmith</a> 
-3. Representation and support for production Deployment on Cloud platforms (AWS, GCP)</p>
+<p>My requirements here are:</p>
+<ol>
+<li>Minimal Time-To-Value and Time-To-Learning from the initial solution</li>
+<li>Representation and support by tools</li>
+<li>including Observability tooling e.g. <a href="https://langfuse.com/">LangFuse</a>, <a href="https://www.langchain.com/langsmith">LangSmith</a> </li>
+<li>Representation and support for production Deployment on Cloud platforms (AWS, GCP)</li>
+</ol>
 <p>So I'll use LangGraph on LangChain. YMMV!</p>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>
 graph TD
-    Start((Start)) --&gt; A[Get Vulnerability Description and CVE ID]
-    A --&gt; |Vulnerability Description| B[Assign CWEs based on Vulnerability Description]
-    A --&gt; |Vulnerability Description| C[Extract weakness keyphrases from description]
-    A --&gt; |CVE ID| D[Get CVE References from NVD]
-    C --&gt; I[Get CVEs with similar weakness keyphrases \nfrom Known-Good CVE-CWE mappings]
-    C --&gt; E[Get CVEs with similar weakness keyphrases \nfrom NVD]
-    B --&gt; R[Assign CWEs based on all data]
-    C --&gt; R
-    D --&gt; R
-    E --&gt; R
-    I --&gt; R
-    R --&gt; F[Create report]
-    F --&gt; G[Update report based on human feedback]
+    Start((Start)) --&gt; A[Get Vulnerability Description]
+    A --&gt; |Vulnerability Description| C[Extract vulnerability keyphrases from Vulnerability Description]
+    C --&gt; |Vulnerability KeyPhrases| D[Get CVEs with similar weakness keyphrases \nfrom CWE Observed Examples]
+    C --&gt; |Vulnerability KeyPhrases| E[Get CVEs with similar weakness keyphrases \nfrom Top25 CWE Mappings]
+    C --&gt; |Vulnerability KeyPhrases| I[Get CVEs with similar weakness keyphrases \nfrom NVD]
+    A-. Vulnerability Description .-&gt; R
+
+    D --&gt; R[Create report]
+    E --&gt; R[Create report]
+    I --&gt; R[Create report]
+    R --&gt; |Draft Report|G[Review Report]
     G --&gt;|Human feedback| G
-    G --&gt; End((End))
+    G --&gt; |Final Report|End((End))
 </code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Text from the <abbr title="National Vulnerability Database">NVD</abbr> Refereces could also be retrieved to augment the report input, as sometimes they contain information that is not in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description. </p>
+<p>That has not been done here (yet) and is not shown in the diagram.</p>
+</div>
 <p>Diagram Code
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>graph TD
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    Start((Start)) --&gt; A[Get Vulnerability Description and CVE ID]
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    A --&gt; |Vulnerability Description| B[Assign CWEs based on Vulnerability Description]
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    A --&gt; |Vulnerability Description| C[Extract weakness keyphrases from description]
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    A --&gt; |CVE ID| D[Get CVE References from NVD]
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    C --&gt; I[Get CVEs with similar weakness keyphrases \nfrom Known-Good CVE-CWE mappings]
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    C --&gt; E[Get CVEs with similar weakness keyphrases \nfrom NVD]
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>    B --&gt; R[Assign CWEs based on all data]
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>    C --&gt; R
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>    D --&gt; R
-<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>    E --&gt; R
-<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>    I --&gt; R
-<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>    R --&gt; F[Create report]
-<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>    F --&gt; G[Update report based on human feedback]
-<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>    G --&gt;|Human feedback| G
-<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>    G --&gt; End((End))
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    Start((Start)) --&gt; A[Vulnerability Description]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    A --&gt; |Vulnerability Description| C[Extract vulnerability keyphrases from Vulnerability Description]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    C --&gt; |Vulnerability Description\nVulnerability KeyPhrases| D[Get CVEs with similar weakness keyphrases \nfrom CWE Observed Examples]
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    C --&gt; |Vulnerability Description\nVulnerability KeyPhrases| E[Get CVEs with similar weakness keyphrases \nfrom Top25 CWE Mappings]
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    C --&gt; |Vulnerability Description\nVulnerability KeyPhrases| I[Get CVEs with similar weakness keyphrases \nfrom NVD]
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    D --&gt; R[Create report]
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>    E --&gt; R[Create report]
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>    I --&gt; R[Create report]
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>    R --&gt; |Draft Report|G[Review Report]
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>    G --&gt;|Human feedback| G
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>    G --&gt; |Final Report|End((End))
 </code></pre></div></p>
 <h2 id="architecture-to-code">Architecture to Code<a class="headerlink" href="#architecture-to-code" title="Permanent link">¶</a></h2>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>I want to create a LangGraph multi agent system based on this diagram
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>I want to create a LangGraph multi agent system based on this diagram
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>I want to create a CrewAI multi agent system based on this diagram
 </code></pre></div>
 Claude 3.5 Sonnet</p>
 <h2 id="multi-agent-system-skeleton-code">Multi Agent System Skeleton Code<a class="headerlink" href="#multi-agent-system-skeleton-code" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a># Initialize our language model
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>llm = ChatOpenAI(model="gpt-3.5-turbo")
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a># Define our agents
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>def create_agent(name: str, description: str, tools: Sequence[Tool] = []):
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>    prompt = ChatPromptTemplate.from_messages([
-<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>        ("system", f"You are {name}. {description}"),
-<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>        ("human", "{input}"),
-<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>        ("human", "Relevant information: {agent_scratchpad}")
-<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>    ])
-<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a>    agent = create_react_agent(llm, tools, prompt)
-<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a>    return AgentExecutor(agent=agent, tools=tools)
-<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a>
-<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a># Define our agent nodes
-<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a>get_vuln_description = create_agent("Vulnerability Description Extractor", "Extract the vulnerability description and CVE ID from the input.")
-<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a>assign_initial_cwes = create_agent("Initial CWE Assigner", "Assign initial CWEs based on the vulnerability description.")
-<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a>extract_keyphrases = create_agent("Keyphrase Extractor", "Extract weakness keyphrases from the description.")
-<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a>get_similar_cves_known_good = create_agent("Known-Good CVE Retriever", "Get CVEs with similar weakness keyphrases from Known-Good mappings.")
-<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a>get_similar_cves_nvd = create_agent("NVD CVE Retriever", "Get CVEs with similar weakness keyphrases from NVD.")
-<a href="#__codelineno-2-20" id="__codelineno-2-20" name="__codelineno-2-20"></a>get_cve_references = create_agent("CVE Reference Retriever", "Get CVE References from NVD.")
-<a href="#__codelineno-2-21" id="__codelineno-2-21" name="__codelineno-2-21"></a>assign_final_cwes = create_agent("Final CWE Assigner", "Assign final CWEs based on all collected data.")
-<a href="#__codelineno-2-22" id="__codelineno-2-22" name="__codelineno-2-22"></a>create_report = create_agent("Report Creator", "Create a comprehensive report based on all the collected and analyzed data.")
-<a href="#__codelineno-2-23" id="__codelineno-2-23" name="__codelineno-2-23"></a>update_report = create_agent("Report Updater", "Update the report based on human feedback.")
-<a href="#__codelineno-2-24" id="__codelineno-2-24" name="__codelineno-2-24"></a>
-<a href="#__codelineno-2-25" id="__codelineno-2-25" name="__codelineno-2-25"></a># Create our graph
-<a href="#__codelineno-2-26" id="__codelineno-2-26" name="__codelineno-2-26"></a>workflow = StateGraph(AgentState)
-<a href="#__codelineno-2-27" id="__codelineno-2-27" name="__codelineno-2-27"></a>
-<a href="#__codelineno-2-28" id="__codelineno-2-28" name="__codelineno-2-28"></a># Add our nodes to the graph
-<a href="#__codelineno-2-29" id="__codelineno-2-29" name="__codelineno-2-29"></a>workflow.add_node("get_vuln_description", get_vuln_description)
-<a href="#__codelineno-2-30" id="__codelineno-2-30" name="__codelineno-2-30"></a>workflow.add_node("assign_initial_cwes", assign_initial_cwes)
-<a href="#__codelineno-2-31" id="__codelineno-2-31" name="__codelineno-2-31"></a>workflow.add_node("extract_keyphrases", extract_keyphrases)
-<a href="#__codelineno-2-32" id="__codelineno-2-32" name="__codelineno-2-32"></a>workflow.add_node("get_similar_cves_known_good", get_similar_cves_known_good)
-<a href="#__codelineno-2-33" id="__codelineno-2-33" name="__codelineno-2-33"></a>workflow.add_node("get_similar_cves_nvd", get_similar_cves_nvd)
-<a href="#__codelineno-2-34" id="__codelineno-2-34" name="__codelineno-2-34"></a>workflow.add_node("get_cve_references", get_cve_references)
-<a href="#__codelineno-2-35" id="__codelineno-2-35" name="__codelineno-2-35"></a>workflow.add_node("assign_final_cwes", assign_final_cwes)
-<a href="#__codelineno-2-36" id="__codelineno-2-36" name="__codelineno-2-36"></a>workflow.add_node("create_report", create_report)
-<a href="#__codelineno-2-37" id="__codelineno-2-37" name="__codelineno-2-37"></a>workflow.add_node("update_report", update_report)
-<a href="#__codelineno-2-38" id="__codelineno-2-38" name="__codelineno-2-38"></a>
-<a href="#__codelineno-2-39" id="__codelineno-2-39" name="__codelineno-2-39"></a># Define our edges
-<a href="#__codelineno-2-40" id="__codelineno-2-40" name="__codelineno-2-40"></a>workflow.add_edge("get_vuln_description", "assign_initial_cwes")
-<a href="#__codelineno-2-41" id="__codelineno-2-41" name="__codelineno-2-41"></a>workflow.add_edge("get_vuln_description", "extract_keyphrases")
-<a href="#__codelineno-2-42" id="__codelineno-2-42" name="__codelineno-2-42"></a>workflow.add_edge("get_vuln_description", "get_similar_cves_known_good")
-<a href="#__codelineno-2-43" id="__codelineno-2-43" name="__codelineno-2-43"></a>workflow.add_edge("extract_keyphrases", "get_similar_cves_nvd")
-<a href="#__codelineno-2-44" id="__codelineno-2-44" name="__codelineno-2-44"></a>workflow.add_edge("extract_keyphrases", "get_cve_references")
-<a href="#__codelineno-2-45" id="__codelineno-2-45" name="__codelineno-2-45"></a>workflow.add_edge("assign_initial_cwes", "assign_final_cwes")
-<a href="#__codelineno-2-46" id="__codelineno-2-46" name="__codelineno-2-46"></a>workflow.add_edge("extract_keyphrases", "assign_final_cwes")
-<a href="#__codelineno-2-47" id="__codelineno-2-47" name="__codelineno-2-47"></a>workflow.add_edge("get_similar_cves_known_good", "assign_final_cwes")
-<a href="#__codelineno-2-48" id="__codelineno-2-48" name="__codelineno-2-48"></a>workflow.add_edge("get_similar_cves_nvd", "assign_final_cwes")
-<a href="#__codelineno-2-49" id="__codelineno-2-49" name="__codelineno-2-49"></a>workflow.add_edge("get_cve_references", "assign_final_cwes")
-<a href="#__codelineno-2-50" id="__codelineno-2-50" name="__codelineno-2-50"></a>workflow.add_edge("assign_final_cwes", "create_report")
-<a href="#__codelineno-2-51" id="__codelineno-2-51" name="__codelineno-2-51"></a>workflow.add_edge("create_report", "update_report")
-<a href="#__codelineno-2-52" id="__codelineno-2-52" name="__codelineno-2-52"></a>workflow.add_edge("update_report", END)
-<a href="#__codelineno-2-53" id="__codelineno-2-53" name="__codelineno-2-53"></a>
-<a href="#__codelineno-2-54" id="__codelineno-2-54" name="__codelineno-2-54"></a># Compile the graph
-<a href="#__codelineno-2-55" id="__codelineno-2-55" name="__codelineno-2-55"></a>app = workflow.compile()
-<a href="#__codelineno-2-56" id="__codelineno-2-56" name="__codelineno-2-56"></a>
-<a href="#__codelineno-2-57" id="__codelineno-2-57" name="__codelineno-2-57"></a># Run the graph
-<a href="#__codelineno-2-58" id="__codelineno-2-58" name="__codelineno-2-58"></a>inputs = {
-<a href="#__codelineno-2-59" id="__codelineno-2-59" name="__codelineno-2-59"></a>    "input": "A buffer overflow vulnerability in XYZ software allows remote attackers to execute arbitrary code.",
-<a href="#__codelineno-2-60" id="__codelineno-2-60" name="__codelineno-2-60"></a>    "cve_id": "CVE-2023-12345"
-<a href="#__codelineno-2-61" id="__codelineno-2-61" name="__codelineno-2-61"></a>}
-<a href="#__codelineno-2-62" id="__codelineno-2-62" name="__codelineno-2-62"></a>for output in app.stream(inputs):
-<a href="#__codelineno-2-63" id="__codelineno-2-63" name="__codelineno-2-63"></a>    print(output)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>#from typing import TypedDict, Annotated, Sequence
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>from langchain_core.messages import BaseMessage
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>from langgraph.graph import StateGraph, Graph
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>from langchain_core.runnables import RunnableBinding
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>from langchain.pydantic_v1 import BaseModel, Field
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>from langchain_core.prompts import ChatPromptTemplate
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>from langchain_openai import ChatOpenAI
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>import asyncio
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a># Define the state
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>class AgentState(TypedDict):
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>    messages: Annotated[Sequence[BaseMessage], "The messages in the conversation"]
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>    vulnerability_description: Annotated[str, "The original vulnerability description"]
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>    vulnerability_keyphrases: Annotated[list, "Extracted keyphrases from the vulnerability description"]
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>    cwe_observed_cves: Annotated[list, "CVEs from CWE Observed Examples"]
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>    top25_cwe_cves: Annotated[list, "CVEs from Top25 CWE Mappings"]
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>    nvd_cves: Annotated[list, "CVEs from NVD"]
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>    draft_report: Annotated[str, "The draft report"]
+<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>    final_report: Annotated[str, "The final report"]
+<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>
+<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a># Initialize the language model
+<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a>llm = ChatOpenAI(temperature=0)
+<a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a>
+<a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a># Define the agents
+<a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a>
+<a href="#__codelineno-3-26" id="__codelineno-3-26" name="__codelineno-3-26"></a>def extract_keyphrases(state):
+<a href="#__codelineno-3-27" id="__codelineno-3-27" name="__codelineno-3-27"></a>    prompt = ChatPromptTemplate.from_template(
+<a href="#__codelineno-3-28" id="__codelineno-3-28" name="__codelineno-3-28"></a>        "Extract key phrases related to the vulnerability from the following description: {vulnerability_description}"
+<a href="#__codelineno-3-29" id="__codelineno-3-29" name="__codelineno-3-29"></a>    )
+<a href="#__codelineno-3-30" id="__codelineno-3-30" name="__codelineno-3-30"></a>    chain = prompt | llm
+<a href="#__codelineno-3-31" id="__codelineno-3-31" name="__codelineno-3-31"></a>    response = chain.invoke({"vulnerability_description": state["vulnerability_description"]})
+<a href="#__codelineno-3-32" id="__codelineno-3-32" name="__codelineno-3-32"></a>    keyphrases = response.content.split(", ")
+<a href="#__codelineno-3-33" id="__codelineno-3-33" name="__codelineno-3-33"></a>    return {"vulnerability_keyphrases": keyphrases}
+<a href="#__codelineno-3-34" id="__codelineno-3-34" name="__codelineno-3-34"></a>
+<a href="#__codelineno-3-35" id="__codelineno-3-35" name="__codelineno-3-35"></a>async def get_cwe_observed_cves(state):
+<a href="#__codelineno-3-36" id="__codelineno-3-36" name="__codelineno-3-36"></a>    # Simulating an asynchronous API call
+<a href="#__codelineno-3-37" id="__codelineno-3-37" name="__codelineno-3-37"></a>    await asyncio.sleep(1)
+<a href="#__codelineno-3-38" id="__codelineno-3-38" name="__codelineno-3-38"></a>    # In a real scenario, you would query a CVE database here
+<a href="#__codelineno-3-39" id="__codelineno-3-39" name="__codelineno-3-39"></a>    return {"cwe_observed_cves": ["CVE-2021-1234", "CVE-2022-5678"]}
+<a href="#__codelineno-3-40" id="__codelineno-3-40" name="__codelineno-3-40"></a>
+<a href="#__codelineno-3-41" id="__codelineno-3-41" name="__codelineno-3-41"></a>async def get_top25_cwe_cves(state):
+<a href="#__codelineno-3-42" id="__codelineno-3-42" name="__codelineno-3-42"></a>    await asyncio.sleep(1)
+<a href="#__codelineno-3-43" id="__codelineno-3-43" name="__codelineno-3-43"></a>    return {"top25_cwe_cves": ["CVE-2020-9876", "CVE-2023-4321"]}
+<a href="#__codelineno-3-44" id="__codelineno-3-44" name="__codelineno-3-44"></a>
+<a href="#__codelineno-3-45" id="__codelineno-3-45" name="__codelineno-3-45"></a>async def get_nvd_cves(state):
+<a href="#__codelineno-3-46" id="__codelineno-3-46" name="__codelineno-3-46"></a>    await asyncio.sleep(1)
+<a href="#__codelineno-3-47" id="__codelineno-3-47" name="__codelineno-3-47"></a>    return {"nvd_cves": ["CVE-2019-8765", "CVE-2024-1111"]}
+<a href="#__codelineno-3-48" id="__codelineno-3-48" name="__codelineno-3-48"></a>
+<a href="#__codelineno-3-49" id="__codelineno-3-49" name="__codelineno-3-49"></a>def create_report(state):
+<a href="#__codelineno-3-50" id="__codelineno-3-50" name="__codelineno-3-50"></a>    prompt = ChatPromptTemplate.from_template(
+<a href="#__codelineno-3-51" id="__codelineno-3-51" name="__codelineno-3-51"></a>        "Create a comprehensive report based on the following information:\n"
+<a href="#__codelineno-3-52" id="__codelineno-3-52" name="__codelineno-3-52"></a>        "Vulnerability Description: {vulnerability_description}\n"
+<a href="#__codelineno-3-53" id="__codelineno-3-53" name="__codelineno-3-53"></a>        "Key Phrases: {vulnerability_keyphrases}\n"
+<a href="#__codelineno-3-54" id="__codelineno-3-54" name="__codelineno-3-54"></a>        "CVEs from CWE Observed Examples: {cwe_observed_cves}\n"
+<a href="#__codelineno-3-55" id="__codelineno-3-55" name="__codelineno-3-55"></a>        "CVEs from Top25 CWE Mappings: {top25_cwe_cves}\n"
+<a href="#__codelineno-3-56" id="__codelineno-3-56" name="__codelineno-3-56"></a>        "CVEs from NVD: {nvd_cves}\n"
+<a href="#__codelineno-3-57" id="__codelineno-3-57" name="__codelineno-3-57"></a>        "Provide a detailed analysis and recommendations."
+<a href="#__codelineno-3-58" id="__codelineno-3-58" name="__codelineno-3-58"></a>    )
+<a href="#__codelineno-3-59" id="__codelineno-3-59" name="__codelineno-3-59"></a>    chain = prompt | llm
+<a href="#__codelineno-3-60" id="__codelineno-3-60" name="__codelineno-3-60"></a>    response = chain.invoke(state)
+<a href="#__codelineno-3-61" id="__codelineno-3-61" name="__codelineno-3-61"></a>    return {"draft_report": response.content}
+<a href="#__codelineno-3-62" id="__codelineno-3-62" name="__codelineno-3-62"></a>
+<a href="#__codelineno-3-63" id="__codelineno-3-63" name="__codelineno-3-63"></a>def review_report(state):
+<a href="#__codelineno-3-64" id="__codelineno-3-64" name="__codelineno-3-64"></a>    prompt = ChatPromptTemplate.from_template(
+<a href="#__codelineno-3-65" id="__codelineno-3-65" name="__codelineno-3-65"></a>        "Review and improve the following report:\n{draft_report}\n"
+<a href="#__codelineno-3-66" id="__codelineno-3-66" name="__codelineno-3-66"></a>        "Provide any necessary corrections or additions."
+<a href="#__codelineno-3-67" id="__codelineno-3-67" name="__codelineno-3-67"></a>    )
+<a href="#__codelineno-3-68" id="__codelineno-3-68" name="__codelineno-3-68"></a>    chain = prompt | llm
+<a href="#__codelineno-3-69" id="__codelineno-3-69" name="__codelineno-3-69"></a>    response = chain.invoke(state)
+<a href="#__codelineno-3-70" id="__codelineno-3-70" name="__codelineno-3-70"></a>    return {"final_report": response.content}
+<a href="#__codelineno-3-71" id="__codelineno-3-71" name="__codelineno-3-71"></a>
+<a href="#__codelineno-3-72" id="__codelineno-3-72" name="__codelineno-3-72"></a># Define the graph
+<a href="#__codelineno-3-73" id="__codelineno-3-73" name="__codelineno-3-73"></a>workflow = StateGraph(AgentState)
+<a href="#__codelineno-3-74" id="__codelineno-3-74" name="__codelineno-3-74"></a>
+<a href="#__codelineno-3-75" id="__codelineno-3-75" name="__codelineno-3-75"></a># Add nodes
+<a href="#__codelineno-3-76" id="__codelineno-3-76" name="__codelineno-3-76"></a>workflow.add_node("extract_keyphrases", extract_keyphrases)
+<a href="#__codelineno-3-77" id="__codelineno-3-77" name="__codelineno-3-77"></a>workflow.add_node("get_cwe_observed_cves", get_cwe_observed_cves)
+<a href="#__codelineno-3-78" id="__codelineno-3-78" name="__codelineno-3-78"></a>workflow.add_node("get_top25_cwe_cves", get_top25_cwe_cves)
+<a href="#__codelineno-3-79" id="__codelineno-3-79" name="__codelineno-3-79"></a>workflow.add_node("get_nvd_cves", get_nvd_cves)
+<a href="#__codelineno-3-80" id="__codelineno-3-80" name="__codelineno-3-80"></a>workflow.add_node("create_report", create_report)
+<a href="#__codelineno-3-81" id="__codelineno-3-81" name="__codelineno-3-81"></a>workflow.add_node("review_report", review_report)
+<a href="#__codelineno-3-82" id="__codelineno-3-82" name="__codelineno-3-82"></a>
+<a href="#__codelineno-3-83" id="__codelineno-3-83" name="__codelineno-3-83"></a># Add edges
+<a href="#__codelineno-3-84" id="__codelineno-3-84" name="__codelineno-3-84"></a>workflow.add_edge("extract_keyphrases", "get_cwe_observed_cves")
+<a href="#__codelineno-3-85" id="__codelineno-3-85" name="__codelineno-3-85"></a>workflow.add_edge("extract_keyphrases", "get_top25_cwe_cves")
+<a href="#__codelineno-3-86" id="__codelineno-3-86" name="__codelineno-3-86"></a>workflow.add_edge("extract_keyphrases", "get_nvd_cves")
+<a href="#__codelineno-3-87" id="__codelineno-3-87" name="__codelineno-3-87"></a>workflow.add_edge("get_cwe_observed_cves", "create_report")
+<a href="#__codelineno-3-88" id="__codelineno-3-88" name="__codelineno-3-88"></a>workflow.add_edge("get_top25_cwe_cves", "create_report")
+<a href="#__codelineno-3-89" id="__codelineno-3-89" name="__codelineno-3-89"></a>workflow.add_edge("get_nvd_cves", "create_report")
+<a href="#__codelineno-3-90" id="__codelineno-3-90" name="__codelineno-3-90"></a>workflow.add_edge("create_report", "review_report")
+<a href="#__codelineno-3-91" id="__codelineno-3-91" name="__codelineno-3-91"></a>
+<a href="#__codelineno-3-92" id="__codelineno-3-92" name="__codelineno-3-92"></a># Set entry point
+<a href="#__codelineno-3-93" id="__codelineno-3-93" name="__codelineno-3-93"></a>workflow.set_entry_point("extract_keyphrases")
+<a href="#__codelineno-3-94" id="__codelineno-3-94" name="__codelineno-3-94"></a>
+<a href="#__codelineno-3-95" id="__codelineno-3-95" name="__codelineno-3-95"></a># Compile the graph
+<a href="#__codelineno-3-96" id="__codelineno-3-96" name="__codelineno-3-96"></a>app = workflow.compile()
+<a href="#__codelineno-3-97" id="__codelineno-3-97" name="__codelineno-3-97"></a>
+<a href="#__codelineno-3-98" id="__codelineno-3-98" name="__codelineno-3-98"></a># Run the graph
+<a href="#__codelineno-3-99" id="__codelineno-3-99" name="__codelineno-3-99"></a>config = {"vulnerability_description": "A buffer overflow vulnerability in the XYZ software allows remote attackers to execute arbitrary code."}
+<a href="#__codelineno-3-100" id="__codelineno-3-100" name="__codelineno-3-100"></a>result = app.invoke(config)
+<a href="#__codelineno-3-101" id="__codelineno-3-101" name="__codelineno-3-101"></a>
+<a href="#__codelineno-3-102" id="__codelineno-3-102" name="__codelineno-3-102"></a>print(result["final_report"])
 </code></pre></div>
 </article>
 </div>
@@ -590,13 +746,13 @@ Claude 3.5 Sonnet</p>
               </div>
 </div>
 </a>
-<a aria-label="Next: BertTopic" class="md-footer__link md-footer__link--next" href="../../TopicModeling/BertTopic/">
+<a aria-label="Next: CrewAI" class="md-footer__link md-footer__link--next" href="../Crewai/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Next
               </span>
 <div class="md-ellipsis">
-                BertTopic
+                CrewAI
               </div>
 </div>
 <div class="md-footer__button md-icon">
