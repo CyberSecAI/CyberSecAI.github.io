@@ -8,8 +8,10 @@
 
     We will then convert the diagram to LangChain and LangGraph code (using a GPT)
 
-!!! tip
-    LangGraph Studio could also be used https://github.com/LangChain-ai/langgraph-studio
+!!! tip "No code solutions to building Multi Agent Systems are also available"
+    
+    * [LangGraph Studio](https://github.com/LangChain-ai/langgraph-studio) 
+    * [Flowise](https://github.com/FlowiseAI/Flowise) 
 
 !!! tip "The building/coding of these agents was AI-assisted"
 
@@ -19,15 +21,14 @@
     4. **Documentation**: CrewAI.com [Chat with our docs](https://chatg.pt/DWjSBZn) link (ChatGPT agent). This was also used to generate code snippets as an answer to a question.
    
 
+## Multi Agent Systems Problem and Solution Space
 
-
-# Multi Agent Systems Problem and Solution Space
-For open-ended problems, ReAct is appropriate.
+For open-ended problems, [ReAct](https://react-lm.github.io/) is appropriate.
 
 But for smaller Problem and Solution Spaces (more bounded), agents and their tools can be more defined and deterministic, and this allows for more optimization.
 
 
-# Multi Agent Systems Frameworks
+## Multi Agent Systems Frameworks
 
 There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.
 
@@ -74,6 +75,11 @@ graph TD
     G -->|Human feedback| G
     G --> |Final Report|End((End))
 ```
+
+!!! note
+    Text from the NVD Refereces could also be retrieved to augment the report input, as sometimes they contain information that is not in the CVE Description. 
+
+    That has not been done here (yet) and is not shown in the diagram.
 
 Diagram Code
 ````
