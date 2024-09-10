@@ -8,9 +8,9 @@
 
 !!! tip
     CrewAI.com has a [Chat with our docs](https://chatg.pt/DWjSBZn) link (ChatGPT agent) which is useful to ask questions e.g.
- was converted to CrewAI code (using a GPT).
+     
     !!! quote
-    
+
         explain the different agent parts and what's the difference between system_prompt backstory and goal
 
     !!! quote "This is a small extract from the response"   
