@@ -540,6 +540,7 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">No code solutions to building Multi Agent Systems are also available</p>
+<p>Some examples:</p>
 <ul>
 <li><a href="https://github.com/LangChain-ai/langgraph-studio">LangGraph Studio</a> </li>
 <li><a href="https://github.com/FlowiseAI/Flowise">Flowise</a> </li>
@@ -559,15 +560,16 @@
 <p>But for smaller Problem and Solution Spaces (more bounded), agents and their tools can be more defined and deterministic, and this allows for more optimization.</p>
 <h2 id="multi-agent-systems-frameworks">Multi Agent Systems Frameworks<a class="headerlink" href="#multi-agent-systems-frameworks" title="Permanent link">¶</a></h2>
 <p>There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.</p>
-<p><a href="https://www.crewai.com/">CrewAI</a> (built on LangChain), and <a href="https://microsoft.github.io/autogen/">AutoGen</a> (by Microsoft), are two popular frameworks.</p>
+<p>Example popular frameworks:</p>
 <ul>
-<li>these are best suited to more complex multi agent use cases - where autonomy and conversation is required. <ul>
-<li>Chatty can be expensive in time and money as its more LLM calls.</li>
+<li><a href="https://www.crewai.com/">CrewAI</a> (built on LangChain)</li>
+<li><a href="https://microsoft.github.io/autogen/">AutoGen</a> (by Microsoft)</li>
+<li><a href="https://github.com/kyegomez/swarms">Swarms</a></li>
 </ul>
-</li>
-<li>they can also be useful for rapid prototyping and development of Multi Agent Systems - getting a working system quickly, that can then be optimized and customized with a lower level framework.</li>
-</ul>
-<p>For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph.</p>
+<p>Some frameworks are best suited to more complex multi agent use cases - where autonomy and conversation is required. 
+    * Chatty can be expensive in time and money as its more LLM calls.
+* they can also be useful for rapid prototyping and development of Multi Agent Systems - getting a working system quickly, that can then be optimized and customized with a lower level framework.</p>
+<p>For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph (or no-code solution based on LangGraph).</p>
 <ul>
 <li>LangChain does have <a href="https://python.langchain.com/v0.1/docs/expression_language/">LCEL (LangChain Expression Language)</a> but <a href="https://www.youtube.com/watch?v=_yFfc5YB5Xc">LangGraph on LangChain may be a better option</a>.  </li>
 <li>Another option again is to write (and maintain) your own plumbing to get a simpler Multi Agent System. And it seems like lots of people are rolling their own.</li>
@@ -575,11 +577,10 @@
 <p>My requirements here are:</p>
 <ol>
 <li>Minimal Time-To-Value and Time-To-Learning from the initial solution</li>
-<li>Representation and support by tools</li>
-<li>including Observability tooling e.g. <a href="https://langfuse.com/">LangFuse</a>, <a href="https://www.langchain.com/langsmith">LangSmith</a> </li>
+<li>Support by tools</li>
+<li>including Observability tooling e.g. <a href="https://langfuse.com/">LangFuse</a>, <a href="https://www.langchain.com/langsmith">LangSmith</a>, <a href="https://www.langtrace.ai/">LangTrace</a> </li>
 <li>Representation and support for production Deployment on Cloud platforms (AWS, GCP)</li>
 </ol>
-<p>So I'll use LangGraph on LangChain. YMMV!</p>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>
 graph TD
