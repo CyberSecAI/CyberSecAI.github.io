@@ -8,27 +8,43 @@
 
     We will then convert the diagram to LangChain and LangGraph code (using a GPT)
 
-!!! tip
-    LangGraph Studio could also be used https://github.com/LangChain-ai/langgraph-studio
+!!! tip "No code solutions to building Multi Agent Systems are also available"
+    
+    Some examples:
+    
+    * [LangGraph Studio](https://github.com/LangChain-ai/langgraph-studio) 
+    * [Flowise](https://github.com/FlowiseAI/Flowise) 
 
+!!! tip "The building/coding of these agents was AI-assisted"
 
-# Multi Agent Systems Problem and Solution Space
-For open-ended problems, ReAct is appropriate.
+    1. **Architecture Diagram**: Bootstrap Mermaid diagram was created (using Claude 3.5 Sonnet)
+    2. **Code**: Bootstrap code was generated from the Architecture Diagram (using Claude 3.5 Sonnet)
+    3. **Code Editor**: Cursor AI was used (with Claude 3.5 Sonnet)
+    4. **Documentation**: CrewAI.com [Chat with our docs](https://chatg.pt/DWjSBZn) link (ChatGPT agent). This was also used to generate code snippets as an answer to a question.
+   
+
+## Multi Agent Systems Problem and Solution Space
+
+For open-ended problems, [ReAct](https://react-lm.github.io/) is appropriate.
 
 But for smaller Problem and Solution Spaces (more bounded), agents and their tools can be more defined and deterministic, and this allows for more optimization.
 
 
-# Multi Agent Systems Frameworks
+## Multi Agent Systems Frameworks
 
 There are several frameworks for building Multi Agent Systems (MAS), and many more being developed.
 
-[CrewAI](https://www.crewai.com/) (built on LangChain), and [AutoGen](https://microsoft.github.io/autogen/) (by Microsoft), are two popular frameworks.
+Example popular frameworks:
 
-* these are best suited to more complex multi agent use cases - where autonomy and conversation is required. 
+* [CrewAI](https://www.crewai.com/) (built on LangChain)
+* [AutoGen](https://microsoft.github.io/autogen/) (by Microsoft)
+* [Swarms](https://github.com/kyegomez/swarms)
+
+Some frameworks are best suited to more complex multi agent use cases - where autonomy and conversation is required. 
     * Chatty can be expensive in time and money as its more LLM calls.
 * they can also be useful for rapid prototyping and development of Multi Agent Systems - getting a working system quickly, that can then be optimized and customized with a lower level framework.
 
-For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph.
+For simpler use cases, where we want to prescribe/control how agents interact with each other, we can use LangChain and LangGraph (or no-code solution based on LangGraph).
 
 * LangChain does have [LCEL (LangChain Expression Language)](https://python.langchain.com/v0.1/docs/expression_language/) but [LangGraph on LangChain may be a better option](https://www.youtube.com/watch?v=_yFfc5YB5Xc).  
 * Another option again is to write (and maintain) your own plumbing to get a simpler Multi Agent System. And it seems like lots of people are rolling their own.
@@ -36,11 +52,12 @@ For simpler use cases, where we want to prescribe/control how agents interact wi
 My requirements here are:
 
 1. Minimal Time-To-Value and Time-To-Learning from the initial solution
-2. Representation and support by tools
-   1. including Observability tooling e.g. [LangFuse](https://langfuse.com/), [LangSmith](https://www.langchain.com/langsmith) 
+2. Support by tools
+   1. including Observability tooling e.g. [LangFuse](https://langfuse.com/), [LangSmith](https://www.langchain.com/langsmith), [LangTrace](https://www.langtrace.ai/) 
 3. Representation and support for production Deployment on Cloud platforms (AWS, GCP)
 
-So I'll use LangGraph on LangChain. YMMV!
+
+
 
 
 
@@ -64,6 +81,11 @@ graph TD
     G -->|Human feedback| G
     G --> |Final Report|End((End))
 ```
+
+!!! note
+    Text from the NVD Refereces could also be retrieved to augment the report input, as sometimes they contain information that is not in the CVE Description. 
+
+    That has not been done here (yet) and is not shown in the diagram.
 
 Diagram Code
 ````

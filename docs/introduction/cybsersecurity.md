@@ -8,4 +8,8 @@ https://cloudsecurityalliance.org/artifacts/using-ai-for-offensive-security?
 ## Overview
 
 https://artificialanalysis.ai/
+<<<<<<< HEAD
 https://openrouter.ai/rankings?view=day LLMs used
+=======
+https://llmpricecheck.com/
+>>>>>>> 7dfcbf18fdb4896ea36a0c5747ea8435124c3c67

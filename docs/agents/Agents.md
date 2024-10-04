@@ -7,6 +7,7 @@
 
 [Why agents are the next frontier of generative AI, July 2024](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai)
 
+!!! tip
     "If one agent can't work well, then why is multi-agent useful?"
 
     * Grouping tools/responsibilities can give better results. An agent is more likely to succeed on a focused task than if it has to select from dozens of tools.
@@ -53,17 +54,17 @@
 
 
 
-    ## References
+## References
 
-    * https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance
-    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection
-    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use
-    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning
-    * https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration
-    * https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
-    * https://blog.langchain.dev/langgraph-multi-agent-workflows/
-    * [Mixture-of-Agents Enhances Large Language Model Capabilities](https://arxiv.org/abs/2406.04692)
-    * [Data Interpreter: An LLM Agent For Data Science](https://arxiv.org/abs/2402.18679) 
-    * [AgentCoder: Multi-Agent Code Generation with Effective Testing and Self-optimisation](https://arxiv.org/html/2312.13010v3) 
-    * [The COMPLETE TRUTH About AI Agents (2024)](https://www.youtube.com/watch?v=HGS5LfyxLUU)
+ 1. https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance
+    1. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection
+    2. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use
+    3. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning
+    4. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration
+ 4. https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
+ 5. https://blog.langchain.dev/langgraph-multi-agent-workflows/
+ 6. Mixture-of-Agents Enhances Large Language Model Capabilities, June 2024, https://arxiv.org/abs/2406.04692
+ 7. Data Interpreter: An LLM Agent For Data Science, Mar 2024, https://arxiv.org/abs/2402.18679
+ 8.  AgentCoder: Multi-Agent Code Generation with Effective Testing and Self-optimisation, May 2024, https://arxiv.org/html/2312.13010v3 
+ 9.  The COMPLETE TRUTH About AI Agents (2024) https://www.youtube.com/watch?v=HGS5LfyxLUU
     
