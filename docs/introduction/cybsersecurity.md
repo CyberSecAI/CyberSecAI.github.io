@@ -9,3 +9,4 @@ https://cloudsecurityalliance.org/artifacts/using-ai-for-offensive-security?
 
 https://artificialanalysis.ai/
 https://llmpricecheck.com/
+https://openrouter.ai/rankings?view=day LLMs used
