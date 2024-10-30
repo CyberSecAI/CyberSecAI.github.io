@@ -11,15 +11,16 @@ nav:
   - NotebookLM:
     - NotebookLM: NotebookLM/NotebookLM.md
     - NotebookLM Vulnerability Standards: NotebookLM/NotebookLM_VulnerabilityStandards.md
-    - NotebookLM CWE: NotebookLM/NotebookLM_Cwe.md
     - NotebookLM CAPEC: NotebookLM/NotebookLM_Capec.md
     - NotebookLM ATTACK: NotebookLM/NotebookLM_Attack.md
     - NotebookLM Config: NotebookLM/NotebookLM_Config.md
     - NotebookLM Secure Code: NotebookLM/NotebookLM_Secure_Code.md
   - Grounded Closed System: 
     - Grounding: Grounded/grounding.md
-    - ChatGPT CWE GPT: Grounded/cwe_gpt.md
-    - Vertex AI CWE Agent: Grounded/vertex_ai.md
+  - CWE Assignment:
+    - ChatGPT CWE GPT: CWE_Assignment/cwe_gpt.md
+    - NotebookLM CWE: CWE_Assignment/NotebookLM_Cwe.md
+    - Vertex AI CWE Agent: CWE_Assignment/vertex_ai.md
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
@@ -34,7 +35,7 @@ nav:
   - Annex:
     - Glossary: annex/Glossary.md
     - Talks & Research: research/research.md
-  
+
 theme:
   name: material
   custom_dir: docs/overrides
