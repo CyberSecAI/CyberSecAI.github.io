@@ -19,6 +19,7 @@ nav:
   - Grounded Closed System: 
     - Grounding: Grounded/grounding.md
   - CWE Assignment:
+    - Overview: CWE_Assignment/cwe_overview.md
     - ChatGPT CWE GPT: CWE_Assignment/cwe_gpt.md
     - NotebookLM CWE: CWE_Assignment/NotebookLM_Cwe.md
     - Vertex AI CWE Agent: CWE_Assignment/vertex_ai.md

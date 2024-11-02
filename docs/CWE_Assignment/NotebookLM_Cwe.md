@@ -39,6 +39,8 @@
         * allows us to remove content that is not relevant e.g. "ContentHistory" can contain a lot of text that is not relevant to CWE assignment
 !!! experiment "Data Sources"
 
+    **The files in https://github.com/CyberSecAI/cwe_top25/tree/main/data_out/output_jsonl are imported into NoteBookLM.**. They are generated as follows: 
+
     1. Get the MITRE CWE Specification as JSON from https://github.com/CWE-CAPEC/REST-API-wg/blob/main/json_repo/cwe.json
     2. Remove the "ContentHistory" entries as this is not useful to assign CWEs and is a lot of content
         1. use Claude 3.5 to generate the python code to do this
@@ -82,6 +84,12 @@
       * CVE-2021-35395: A stack-based buffer overflow vulnerability exists in the DHCP client of Lantronix PremierWave 2050 8.9.0.0R4.
     
 
+## Sharing Notebooks
+
+!!! tip
+    The notebook can be shared with other users via email (using the share button top right) to allow them to use the notebook.
+
+    Sharing is via a user's email.
 
 
 

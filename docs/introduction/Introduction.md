@@ -70,6 +70,10 @@ Different, and especially opposite, opinions with the data to back them up, are 
 
       Julien Simon, Chief Evangelist, Hugging Face
 
+!!! warning
+      This space is rapidly evolving so the content in this guide may become no longer current or accurate.
+      
+
 
 !!! warning
       You are responsible for your data and where it goes. 
