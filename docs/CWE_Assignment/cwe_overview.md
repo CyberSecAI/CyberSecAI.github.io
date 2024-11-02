@@ -1,8 +1,8 @@
 # Overview
 
-Overall, there’s different parameters
+Overall, there’s different components to the CWE assignment system:
 
-1. Representations of the MITRE CWE Specification. 
+1. RAG Corpus: Representations of the MITRE CWE Specification. 
       1. PDF version of the MITRE CWE Specification 
          1. https://cwe.mitre.org/data/downloads.html 
       2. JSON version of the MITRE CWE Specification 
@@ -21,4 +21,5 @@ Overall, there’s different parameters
          1. Anyone with a Google account can get up and running in 5 minutes for free.
       3. VertexAI
          1. This allows the most customization - but there's more effort to set it up and it is not free.
-3. Various Prompts can be used depending on what you want
+3. Prompts: 
+      1. Various Prompts can be used depending on what you want

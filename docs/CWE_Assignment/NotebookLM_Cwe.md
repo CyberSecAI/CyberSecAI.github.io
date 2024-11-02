@@ -82,7 +82,21 @@
       * CVE-2021-20046, CVE-2021-20048: Stack-based buffer overflows in SonicOS HTTP response headers allow for Denial of Service and potentially remote code execution.
       * CVE-2021-21887: A stack-based buffer overflow in Lantronix PremierWave 2050 8.9.0.0R4 allows remote code execution via a crafted HTTP request.
       * CVE-2021-35395: A stack-based buffer overflow vulnerability exists in the DHCP client of Lantronix PremierWave 2050 8.9.0.0R4.
-    
+
+## CWE Assignment Prompt
+The notebook can be used to assign CWEs to a given CVE Description using a specific prompt:
+https://github.com/CyberSecAI/CWEMap/blob/main/prompts/assign_cwes/system.md
+
+NoteBookLM does not allow the full prompt to be copied into the chat as is - it needs to be copied in 3 smaller parts.
+
+### Example CVE-2024-5158
+!!! quote "CVE-2024-5158"
+    Type Confusion in V8 in Google Chrome prior to 125.0.6422.76 allowed a remote attacker to potentially perform arbitrary read/write via a crafted HTML page. (Chromium security severity: High)
+    https://nvd.nist.gov/vuln/detail/CVE-2024-5158
+
+<figure markdown>
+![](../assets/images/type_confusion2.png)
+</figure>
 
 ## Sharing Notebooks
 
