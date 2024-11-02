@@ -17,9 +17,15 @@
 
 ## [NotebookLM](https://notebooklm.google.com/)
 
+!!! tip
+    !!! quote
+        [NotebookLM](https://notebooklm.google.com/) lets you read, take notes, ask questions, organize your ideas, and much more -- all with the power of Google AI helping you at every step of the way.
 
-!!! quote
-    [NotebookLM](https://notebooklm.google.com/) lets you read, take notes, ask questions, organize your ideas, and much more -- all with the power of Google AI helping you at every step of the way.
+    !!! quote
+        [Audio Overview](https://blog.google/technology/ai/notebooklm-audio-overviews/), a new way to turn your documents into engaging audio discussions. With one click, two AI hosts start up a lively “deep dive” discussion based on your sources. They summarize your material, make connections between topics, and banter back and forth. You can even download the conversation and take it on the go.
+    
+
+    
 
 !!! quote
     It runs on the company’s Gemini 1.5 Pro model ([released Dec 2023](https://en.wikipedia.org/wiki/Gemini_(language_model))), the same AI that powers the Gemini Advanced chatbot. 
