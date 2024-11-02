@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/agents/Agents/">
+        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/CWE_Assignment/vertex_ai/">
       
       
-        <link rel="prev" href="../../Vulnrichment/Vulnrichment/">
+        <link rel="prev" href="../NotebookLM_Cwe/">
       
       
-        <link rel="next" href="../Build_agents/">
+        <link rel="next" href="../../prompt_engineering/prompt_engineering/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Agents - CyberSecAI</title>
+        <title>Vertex AI CWE Agent - CyberSecAI</title>
       
     
     
@@ -102,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#agents" class="md-skip">
+        <a href="#google-vertex-ai-agent-builder" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Agents
+              Vertex AI CWE Agent
             
           </span>
         </div>
@@ -633,19 +633,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -659,7 +659,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             CWE Assignment
@@ -673,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CWE_Assignment/cwe_overview/" class="md-nav__link">
+      <a href="../cwe_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CWE_Assignment/cwe_gpt/" class="md-nav__link">
+      <a href="../cwe_gpt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CWE_Assignment/NotebookLM_Cwe/" class="md-nav__link">
+      <a href="../NotebookLM_Cwe/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -733,10 +733,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../CWE_Assignment/vertex_ai/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vertex AI CWE Agent
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -745,6 +765,161 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#grounding-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grounding Confidence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitre-cwe-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      MITRE CWE Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-vertex-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Vertex AI Agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Preprocessing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Import
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-the-system-is-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check if the System is Closed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-different-types-of-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the different types of XSS?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-cwe-ids-relate-to-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      What CWE IDs Relate To XSS?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-parent-weakness-or-cwe-for-xss-and-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is The Parent Weakness Or CWE For XSS And CSRF?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-cwe-ids-relate-to-path-or-directory-traversal-list-all-cwe-ids-and-their-description-in-a-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      What CWE IDs Relate To Path Or Directory Traversal? List All CWE IDs And Their Description In A Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-cwe-associated-with-cve" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the CWE Associated With CVE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-1394" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage: CWE-1394
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-app-builder-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other App Builder Docs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -914,19 +1089,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -940,7 +1115,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Agents
@@ -951,30 +1126,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Agents
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../agents/Agents/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -983,44 +1138,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Agents?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1033,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Build_agents/" class="md-nav__link">
+      <a href="../../agents/Build_agents/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1054,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Crewai/" class="md-nav__link">
+      <a href="../../agents/Crewai/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1255,18 +1372,135 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-agents" class="md-nav__link">
+  <a href="#grounding-confidence" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Agents?
+      Grounding Confidence
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#recipe" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      Recipe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitre-cwe-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      MITRE CWE Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-vertex-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build Vertex AI Agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Preprocessing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Import
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-the-system-is-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check if the System is Closed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-different-types-of-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the different types of XSS?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-cwe-ids-relate-to-xss" class="md-nav__link">
+    <span class="md-ellipsis">
+      What CWE IDs Relate To XSS?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-parent-weakness-or-cwe-for-xss-and-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is The Parent Weakness Or CWE For XSS And CSRF?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-cwe-ids-relate-to-path-or-directory-traversal-list-all-cwe-ids-and-their-description-in-a-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      What CWE IDs Relate To Path Or Directory Traversal? List All CWE IDs And Their Description In A Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-cwe-associated-with-cve" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the CWE Associated With CVE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-cwe-1394" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Usage: CWE-1394
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-app-builder-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other App Builder Docs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
     </span>
   </a>
   
@@ -1287,63 +1521,174 @@
                   
 
 
-<h1 id="agents">Agents<a class="headerlink" href="#agents" title="Permanent link">&para;</a></h1>
-<h2 id="why-agents">Why Agents?<a class="headerlink" href="#why-agents" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai">Why agents are the next frontier of generative AI, July 2024</a></p>
+<h1 id="google-vertex-ai-agent-builder">Google Vertex AI Agent Builder<a class="headerlink" href="#google-vertex-ai-agent-builder" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>Here we'll use Vertex AI Agent Builder with the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification to aid mapping CWEs to vulnerability descriptions.</p>
+<p>This is a no-code option.</p>
+<p>We'll implement a closed grounded system to ensure the accuracy of the data (and mitigate hallucinations)</p>
+<ol>
+<li><strong>Grounded</strong>: content is provided to inform the answers</li>
+<li><strong>Closed system</strong>: answers come from only the documents you provide</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>"If one agent can't work well, then why is multi-agent useful?"</p>
+<p>In other words, we'll build <a href="../../NotebookLM/NotebookLM/">NotebookLM</a>.</p>
 <ul>
-<li>Grouping tools/responsibilities can give better results. An agent is more likely to succeed on a focused task than if it has to select from dozens of tools.</li>
-<li>Separate prompts can give better results. Each prompt can have its own instructions and few-shot examples. Each agent could even be powered by a separate fine-tuned LLM!</li>
-<li>Helpful conceptual model to develop. You can evaluate and improve each agent individually without breaking the larger application.</li>
+<li>where NotebookLM is basically a combination of Vertex AI Search for Unstructured (PDFs, HTML, etc.), <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview">Vertex AI Grounding</a>, and a custom UX/UI.</li>
+<li>But we'll take advantage of the structured data (JSON) that we have for MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> list, instead of using the unstructured data from the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> list PDF.</li>
 </ul>
-<p>Multi-agent designs allow you to divide complicated problems into tractable units of work that can be targeted by specialized agents and LLM programs.</p>
-<p><a href="https://blog.langchain.dev/langgraph-multi-agent-workflows/">https://blog.langchain.dev/langgraph-multi-agent-workflows/</a></p>
+</div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Result</p>
+<p>The result is that we have a grounded closed system (that compares in performance and accuracy to <a href="../../NotebookLM/NotebookLM/">NotebookLM</a>.</p>
+<p>But we don't have reference links to the source content in the response i.e. I didn't add that part yet but it's standard functionality that is easy in Vertex AI.</p>
+</div>
+<h2 id="grounding-confidence">Grounding Confidence<a class="headerlink" href="#grounding-confidence" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>For each response generated from the content of your connected data stores, the agent evaluates a confidence level, which gauges the confidence that all information in the response is supported by information in the data stores. You can customize which responses to allow by selecting the lowest confidence level you are comfortable with. Only responses at or above that confidence level will be shown.</p>
+<p>There are 5 confidence levels to choose from: VERY_LOW, LOW, MEDIUM, HIGH, and VERY_HIGH.</p>
+<p><a href="https://cloud.google.com/dialogflow/vertex/docs/concept/tools">https://cloud.google.com/dialogflow/vertex/docs/concept/tools</a></p>
 </div>
 <div class="admonition quote">
-<p class="admonition-title">Using Agents can significantly improve performance</p>
-<p><figure markdown>
-<img alt="" src="../../assets/images/agents.webp" />
-</figure></p>
-<p>GPT-3.5 (zero shot) was 48.1% correct. GPT-4 (zero shot) does better at 67.0%. However, the improvement from GPT-3.5 to GPT-4 is dwarfed by incorporating an iterative agent workflow. Indeed, wrapped in an agent loop, GPT-3.5 achieves up to 95.1%.
- <a href="https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance">https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance</a></p>
-<p>An agentic workflow in which the LLM is prompted to focus on one thing at a time can give better performance.
-<a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/">https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/</a></p>
+<p class="admonition-title">Quote</p>
+<p>To create a data store and connect it to your app, you can use the Tools link in the left navigation of the console. Follow the instructions to create a data store.
+  <a href="https://cloud.google.com/dialogflow/vertex/docs/concept/tools">https://cloud.google.com/dialogflow/vertex/docs/concept/tools</a></p>
 </div>
-<div class="admonition quote">
-<p class="admonition-title">Agentic AI Design Patterns</p>
+<h2 id="recipe">Recipe<a class="headerlink" href="#recipe" title="Permanent link">&para;</a></h2>
+<p>Same recipe as <a href="../cwe_gpt/#recipe">before</a> but we'll use <a href="https://cloud.google.com/products/agent-builder">Google Vertex AI Agent Builder</a></p>
+<h2 id="mitre-cwe-specification">MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Specification<a class="headerlink" href="#mitre-cwe-specification" title="Permanent link">&para;</a></h2>
+<p>Same <a href="../cwe_gpt/#mitre-cwe-specification">MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Specification</a> as the data source.</p>
+<h2 id="build-vertex-ai-agent">Build Vertex AI Agent<a class="headerlink" href="#build-vertex-ai-agent" title="Permanent link">&para;</a></h2>
+<p>This <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/ground-gemini#private-ground-gemini">link</a> gives the steps with links to the details, summarized here:</p>
 <ol>
-<li><strong><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection?ref=dl-staging-website.ghost.io">Reflection</a></strong>: The LLM examines its own work to come up with ways to improve it. </li>
-<li><strong><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use">Tool Use</a></strong>: The LLM is given tools such as web search, code execution, or any other function to help it gather information, take action, or process data.</li>
-<li><strong><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning/?ref=dl-staging-website.ghost.io">Planning</a></strong>: The LLM comes up with, and executes, a multistep plan to achieve a goal (for example, writing an outline for an essay, then doing online research, then writing a draft, and so on).</li>
-<li><strong><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/?ref=dl-staging-website.ghost.io">Multi-agent collaboration</a></strong>: More than one AI agent work together, splitting up tasks and discussing and debating ideas, to come up with better solutions than a single agent would.</li>
-</ol>
-<p><a href="https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance">https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance</a></p>
-</div>
-<div class="admonition quote">
-<p class="admonition-title">Reflection using a multi-agent framework</p>
-<p>Further, we can implement Reflection using a multi-agent framework. I've found it convenient to create two different agents, one prompted to generate good outputs and the other prompted to give constructive criticism of the first agent's output. The resulting discussion between the two agents leads to improved responses.</p>
-<p><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection/">https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection/</a></p>
-<p>Like the design pattern of Planning, I find the output quality of multi-agent collaboration hard to predict, especially when allowing agents to interact freely and providing them with multiple tools. The more mature patterns of Reflection and Tool Use are more reliable.</p>
-<p><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/">https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/</a></p>
-</div>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance">https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance</a><ol>
-<li><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection">https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection</a></li>
-<li><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use">https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use</a></li>
-<li><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning">https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning</a></li>
-<li><a href="https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration">https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration</a></li>
+<li><a href="https://cloud.google.com/products/agent-builder?hl=en">Vertex AI Agent Builder</a> </li>
+<li>Create App </li>
+<li>Select app type<ol>
+<li>Agent (preview) "Built using natural language, agents can answer questions from data, connect with business systems through tools and more"</li>
 </ol>
 </li>
-<li><a href="https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f">https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f</a></li>
-<li><a href="https://blog.langchain.dev/langgraph-multi-agent-workflows/">https://blog.langchain.dev/langgraph-multi-agent-workflows/</a></li>
-<li>Mixture-of-Agents Enhances Large Language Model Capabilities, June 2024, <a href="https://arxiv.org/abs/2406.04692">https://arxiv.org/abs/2406.04692</a></li>
-<li>Data Interpreter: An LLM Agent For Data Science, Mar 2024, <a href="https://arxiv.org/abs/2402.18679">https://arxiv.org/abs/2402.18679</a></li>
-<li>AgentCoder: Multi-Agent Code Generation with Effective Testing and Self-optimisation, May 2024, <a href="https://arxiv.org/html/2312.13010v3">https://arxiv.org/html/2312.13010v3</a> </li>
-<li>The COMPLETE TRUTH About AI Agents (2024) <a href="https://www.youtube.com/watch?v=HGS5LfyxLUU">https://www.youtube.com/watch?v=HGS5LfyxLUU</a></li>
+<li>Create Data Store<ol>
+<li>The MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> JSON data is converted to jsonl format for import</li>
+<li>It takes ~5 minutes to ingest (create embeddings for) the jsonl file</li>
 </ol>
+</li>
+<li>There are lots of other Settings available like Logging, Git integration to push/pull agents from a Github repo, or just download the JSON file that represents the agent.</li>
+<li>The built agent supports <a href="https://cloud.google.com/dialogflow/vertex/docs/quick/api">Interactions with the API </a>.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To create an Grounded <strong>Open</strong> system, select "search" app type.</p>
+<p>The agent will retrieve information from the local documents you provide and via web search.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Alternatively these steps can be implemented with code e.g. 
+  <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/ground-gemini#generative-ai-gemini-grounding-python_vertex_ai_sdk">https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/ground-gemini#generative-ai-gemini-grounding-python_vertex_ai_sdk</a></p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>Note: Conversation history is used as context during tool invocation. Learn more</p>
+</div>
+<h2 id="data-preprocessing">Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permanent link">&para;</a></h2>
+<p>Remove unneeded sections from the json</p>
+<ul>
+<li>content_history</li>
+<li>views</li>
+<li>categories</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3 ./trim_json.py # cwe.json -&gt; cwe_trimmed.json
+</code></pre></div>
+<p>Convert to jsonl for import
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3 ./json_to_jsonl.py # cwe_trimmed.json -&gt; cwe_trimmed.jsonl
+</code></pre></div></p>
+<h2 id="data-import">Data Import<a class="headerlink" href="#data-import" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../../assets/images/vertexai_datastore.png" /></p>
+</figure>
+<figure>
+<p><img alt="" src="../../assets/images/vertex_ai_agent1.png" /></p>
+</figure>
+<figure>
+<p><img alt="" src="../../assets/images/vertexai_jsonl.png" /></p>
+</figure>
+<h2 id="check-if-the-system-is-closed">Check if the System is Closed<a class="headerlink" href="#check-if-the-system-is-closed" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>What is a dog?</p>
+<p><figure markdown>
+  <img alt="" src="../../assets/images/vertex_ai_what_is_a_dog.png" />
+  </figure></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The system is closed because the GPT can't answer the question because there is no information about dogs in the MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> specification.</p>
+</div>
+<h2 id="what-are-the-different-types-of-xss">What are the different types of XSS?<a class="headerlink" href="#what-are-the-different-types-of-xss" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../../assets/images/vertex_ai_xss_types.png" /></p>
+</figure>
+<h2 id="what-cwe-ids-relate-to-xss">What <abbr title="CWE Common Weakness Enumeration">CWE</abbr> IDs Relate To XSS?<a class="headerlink" href="#what-cwe-ids-relate-to-xss" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../../assets/images/vertex_ai_xss.png" /></p>
+</figure>
+<h2 id="what-is-the-parent-weakness-or-cwe-for-xss-and-csrf">What Is The Parent Weakness Or <abbr title="CWE Common Weakness Enumeration">CWE</abbr> For XSS And CSRF?<a class="headerlink" href="#what-is-the-parent-weakness-or-cwe-for-xss-and-csrf" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../../assets/images/vertex_ai_parent.png" /></p>
+</figure>
+<h2 id="what-cwe-ids-relate-to-path-or-directory-traversal-list-all-cwe-ids-and-their-description-in-a-table">What <abbr title="CWE Common Weakness Enumeration">CWE</abbr> IDs Relate To Path Or Directory Traversal?  List All <abbr title="CWE Common Weakness Enumeration">CWE</abbr> IDs And Their Description In A Table<a class="headerlink" href="#what-cwe-ids-relate-to-path-or-directory-traversal-list-all-cwe-ids-and-their-description-in-a-table" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../../assets/images/vertex_ai_path_traversal.png" /></p>
+</figure>
+<h2 id="what-is-the-cwe-associated-with-cve">What is the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Associated With <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr><a class="headerlink" href="#what-is-the-cwe-associated-with-cve" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>What is the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> associated with <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr>-2021-27104 "Accellion FTA OS Command Injection Vulnerability"</p>
+<p>What is the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> associated with "Cisco Small Business RV320 and RV325 Routers Information Disclosure Vulnerability"</p>
+</div>
+<figure>
+<p><img alt="" src="../../assets/images/vertex_ai_cves.png" /></p>
+</figure>
+<h2 id="example-usage-cwe-1394">Example Usage: <abbr title="CWE Common Weakness Enumeration">CWE</abbr>-1394<a class="headerlink" href="#example-usage-cwe-1394" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>what is the best <abbr title="CWE Common Weakness Enumeration">CWE</abbr> to describe the root cause weakness in <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> "ProductX contains a default SSH public key in the authorized_keys file. A remote attacker could use this key to gain root privileges.". </p>
+</div>
+<figure>
+<p><img alt="" src="../../assets/images/vertex_ai_ssh.png" /></p>
+</figure>
+<h2 id="other-app-builder-docs">Other App Builder Docs<a class="headerlink" href="#other-app-builder-docs" title="Permanent link">&para;</a></h2>
+<p>These were not used or required but listing here as I found them informative.</p>
+<ol>
+<li><a href="https://codelabs.developers.google.com/codelabs/vertex-ai-conversation#0">https://codelabs.developers.google.com/codelabs/vertex-ai-conversation#0</a></li>
+<li><a href="https://codelabs.developers.google.com/build-google-quality-rag#0">https://codelabs.developers.google.com/build-google-quality-rag#0</a></li>
+<li><a href="https://github.com/GoogleCloudPlatform/generative-ai/tree/main">https://github.com/GoogleCloudPlatform/generative-ai/tree/main</a></li>
+<li><a href="https://github.com/GoogleCloudPlatform/generative-ai/tree/main/conversation/chat-app">https://github.com/GoogleCloudPlatform/generative-ai/tree/main/conversation/chat-app</a></li>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/samples?language=python">https://cloud.google.com/generative-ai-app-builder/docs/samples?language=python</a></li>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-multi-turn-search?hl=en">https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-multi-turn-search?hl=en</a></li>
+<li><a href="https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-import-documents?hl=en">https://cloud.google.com/generative-ai-app-builder/docs/samples/genappbuilder-import-documents?hl=en</a></li>
+<li><a href="https://www.googlecloudcommunity.com/gc/Community-Blogs/Building-and-Deploying-AI-Agents-with-LangChain-on-Vertex-AI/bc-p/750793#M415">https://www.googlecloudcommunity.com/gc/Community-Blogs/Building-and-Deploying-AI-Agents-with-LangChain-on-Vertex-AI/bc-p/750793#M415</a></li>
+<li><a href="https://medium.com/google-cloud/gen-ai-grounding-with-vertex-ai-llm-3cb1cbe9f9d2">https://medium.com/google-cloud/gen-ai-grounding-with-vertex-ai-llm-3cb1cbe9f9d2</a></li>
+<li><a href="https://medium.com/google-cloud/designing-data-store-hybrid-agents-with-dialogflow-cx-vertex-ai-agents-070082f07cb4">https://medium.com/google-cloud/designing-data-store-hybrid-agents-with-dialogflow-cx-vertex-ai-agents-070082f07cb4</a></li>
+<li><a href="https://www.cloudskillsboost.google/paths/236/course_templates/978/labs/488165">https://www.cloudskillsboost.google/paths/236/course_templates/978/labs/488165</a></li>
+<li><a href="https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/2d22382cf72840dcde313db2f2feb2115f9fbd70/gemini/grounding/intro-grounding-gemini.ipynb?hl=es-419">https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/2d22382cf72840dcde313db2f2feb2115f9fbd70/gemini/grounding/intro-grounding-gemini.ipynb?hl=es-419</a></li>
+<li><a href="https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/">https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/</a></li>
+<li><a href="https://saschaheyer.medium.com/vertex-ai-grounding-large-language-models-8335f838990f">https://saschaheyer.medium.com/vertex-ai-grounding-large-language-models-8335f838990f</a></li>
+</ol>
+<h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<ol>
+<li>Google Vertex AI Agent Builder allows/requires more control over the agent than the <a href="../cwe_gpt/">ChatGPT GPTs</a> currently. </li>
+<li>Google Vertex AI Agent Builder supports a Closed (or Open) System with Grounding and <a href="./#grounding-confidence">Grounding Confidence threshold</a> unlike <a href="../cwe_gpt/">ChatGPT GPTs</a> currently.</li>
+<li>This comes close to <a href="../../NotebookLM/NotebookLM/">NotebookLM</a> but <ol>
+<li>does not provide references from the original documents from which the answer was determined.</li>
+</ol>
+</li>
+</ol>
+</div>
 
 
 
@@ -1375,7 +1720,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Vulnrichment/Vulnrichment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CISA Vulnrichment">
+          <a href="../NotebookLM_Cwe/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NotebookLM CWE">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1385,20 +1730,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                CISA Vulnrichment
+                NotebookLM CWE
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Build_agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Build Agents">
+          <a href="../../prompt_engineering/prompt_engineering/" class="md-footer__link md-footer__link--next" aria-label="Next: Prompt Engineering">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Build Agents
+                Prompt Engineering
               </div>
             </div>
             <div class="md-footer__button md-icon">
