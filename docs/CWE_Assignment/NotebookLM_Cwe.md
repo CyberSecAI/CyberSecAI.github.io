@@ -98,6 +98,15 @@ NoteBookLM does not allow the full prompt to be copied into the chat as is - it 
 ![](../assets/images/type_confusion2.png)
 </figure>
 
+### Example CVE-2022-30271
+!!! quote "CVE-2022-30271"
+    The Motorola ACE1000 RTU through 2022-05-02 ships with a hardcoded SSH private key and initialization scripts (such as /etc/init.d/sshd_service) only generate a new key if no private-key file exists. Thus, this hardcoded key is likely to be used by default.
+    https://nvd.nist.gov/vuln/detail/CVE-2022-30271
+
+<figure markdown>
+![](../assets/images/hardcoded_ssh_key.png)
+</figure>
+
 ## Sharing Notebooks
 
 !!! tip
@@ -113,9 +122,5 @@ NoteBookLM does not allow the full prompt to be copied into the chat as is - it 
 !!! success "Takeaways" 
 
     1. I found it useful, quick, and convenient to be able to ask questions of the CWE list, as a compliment to the traditional search method I've used in the past.
-    1. The large CWE document could not be uploaded to NoteBookLM as one PDF document, but had to be split into smaller PDFs.
-        1. The same document could be uploaded to ChatGPT4o (without splitting).
-    2. Based on the extremely limited test cases here (your experience may vary):
-        1. NoteBookLM provides better answers on the provided source documents.
-        2. ChatGPT provides richer answers to questions that can be answered outside of the provided source documents.
+    2. It is also useful to suggest CWEs (and associated info) for a given Vulnerability Description.
     3. The [Vulnrichment](../Vulnrichment/Vulnrichment.md) chapter covers a much more detailed use case - and NoteBookLM performed better than other LLMs.
