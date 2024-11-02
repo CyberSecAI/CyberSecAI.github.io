@@ -6,8 +6,9 @@ site_url: https://github.com/CyberSecAI/CyberSecAI.github.io
 nav:
   - Home: index.md
   - Introduction: 
-    - Introduction: introduction/Introduction.md
     - Preface: introduction/Preface.md
+    - Introduction: introduction/Introduction.md
+    - LLMs for CyberSecurity: introduction/cybsersecurity.md
   - NotebookLM:
     - NotebookLM: NotebookLM/NotebookLM.md
     - NotebookLM Vulnerability Standards: NotebookLM/NotebookLM_VulnerabilityStandards.md
