@@ -37,7 +37,7 @@ icon: material/play-box-edit-outline
         * training humans on the detailed CWE standard (though a basic understanding is still required)
     * **NotebookLM did well in recommending a CWE given a CVE Description.... and providing a supporting CVE from the CWE Observed Examples in the CWE standard**.
         *  NotebookLM has a large context window which allows it to digest the large CWE standard, and it is source-grounded as described in the [NotebookLM chapter](../NotebookLM/NotebookLM.md).
-        *  [NotebookLM_Cwe](../NotebookLM/NotebookLM_Cwe.md) describes how to create this NotebookLM for CWEs
+        *  [Notebook on CWEs](../CWE_Assignment/cwe_overview.md) describes how to create this NotebookLM for CWEs
 
     The different approaches used (and the subscription plan used):
 

@@ -107,6 +107,12 @@ NoteBookLM does not allow the full prompt to be copied into the chat as is - it 
 ![](../assets/images/hardcoded_ssh_key.png)
 </figure>
 
+!!! Warning 
+    Some of the CWE Abstraction Level values are incorrect; we’re asking for too much here in one prompt with this simple setup.
+
+    We need to either simplify or decompose into separate prompts.
+
+
 ## Sharing Notebooks
 
 !!! tip
