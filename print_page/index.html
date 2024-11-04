@@ -1773,7 +1773,7 @@
 <p><strong>“source-grounded AI”</strong>: you define a set of documents that are important to your work—called “sources” in the NotebookLM parlance—and from that point on, you can have an open-ended conversation with the language model where its answers will be “grounded” in the information you’ve selected. It is as if you are giving the AI instant expertise in whatever domain you happen to be working in. (<a href="https://adjacentpossible.substack.com/p/introducing-notebooklm">ref</a>)</p>
 </div>
 <h4 id="notebooklm-notebooklm-what-is-a-dog">What is a dog?<a class="headerlink" href="#notebooklm-notebooklm-what-is-a-dog" title="Permanent link">&para;</a></h4>
-<p>This is illustrated with a simple example of asking our <a href="#notebooklm-notebooklm-notebooklm_cwe.md">Notebook on CWEs</a> "what is a dog?":</p>
+<p>This is illustrated with a simple example of asking our <a href="#cwe_assignment-cwe_overview">Notebook on CWEs</a> "what is a dog?":</p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>The sources provided do not contain any information about dogs. Therefore, the query "what is a dog?" cannot be answered from the given sources.</p>
@@ -3471,6 +3471,11 @@ One of the concerns that is often raised is that GenAI Code is not secure becaus
 <figure>
 <p><img alt="" src="../assets/images/hardcoded_ssh_key.png" /></p>
 </figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some of the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Abstraction Level values are incorrect; we’re asking for too much here in one prompt with this simple setup.</p>
+<p>We need to either simplify or decompose into separate prompts.</p>
+</div>
 <h2 id="cwe_assignment-notebooklm_cwe-sharing-notebooks">Sharing Notebooks<a class="headerlink" href="#cwe_assignment-notebooklm_cwe-sharing-notebooks" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3947,7 +3952,7 @@ where</p>
 </li>
 <li><strong>NotebookLM did well in recommending a <abbr title="CWE Common Weakness Enumeration">CWE</abbr> given a <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description.... and providing a supporting <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> from the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Observed Examples in the <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard</strong>.<ul>
 <li>NotebookLM has a large context window which allows it to digest the large <abbr title="CWE Common Weakness Enumeration">CWE</abbr> standard, and it is source-grounded as described in the <a href="#notebooklm-notebooklm">NotebookLM chapter</a>.</li>
-<li><a href="#vulnrichment-notebooklm-notebooklm_cwe.md">NotebookLM_Cwe</a> describes how to create this NotebookLM for CWEs</li>
+<li><a href="#cwe_assignment-cwe_overview">Notebook on CWEs</a> describes how to create this NotebookLM for CWEs</li>
 </ul>
 </li>
 </ul>
