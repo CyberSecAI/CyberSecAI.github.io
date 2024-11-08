@@ -67,7 +67,7 @@ Different GPT setups e.g.
       1. Requires you and users to have a paid ChatGPT subscription
    2. [NoteBookLM](./NotebookLM_Cwe.md)
       1. Anyone with a Google account can get up and running in 5 minutes for free.
-   3. [VertexAI](./VertexAI.md)
+   3. [VertexAI](./vertex_ai.md)
       1. This allows the most customization - but there's more effort to set it up and it is not free.
 
 ## Prompts
