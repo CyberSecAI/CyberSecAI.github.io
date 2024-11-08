@@ -80,3 +80,7 @@ For processing 250K+ CVE Descriptions, speed, latency and cost are important con
 
 Based on [comparing LLMs](../introduction/cybsersecurity.md#comparing-llms) as at September 2024, Gemini 1.5 Flash was chosen.
 
+There are different Google AI Environments:
+   - [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
+     - lower learning curve and cost and capability
+   - [Vertex AI Studio](https://console.cloud.google.com/vertex-ai/studio) or VertexAI in general
