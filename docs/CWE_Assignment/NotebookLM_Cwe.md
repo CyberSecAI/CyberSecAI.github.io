@@ -116,7 +116,7 @@ NoteBookLM does not allow the full prompt to be copied into the chat as is - it 
 ## Sharing Notebooks
 
 !!! tip
-    The notebook can be shared with other users via email (using the share button top right) to allow them to use the notebook.
+    The notebook can be shared with other users via email (using the share button top right) to allow them to use the notebook. See https://support.google.com/notebooklm/answer/14276471?hl=en.
 
     Sharing is via a user's email.
 
