@@ -1,7 +1,10 @@
 # LLMs for CyberSecurity
 
 !!! tip
-      LLMs (the subset of GenAI that focus on processing and generating text/language) can be used effectively for many parts of CyberSecurity; anywhere natural language is used from standards, documents, messages, reports, log files - across different modes: text, audio, video.
+      LLMs (the subset of GenAI that focus on processing and generating text/language) can be used effectively for many parts of CyberSecurity:
+
+      - anywhere natural language is used from standards, documents, messages, reports, log files 
+      - across different modes: text, audio, video.
 
 <figure markdown>
 ![](../assets/images/LLMCyberSec.png)
