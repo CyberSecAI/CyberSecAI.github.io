@@ -1,40 +1,29 @@
 # LLMs for CyberSecurity
-<<<<<<< HEAD
-     
+   
 ## LLMs for CyberSecurity References
 1. [Generative AI and Large Language Models for Cyber Security: All Insights You Need](https://arxiv.org/pdf/2405.12750), May 2024
-2. [A Comprehensive Review of Large Language Models in Cyber Security](https://www.researchgate.net/publication/384500263_A_Comprehensive_Review_of_Large_Language_Models_in_Cyber_Security), September 2024 
+2. [A Comprehensive Review of Large Language Models in Cyber Security](https://www.researchgate.net/publication/384500263_A_Comprehensive_Review_of_Large_Language_Models_in_Cyber_Security), September 2024
 3. [Large Language Models in Cybersecurity: State-of-the-Art](https://arxiv.org/pdf/2402.00891), January 2024
 4. [How Large Language Models Are Reshaping the Cybersecurity Landscape](https://elie.net/talk/ai-for-cybersecurity-get-started-today) | Global AI Symposium talk, September 2024
 5. [Large Language Models for Cyber Security: A Systematic Literature Review](https://arxiv.org/pdf/2405.04760), July 2024
-6. [Using AI for Offensive Security](https://cloudsecurityalliance.org/artifacts/using-ai-for-offensive-security), June 2024 
-=======
+6. [Using AI for Offensive Security](https://cloudsecurityalliance.org/artifacts/using-ai-for-offensive-security), June 2024
 
-!!! tip
-      LLMs (the subset of GenAI that focus on processing and generating text/language) can be used effectively for many parts of CyberSecurity:
-
-      - anywhere natural language is used from standards, documents, messages, reports, log files 
-      - across different modes: text, audio, video.
-
-<figure markdown>
-![](../assets/images/LLMCyberSec.png)
-<figcaption>Image from Generative AI and Large Language Models for Cyber Security: All Insights You Need https://arxiv.org/pdf/2405.12750 </figcaption>
-</figure>
-
-The [Research](../research/research.md) section lists reports and research papers that describe the application of LLMs for CyberSecurity.
->>>>>>> f922a006253a10bc11f57a59728a0d2013ad0625
 
 ## Agents for CyberSecurity References
 1. [Blueprint for AI Agents in Cybersecurity - Leveraging AI Agents to Evolve Cybersecurity Practices](https://www.cybersec-automation.com/p/blueprint-for-ai-agents-in-cybersecurity)
 2. [Building AI Agents: Lessons Learned over the past Year](https://medium.com/@cpdough/building-ai-agents-lessons-learned-over-the-past-year-41dc4725d8e5)
 
 
+
+
 ## Comparing LLMs
-There are several sites that allow comparisons of LLMs characteristics list cost, speed, etc... e.g.
+There are several sites that allow comparisons of LLMs e.g.
+
 
 1. https://artificialanalysis.ai/
-      1. Independent analysis of AI models and API providers. Understand the AI landscape to choose the best model and provider for your use-case
+     1. Independent analysis of AI models and API providers. Understand the AI landscape to choose the best model and provider for your use-case
 2. https://llmpricecheck.com/
-      1. Compare and calculate the latest prices for LLM (Large Language Models) APIs from leading providers such as OpenAI GPT-4, Anthropic Claude, Google Gemini, Mate Llama 3, and more. Use our streamlined LLM Price Check tool to start optimizing your AI budget efficiently today!
+     1. Compare and calculate the latest prices for LLM (Large Language Models) APIs from leading providers such as OpenAI GPT-4, Anthropic Claude, Google Gemini, Mate Llama 3, and more. Use our streamlined LLM Price Check tool to start optimizing your AI budget efficiently today!
 3. [Compare models used via OpenRouter](https://openrouter.ai/rankings?view=day)
-   
+ 
+
