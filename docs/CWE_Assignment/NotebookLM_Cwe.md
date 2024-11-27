@@ -116,7 +116,7 @@ NoteBookLM does not allow the full prompt to be copied into the chat as is - it 
 ## Sharing Notebooks
 
 !!! tip
-    The notebook can be shared with other users via email (using the share button top right) to allow them to use the notebook.
+    The notebook can be shared with other users via email (using the share button top right) to allow them to use the notebook. See https://support.google.com/notebooklm/answer/14276471?hl=en.
 
     Sharing is via a user's email.
 
@@ -129,4 +129,4 @@ NoteBookLM does not allow the full prompt to be copied into the chat as is - it 
 
     1. I found it useful, quick, and convenient to be able to ask questions of the CWE list, as a compliment to the traditional search method I've used in the past.
     2. It is also useful to suggest CWEs (and associated info) for a given Vulnerability Description.
-    3. The [Vulnrichment](../Vulnrichment/Vulnrichment.md) chapter covers a much more detailed use case - and NoteBookLM performed better than other LLMs.
+    3. The [Vulnrichment](./Vulnrichment.md) chapter covers a much more detailed use case - and NoteBookLM performed better than other LLMs.

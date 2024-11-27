@@ -23,11 +23,10 @@ nav:
     - ChatGPT CWE GPT: CWE_Assignment/cwe_gpt.md
     - NotebookLM CWE: CWE_Assignment/NotebookLM_Cwe.md
     - Vertex AI CWE Agent: CWE_Assignment/vertex_ai.md
+    - CISA Vulnrichment: CWE_Assignment/Vulnrichment.md
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
-  - Vulnrichment:
-    - CISA Vulnrichment: Vulnrichment/Vulnrichment.md
   - Agents:
     - Agents: agents/Agents.md
     - Build Agents: agents/Build_agents.md

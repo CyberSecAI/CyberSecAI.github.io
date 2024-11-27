@@ -88,48 +88,6 @@ I have great admiration for CISA and their pragmatic initiatives like [CISA KEV]
 ## Get CVEs Enriched by CISA ADP
 
 
-## Approach to using Language Models
-
-
-* All CVE Descriptions and assigned CWEs were sent to all 3 LLMs.
-
-
-
-### Don't Train A Model On Bad Data!
-
-It is possible to train a Language Model as a Classifier to assign CWEs to a CVE - and there are several research papers that took that approach e.g.
-
-* [V2W-BERT: A Framework for Effective Hierarchical Multiclass Classification of Software Vulnerabilities](https://arxiv.org/pdf/2102.11498v1.pdf) 
-* [Automated Mapping of CVE Vulnerability Records to MITRE CWE Weaknesses](https://arxiv.org/pdf/2304.11130.pdf)
-
-The problems with this approach:
-
-1. It's delusional based on my research and experience of incorrect assigned CWEs in general - Garbage In Garbage Out
-    1. Per [Steve Christey Coley, CWE tech lead](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29): 
-
-    !!! quote 
-        There has been significant interest in using AI/ML in various applications to use and/or map to CWE, but in my opinion there are a number of significant hurdles, e.g. you can't train on "bad mappings" to learn how to do good mappings.
-
-2. It removes a lot of the context that could be available to an LM by reducing the reference target down to a set of values or classes (for the given input CVE Descriptions)
-
-
-### Train on Good Data and the Full Standard
-
-We can "train" on "good mappings".
-
-1. The CWE standard includes known "good mappings" e.g. [CWE-917 Observed Examples](https://riskbasedprioritization.github.io/risk/Log4Shell/#mitre-cwe-917) includes CVE-2021-44228 and its Description.
-    1. The count of these CVE Observed Examples varies significantly per CWE. 
-    2. There's ~3000 CVE Observed Examples in the CWE standard.
-2. We can use the full CWE standard and associated known good CVE assignments in the standard (CVE Observed Examples for a given CWE) as the target, allowing an LLM to compare the CVE Description (and other data) to this.
-    1. And moreover, prompt the LLM to provide similar CVEs to support its rationale for the CWE assignment
-
-!!! tip
-    Rather than train a model on bad data, we can ask a model to assign / validate a CWE based on its understanding of the CWEs available (and its understanding of CWEs assigned to similar CVEs based on the Observed Examples for each CWE in the standard)
-
-We can use a Closed or Open Model:
-
-1. a closed-model with access to the CWE specification only (and no other data) e.g. NotebookLM
-2. an open-model with access to the CWE specification and other data
 
 
 
@@ -359,7 +317,7 @@ CVE-2023-49224
     1. The value of CVE data depends on its quality. 
 
         1. For all published CVEs to date, [the quality of CWEs assigned is questionable](https://www.linkedin.com/feed/update/urn:li:activity:7186373368344920064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7186373368344920064%2C7186417379470385153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287186417379470385153%2Curn%3Ali%3Aactivity%3A7186373368344920064%29).
-        2. A large part of that is that humans can't grok 1000+ CWEs. LLMs can.
+        2. A large part of that is that humans can't grok ~~1000 CWEs. LLMs can.
     2. Using LLMs to suggest or validate CWEs can reduce the manual effort and error in CWE assignment.
     3. LLMs can validate CWEs at scale e.g. using Batch mode, or multiple CVEs per prompt, or both.
     4. LLMs perform well at this task and, given they can be automated, can augment the human manual effort, and improve the quality of assigned CWEs.
