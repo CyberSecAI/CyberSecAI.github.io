@@ -52,6 +52,14 @@
     
     https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/
 
+## Agents in Production
+
+1. Pitfalls and Best Practices — 5 lessons from LLMs in Production, Raza Habib, LLMs in Prod Con 2 https://www.youtube.com/watch?v=TRAUNcPj8KU 
+2. Generative AI Agents in Production: Best Practices and Lessons Learned, Patrick Marlow https://www.youtube.com/watch?v=3y17VO3C8jo and whitepaper https://www.kaggle.com/whitepaper-agents
+3. Fine-Tuning LLMs: Best Practices and When to Go Small, Mark Kim-Huang, MLOps Meetup https://www.youtube.com/watch?v=1WSUfWojoe0 
+4. Everything you ever wanted to know about LLMOps Maturity Models, Alex Strick van Linschoten
+Nov 26, 2024 https://www.zenml.io/blog/everything-you-ever-wanted-to-know-about-llmops-maturity-models
+5. A comprehensive collection of over 300 real-world generative AI implementations that showcases how organizations are successfully deploying LLMs in production https://www.zenml.io/blog/demystifying-llmops-a-practical-database-of-real-world-generative-ai-implementations
 
 
 ## References
