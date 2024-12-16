@@ -64,12 +64,14 @@ Nov 26, 2024 https://www.zenml.io/blog/everything-you-ever-wanted-to-know-about-
 
 ## References
 
- 1. https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance
+ 1. The Shift from Models to Compound AI Systems, https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/, Feb 18, 2024
+ 2. https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance
     1. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection
     2. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use
     3. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-4-planning
     4. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration
- 4. https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
+ 3. https://www.linkedin.com/pulse/potential-impact-future-ai-agents-agentic-series-part-44-techwards-84h3f
+ 4. https://www.resilientcyber.io/p/agentic-ais-intersection-with-cybersecurity
  5. https://blog.langchain.dev/langgraph-multi-agent-workflows/
  6. Mixture-of-Agents Enhances Large Language Model Capabilities, June 2024, https://arxiv.org/abs/2406.04692
  7. Data Interpreter: An LLM Agent For Data Science, Mar 2024, https://arxiv.org/abs/2402.18679

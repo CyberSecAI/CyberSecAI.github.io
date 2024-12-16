@@ -74,6 +74,14 @@ Google [announced Grounding in April 2024](https://youtu.be/vax4Nl7frAo?t=1648).
 
     https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview#ground-private
 
+## RAG Architectures
+
+<figure markdown>
+![](../assets/images/rag_types.jpeg)
+https://www.linkedin.com/posts/weaviate-io_struggling-to-keep-up-with-new-rag-variants-activity-7272294342122192896-iMs1 is the image source, and it contains other useful articles on RAG.
+</figure>
+
+
 
 ## Takeaways
 

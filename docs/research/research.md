@@ -6,6 +6,13 @@
 
 
 
+## My Talks and Research
+
+| **Title**                                                                                        | **Venue**           | **Author(s)** | **Date** (YYYY/M) |
+|--------------------------------------------------------------------------------------------------|---------------------|---------------|-------------------|
+| [Leveraging generative AI for efficient CVE enrichment](https://www.youtube.com/watch?v=XBjLAJsm5LA)  | CyberRisk Summit           | Chris Madden  | 2024/11            |
+| https://github.com/CyberSecAI CVE Enrichment User Scenarios and Solutions | GitHub   |      Chris Madden  | 2024/11           |
+
 
 
 ## LLMs For CyberSecurity References
