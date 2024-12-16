@@ -34,9 +34,9 @@ nav:
   - TopicModeling:
     - BertTopic: TopicModeling/BertTopic.md
   - References:
-    - Learning: learning/learning.md
     - Research: research/research.md
   - Annex:
+    - Learning: annex/Learning.md
     - Glossary: annex/Glossary.md
     - Talks & Research: research/research.md
 
