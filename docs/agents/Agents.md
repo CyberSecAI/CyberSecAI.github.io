@@ -52,19 +52,28 @@
     
     https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-5-multi-agent-collaboration/
 
+
+## LLMs in Production
+1. [Building LLMs for Production: Enhancing LLM Abilities and Reliability with Prompting, Fine-Tuning, and RAG](https://www.louisbouchard.ai/book-towards-ai/), October 2024, Louis-Francois Bouchard and Louie Peters
+2. [LLMs in Production you own this product From language models to successful products](https://www.manning.com/books/llms-in-production), December 2024, Christopher Brousseau and Matthew Sharp
+3. [The Shift from Models to Compound AI Systems](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/), Feb 18, 2024
+4. [LLM Engineer's Handbook](https://github.com/PacktPublishing/LLM-Engineers-Handbook), by Paul Iusztin and Maxime Labonne, Oct 2024
+5. [What We’ve Learned From A Year of Building with LLMs. A practical guide to building successful LLM products, covering the tactical, operational, and strategic.](https://applied-llms.org/), June 2024
+
 ## Agents in Production
 
-1. Pitfalls and Best Practices — 5 lessons from LLMs in Production, Raza Habib, LLMs in Prod Con 2 https://www.youtube.com/watch?v=TRAUNcPj8KU 
-2. Generative AI Agents in Production: Best Practices and Lessons Learned, Patrick Marlow https://www.youtube.com/watch?v=3y17VO3C8jo and whitepaper https://www.kaggle.com/whitepaper-agents
-3. Fine-Tuning LLMs: Best Practices and When to Go Small, Mark Kim-Huang, MLOps Meetup https://www.youtube.com/watch?v=1WSUfWojoe0 
-4. Everything you ever wanted to know about LLMOps Maturity Models, Alex Strick van Linschoten
+1. [Building effective agents (Anthropic)](https://www.anthropic.com/research/building-effective-agents), Dec 19, 2024
+2. Pitfalls and Best Practices — 5 lessons from LLMs in Production, Raza Habib, LLMs in Prod Con 2 https://www.youtube.com/watch?v=TRAUNcPj8KU 
+3. Generative AI Agents in Production: Best Practices and Lessons Learned, Patrick Marlow https://www.youtube.com/watch?v=3y17VO3C8jo and whitepaper https://www.kaggle.com/whitepaper-agents
+4. Fine-Tuning LLMs: Best Practices and When to Go Small, Mark Kim-Huang, MLOps Meetup https://www.youtube.com/watch?v=1WSUfWojoe0 
+5. Everything you ever wanted to know about LLMOps Maturity Models, Alex Strick van Linschoten
 Nov 26, 2024 https://www.zenml.io/blog/everything-you-ever-wanted-to-know-about-llmops-maturity-models
-5. A comprehensive collection of over 300 real-world generative AI implementations that showcases how organizations are successfully deploying LLMs in production https://www.zenml.io/blog/demystifying-llmops-a-practical-database-of-real-world-generative-ai-implementations
+1. A comprehensive collection of over 300 real-world generative AI implementations that showcases how organizations are successfully deploying LLMs in production https://www.zenml.io/blog/demystifying-llmops-a-practical-database-of-real-world-generative-ai-implementations
 
 
 ## References
 
- 1. The Shift from Models to Compound AI Systems, https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/, Feb 18, 2024
+ 1. https://github.com/Jason2Brownlee/awesome-llm-books a list of "Awesome LLM Books"
  2. https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance
     1. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-2-reflection
     2. https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use
