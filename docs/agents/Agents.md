@@ -55,7 +55,7 @@
 
 ## LLMs in Production
 1. [Building LLMs for Production: Enhancing LLM Abilities and Reliability with Prompting, Fine-Tuning, and RAG](https://www.louisbouchard.ai/book-towards-ai/), October 2024, Louis-Francois Bouchard and Louie Peters
-2. [LLMs in Production you own this product From language models to successful products](https://www.manning.com/books/llms-in-production), December 2024, Christopher Brousseau and Matthew Sharp
+2. [LLMs in Production From language models to successful products](https://www.manning.com/books/llms-in-production), December 2024, Christopher Brousseau and Matthew Sharp
 3. [The Shift from Models to Compound AI Systems](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/), Feb 18, 2024
 4. [LLM Engineer's Handbook](https://github.com/PacktPublishing/LLM-Engineers-Handbook), by Paul Iusztin and Maxime Labonne, Oct 2024
 5. [What We’ve Learned From A Year of Building with LLMs. A practical guide to building successful LLM products, covering the tactical, operational, and strategic.](https://applied-llms.org/), June 2024
