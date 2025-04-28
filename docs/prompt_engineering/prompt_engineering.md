@@ -105,7 +105,14 @@ In addition to using LLMs to generate prompts (aka Meta Prompts), and review pro
     2. https://x.com/AnthropicAI/status/1810747792807342395
 3. [Google Prompt Gallery](https://aistudio.google.com/app/gallery) 
 
-  
+### Prompts used in various Code Generation Tools
+
+https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
+
+FULL v0, Cursor, Manus, Same.dev, Lovable, Devin, Replit Agent, Windsurf Agent & VSCode Agent (And other Open Sourced) System Prompts, Tools & AI Models.
+
+These are useful as reference examples.
+
 !!! success "Takeaways" 
 
     1. Getting the right prompt to get what you want out of an LLM can sometimes feel like art or interrogation. There are several options covered here:
