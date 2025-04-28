@@ -24,6 +24,11 @@ There are several sites that allow comparisons of LLMs e.g.
      1. Independent analysis of AI models and API providers. Understand the AI landscape to choose the best model and provider for your use-case
 2. https://llmpricecheck.com/
      1. Compare and calculate the latest prices for LLM (Large Language Models) APIs from leading providers such as OpenAI GPT-4, Anthropic Claude, Google Gemini, Mate Llama 3, and more. Use our streamlined LLM Price Check tool to start optimizing your AI budget efficiently today!
-3. [Compare models used via OpenRouter](https://openrouter.ai/rankings?view=day)
+3. https://openrouter.ai/rankings?view=day 
+     1. Compare models used via OpenRouter
+4. https://github.com/vectara/hallucination-leaderboard 
+     1. LLM Hallucination Rate leaderboard
+
+ 
  
 
