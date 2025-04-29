@@ -59,6 +59,10 @@ An Exploratory Data Analysis of the dataset is available in https://github.com/C
     1. For comparison, the MITRE CWE Top25 2022, 2023 datasets contain many CWEs with more than 1 CWE per CVE
 5. The dataset is highly imbalanced per https://github.com/CyberSecAI/cti_bench_rcm
     1. Some CWEs appear a lot more than others per https://github.com/CyberSecAI/cti_bench_rcm
+ 6. The dataset contains the CVE Description only i.e. not the CVE Reference Information in the CVE links
+    1. This generally contains more information than the CVE Description alone.
+    2. A benchmark dataset should use the full CVE info available in the CVE including the Reference Content.
+    3. For comparison, the MITRE CWE Top25 2022, 2023 mappings relied on the Reference content in many cases because the CVE Description was not sufficient.
 6. The evaluation is a binary equals per https://github.com/xashru/cti-bench/blob/main/evaluation/evaluation.ipynb i.e. correct if the CWE assigned by the model equals the CWE in the benchmark dataset. 
     1. Based on my work with the MITRE CWE-RCMWG, a model may assign CWEs that are (correctly) more specific (childOf) than the CWE in the CVE. Does this make it "wrong" or "more right"?
     2. An evaluation metric should support this e.g. use distance between benchmark and assigned CWEs, where exact match is distance 0, parent/child is distance 1, grandparent/grandchild or cousin is distance 2.
