@@ -27,6 +27,8 @@ nav:
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
+  - CyberSecurity Models:
+    - CyberSecurity LLMs: cti_models/cyber_security_models.md
   - Agents:
     - Agents: agents/Agents.md
     - Build Agents: agents/Build_agents.md
