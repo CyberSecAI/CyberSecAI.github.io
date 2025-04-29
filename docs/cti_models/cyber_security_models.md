@@ -45,7 +45,9 @@ CTI-RCM includes 1000 CVE --> CWE Mappings using the CVE Description only (not C
 
 ### CTI-RCM Exploratory Data Analysis
 
-An Exploratory Data Analysis of the dataset is available in https://github.com/CyberSecAI/cti_bench_rcm.
+!!! example "Exploratory Data Analysis of the CTI-RCM dataset with code"
+
+    An Exploratory Data Analysis of the dataset is available in https://github.com/CyberSecAI/cti_bench_rcm.
 
 #### Limitations
 
