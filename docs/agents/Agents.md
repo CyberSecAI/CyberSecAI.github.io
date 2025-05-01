@@ -87,4 +87,5 @@ Nov 26, 2024 https://www.zenml.io/blog/everything-you-ever-wanted-to-know-about-
  8. Data Interpreter: An LLM Agent For Data Science, Mar 2024, https://arxiv.org/abs/2402.18679
  9.  AgentCoder: Multi-Agent Code Generation with Effective Testing and Self-optimisation, May 2024, https://arxiv.org/html/2312.13010v3 
  10. The COMPLETE TRUTH About AI Agents (2024) https://www.youtube.com/watch?v=HGS5LfyxLUU
+ 11. Securing Agentic AI: A Comprehensive Threat Model and Mitigation Framework for Generative AI Agents, Apr 2025, https://arxiv.org/html/2504.19956v1
     
