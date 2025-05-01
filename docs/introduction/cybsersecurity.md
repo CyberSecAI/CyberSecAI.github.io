@@ -21,7 +21,7 @@ There are several sites that allow comparisons of LLMs e.g.
 
 
 1. https://winston-bosan.github.io/llm-pareto-frontier/
-   1. LLM Arena Pareto Frontier: Performance vs Cost
+     1. LLM Arena Pareto Frontier: Performance vs Cost
 2. https://artificialanalysis.ai/
      1. Independent analysis of AI models and API providers. Understand the AI landscape to choose the best model and provider for your use-case
 3. https://llmpricecheck.com/
