@@ -33,9 +33,9 @@ There are several sites that allow comparisons of LLMs e.g.
 6. https://lmarena.ai/?leaderboard
      1. Chatbot Arena is an open platform for crowdsourced AI benchmarking
 7. https://aider.chat/docs/leaderboards/
-   1. Benchmark to evaluate an LLM’s ability to follow instructions and edit code successfully without human intervention
+     1. Benchmark to evaluate an LLM’s ability to follow instructions and edit code successfully without human intervention
 8. https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro
-   1. Benchmark to evaluate language understanding models across broader and more challenging tasks
+     1. Benchmark to evaluate language understanding models across broader and more challenging tasks
 
  
 See also [Economics of LLMs: Evaluations vs Pricing - Looking at which model to use for which task](https://medium.com/data-science-collective/economics-of-llms-evaluations-vs-pricing-04802074e095)
