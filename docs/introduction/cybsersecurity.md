@@ -20,19 +20,21 @@
 There are several sites that allow comparisons of LLMs e.g.
 
 
-1. https://artificialanalysis.ai/
+1. https://winston-bosan.github.io/llm-pareto-frontier/
+   1. LLM Arena Pareto Frontier: Performance vs Cost
+2. https://artificialanalysis.ai/
      1. Independent analysis of AI models and API providers. Understand the AI landscape to choose the best model and provider for your use-case
-2. https://llmpricecheck.com/
+3. https://llmpricecheck.com/
      1. Compare and calculate the latest prices for LLM (Large Language Models) APIs from leading providers such as OpenAI GPT-4, Anthropic Claude, Google Gemini, Mate Llama 3, and more. Use our streamlined LLM Price Check tool to start optimizing your AI budget efficiently today!
-3. https://openrouter.ai/rankings?view=day 
+4. https://openrouter.ai/rankings?view=day 
      1. Compare models used via OpenRouter
-4. https://github.com/vectara/hallucination-leaderboard 
+5. https://github.com/vectara/hallucination-leaderboard 
      1. LLM Hallucination Rate leaderboard
-5. https://lmarena.ai/?leaderboard
+6. https://lmarena.ai/?leaderboard
      1. Chatbot Arena is an open platform for crowdsourced AI benchmarking
-6. https://aider.chat/docs/leaderboards/
+7. https://aider.chat/docs/leaderboards/
    1. Benchmark to evaluate an LLM’s ability to follow instructions and edit code successfully without human intervention
-7. https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro
+8. https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro
    1. Benchmark to evaluate language understanding models across broader and more challenging tasks
 
  
