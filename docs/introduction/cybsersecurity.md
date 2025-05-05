@@ -41,3 +41,10 @@ There are several sites that allow comparisons of LLMs e.g.
 See also [Economics of LLMs: Evaluations vs Pricing - Looking at which model to use for which task](https://medium.com/data-science-collective/economics-of-llms-evaluations-vs-pricing-04802074e095)
 
 
+## Books
+1. [Build a Large Language Model (from Scratch)](https://www.oreilly.com/library/view/build-a-large/9781633437166/) by Sebastian Raschka, PhD 
+4. [LLM Engineer's Handbook](https://www.oreilly.com/library/view/llm-engineers-handbook/9781836200079/) by Paul Iusztin and Maxime Labonne 
+5. [AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) by Chip Huyen 
+6. [Hands-On Large Language Models: Language Understanding and Generation](https://www.amazon.ie/Hands-Large-Language-Models-Understanding/dp/1098150961), Oct 2024, Jay Alammar and Maarten Grootendorst
+7. [Building LLMs for Production: Enhancing LLM Abilities and Reliability with Prompting, Fine-Tuning, and RAG](https://www.louisbouchard.ai/book-towards-ai/), October 2024, Louis-Francois Bouchard and Louie Peters
+2. [LLMs in Production From language models to successful products](https://www.manning.com/books/llms-in-production), December 2024, Christopher Brousseau and Matthew Sharp
