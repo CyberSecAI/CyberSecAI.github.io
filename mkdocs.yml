@@ -27,6 +27,9 @@ nav:
   - Prompting:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
+  - Software Engineering:
+    - Software Engineering: software/introduction.md
+    - Example: software/example.md
   - CyberSecurity Models:
     - CyberSecurity LLMs: cti_models/cyber_security_models.md
   - Agents:
