@@ -8,6 +8,7 @@ nav:
   - Introduction: 
     - Preface: introduction/Preface.md
     - Introduction: introduction/Introduction.md
+    - Model Types: introduction/models.md
     - LLMs for CyberSecurity: introduction/cybsersecurity.md
   - NotebookLM:
     - NotebookLM: NotebookLM/NotebookLM.md

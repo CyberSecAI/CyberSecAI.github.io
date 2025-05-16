@@ -18,7 +18,6 @@ I started my career as a software engineer working on embedded devices (High sec
 After years of programming, I began to find it tedious and repetitive and wanted something different. I wanted to 
 Since then, I've worked across all part of the stack, and all parts of the SDLC.
 
-## model types
 
 
 ## Natural Language
