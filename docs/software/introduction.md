@@ -30,7 +30,7 @@ Software 1.0 is code we write. Software 2.0 is code written by the optimization 
 
 
 
-## 4. Shift Left
+## Shift Left
 
 !!! quote
 
@@ -104,7 +104,7 @@ Tracy Bannon’s model outlines opportunities from planning to monitoring: [Appl
 | Monitor       | Automated root-cause analysis                  |
 
 
-## 7. Evolving “Clean Code” for AI Agents
+## Evolving “Clean Code” for AI Agents
 > “Code for AI agents may prefer _verbose naming_, thorough comments, and highly regular structures—even if that feels like over-documentation to humans.”  
 > — Ikangai, 2024[^5]
 
