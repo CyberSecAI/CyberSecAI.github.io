@@ -108,6 +108,10 @@ As Karpathy noted:
 
 ## Software 1.0 Redux
 
+!!! note
+
+    It's "Software 1.0 Redux" because all the artifacts from "Software 1.0" are still the same, and even more relevant, but the Software factory has transformed with LLMs.
+
 !!! quote 
 
     “The hottest new programming language is English.”  
@@ -122,10 +126,14 @@ While AI handles low-level implementation details, human developers are elevated
 
 The skill shifts from syntax mastery to effective requirements management, architecture, and system design, and clean coding principles. 
 
+### Thoughts on the Future from the Past
+
+I captured some thoughts from the past on how I thought the future of software would play out.
+These pre-dated LLMs. LLMs have made these thoughts real.
 
 
-### More Continuity between Requirements – Documentation – Test – SW
-6 years ago, as part of a presentation on DevSecOps, I concluded with my view of the next 10 years. This pre-dated LLMs. 
+#### More Continuity between Requirements – Documentation – Test – SW
+6 years ago, as part of a presentation on DevSecOps, I concluded with my view of the next 10 years. 
 
 <figure markdown>
 ![](../assets/images/devsecops_10yrs.png)
@@ -144,14 +152,33 @@ the non-code artifacts (requirements, architecture and design documentation, tes
 Natural language prompts have become first-class citizens in development workflows, allowing developers to specify intent at higher levels of abstraction while AI handles implementation details.
 Prompt engineering is also an important skill currently, though the need for Prompt engineering is less for more capable models. 
 
+#### Diagrams as Code
 
-## From Code-Centric to Contract-Centric Development
+5 years ago, as part of a "Thoughts For The Future" chapter for [The Hitchhiker’s Guide to PlantUML!](https://crashedmind.github.io/PlantUMLHitchhikersGuide/) (linked from [plantuml.com](https://www.plantuml.com)) I wrote:
+
+
+
+!!! quote
+
+    1.3. Machine Processing Of Text Files
+
+    Having a diagram source as a text file is powerful because it allows for machine processing e.g.
+
+    1. If standard building blocks are used, it allows automated analysis and recognition of the diagram text source, and recommendations to the user e.g. if an arrow text includes “TLS” to indicate the link is secured, then an external program can provide recommendations on TLS protocol version, cipher-suites etc…
+
+    2. As companies move towards standard architecture icon sets (AWS, MS/Azure, Google,…), it is possible to process an existing architecture diagram image with optical recognition (and machine learning) and create the text (plantuml) equivalent.
+
+
+Today Multi-modal LLMs can process diagram images directly, or diagrams-as-code e.g. generate the code for an architecture diagram, provide security guidance or threat models based on the diagram, etc...
+
+
+### From Code-Centric to Contract-Centric Development
 
 This transformation reflects a broader trend toward what [a16z calls](https://a16z.com/nine-emerging-developer-patterns-for-the-ai-era/) "upstream artifacts" becoming the primary deliverables:
 
 > In agent-driven workflows, code becomes a byproduct—like a compiled artifact—while high-level inputs become the core deliverable. Code becomes the byproduct of those inputs, more like a compiled artifact than a manually authored source.
 
-### The New Development Hierarchy
+#### The New Development Hierarchy
 
 | Aspect               | Traditional (Software 1.0)           | AI-Enhanced (Software 1.0 Redux)            |
 |----------------------|---------------------------------------|----------------------------------------------|
@@ -160,7 +187,7 @@ This transformation reflects a broader trend toward what [a16z calls](https://a1
 | **Skill Emphasis**   | Syntax, algorithms, debugging         | Requirements engineering, system design      |
 | **Version Control**  | Code changes                          | Contract changes + generated artifacts       |
 
-### Critical Upstream Artifacts
+#### Critical Upstream Artifacts
 
 The most valuable artifacts in AI-driven development become the specifications that guide code generation:
 
@@ -171,7 +198,7 @@ The most valuable artifacts in AI-driven development become the specifications t
 | **Data & Schemas**        | JSON schemas, database models, API specifications    | Structured templates for consistent output   |
 | **Security & Compliance** | Threat models, security policies, audit requirements | Automated guardrails and validation rules    |
 
-## Everything-as-Code: The Infrastructure Precedent
+### Everything-as-Code: The Infrastructure Precedent
 
 This shift toward specification-driven development builds on existing "everything-as-code" movements:
 
@@ -182,7 +209,7 @@ This shift toward specification-driven development builds on existing "everythin
 
 These approaches already demonstrated the value of maintaining human-readable specifications that generate operational artifacts. AI extends this pattern to application code itself.
 
-## Blurred Boundaries: Developer Roles Evolve
+### Blurred Boundaries: Developer Roles Evolve
 
 The lines between traditional software engineering roles are blurring:
 
@@ -205,7 +232,7 @@ This evolution suggests developers will spend less time on implementation minuti
 ## Coding for AI Agents
 
 
-## Evolving “Clean Code” for AI Agents
+### Evolving “Clean Code” for AI Agents
 > “Code for AI agents may prefer _verbose naming_, thorough comments, and highly regular structures—even if that feels like over-documentation to humans.”  
 > — Ikangai, 2024[^5]
 
