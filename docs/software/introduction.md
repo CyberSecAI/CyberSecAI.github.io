@@ -8,7 +8,8 @@
 
     Then it looks at how AI gave us Software 2.0 where "AI is **eating** software", and how Generative AI gave us Software 1.0 **Redux** where "AI is **feeding** software" (and Vibe Coding).
     
-    - [Andrej_Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy) quotes are user throughout.
+    - [Andrej Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy) quotes are used throughout.
+
         
 
 ## Evolution of Software Engineering as Communication over Code
@@ -124,7 +125,7 @@ As Karpathy noted:
 
 !!! note
 
-    It's "Software 1.0 **Redux**" because the fundamental software principles of Software 1.0 have not changed; all the artifacts from "Software 1.0" are still the same, and even more relevant, but the Software factory has transformed (due to Generative AI and LLMs).
+     "Software 1.0 **Redux**" refers to how fundamental software engineering principles remain unchanged, but the development process itself has been transformed by Generative AI and LLMs. All traditional artifacts become even more relevant as AI-generated code depends on high-quality specifications.
 
 !!! quote 
 
@@ -275,24 +276,14 @@ This evolution suggests developers will spend less time on implementation minuti
     Ultimately, good code is good code – many best practices overlap whether the consumer is human or AI. Clean architecture, readable style, and efficient execution benefit both. The key differences lie in emphasis: AI agents “read” code differently than humans, so code meant for them leans into consistency, explicit context, and simplicity of structure.
 
 
+### From Professional Development to Rapid Prototyping via Vibe Coding
+
+While professional software engineering requires rigorous practices, AI has also enabled what [Andrej Karpathy terms "vibe coding"](https://en.wikipedia.org/wiki/Vibe_coding)— a more experimental approach where developers "see things, say things, run things, and copy-paste things, and it mostly works."
+
+Though Karpathy notes this isn't traditional software engineering and has limitations, vibe coding serves an important role in enabling rapid prototyping and proof-of-concepts for both experienced developers and newcomers to programming.
 
 
-
-
-### Vibe Coding
-
-Vibe Coding is not Software Engineering according to Karpathy who coined the phrase.
-
-!!! quote
-
-    "It's not really coding - I just see things, say things, run things, and copy-paste things, and it mostly works." Karpathy acknowledged that vibe coding has limitations, noting that AI tools are not always able to fix or understand bugs, requiring him to experiment with unrelated changes until the problems are resolved. He concluded that he found the technique "not too bad for throwaway weekend projects" and described it as "quite amusing."
-
-    https://en.wikipedia.org/wiki/Vibe_coding
-
-That said, Vibe Coding has a place in Software Engineering - allowing rapid prototyping and proof-of-concepts for coders and non-coders.
-
-
-### Leveraging AI to Improve Software Engineering
+## AI Across the Development Lifecycle
 
 Tracy Bannon's excellent talk [Applying AI to the SDLC: New Ideas and Gotchas! - Leveraging AI to Improve Software Engineering](https://www.infoq.com/presentations/ai-sdlc/) includes a model for where AI can be used with DevSecOps.
 
@@ -300,22 +291,30 @@ Tracy Bannon's excellent talk [Applying AI to the SDLC: New Ideas and Gotchas! -
 ![](../assets/images/ai_devsecops.png)
 </figure>
 
-Tracy Bannon’s model outlines opportunities from planning to monitoring: [Applying AI to the SDLC — InfoQ](https://www.infoq.com/presentations/ai-sdlc/) 
+It demonstrates how AI can enhance every phase of software development:
+
+| Phase             | AI Applications                                       | Current Tools                                  |
+|-------------------|-------------------------------------------------------|-----------------------------------------------|
+| **Plan & Design** | Generate design alternatives, review architectural decisions | Claude Artifacts, GitHub Copilot Chat        |
+| **Code**          | Auto-complete, generate from natural language specs   | GitHub Copilot, Claude Code, Cursor          |
+| **Test & QA**     | Auto-generate test cases, intelligent fuzzing        | GitHub Copilot, automated testing tools      |
+| **Deploy & Ops**  | Predictive scaling, infrastructure optimization       | AI-powered DevOps platforms                  |
+| **Monitor**       | Automated root-cause analysis, performance insights   | AI monitoring and observability tools        |
+
+This comprehensive integration shows AI's potential to transform every aspect of the software development lifecycle.
 
 
 ## Takeaways
   
-!!! success "Takeaways" 
+!!! success "Key Takeaways"
 
-    1. AI accelerates feedback loops: ideas → prototypes → validation happen in minutes, not weeks.
-    1. AI is reframing software engineering: _upstream artifacts_ become the true deliverables, and “code” is an executable byproduct. 
-    2. Success demands mastery of requirements, architecture, and prompt-engineering as much as traditional coding skills.
-
-
-
+    1. **Accelerated Innovation**: AI compresses idea-to-prototype cycles from weeks to minutes, fundamentally changing development velocity.
     
-
-
+    2. **Inverted Priorities**: Upstream artifacts (requirements, architecture, contracts) become primary deliverables, while code becomes a generated byproduct.
+    
+    3. **Evolved Skill Sets**: Success now requires mastering requirements engineering, system architecture, and human-AI collaboration alongside traditional coding skills.
+    
+    4. **New Paradigms**: We're witnessing both Software 2.0 (AI eating software) and Software 1.0 Redux (AI feeding traditional development), each suited to different problem domains.
 
 
 
