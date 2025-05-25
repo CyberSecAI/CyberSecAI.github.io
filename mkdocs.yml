@@ -30,7 +30,7 @@ nav:
     - Fabric: prompt_engineering/Fabric.md    
   - Software Engineering:
     - Software Engineering: software/introduction.md
-    - Software Artifacts: software/software_artifacts.md
+    - Software Engineering Artifacts: software/software_artifacts.md
     - Code Assistant vs. Autonomous Coding Agents: software/code/code_assistant_agents.md
     - Leaderboards: software/code/leaderboards.md
   - CyberSecurity Models:

@@ -94,13 +94,57 @@
 
 ---
 
-## Artifact Formats
+---
 
-Multi-modal LLMs can process multiple document and image and text formats.
+## Artifact Formats for AI Integration
 
-And, tools like MarkItDown, Docling can convert documents in many formats to MarkDown.
+Multi-modal LLMs can process diverse document formats, but strategic format selection enhances AI comprehension and workflow efficiency.
 
-However, 
+### Recommended Primary Formats
+
+**Markdown (.md)** - *Optimal for AI processing*
+
+- Semi-structured, lightweight format ideal for LLMs
+- Human-readable with machine-parseable structure
+- Supports frontmatter for metadata
+- Version control friendly
+
+
+**Structured Data**
+
+- **JSON/YAML** - Configuration files, schemas, API definitions
+- **TOML** - Configuration with human-friendly syntax
+- **CSV** - Tabular data, test cases, requirements matrices
+
+**Diagrams-as-Code**
+
+- **Mermaid** - Flowcharts, sequence diagrams, system architecture
+- **PlantUML** - UML diagrams, component relationships
+- **DOT/Graphviz** - Network diagrams, dependency graphs
+
+
+### Document Conversion Pipeline
+
+Modern tools enable seamless format conversion for AI consumption:
+
+| Tool | Input Formats | Use Case |
+|------|---------------|----------|
+| [MarkItDown](https://github.com/microsoft/markitdown) | PDF, DOCX, PPTX, XLSX, Images | Legacy document conversion |
+| [Docling](https://github.com/docling-project/docling) | PDF, DOCX, HTML, Images | Enterprise document processing |
+| [Pandoc](https://pandoc.org/) | 40+ formats | Universal document conversion |
+
+
+**Best Practices:**
+
+- Start with Markdown for new artifacts
+- Convert legacy documents using automated tools
+- Use frontmatter for metadata (tags, version, AI instructions)
+- Maintain original formats alongside Markdown for compliance
+
+This approach ensures artifacts remain both human-readable and AI-processable throughout the development lifecycle.
+
+---
+
 
 
 ## AI-Enhanced Artifact Workflow
