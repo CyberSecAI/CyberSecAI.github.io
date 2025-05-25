@@ -5,17 +5,50 @@
 !!! abstract "Overview"
 
     There is a LOT more to Software Engineering than Code Generation. 
-Software 2.0
-    https://karpathy.medium.com/software-2-0-a64152b37c35 
-Andrej Karpathy, 2017
-Software (1.0) is eating the world, and now AI (Software 2.0) is eating software.
-
-Software 1.0 is code we write. Software 2.0 is code written by the optimization based on an evaluation criterion (such as “classify this training data correctly”). It is likely that any setting where the program is not obvious but one can repeatedly evaluate the performance of it (e.g. — did you classify some images correctly? do you win games of Go?) will be subject to this transition, because the optimization can find much better code than what a human can write.
 
 
 
 
-## Design Thinking & Rapid Feedback
+## Continuous Communication with Feedback
+
+### Waterfall
+
+When I started my career as a software engineer, the [Waterfall model](https://en.wikipedia.org/wiki/Waterfall_model) was how software was developed.
+
+This linear, sequential approach [had a lot of issues](https://en.wikipedia.org/wiki/Waterfall_model#Criticism). 
+One of the most obvious was that there was a large gap between the documentation and the code - and requirements and other pre-coding artifacts, or post-coding documentation quickly became out of sync and irrelevant. 
+
+The code became the record of reality - but most stakeholders couldn't understand the code. This often led to solving the wrong problem - or solving the right problem in the wrong way.
+
+### Agile
+"During the 1990s, a number of lightweight software development methods evolved in reaction to the prevailing heavyweight methods (often referred to collectively as waterfall)" https://en.wikipedia.org/wiki/Agile_software_development. 
+
+- The most popular of these was [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development), which emphasized continuous communication and feedback.
+
+
+In addition
+
+Quotes from various Software Engineering thought leaders below emphasize the importance of communication in software development and use of a common language.
+
+
+
+!!! quote
+
+    “Communication is the single most important factor in software development; artifacts only help if they foster ongoing dialogue”  
+    Alistair Cockburn, Agile Software Development (2001)
+
+    “Everyone on the team must speak a common language or risk building software that doesn’t solve the real problem.”  
+    Eric Evans, Domain-Driven Design (2003)
+
+    “Behavior-Driven Development isn’t just about tests; it’s a ubiquitous language that flows through examples, documentation and automation.”  
+    Dan North, on BDD (circa 2006)
+
+
+
+
+
+
+
 <figure markdown>
 ![](../assets/images/doublediamondprocess.png)
 </figure>
@@ -28,6 +61,15 @@ Software 1.0 is code we write. Software 2.0 is code written by the optimization 
 
     See the Design Council’s [Systemic Design Framework](https://medium.com/design-council/developing-our-new-systemic-design-framework-e0f74fe118f7) for an evolution of the Double Diamond that  recognises the importance of the ‘invisible activities’ that sit around the design process: orientation and value setting, continuing the journey, collaboration and connection, and leadership and storytelling.
 
+
+
+
+Software 2.0
+    https://karpathy.medium.com/software-2-0-a64152b37c35 
+Andrej Karpathy, 2017
+Software (1.0) is eating the world, and now AI (Software 2.0) is eating software.
+
+Software 1.0 is code we write. Software 2.0 is code written by the optimization based on an evaluation criterion (such as “classify this training data correctly”). It is likely that any setting where the program is not obvious but one can repeatedly evaluate the performance of it (e.g. — did you classify some images correctly? do you win games of Go?) will be subject to this transition, because the optimization can find much better code than what a human can write.
 
 
 ## Shift Left
