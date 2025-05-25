@@ -8,7 +8,7 @@
 
     Then it looks at how AI gave us Software 2.0 where "AI is **eating** software", and how Generative AI gave us Software 1.0 **Redux** where "AI is **feeding** software" (and Vibe Coding).
     
-    - [Andrej Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy) quotes are used throughout.
+    [Andrej Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy) quotes are used throughout as a consistent commentary from someone who has been formative in this space.
 
         
 
@@ -135,7 +135,7 @@ As Karpathy noted:
 
 Not all problems are suited to the Software 2.0 paradigm of neural networks replacing traditional code. 
 
-For such problems, Large Language Models (LLMs) are transforming how we write traditional software, creating what we might call "Software 1.0 Redux", where AI feeds and enhances traditional software, rather than eating it ala Software 2.0.
+For such problems, Large Language Models (LLMs) are transforming how we write traditional software, creating what we might call "Software 1.0 **Redux**", where AI feeds and enhances traditional software, rather than eating it ala Software 2.0.
 
 - While AI handles low-level implementation details, human developers are elevated to higher levels of abstraction, using natural language to specify intent and behavior. 
 - The skill shifts from syntax mastery to effective requirements management, architecture, and system design, and clean coding principles. 
