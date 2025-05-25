@@ -2,9 +2,14 @@
 
 !!! abstract "Overview"
 
-    AI accelerates feedback loops: ideas → prototypes → validation happen in minutes, not weeks.
+    This section gives an overview of Software Engineering and how it has evolved with AI and Generative AI.
 
-    We look at Software 2.0 where "AI is **eating** software", and Software 1.0 Redux where "AI is **feeding** software."
+    It looks at the early days of Software Engineering and the transition from WaterFall to Agile - and the emphasis on communication over code and documentation. 
+
+    Then it looks at how AI gave us Software 2.0 where "AI is **eating** software", and how Generative AI gave us Software 1.0 **Redux** where "AI is **feeding** software" (and Vibe Coding).
+    
+    - [Andrej_Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy) quotes are user throughout.
+        
 
 ## Evolution of Software Engineering as Communication over Code
 
@@ -35,11 +40,13 @@ Rather than relying on comprehensive documentation, Agile methodologies prioriti
     See the Design Council’s [Systemic Design Framework](https://medium.com/design-council/developing-our-new-systemic-design-framework-e0f74fe118f7) for an evolution of the Double Diamond that  recognises the importance of the ‘invisible activities’ that sit around the design process: orientation and value setting, continuing the journey, collaboration and connection, and leadership and storytelling.
 
 
-Software engineering thought leaders have consistently emphasized how critical shared understanding becomes in successful projects. [Alistair Cockburn's research](https://agilemodeling.com/essays/communication.htm) demonstrated that face-to-face communication, particularly when enhanced by shared modeling tools like whiteboards, represents the most effective form of team communication. His work on [communication effectiveness](https://alistaircockburn.com/) showed that physical proximity and multiple communication modalities dramatically improve information transfer and reduce misunderstandings.
+Software engineering thought leaders have consistently emphasized how critical shared understanding becomes in successful projects. 
 
-Eric Evans, in his foundational work on [Domain-Driven Design](https://www.domainlanguage.com/), introduced the concept of ["ubiquitous language"](https://martinfowler.com/bliki/UbiquitousLanguage.html)—a shared vocabulary that bridges the gap between business experts and technical teams. This common language emerges from ongoing collaboration and becomes embedded in both conversations and code, ensuring that business terminology permeates throughout the software system.
+- [Alistair Cockburn's research](https://agilemodeling.com/essays/communication.htm) demonstrated that face-to-face communication, particularly when enhanced by shared modeling tools like whiteboards, represents the most effective form of team communication. His work on [communication effectiveness](https://alistaircockburn.com/) showed that physical proximity and multiple communication modalities dramatically improve information transfer and reduce misunderstandings.
 
-[Dan North](https://dannorth.net/) extended these ideas when developing [Behavior-Driven Development (BDD)](https://dannorth.net/introducing-bdd/), creating frameworks that use natural language constructs to describe software behavior in terms that all stakeholders can understand. BDD treats the specification of desired behavior as a ubiquitous language for the entire project team, helping prevent communication breakdowns between developers and business stakeholders.
+- Eric Evans, in his foundational work on [Domain-Driven Design](https://www.domainlanguage.com/), introduced the concept of ["ubiquitous language"](https://martinfowler.com/bliki/UbiquitousLanguage.html)—a shared vocabulary that bridges the gap between business experts and technical teams. This common language emerges from ongoing collaboration and becomes embedded in both conversations and code, ensuring that business terminology permeates throughout the software system.
+
+- [Dan North](https://dannorth.net/) extended these ideas when developing [Behavior-Driven Development (BDD)](https://dannorth.net/introducing-bdd/), creating frameworks that use natural language constructs to describe software behavior in terms that all stakeholders can understand. BDD treats the specification of desired behavior as a ubiquitous language for the entire project team, helping prevent communication breakdowns between developers and business stakeholders.
 
 These approaches share a common insight: **successful software development requires more than technical expertise—it demands ongoing communication, shared vocabulary, and collaborative understanding of both the problem domain and the solution being built.**
 
@@ -68,6 +75,13 @@ Andrej Karpathy introduced the concept of "Software 2.0" to describe this transf
     It is likely that any setting where the program is not obvious but one can repeatedly evaluate the performance of it (e.g. — did you classify some images correctly? do you win games of Go?) will be subject to this transition, because the optimization can find much better code than what a human can write.
 
     Andrej Karpathy, Nov 11, 2017 https://karpathy.medium.com/software-2-0-a64152b37c35
+
+
+!!! note
+
+    "Software (1.0) is eating the world" is a reference to "Why Software Is Eating the World", Marc Andreessen", 2011.
+  
+    https://a16z.com/why-software-is-eating-the-world/ where a16z is "**A**ndreessenHorowit**z**."
 
 
 ### Software 2.0 Example: Tesla Autopilot transition from C++ code to AI
@@ -110,7 +124,7 @@ As Karpathy noted:
 
 !!! note
 
-    It's "Software 1.0 Redux" because all the artifacts from "Software 1.0" are still the same, and even more relevant, but the Software factory has transformed with LLMs.
+    It's "Software 1.0 **Redux**" because the fundamental software principles of Software 1.0 have not changed; all the artifacts from "Software 1.0" are still the same, and even more relevant, but the Software factory has transformed (due to Generative AI and LLMs).
 
 !!! quote 
 
@@ -122,18 +136,18 @@ Not all problems are suited to the Software 2.0 paradigm of neural networks repl
 
 For such problems, Large Language Models (LLMs) are transforming how we write traditional software, creating what we might call "Software 1.0 Redux", where AI feeds and enhances traditional software, rather than eating it ala Software 2.0.
 
-While AI handles low-level implementation details, human developers are elevated to higher levels of abstraction, using natural language to specify intent and behavior. 
-
-The skill shifts from syntax mastery to effective requirements management, architecture, and system design, and clean coding principles. 
+- While AI handles low-level implementation details, human developers are elevated to higher levels of abstraction, using natural language to specify intent and behavior. 
+- The skill shifts from syntax mastery to effective requirements management, architecture, and system design, and clean coding principles. 
 
 ### Thoughts on the Future from the Past
 
-I captured some thoughts from the past on how I thought the future of software would play out.
-These pre-dated LLMs. LLMs have made these thoughts real.
+In the past, I captured some thoughts publicly on how I thought the future of software would play out. 
 
+These predictions have materialized through today's Generative AI tools, though at the time the Generative AI that we take for granted today did not exist.
 
 #### More Continuity between Requirements – Documentation – Test – SW
-6 years ago, as part of a presentation on DevSecOps, I concluded with my view of the next 10 years. 
+
+Six years ago, as part of a presentation on DevSecOps, I concluded with my view of the next 10 years:
 
 <figure markdown>
 ![](../assets/images/devsecops_10yrs.png)
@@ -142,21 +156,16 @@ These pre-dated LLMs. LLMs have made these thoughts real.
 For "More Continuity between Requirements – Documentation – Test – SW", these points were already playing out at that time:
 
 - Less heavy lifting required by people to build software
-- The breadth and depth and rate of change of new technologies means that developers can’t keep pace
+- The breadth and depth and rate of change of new technologies means that developers can't keep pace
 - Value moves further up the stack – the lower layers become commodities
 
+The "More Continuity between Requirements – Documentation – Test – SW" is now playing out as "Software 1.0 Redux" where the non-code artifacts (requirements, architecture and design documentation, tests, user documentation) become the contracts from which code is generated by LLMs—and the code becomes more of a byproduct. These contracts are maintained and versioned alongside the code.
 
-The "More Continuity between Requirements – Documentation – Test – SW" is playing out as "Software 1.0 Redux" where
-the non-code artifacts (requirements, architecture and design documentation, tests, user documentation) become the contracts from which the code is generated by the LLM - and the code becomes more of a byproduct. And these contracts are maintained and versioned - along with the code.
-
-Natural language prompts have become first-class citizens in development workflows, allowing developers to specify intent at higher levels of abstraction while AI handles implementation details.
-Prompt engineering is also an important skill currently, though the need for Prompt engineering is less for more capable models. 
+Natural language prompts have become first-class citizens in development workflows, allowing developers to specify intent at higher levels of abstraction while AI handles implementation details. Prompt engineering is an important skill currently, though the need for prompt engineering diminishes with more capable models.
 
 #### Diagrams as Code
 
-5 years ago, as part of a "Thoughts For The Future" chapter for [The Hitchhiker’s Guide to PlantUML!](https://crashedmind.github.io/PlantUMLHitchhikersGuide/) (linked from [plantuml.com](https://www.plantuml.com)) I wrote:
-
-
+Five years ago, as part of a "[Thoughts For The Future](https://crashedmind.github.io/PlantUMLHitchhikersGuide/about/future.html?highlight=machine#machine-processing-of-text-files)" chapter for [The Hitchhiker's Guide to PlantUML!](https://crashedmind.github.io/PlantUMLHitchhikersGuide/) (linked from [plantuml.com](https://www.plantuml.com)), I wrote:
 
 !!! quote
 
@@ -164,12 +173,30 @@ Prompt engineering is also an important skill currently, though the need for Pro
 
     Having a diagram source as a text file is powerful because it allows for machine processing e.g.
 
-    1. If standard building blocks are used, it allows automated analysis and recognition of the diagram text source, and recommendations to the user e.g. if an arrow text includes “TLS” to indicate the link is secured, then an external program can provide recommendations on TLS protocol version, cipher-suites etc…
+    1. If standard building blocks are used, it allows automated analysis and recognition of the diagram text source, and recommendations to the user e.g. if an arrow text includes "TLS" to indicate the link is secured, then an external program can provide recommendations on TLS protocol version, cipher-suites etc…
 
     2. As companies move towards standard architecture icon sets (AWS, MS/Azure, Google,…), it is possible to process an existing architecture diagram image with optical recognition (and machine learning) and create the text (plantuml) equivalent.
 
+ 
+!!! quote
 
-Today Multi-modal LLMs can process diagram images directly, or diagrams-as-code e.g. generate the code for an architecture diagram, provide security guidance or threat models based on the diagram, etc...
+    Having diagrams as code that can live beside the system code, that the stakeholders are equally comfortable editing and viewing, reduces the gap i.e. “Where system diagrams meet system reality”
+
+    https://crashedmind.github.io/PlantUMLHitchhikersGuide/about/AboutPlantUML.html#diagrams-as-code
+
+I felt strong enough about this that I wrote a guide on PlantUML, a diagram-as-code tool.
+
+
+
+
+
+### Validation Through Current AI Tools
+
+These predictions have materialized through today's generative AI tools:
+
+- e.g. [Claude's Artifacts feature](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) exemplifies the upstream artifacts concept, allowing users to generate substantial, standalone content like code snippets, documents, or website designs that appear in a dedicated window for iterative refinement. Meanwhile, [Claude Code](https://www.anthropic.com/claude-code) takes this further by operating directly in the terminal, understanding entire codebases and helping developers code faster by executing routine tasks, explaining complex code, and handling git workflows through natural language commands.
+- The "diagrams as code" vision has also been realized—modern AI can now generate Mermaid diagrams, SVG graphics, and complete architecture visualizations from natural language descriptions, then provide contextual analysis including security recommendations and threat modeling based on those diagrams. It can also generate the code given an image.
+
 
 
 ### From Code-Centric to Contract-Centric Development
@@ -229,34 +256,43 @@ This evolution suggests developers will spend less time on implementation minuti
 
 
 
-## Coding for AI Agents
+### Coding for AI Agents vs. Humans
 
+[Coding for AI Agents vs. Humans, May 2025, Martin Treiber](https://www.ikangai.com/coding-for-ai-agents-vs-coding-for-human-developers/)  
 
-### Evolving “Clean Code” for AI Agents
-> “Code for AI agents may prefer _verbose naming_, thorough comments, and highly regular structures—even if that feels like over-documentation to humans.”  
-> — Ikangai, 2024[^5]
+!!! quote
 
-**New Guidelines**  
-- **Naming:** Explicit, unambiguous  
-- **Comments:** Machine-readable annotations  
-- **Formatting:** Consistent AST-friendly style  
-
-
-Furthermore, the increasing involvement of AI agents is expanding the "audience" for code. Traditionally, code was written primarily by and for human developers, with a strong emphasis on readability and maintainability for human comprehension. However, code intended to be generated or maintained by AI agents may prioritize different qualities to align with an AI's interpretive capabilities. 1 This can lead to a preference for thorough comments, verbose naming conventions, and highly regular code structures, even if a human developer might consider these practices "over-documentation" or overly explicit. This adjustment in coding best practices is driven by the need to ensure AI agents can correctly parse and manipulate the code. This means that the definition of "clean code" may evolve to balance human readability with optimal AI parseability. Organizations will likely need to establish new guidelines for "AI-optimized code" to ensure that their systems can be effectively maintained and evolved by autonomous agents. This also suggests that documentation will transition from passive information repositories to active instructions that AI agents can directly interpret and act upon. 2
-[Coding for AI Agents vs. Humans — Ikangai](https://www.ikangai.com/coding-for-ai-agents-vs-coding-for-human-developers/)  
+    As AI coding assistants and autonomous agents (often powered by large language models) become more involved in software development, best practices in coding must account for a new “audience.” Traditionally, code is written by and for human developers, emphasizing readability and maintainability for people. In contrast, code intended to be generated or maintained by AI agents may prioritize different qualities to align with an AI’s interpretive capabilities. 
 
 
 
+    | ASPECT                    | CODE OPTIMIZED FOR HUMAN DEVS                                                                                                                                                                   | CODE OPTIMIZED FOR AI AGENTS                                                                                                                                                                                                 |
+    |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | **Design & Patterns**     | Uses established design patterns and abstractions for maintainability; architecture planned with human intuition in mind. *E.g.* heavily employs DRY and common patterns to avoid duplication.      | Prefers straightforward implementations unless instructed otherwise; may duplicate logic or use simpler patterns by default. Requires explicit guidance to enforce complex patterns or project-specific architectures.        |
+    | **Readability & Naming**  | Emphasizes self-explanatory code: clear but concise names, standard formatting, and comments only where needed. Relies on code being self-documenting and consistent by convention.             | Emphasizes explicit clarity: very descriptive names (the AI doesn’t mind length), extremely consistent naming and styling. Heavy inline documentation and docstrings are included to provide context (since AI can update). |
+    | **Performance Trade-offs**| Prioritizes readability and maintainability; avoids premature optimizations. Optimizes hotspots after profiling, using complex techniques only with justification (and documenting them for colleagues). | Prioritizes correctness and completeness on first pass; optimizations are applied via iteration or prompts. Tends toward robust, error-checked code even if slightly slower. Can leverage known optimizations or libraries.   |
 
-
+    Ultimately, good code is good code – many best practices overlap whether the consumer is human or AI. Clean architecture, readable style, and efficient execution benefit both. The key differences lie in emphasis: AI agents “read” code differently than humans, so code meant for them leans into consistency, explicit context, and simplicity of structure.
 
 
 
 
 
 
+### Vibe Coding
 
-## Leveraging AI to Improve Software Engineering
+Vibe Coding is not Software Engineering according to Karpathy who coined the phrase.
+
+!!! quote
+
+    "It's not really coding - I just see things, say things, run things, and copy-paste things, and it mostly works." Karpathy acknowledged that vibe coding has limitations, noting that AI tools are not always able to fix or understand bugs, requiring him to experiment with unrelated changes until the problems are resolved. He concluded that he found the technique "not too bad for throwaway weekend projects" and described it as "quite amusing."
+
+    https://en.wikipedia.org/wiki/Vibe_coding
+
+That said, Vibe Coding has a place in Software Engineering - allowing rapid prototyping and proof-of-concepts for coders and non-coders.
+
+
+### Leveraging AI to Improve Software Engineering
 
 Tracy Bannon's excellent talk [Applying AI to the SDLC: New Ideas and Gotchas! - Leveraging AI to Improve Software Engineering](https://www.infoq.com/presentations/ai-sdlc/) includes a model for where AI can be used with DevSecOps.
 
@@ -266,32 +302,18 @@ Tracy Bannon's excellent talk [Applying AI to the SDLC: New Ideas and Gotchas! -
 
 Tracy Bannon’s model outlines opportunities from planning to monitoring: [Applying AI to the SDLC — InfoQ](https://www.infoq.com/presentations/ai-sdlc/) 
 
-| Phase         | AI Use Case                                    |
-|---------------|------------------------------------------------|
-| Plan & Design | Generate design variants, review ADRs          |
-| Code          | Autocomplete, synthesis from prompts          |
-| Test & QA     | Auto-generate test cases, fuzzing              |
-| Deploy & Ops  | Predictive scaling, anomaly detection          |
-| Monitor       | Automated root-cause analysis                  |
-
 
 ## Takeaways
   
 !!! success "Takeaways" 
 
+    1. AI accelerates feedback loops: ideas → prototypes → validation happen in minutes, not weeks.
     1. AI is reframing software engineering: _upstream artifacts_ become the true deliverables, and “code” is an executable byproduct. 
     2. Success demands mastery of requirements, architecture, and prompt-engineering as much as traditional coding skills.
 
 
 
-### Critical Artifacts for AI-Driven Development
-
-| Artifact Category         | Examples                                             | AI-Centric Need                             |
-|---------------------------|------------------------------------------------------|----------------------------------------------|
-| **Requirements**          | User stories, functional & non-functional specs      | Clear acceptance criteria for evaluation     |
-| **Architecture & Design** | ADRs, UML/component diagrams, API contracts          | Unambiguous intents for prompt templates     |
-| **Data & Schemas**        | Training datasets, JSON/YAML schemas                 | Consistent structure for model generation    |
-| **Security & Compliance** | Threat models, audit reports                        | Automated guardrails for AI outputs          |
+    
 
 
 
