@@ -1,53 +1,30 @@
-# How Software Engineering Is Changing with AI
-
-# Overview
+# How AI is Changing Software Engineering
 
 !!! abstract "Overview"
 
-    There is a LOT more to Software Engineering than Code Generation. 
+    AI accelerates feedback loops: ideas → prototypes → validation happen in minutes, not weeks.
 
+    We look at Software 2.0 where "AI is **eating** software", and Software 1.0 Redux where "AI is **feeding** software."
 
+## Evolution of Software Engineering as Communication over Code
 
+ 
 
-## Continuous Communication with Feedback
+Effective software development depends fundamentally on clear communication between all stakeholders—from business experts to developers to end users. The evolution from rigid, document-heavy approaches to collaborative, feedback-driven methodologies illustrates how the industry has learned to prioritize human communication over process documentation.
 
-### Waterfall
+### The Waterfall Challenge
 
-When I started my career as a software engineer, the [Waterfall model](https://en.wikipedia.org/wiki/Waterfall_model) was how software was developed.
+The [Waterfall model](https://en.wikipedia.org/wiki/Waterfall_model) dominated software development for decades through its linear, sequential approach. However, this methodology created significant communication barriers. Requirements, design documents, and other pre-coding artifacts quickly became outdated as projects progressed. The code itself became the only reliable source of truth, but most stakeholders couldn't understand it.
 
-This linear, sequential approach [had a lot of issues](https://en.wikipedia.org/wiki/Waterfall_model#Criticism). 
-One of the most obvious was that there was a large gap between the documentation and the code - and requirements and other pre-coding artifacts, or post-coding documentation quickly became out of sync and irrelevant. 
+This disconnect between documentation and reality often led teams to solve the wrong problems. The fundamental issue was the lack of continuous feedback loops between those who understood the business needs and those building the software.
 
-The code became the record of reality - but most stakeholders couldn't understand the code. This often led to solving the wrong problem - or solving the right problem in the wrong way.
+### The Agile Response
 
-### Agile
-"During the 1990s, a number of lightweight software development methods evolved in reaction to the prevailing heavyweight methods (often referred to collectively as waterfall)" https://en.wikipedia.org/wiki/Agile_software_development. 
+During the 1990s, [lightweight development methodologies emerged](https://en.wikipedia.org/wiki/Agile_software_development) in response to these heavyweight, document-centric approaches. [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development) became the most influential of these approaches, emphasizing iterative development, continuous feedback, and direct collaboration between business stakeholders and development teams.
 
-- The most popular of these was [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development), which emphasized continuous communication and feedback.
+Rather than relying on comprehensive documentation, Agile methodologies prioritize working software and frequent communication. This shift recognized that software development is fundamentally a collaborative, creative process that benefits from ongoing dialogue rather than upfront specification.
 
-
-In addition
-
-Quotes from various Software Engineering thought leaders below emphasize the importance of communication in software development and use of a common language.
-
-
-
-!!! quote
-
-    “Communication is the single most important factor in software development; artifacts only help if they foster ongoing dialogue”  
-    Alistair Cockburn, Agile Software Development (2001)
-
-    “Everyone on the team must speak a common language or risk building software that doesn’t solve the real problem.”  
-    Eric Evans, Domain-Driven Design (2003)
-
-    “Behavior-Driven Development isn’t just about tests; it’s a ubiquitous language that flows through examples, documentation and automation.”  
-    Dan North, on BDD (circa 2006)
-
-
-
-
-
-
+### The Language of Collaboration
 
 <figure markdown>
 ![](../assets/images/doublediamondprocess.png)
@@ -55,29 +32,99 @@ Quotes from various Software Engineering thought leaders below emphasize the imp
 
 !!! tip
 
-    AI accelerates feedback loops: ideas → prototypes → validation happen in minutes, not weeks.
-
-!!! tip
-
     See the Design Council’s [Systemic Design Framework](https://medium.com/design-council/developing-our-new-systemic-design-framework-e0f74fe118f7) for an evolution of the Double Diamond that  recognises the importance of the ‘invisible activities’ that sit around the design process: orientation and value setting, continuing the journey, collaboration and connection, and leadership and storytelling.
 
 
+Software engineering thought leaders have consistently emphasized how critical shared understanding becomes in successful projects. [Alistair Cockburn's research](https://agilemodeling.com/essays/communication.htm) demonstrated that face-to-face communication, particularly when enhanced by shared modeling tools like whiteboards, represents the most effective form of team communication. His work on [communication effectiveness](https://alistaircockburn.com/) showed that physical proximity and multiple communication modalities dramatically improve information transfer and reduce misunderstandings.
+
+Eric Evans, in his foundational work on [Domain-Driven Design](https://www.domainlanguage.com/), introduced the concept of ["ubiquitous language"](https://martinfowler.com/bliki/UbiquitousLanguage.html)—a shared vocabulary that bridges the gap between business experts and technical teams. This common language emerges from ongoing collaboration and becomes embedded in both conversations and code, ensuring that business terminology permeates throughout the software system.
+
+[Dan North](https://dannorth.net/) extended these ideas when developing [Behavior-Driven Development (BDD)](https://dannorth.net/introducing-bdd/), creating frameworks that use natural language constructs to describe software behavior in terms that all stakeholders can understand. BDD treats the specification of desired behavior as a ubiquitous language for the entire project team, helping prevent communication breakdowns between developers and business stakeholders.
+
+These approaches share a common insight: **successful software development requires more than technical expertise—it demands ongoing communication, shared vocabulary, and collaborative understanding of both the problem domain and the solution being built.**
 
 
-Software 2.0
-    https://karpathy.medium.com/software-2-0-a64152b37c35 
-Andrej Karpathy, 2017
-Software (1.0) is eating the world, and now AI (Software 2.0) is eating software.
+## Software 2.0
 
-Software 1.0 is code we write. Software 2.0 is code written by the optimization based on an evaluation criterion (such as “classify this training data correctly”). It is likely that any setting where the program is not obvious but one can repeatedly evaluate the performance of it (e.g. — did you classify some images correctly? do you win games of Go?) will be subject to this transition, because the optimization can find much better code than what a human can write.
+The emergence of artificial intelligence is fundamentally changing how we think about software development. 
+
+Andrej Karpathy introduced the concept of "Software 2.0" to describe this transformation, where traditional human-written code gives way to AI-generated solutions.
+
+!!! quote
+
+    Software (1.0) is eating the world, and now AI (Software 2.0) is eating software.
+
+    The “classical stack” of Software 1.0 is what we’re all familiar with — it is written in languages such as Python, C++, etc. It consists of explicit instructions to the computer written by a programmer. By writing each line of code, the programmer identifies a specific point in program space with some desirable behavior.
+
+    In contrast, Software 2.0 is written in much more abstract, human unfriendly language, such as the weights of a neural network. No human is involved in writing this code because there are a lot of weights (typical networks might have millions), and coding directly in weights is kind of hard
+
+    In Software 1.0, human-engineered source code (e.g. some .cpp files) is compiled into a binary that does useful work. 
+    
+    In Software 2.0 most often the source code comprises 
+    
+    1. the dataset that defines the desirable behavior and 
+    2. the neural net architecture that gives the rough skeleton of the code, but with many details (the weights) to be filled in.
+
+    It is likely that any setting where the program is not obvious but one can repeatedly evaluate the performance of it (e.g. — did you classify some images correctly? do you win games of Go?) will be subject to this transition, because the optimization can find much better code than what a human can write.
+
+    Andrej Karpathy, Nov 11, 2017 https://karpathy.medium.com/software-2-0-a64152b37c35
+
+
+### Software 2.0 Example: Tesla Autopilot transition from C++ code to AI
+
+Tesla's Autopilot system demonstrates this transition in practice. As Karpathy explained:
+
+!!! quote 
+
+
+    Neural network can eat through the [programming] stack… When I joined Tesla, there was a ton of C++ code, and now there's much, much less C++ code in the code that runs in the car. 
+
+    Neural network initially was just doing a detection on the image level, then it went for multiple images, it gives you prediction, then multiple images over time give you a prediction, and you're discarding C++ code. And eventually you're just giving steering commands.
+
+    … I do suspect that the end-to-end systems for Tesla in, say, 10 years, it is just a neural net. I mean, the videos stream into a neural net and commands come out.
+
+    https://www.linkedin.com/pulse/andrej-karpathy-8-big-ideas-mikael-alemu-gorsky-eckuf/
+
+
+This evolution illustrates how AI systems can progressively replace traditional programmatic logic, moving toward end-to-end neural networks that process inputs and generate outputs directly.
+
+
+### Data as the New Source Code
+
+In this Software 2.0 world, datasets become the primary artifact of development. [Hugging Face](https://huggingface.co/) has emerged as "Software 2.0's GitHub," hosting over [400K+ datasets](https://huggingface.co/datasets) alongside 1.7M+ models, where repositories contain datasets and commits represent additions and edits of labels rather than code changes.
+
+This shift fundamentally changes how we think about version control, collaboration, and the artifacts that define our systems. The focus moves from managing code repositories to curating and versioning the data that trains our AI systems. 
+
+As Karpathy noted:
+
+!!! quote 
+
+    Github is a very successful home for Software 1.0 code. Is there space for a Software 2.0 Github? In this case repositories are datasets and commits are made up of additions and edits of the labels.
+
+    https://karpathy.medium.com/software-2-0-a64152b37c35
+
+
+## Software 1.0 Redux
+
+!!! quote 
+
+    “The hottest new programming language is English.”  
+    
+    —[Andrej Karpathy on X/Twitter, 2023](https://x.com/karpathy/status/1617979122625712128)  
+
+
+Not all problems (or people) are amenable to Software 2.0.
+
+
+
+Natural-language prompts are now first-class citizens in our toolchains.
+
+
+
 
 
 ## Shift Left
 
-!!! quote
-
-    “Software 1.0 is code we write. Software 2.0 is code written by optimization based on an evaluation criterion.”  
-    [Software 2.0 — Andrej Karpathy, 2017](https://karpathy.medium.com/software-2-0-a64152b37c35)  
 
 While Code Generation grabs headlines, **the true value** lies in the _upstream artifacts_—architecture ADRs, user-story requirements, API contracts—that shape AI-driven workflows.
 
@@ -108,14 +155,7 @@ Furthermore, the increasing involvement of AI agents is expanding the "audience"
 [Coding for AI Agents vs. Humans — Ikangai](https://www.ikangai.com/coding-for-ai-agents-vs-coding-for-human-developers/)  
 
 
-## “Programming Language” → Natural Language
-!!! quote 
 
-    “The hottest new programming language is English.”  
-    
-    —[Andrej Karpathy on X/Twitter, 2023](https://x.com/karpathy/status/1617979122625712128)  
-
-Natural-language prompts are now first-class citizens in our toolchains.
 
 ## Pre-Coding Artifacts: Contracts Become King
 
