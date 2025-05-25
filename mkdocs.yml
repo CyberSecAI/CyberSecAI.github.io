@@ -30,11 +30,9 @@ nav:
     - Fabric: prompt_engineering/Fabric.md    
   - Software Engineering:
     - Software Engineering: software/introduction.md
-    - Example: software/example.md
     - Software Artifacts: software/software_artifacts.md
-    - Coding:
-        - Code Assistant vs. Autonomous Coding Agents: software/code/code_assistant_agents.md
-        - Leaderboards: software/code/leaderboards.md
+    - Code Assistant vs. Autonomous Coding Agents: software/code/code_assistant_agents.md
+    - Leaderboards: software/code/leaderboards.md
   - CyberSecurity Models:
     - CyberSecurity LLMs: cti_models/cyber_security_models.md
     - Agents: agents/Agents.md

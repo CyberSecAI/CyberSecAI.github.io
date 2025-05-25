@@ -108,7 +108,7 @@ This evolution illustrates how AI systems can progressively replace traditional 
 
 In this Software 2.0 world, datasets become the primary artifact of development. 
 
-[Hugging Face](https://huggingface.co/) has emerged as "Software 2.0's GitHub," hosting over [400K+ datasets](https://huggingface.co/datasets) alongside 1.7M+ models, where repositories contain datasets and commits represent additions and edits of labels rather than code changes.
+[Hugging Face](https://huggingface.co/) has emerged as "Software 2.0's GitHub," hosting over [400K+ datasets](https://huggingface.co/datasets) alongside [1.7M+ models,](https://huggingface.co/models) where repositories contain datasets and commits represent additions and edits of labels rather than code changes.
 
 This shift fundamentally changes how we think about version control, collaboration, and the artifacts that define our systems. The focus moves from managing code repositories to curating and versioning the data that trains our AI systems. 
 
