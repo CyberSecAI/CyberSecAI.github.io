@@ -1037,14 +1037,20 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison-table-of-developer-ai-tools-by-autonomy-and-capabilities" class="md-nav__link">
+    <nav class="md-nav" aria-label="Autonomy Levels for AI Coding Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#works-cited" class="md-nav__link">
     <span class="md-ellipsis">
-      Comparison Table of Developer AI Tools by Autonomy and Capabilities
+      Works cited
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1493,14 +1499,20 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison-table-of-developer-ai-tools-by-autonomy-and-capabilities" class="md-nav__link">
+    <nav class="md-nav" aria-label="Autonomy Levels for AI Coding Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#works-cited" class="md-nav__link">
     <span class="md-ellipsis">
-      Comparison Table of Developer AI Tools by Autonomy and Capabilities
+      Works cited
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1535,145 +1547,259 @@
 <li><strong>Level 4 – Highly Autonomous Coding:</strong> The AI can handle <strong>complex projects end-to-end</strong>, needing only minimal human input (like a prompt or spec) and <em>no required oversight on each change</em>. It can design solutions, write code across the entire codebase, test, debug, and even proactively improve code without awaiting human review. At this level, you might trust the AI as you would a strong senior engineer: provide requirements and let it deliver a solution to review. (In practice, developers may still do a final review, but the AI’s output is intended to be production-ready.)</li>
 <li><strong>Level 5 – Full Autonomy (Experimental/Future):</strong> At this theoretical stage, an AI coding agent <strong>sets its own goals and continuously improves software</strong> without explicit human-defined tasks. It could analyze user needs or system metrics and autonomously decide to implement features or optimizations. This remains speculative – current tools do <strong>not</strong> reach Level 5, but research projects hint at this direction (e.g. AutoGPT agents that take an open-ended goal and break it into sub-tasks to achieve it). No mainstream coding tool today operates at full Level 5 autonomy.</li>
 </ul>
-<h2 id="comparison-table-of-developer-ai-tools-by-autonomy-and-capabilities"><strong>Comparison Table of Developer AI Tools by Autonomy and Capabilities</strong><a class="headerlink" href="#comparison-table-of-developer-ai-tools-by-autonomy-and-capabilities" title="Permanent link">&para;</a></h2>
-<p>The table below summarizes the tools discussed, comparing their autonomy level, interaction style, key strengths, and notable limitations:</p>
+<p><strong>Comparison Table of Developer AI Tools by Autonomy and Capabilities</strong></p>
+<p>The following table provides a summarized comparison of the developer AI tools discussed in this report, categorized by their primary autonomy level and highlighting their key characteristics, interaction styles, strengths, and limitations. This table serves as a quick reference to differentiate the capabilities and intended use cases of various tools in the rapidly evolving landscape of AI-assisted software development. Understanding these distinctions is crucial for developers and engineering leaders seeking to effectively integrate AI into their workflows.</p>
 <table>
 <thead>
 <tr>
-<th><strong>Tool Name</strong></th>
-<th><strong>Autonomy Level</strong></th>
-<th><strong>Interaction Style</strong></th>
-<th><strong>Key Strengths</strong></th>
-<th><strong>Notable Limitations</strong></th>
+<th style="text-align: left;">Tool Name</th>
+<th style="text-align: left;">Autonomy Level</th>
+<th style="text-align: left;">Interaction Style</th>
+<th style="text-align: left;">Key Strengths</th>
+<th style="text-align: left;">Notable Limitations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>VS Code IntelliSense</strong></td>
-<td>1 (Basic Assist)</td>
-<td>Inline IDE suggestions as you type</td>
-<td>Fast, context-aware completions for syntax &amp; names; no cloud needed, very reliable for known code patterns.</td>
-<td>No true “AI” or understanding of intent; cannot generate new logic beyond what’s in scope (only completes existing code).</td>
+<td style="text-align: left;"><strong>VS Code IntelliSense</strong></td>
+<td style="text-align: left;">1 (Basic Assist)</td>
+<td style="text-align: left;">Inline IDE suggestions as you type</td>
+<td style="text-align: left;">Fast, context-aware completions for syntax &amp; names based on language semantics and source analysis <a href="https://code.visualstudio.com/docs/editing/intellisense">7</a>; works offline; reliable for known code patterns; extensible.</td>
+<td style="text-align: left;">No true "AI" generation of novel logic; limited to current file/project context; cannot understand higher-level intent [User Query].</td>
 </tr>
 <tr>
-<td><strong>Tabnine</strong></td>
-<td>1 (Basic Assist)</td>
-<td>IDE plugin, ML-based autocomplete</td>
-<td>ML-driven suggestions for full lines/functions; supports many languages; can work offline/local for privacy.</td>
-<td>Still reactive only; quality varies if context is unclear; no multi-step abilities or deep reasoning.</td>
+<td style="text-align: left;"><strong>Tabnine</strong></td>
+<td style="text-align: left;">1 (with L3 agent features)</td>
+<td style="text-align: left;">IDE plugin, ML-based autocomplete; AI chat; AI agents for specific tasks <a href="https://www.tabnine.com/">8</a></td>
+<td style="text-align: left;">ML-driven suggestions for full lines/functions; supports many languages; local models for privacy <a href="https://www.tabnine.com/">8</a>; team-trained models <a href="https://spacelift.io/blog/ai-coding-assistant-tools">10</a>; agents for docs, review, Jira tasks.<a href="https://www.tabnine.com/">8</a></td>
+<td style="text-align: left;">Core completion reactive; agent features newer; quality varies with context; large local models can be resource-intensive.<a href="https://spacelift.io/blog/ai-coding-assistant-tools">10</a></td>
 </tr>
 <tr>
-<td><strong>GitHub Copilot</strong></td>
-<td>2 (Pair Programmer)</td>
-<td>IDE plugin (VS Code, etc.), inline suggestions and chat interface</td>
-<td>Generates larger code blocks from comments or function signatures; huge knowledge base of frameworks; seamlessly integrates into coding workflow.</td>
-<td>Can produce incorrect or insecure code that needs review; limited context window (may miss cross-file issues); requires internet (cloud model).</td>
+<td style="text-align: left;"><strong>GitHub Copilot (Standard Mode)</strong></td>
+<td style="text-align: left;">2 (Pair Programmer)</td>
+<td style="text-align: left;">IDE plugin (inline suggestions); Copilot Chat interface <a href="https://spacelift.io/blog/ai-coding-assistant-tools">10</a></td>
+<td style="text-align: left;">Generates larger code blocks/functions from comments/context <a href="https://spacelift.io/blog/ai-coding-assistant-tools">10</a>; broad framework knowledge; seamless IDE integration; chat for Q\&amp;A/explanations.<a href="https://spacelift.io/blog/ai-coding-assistant-tools">10</a></td>
+<td style="text-align: left;">Can produce incorrect/insecure code requiring review <a href="https://www.peerspot.com/products/github-copilot-pros-and-cons">6</a>; limited full-project context; cloud-dependent; privacy/licensing concerns [User Query].</td>
 </tr>
 <tr>
-<td><strong>Amazon CodeWhisperer</strong></td>
-<td>2 (Pair Programmer)</td>
-<td>IDE plugin (AWS Toolkit), inline suggestions</td>
-<td>Understands intent from natural-language comments (especially cloud tasks); can insert relevant AWS API calls automatically; multi-line completions boost productivity.</td>
-<td>Tied to AWS ecosystem for best results; suggestions can be more basic; potential for errors means human oversight needed (like Copilot).</td>
+<td style="text-align: left;"><strong>Amazon CodeWhisperer</strong></td>
+<td style="text-align: left;">2 (Pair Programmer)</td>
+<td style="text-align: left;">IDE plugin (inline suggestions) <a href="https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html">11</a></td>
+<td style="text-align: left;">Optimized for AWS services and APIs <a href="https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html">11</a>; generates multi-line completions from comments; security scans <a href="https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html">11</a>; free for individuals.<a href="https://www.revoyant.com/blog/best-ai-code-assistants-2025-top-tools">47</a> (Becoming part of Amazon Q Developer <a href="https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html">11</a>)</td>
+<td style="text-align: left;">Strong AWS bias, less effective for non-AWS work <a href="https://www.revoyant.com/blog/best-ai-code-assistants-2025-top-tools">47</a>; suggestions can be basic; output needs review; requires AWS account [User Query].</td>
 </tr>
 <tr>
-<td><strong>OpenAI Codex</strong></td>
-<td>2 (Pair Programmer)</td>
-<td>API/Playground or via ChatGPT (prompt-response)</td>
-<td>Powerful code generation from natural language; proficient in many languages; basis for many other tools (flexible integration).</td>
-<td>No GUI – requires prompt engineering; Codex model itself deprecated in favor of GPT-4 (support shifting); outputs need debugging and validation by developer.</td>
+<td style="text-align: left;"><strong>OpenAI Codex (API) / GPT Models</strong></td>
+<td style="text-align: left;">2 (Pair Programmer)</td>
+<td style="text-align: left;">API/Playground; via ChatGPT (prompt-response); new "Codex" agent in ChatGPT <a href="https://emelia.io/hub/codex-open-ai">12</a></td>
+<td style="text-align: left;">Powerful natural language to code generation (esp. GPT-4.1 <a href="https://openai.com/index/gpt-4-1/">13</a>); many languages; new "Codex" agent can edit files, run commands.<a href="https://openai.com/index/introducing-codex/">48</a></td>
+<td style="text-align: left;">Original Codex API deprecated <a href="https://emelia.io/hub/codex-open-ai">12</a>; API use requires prompt engineering, output needs validation; context limits; advanced access often paid [User Query].</td>
 </tr>
 <tr>
-<td><strong>Replit Ghostwriter</strong></td>
-<td>2 (Pair Programmer)</td>
-<td>Replit IDE integration (browser IDE with autocomplete &amp; chat)</td>
-<td>Great for quick prototype development; generates code and explanations inside Replit; can run code instantly to verify.</td>
-<td>Locked to Replit’s platform for full features; not as polished outside that; similar limitations to Copilot (may be wrong or need tweaks).</td>
+<td style="text-align: left;"><strong>Replit Ghostwriter</strong></td>
+<td style="text-align: left;">2 (Pair Programmer)</td>
+<td style="text-align: left;">Replit IDE integration (inline autocomplete &amp; Ghostwriter Chat) <a href="https://apidog.com/blog/how-to-use-replit-ai-for-free/">49</a></td>
+<td style="text-align: left;">Tight Replit integration for instant execution/testing; multi-line/function completion, refactoring, explanation, proactive debugger <a href="https://www.codestringers.com/insights/replit-ghostwriter-vs-copilot/">50</a>; good for learning/prototyping.</td>
+<td style="text-align: left;">Primarily Replit-locked <a href="https://goldenowl.asia/blog/best-ai-for-coding">51</a>; quality similar to other LLM tools (needs review); advanced AI features are paid <a href="https://apidog.com/blog/how-to-use-replit-ai-for-free/">49</a>; internet-dependent.<a href="https://goldenowl.asia/blog/best-ai-for-coding">51</a></td>
 </tr>
 <tr>
-<td><strong>GitHub Copilot (Agent Mode)</strong></td>
-<td>3 (Agentic – supervised)</td>
-<td>IDE chat/command triggering multi-step actions</td>
-<td>Plans and executes multi-file edits, runs tests, iterates until goal met; keeps developer in loop for safety; huge time-saver for refactors &amp; repetitive tasks.</td>
-<td>Beta stage – may be unstable; might misinterpret high-level requests; still should review final PR; cannot handle extremely complex, open-ended tasks without guidance.</td>
+<td style="text-align: left;"><strong>GitHub Copilot (Agent Mode)</strong></td>
+<td style="text-align: left;">3 (Agentic – supervised)</td>
+<td style="text-align: left;">IDE chat/command (VS Code); GitHub issue assignment <a href="https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode">14</a></td>
+<td style="text-align: left;">Plans &amp; executes multi-file edits, runs tests, iterates on errors autonomously based on high-level goals/issues <a href="https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode">14</a>; creates PRs <a href="https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features">44</a>; developer kept in loop.</td>
+<td style="text-align: left;">Newer feature (stable in VS Code <a href="https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode">14</a>); can misinterpret complex requests, output needs review; performance varies with repo complexity.<a href="https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode">14</a></td>
 </tr>
 <tr>
-<td><strong>Cursor (AI Editor)</strong></td>
-<td>3 (Agentic – supervised)</td>
-<td>Full AI-based code editor (VS Code fork) with chat &amp; agent modes</td>
-<td>Deep codebase integration (indexes entire repo) for global reasoning; smart rewrites and multi-file ops; can auto-run commands/tests with “YOLO mode”; very interactive and intuitive for code edits.</td>
-<td>Requires using a separate editor (missing some native IDE features/plugins); occasional stability issues on large projects; model performance depends on provided API keys (cost &amp; setup).</td>
+<td style="text-align: left;"><strong>Cursor (AI Editor)</strong></td>
+<td style="text-align: left;">3 (Agentic – supervised)</td>
+<td style="text-align: left;">Full AI-based code editor (VS Code fork) with chat &amp; agent modes <a href="https://docs.cursor.com/chat/agent">15</a></td>
+<td style="text-align: left;">Deep codebase indexing for global context <a href="https://docs.cursor.com/chat/agent">15</a>; multi-file ops, refactoring; Agent Mode explores, plans, executes with tools <a href="https://docs.cursor.com/chat/agent">15</a>; "YOLO mode" for auto-execution (user term for auto-run) <a href="https://www.software.com/ai-index/tools/cursor">57</a>; checkpoints for safety.<a href="https://docs.cursor.com/chat/agent">15</a></td>
+<td style="text-align: left;">Standalone editor (though high VS Code compatibility <a href="https://www.enginelabs.ai/blog/cursor-ai-an-in-depth-review-may-2025-update">56</a>); auto-run/YOLO mode is risky <a href="https://www.software.com/ai-index/tools/cursor">57</a>; performance/cost depends on chosen LLM API keys.<a href="https://www.fahimai.com/cursor-ai">55</a></td>
 </tr>
 <tr>
-<td><strong>Windsurf (formerly Codeium)</strong></td>
-<td>3 (Agentic – supervised)</td>
-<td>AI-driven IDE (VS Code-based) with Cascade (plan-run) workflow</td>
-<td><em>Agent-powered IDE with iterative loop:</em> can modify code, run it, debug and repeat until success; advanced features like image-to-code and web search integration; good for automating test-and-fix cycles.</td>
-<td>New and evolving – could have bugs; fully automatic mode carries risk of unintended changes; must adapt to its IDE; heavy reliance on model correctness (still requires final validation by dev).</td>
+<td style="text-align: left;"><strong>Windsurf (Cascade Agent)</strong></td>
+<td style="text-align: left;">3 (Agentic – supervised)</td>
+<td style="text-align: left;">AI-driven IDE (VS Code-based) with "Cascade" agent (Write/Chat modes) <a href="https://windsurf.com/">63</a></td>
+<td style="text-align: left;">Cascade agent modifies code, runs it, debugs, iterates until success (Write Mode) <a href="https://www.datacamp.com/tutorial/windsurf-ai-agentic-code-editor">16</a>; uses tools (search, terminal, web); auto-fixes lint errors <a href="https://windsurf.com/">63</a>; "Turbo mode" for auto-execution.<a href="https://windsurf.com/">63</a></td>
+<td style="text-align: left;">Newer tool; auto-execution ("Turbo mode") risky; must use its IDE; can make errors requiring human fix <a href="https://www.g2.com/products/codeium/reviews">68</a>; some features paid/enterprise.<a href="https://docs.windsurf.com/windsurf/cascade/cascade">65</a></td>
 </tr>
 <tr>
-<td><strong>Anthropic Claude Code</strong></td>
-<td>3 (Agentic – supervised)</td>
-<td>Terminal-based chat agent linked to codebase &amp; tools</td>
-<td>Very large context understanding (reads big codebases); edits files via diffs, runs tests, writes commit messages; excellent at explaining reasoning and maintaining conversation.</td>
-<td>CLI interface might intimidate some; currently in limited preview; uses paid API (costly for extensive use); even with big context, extremely large projects can exceed its limits or require careful prompt scoping.</td>
+<td style="text-align: left;"><strong>Anthropic Claude Code</strong></td>
+<td style="text-align: left;">3 (Agentic – supervised)</td>
+<td style="text-align: left;">Terminal-based chat agent; IDE integrations (VS Code, JetBrains) <a href="https://docs.anthropic.com/en/docs/agents/claude-code/introduction">19</a></td>
+<td style="text-align: left;">Large context understanding; edits files (presents diffs), runs tests, Git ops (history, merge, commit/PR) <a href="https://docs.anthropic.com/en/docs/agents/claude-code/introduction">19</a>; explains reasoning; SDK for custom agents.<a href="https://www.anthropic.com/news/claude-4">69</a></td>
+<td style="text-align: left;">CLI interface might intimidate some; currently in beta/research preview <a href="https://docs.anthropic.com/en/docs/agents/claude-code/introduction">19</a>; uses paid API (costly for extensive use) <a href="https://anthropic.com/news/claude-4">71</a>; extremely large projects may still pose challenges [User Query].</td>
 </tr>
 <tr>
-<td><strong>ChatGPT (with dev plugins)</strong></td>
-<td>3 (Agentic – supervised)</td>
-<td>Conversational AI (web UI or API) with plugins (code exec, filesystem, etc.)</td>
-<td>Highly flexible multi-tool agent: can fetch docs, run code, use Git, all in one dialogue; strong natural language understanding and reasoning (GPT-4); adapts to many tasks (coding, DevOps, research).</td>
-<td>Not integrated into IDE by default – context sharing is manual (except via plugins); may produce verbose or tangential output; plugin reliability varies; and it’s gated by ChatGPT Plus access and plugin availability. Oversight needed as it’s not tailor-made for your specific codebase unless you feed it.</td>
+<td style="text-align: left;"><strong>ChatGPT (with Plugins &amp; Advanced Data Analysis)</strong></td>
+<td style="text-align: left;">3 (Agentic – supervised)</td>
+<td style="text-align: left;">Conversational AI (web UI or API) with Code Interpreter &amp; plugins (tool use) <a href="https://devdynamics.ai/blog/how-to-use-chatgpts-new-code-interpreter/">75</a></td>
+<td style="text-align: left;">Highly flexible multi-tool agent: can fetch docs, run/debug Python code iteratively, use Git (via plugins) <a href="https://devdynamics.ai/blog/how-to-use-chatgpts-new-code-interpreter/">75</a>; strong natural language understanding (GPT-4).<a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">74</a></td>
+<td style="text-align: left;">Not an IDE tool by default (copy-paste workflow unless plugins bridge gap) [User Query]; plugin reliability varies; context limits; requires paid subscription for advanced features.<a href="https://sonary.com/b/open-ai/chatgpt-writing-tool+ai-tools/">82</a></td>
 </tr>
 <tr>
-<td><strong>Aider (CLI + Git assistant)</strong></td>
-<td>3 (Agentic – supervised)</td>
-<td>CLI chat tool working on local repo (Git-integrated)</td>
-<td>Excellent for code modifications with safety – auto-commits each change with meaningful messages, auto-runs tests and fixes issues on the fly; supports connecting to powerful models (Claude/GPT-4) or local LLMs; free and open-source, highly configurable.</td>
-<td>Primarily command-line – less visual; initial setup of API keys required; if tests are lacking, its auto-fix won’t catch all errors; model errors can still slip through (needs review of commits, which fortunately are broken down for you).</td>
+<td style="text-align: left;"><strong>Aider (CLI + Git assistant)</strong></td>
+<td style="text-align: left;">3 (Agentic – supervised)</td>
+<td style="text-align: left;">CLI chat tool working on local Git repo <a href="https://aider.chat/">17</a></td>
+<td style="text-align: left;">Excellent Git integration (auto-commits, diffs); auto-runs linters/tests &amp; attempts fixes <a href="https://aider.chat/">17</a>; supports various LLMs (cloud/local) <a href="https://aider.chat/">17</a>; open-source.<a href="https://uibakery.io/blog/aider-vs-windsurf">18</a></td>
+<td style="text-align: left;">CLI-based (less visual, steeper curve) <a href="https://uibakery.io/blog/aider-vs-windsurf">18</a>; requires API key setup; auto-fix quality depends on tests/linters; model errors possible [User Query].</td>
 </tr>
 <tr>
-<td><strong>Amazon Q Developer CLI</strong></td>
-<td>3 (Agentic – supervised)</td>
-<td>Interactive CLI agent (natural language to CLI commands &amp; code edits)</td>
-<td>Lets AI control CLI tools: can compile, run, deploy and iterate using system tools; great for cloud and devops tasks (deep AWS integration); uses Claude’s strong reasoning via Bedrock; keeps conversation context for complex troubleshooting.</td>
-<td>Mac/Linux only currently; executing commands automatically has inherent risk (needs user trust or dry-runs); may require AWS-specific setup; not GUI – suited for those comfortable in terminal.</td>
+<td style="text-align: left;"><strong>Amazon Q Developer CLI</strong></td>
+<td style="text-align: left;">3 (Agentic – supervised)</td>
+<td style="text-align: left;">Interactive CLI agent (natural language to CLI commands &amp; code edits) <a href="https://aws.amazon.com/about-aws/whats-new/2025/03/amazon-q-developer-cli-agent-command-line/">85</a></td>
+<td style="text-align: left;">AI orchestrates local CLI tools (compilers, package managers, AWS CLI) <a href="https://aws.amazon.com/blogs/devops/introducing-the-enhanced-command-line-interface-in-amazon-q-developer/">86</a>; strong for AWS/cloud tasks; uses powerful models (Claude via Bedrock) <a href="https://aws.amazon.com/about-aws/whats-new/2025/03/amazon-q-developer-cli-agent-command-line/">85</a>; iterative adjustments based on feedback.<a href="https://aws.amazon.com/about-aws/whats-new/2025/03/amazon-q-developer-cli-agent-command-line/">85</a></td>
+<td style="text-align: left;">Newer tool; executing commands automatically has inherent risks [User Query]; primarily benefits AWS users; requires AWS setup [User Query].</td>
 </tr>
 <tr>
-<td><strong>Google Jules</strong></td>
-<td>4 (High Autonomy)</td>
-<td>Cloud-based agent (async tasks, GitHub-connected)</td>
-<td><em>Fully autonomous coding agent:</em> given a goal it reads code, writes new code or tests, and delivers changes with minimal prompts. Great at large-scale tasks (e.g. adding major features, writing extensive tests) without micro-management. Backed by Google’s AI expertise and integrated with common workflows (GitHub PRs).</td>
-<td>Very new (beta) – real-world performance still being proven; works off-premises (code goes to Google cloud workspace); lack of real-time interaction (you assign task and wait) can be less predictable; no guarantee it perfectly meets intent – still should do final code review.</td>
+<td style="text-align: left;"><strong>Google Jules</strong></td>
+<td style="text-align: left;">4 (High Autonomy)</td>
+<td style="text-align: left;">Asynchronous cloud-based agent; GitHub integration (task assignment &amp; PRs) <a href="https://blog.google/technology/google-labs/jules/">20</a></td>
+<td style="text-align: left;"><em>Autonomous coding agent:</em> takes high-level goals (features, bugs), works independently in cloud VM, presents PRs <a href="https://blog.google/technology/google-labs/jules/">20</a>; uses Gemini 2.5 Pro; provides plan/reasoning; audio changelogs.<a href="https://blog.google/technology/google-labs/jules/">20</a></td>
+<td style="text-align: left;">Very new (public beta May 2025) <a href="https://blog.google/technology/google-labs/jules/">20</a>; cloud-only (code sent to Google VM); asynchronous (no real-time interaction); high autonomy needs careful review of results [User Query].</td>
 </tr>
 <tr>
-<td><strong>Cognition Devin</strong></td>
-<td>4 (High Autonomy)</td>
-<td>Cloud AI service acting as a team dev (task assignment model)</td>
-<td>Ambitious scope: plans and executes complex tasks with long-term reasoning; uses tools (editor, browser, shell) like a human engineer; can produce documentation and answer code questions (not just code); has shown ability to build small apps end-to-end and fix known bugs autonomously.</td>
-<td>Expensive enterprise tool (pricing and usage limits apply); struggled with truly complex or novel problems – not infallible, success rate on tough issues still low (\~14% in benchmarks); requires handing over code access to third-party; outcomes can be hit-or-miss, demanding human validation despite the “autonomous” label.</td>
+<td style="text-align: left;"><strong>Cognition Devin</strong></td>
+<td style="text-align: left;">4 (High Autonomy)</td>
+<td style="text-align: left;">Cloud AI service (task assignment via dashboard/Slack/CLI) <a href="https://research.contrary.com/company/cognition">22</a></td>
+<td style="text-align: left;"><em>AI Software Engineer:</em> plans &amp; executes complex end-to-end tasks using own shell, editor, browser <a href="https://devin.ai/">21</a>; strong SWE-bench (13.86%) <a href="https://cognition.ai/blog/swe-bench-technical-report">23</a>; Devin 2.0 has interactive planning, search, wiki.<a href="https://research.contrary.com/company/cognition">22</a></td>
+<td style="text-align: left;">Expensive enterprise tool [User Query]; success on very complex/novel tasks still limited <a href="https://cognition.ai/blog/swe-bench-technical-report">23</a>; requires codebase access by third-party; some demo authenticity concerns raised.<a href="https://research.contrary.com/company/cognition">22</a></td>
 </tr>
 <tr>
-<td><strong>GPT-Engineer (open-source)</strong></td>
-<td>4 (High Autonomy)</td>
-<td>CLI tool – one prompt to codebase generation (iterative plan/spec/code)</td>
-<td>Can bootstrap entire project from a single prompt, automating the role of developer given clear specs; extensible and adaptable (developers can insert custom reasoning steps); showcases how far a single-run agent can go for certain tasks.</td>
-<td>Highly dependent on prompt quality; not reliable for complex applications without iteration – may generate incomplete or incorrect systems that need debugging; no ongoing conversation (one-shot run), so if it’s off-track, it may fail without asking for guidance unlike Level 3 agents. More a tech demo currently.</td>
+<td style="text-align: left;"><strong>GPT-Engineer (open-source)</strong></td>
+<td style="text-align: left;">4 (High Autonomy, experimental)</td>
+<td style="text-align: left;">CLI tool: single prompt -&gt; clarification dialogue -&gt; codebase generation <a href="https://logicballs.com/ai-tools/gpt-engineer">24</a></td>
+<td style="text-align: left;">Can bootstrap entire (simple) projects from one prompt; automates initial spec-to-code process <a href="https://logicballs.com/ai-tools/gpt-engineer">24</a>; open-source and customizable.<a href="https://logicballs.com/ai-tools/gpt-engineer">24</a></td>
+<td style="text-align: left;">Highly prompt-dependent; generated code needs significant review/debugging for complex apps <a href="https://logicballs.com/ai-tools/gpt-engineer">24</a>; primarily for initial generation, not iterative work on existing code [User Query].</td>
 </tr>
 <tr>
-<td><strong>AutoGPT (for coding tasks)</strong></td>
-<td>4 (High Autonomy)</td>
-<td>Self-directed AI agent (goal-driven loop), uses tools including code execution</td>
-<td>Fully automated workflow: given an objective, it breaks into sub-tasks and executes them in a loop. For coding, it can write, run, and fix code iteratively without human prompts, striving to meet the goal (e.g. “create a Python script for X”).</td>
-<td>Tends to be inefficient and sometimes veers off-course without human feedback; can get stuck in loops or produce suboptimal solutions; not specialized for coding (uses general planning, which might not incorporate best coding practices); requires careful prompt setup and often a lot of computing resources (many API calls). Mainly experimental – not a plug-and-play dev tool.</td>
+<td style="text-align: left;"><strong>AutoGPT (for coding tasks)</strong></td>
+<td style="text-align: left;">4 (High Autonomy, experimental)</td>
+<td style="text-align: left;">Self-directed AI agent framework (user sets high-level goal, agent plans &amp; executes with tools) <a href="https://aiagentsdirectory.com/agent/autogpt">98</a></td>
+<td style="text-align: left;">Fully automated workflow: breaks goal into sub-tasks, uses tools (web search, file I/O, code execution) iteratively without human prompts.<a href="https://aiagentsdirectory.com/agent/autogpt">98</a></td>
+<td style="text-align: left;">Often inefficient, prone to loops or incorrect paths without precise goals/human feedback <a href="https://www.geeksforgeeks.org/what-is-autogpt-and-how-to-use-it/">100</a>; not specialized for coding; high API costs; mainly experimental for dev tasks.<a href="https://codoid.com/ai/autogpt-examples-expert-tips-for-success/">99</a></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Tools at <strong>Level 5</strong> are omitted above since none are productized yet; future AI dev agents might eventually populate that row once they emerge.</p>
+<p>Tools at <strong>Level 5</strong> are omitted from the table as no productized examples currently exist; this level remains theoretical and experimental.)*</p>
 <p>This comparison underscores that as we progress from Level 1 to Level 4, AI tools take on more of the coding burden — from merely completing the next line of code to handling whole features. Developers today can mix and match these tools to suit their needs, but it’s crucial to understand each tool’s autonomy and limits to use them effectively. The field is evolving rapidly, and what is Level 3 today may become Level 4 tomorrow. Keeping an eye on these autonomy levels helps set expectations and guides us in adopting AI tools that truly enhance productivity while maintaining quality and control in software development.</p>
 </div>
+<h4 id="works-cited"><strong>Works cited</strong><a class="headerlink" href="#works-cited" title="Permanent link">&para;</a></h4>
+<ol>
+<li>The 2025 AI Index Report | Stanford HAI, accessed May 26, 2025, <a href="https://hai.stanford.edu/ai-index/2025-ai-index-report">https://hai.stanford.edu/ai-index/2025-ai-index-report</a>  </li>
+<li>AI: A Declaration of Autonomy - Accenture, accessed May 26, 2025, <a href="https://www.accenture.com/content/dam/accenture/final/accenture-com/document-3/Accenture-Tech-Vision-2025.pdf">https://www.accenture.com/content/dam/accenture/final/accenture-com/document-3/Accenture-Tech-Vision-2025.pdf</a>  </li>
+<li>What are AI Agents?- Agents in Artificial Intelligence Explained - AWS, accessed May 26, 2025, <a href="https://aws.amazon.com/what-is/ai-agents/">https://aws.amazon.com/what-is/ai-agents/</a>  </li>
+<li>A More Practical Future for Autonomous Vehicles | S\&amp;P Global, accessed May 26, 2025, <a href="https://www.spglobal.com/automotive-insights/en/blogs/fuel-for-thought-a-more-practical-future-for-autonomous-vehicles">https://www.spglobal.com/automotive-insights/en/blogs/fuel-for-thought-a-more-practical-future-for-autonomous-vehicles</a>  </li>
+<li>Levels of intelligence: Navigating the future of AI, from robotic arms to autonomous cars, accessed May 26, 2025, <a href="https://roboticsandautomationnews.com/2025/05/17/levels-of-intelligence-navigating-the-future-of-ai-from-robotic-arms-to-autonomous-cars/90943/">https://roboticsandautomationnews.com/2025/05/17/levels-of-intelligence-navigating-the-future-of-ai-from-robotic-arms-to-autonomous-cars/90943/</a>  </li>
+<li>GitHub CoPilot: Pros and Cons 2025 - PeerSpot, accessed May 26, 2025, <a href="https://www.peerspot.com/products/github-copilot-pros-and-cons">https://www.peerspot.com/products/github-copilot-pros-and-cons</a>  </li>
+<li>IntelliSense - Visual Studio Code, accessed May 26, 2025, <a href="https://code.visualstudio.com/docs/editing/intellisense">https://code.visualstudio.com/docs/editing/intellisense</a>  </li>
+<li>Tabnine AI Code Assistant | private, personalized, protected, accessed May 26, 2025, <a href="https://www.tabnine.com/">https://www.tabnine.com/</a>  </li>
+<li>Plans &amp; Pricing | Tabnine: The AI code assistant that you control, accessed May 26, 2025, <a href="https://www.tabnine.com/pricing/">https://www.tabnine.com/pricing/</a>  </li>
+<li>20 Best AI-Powered Coding Assistant Tools in 2025 - Spacelift, accessed May 26, 2025, <a href="https://spacelift.io/blog/ai-coding-assistant-tools">https://spacelift.io/blog/ai-coding-assistant-tools</a>  </li>
+<li>What is CodeWhisperer? - CodeWhisperer - AWS Documentation, accessed May 26, 2025, <a href="https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html">https://docs.aws.amazon.com/codewhisperer/latest/userguide/what-is-cwspr.html</a>  </li>
+<li>Codex Open AI: The Ultimate Guide to AI-Powered Coding in 2025 - Emelia.io, accessed May 26, 2025, <a href="https://emelia.io/hub/codex-open-ai">https://emelia.io/hub/codex-open-ai</a>  </li>
+<li>Introducing GPT-4.1 in the API - OpenAI, accessed May 26, 2025, <a href="https://openai.com/index/gpt-4-1/">https://openai.com/index/gpt-4-1/</a>  </li>
+<li>Introducing GitHub Copilot agent mode (preview) - Visual Studio Code, accessed May 26, 2025, <a href="https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode">https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode</a>  </li>
+<li>Agent Mode - Cursor, accessed May 26, 2025, <a href="https://docs.cursor.com/chat/agent">https://docs.cursor.com/chat/agent</a>  </li>
+<li>Windsurf AI Agentic Code Editor: Features, Setup, and Use Cases | DataCamp, accessed May 26, 2025, <a href="https://www.datacamp.com/tutorial/windsurf-ai-agentic-code-editor">https://www.datacamp.com/tutorial/windsurf-ai-agentic-code-editor</a>  </li>
+<li>Aider - AI Pair Programming in Your Terminal, accessed May 26, 2025, <a href="https://aider.chat/">https://aider.chat/</a>  </li>
+<li>Aider vs Windsurf: Which AI Coding Assistant Should You Choose? | UI Bakery Blog, accessed May 26, 2025, <a href="https://uibakery.io/blog/aider-vs-windsurf">https://uibakery.io/blog/aider-vs-windsurf</a>  </li>
+<li>Claude Code overview - Anthropic API, accessed May 26, 2025, <a href="https://docs.anthropic.com/en/docs/agents/claude-code/introduction">https://docs.anthropic.com/en/docs/agents/claude-code/introduction</a>  </li>
+<li>Jules: Google's autonomous AI coding agent - Google Blog, accessed May 26, 2025, <a href="https://blog.google/technology/google-labs/jules/">https://blog.google/technology/google-labs/jules/</a>  </li>
+<li>Devin | The AI Software Engineer, accessed May 26, 2025, <a href="https://devin.ai/">https://devin.ai/</a>  </li>
+<li>Report: Cognition Business Breakdown &amp; Founding Story | Contrary ..., accessed May 26, 2025, <a href="https://research.contrary.com/company/cognition">https://research.contrary.com/company/cognition</a>  </li>
+<li>SWE-bench technical report - Cognition, accessed May 26, 2025, <a href="https://cognition.ai/blog/swe-bench-technical-report">https://cognition.ai/blog/swe-bench-technical-report</a>  </li>
+<li>GPT Engineer | AI Low-Code/No-Code Tool Review 2025 - LogicBalls, accessed May 26, 2025, <a href="https://logicballs.com/ai-tools/gpt-engineer">https://logicballs.com/ai-tools/gpt-engineer</a>  </li>
+<li>From Prompt to Codebase: The Power of GPT Engineer - Kanaries Docs, accessed May 26, 2025, <a href="https://docs.kanaries.net/topics/ChatGPT/gpt-engineer">https://docs.kanaries.net/topics/ChatGPT/gpt-engineer</a>  </li>
+<li>arxiv.org, accessed May 26, 2025, <a href="https://arxiv.org/html/2504.15228">https://arxiv.org/html/2504.15228</a>  </li>
+<li>arXiv:2504.15228v1 [cs.AI] 21 Apr 2025, accessed May 26, 2025, <a href="https://arxiv.org/pdf/2504.15228">https://arxiv.org/pdf/2504.15228</a>  </li>
+<li>DeepMind's AlphaDev Reinvents Algorithms | Enterprise AI Daily, accessed May 26, 2025, <a href="https://www.enterpriseaisolutions.io/p/beyond-human-limits-f2bc">https://www.enterpriseaisolutions.io/p/beyond-human-limits-f2bc</a>  </li>
+<li>MuZero, AlphaZero, and AlphaDev: Optimizing computer systems - Google DeepMind, accessed May 26, 2025, <a href="https://deepmind.google/discover/blog/muzero-alphazero-and-alphadev-optimizing-computer-systems/">https://deepmind.google/discover/blog/muzero-alphazero-and-alphadev-optimizing-computer-systems/</a>  </li>
+<li>AlphaDev discovers faster sorting algorithms - Google DeepMind, accessed May 26, 2025, <a href="https://deepmind.google/discover/blog/alphadev-discovers-faster-sorting-algorithms/">https://deepmind.google/discover/blog/alphadev-discovers-faster-sorting-algorithms/</a>  </li>
+<li>Meta AI Introduces Meta LLM Compiler: A State-of-the-Art LLM that Builds upon Code Llama with Improved Performance for Code Optimization and Compiler Reasoning : r/machinelearningnews - Reddit, accessed May 26, 2025, <a href="https://www.reddit.com/r/machinelearningnews/comments/1dqn8to/meta_ai_introduces_meta_llm_compiler_a/">https://www.reddit.com/r/machinelearningnews/comments/1dqn8to/meta_ai_introduces_meta_llm_compiler_a/</a>  </li>
+<li>Meta's LLM Compiler: Innovating Code Optimization with AI ..., accessed May 26, 2025, <a href="https://www.unite.ai/metas-llm-compiler-innovating-code-optimization-with-ai-powered-compiler-design/">https://www.unite.ai/metas-llm-compiler-innovating-code-optimization-with-ai-powered-compiler-design/</a>  </li>
+<li>A Multi-AI Agent System for Autonomous Optimization of Agentic AI Solutions via Iterative Refinement and LLM-Driven Feedback Loops - arXiv, accessed May 26, 2025, <a href="https://arxiv.org/html/2412.17149v1">https://arxiv.org/html/2412.17149v1</a>  </li>
+<li>Recursive self-improvement - Wikipedia, accessed May 26, 2025, <a href="https://en.wikipedia.org/wiki/Recursive_self-improvement">https://en.wikipedia.org/wiki/Recursive_self-improvement</a>  </li>
+<li>Level 5 Autonomy: How Close Are We to Fully Self-Driving Cars? (Latest Industry Stats), accessed May 26, 2025, <a href="https://patentpc.com/blog/level-5-autonomy-how-close-are-we-to-fully-self-driving-cars-latest-industry-stats">https://patentpc.com/blog/level-5-autonomy-how-close-are-we-to-fully-self-driving-cars-latest-industry-stats</a>  </li>
+<li>In response to critiques of Guaranteed Safe AI - AI Alignment Forum, accessed May 26, 2025, <a href="https://www.alignmentforum.org/posts/DZuBHHKao6jsDDreH/in-response-to-critiques-of-guaranteed-safe-ai">https://www.alignmentforum.org/posts/DZuBHHKao6jsDDreH/in-response-to-critiques-of-guaranteed-safe-ai</a>  </li>
+<li>Part 1: How Sourcegraph scales with the Language Server Protocol, accessed May 26, 2025, <a href="https://sourcegraph.com/blog/part-1-how-sourcegraph-scales-with-the-language-server-protocol">https://sourcegraph.com/blog/part-1-how-sourcegraph-scales-with-the-language-server-protocol</a>  </li>
+<li>JavaScript in Visual Studio Code, accessed May 26, 2025, <a href="https://code.visualstudio.com/docs/languages/javascript">https://code.visualstudio.com/docs/languages/javascript</a>  </li>
+<li>Features - CodeWhisperer - AWS Documentation, accessed May 26, 2025, <a href="https://docs.aws.amazon.com/codewhisperer/latest/userguide/features.html">https://docs.aws.amazon.com/codewhisperer/latest/userguide/features.html</a>  </li>
+<li>Code completion | IntelliJ IDEA Documentation - JetBrains, accessed May 26, 2025, <a href="https://www.jetbrains.com/help/idea/auto-completing-code.html">https://www.jetbrains.com/help/idea/auto-completing-code.html</a>  </li>
+<li>IntelliJ IDEA | Features - JetBrains, accessed May 26, 2025, <a href="https://www.jetbrains.com/idea/features/">https://www.jetbrains.com/idea/features/</a>  </li>
+<li>IntelliCode for Visual Studio | Microsoft Learn, accessed May 26, 2025, <a href="https://learn.microsoft.com/en-us/visualstudio/ide/intellicode-visual-studio?view=vs-2022">https://learn.microsoft.com/en-us/visualstudio/ide/intellicode-visual-studio?view=vs-2022</a>  </li>
+<li>IntelliCode Whole-line autocompletions - Visual Studio (Windows) | Microsoft Learn, accessed May 26, 2025, <a href="https://learn.microsoft.com/en-us/visualstudio/ide/visual-studio-whole-line-completions?view=vs-2022">https://learn.microsoft.com/en-us/visualstudio/ide/visual-studio-whole-line-completions?view=vs-2022</a>  </li>
+<li>GitHub Copilot features, accessed May 26, 2025, <a href="https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features">https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features</a>  </li>
+<li>About individual Copilot plans and benefits - GitHub Docs, accessed May 26, 2025, <a href="https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/getting-started-with-copilot-on-your-personal-account/about-individual-copilot-plans-and-benefits">https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/getting-started-with-copilot-on-your-personal-account/about-individual-copilot-plans-and-benefits</a>  </li>
+<li>GitHub Copilot Pros and Cons, accessed May 26, 2025, <a href="https://www.netguru.com/blog/github-copilot">https://www.netguru.com/blog/github-copilot</a>  </li>
+<li>Best AI Code Assistants In 2025 - Top 5 Tools For Developers - Revoyant, accessed May 26, 2025, <a href="https://www.revoyant.com/blog/best-ai-code-assistants-2025-top-tools">https://www.revoyant.com/blog/best-ai-code-assistants-2025-top-tools</a>  </li>
+<li>Introducing Codex - OpenAI, accessed May 26, 2025, <a href="https://openai.com/index/introducing-codex/">https://openai.com/index/introducing-codex/</a>  </li>
+<li>How to Use Replit AI for free - Apidog, accessed May 26, 2025, <a href="https://apidog.com/blog/how-to-use-replit-ai-for-free/">https://apidog.com/blog/how-to-use-replit-ai-for-free/</a>  </li>
+<li>Replit Ghostwriter vs. Copilot: Which is Better? - CodeStringers, accessed May 26, 2025, <a href="https://www.codestringers.com/insights/replit-ghostwriter-vs-copilot/">https://www.codestringers.com/insights/replit-ghostwriter-vs-copilot/</a>  </li>
+<li>11 Best AI Coding Tools—Guide for Developers (2025 updated) - Golden Owl, accessed May 26, 2025, <a href="https://goldenowl.asia/blog/best-ai-for-coding">https://goldenowl.asia/blog/best-ai-for-coding</a>  </li>
+<li>Replit — Announcing Ghostwriter Chat: The first conversational AI ..., accessed May 26, 2025, <a href="https://blog.replit.com/gw-chat-launch">https://blog.replit.com/gw-chat-launch</a>  </li>
+<li>Agent mode 101: All about GitHub Copilot's powerful mode - The ..., accessed May 26, 2025, <a href="https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/">https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/</a>  </li>
+<li>Complete Guide to GitHub Copilot Agent Mode: Transforming Development Paradigms, accessed May 26, 2025, <a href="https://blog.wadan.co.jp/en/tech/github-copilot-agent-mode">https://blog.wadan.co.jp/en/tech/github-copilot-agent-mode</a>  </li>
+<li>Cursor AI Review: Best AI Code Editor in 2025?, accessed May 26, 2025, <a href="https://www.fahimai.com/cursor-ai">https://www.fahimai.com/cursor-ai</a>  </li>
+<li>Cursor AI: An In-Depth Review (May 2025 Update) | Engine, accessed May 26, 2025, <a href="https://www.enginelabs.ai/blog/cursor-ai-an-in-depth-review-may-2025-update">https://www.enginelabs.ai/blog/cursor-ai-an-in-depth-review-may-2025-update</a>  </li>
+<li>Guide to Cursor | Software.com, accessed May 26, 2025, <a href="https://www.software.com/ai-index/tools/cursor">https://www.software.com/ai-index/tools/cursor</a>  </li>
+<li>docs.cursor.com, accessed May 26, 2025, <a href="https://docs.cursor.com/context/codebase-indexing#:~:text=For%20better%20and%20more%20accurate,initialize%20indexing%20for%20that%20workspace.">https://docs.cursor.com/context/codebase-indexing#:\~:text=For%20better%20and%20more%20accurate,initialize%20indexing%20for%20that%20workspace.</a>  </li>
+<li>Codebase Indexing - Cursor, accessed May 26, 2025, <a href="https://docs.cursor.com/context/codebase-indexing">https://docs.cursor.com/context/codebase-indexing</a>  </li>
+<li>Top 5 AI IDEs for Coding with Windsurf in 2025 By Girish Kot - Peerlist, accessed May 26, 2025, <a href="https://peerlist.io/gkotte/articles/top-5-ai-ides-for-coding-with-windsurf-in-2025">https://peerlist.io/gkotte/articles/top-5-ai-ides-for-coding-with-windsurf-in-2025</a>  </li>
+<li>How I use Cursor (+ my best tips) - Builder.io, accessed May 26, 2025, <a href="https://www.builder.io/blog/cursor-tips">https://www.builder.io/blog/cursor-tips</a>  </li>
+<li>Cursor AI Unleashed: The Agent-Powered Code Editor Transforming Developer Workflow, accessed May 26, 2025, <a href="https://savemyleads.com/blog/useful/cursor-ai">https://savemyleads.com/blog/useful/cursor-ai</a>  </li>
+<li>Windsurf (formerly Codeium) - The most powerful AI Code Editor, accessed May 26, 2025, <a href="https://windsurf.com/">https://windsurf.com/</a>  </li>
+<li>Windsurf Editor by Codeium for Revit: AI Automation in Revit - ArchiLabs, accessed May 26, 2025, <a href="https://archilabs.ai/posts/windsurf-for-revit">https://archilabs.ai/posts/windsurf-for-revit</a>  </li>
+<li>Cascade - Windsurf Docs, accessed May 26, 2025, <a href="https://docs.windsurf.com/windsurf/cascade/cascade">https://docs.windsurf.com/windsurf/cascade/cascade</a>  </li>
+<li>Windsurf Reviews, Ratings &amp; Features 2025 | Gartner Peer Insights, accessed May 26, 2025, <a href="https://www.gartner.com/reviews/market/ai-code-assistants/vendor/windsurf-exafunction/product/windsurf-exafunction">https://www.gartner.com/reviews/market/ai-code-assistants/vendor/windsurf-exafunction/product/windsurf-exafunction</a>  </li>
+<li>Windsurf Editor Changelogs - Codeium, accessed May 26, 2025, <a href="https://codeium.com/changelog">https://codeium.com/changelog</a>  </li>
+<li>Windsurf Reviews 2025: Details, Pricing, &amp; Features | G2, accessed May 26, 2025, <a href="https://www.g2.com/products/codeium/reviews">https://www.g2.com/products/codeium/reviews</a>  </li>
+<li>Introducing Claude 4 - Anthropic, accessed May 26, 2025, <a href="https://www.anthropic.com/news/claude-4">https://www.anthropic.com/news/claude-4</a>  </li>
+<li>Claude Code: Best practices for agentic coding - Anthropic, accessed May 26, 2025, <a href="https://www.anthropic.com/engineering/claude-code-best-practices">https://www.anthropic.com/engineering/claude-code-best-practices</a>  </li>
+<li>Introducing Claude 4 \ Anthropic, accessed May 26, 2025, <a href="https://anthropic.com/news/claude-4">https://anthropic.com/news/claude-4</a>  </li>
+<li>Claude Anthropic Reviews &amp; Ratings | Pros &amp; Cons - Software Finder, accessed May 26, 2025, <a href="https://softwarefinder.com/artificial-intelligence/claude-anthropic/reviews">https://softwarefinder.com/artificial-intelligence/claude-anthropic/reviews</a>  </li>
+<li>15 Pros &amp; Cons of Claude [2025] - DigitalDefynd, accessed May 26, 2025, <a href="https://digitaldefynd.com/IQ/pros-cons-of-claude/">https://digitaldefynd.com/IQ/pros-cons-of-claude/</a>  </li>
+<li>ChatGPT — Release Notes - OpenAI Help Center, accessed May 26, 2025, <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">https://help.openai.com/en/articles/6825453-chatgpt-release-notes</a>  </li>
+<li>How to Use ChatGPT's New Code Interpreter - DevDynamics, accessed May 26, 2025, <a href="https://devdynamics.ai/blog/how-to-use-chatgpts-new-code-interpreter/">https://devdynamics.ai/blog/how-to-use-chatgpts-new-code-interpreter/</a>  </li>
+<li>Why ChatGPT's Code Interpreter is the Future of Programming - BotPenguin, accessed May 26, 2025, <a href="https://botpenguin.com/blogs/why-chatgpt-code-interpreter-is-future-of-programming">https://botpenguin.com/blogs/why-chatgpt-code-interpreter-is-future-of-programming</a>  </li>
+<li>10 of The Best ChatGPT Plugins to Get The Most From AI in 2024 | DataCamp, accessed May 26, 2025, <a href="https://www.datacamp.com/blog/best-chat-gpt-plugins">https://www.datacamp.com/blog/best-chat-gpt-plugins</a>  </li>
+<li>The Top 9 ChatGPT Plugins for Developers in 2025 - ISHIR, accessed May 26, 2025, <a href="https://www.ishir.com/blog/119322/the-top-9-chatgpt-plugins-for-developers-in-2024.htm">https://www.ishir.com/blog/119322/the-top-9-chatgpt-plugins-for-developers-in-2024.htm</a>  </li>
+<li>GitLab ChatGPT (OpenAI) Integration - Quick Connect - Zapier, accessed May 26, 2025, <a href="https://zapier.com/apps/gitlab/integrations/chatgpt">https://zapier.com/apps/gitlab/integrations/chatgpt</a>  </li>
+<li>HighwayofLife/awesome-chatgpt-plugins - GitHub, accessed May 26, 2025, <a href="https://github.com/HighwayofLife/awesome-chatgpt-plugins">https://github.com/HighwayofLife/awesome-chatgpt-plugins</a>  </li>
+<li>Explore the Top 10 Best Chatgpt Plugins of 2025 - Murf AI, accessed May 26, 2025, <a href="https://murf.ai/blog/best-chatgpt-plugins">https://murf.ai/blog/best-chatgpt-plugins</a>  </li>
+<li>ChatGPT AI Tools Review 2025: Pros, Cons, and Pricing - Sonary, accessed May 26, 2025, <a href="https://sonary.com/b/open-ai/chatgpt-writing-tool+ai-tools/">https://sonary.com/b/open-ai/chatgpt-writing-tool+ai-tools/</a>  </li>
+<li>Aider Documentation, accessed May 26, 2025, <a href="https://aider.chat/docs/">https://aider.chat/docs/</a>  </li>
+<li>Best AI Coding Assistants as of May 2025 - Shakudo, accessed May 26, 2025, <a href="https://www.shakudo.io/blog/best-ai-coding-assistants">https://www.shakudo.io/blog/best-ai-coding-assistants</a>  </li>
+<li>Amazon Q Developer announces a new CLI agent within the command line - AWS, accessed May 26, 2025, <a href="https://aws.amazon.com/about-aws/whats-new/2025/03/amazon-q-developer-cli-agent-command-line/">https://aws.amazon.com/about-aws/whats-new/2025/03/amazon-q-developer-cli-agent-command-line/</a>  </li>
+<li>A lightning fast, new agentic coding experience within the Amazon Q Developer CLI - AWS, accessed May 26, 2025, <a href="https://aws.amazon.com/blogs/devops/introducing-the-enhanced-command-line-interface-in-amazon-q-developer/">https://aws.amazon.com/blogs/devops/introducing-the-enhanced-command-line-interface-in-amazon-q-developer/</a>  </li>
+<li>Amazon Q Developer Reviews 2025: Details, Pricing, &amp; Features | G2, accessed May 26, 2025, <a href="https://www.g2.com/products/amazon-q-developer/reviews">https://www.g2.com/products/amazon-q-developer/reviews</a>  </li>
+<li>Best AI Coding Assistant 2025: Complete Guide to Cline and Cursor ..., accessed May 26, 2025, <a href="https://cline.bot/blog/best-ai-coding-assistant-2025-complete-guide-to-cline-and-cursor">https://cline.bot/blog/best-ai-coding-assistant-2025-complete-guide-to-cline-and-cursor</a>  </li>
+<li>Qodo AI Reviews: Use Cases, Pricing &amp; Alternatives - Futurepedia, accessed May 26, 2025, <a href="https://www.futurepedia.io/tool/qodo">https://www.futurepedia.io/tool/qodo</a>  </li>
+<li>Qodo Reviews 2025: Details, Pricing, &amp; Features | G2, accessed May 26, 2025, <a href="https://www.g2.com/products/qodo/reviews">https://www.g2.com/products/qodo/reviews</a>  </li>
+<li>Google I/O 2025: Google's answer to Microsoft and OpenAI's AI coding agents, Jules is now available for everyone to try - The Times of India, accessed May 26, 2025, <a href="https://timesofindia.indiatimes.com/technology/tech-news/google-i/o-2025-googles-answer-to-microsoft-and-openais-ai-coding-agents-jules-is-now-available-for-everyone-to-try/articleshow/121298997.cms">https://timesofindia.indiatimes.com/technology/tech-news/google-i/o-2025-googles-answer-to-microsoft-and-openais-ai-coding-agents-jules-is-now-available-for-everyone-to-try/articleshow/121298997.cms</a>  </li>
+<li>Google Counters GitHub &amp; Microsoft with Jules Agent &amp; Enhanced Gemini AI, accessed May 26, 2025, <a href="https://visualstudiomagazine.com/articles/2025/05/20/google-counters-github-microsoft-with-jules-agent-enhanced-gemini-ai.aspx">https://visualstudiomagazine.com/articles/2025/05/20/google-counters-github-microsoft-with-jules-agent-enhanced-gemini-ai.aspx</a>  </li>
+<li>What Google I/O 2025's AI Announcements Mean for Developers - RisingStack Engineering, accessed May 26, 2025, <a href="https://blog.risingstack.com/google-io-2025-recap/">https://blog.risingstack.com/google-io-2025-recap/</a>  </li>
+<li>Devin AI vs Cursor: Speed &amp; Accuracy Test Results - Trickle AI, accessed May 26, 2025, <a href="https://www.trickle.so/blog/devin-ai-or-cursor">https://www.trickle.so/blog/devin-ai-or-cursor</a>  </li>
+<li>Generate Complete Apps with Ease: GPT Engineer Review and Setup - Toolify.ai, accessed May 26, 2025, <a href="https://www.toolify.ai/ai-news/generate-complete-apps-with-ease-gpt-engineer-review-and-setup-751744">https://www.toolify.ai/ai-news/generate-complete-apps-with-ease-gpt-engineer-review-and-setup-751744</a>  </li>
+<li>Build Any App with One Prompt Using GPT-Engineer - YouTube, accessed May 26, 2025, <a href="https://m.youtube.com/watch?v=-W73zQr0rl4&amp;pp=ygUII21nY29kZXI%3D">https://m.youtube.com/watch?v=-W73zQr0rl4\&amp;pp=ygUII21nY29kZXI%3D</a>  </li>
+<li>What I learned in 6 months of working on a CodeGen dev tool GPT Pilot, accessed May 26, 2025, <a href="https://dev.to/zvone187/what-i-learned-in-6-months-of-working-on-a-codegen-dev-tool-gpt-pilot-4fij">https://dev.to/zvone187/what-i-learned-in-6-months-of-working-on-a-codegen-dev-tool-gpt-pilot-4fij</a>  </li>
+<li>AutoGPT - AI Agent Reviews, Features, Use Cases &amp; Alternatives (2025), accessed May 26, 2025, <a href="https://aiagentsdirectory.com/agent/autogpt">https://aiagentsdirectory.com/agent/autogpt</a>  </li>
+<li>Autogpt Examples: Expert Tips for Success - Codoid, accessed May 26, 2025, <a href="https://codoid.com/ai/autogpt-examples-expert-tips-for-success/">https://codoid.com/ai/autogpt-examples-expert-tips-for-success/</a>  </li>
+<li>What is AutoGPT and How to Use It? - GeeksforGeeks, accessed May 26, 2025, <a href="https://www.geeksforgeeks.org/what-is-autogpt-and-how-to-use-it/">https://www.geeksforgeeks.org/what-is-autogpt-and-how-to-use-it/</a>  </li>
+<li>AutoGPT Example Guide: With Hands-On Applications - PageTraffic, accessed May 26, 2025, <a href="https://www.pagetraffic.com/blog/autogpt-example/">https://www.pagetraffic.com/blog/autogpt-example/</a>  </li>
+<li>Multi-Agent Collaboration Mechanisms: A Survey of LLMs - arXiv, accessed May 26, 2025, <a href="https://arxiv.org/html/2501.06322v1">https://arxiv.org/html/2501.06322v1</a>  </li>
+<li>Towards Effective GenAI Multi-Agent Collaboration: Design and Evaluation for Enterprise Applications - arXiv, accessed May 26, 2025, <a href="https://arxiv.org/html/2412.05449v1">https://arxiv.org/html/2412.05449v1</a>  </li>
+<li>Agent-Oriented Programming Examples: Real-World Applications and Use Cases, accessed May 26, 2025, <a href="https://smythos.com/ai-agents/ai-agent-development/agent-oriented-programming-examples/">https://smythos.com/ai-agents/ai-agent-development/agent-oriented-programming-examples/</a>  </li>
+<li>20 AI Agent Examples in 2025 - AutoGPT, accessed May 26, 2025, <a href="https://autogpt.net/20-ai-agents-examples/">https://autogpt.net/20-ai-agents-examples/</a>  </li>
+<li>2025 AI predictions: The future of application development - OutSystems, accessed May 26, 2025, <a href="https://www.outsystems.com/blog/posts/ai-predictions/">https://www.outsystems.com/blog/posts/ai-predictions/</a>  </li>
+<li>AI Agents in 2025: Expectations vs. Reality | IBM, accessed May 26, 2025, <a href="https://www.ibm.com/think/insights/ai-agents-2025-expectations-vs-reality">https://www.ibm.com/think/insights/ai-agents-2025-expectations-vs-reality</a>  </li>
+<li>Revolutionary AI Coding Tool: Cody - Made for Efficient Programming, accessed May 26, 2025, <a href="https://www.toolify.ai/ai-news/revolutionary-ai-coding-tool-cody-made-for-efficient-programming-395707">https://www.toolify.ai/ai-news/revolutionary-ai-coding-tool-cody-made-for-efficient-programming-395707</a>  </li>
+<li>The 9 best AI coding tools for developers of all levels - Lummi, accessed May 26, 2025, <a href="https://www.lummi.ai/blog/best-ai-coding-tools">https://www.lummi.ai/blog/best-ai-coding-tools</a>  </li>
+<li>AI for Testing: Context &amp; Eval with Sourcegraph - AI Native Dev, accessed May 26, 2025, <a href="https://ainativedev.io/podcast/ai-testing-context-eval-sourcegraph">https://ainativedev.io/podcast/ai-testing-context-eval-sourcegraph</a>  </li>
+<li>Agentic code generation: The future of software development - AI Accelerator Institute, accessed May 26, 2025, <a href="https://www.aiacceleratorinstitute.com/agentic-code-generation-the-future-of-software-development/">https://www.aiacceleratorinstitute.com/agentic-code-generation-the-future-of-software-development/</a></li>
+</ol>
 
 
 
