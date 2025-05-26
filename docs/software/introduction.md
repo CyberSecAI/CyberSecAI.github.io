@@ -56,7 +56,7 @@ These approaches share a common insight: **successful software development requi
 
 The emergence of artificial intelligence is fundamentally changing how we think about software development. 
 
-Andrej Karpathy introduced the concept of "Software 2.0" to describe this transformation, where traditional human-written code gives way to AI-generated solutions.
+In 2017, Andrej Karpathy introduced the concept of "Software 2.0" to describe this transformation, where traditional human-written code gives way to AI-generated solutions.
 
 !!! quote
 
