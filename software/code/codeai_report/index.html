@@ -1,0 +1,1862 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/software/code/codeai_report/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+    
+    
+      
+        <title>From Code Completion to Autonomous Coding Agents: AI Developer Tools by Autonomy Level - CyberSecAI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-NMMB0KXVGQ"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-NMMB0KXVGQ",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-NMMB0KXVGQ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#from-code-completion-to-autonomous-coding-agents-ai-developer-tools-by-autonomy-level" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  THIS GUIDE IS UNDER CONSTRUCTION... BUT AVAILABLE HERE FOR EARLY ACCESS REVIEW & FEEDBACK. 
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CyberSecAI" class="md-header__button md-logo" aria-label="CyberSecAI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3C9.2 3 6.2 5.9 6 9.7l-1.9 2.5c-.2.3 0 .8.4.8H6v3c0 1.1.9 2 2 2h1v3h7v-4.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7m4 7h-3v3h-2v-3H9V8h3V5h2v3h3v2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CyberSecAI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              From Code Completion to Autonomous Coding Agents: AI Developer Tools by Autonomy Level
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CyberSecAI" class="md-nav__button md-logo" aria-label="CyberSecAI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3C9.2 3 6.2 5.9 6 9.7l-1.9 2.5c-.2.3 0 .8.4.8H6v3c0 1.1.9 2 2 2h1v3h7v-4.7c2.4-1.1 4-3.5 4-6.3 0-3.9-3.1-7-7-7m4 7h-3v3h-2v-3H9V8h3V5h2v3h3v2Z"/></svg>
+
+    </a>
+    CyberSecAI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/Preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/cybsersecurity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LLMs for CyberSecurity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NotebookLM
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            NotebookLM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NotebookLM/NotebookLM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NotebookLM/NotebookLM_VulnerabilityStandards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM Vulnerability Standards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NotebookLM/NotebookLM_Capec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM CAPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NotebookLM/NotebookLM_Attack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM ATTACK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NotebookLM/NotebookLM_Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../NotebookLM/NotebookLM_Secure_Code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM Secure Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Grounded Closed System
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Grounded Closed System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Grounded/grounding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grounding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CWE Assignment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            CWE Assignment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CWE_Assignment/cwe_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CWE_Assignment/cwe_gpt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ChatGPT CWE GPT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CWE_Assignment/NotebookLM_Cwe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NotebookLM CWE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CWE_Assignment/vertex_ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vertex AI CWE Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CWE_Assignment/Vulnrichment/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 18.9 6.1-6.1 2.1 2.1-6.1 6.1H13v-2.1m8.4-7.6 1.3 1.3c.2.2.2.5 0 .7l-1 1-2.1-2 1-1c.1-.1.2-.2.4-.2s.3 0 .4.2M11 21H5c-.5 0-1-.2-1.4-.6-.4-.4-.6-.9-.6-1.4V5c0-.5.2-1 .6-1.4C4 3.2 4.5 3 5 3h14c1.1 0 2 .9 2 2v4h-2V5H5v14h6v2m4-9-5-4v8l5-4Z"/></svg>
+  
+  <span class="md-ellipsis">
+    CISA Vulnrichment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Prompting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Prompting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../prompt_engineering/prompt_engineering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../prompt_engineering/Fabric/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fabric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software Engineering
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Software Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Engineering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software_artifacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Engineering Artifacts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code_assistant_agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Assistant vs. Autonomous Coding Agents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leaderboards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leaderboards
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software_security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CyberSecurity Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            CyberSecurity Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cti_models/cyber_security_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CyberSecurity LLMs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/Agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/Build_agents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build Agents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TopicModeling
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            TopicModeling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TopicModeling/BertTopic/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 18.9 6.1-6.1 2.1 2.1-6.1 6.1H13v-2.1m8.4-7.6 1.3 1.3c.2.2.2.5 0 .7l-1 1-2.1-2 1-1c.1-.1.2-.2.4-.2s.3 0 .4.2M11 21H5c-.5 0-1-.2-1.4-.6-.4-.4-.6-.9-.6-1.4V5c0-.5.2-1 .6-1.4C4 3.2 4.5 3 5 3h14c1.1 0 2 .9 2 2v4h-2V5H5v14h6v2m4-9-5-4v8l5-4Z"/></svg>
+  
+  <span class="md-ellipsis">
+    BertTopic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/research/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Research
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Annex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Annex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../annex/Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../annex/Glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/research/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Talks & Research
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#autonomy-levels-for-ai-coding-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autonomy Levels for AI Coding Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-basic-code-completion-assistants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 1 – Basic Code Completion Assistants
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-advanced-code-generation-ai-pair-programmers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 2 – Advanced Code Generation (AI Pair Programmers)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-context-aware-coding-agents-supervised-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 3 – Context-Aware Coding Agents (Supervised Automation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-highly-autonomous-coding-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 4 – Highly Autonomous Coding Agents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-full-autonomy-and-future-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 5 – Full Autonomy and Future Outlook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-table-of-developer-ai-tools-by-autonomy-and-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison Table of Developer AI Tools by Autonomy and Capabilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison Table of Developer AI Tools by Autonomy and Capabilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="from-code-completion-to-autonomous-coding-agents-ai-developer-tools-by-autonomy-level"><strong>From Code Completion to Autonomous Coding Agents: AI Developer Tools by Autonomy Level</strong><a class="headerlink" href="#from-code-completion-to-autonomous-coding-agents-ai-developer-tools-by-autonomy-level" title="Permanent link">&para;</a></h1>
+<p>AI-powered developer tools now range from simple code completers to advanced autonomous coding agents. In this report, we compare these tools across <strong>five levels of autonomy</strong>, from basic assistants (Level 1) to highly autonomous coding agents (Level 5). Each tool is described with its autonomy level, key characteristics, interaction mode, example use cases, and pros/cons. We also include a <strong>comparison table</strong> summarizing their differences.</p>
+<h2 id="autonomy-levels-for-ai-coding-tools"><strong>Autonomy Levels for AI Coding Tools</strong><a class="headerlink" href="#autonomy-levels-for-ai-coding-tools" title="Permanent link">&para;</a></h2>
+<p>We define autonomy levels similar to how autonomous driving is categorized:</p>
+<ul>
+<li><strong>Level 1 – Basic Code Completion:</strong> AI offers <em>single-line or small code suggestions</em> based on context. The developer is fully in control, and the AI assists with micro-tasks (comparable to basic cruise control in cars). Tools at this level accelerate typing but <strong>do not generate complex code blocks or make decisions</strong>.</li>
+<li><strong>Level 2 – Advanced Code Generation (AI Pair Programmer):</strong> AI can produce <em>larger code snippets or entire functions</em> from natural language prompts or broader context. The AI behaves like a junior pair programmer – it writes significant blocks of code or fixes simple bugs on request, but <strong>each AI output is a single-step operation reviewed by the human</strong>. Developers still guide the overall structure and verify the results.</li>
+<li><strong>Level 3 – Context-Aware Agents (Supervised Automation):</strong> AI acts more <em>agentically</em>, performing <strong>multi-step coding tasks</strong> in an iterative loop to fulfill a high-level goal. The developer provides a goal (e.g. “Add a profile feature” or “Fix this bug”) and the AI <strong>plans steps, writes or edits multiple files, runs code or tests, debugs, and iterates</strong> with minimal prompting. The human oversees the process and may intervene or review final changes, but does not micromanage each step. This is akin to an intern or junior dev autonomously coding under supervision.</li>
+<li><strong>Level 4 – Highly Autonomous Coding:</strong> The AI can handle <strong>complex projects end-to-end</strong>, needing only minimal human input (like a prompt or spec) and <em>no required oversight on each change</em>. It can design solutions, write code across the entire codebase, test, debug, and even proactively improve code without awaiting human review. At this level, you might trust the AI as you would a strong senior engineer: provide requirements and let it deliver a solution to review. (In practice, developers may still do a final review, but the AI’s output is intended to be production-ready.)</li>
+<li><strong>Level 5 – Full Autonomy (Experimental/Future):</strong> At this theoretical stage, an AI coding agent <strong>sets its own goals and continuously improves software</strong> without explicit human-defined tasks. It could analyze user needs or system metrics and autonomously decide to implement features or optimizations. This remains speculative – current tools do <strong>not</strong> reach Level 5, but research projects hint at this direction (e.g. AutoGPT agents that take an open-ended goal and break it into sub-tasks to achieve it). No mainstream coding tool today operates at full Level 5 autonomy.</li>
+</ul>
+<p>Below, we group popular developer AI tools by these autonomy levels.</p>
+<h2 id="level-1-basic-code-completion-assistants"><strong>Level 1 – Basic Code Completion Assistants</strong><a class="headerlink" href="#level-1-basic-code-completion-assistants" title="Permanent link">&para;</a></h2>
+<p>Level 1 tools provide intelligent <em>in-line code suggestions</em> to speed up typing and reduce trivial errors. They typically complete a single word, line, or simple code block based on the current context (file content, syntax, and maybe local context from open files). The developer must still drive all logic and make all decisions – the AI just <strong>predicts likely code to follow</strong>, much like an advanced autocomplete. These tools don’t “understand” higher-level intent; they react to immediate context.</p>
+<p><strong>Characteristics:</strong> Limited scope suggestions (often one line at a time), no long-range planning, no ability to perform actions beyond text insertion. They use either static analysis or trained models on code patterns. The interaction is passive: as you type, they offer completions you can accept or ignore.</p>
+<p>Tools in this category include basic IDE autocompletion and early ML-powered completers:</p>
+<ul>
+<li>
+<p><strong>Visual Studio Code IntelliSense (Level 1):</strong> <em>Autonomy:</em> Level 1 (baseline code assist). <strong>Key Characteristics:</strong> Rule-based and context-aware suggestions for code completion built into VS Code (and similarly, other IDEs’ IntelliSense). It predicts variables, function names, and code syntax as you type, based on static typing info and the code context. <strong>Mode of Interaction:</strong> Inline suggestions appear in the editor dropdown as the developer types. <strong>Use Cases:</strong> Speeding up typing of known identifiers or boilerplate (e.g. suggesting object property names, completing function signatures). <strong>Pros:</strong> Very fast and reliable for known APIs; works offline; no privacy concerns since it’s based on local analysis. It “predicts keywords, variable names, and suggests basic syntax” to accelerate coding. <strong>Cons:</strong> No true “intelligence” or learning – it cannot generate novel code outside of what’s already in the project or language specs. It doesn’t understand intent or do multi-line insertions beyond simple patterns.</p>
+</li>
+<li>
+<p><strong>Tabnine (Level 1):</strong> <em>Autonomy:</em> Level 1. <strong>Key Characteristics:</strong> An AI-driven code completion tool that extends basic autocomplete with ML. Tabnine’s model predicts code at the token/line level and can sometimes complete entire snippets or function bodies based on context. It supports many languages and can run locally, prioritizing privacy. <strong>Mode:</strong> Installed as an IDE plugin, it provides on-the-fly suggestions for the current and next lines of code. <strong>Use Cases:</strong> Similar to IntelliSense but more powerful: completing idiomatic code patterns, suggesting arguments, generating common code constructs (e.g., loop templates) from just a few typed characters. <strong>Pros:</strong> Faster coding with “accurate and personalized code completions for snippets, whole lines, and even full functions”. It learns from your codebase (and optionally global code data) to improve relevancy. Works in many IDEs. <strong>Cons:</strong> Still limited to reactive suggestions – it doesn’t handle multi-step tasks or deep reasoning. Quality can vary if context is ambiguous. Large models may consume significant memory if running locally. It also cannot initiate actions (only completes what you start).</p>
+</li>
+</ul>
+<p><em>(Other Level 1 examples:</em> Basic autocompletion in JetBrains IDEs or <strong>IntelliCode</strong> in Visual Studio, which uses AI to rank suggestions but still behaves like Level 1. These offer convenience boosts but do not generate complex logic on their own.)</p>
+<h2 id="level-2-advanced-code-generation-ai-pair-programmers"><strong>Level 2 – Advanced Code Generation (AI Pair Programmers)</strong><a class="headerlink" href="#level-2-advanced-code-generation-ai-pair-programmers" title="Permanent link">&para;</a></h2>
+<p>Level 2 tools act as <strong>AI pair programmers</strong>. They can generate more substantial code given a prompt or context, going beyond single-line completions. At this level, the AI can infer your intent from comments or function signatures and produce code that fulfills that intent. However, the AI’s role is still <strong>reactive and single-step</strong> – it responds to a human prompt with a chunk of code. The developer drives the process, giving instructions for each task, and the AI’s output is meant to be reviewed and possibly edited by the human.</p>
+<p><strong>Characteristics:</strong> Context-aware generation of larger code blocks (functions, classes) or explanations. Often powered by large language models trained on code (e.g. OpenAI Codex, Code Llama). These tools might integrate into IDEs or operate via chat interfaces, but they do <em>not</em> autonomously execute code or make further changes beyond their one response. Interaction is typically: developer writes a comment or question, AI outputs code suggestion or answer.</p>
+<p>Representative tools at Level 2 include:</p>
+<ul>
+<li>
+<p><strong>GitHub Copilot (Level 2):</strong> <em>Autonomy:</em> Level 2. <strong>Key Characteristics:</strong> Copilot is an “AI pair programmer” integrated into editors. It uses OpenAI’s Codex model (GPT-based) to generate code suggestions ranging from a single line to entire functions. Copilot can infer what you’re trying to implement from function names or comments and produce a candidate implementation. <strong>Mode:</strong> Inline completion as you code, plus an optional chat interface (“Copilot Chat”) for Q\&amp;A or explanations. The AI draws on the file’s content and surrounding context to suggest next steps. <strong>Use Cases:</strong> E.g., type a comment like “// function to sort an array of numbers” and Copilot will generate the full function; or start writing a test and it completes the rest. Great for boilerplate, standard algorithms, or suggesting code that calls APIs you described in comments. <strong>Pros:</strong> Seamless integration into development workflow – <em>“works alongside you... suggesting whole lines or entire functions”</em>. It significantly speeds up writing routine code and can even suggest solutions to simple bugs or TODOs from context. Copilot has knowledge of many frameworks and languages, often saving lookup time. <strong>Cons:</strong> The code it generates may be <strong>inaccurate or insecure</strong> – it doesn’t guarantee correctness. Developers must review and test suggestions. Copilot has limited awareness of the entire project (it looks at the open file and some neighboring content, but not the whole codebase in depth), so it might produce non-compiling or inconsistent code if used naively. It also can suggest outdated patterns or even plagiarized snippets (though it has filters to reduce this). In short, it’s a helpful assistant, but still requires a human in the loop for judgement.</p>
+</li>
+<li>
+<p><strong>Amazon CodeWhisperer (Level 2):</strong> <em>Autonomy:</em> Level 2. <strong>Key Characteristics:</strong> CodeWhisperer is AWS’s AI coding companion, similar to Copilot. It generates code recommendations based on your code context and natural language comments. Notably, CodeWhisperer is optimized to understand <strong>cloud and AWS API usage</strong> — for example, if you comment <em>“upload file to S3”</em>, it will produce code using the AWS SDK accordingly. <strong>Mode:</strong> Provided as an IDE plugin (within AWS Toolkit extension) for VS Code, JetBrains, etc. Suggestions appear as you type or when you invoke them after writing a comment. <strong>Use Cases:</strong> Writing cloud-related code (AWS operations), boilerplate for AWS services (creating resources, handling AWS auth), and general Python/Java/JavaScript code. For instance, given a comment describing converting JSON to CSV, CodeWhisperer can generate the entire function with proper parsing and CSV formatting. <strong>Pros:</strong> Can generate <em>“entire functions and logical code blocks at a time”</em> and understands plain-English intent in comments. It often knows to include necessary import statements or API calls (especially for AWS tasks) automatically. It improves developer productivity by eliminating trips to documentation for common tasks. <strong>Cons:</strong> As with Copilot, the output is only as good as the prompt and the training data – it may produce incorrect or suboptimal code that needs fixing. Its AWS bias is helpful in AWS contexts but less so outside them. Some users find CodeWhisperer’s suggestions slightly more basic or conservative compared to Copilot, and it supports fewer languages initially. It also requires an AWS account and may send code context to AWS (raising similar code privacy/licensing considerations as Copilot).</p>
+</li>
+<li>
+<p><strong>OpenAI Codex (API) (Level 2):</strong> <em>Autonomy:</em> Level 2. <strong>Key Characteristics:</strong> OpenAI Codex is the underlying model (a descendant of GPT-3) that <em>“translates natural language into code”</em>. It can be accessed via OpenAI’s API or through the ChatGPT interface (as “Code Interpreter” or the GPT-4 coding mode). Codex powers Copilot and can be used directly to generate code solutions from prompts. <strong>Mode:</strong> As an API or playground – the developer provides a prompt (which can be a problem description or partial code), and Codex returns code. For example, you can prompt: <em>“Create a Python function to check if a number is prime.”</em> Codex will output the function code. <strong>Use Cases:</strong> Single-step generation of code from spec; answering how-to code questions in natural language (with code in the answer); assisting in writing scripts by describing the desired outcome. <strong>Pros:</strong> Very powerful language understanding – it was <em>“specifically optimized for software engineering tasks”</em> and proficient in many programming languages. It can write code plus brief explanations. As a model, it underpins many other tools, so it’s versatile. <strong>Cons:</strong> Using Codex directly requires crafting effective prompts and it will still make mistakes. It has a context length limit, meaning it might not account for large codebases unless fragments are provided. Also, OpenAI deprecated the original Codex model in 2023 in favor of more advanced GPT-4-based coding assistance, so Codex itself is not openly available except via the newer models. Essentially, Codex was the early brain behind Level 2 tools, but on its own it’s rarely used by developers outside of powering other assistants.</p>
+</li>
+<li>
+<p><strong>Replit Ghostwriter (Level 2):</strong> <em>Autonomy:</em> Level 2. <strong>Key Characteristics:</strong> Ghostwriter is Replit’s AI dev tool, integrated into Replit’s online IDE. It provides code completions, a chat-based help, and even code transformation tools. Like Copilot, Ghostwriter can suggest the next lines of code as you type, and recently Replit added a Ghostwriter chat sidebar for asking coding questions. <strong>Mode:</strong> Within Replit’s browser IDE or desktop app, it offers inline autocomplete and a chat interface. <strong>Use Cases:</strong> Quickly generating code while working on Replit projects – e.g., writing a function in a Replit Python project and Ghostwriter autocompletes it; or asking the Ghostwriter chat “How do I implement a linked list in Java?” and getting a code example. <strong>Pros:</strong> Tight integration with Replit means it can run the code it generates instantly. It supports <em>multi-line and function completions</em>, and can even refactor or fix code when prompted. Good for learning from examples or speeding up small project development. <strong>Cons:</strong> Primarily available within Replit’s ecosystem (not a general IDE plugin, though Replit has an extension for VS Code in preview). Quality of suggestions is similar to Copilot (since it’s powered by similar model tech), so it shares the same limitations of possibly wrong or non-optimal code. Also, as of 2025, Ghostwriter’s chat is still improving – it may not handle extremely detailed multi-file queries as well as some competitors.</p>
+</li>
+</ul>
+<p><em>(Level 2 tools allow significant assistance but the </em><em>human must prompt each action and integrate the results</em><em>. They won’t autonomously refactor code or verify correctness beyond what they generate in one go. Next, we move to truly agentic tools that can take initiative in multi-step tasks.)</em></p>
+<h2 id="level-3-context-aware-coding-agents-supervised-automation"><strong>Level 3 – Context-Aware Coding Agents (Supervised Automation)</strong><a class="headerlink" href="#level-3-context-aware-coding-agents-supervised-automation" title="Permanent link">&para;</a></h2>
+<p>Level 3 tools mark a major leap: the AI becomes an <strong>agent that can autonomously perform multiple steps</strong> to accomplish a goal, while the developer supervises at a high level. Rather than just outputting a snippet and stopping, a Level 3 coding agent will <em>plan a series of actions</em>: it might read and modify several files, compile or run the project, observe the results (or test failures), and adjust its code, all in a loop, to meet the objective. Importantly, <strong>the human is no longer required to prompt every single code change</strong> – you give one high-level instruction, and the agent carries out many sub-tasks. However, the human typically remains “in the loop” at least at the end to review changes or during the process if clarifications are needed. This is analogous to a capable junior developer to whom you can say, “Please add this feature,” and they will work through it, asking questions if needed and then present a code update for review.</p>
+<p><strong>Characteristics:</strong> These tools maintain <em>state</em> and <em>memory</em> of the codebase. They often integrate with your environment (IDE or CLI) to actually apply code edits, run tests, use version control, etc. They have components for planning (breaking down tasks) and execution (writing code, running commands). Interaction style is often conversational (you instruct via chat or command, the agent may respond with questions or confirmations) or declarative (you issue a “task command” and the agent executes it and reports back). The developer’s role becomes more of a <strong>product manager or reviewer</strong>, specifying goals and constraints.</p>
+<p>Many cutting-edge AI dev tools in 2024–2025 fall in this Level 3 category:</p>
+<ul>
+<li>
+<p><strong>GitHub Copilot (Agent Mode) – “Copilot X” (Level 3):</strong> <em>Autonomy:</em> Level 3. <strong>Key Characteristics:</strong> As part of the Copilot X initiative, GitHub introduced an <em>“autonomous peer programmer”</em> mode for Copilot. In agent mode, Copilot can do more than suggest code – it can <strong>take actions like editing files, running build commands, and iterating until tests pass</strong>. For example, you might say “<strong>Add a new API endpoint for user profile</strong>,” and Copilot agent will locate relevant files (routes, controllers), modify or create code, run <code>npm test</code> or compile to ensure everything works, and present the diff. It effectively performs a sequence of edits and verifications without needing the user to prompt each step. <strong>Mode:</strong> Triggered via chat interface in the IDE (Copilot chat) – the user provides a high-level instruction in natural language. Copilot then autonomously decides which files/functions to change and executes those changes. It will often ask for permission for major steps unless in a fully automatic setting. <strong>Use Cases:</strong> Multi-file refactors, implementing a feature across the stack, fixing a bug that involves changes in several places. <em>Degree of autonomy:</em> It’s described as <em>“highly autonomous while keeping developers in the loop for safety”</em> – meaning it doesn’t require continuous prompts, but it will show you plans or get confirmation for impactful actions. <strong>Pros:</strong> Huge productivity boost for routine tasks – it can handle the boring work of updating boilerplate in multiple files, running tests, etc. One review noted the agent <em>“determines relevant context and files, makes code modifications, runs commands, and responds to test failures automatically… continuing this plan-act loop until it achieves the goal.”</em> This saves the developer from manual context switching. It’s like a junior dev who doesn’t get tired or bored. <strong>Cons:</strong> It’s still early-stage – the agent might get things wrong or misinterpret the request, so you must carefully review its final output. It might also overfit to patterns (e.g. writing code in a certain style that’s not exactly what you wanted). There are safety checks, but letting it run unchecked could lead to breaking changes if the AI misunderstands the codebase. Also, the feature is (as of 2025) in limited beta, so stability and availability might be issues. <em>Notable limitation:</em> it won’t initiate completely new projects or architectural shifts on its own – the scope is generally within the repo you’re working on and the instructions you give.</p>
+</li>
+<li>
+<p><strong>Cursor (AI Code Editor with Agent Mode) (Level 3):</strong> <em>Autonomy:</em> Level 3. <strong>Key Characteristics:</strong> Cursor is a full <strong>AI-powered code editor</strong> (a fork of VS Code) that from the start integrated AI for autocomplete and chat, and has since added an <em>Agent mode</em> for autonomous actions. Cursor can index your entire codebase and answer questions about it. With agent features, it can <strong>execute commands, modify multiple files, and even perform web searches as needed</strong>. It has a “YOLO mode” for fully automatic execution of commands without user approval on each step. <strong>Mode:</strong> The developer works inside the Cursor editor. You can enter high-level instructions via a chat pane or command palette (e.g. “refactor the authentication logic to use tokens instead of sessions”). Cursor’s agent will then locate relevant code, apply changes, and possibly run the project or tests using an integrated terminal. <strong>Use Cases:</strong> Large-scale refactoring, codebase-wide find-and-fix (like “rename this API across all microservices”), implementing a feature that touches front-end and back-end in one go. It also supports natural language Q\&amp;A about the code (like “Where is the database connection established?”). <strong>Pros:</strong> Deep integration in an IDE means it feels like a natural extension of the developer. Cursor <em>“predicts subsequent code edits”</em> and lets you apply them easily. It supports <em>global codebase operations and debugging assistance</em>. The agent’s <em>retrieval system indexes the entire project</em> to overcome token limits, so it can reason with more context than most. Users report it’s very effective for sweeping changes and answering questions about the code structure. <strong>Cons:</strong> Being a standalone editor, it may lack some plugins or dev environment customizations developers are used to in VS Code or IntelliJ. There have been occasional stability issues on very large projects. Also, while it’s agentic, the quality depends on the underlying model you connect (it supports GPT-4, Claude, etc., requiring API keys). Cost of API usage and setup is a consideration. Finally, fully automatic “YOLO” execution can be risky – if the AI makes a wrong change or command (like deleting a file), it might require rollback; thankfully Cursor includes a checkpoint/rollback system for safety.</p>
+</li>
+<li>
+<p><strong>Windsurf (formerly Codeium) (Level 3):</strong> <em>Autonomy:</em> Level 3. <strong>Key Characteristics:</strong> Windsurf is marketed as <em>“the first AI-native IDE”</em> and an <strong>agentic code editor</strong> similar to Cursor, but claiming even more advanced features. It evolved from Codeium’s autocomplete tool into a full editor with an AI agent that <em>“understands your entire project before making suggestions”</em>. Windsurf can automatically make code changes on request, run and debug code, and crucially, if execution fails, it <strong>iteratively modifies the code and retries until the request is fulfilled</strong>. <strong>Mode:</strong> Like Cursor, it’s a custom IDE (based on VS Code) with built-in AI. A developer might toggle into a “Write Mode” or use Windsurf’s Cascade (workflow engine) to have the AI carry out tasks. For example, you tell Windsurf “Optimize this function’s performance,” it will edit the code, run benchmarks or tests if set up, and adjust accordingly. Windsurf’s <strong>Cascade</strong> feature breaks down the AI workflow: it generates code, asks for user approval to run it, runs in an integrated terminal, then asks follow-up questions or makes further changes based on results. <strong>Use Cases:</strong> Complex debugging (where the agent runs the code, sees a stack trace, fixes error, re-runs), test-driven development (it can run tests and fix failing ones), and adding features that require touching many parts of the project. <strong>Pros:</strong> Extremely powerful automation – Windsurf <em>“can make changes automatically upon request, debug, and even run your code… if execution fails, [it] will iterate – making changes and rerunning – until your request is successfully fulfilled.”</em> This loop substantially offloads the grunt work from the developer. It also has innovative features like <em>“Supercomplete”</em> (understands intent rather than just next-token, generating code with proper docs and context), <em>Inline AI</em> for fine-grained edits on specific lines or selections, and ability to use images and web search in its prompts. <strong>Cons:</strong> Windsurf is newer and perhaps less proven at scale; being free (as Codeium was), it appeals but one must trust the quality. It requires loading your codebase into the tool’s indexing system, which could have privacy considerations (though they likely allow local indexing). Also, as an all-in-one IDE, you must switch to it from your usual environment. Some users on community forums note that while Windsurf is powerful, it can still produce errors – <em>“the time you save… will be wasted fixing errors caused by AI”</em>, one reviewer cautioned. In short, it’s cutting-edge but not magic – it shines on routine tasks, but complex logic still needs human insight.</p>
+</li>
+<li>
+<p><strong>Claude Code (Anthropic) (Level 3):</strong> <em>Autonomy:</em> Level 3. <strong>Key Characteristics:</strong> Claude Code is an <strong>agentic coding assistant by Anthropic</strong> that runs in your terminal and pairs with your editor/CLI workflow. It uses Anthropic’s Claude model (known for its large context window and conversational style) to understand your entire codebase and perform multi-step tasks. Claude Code can do things like: <em>edit multiple files, fix bugs, answer questions about the code, execute tests or linting, search through git history, handle merge conflicts, and even generate commit messages and PRs</em>. It essentially gives you a powerful AI co-developer right in the terminal. <strong>Mode:</strong> The typical usage is via a CLI command (once installed via npm). You chat with Claude Code in your terminal, instructing it with natural language (e.g., “Claude, refactor the user authentication logic to use OIDC”). It will find relevant files, propose a diff (in unified diff format in the terminal) and you can apply it. It can also be integrated with IDEs or invoked in a git commit workflow. <strong>Use Cases:</strong> Use it to perform complex codebase changes, get explanations for code segments (“Why is this function recursive?”), automatically generate tests and run them, or resolve a merge conflict by asking it to merge code intelligently. It’s great for maintenance tasks and understanding unfamiliar code. One of its special focuses is <strong>codebase Q\&amp;A</strong> – because it can hold a lot of context, you can ask very detailed questions about how functions relate or where something is used. <strong>Pros:</strong> Extremely broad capabilities – <em>“editing files and fixing bugs… answering questions about code… executing and fixing tests… creating commits and PRs… and browsing documentation via web search”</em> are all within its toolkit. It’s like having an expert pair programmer who not only suggests but actually <em>applies</em> changes and verifies them. Claude Code is also designed with enterprise in mind (works with Amazon Bedrock, etc., for privacy). Another pro is Claude’s strength in natural language – it can explain its reasoning step by step, which many users find illuminates the codebase. For example, one tester noted Claude Code gave <em>“a highly detailed, step-by-step breakdown of the solution… presenting code changes via a terminal diff,”</em> demonstrating excellent reasoning. <strong>Cons:</strong> As a terminal-first tool, it might have a learning curve for those used to GUI. You have to trust an AI with potentially large code changes; oversight is needed. Also, since it’s in research preview, access may be limited. And while Claude’s large context is helpful, extremely large projects may still exceed its limits, requiring chunking (which it attempts to handle by exploring code as needed). In terms of accuracy, it’s strong, but if instructions are ambiguous, it might produce incorrect edits. Cost is also a factor – it uses API calls to Claude, so large sessions can incur usage fees (Anthropic’s Claude models are typically priced per million tokens). In summary, Claude Code is a formidable assistant, particularly for understanding and modifying code with minimal input, but it’s not infallible and currently in limited preview.</p>
+</li>
+<li>
+<p><strong>ChatGPT (with Plugins) (Level 3):</strong> <em>Autonomy:</em> Level 3. <strong>Key Characteristics:</strong> OpenAI’s ChatGPT (especially GPT-4) is already a very capable coding assistant in a chat format. With the addition of <strong>plugins</strong>, ChatGPT can interact with external tools and services, effectively turning it into a multi-tool agent. For coding, relevant plugins (and built-in features for ChatGPT Plus users) include: a <em>code execution sandbox (Code Interpreter)</em>, file system access, web browser, and even GitHub integration via third-party plugins. With these, ChatGPT can not only generate code, but also <strong>run the code, debug it, and perform actions like retrieving documentation or committing code to a repo</strong>. <strong>Mode:</strong> Through a conversational interface where the user instructs ChatGPT. For example, you can say: “Use the Python plugin to create a new Django project and generate a models.py with these fields…” and ChatGPT will execute those steps. Or you might enable a Git plugin and say: “Commit the changes with message 'Added profile endpoint'” and it will form a commit via the plugin. Each plugin extends ChatGPT’s abilities. <strong>Use Cases:</strong> High-level coding tasks where ChatGPT can fetch and use information or perform actions. E.g., <em>browsing</em> the web for a solution to a bug and then applying a fix in code, or <em>running code</em> to verify output (ChatGPT’s Code Interpreter environment is great for data analysis code and quick testing). With a version control plugin, it can even manage pull requests. Essentially, ChatGPT with plugins can function like an all-purpose dev assistant: ask it to generate code, test it, fix errors, and document it, all in one conversation. <strong>Pros:</strong> Enormous flexibility – ChatGPT is not tied to one project or language; it has broad knowledge and with plugins it can compensate for its training cutoff by pulling real-time info or performing live computations. It’s been reported that <em>“developers using ChatGPT with plugins experience a significant boost in productivity”</em> in part because the AI can handle more context and actions (some claim up to 30% time saved). Interaction is very natural; you can discuss with it as if with a colleague. <strong>Cons:</strong> Not a dedicated IDE tool, so integration is not as seamless as something like Copilot or Cursor. You often have to copy code to and from ChatGPT, unless you use a plugin to interface with your dev environment. There are also still limitations on context length (though GPT-4 is large) – it might not hold an entire big codebase in mind like a specialized tool could. Additionally, while plugins allow actions, ChatGPT will still sometimes ask for confirmation or have limitations for safety. The reliability of each plugin can vary (some may fail to execute at times). And fundamentally, ChatGPT is a general model – it might not have the focus on your specific codebase unless you feed it in. There’s also the cost (ChatGPT Plus subscription, and some plugins might have their own costs or rate limits). Finally, letting ChatGPT loose with plugins (like giving it web access or file system rights) introduces new risks: it could execute a wrong command or retrieve irrelevant info. So while it’s very powerful, it needs careful guidance for critical tasks.</p>
+</li>
+<li>
+<p><strong>Aider (CLI Chat &amp; Git Integration) (Level 3):</strong> <em>Autonomy:</em> Level 3. <strong>Key Characteristics:</strong> Aider is an open-source tool that brings AI pair programming to your <strong>terminal and Git workflow</strong>. It uses large language models (OpenAI GPT-4 or Claude, or even local models) to understand and edit your codebase through natural language instructions. Aider stands out for its strong integration with version control: it tracks changes, creates commits, and can run tests automatically. For example, you can say in the Aider chat: “<strong>Implement a function for X feature in these files</strong>” – Aider will modify the files, and then <em>automatically commit the changes with a sensible commit message</em>. It also can continually run linters/tests on each change and <em>auto-fix any issues those tools report</em>. <strong>Mode:</strong> Run <code>aider</code> in your terminal within a Git repo. You chat with it (like with ChatGPT, but tied to your repo). You can also use it from inside editors via an extension or by adding special comments for Aider to detect. After giving an instruction, Aider will possibly ask clarifying questions or directly present a diff of proposed changes. You can apply them selectively or let Aider apply all. It then often runs tests (if configured) to ensure nothing broke. <strong>Use Cases:</strong> Rapid development on existing codebases – e.g., adding a new feature spanning multiple files, or fixing a tricky bug by describing the problem. Aider is great for refactoring: “Clean up the API routes to use the new middleware” – it will change the code across files accordingly, then run tests. Also useful for explaining code: you can ask it to read a function and explain it, or even generate documentation. <strong>Pros:</strong> Very <strong>automation-focused</strong>. As mentioned, it <em>“automatically commits changes with sensible commit messages”</em>, integrating with Git so you have a clear history of what the AI did (and easy rollback if needed). It <em>“automatically lints and tests your code every time it makes changes”</em>, and can <em>“fix problems detected by your linters and test suites”</em> – essentially providing a safety net that many other agents lack. It can work with both cloud and local LLMs, meaning flexibility in cost and privacy. Many developers praise Aider as extremely helpful in real projects, with some calling it “the peak of LLM coding assistants right now”. <strong>Cons:</strong> As an open tool, you need to set up API keys and possibly tune which model works best. If using GPT-4 via API, you have to mind token limits and cost. Aider’s effectiveness can depend on how well you phrase instructions (it’s less of a polished UX than Copilot – more techy). Also, if tests or linters are not comprehensive, Aider might miss issues – auto-fixing is only as good as the tools in place. Another limitation is the interactive loop: if the AI misinterprets something, it might go down a wrong path (though the Git history and diff view mitigate this). In essence, Aider is extremely powerful for power-users comfortable with CLI and Git, but it might be daunting for beginners. It’s also evolving fast, which is great but means you need to keep up with updates.</p>
+</li>
+<li>
+<p><strong>Amazon CodeWhisperer Q Dev (Amazon Q CLI) (Level 3):</strong> <em>Autonomy:</em> Level 3. <strong>Key Characteristics:</strong> Amazon has expanded CodeWhisperer into a more <strong>agentic CLI tool called Amazon Q Developer CLI</strong>, often just “Amazon Q CLI.” It’s a terminal-based AI assistant that leverages Amazon’s infrastructure (and interestingly, Anthropic’s Claude under the hood). The Q CLI brings intelligent chat to the developer’s command line, meaning you can have a conversation with an AI about your codebase <em>in the terminal</em>, and it can execute shell commands, compile code, or call AWS services in response. In its latest version, the Q CLI agent can <strong>actively execute commands on your system (compilers, package managers, AWS CLI calls)</strong> rather than just suggest them. This lets it carry out multi-step development workflows autonomously. <strong>Mode:</strong> You launch an interactive Q CLI session. For example, you might say: “Create a new Lambda function in this project.” The agent will run the necessary CLI commands to set up a Lambda function code template, install dependencies, etc., then perhaps even deploy it if asked. It maintains a multi-turn conversation, asking for clarification or providing updates as it executes steps. <strong>Use Cases:</strong> Cloud development tasks are a natural fit (setting up AWS resources, scaffolding projects, running builds/deploys). But it can also do general local dev tasks: running a build, then running tests, then parsing test output and fixing errors, all through an agentic loop. It essentially combines a Copilot-like assistant with a command-runner. <strong>Pros:</strong> Reduces context switching – you can stay in terminal and have the AI do what you’d normally have to type out. The upgrade <em>“means the tool can now complete more tasks autonomously rather than just providing hints”</em>, using <em>“step-by-step reasoning to break down complex problems,”</em> with multi-turn collaboration. This is very powerful for, say, provisioning infrastructure or performing mass refactors that involve command-line operations (like code generators, migrations). Integration with AWS is a plus if you’re in that ecosystem. <strong>Cons:</strong> It’s a new tool and requires macOS or specific setups at the moment. Because it can run commands on your system, there’s a <em>trust and safety</em> consideration – you wouldn’t want it executing a destructive command. Amazon likely sandboxes some operations, but caution is needed. Also, while Claude is a strong model, the quality of code understanding might not equal what you get in a dedicated IDE tool. If you don’t use AWS services, some features might be less relevant. Another limitation noted is that it currently requires some configuration (installing, logging in with AWS Builder ID, etc.) and might not be as straightforward as, say, just using Copilot. In summary, Q CLI is a potent idea (an AI that can use your dev tools for you), but its practicality will depend on your workflow and trust in the AI with those tools.</p>
+</li>
+</ul>
+<p><em>(The Level 3 roster is growing quickly; other notable Level 3 tools include </em><em>Cline</em><em>, an open-source VS Code agent with distinct “Plan” and “Act” modes to architect then implement solutions, and </em><em>QodoAI</em><em> (formerly CodiumAI), which focuses its agent on testing and code analysis rather than feature coding. These illustrate the diversity: Cline uses a </em>plan/act toggle<em> so the AI can first propose a plan (ask clarifying questions, design a solution) and then execute it in code, whereas QodoAI’s test agent can </em>“analyze a repository, generate unit tests, run them, and iterate to improve coverage,”<em> acting as an autonomous QA assistant. Regardless of implementation, Level 3 tools handle multi-step tasks with the human providing high-level guidance.)</em></p>
+<h2 id="level-4-highly-autonomous-coding-agents"><strong>Level 4 – Highly Autonomous Coding Agents</strong><a class="headerlink" href="#level-4-highly-autonomous-coding-agents" title="Permanent link">&para;</a></h2>
+<p>Level 4 tools push toward <strong>fully autonomous coding on complex tasks</strong>, requiring only minimal human input (often just an initial prompt or specification) and potentially <strong>no human review before deployment</strong> (in theory). These agents can take a project goal (“build me an app that does X”) or a very complex bug fix and deliver a completed solution with <em>little to no incremental guidance</em>. They incorporate advanced planning, long-term memory of the project, and can integrate various tools to accomplish their mission. While Level 3 still expects a human to review the final output, Level 4 aspires to produce production-ready code that could be trusted after automated validation.</p>
+<p>In reality, Level 4 is at the cutting edge in 2025, with only a few emerging examples – often proprietary or in beta – that <em>approach</em> this level. These agents operate like a seasoned developer who can be given a broad problem and will autonomously clarify requirements, write code, test it, and hand over the finished product.</p>
+<p>Key players (and experiments) in this space:</p>
+<ul>
+<li>
+<p><strong>Google <em>Jules</em> (Coding Agent) (Level 4):</strong> <em>Autonomy:</em> Level 4. <strong>Key Characteristics:</strong> Jules is Google’s new autonomous coding agent, introduced via Google Labs in late 2024 and now in public beta (as of May 2025). Google explicitly positions Jules as <em>“not a co-pilot, not a code-completion sidekick, but an autonomous agent that reads your code, understands your intent, and gets to work.”</em> This sums up its Level 4 ambition – you tell Jules what you need, and it will make it happen in your codebase with minimal further prompts. Jules works <em>asynchronously</em> in the cloud: you give it a task, and it performs the task on its own servers, then returns the results to you. It can make broad changes (covering multiple files), write new code, and even generate artifacts like tests or documentation. <strong>Mode:</strong> Jules is accessed via a web interface (Google Labs) and has GitHub integration. For example, you might connect it to a GitHub repo and issue a command like “Jules, add pagination to the blog posts list.” Jules will clone the repo into a cloud workspace, analyze the codebase, apply the changes for pagination across backend and frontend as needed, run tests, etc., then provide you with the changed code (possibly as a branch or a pull request on GitHub). It also provides <em>audio changelogs</em> – an interesting feature where it narrates what it did, so you can listen to a summary of changes. <strong>Use Cases:</strong> Large features or major bug fixes executed with minimal developer work. Because it’s cloud-based and async, you could assign Jules a task and it will eventually reply with the completed changes. For instance, <em>writing extensive unit tests</em> for existing code (Jules is noted to autonomously write tests), or <em>upgrading a library version and fixing all compatibility issues</em>. It’s like having a remote contractor to whom you delegate coding tasks. <strong>Pros:</strong> Extremely hands-off — Jules <em>“autonomously reads your code [and] performs tasks like writing tests and fixing bugs”</em> without babysitting. The promise is a big productivity leap: while it works, you can focus on other things. Jules leverages Google’s Gemini AI model, so it’s presumably very powerful in both coding and reasoning. Integration with GitHub means it fits into existing dev workflows (review its pull requests as you would a human’s). Also, Google’s focus on safety means Jules likely sandboxes the execution and ensures privacy (running in a secure environment). <strong>Cons:</strong> It’s very new – only recently opened from waitlist. Many developers haven’t tested it yet, so real-world performance is still being evaluated. Being cloud-only might raise security questions (though Google likely addresses this) and introduces latency (jobs might take minutes to complete). Jules aiming for full autonomy can sometimes result in overshooting what’s needed; as one Reddit user noted, they were “incredibly impressed by the amount of work [Jules] can handle almost autonomously” – which is good, but if it handles it in an unexpected way, you’d have to untangle that. The lack of human checkpoints means it might make decisions or structural changes that a developer wouldn’t, so trust is a big issue (especially for critical code). Lastly, it’s currently tied to Google’s ecosystem; how well it handles non-web or non-cloud scenarios is unclear. Nonetheless, Jules is a front-runner in the race to higher autonomy in coding.</p>
+</li>
+<li>
+<p><strong>Cognition’s <em>Devin</em> (AI Software Engineer) (Level 4):</strong> <em>Autonomy:</em> Level 4. <strong>Key Characteristics:</strong> Devin, created by startup Cognition, has been branded as <em>“the first AI software engineer”</em>. It garnered attention in 2024 for its ability to <em>autonomously perform software development tasks</em> that typically require human involvement. Devin is designed with advanced long-term reasoning and tool use: it can plan out thousands of small decisions and steps to achieve a big coding goal. It runs in a cloud environment with access to a shell, code editor, browser, and other tools—essentially everything a human developer would use. It also actively collaborates: it will report progress, ask for feedback or design choices from the user when needed, then continue working. Devin can even work in parallel via cloud agents to speed up development for large tasks. <strong>Mode:</strong> Offered as a service to engineering teams. Typically, a dev might assign Devin an issue or a feature request (like through a web dashboard or CLI), and Devin will begin working on the codebase to implement it. For instance, if given a GitHub issue link, Devin will gather context, clone the repo, set up the environment, and then fix the issue entirely on its own. It can also be invited into a codebase as a collaborator. <strong>Use Cases:</strong> Ambitious ones – e.g., <em>“build and deploy an end-to-end application”</em> from just a description: one demo showed Devin creating an interactive “Game of Life” web app from scratch, adding features as the user requested, then deploying it to Netlify. Another use: maintaining legacy projects by giving Devin a list of bug reports to handle autonomously. It has also been used to <em>fix complex bugs in mature codebases</em>: on a benchmark of real open-source issues (SWE-bench), Devin was able to solve some that previous AI approaches could not. <strong>Pros:</strong> Potentially a massive force multiplier for a dev team. Devin can <em>“plan and execute complex engineering tasks requiring thousands of decisions”</em> and <em>“recall relevant context at every step, learn over time, and fix mistakes”</em>, which is essentially what a strong human engineer does over the span of a project. It uses common tools (shell, browser, etc.) to do things like read documentation or test applications in ways other AI might not. This makes it quite general. Early users noted it could write significant portions of code autonomously – one hype example was <em>“Devin wrote 80% of its own code”</em> during development (though that speaks to a bootstrapping scenario). In practice, Devin’s new version can <em>“generate plans for coding projects, answer questions about code with citations, and create wikis for code”</em> to document it. These supporting features (code documentation, explanation) add to its usefulness. <strong>Cons:</strong> Despite the hype, Devin has limitations. It <em>“struggled with more complex coding work”</em> beyond a certain point – for instance, while it can handle straightforward issues, truly intricate algorithmic challenges or deep architectural design still stumped it. In an initial evaluation, Devin could only fully solve about <strong>13.9% of real-world coding issues</strong> it was given (though this <em>far exceeded</em> the previous state-of-the-art of 1.96%). That indicates there’s lots of room for improvement; many tasks will require multiple attempts or human help. Additionally, Devin is expensive – it was initially priced at $500/month for access (targeting enterprise teams), though now there are lower-cost plans. Using Devin also means handing your codebase to a third-party AI service, raising all the usual concerns of security and compliance. And as with any agent, debugging what Devin does when it makes a mistake can be tricky (though the idea is it documents its actions). In summary, Devin is a trailblazer in autonomous coding, showing what’s possible when an AI is equipped with tools and long-term planning, but it’s not yet a replacement for human engineers on hard problems, functioning more like a very capable assistant on easier ones. It exemplifies Level 4 in vision, even if in practice it occasionally operates more like a Level 3 that still benefits from oversight.</p>
+</li>
+<li>
+<p><strong>Experimental “One-Shot” Coding Agents (Level 4):</strong> Aside from commercial products, the open-source community has been exploring highly autonomous coding with projects like <strong>GPT-Engineer</strong> and <strong>AutoGPT</strong>-based dev agents. <em>GPT-Engineer</em>, for example, is an open-source CLI tool where <strong>one prompt can generate an entire codebase</strong>: it will ask you clarifying questions, produce a technical spec, then implement all necessary code files accordingly. The idea is to feed in a description like “A website that shows random cat pictures and quotes” and GPT-Engineer will plan out what that requires, generate the code (HTML, CSS, JS, backend if needed), possibly even test it. This approach shows how a Level 4 agent can handle project creation from scratch with minimal input. However, these are more experimental and often require multiple iterations to get right. <em>AutoGPT</em>-style agents (not specific to coding but often used for coding tasks) also demonstrate Level 4 behavior: given a high-level goal in natural language, an AutoGPT agent will <em>“attempt to achieve it by breaking it into sub-tasks and using tools in an automatic loop”</em>. For coding, this could mean the agent decides to search the web for an algorithm, then writes code, then runs it to test, etc., without a human in the loop. Some users have tried AutoGPT to, say, “build a simple game in Python” – the agent will create files, attempt to code the game, run it, debug errors, and iterate. <strong>Pros:</strong> These experiments push the boundary of how little guidance an AI needs. They showcase that an AI can autonomously decide what functions to write or which libraries to use when only the end goal is specified. <strong>Cons:</strong> They are often inconsistent and can get stuck or produce low-quality results without human feedback. AutoGPT, for instance, might loop indefinitely or miss the mark in coding tasks unless the goal is very clear. They also tend to require a lot of API calls (which can be expensive and slow) and have difficulty with truly complex logic that wasn’t seen in training. No mainstream development tool uses a fully automated Level 4 agent without expecting a human review – it’s mostly in research and enthusiasts’ hands. But these prototypes are an important stepping stone toward future Level 5 autonomy.</p>
+</li>
+</ul>
+<h2 id="level-5-full-autonomy-and-future-outlook"><strong>Level 5 – Full Autonomy and Future Outlook</strong><a class="headerlink" href="#level-5-full-autonomy-and-future-outlook" title="Permanent link">&para;</a></h2>
+<p>Level 5 represents the <strong>aspirational endgame</strong>: AI agents that can handle software development lifecycle entirely on their own, even to the point of <strong>deciding what needs to be built or fixed without explicit human requests</strong>. In the context of our analogy, this is like a self-driving car that can decide where to go and handle any road – an AI developer that improves and expands a codebase proactively. This level remains largely theoretical in 2025. No current tool can set its own development goals in a reliable, controlled way.</p>
+<p>However, discussions around Level 5 often involve <em>multiple agents or continuous learning loops</em>. For example, an AI could analyze user feedback or issue trackers and then autonomously open a task (or even a pull request) to address an enhancement. Another angle is AI systems that <strong>continuously refactor or optimize code</strong> to improve efficiency without being asked (like an AI ops team that monitors a system and tweaks it for performance or cost).</p>
+<p>While we don’t have concrete products doing this, there are glimpses in certain domains: DeepMind’s <strong>AlphaDev</strong> used AI to discover a more efficient sorting algorithm in C++ assembly – essentially improving code beyond what humans had – but it did this as a targeted research task, not as a general coding agent. Similarly, Meta’s work on using AI for code optimization hints that future AI might autonomously make code faster or more secure as a background process.</p>
+<p>Perhaps the closest current analogy to Level 5 behavior is the concept of <strong>self-improving code agents</strong>. For instance, Anthropic’s team noted an experiment where <em>Claude Code wrote a large portion of its own code</em>, implying an AI agent can participate in its self-development. Another example is community-driven AutoGPT setups where one agent writes code and another reviews it, iterating with minimal human oversight – though very experimental, it points to a future where AI agents collaborate to check each other’s work.</p>
+<p><strong>Outlook:</strong> Level 5 autonomy in coding raises big questions around <strong>trust, safety, and alignment</strong>. An agent that sets its own goals could easily drift from what humans actually want. So, reaching Level 5 will require not just technical advances (in reasoning, long-term memory, tool use) but also robust safety guardrails. Nonetheless, the rapid progress from 2022 to 2025 in levels 3 and 4 fuels optimism that Level 5 might be achievable in the future. Companies like Sourcegraph have begun discussing these levels openly to manage expectations and development focus.</p>
+<p>For now, developers can expect their AI assistants to become increasingly autonomous within the scope <em>developers</em> set. Level 4 tools like Jules and Devin will likely improve and expand access. Over the next few years, we might see agents that handle entire projects (from reading specs to deployment) under human supervision (Level 4 approaching Level 5), and eventually, perhaps an AI that can act as a <strong>project lead</strong>, deciding what features to implement to maximize some goal (an early form of Level 5).</p>
+<p>In summary, Level 5 remains a frontier – exciting, a bit uncertain, but certainly a space to watch. Today’s most autonomous tools still hand back control to humans at the final step, and that’s probably a wise approach until we are sure an AI can truly go solo.</p>
+<hr />
+<h2 id="comparison-table-of-developer-ai-tools-by-autonomy-and-capabilities"><strong>Comparison Table of Developer AI Tools by Autonomy and Capabilities</strong><a class="headerlink" href="#comparison-table-of-developer-ai-tools-by-autonomy-and-capabilities" title="Permanent link">&para;</a></h2>
+<p>The table below summarizes the tools discussed, comparing their autonomy level, interaction style, key strengths, and notable limitations:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool Name</strong></th>
+<th><strong>Autonomy Level</strong></th>
+<th><strong>Interaction Style</strong></th>
+<th><strong>Key Strengths</strong></th>
+<th><strong>Notable Limitations</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VS Code IntelliSense</strong></td>
+<td>1 (Basic Assist)</td>
+<td>Inline IDE suggestions as you type</td>
+<td>Fast, context-aware completions for syntax &amp; names; no cloud needed, very reliable for known code patterns.</td>
+<td>No true “AI” or understanding of intent; cannot generate new logic beyond what’s in scope (only completes existing code).</td>
+</tr>
+<tr>
+<td><strong>Tabnine</strong></td>
+<td>1 (Basic Assist)</td>
+<td>IDE plugin, ML-based autocomplete</td>
+<td>ML-driven suggestions for full lines/functions; supports many languages; can work offline/local for privacy.</td>
+<td>Still reactive only; quality varies if context is unclear; no multi-step abilities or deep reasoning.</td>
+</tr>
+<tr>
+<td><strong>GitHub Copilot</strong></td>
+<td>2 (Pair Programmer)</td>
+<td>IDE plugin (VS Code, etc.), inline suggestions and chat interface</td>
+<td>Generates larger code blocks from comments or function signatures; huge knowledge base of frameworks; seamlessly integrates into coding workflow.</td>
+<td>Can produce incorrect or insecure code that needs review; limited context window (may miss cross-file issues); requires internet (cloud model).</td>
+</tr>
+<tr>
+<td><strong>Amazon CodeWhisperer</strong></td>
+<td>2 (Pair Programmer)</td>
+<td>IDE plugin (AWS Toolkit), inline suggestions</td>
+<td>Understands intent from natural-language comments (especially cloud tasks); can insert relevant AWS API calls automatically; multi-line completions boost productivity.</td>
+<td>Tied to AWS ecosystem for best results; suggestions can be more basic; potential for errors means human oversight needed (like Copilot).</td>
+</tr>
+<tr>
+<td><strong>OpenAI Codex</strong></td>
+<td>2 (Pair Programmer)</td>
+<td>API/Playground or via ChatGPT (prompt-response)</td>
+<td>Powerful code generation from natural language; proficient in many languages; basis for many other tools (flexible integration).</td>
+<td>No GUI – requires prompt engineering; Codex model itself deprecated in favor of GPT-4 (support shifting); outputs need debugging and validation by developer.</td>
+</tr>
+<tr>
+<td><strong>Replit Ghostwriter</strong></td>
+<td>2 (Pair Programmer)</td>
+<td>Replit IDE integration (browser IDE with autocomplete &amp; chat)</td>
+<td>Great for quick prototype development; generates code and explanations inside Replit; can run code instantly to verify.</td>
+<td>Locked to Replit’s platform for full features; not as polished outside that; similar limitations to Copilot (may be wrong or need tweaks).</td>
+</tr>
+<tr>
+<td><strong>GitHub Copilot (Agent Mode)</strong></td>
+<td>3 (Agentic – supervised)</td>
+<td>IDE chat/command triggering multi-step actions</td>
+<td>Plans and executes multi-file edits, runs tests, iterates until goal met; keeps developer in loop for safety; huge time-saver for refactors &amp; repetitive tasks.</td>
+<td>Beta stage – may be unstable; might misinterpret high-level requests; still should review final PR; cannot handle extremely complex, open-ended tasks without guidance.</td>
+</tr>
+<tr>
+<td><strong>Cursor (AI Editor)</strong></td>
+<td>3 (Agentic – supervised)</td>
+<td>Full AI-based code editor (VS Code fork) with chat &amp; agent modes</td>
+<td>Deep codebase integration (indexes entire repo) for global reasoning; smart rewrites and multi-file ops; can auto-run commands/tests with “YOLO mode”; very interactive and intuitive for code edits.</td>
+<td>Requires using a separate editor (missing some native IDE features/plugins); occasional stability issues on large projects; model performance depends on provided API keys (cost &amp; setup).</td>
+</tr>
+<tr>
+<td><strong>Windsurf (formerly Codeium)</strong></td>
+<td>3 (Agentic – supervised)</td>
+<td>AI-driven IDE (VS Code-based) with Cascade (plan-run) workflow</td>
+<td><em>Agent-powered IDE with iterative loop:</em> can modify code, run it, debug and repeat until success; advanced features like image-to-code and web search integration; good for automating test-and-fix cycles.</td>
+<td>New and evolving – could have bugs; fully automatic mode carries risk of unintended changes; must adapt to its IDE; heavy reliance on model correctness (still requires final validation by dev).</td>
+</tr>
+<tr>
+<td><strong>Anthropic Claude Code</strong></td>
+<td>3 (Agentic – supervised)</td>
+<td>Terminal-based chat agent linked to codebase &amp; tools</td>
+<td>Very large context understanding (reads big codebases); edits files via diffs, runs tests, writes commit messages; excellent at explaining reasoning and maintaining conversation.</td>
+<td>CLI interface might intimidate some; currently in limited preview; uses paid API (costly for extensive use); even with big context, extremely large projects can exceed its limits or require careful prompt scoping.</td>
+</tr>
+<tr>
+<td><strong>ChatGPT (with dev plugins)</strong></td>
+<td>3 (Agentic – supervised)</td>
+<td>Conversational AI (web UI or API) with plugins (code exec, filesystem, etc.)</td>
+<td>Highly flexible multi-tool agent: can fetch docs, run code, use Git, all in one dialogue; strong natural language understanding and reasoning (GPT-4); adapts to many tasks (coding, DevOps, research).</td>
+<td>Not integrated into IDE by default – context sharing is manual (except via plugins); may produce verbose or tangential output; plugin reliability varies; and it’s gated by ChatGPT Plus access and plugin availability. Oversight needed as it’s not tailor-made for your specific codebase unless you feed it.</td>
+</tr>
+<tr>
+<td><strong>Aider (CLI + Git assistant)</strong></td>
+<td>3 (Agentic – supervised)</td>
+<td>CLI chat tool working on local repo (Git-integrated)</td>
+<td>Excellent for code modifications with safety – auto-commits each change with meaningful messages, auto-runs tests and fixes issues on the fly; supports connecting to powerful models (Claude/GPT-4) or local LLMs; free and open-source, highly configurable.</td>
+<td>Primarily command-line – less visual; initial setup of API keys required; if tests are lacking, its auto-fix won’t catch all errors; model errors can still slip through (needs review of commits, which fortunately are broken down for you).</td>
+</tr>
+<tr>
+<td><strong>Amazon Q Developer CLI</strong></td>
+<td>3 (Agentic – supervised)</td>
+<td>Interactive CLI agent (natural language to CLI commands &amp; code edits)</td>
+<td>Lets AI control CLI tools: can compile, run, deploy and iterate using system tools; great for cloud and devops tasks (deep AWS integration); uses Claude’s strong reasoning via Bedrock; keeps conversation context for complex troubleshooting.</td>
+<td>Mac/Linux only currently; executing commands automatically has inherent risk (needs user trust or dry-runs); may require AWS-specific setup; not GUI – suited for those comfortable in terminal.</td>
+</tr>
+<tr>
+<td><strong>Google Jules</strong></td>
+<td>4 (High Autonomy)</td>
+<td>Cloud-based agent (async tasks, GitHub-connected)</td>
+<td><em>Fully autonomous coding agent:</em> given a goal it reads code, writes new code or tests, and delivers changes with minimal prompts. Great at large-scale tasks (e.g. adding major features, writing extensive tests) without micro-management. Backed by Google’s AI expertise and integrated with common workflows (GitHub PRs).</td>
+<td>Very new (beta) – real-world performance still being proven; works off-premises (code goes to Google cloud workspace); lack of real-time interaction (you assign task and wait) can be less predictable; no guarantee it perfectly meets intent – still should do final code review.</td>
+</tr>
+<tr>
+<td><strong>Cognition Devin</strong></td>
+<td>4 (High Autonomy)</td>
+<td>Cloud AI service acting as a team dev (task assignment model)</td>
+<td>Ambitious scope: plans and executes complex tasks with long-term reasoning; uses tools (editor, browser, shell) like a human engineer; can produce documentation and answer code questions (not just code); has shown ability to build small apps end-to-end and fix known bugs autonomously.</td>
+<td>Expensive enterprise tool (pricing and usage limits apply); struggled with truly complex or novel problems – not infallible, success rate on tough issues still low (\~14% in benchmarks); requires handing over code access to third-party; outcomes can be hit-or-miss, demanding human validation despite the “autonomous” label.</td>
+</tr>
+<tr>
+<td><strong>GPT-Engineer (open-source)</strong></td>
+<td>4 (High Autonomy)</td>
+<td>CLI tool – one prompt to codebase generation (iterative plan/spec/code)</td>
+<td>Can bootstrap entire project from a single prompt, automating the role of developer given clear specs; extensible and adaptable (developers can insert custom reasoning steps); showcases how far a single-run agent can go for certain tasks.</td>
+<td>Highly dependent on prompt quality; not reliable for complex applications without iteration – may generate incomplete or incorrect systems that need debugging; no ongoing conversation (one-shot run), so if it’s off-track, it may fail without asking for guidance unlike Level 3 agents. More a tech demo currently.</td>
+</tr>
+<tr>
+<td><strong>AutoGPT (for coding tasks)</strong></td>
+<td>4 (High Autonomy)</td>
+<td>Self-directed AI agent (goal-driven loop), uses tools including code execution</td>
+<td>Fully automated workflow: given an objective, it breaks into sub-tasks and executes them in a loop. For coding, it can write, run, and fix code iteratively without human prompts, striving to meet the goal (e.g. “create a Python script for X”).</td>
+<td>Tends to be inefficient and sometimes veers off-course without human feedback; can get stuck in loops or produce suboptimal solutions; not specialized for coding (uses general planning, which might not incorporate best coding practices); requires careful prompt setup and often a lot of computing resources (many API calls). Mainly experimental – not a plug-and-play dev tool.</td>
+</tr>
+</tbody>
+</table>
+<p>(Note: Tools at <strong>Level 5</strong> are omitted above since none are productized yet; future AI dev agents might eventually populate that row once they emerge.)</p>
+<h3 id="sources"><strong>Sources</strong><a class="headerlink" href="#sources" title="Permanent link">&para;</a></h3>
+<p>Throughout this report, references are included in the format【source†lines】to support factual claims and characteristics:</p>
+<ul>
+<li>Autonomy level concepts are based on industry discussions and analogies to self-driving levels.</li>
+<li>Tool capabilities and quotes were drawn from official documentation, blogs, and reputable reviews (e.g., GitHub Copilot’s description, CodeWhisperer’s feature explanation, Cursor and Windsurf agent details, Claude Code docs, Google’s Jules announcement, Cognition’s Devin blog, etc.).</li>
+<li>Limitations and pros/cons were cross-verified with user reports and tech articles (for instance, Devin’s struggle with complex tasks, Aider’s auto-commit/test approach, and anecdotal usage feedback).</li>
+</ul>
+<p>This comparison underscores that as we progress from Level 1 to Level 4, AI tools take on more of the coding burden — from merely completing the next line of code to handling whole features. Developers today can mix and match these tools to suit their needs, but it’s crucial to understand each tool’s autonomy and limits to use them effectively. The field is evolving rapidly, and what is Level 3 today may become Level 4 tomorrow. Keeping an eye on these autonomy levels helps set expectations and guides us in adopting AI tools that truly enhance productivity while maintaining quality and control in software development.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Contributors to the CyberSecAI Guide.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io" target="_blank" rel="noopener" title="Guide" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2 0-3.3-.1-1.4.1-2.8.1-4.2.1H392c-22.1 0-40-17.9-40-40v-88c0-17.7-14.3-32-32-32h-64c-17.7 0-32 14.3-32 32v88c0 22.1-17.9 40-40 40h-55.9c-1.5 0-3-.1-4.5-.2-1.2.1-2.4.2-3.6.2h-16c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9.1-2.8v-69.6H32c-18 0-32-14-32-32.1 0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7l255.4 224.5c8 7 12 15 11 24z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io/issues/" target="_blank" rel="noopener" title="Report an Issue or Suggest a Change" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM41.4 105.4c12.5-12.5 32.8-12.5 45.3 0l64 64c.7.7 1.3 1.4 1.9 2.1 14.2-7.3 30.4-11.4 47.5-11.4H312c17.1 0 33.2 4.1 47.5 11.4.6-.7 1.2-1.4 1.9-2.1l64-64c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-64 64c-.7.7-1.4 1.3-2.1 1.9 6.2 12 10.1 25.3 11.1 39.5H480c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c0 24.6-5.5 47.8-15.4 68.6 2.2 1.3 4.2 2.9 6 4.8l64 64c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-63.1-63.1c-24.5 21.8-55.8 36.2-90.3 39.6V240c0-8.8-7.2-16-16-16s-16 7.2-16 16v239.2c-34.5-3.4-65.8-17.8-90.3-39.6l-63 63c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l64-64c1.9-1.9 3.9-3.4 6-4.8C101.5 367.8 96 344.6 96 320H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h64.3c1.1-14.1 5-27.5 11.1-39.5-.7-.6-1.4-1.2-2.1-1.9l-64-64c-12.5-12.5-12.5-32.8 0-45.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io" target="_blank" rel="noopener" title="source on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/CyberSecAI/CyberSecAI.github.io/print_page/" target="_blank" rel="noopener" title="Save as HTML or print to PDF / paper" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.footer", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.caa56a14.min.js"></script>
+      
+        <script src="../../../js/print-site.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
