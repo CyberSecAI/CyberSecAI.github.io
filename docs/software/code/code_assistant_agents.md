@@ -2,7 +2,7 @@
 
 !!! abstract "Overview"
 
-    This page gives a comparison of Coding Assistants vs. Autonomous Coding Agents
+    This page gives a comparison of AI Coding Tools by Autonomy Levels.
 
     It starts by defining Autonomy Levels for AI Coding Tools.
 
