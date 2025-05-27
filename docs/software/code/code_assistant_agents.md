@@ -9,6 +9,10 @@
     Then it categorizes and compares these AI Coding Tools based on these Autonomy Levels
 
 
+!!! note
+
+    See also [Feature Comparison and Analysis of Leading AI IDEs: Cursor,
+    Windsurf, Roo Code, and GitHub Copilot](../../assets/docs/IDEs_Feature_Comparison.pdf)
 ## **Autonomy Levels for AI Coding Tools**
 
 We define autonomy levels similar to [how autonomous driving is categorized](https://sourcegraph.com/blog/levels-of-code-ai):
