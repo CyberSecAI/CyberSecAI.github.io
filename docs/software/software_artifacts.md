@@ -22,6 +22,7 @@
 * **Use-case Diagrams and Scenarios** - Visual specifications for complex workflows
 * **Feature Backlog** with AI-friendly descriptions and constraints
 * **Prompt Libraries** - Reusable natural language specifications for common patterns
+* **Prompt Engineering Specifications** - Detailed instructions optimized for AI performance and reliability
 
 ### 3. Architecture & Design ⭐
 
@@ -33,6 +34,7 @@
 * **API Contracts & Specifications** (OpenAPI/Swagger) - Precise interfaces for AI code generation
 * **Data Schemas** (JSON Schema, database models) - Structured templates for consistent output
 * **Diagrams-as-Code** (Mermaid, PlantUML) - Machine-readable architectural specifications
+* **Diagrams-as-Images** (any) - Multi-Modal-LLM-readable architectural specifications
 
 ### 4. Implementation
 
@@ -42,6 +44,10 @@
 * **Code Review Guidelines** for AI-generated code
 * **Refactoring Documentation** - Plans and histories for AI-assisted refactoring
 * **Legacy Migration Plans** - Strategies for AI-assisted modernization
+* **Dataset Management** - Versioning, curation, and labeling of training data as code artifacts
+* **Traceability Matrices** - Automated linkage between specifications, generated code, and test artifacts
+* **Metadata Standards** - Explicit schema for documenting AI contributions vs. human edits, linked to audit trails
+
 
 ### 5. Testing & Quality Assurance
 
@@ -61,6 +67,7 @@
 * **Vulnerability Scans** of AI-generated code
 * **Compliance Checklists** - Regulatory requirements embedded in AI workflows
 * **Audit Trails** - Enhanced tracking of AI-generated changes
+* **Code Reviews** - Code Reviews by AI
 
 ### 7. Deployment & Operations
 
@@ -77,6 +84,7 @@
 * **Post-mortem Reports** - Learning from failures with AI insights
 * **Dependency Management** - Automated updates and security patches
 * **Technical Debt Tracking** - AI-identified improvement opportunities
+* **Continuous Improvement Plans** - Strategies integrating feedback loops from operational AI performance to refine specifications and AI model performance over time
 
 ### 9. Communication & Collaboration
 
@@ -85,7 +93,8 @@
 * **Decision Logs** - Context for architectural and design choices
 * **User Documentation** - Generated from code and specifications
 * **Training Materials** - AI-assisted onboarding and skill development
-
+* **Role Definitions for Human-AI Interaction** - Clear delineation of responsibilities, authority, and interaction protocols for AI vs. human developers
+* **Ubiquitous Language Glossaries** - Domain-driven language consistently used across requirements, code, prompts, and AI interactions
 ---
 
 ## Artifact Formats for AI Integration
@@ -108,11 +117,14 @@ Multi-modal LLMs can process diverse document formats, but strategic format sele
 - **TOML** - Configuration with human-friendly syntax
 - **CSV** - Tabular data, test cases, requirements matrices
 
+**Dataset Management Formats** - CSV, Parquet, JSONL for structured training data versioning and curation
+
 **Diagrams-as-Code**
 
 - **Mermaid** - Flowcharts, sequence diagrams, system architecture
 - **PlantUML** - UML diagrams, component relationships
 - **DOT/Graphviz** - Network diagrams, dependency graphs
+
 
 
 ### Document Conversion Pipeline
