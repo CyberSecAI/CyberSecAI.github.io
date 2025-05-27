@@ -83,7 +83,7 @@ graph TD
 ```
 
 !!! note
-    Text from the NVD Refereces could also be retrieved to augment the report input, as sometimes they contain information that is not in the CVE Description. 
+    Text from the NVD References could also be retrieved to augment the report input, as sometimes they contain information that is not in the CVE Description. 
 
     That has not been done here (yet) and is not shown in the diagram.
 

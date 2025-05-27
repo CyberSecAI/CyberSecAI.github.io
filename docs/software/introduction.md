@@ -202,6 +202,7 @@ These predictions have materialized through today's generative AI tools:
 
 - e.g. [Claude's Artifacts feature](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) exemplifies the upstream artifacts concept, allowing users to generate substantial, standalone content like code snippets, documents, or website designs that appear in a dedicated window for iterative refinement. Meanwhile, [Claude Code](https://www.anthropic.com/claude-code) takes this further by operating directly in the terminal, understanding entire codebases and helping developers code faster by executing routine tasks, explaining complex code, and handling git workflows through natural language commands.
 - The "diagrams as code" vision has also been realized—modern AI can now generate Mermaid diagrams, SVG graphics, and complete architecture visualizations from natural language descriptions, then provide contextual analysis including security recommendations and threat modeling based on those diagrams. It can also generate the code given an image.
+- I've used [LLMs to create architecture diagrams, and then generate code from those diagrams](../../agents/Build_agents#architecture).
 
 But [AWS DevGenius](https://github.com/aws-samples/sample-devgenius-aws-solution-builder/tree/main) is a more recent complete example application that exemplifies this.
 #### Example DevGenius - AWS Solution Generator 
