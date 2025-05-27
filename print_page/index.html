@@ -4870,6 +4870,7 @@ where</p>
 <ul>
 <li>e.g. <a href="https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them">Claude's Artifacts feature</a> exemplifies the upstream artifacts concept, allowing users to generate substantial, standalone content like code snippets, documents, or website designs that appear in a dedicated window for iterative refinement. Meanwhile, <a href="https://www.anthropic.com/claude-code">Claude Code</a> takes this further by operating directly in the terminal, understanding entire codebases and helping developers code faster by executing routine tasks, explaining complex code, and handling git workflows through natural language commands.</li>
 <li>The "diagrams as code" vision has also been realized—modern AI can now generate Mermaid diagrams, SVG graphics, and complete architecture visualizations from natural language descriptions, then provide contextual analysis including security recommendations and threat modeling based on those diagrams. It can also generate the code given an image.</li>
+<li>I've used <a href="#agents-build_agents-architecture">LLMs to create architecture diagrams, and then generate code from those diagrams</a>.</li>
 </ul>
 <p>But <a href="https://github.com/aws-samples/sample-devgenius-aws-solution-builder/tree/main">AWS DevGenius</a> is a more recent complete example application that exemplifies this.</p>
 <h4 id="software-introduction-example-devgenius-aws-solution-generator">Example DevGenius - AWS Solution Generator<a class="headerlink" href="#software-introduction-example-devgenius-aws-solution-generator" title="Permanent link">&para;</a></h4>
@@ -5924,7 +5925,7 @@ graph TD
 </code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Text from the <abbr title="National Vulnerability Database">NVD</abbr> Refereces could also be retrieved to augment the report input, as sometimes they contain information that is not in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description. </p>
+<p>Text from the <abbr title="National Vulnerability Database">NVD</abbr> References could also be retrieved to augment the report input, as sometimes they contain information that is not in the <abbr title="CVE Common Vulnerability and Exposures. A standardized list of publicly known vulnerabilities and exposures maintained by the MITRE Corporation.">CVE</abbr> Description. </p>
 <p>That has not been done here (yet) and is not shown in the diagram.</p>
 </div>
 <p>Diagram Code
