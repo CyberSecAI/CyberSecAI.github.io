@@ -11,7 +11,7 @@
 | **Title**                                                                                        | **Venue**           | **Author(s)** | **Date** (YYYY/M) |
 |--------------------------------------------------------------------------------------------------|---------------------|---------------|-------------------|
 | [Leveraging generative AI for efficient CVE enrichment](https://www.youtube.com/watch?v=XBjLAJsm5LA)  | CyberRisk Summit           | Chris Madden  | 2024/11            |
-| https://github.com/CyberSecAI CVE Enrichment User Scenarios and Solutions | GitHub   |      Chris Madden  | 2024/11           |
+| [Vulnerability Root Cause Mapping with CWE: Challenges, Solutions, and Insights from Grounded LLM-based Analysis](https://www.first.org/conference/vulncon2025/program#pVulnerability-Root-Cause-Mapping-with-CWE-Challenges-Solutions-and-Insights-from-Grounded-LLM-based-Analysis). Available soon on [FIRST YouTube](https://www.youtube.com/@FIRSTdotorg). | [FIRST VulnCon](https://www.first.org/conference/vulncon2025)   |      Chris Madden, Alec Summers  | 2025/4           |
 
 
 
