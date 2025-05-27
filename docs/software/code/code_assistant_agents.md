@@ -9,10 +9,23 @@
     Then it categorizes and compares these AI Coding Tools based on these Autonomy Levels
 
 
-!!! note
+!!! tip
 
     See also [Feature Comparison and Analysis of Leading AI IDEs: Cursor,
-    Windsurf, Roo Code, and GitHub Copilot](../../assets/docs/IDEs_Feature_Comparison.pdf)
+    Windsurf, Roo Code, and GitHub Copilot, May 27, 2025](../../assets/docs/IDEs_Feature_Comparison.pdf).
+
+
+!!! observation
+
+    Current [integrated development environments (IDEs)](https://en.wikipedia.org/wiki/Integrated_development_environment) are optimized for human programmers.
+
+    They are not optimal  
+
+    - For [Software Engineering Artifacts in the AI Era](../../software/software_artifacts.md)
+    - For shared understanding among stakeholders
+    - As we move [From Code-Centric to Contract-Centric Development](../introduction.md#from-code-centric-to-contract-centric-development)
+
+
 ## **Autonomy Levels for AI Coding Tools**
 
 We define autonomy levels similar to [how autonomous driving is categorized](https://sourcegraph.com/blog/levels-of-code-ai):
