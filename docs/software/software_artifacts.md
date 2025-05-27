@@ -169,50 +169,92 @@ This approach ensures artifacts remain both human-readable and AI-processable th
 project-root/
 ├── README.md
 ├── CONTRIBUTING.md
-├── .ai/                               # AI-specific configurations
-│   ├── prompts/                       # Reusable prompt templates
-│   ├── models/                        # Model configurations
-│   └── validation/                    # AI output validation rules
+├── .ai/                                    # AI-specific configurations
+│   ├── prompts/                           # Reusable prompt templates
+│   ├── models/                            # Model configurations
+│   └── validation/                        # AI output validation rules
 │
 ├── docs/
-│   ├── 01-research/
-│   │   ├── technical-research.md
-│   │   └── ai-model-analysis.md       # NEW: AI capability assessment
+│   ├── system-docs/                       # System-focused documentation
+│   │   ├── 01-research/
+│   │   │   ├── technical-research.md
+│   │   │   ├── ai-model-research.md
+│   │   │   └── competitive-analysis.md
+│   │   │
+│   │   ├── 02-requirements/               # ⭐ CRITICAL for AI generation
+│   │   │   ├── user-stories.md
+│   │   │   ├── functional-requirements.md
+│   │   │   ├── use-case-scenarios.md
+│   │   │   ├── feature-backlog.md
+│   │   │   ├── prompt-libraries.md
+│   │   │   └── prompt-engineering-specifications.md
+│   │   │
+│   │   ├── 03-architecture/               # ⭐ PRIMARY contracts
+│   │   │   ├── architecture-diagrams/
+│   │   │   │   ├── diagrams-as-code/
+│   │   │   │   └── diagrams-as-images/
+│   │   │   ├── ADR/
+│   │   │   ├── system-design-documents.md
+│   │   │   ├── api-contracts/
+│   │   │   └── data-schemas/
+│   │   │
+│   │   ├── 04-implementation/
+│   │   │   ├── generated-source-code/
+│   │   │   ├── code-repositories-metadata.md
+│   │   │   ├── ai-generation-prompts.md
+│   │   │   ├── code-review-guidelines.md
+│   │   │   ├── refactoring-documentation.md
+│   │   │   ├── legacy-migration-plans.md
+│   │   │   ├── dataset-management.md
+│   │   │   ├── traceability-matrices.md
+│   │   │   └── metadata-standards.md
+│   │   │
+│   │   ├── 05-testing/
+│   │   │   ├── test-plans.md
+│   │   │   ├── automated-test-suites.md
+│   │   │   ├── ai-generated-test-cases.md
+│   │   │   ├── quality-gates.md
+│   │   │   ├── performance-benchmarks.md
+│   │   │   └── bug-tracking.md
+│   │   │
+│   │   ├── 06-security/                   # ⭐ AI guardrails
+│   │   │   ├── threat-models.md
+│   │   │   ├── security-policies-as-code.md
+│   │   │   ├── vulnerability-scans.md
+│   │   │   ├── compliance-checklists.md
+│   │   │   ├── audit-trails.md
+│   │   │   └── ai-code-reviews.md
+│   │   │
+│   │   ├── 07-deployment-operations/
+│   │   │   ├── infrastructure-as-code/
+│   │   │   ├── ci-cd-pipeline-configurations.md
+│   │   │   ├── release-notes.md
+│   │   │   ├── monitoring-observability.md
+│   │   │   └── runbooks.md
+│   │   │
+│   │   ├── 08-maintenance-evolution/
+│   │   │   ├── change-logs.md
+│   │   │   ├── incident-response.md
+│   │   │   ├── post-mortem-reports.md
+│   │   │   ├── dependency-management.md
+│   │   │   ├── technical-debt-tracking.md
+│   │   │   └── continuous-improvement-plans.md
+│   │   │
+│   │   └── 09-communication-collaboration/
+│   │       ├── project-documentation.md
+│   │       ├── team-knowledge-base.md
+│   │       ├── decision-logs.md
+│   │       ├── role-definitions-human-ai.md
+│   │       └── ubiquitous-language-glossaries.md
 │   │
-│   ├── 02-requirements/               # ⭐ CRITICAL for AI generation
-│   │   ├── user-stories.md
-│   │   ├── functional-requirements.md
-│   │   ├── acceptance-criteria.md     # NEW: AI validation targets
-│   │   └── prompt-library.md          # NEW: Reusable specifications
-│   │
-│   ├── 03-architecture/               # ⭐ PRIMARY contracts
-│   │   ├── system-architecture.md
-│   │   ├── ADR/                       # Critical for AI consistency
-│   │   ├── api-contracts/             # OpenAPI specifications
-│   │   ├── data-schemas/              # JSON schemas, DB models
-│   │   └── diagrams-as-code/          # Mermaid, PlantUML sources
-│   │
-│   ├── 04-implementation/
-│   │   ├── ai-coding-standards.md     # NEW: AI-optimized practices
-│   │   ├── generation-workflows.md    # NEW: AI development processes
-│   │   └── human-ai-collaboration.md  # NEW: Role definitions
-│   │
-│   ├── 05-testing/
-│   │   ├── ai-test-generation.md      # NEW: Automated test creation
-│   │   └── validation-frameworks.md   # NEW: AI output validation
-│   │
-│   ├── 06-security/                   # ⭐ AI guardrails
-│   │   ├── ai-security-policies.md    # NEW: AI-specific security rules
-│   │   └── automated-compliance.md    # NEW: Continuous compliance
-│   │
-│   └── 07-operations/
-│       ├── ai-monitoring.md           # NEW: AI system observability
-│       └── incident-ai-analysis.md    # NEW: AI-assisted debugging
+│   └── user-docs/                         # User-facing documentation
+│       ├── user-documentation.md
+│       └── training-materials.md
 │
-├── src/                               # Generated and human code
-├── infra/                             # IaC specifications
-├── .github/workflows/                 # AI-enhanced CI/CD
-└── scripts/ai/                        # AI automation scripts
+├── src/                                   # Generated and human code
+├── infra/                                 # IaC specifications
+├── .github/workflows/                     # AI-enhanced CI/CD
+└── scripts/ai/                            # AI automation scripts
 ```
 
 ---
