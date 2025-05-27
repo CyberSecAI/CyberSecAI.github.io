@@ -1231,27 +1231,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../software_security/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Software Security
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1845,6 +1824,7 @@
 <li><strong>Use-case Diagrams and Scenarios</strong> - Visual specifications for complex workflows</li>
 <li><strong>Feature Backlog</strong> with AI-friendly descriptions and constraints</li>
 <li><strong>Prompt Libraries</strong> - Reusable natural language specifications for common patterns</li>
+<li><strong>Prompt Engineering Specifications</strong> - Detailed instructions optimized for AI performance and reliability</li>
 </ul>
 <h3 id="3-architecture-design">3. Architecture &amp; Design ⭐<a class="headerlink" href="#3-architecture-design" title="Permanent link">&para;</a></h3>
 <p><em>Primary artifacts that guide AI implementation</em></p>
@@ -1855,6 +1835,7 @@
 <li><strong>API Contracts &amp; Specifications</strong> (OpenAPI/Swagger) - Precise interfaces for AI code generation</li>
 <li><strong>Data Schemas</strong> (JSON Schema, database models) - Structured templates for consistent output</li>
 <li><strong>Diagrams-as-Code</strong> (Mermaid, PlantUML) - Machine-readable architectural specifications</li>
+<li><strong>Diagrams-as-Images</strong> (any) - Multi-Modal-LLM-readable architectural specifications</li>
 </ul>
 <h3 id="4-implementation">4. Implementation<a class="headerlink" href="#4-implementation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1864,6 +1845,9 @@
 <li><strong>Code Review Guidelines</strong> for AI-generated code</li>
 <li><strong>Refactoring Documentation</strong> - Plans and histories for AI-assisted refactoring</li>
 <li><strong>Legacy Migration Plans</strong> - Strategies for AI-assisted modernization</li>
+<li><strong>Dataset Management</strong> - Versioning, curation, and labeling of training data as code artifacts</li>
+<li><strong>Traceability Matrices</strong> - Automated linkage between specifications, generated code, and test artifacts</li>
+<li><strong>Metadata Standards</strong> - Explicit schema for documenting AI contributions vs. human edits, linked to audit trails</li>
 </ul>
 <h3 id="5-testing-quality-assurance">5. Testing &amp; Quality Assurance<a class="headerlink" href="#5-testing-quality-assurance" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1882,6 +1866,7 @@
 <li><strong>Vulnerability Scans</strong> of AI-generated code</li>
 <li><strong>Compliance Checklists</strong> - Regulatory requirements embedded in AI workflows</li>
 <li><strong>Audit Trails</strong> - Enhanced tracking of AI-generated changes</li>
+<li><strong>Code Reviews</strong> - Code Reviews by AI</li>
 </ul>
 <h3 id="7-deployment-operations">7. Deployment &amp; Operations<a class="headerlink" href="#7-deployment-operations" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1898,6 +1883,7 @@
 <li><strong>Post-mortem Reports</strong> - Learning from failures with AI insights</li>
 <li><strong>Dependency Management</strong> - Automated updates and security patches</li>
 <li><strong>Technical Debt Tracking</strong> - AI-identified improvement opportunities</li>
+<li><strong>Continuous Improvement Plans</strong> - Strategies integrating feedback loops from operational AI performance to refine specifications and AI model performance over time</li>
 </ul>
 <h3 id="9-communication-collaboration">9. Communication &amp; Collaboration<a class="headerlink" href="#9-communication-collaboration" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1906,6 +1892,8 @@
 <li><strong>Decision Logs</strong> - Context for architectural and design choices</li>
 <li><strong>User Documentation</strong> - Generated from code and specifications</li>
 <li><strong>Training Materials</strong> - AI-assisted onboarding and skill development</li>
+<li><strong>Role Definitions for Human-AI Interaction</strong> - Clear delineation of responsibilities, authority, and interaction protocols for AI vs. human developers</li>
+<li><strong>Ubiquitous Language Glossaries</strong> - Domain-driven language consistently used across requirements, code, prompts, and AI interactions</li>
 </ul>
 <hr />
 <h2 id="artifact-formats-for-ai-integration">Artifact Formats for AI Integration<a class="headerlink" href="#artifact-formats-for-ai-integration" title="Permanent link">&para;</a></h2>
@@ -1924,6 +1912,7 @@
 <li><strong>TOML</strong> - Configuration with human-friendly syntax</li>
 <li><strong>CSV</strong> - Tabular data, test cases, requirements matrices</li>
 </ul>
+<p><strong>Dataset Management Formats</strong> - CSV, Parquet, JSONL for structured training data versioning and curation</p>
 <p><strong>Diagrams-as-Code</strong></p>
 <ul>
 <li><strong>Mermaid</strong> - Flowcharts, sequence diagrams, system architecture</li>
@@ -2009,50 +1998,92 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>project-root/
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── README.md
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── CONTRIBUTING.md
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── .ai/                               # AI-specific configurations
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── prompts/                       # Reusable prompt templates
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── models/                        # Model configurations
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── validation/                    # AI output validation rules
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── .ai/                                    # AI-specific configurations
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── prompts/                           # Reusable prompt templates
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── models/                            # Model configurations
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── validation/                        # AI output validation rules
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── docs/
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   ├── 01-research/
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   │   ├── technical-research.md
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   │   └── ai-model-analysis.md       # NEW: AI capability assessment
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   │
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   ├── 02-requirements/               # ⭐ CRITICAL for AI generation
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   │   ├── user-stories.md
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   │   ├── functional-requirements.md
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   │   ├── acceptance-criteria.md     # NEW: AI validation targets
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   │   └── prompt-library.md          # NEW: Reusable specifications
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   │
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│   ├── 03-architecture/               # ⭐ PRIMARY contracts
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│   │   ├── system-architecture.md
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   │   ├── ADR/                       # Critical for AI consistency
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   │   ├── api-contracts/             # OpenAPI specifications
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│   │   ├── data-schemas/              # JSON schemas, DB models
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   │   └── diagrams-as-code/          # Mermaid, PlantUML sources
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│   │
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│   ├── 04-implementation/
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│   │   ├── ai-coding-standards.md     # NEW: AI-optimized practices
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│   │   ├── generation-workflows.md    # NEW: AI development processes
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│   │   └── human-ai-collaboration.md  # NEW: Role definitions
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   │
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│   ├── 05-testing/
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│   │   ├── ai-test-generation.md      # NEW: Automated test creation
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   │   └── validation-frameworks.md   # NEW: AI output validation
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   │
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   ├── 06-security/                   # ⭐ AI guardrails
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│   │   ├── ai-security-policies.md    # NEW: AI-specific security rules
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│   │   └── automated-compliance.md    # NEW: Continuous compliance
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│   │
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│   └── 07-operations/
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│       ├── ai-monitoring.md           # NEW: AI system observability
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│       └── incident-ai-analysis.md    # NEW: AI-assisted debugging
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>├── src/                               # Generated and human code
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>├── infra/                             # IaC specifications
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>├── .github/workflows/                 # AI-enhanced CI/CD
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>└── scripts/ai/                        # AI automation scripts
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   ├── system-docs/                       # System-focused documentation
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   │   ├── 01-research/
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   │   │   ├── technical-research.md
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   │   │   ├── ai-model-research.md
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   │   │   └── competitive-analysis.md
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   │   │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   │   ├── 02-requirements/               # ⭐ CRITICAL for AI generation
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   │   │   ├── user-stories.md
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   │   │   ├── functional-requirements.md
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   │   │   ├── use-case-scenarios.md
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│   │   │   ├── feature-backlog.md
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│   │   │   ├── prompt-libraries.md
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   │   │   └── prompt-engineering-specifications.md
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   │   │
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│   │   ├── 03-architecture/               # ⭐ PRIMARY contracts
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   │   │   ├── architecture-diagrams/
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│   │   │   │   ├── diagrams-as-code/
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│   │   │   │   └── diagrams-as-images/
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│   │   │   ├── ADR/
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│   │   │   ├── system-design-documents.md
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│   │   │   ├── api-contracts/
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   │   │   └── data-schemas/
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│   │   │
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│   │   ├── 04-implementation/
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   │   │   ├── generated-source-code/
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   │   │   ├── code-repositories-metadata.md
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   │   │   ├── ai-generation-prompts.md
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│   │   │   ├── code-review-guidelines.md
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│   │   │   ├── refactoring-documentation.md
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│   │   │   ├── legacy-migration-plans.md
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│   │   │   ├── dataset-management.md
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│   │   │   ├── traceability-matrices.md
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│   │   │   └── metadata-standards.md
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│   │   │
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│   │   ├── 05-testing/
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│   │   │   ├── test-plans.md
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│   │   │   ├── automated-test-suites.md
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│   │   │   ├── ai-generated-test-cases.md
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│   │   │   ├── quality-gates.md
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│   │   │   ├── performance-benchmarks.md
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>│   │   │   └── bug-tracking.md
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│   │   │
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│   │   ├── 06-security/                   # ⭐ AI guardrails
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│   │   │   ├── threat-models.md
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│   │   │   ├── security-policies-as-code.md
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│   │   │   ├── vulnerability-scans.md
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>│   │   │   ├── compliance-checklists.md
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>│   │   │   ├── audit-trails.md
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>│   │   │   └── ai-code-reviews.md
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>│   │   │
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>│   │   ├── 07-deployment-operations/
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>│   │   │   ├── infrastructure-as-code/
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>│   │   │   ├── ci-cd-pipeline-configurations.md
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>│   │   │   ├── release-notes.md
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>│   │   │   ├── monitoring-observability.md
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>│   │   │   └── runbooks.md
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>│   │   │
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>│   │   ├── 08-maintenance-evolution/
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>│   │   │   ├── change-logs.md
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>│   │   │   ├── incident-response.md
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>│   │   │   ├── post-mortem-reports.md
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>│   │   │   ├── dependency-management.md
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>│   │   │   ├── technical-debt-tracking.md
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>│   │   │   └── continuous-improvement-plans.md
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>│   │   │
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>│   │   └── 09-communication-collaboration/
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>│   │       ├── project-documentation.md
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>│   │       ├── team-knowledge-base.md
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>│   │       ├── decision-logs.md
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>│   │       ├── role-definitions-human-ai.md
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>│   │       └── ubiquitous-language-glossaries.md
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>│   │
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>│   └── user-docs/                         # User-facing documentation
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>│       ├── user-documentation.md
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>│       └── training-materials.md
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>│
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>├── src/                                   # Generated and human code
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>├── infra/                                 # IaC specifications
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>├── .github/workflows/                     # AI-enhanced CI/CD
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>└── scripts/ai/                            # AI automation scripts
 </code></pre></div>
 <hr />
 <h2 id="key-principles-for-ai-era-artifacts">Key Principles for AI-Era Artifacts<a class="headerlink" href="#key-principles-for-ai-era-artifacts" title="Permanent link">&para;</a></h2>
