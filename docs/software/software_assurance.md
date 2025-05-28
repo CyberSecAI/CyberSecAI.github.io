@@ -200,7 +200,7 @@ ADRs are common e.g.
 
     It is important to understand the **why** for the **how** (e.g. ADRs)
     
-    Quality Attributes drive the architecture design (e.g. the )
+    Quality Attributes drive the architecture design
 
 
 
