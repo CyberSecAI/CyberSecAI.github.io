@@ -4,7 +4,12 @@
 
     This section provides an overview of Software Assurance today and what it could look like in the future.
 
-    Shift-left testing is necessary but not sufficient.
+    It covers some software fundamentals that are independent of the Software Development Life Cycle (SDLC) [Methodology](https://en.wikipedia.org/wiki/Software_development_process#Methodologies):
+   
+       1. Software Assurance
+       2. Verification and Validation
+       3. Laws of Software Architecture
+
 
 ## Software Assurance
 
@@ -26,7 +31,7 @@
 
 
 
-## Validation vs. verification
+## Validation Vs. Verification
 
 !!! quote
 
@@ -40,8 +45,6 @@
 
     - "Are you building the right thing?"
     
-
-    It is clear that the **key artifact that distinguishes verification activities from validation activities is the software requirements baseline**
 
     - verification activities begin in the Product Design phase and conclude with the acceptance
     Test. They do not lead to changes in the requirements baseline; only to changes in the
@@ -61,12 +64,26 @@
     Guidelines For Verifying And Validating Software Requirements And Design Specifications, Barry W. Boehm
 
 
+
+### Continuous Validation And Veri­fication Process
+
 <figure markdown>
 ![](../assets/images/fig1big.webp.png)
 A continuous validation and veri­fication process. Validation ensures the requirements correctly capture the users’ and stakeholders’ expectations and should be performed whenever a translation of requirements from one domain to another occurs. https://www.infoq.com/articles/ieee-verification-and-validation-for-software-systems/
 </figure>
 
+### Software Requirements
 
+!!! quote
+    It is clear that the **key artifact that distinguishes verification activities from validation activities is the software requirements baseline**, Guidelines For Verifying And Validating Software Requirements And Design Specifications, Barry W. Boehm
+
+
+    
+!!! quote
+
+    Software requirements engineering is the discipline for developing a complete, consistent, unambiguous specification-which can serve as a basis for common agreement among all parties concerned-describing **what** the software product will do (but not **how** it will do it; this is to be done in the design specification).
+    https://selab.netlab.uky.edu/homepage/boehm-sw-eng-paper.pdf
+    Barry W. Boehm
 
 
 
@@ -76,10 +93,12 @@ A continuous validation and veri­fication process. Validation ensures the requi
 Continuous Verification & Validation of Critical Software via DevSecOps, https://apps.dtic.mil/sti/pdfs/AD1187382.pdf
 </figure>
 
- The easiest way is to say that verification is always against the requirements (technical terms) and validation is always against the real world or the user's needs
-https://en.wikipedia.org/wiki/V-model#Validation_vs._verification
+!!! note
 
-A continuous validation and veri­fication process. Validation ensures the requirements correctly capture the users’ and stakeholders’ expectations and should be performed whenever a translation of requirements from one domain to another occurs.
+    These assurance steps apply independent of the Software Development Life Cycle (SDLC) [Methodology](https://en.wikipedia.org/wiki/Software_development_process#Methodologies). 
+
+
+
 
 
 ## DevOps
