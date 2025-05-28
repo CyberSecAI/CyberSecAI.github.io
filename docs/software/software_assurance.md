@@ -2,14 +2,15 @@
 
 !!! abstract "Overview"
 
-    This section provides an overview of Software Assurance today and what it could look like in the future.
-
-    It covers some software fundamentals that are independent of the Software Development Life Cycle (SDLC) [Methodology](https://en.wikipedia.org/wiki/Software_development_process#Methodologies):
+    This section provides a brief overview of Software Assurance fundamentals that are independent of the Software Development Life Cycle (SDLC) [Methodology](https://en.wikipedia.org/wiki/Software_development_process#Methodologies) or what entity is creating the software:
    
        1. Software Assurance
        2. Verification and Validation
-       3. Laws of Software Architecture
+       3. Architecture
+          1. Laws of Software Architecture
+          2. Quality Attributes Drive the Architecture Design
 
+    It also covers the what, how, and why for the how, of Software Engineering.
 
 ## Software Assurance
 
@@ -72,18 +73,10 @@
 A continuous validation and veri­fication process. Validation ensures the requirements correctly capture the users’ and stakeholders’ expectations and should be performed whenever a translation of requirements from one domain to another occurs. https://www.infoq.com/articles/ieee-verification-and-validation-for-software-systems/
 </figure>
 
-### Software Requirements
 
-!!! quote
-    It is clear that the **key artifact that distinguishes verification activities from validation activities is the software requirements baseline**, Guidelines For Verifying And Validating Software Requirements And Design Specifications, Barry W. Boehm
+The **key artifact that distinguishes verification activities from validation activities is the software requirements** specification.
 
-
-    
-!!! quote
-
-    Software requirements engineering is the discipline for developing a complete, consistent, unambiguous specification-which can serve as a basis for common agreement among all parties concerned-describing **what** the software product will do (but not **how** it will do it; this is to be done in the design specification).
-    https://selab.netlab.uky.edu/homepage/boehm-sw-eng-paper.pdf
-    Barry W. Boehm
+- This covers **what** the software product will do (but not **how** it will do it; this is to be done in the design specification).
 
 
 
@@ -98,88 +91,118 @@ Continuous Verification & Validation of Critical Software via DevSecOps, https:/
     These assurance steps apply independent of the Software Development Life Cycle (SDLC) [Methodology](https://en.wikipedia.org/wiki/Software_development_process#Methodologies). 
 
 
+## Architecture
 
-
-
-## DevOps
-Four Fundamental Principles
-1. Collaboration: between all stakeholders
-2. Infrastructure as code (IaC): assets are versioned, scripted,
-and shared
-3. Automation: deployment, testing, provisioning, any manual or
-human-error-prone process
-4. Monitoring: any metric in development or operation that can
-inform priorities, direction, and policy
-
-## Laws of Software Architecture
-
-The code review is designed to answer, “Does this code successfully implement its specification?” The architecture validation is designed to answer, “Will the computer system to be built from this architecture satisfy its business goals?”2
+### Laws of Software Architecture
 
 [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/), Mark Richards & Neal Ford, defines some fundamental Laws of Software Architecture.
 
-### First Law of Software Architecture
+#### First Law of Software Architecture
 
 **"Everything in software architecture is a trade-off."**
 
 - Corollary 1:  If an architect thinks they have discovered something that isn’t a trade-off, more likely they just haven’t identified the trade-off yet.
 
 
-### Second Law of Software Architecture
+#### Second Law of Software Architecture
 
 **"Why is more important than how."**
 
 
-trast with validation."
-https://en.wikipedia.org/wiki/V-model#Validation_vs._verification
-
-https://www.parasoft.com/blog/verification-vs-validation-in-embedded-software/
-
-## From Shift-Left Testing to Earlier Lag Indicators
+#### Quality Attributes Drive The Architecture Design
 
 !!! quote
 
-    Shift-left testing is an approach to software testing and system testing in which testing is performed earlier in the lifecycle (i.e. moved left on the project timeline). It is the first half of the maxim "test early and often."
+    Requirements for a software system fall into the following two categories: 
 
-    [Shift-left testing - Wikipedia](https://en.wikipedia.org/wiki/Shift-left_testing)
+    1. Functional requirements: These requirements describe the business capabilities that the system must provide, as well as its behavior at run-time. 
 
-**Shift-left testing is inherently a lagging activity** by definition—it measures past outcomes earlier in the SDLC rather than preventing issues from occurring.
+    2. Non-functional requirements: These requirements describe the “[Quality Attributes](https://en.wikipedia.org/wiki/ISO/IEC_9126)” that the system must meet in delivering functional requirements.
 
-A lagging indicator is a metric that measures past performance or outcomes, reflecting what has already happened. In other words, it reveals the symptoms rather than addressing root causes.
+    **Quality Attributes drive the architecture design.**
 
-Shift-left security testing is a DevSecOps practice that integrates security testing early in the Software Development Life Cycle (SDLC). While this approach is necessary, it is neither sufficient nor efficient for remediating cybersecurity risk.
-
-## Leading Levers for Security
-
-Leading indicators are measures that change before outcomes occur. They function as proactive measures that focus on the activities and processes that influence outcomes, rather than simply measuring results after the fact.
-
-A leading lever, when adjusted, influences the system and causes lagging indicators to change as a result, providing feedback to the operator.
-
-The critical question is: what levers do we need to use to address the symptoms?
-
-1. What are the root causes?
-2. Where are the Pareto distributions? (What follows the 80/20 rule?)
-3. What are the top three remediation priorities that will deliver the biggest reduction in organizational risk?
-
-**Reference:** [Security Risk Management Discussion](https://youtu.be/oMZN810xfck?t=897)
-## Shift Left Before Coding
+    [Continuous Architecture: Sustainable Architecture in an Agile and Cloud-Centric World](https://www.oreilly.com/library/view/continuous-architecture/9780128032855/)
 
 
 
-## Shift Negative
+#### Architecture Decision Records (ADR)
+    
 
-## DevSecOps Reimagined
+!!! quote
 
-
-### Find Your Levers
-
-Remediation ROI 
-
-
-Shift Left Security Testing is a DevSecOps practice that integrates security testing and processes early in the Software Development Life Cycle (SDLC). 
+    An ADR can help you understand the reasons for a chosen architectural decision, along with its trade-offs and consequences. The collection of ADRs created and maintained in a project constitute its decision log.
+    https://adr.github.io/
 
 
+ADRs are common e.g.
 
-## CyberSecurity Industry Reimagined
+- [Azure Well-Architected Framework ADRs](https://learn.microsoft.com/en-us/azure/well-architected/architect-role/architecture-decision-record)
+- [Amazon AWS ADR Prescriptive Guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
+- [Google GCP Architecture](https://cloud.google.com/architecture/architecture-decision-records)
+
+
+
+
+
+!!! quote ADRs as Documentation
+
+    Architecture Decision Records can be used an an effective means to document a software architecture. 
+    
+    - The Context section of an ADR provides an excellent opportunity to describe the specific area of the system that requires an architecture decision to be made. This section also provides an opportunity to describe the alternatives. 
+    - Perhaps more important is that the Decision section describes the reasons why a particular decision is made, which is by far the best form of architecture documentation. 
+    - The Consequences section adds the final piece to the architecture documentation by describing additional aspects of a particular decision, such as the trade-off analysis of choosing performance over scalability.
+
+
+    Chapter 19: Architecture Decisions, [Fundamentals of Software Architecture](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/), Mark Richards & Neal Ford, defines some fundamental Laws of Software Architecture.
+
+
+
+## The What How Why Of Software Engineering
+
+!!! observation
+
+    As a software architect for most of my career, I've seen people (customers and technical people) struggle with the **what vs how**. 
+    
+    They will often specify the implementation details (the **how**), but not **what** they want and why.
+    
+    - Or they will specify what they know exists - not what they actually want.
+
+    I've seen this also in a security context e.g. 
+
+    - how: "I want to share a secret key with a trusted 3rd party"
+        - the wrong thing to do is start by describing secure ways to share keys (which some technical people will do regardless of their seniority)
+        - the right thing to do is ask "why, what are you trying to do? Can you give an example?", but often people don't ask.
+    - what: "I want to give read access to a trusted 3rd party to data on ____"
+        - This may not require sharing keys depending on the context. But even if it does require sharing keys, you can give advice appropriate to the use case.
+
+
+
+    !!! quote "Framing the "what""
+    
+        Think of me as a good plumber:
+
+        1. Ask for what you want, not what you think you can get. In other words, assume you can have anything you want, now what do you want?
+        2. You tell me what features you want. I'll take care of the plumbing details.
+
+
+### What How Why
+
+  - The **what** is captured in the **Software Requirements**.
+  - The **how** is captured in the **System Design**.
+  - The **why** for the **how** is captured in Decision Records covering the reasons and tradeoffs associated with the decisions. These decision can be at an Architecture or Design level.
+
+
+## Takeaways
+
+!!! tip
+
+    It is important to understand the **what** independent of the **how** (requirements vs design)
+
+    It is important to understand the **why** for the **how** (e.g. ADRs)
+    
+    Quality Attributes drive the architecture design (e.g. the )
+
+
 
 
 
