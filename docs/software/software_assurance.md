@@ -76,6 +76,8 @@ A continuous validation and veri­fication process. Validation ensures the requi
 Continuous Verification & Validation of Critical Software via DevSecOps, https://apps.dtic.mil/sti/pdfs/AD1187382.pdf
 </figure>
 
+ The easiest way is to say that verification is always against the requirements (technical terms) and validation is always against the real world or the user's needs
+https://en.wikipedia.org/wiki/V-model#Validation_vs._verification
 
 A continuous validation and veri­fication process. Validation ensures the requirements correctly capture the users’ and stakeholders’ expectations and should be performed whenever a translation of requirements from one domain to another occurs.
 
