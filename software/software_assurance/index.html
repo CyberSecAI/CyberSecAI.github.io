@@ -931,6 +931,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../introduction/" class="md-nav__link">
         
   
@@ -1009,17 +1030,17 @@
         <li class="md-nav__item">
   <a href="#validation-vs-verification" class="md-nav__link">
     <span class="md-ellipsis">
-      Validation Vs. Verification
+      Validation vs. Verification
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Validation Vs. Verification">
+    <nav class="md-nav" aria-label="Validation vs. Verification">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#continuous-validation-and-verification-process" class="md-nav__link">
     <span class="md-ellipsis">
-      Continuous Validation And Veri­fication Process
+      Continuous Validation And Verification Process
     </span>
   </a>
   
@@ -1068,6 +1089,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#quality-attributes-drive-the-architecture-design" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1083,11 +1109,6 @@
       Architecture Decision Records (ADR)
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1149,7 +1170,7 @@
         
   
   <span class="md-ellipsis">
-    Software Engineering Artifacts
+    Software Artifacts
   </span>
   
 
@@ -1592,17 +1613,17 @@
         <li class="md-nav__item">
   <a href="#validation-vs-verification" class="md-nav__link">
     <span class="md-ellipsis">
-      Validation Vs. Verification
+      Validation vs. Verification
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Validation Vs. Verification">
+    <nav class="md-nav" aria-label="Validation vs. Verification">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#continuous-validation-and-verification-process" class="md-nav__link">
     <span class="md-ellipsis">
-      Continuous Validation And Veri­fication Process
+      Continuous Validation And Verification Process
     </span>
   </a>
   
@@ -1651,6 +1672,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#quality-attributes-drive-the-architecture-design" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1666,11 +1692,6 @@
       Architecture Decision Records (ADR)
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1742,9 +1763,14 @@
 </ol>
 <p>It also covers the what, how, and why for the how, of Software Engineering.</p>
 </div>
-<h2 id="software-assurance_1">Software Assurance<a class="headerlink" href="#software-assurance_1" title="Permanent link">&para;</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
+<p>"Don't worry about that specification paperwork. We'd better hurry up and start coding, because we're going to have a whole lot of debugging to do."</p>
+<p>Verifying And Validating Software Requirements And Design Specifications, Barry Boehm, 1984</p>
+</div>
+<h2 id="software-assurance_1">Software Assurance<a class="headerlink" href="#software-assurance_1" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Software assurance aims to ensure the reliability, safety, and security of software products.</p>
 <p>Software assurance (SwA) is a critical process in software development that ensures the reliability, safety, and security of software products.</p>
 <p>There are several types of software assurance initiatives, including:</p>
 <ul>
@@ -1756,10 +1782,10 @@
 <p>Software assurance is executed through a series of activities that aim to ensure the reliability, safety, and security of software products. These activities include requirements analysis, design reviews, code inspections, testing, and formal verification.</p>
 <p><a href="https://en.wikipedia.org/wiki/Software_assurance">https://en.wikipedia.org/wiki/Software_assurance</a></p>
 </div>
-<h2 id="validation-vs-verification">Validation Vs. Verification<a class="headerlink" href="#validation-vs-verification" title="Permanent link">&para;</a></h2>
+<h2 id="validation-vs-verification">Validation vs. Verification<a class="headerlink" href="#validation-vs-verification" title="Permanent link">&para;</a></h2>
 <div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p><strong>The basic objectives in verification and validation (V&amp;V) of software requirements and design specifications are to identify and resolve software problems and high-risk issues early in the software life-cycle.</strong></p>
+<p class="admonition-title">verification and validation to resolve issues early in the software life cycle</p>
+<p><strong>The basic objectives in verification and validation (V&amp;V) of software requirements and design specifications are to identify and resolve software problems and high-risk issues early in the software life cycle.</strong></p>
 <p><strong>Verification</strong> - to establish the truth of the correspondence between a software product and its specification. </p>
 <ul>
 <li>"Are you building it right?" </li>
@@ -1770,13 +1796,10 @@
 <p>"Are you building the right thing?"</p>
 </li>
 <li>
-<p>verification activities begin in the Product Design phase and conclude with the acceptance
-Test. They do not lead to changes in the requirements baseline; only to changes in the
-refinements descending from it.</p>
+<p>Verification activities begin in the Product Design phase and conclude with the acceptance test. They do not lead to changes in the requirements baseline; only to changes in the refinements descending from it.</p>
 </li>
 <li>
-<p>On the other hand, validation identifies problems which must be resolved by a change of the
-requirements specification. Thus, there are validation activities which occur throughout the software life-cycle, including the development phase. </p>
+<p>On the other hand, validation identifies problems which must be resolved by a change of the requirements specification. Thus, there are validation activities which occur throughout the software life cycle, including the development phase. </p>
 <ul>
 <li>For example, a simulation of the product design may establish not only that the design cannot meet the baseline performance requirements (verification), but also that the performance requirements are too stringent for any cost-effective product designs, and therefore need to be changed (validation).</li>
 </ul>
@@ -1791,10 +1814,10 @@ requirements specification. Thus, there are validation activities which occur th
 </ul>
 <p>Guidelines For Verifying And Validating Software Requirements And Design Specifications, Barry W. Boehm</p>
 </div>
-<h3 id="continuous-validation-and-verification-process">Continuous Validation And Veri­fication Process<a class="headerlink" href="#continuous-validation-and-verification-process" title="Permanent link">&para;</a></h3>
+<h3 id="continuous-validation-and-verification-process">Continuous Validation And Verification Process<a class="headerlink" href="#continuous-validation-and-verification-process" title="Permanent link">&para;</a></h3>
 <figure>
 <p><img alt="" src="../../assets/images/fig1big.webp.png" />
-A continuous validation and veri­fication process. Validation ensures the requirements correctly capture the users’ and stakeholders’ expectations and should be performed whenever a translation of requirements from one domain to another occurs. <a href="https://www.infoq.com/articles/ieee-verification-and-validation-for-software-systems/">https://www.infoq.com/articles/ieee-verification-and-validation-for-software-systems/</a></p>
+A continuous validation and verification process. Validation ensures the requirements correctly capture the users' and stakeholders' expectations and should be performed whenever a translation of requirements from one domain to another occurs. <a href="https://www.infoq.com/articles/ieee-verification-and-validation-for-software-systems/">https://www.infoq.com/articles/ieee-verification-and-validation-for-software-systems/</a></p>
 </figure>
 <p>The <strong>key artifact that distinguishes verification activities from validation activities is the software requirements</strong> specification.</p>
 <ul>
@@ -1815,22 +1838,28 @@ Continuous Verification &amp; Validation of Critical Software via DevSecOps, <a 
 <h4 id="first-law-of-software-architecture">First Law of Software Architecture<a class="headerlink" href="#first-law-of-software-architecture" title="Permanent link">&para;</a></h4>
 <p><strong>"Everything in software architecture is a trade-off."</strong></p>
 <ul>
-<li>Corollary 1:  If an architect thinks they have discovered something that isn’t a trade-off, more likely they just haven’t identified the trade-off yet.</li>
+<li>Corollary 1: If an architect thinks they have discovered something that isn't a trade-off, more likely they just haven't identified the trade-off yet.</li>
 </ul>
 <h4 id="second-law-of-software-architecture">Second Law of Software Architecture<a class="headerlink" href="#second-law-of-software-architecture" title="Permanent link">&para;</a></h4>
 <p><strong>"Why is more important than how."</strong></p>
-<h4 id="quality-attributes-drive-the-architecture-design">Quality Attributes Drive The Architecture Design<a class="headerlink" href="#quality-attributes-drive-the-architecture-design" title="Permanent link">&para;</a></h4>
+<h3 id="quality-attributes-drive-the-architecture-design">Quality Attributes Drive The Architecture Design<a class="headerlink" href="#quality-attributes-drive-the-architecture-design" title="Permanent link">&para;</a></h3>
 <div class="admonition quote">
-<p class="admonition-title">Quote</p>
+<p class="admonition-title">Quality Attributes drive the architecture design</p>
 <p>Requirements for a software system fall into the following two categories: </p>
-<p>1. Functional requirements: These requirements describe the business capabilities that the system must provide, as well as its behavior at run-time. </p>
-<p>2. Non-functional requirements: These requirements describe the “<a href="https://en.wikipedia.org/wiki/ISO/IEC_9126">Quality Attributes</a>” that the system must meet in delivering functional requirements.</p>
+<ol>
+<li>
+<p>Functional requirements: These requirements describe the business capabilities that the system must provide, as well as its behavior at run-time. </p>
+</li>
+<li>
+<p>Non-functional requirements: These requirements describe the "<a href="https://en.wikipedia.org/wiki/ISO/IEC_9126">Quality Attributes</a>" that the system must meet in delivering functional requirements.</p>
+</li>
+</ol>
 <p><strong>Quality Attributes drive the architecture design.</strong></p>
 <p><a href="https://www.oreilly.com/library/view/continuous-architecture/9780128032855/">Continuous Architecture: Sustainable Architecture in an Agile and Cloud-Centric World</a></p>
 </div>
-<h4 id="architecture-decision-records-adr">Architecture Decision Records (ADR)<a class="headerlink" href="#architecture-decision-records-adr" title="Permanent link">&para;</a></h4>
+<h3 id="architecture-decision-records-adr">Architecture Decision Records (ADR)<a class="headerlink" href="#architecture-decision-records-adr" title="Permanent link">&para;</a></h3>
 <div class="admonition quote">
-<p class="admonition-title">Quote</p>
+<p class="admonition-title">ADRs as a Decision Log</p>
 <p>An ADR can help you understand the reasons for a chosen architectural decision, along with its trade-offs and consequences. The collection of ADRs created and maintained in a project constitute its decision log.
 <a href="https://adr.github.io/">https://adr.github.io/</a></p>
 </div>
@@ -1840,19 +1869,19 @@ Continuous Verification &amp; Validation of Critical Software via DevSecOps, <a 
 <li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html">Amazon AWS ADR Prescriptive Guidance</a></li>
 <li><a href="https://cloud.google.com/architecture/architecture-decision-records">Google GCP Architecture</a></li>
 </ul>
-<div class="admonition quote adrs as documentation">
-<p class="admonition-title">Quote</p>
-<p>Architecture Decision Records can be used an an effective means to document a software architecture. </p>
+<div class="admonition quote">
+<p class="admonition-title">ADRs as Documentation</p>
+<p>Architecture Decision Records can be used as an effective means to document a software architecture. </p>
 <ul>
 <li>The Context section of an ADR provides an excellent opportunity to describe the specific area of the system that requires an architecture decision to be made. This section also provides an opportunity to describe the alternatives. </li>
 <li>Perhaps more important is that the Decision section describes the reasons why a particular decision is made, which is by far the best form of architecture documentation. </li>
 <li>The Consequences section adds the final piece to the architecture documentation by describing additional aspects of a particular decision, such as the trade-off analysis of choosing performance over scalability.</li>
 </ul>
-<p>Chapter 19: Architecture Decisions, <a href="https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/">Fundamentals of Software Architecture</a>, Mark Richards &amp; Neal Ford, defines some fundamental Laws of Software Architecture.</p>
+<p>Chapter 19: Architecture Decisions, <a href="https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/">Fundamentals of Software Architecture</a>, Mark Richards &amp; Neal Ford</p>
 </div>
 <h2 id="the-what-how-why-of-software-engineering">The What How Why Of Software Engineering<a class="headerlink" href="#the-what-how-why-of-software-engineering" title="Permanent link">&para;</a></h2>
 <div class="admonition observation">
-<p class="admonition-title">Observation</p>
+<p class="admonition-title">People often struggle with what vs how</p>
 <p>As a software architect for most of my career, I've seen people (customers and technical people) struggle with the <strong>what vs how</strong>. </p>
 <p>They will often specify the implementation details (the <strong>how</strong>), but not <strong>what</strong> they want and why.</p>
 <ul>
@@ -1861,12 +1890,12 @@ Continuous Verification &amp; Validation of Critical Software via DevSecOps, <a 
 <p>I've seen this also in a security context e.g. </p>
 <ul>
 <li>how: "I want to share a secret key with a trusted 3rd party"<ul>
-<li>the wrong thing to do is start by describing secure ways to share keys (which some technical people will do regardless of their seniority)</li>
-<li>the right thing to do is ask "why, what are you trying to do? Can you give an example?", but often people don't ask.</li>
+<li>The wrong thing to do is start by describing secure ways to share keys (which some technical people will do regardless of their seniority)</li>
+<li>The right thing to do is ask "why, what are you trying to do? Can you give an example?", but often people don't ask.</li>
 </ul>
 </li>
-<li>what: "I want to give read access to a trusted 3rd party to data on ____"<ul>
-<li>This may not require sharing keys depending on the context. But even if it does require sharing keys, you can give advice appropriate to the use case.</li>
+<li>what: "I want to give read access to a trusted 3rd party to data on <em>somewhere</em> so they can do <em>something</em>"<ul>
+<li>This may not require sharing keys depending on the context. But even if it does require sharing keys, you can give advice appropriate to the use case and context.</li>
 </ul>
 </li>
 </ul>
@@ -1883,14 +1912,17 @@ Continuous Verification &amp; Validation of Critical Software via DevSecOps, <a 
 <ul>
 <li>The <strong>what</strong> is captured in the <strong>Software Requirements</strong>.</li>
 <li>The <strong>how</strong> is captured in the <strong>System Design</strong>.</li>
-<li>The <strong>why</strong> for the <strong>how</strong> is captured in Decision Records covering the reasons and tradeoffs associated with the decisions. These decision can be at an Architecture or Design level.</li>
+<li>The <strong>why</strong> for the <strong>how</strong> is captured in Decision Records covering the reasons and tradeoffs associated with the decisions. These decisions can be at an Architecture or Design level.</li>
 </ul>
 <h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>It is important to understand the <strong>what</strong> independent of the <strong>how</strong> (requirements vs design)</p>
-<p>It is important to understand the <strong>why</strong> for the <strong>how</strong> (e.g. ADRs)</p>
-<p>Quality Attributes drive the architecture design</p>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<p>The key artifact that distinguishes verification activities from validation activities is the software requirements.</p>
+<p>It is important to understand the <strong>what</strong> independent of the <strong>how</strong> (requirements vs design).</p>
+<p>It is important to understand the <strong>why</strong> for the <strong>how</strong> (e.g. ADRs) aka </p>
+<p>"Why is more important than how."</p>
+<p>Everything in software architecture is a trade-off.</p>
+<p>Quality Attributes drive the architecture design.</p>
 </div>
 
 
@@ -1940,13 +1972,13 @@ Continuous Verification &amp; Validation of Critical Software via DevSecOps, <a 
         
         
           
-          <a href="../software_artifacts/" class="md-footer__link md-footer__link--next" aria-label="Next: Software Engineering Artifacts">
+          <a href="../software_artifacts/" class="md-footer__link md-footer__link--next" aria-label="Next: Software Artifacts">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Software Engineering Artifacts
+                Software Artifacts
               </div>
             </div>
             <div class="md-footer__button md-icon">
