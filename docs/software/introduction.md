@@ -298,6 +298,12 @@ While professional software engineering requires rigorous practices, AI has also
 
 Though Karpathy notes this isn't traditional software engineering and has limitations, vibe coding serves an important role in enabling rapid prototyping and proof-of-concepts for both experienced developers and newcomers to programming.
 
+!!! quote
+    
+    “Don’t worry about that specification paperwork. We’d better hurry up and start coding, because we’re going to have a whole lot of debugging to do.”
+
+    Barry Boehm, 1984, verifying and Validating software Requirements and design Specifications
+
 
 ## AI Across the Development Lifecycle
 

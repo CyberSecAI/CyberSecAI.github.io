@@ -12,6 +12,14 @@
 
     It also covers the what, how, and why for the how, of Software Engineering.
 
+
+!!! quote
+    
+    “Don’t worry about that specification paperwork. We’d better hurry up and start coding, because we’re going to have a whole lot of debugging to do.”
+
+    Verifying And Validating Software Requirements And Design Specifications, Barry Boehm, 1984
+
+
 ## Software Assurance
 
 !!! quote
@@ -172,8 +180,8 @@ ADRs are common e.g.
     - how: "I want to share a secret key with a trusted 3rd party"
         - the wrong thing to do is start by describing secure ways to share keys (which some technical people will do regardless of their seniority)
         - the right thing to do is ask "why, what are you trying to do? Can you give an example?", but often people don't ask.
-    - what: "I want to give read access to a trusted 3rd party to data on ____"
-        - This may not require sharing keys depending on the context. But even if it does require sharing keys, you can give advice appropriate to the use case.
+    - what: "I want to give read access to a trusted 3rd party to data on *somewhere* so they can do  *something*"
+        - This may not require sharing keys depending on the context. But even if it does require sharing keys, you can give advice appropriate to the use case and context.
 
 
 
@@ -196,11 +204,17 @@ ADRs are common e.g.
 
 !!! tip
 
-    It is important to understand the **what** independent of the **how** (requirements vs design)
+    The key artifact that distinguishes verification activities from validation activities is the software requirements.
 
-    It is important to understand the **why** for the **how** (e.g. ADRs)
+    It is important to understand the **what** independent of the **how** (requirements vs design).
+
+    It is important to understand the **why** for the **how** (e.g. ADRs) aka 
     
-    Quality Attributes drive the architecture design
+    "Why is more important than how."
+
+    Everything in software architecture is a trade-off.
+
+    Quality Attributes drive the architecture design.
 
 
 
