@@ -72,6 +72,12 @@ The comparison spans from Level 1 (basic autocomplete) through Level 4 (autonomo
 
 A curated collection of benchmarks and evaluation metrics for Large Language Models (LLMs) specifically focused on coding capabilities. These leaderboards provide objective measures for comparing the performance of different AI models in software development tasks.
 
+
+**Key Takeaways:**
+
+- Leaderboards are a good way to quantitatively and objectively compare solutions.
+- Comparison across multiple metrics and leaderboards avoids solutions that overfit to a benchmark.
+
 ---
 
 ## Takeaways

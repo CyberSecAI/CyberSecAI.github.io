@@ -17,3 +17,13 @@
 | [Copilot Arena](https://github.com/lmarena/copilot-arena)             | Coding Assistant          | Paired autocomplete & inline-editing comparisons                                                   | ELO-style rankings from user votes                         |
 | [SWE-bench](https://www.swebench.com/)                                | Autonomous Agent          | 2,294 real-world “Fail-to-Pass” GitHub issues from 12 Python repos                                 | % of issues resolved                                       |
 | [HAL (Holistic Agent Leaderboard)](https://hal.cs.princeton.edu/)     | Autonomous Agent          | 13 benchmarks (e.g., SWE-bench Verified, USACO, Cybench, TAU-bench) across many domains            | Cost-controlled evaluations; success rates; Pareto fronts  |
+
+
+
+## Takeaways
+  
+!!! success "Key Takeaways"
+
+    Leaderboards are a good way to quantitatively and objectively compare solutions.
+
+    Comparison across multiple metrics and leaderboards avoids solutions that overfit to a benchmark.
