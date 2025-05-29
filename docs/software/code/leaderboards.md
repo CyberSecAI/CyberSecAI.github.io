@@ -17,8 +17,7 @@
 | [Copilot Arena](https://github.com/lmarena/copilot-arena)             | Coding Assistant          | Paired autocomplete & inline-editing comparisons                                                   | ELO-style rankings from user votes                         |
 | [SWE-bench](https://www.swebench.com/)                                | Autonomous Agent          | 2,294 real-world “Fail-to-Pass” GitHub issues from 12 Python repos                                 | % of issues resolved                                       |
 | [HAL (Holistic Agent Leaderboard)](https://hal.cs.princeton.edu/)     | Autonomous Agent          | 13 benchmarks (e.g., SWE-bench Verified, USACO, Cybench, TAU-bench) across many domains            | Cost-controlled evaluations; success rates; Pareto fronts  |
-
-
+| [TBench](https://www.tbench.ai/)                                      | Autonomous Agent          | Terminal-based complex tasks in realistic environments                                             | Task success rate; command accuracy; time-to-completion    |
 
 ## Takeaways
   

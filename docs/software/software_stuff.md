@@ -4,6 +4,9 @@ https://en.wikipedia.org/wiki/V-model#Validation_vs._verification
 
 https://www.parasoft.com/blog/verification-vs-validation-in-embedded-software/
 
+docs/assets/images/sast_forrestor.png
+https://reprint.forrester.com/reports/the-static-application-security-testing-solutions-landscape-q2-2025-5effe9ec/index.html
+
 ## From Shift-Left Testing to Earlier Lag Indicators
 
 !!! quote
