@@ -29,9 +29,10 @@ nav:
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
   - Software Engineering:
+    - Overview: software/overview.md  
     - Software Engineering: software/introduction.md
     - Software Assurance: software/software_assurance.md
-    - Software Engineering Artifacts: software/software_artifacts.md
+    - Software Artifacts: software/software_artifacts.md
     - Code Assistant vs. Autonomous Coding Agents: software/code/code_assistant_agents.md
     - Leaderboards: software/code/leaderboards.md
   - CyberSecurity Models:

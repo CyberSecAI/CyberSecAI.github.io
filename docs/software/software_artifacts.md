@@ -2,7 +2,7 @@
 
 !!! abstract "Overview"
 
-    This section builds on [How AI is Changing Software Engineering](./introduction.md) to focus on the Software Engineering artifacts, which are becoming the core deliverable, the **active contracts** that guide code generation and system behavior. 
+    This section builds on [How AI is Changing Software Engineering](./introduction.md) and [Software Assurance](./software_assurance.md) to focus on the Software Engineering artifacts, which are becoming the core deliverable, the **active contracts** that guide code generation and system behavior. 
 
 ## Artifacts
 
