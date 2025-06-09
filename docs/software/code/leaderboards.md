@@ -15,10 +15,10 @@
 | [TabbyML Coding LLMs Leaderboard](https://leaderboard.tabbyml.com/)  | Coding Assistant          | Amazon CCEval next-line tasks in Python, JS, Go…                                                   | Next-line accuracy (exact-match of very next line)         |
 | [MHPP Leaderboard](https://sparksofagi.github.io/MHPP/)               | Coding Assistant          | 210 “Mostly Hard” multi-step Python problems                                                       | pass@1 (greedy); sampling (T=0.7, 100 runs)                |
 | [Copilot Arena](https://github.com/lmarena/copilot-arena)             | Coding Assistant          | Paired autocomplete & inline-editing comparisons                                                   | ELO-style rankings from user votes                         |
+| [WebDev Arena Leaderboard](https://web.lmarena.ai/leaderboard)        | Coding Assistant          | Real-time web development challenges between models                                                | Win rate; task completion; user voting                     |
 | [SWE-bench](https://www.swebench.com/)                                | Autonomous Agent          | 2,294 real-world “Fail-to-Pass” GitHub issues from 12 Python repos                                 | % of issues resolved                                       |
 | [HAL (Holistic Agent Leaderboard)](https://hal.cs.princeton.edu/)     | Autonomous Agent          | 13 benchmarks (e.g., SWE-bench Verified, USACO, Cybench, TAU-bench) across many domains            | Cost-controlled evaluations; success rates; Pareto fronts  |
-
-
+| [TBench](https://www.tbench.ai/)                                      | Autonomous Agent          | Terminal-based complex tasks in realistic environments                                             | Task success rate; command accuracy; time-to-completion    |
 
 ## Takeaways
   

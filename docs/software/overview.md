@@ -51,7 +51,7 @@ As AI transforms development workflows, these artifacts become the core delivera
 4. **Automate Validation** - Ensure AI outputs meet specification requirements
 5. **Maintain Traceability** - Link generated code back to originating specifications
 
-## 4. [AI Coding Tools](software/code/code_assistant_agents.md)
+## 4. [AI Coding Tools](./code/code_assistant_agents.md)
 
 A comprehensive analysis of AI-powered development tools, categorized by autonomy levels from basic code completion to autonomous feature development. This classification helps developers understand the capabilities and limitations of different tools.
 
@@ -68,7 +68,7 @@ The comparison spans from Level 1 (basic autocomplete) through Level 4 (autonomo
 
     See also [Feature Comparison and Analysis of Leading AI IDEs: Cursor, Windsurf, Roo Code, and GitHub Copilot, May 27, 2025](../../assets/docs/IDEs_Feature_Comparison.pdf).
 
-## 5. [Leaderboards](software/code/leaderboards.md)
+## 5. [Leaderboards](./code/leaderboards.md)
 
 A curated collection of benchmarks and evaluation metrics for Large Language Models (LLMs) specifically focused on coding capabilities. These leaderboards provide objective measures for comparing the performance of different AI models in software development tasks.
 
