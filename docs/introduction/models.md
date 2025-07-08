@@ -112,7 +112,7 @@ Code-focused models are specifically trained on large datasets of code from vari
     
     Code Generation is a small part of [Software Engineering](../software/introduction.md).
 
-    Different model types are suitable for different [Software Engineering Artifacts](../software/introduction.md#software-engineering-artifacts)
+    Different model types are suitable for different [Software Engineering Artifacts](../software/software_artifacts.md)
 
     
 
