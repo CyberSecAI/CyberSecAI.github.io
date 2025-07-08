@@ -10,6 +10,14 @@
     
     [Andrej Karpathy](https://en.wikipedia.org/wiki/Andrej_Karpathy) quotes are used throughout as a consistent commentary from someone who has been formative in this space.
 
+Software engineering 
+
+!!! quote
+
+    Software engineering is a branch of both computer science and engineering focused on **designing, developing, testing, and maintaining software applications**. It involves applying engineering principles and computer programming expertise to develop software systems that meet user needs.
+
+    https://en.wikipedia.org/wiki/Software_engineering
+
 ## Evolution of Software Engineering as Communication over Code
 
 Effective software development depends fundamentally on clear communication between all stakeholders—from business experts to developers to end users. The evolution from rigid, document-heavy approaches to collaborative, feedback-driven methodologies illustrates how the industry has learned to prioritize human communication over process documentation.
