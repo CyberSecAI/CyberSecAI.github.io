@@ -69,6 +69,7 @@
 5. Everything you ever wanted to know about LLMOps Maturity Models, Alex Strick van Linschoten
 Nov 26, 2024 https://www.zenml.io/blog/everything-you-ever-wanted-to-know-about-llmops-maturity-models
 1. A comprehensive collection of over 300 real-world generative AI implementations that showcases how organizations are successfully deploying LLMs in production https://www.zenml.io/blog/demystifying-llmops-a-practical-database-of-real-world-generative-ai-implementations
+2. [Stanford Webinar - Agentic AI: A Progression of Language Model Usage](https://www.youtube.com/watch?v=kJLiOGle3Lw) and a [list of 40 takeaways](https://www.linkedin.com/posts/maryammiradi_the-1-hour-stanford-agentic-ai-webinar-is-activity-7340100313997012994-Ax4B) 
 
 
 ## References

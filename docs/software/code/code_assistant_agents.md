@@ -25,6 +25,9 @@
     - For shared understanding among stakeholders
     - As we move [From Code-Centric to Contract-Centric Development](../introduction.md#from-code-centric-to-contract-centric-development)
 
+    !!! quote
+
+        "There's a good chance that, by the end of the year, people aren't using IDEs anymore", [Mastering Claude Code in 30 minutes](https://youtu.be/6eBSHbLKuN0?t=1586), Anthropic, 22 May 2025
 
 ## **Autonomy Levels for AI Coding Tools**
 

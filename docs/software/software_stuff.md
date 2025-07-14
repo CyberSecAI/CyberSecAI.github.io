@@ -2,6 +2,16 @@
 
 
 
+[AI Engineer World's Fair 2025 ](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0W3ORTR-Cr4Ppw6UrN8kfMh) has some talks that 
+
+
+
+ Sean Grove, OpenAI, July 2025 discuuses [The New Code](https://youtu.be/8rABwKRsec4?si=bVyUlwN6XsRnvzkp) where specifications, not traditional code, are the primary valuable artifact for aligning human and AI intent.
+ - Future IDEs might function as "integrated thought clarifiers," helping to surface and resolve ambiguities in specifications.
+ - Moving from disparate machine encodings to a unified human encoding (specifications) will simplify how we solve problems.
+
+https://youtu.be/8rABwKRsec4?t=885
+
 ## New Tech
 
 <figure markdown>
@@ -15,6 +25,10 @@ For effective GenAI strategy, organizations must simultaneously:
 Address immediate needs by applying AI to current processes
 Anticipate and design for entirely new operational paradigms that will emerge
 This dual focus ensures solutions remain relevant not just for today's challenges, but for the transformed landscape that GenAI will ultimately create.
+
+
+https://www.reforge.com/blog/the-coder-framework
+
 
 
 trast with validation."
