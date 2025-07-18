@@ -28,6 +28,8 @@ icon: material/play-box-edit-outline
 
 Having reviewed and played with some of the [SWE agents](swe_agents_report.md), the BMAD-Method was closest to my views on Software 1.0 Redux, so this is used here.
 
+> TODO: BMAD method breaks down requirements into epics and stories, enabling Claude Code to generate structured code and docs with little human intervention.
+
 There's 2 [BMad Workflows](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow):
 
 - [The Planning Workflow](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow) 
@@ -48,6 +50,13 @@ There's 2 [BMad Workflows](https://github.com/bmadcode/BMAD-METHOD/blob/main/doc
     !!! quote "Key Planning Phases"
 
         When to move to the IDE: Once you have your PRD, Architecture, optional UX and Briefs - its time to switch over to the IDE to shard your docs, and start implementing the actual code! 
+
+### UI Designer 
+https://www.youtube.com/watch?v=TyGx277x9hQ
+
+### Restrospectives
+
+https://www.youtube.com/watch?v=ai_sSQH1Pn4&t=478s
 
 
 
@@ -73,35 +82,30 @@ In the exploratory part of the project at the start I had some [existing documen
 
 Here we build the [Upstream Software Engineering Artifacts](./software_artifacts.md).
 
-Specifically the artifacts [here](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation):
+Specifically these are the [built artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation).
 
-1. Executive summary and problem statement defining the project vision and user personas
-2. Detailed functional and non-functional requirements with user stories
-3. User interface and user experience design specifications
-4. Complete technical architecture and system design
-5. Final product owner review and approval
 
 ### Setup
 
 The [BMAD-METHOD](./swe_agents_report.md) is used.
 
-Specifically, the [Fastest Start: Web UI Full Stack Team at your disposal](https://github.com/bmadcode/BMAD-METHOD?tab=readme-ov-file#fastest-start-web-ui-full-stack-team-at-your-disposal-2-minutes) where you create a Gemini GEM with a [BMAD-provided text file](https://github.com/bmadcode/BMAD-METHOD/blob/main/dist/teams/team-fullstack.txt).
+Specifically, the [Fastest Start: Web UI Full Stack Team at your disposal](https://github.com/bmadcode/BMAD-METHOD?tab=readme-ov-file#fastest-start-web-ui-full-stack-team-at-your-disposal-2-minutes) part where you create a Gemini GEM with a [BMAD-provided text file](https://github.com/bmadcode/BMAD-METHOD/blob/main/dist/teams/team-fullstack.txt).
 
-- All these documents are created via a browser interface (Gemini GEM) - the process is IDE independent!
+- All these documents are created via a browser interface (Gemini GEM) so the process is IDE-independent!
 - Gemini's long-context window allows it to keep the various documents produced in context so it can make consistent changes across them all.
-- 
 
 !!! Success
 
-    I was impressed how well this setup worked 
-        - following a logical workflow and prompting for choices or input at each stage (and not getting lost)
-        - allowing me to refine the content or ask questions across all the documents as required e.g. if I suggested a change that impacted multiple documents then this was detected by Gemini and the updates made. This ensured consistency across the artefacts.
+    I was impressed how well this setup worked! 
+
+    - following a logical workflow and prompting for choices or input at each stage (and not getting lost)
+    - allowing me to request Gemini Gem to output a document at any time (so I could review and version control it before changes)
+    - allowing me to refine the content or ask questions across all the documents as required e.g. if I suggested a change that impacted multiple documents then this was detected by Gemini and the updates made. This ensured consistency across the artefacts.
+  
+
+### Example Interactions with BMAD Gemini Gem
 
 
-<figure markdown>
-![](../assets/images/bmad_choose.png)
-Prompt 
-</figure>
 
 <figure markdown>
 ![](../assets/images/bmad1.png)
@@ -127,15 +131,20 @@ Prompt
 </figure>
 <figure markdown>
 ![](../assets/images/bmad11.png)
+Some choices / decisions were delibertate postponed e.g. data exchange formats and schemas per [Principle #3 - Assume variability; preserve options](https://framework.scaledagile.com/assume-variability-preserve-options/). This results in a PARTIAL Status at this point.
 </figure>
+
+
 <figure markdown>
 ![](../assets/images/bmad12.png)
 </figure>
 <figure markdown>
 ![](../assets/images/bmad13.png)
 </figure>
+<figure markdown>
+![](../assets/images/bmad_choose.png)
+Prompt to choose how to proceed. Or interact in general via the Prompt.
+</figure>
 
 
 
-
-## Restrospectives
