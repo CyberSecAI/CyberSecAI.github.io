@@ -1,16 +1,16 @@
-# Software Engineering Reimagined
-
 
 
 [AI Engineer World's Fair 2025 ](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0W3ORTR-Cr4Ppw6UrN8kfMh) has some talks that 
 
-
+https://www.youtube.com/watch?v=fD8NLPU0WYU  Agile Coding Is HERE… 90% AI Coding Is Already Done With This
 
  Sean Grove, OpenAI, July 2025 discuuses [The New Code](https://youtu.be/8rABwKRsec4?si=bVyUlwN6XsRnvzkp) where specifications, not traditional code, are the primary valuable artifact for aligning human and AI intent.
  - Future IDEs might function as "integrated thought clarifiers," helping to surface and resolve ambiguities in specifications.
  - Moving from disparate machine encodings to a unified human encoding (specifications) will simplify how we solve problems.
 
 https://youtu.be/8rABwKRsec4?t=885
+
+https://forum.cursor.com/t/bmad-method-v2-in-an-evolution-imo-the-power-of-custom-agents-smaller-docs-and-checklists/87218
 
 ## New Tech
 
@@ -19,12 +19,7 @@ https://youtu.be/8rABwKRsec4?t=885
 
 </figure>
 
-In the early stages of GenAI implementation, organizations tend to "shoehorn" these advanced capabilities into existing workflows and processes. They essentially use powerful new tools to perform the same tasks slightly more efficiently, without fundamentally reimagining what's possible.
-However, the true transformative potential of generative AI emerges when we recognize that it won't simply augment our current operational models—it will radically reshape them. The "way of doing things" inevitably undergoes profound change as the technology matures and its implications become more apparent.
-For effective GenAI strategy, organizations must simultaneously:
-Address immediate needs by applying AI to current processes
-Anticipate and design for entirely new operational paradigms that will emerge
-This dual focus ensures solutions remain relevant not just for today's challenges, but for the transformed landscape that GenAI will ultimately create.
+
 
 
 https://www.reforge.com/blog/the-coder-framework
@@ -81,4 +76,3 @@ Remediation ROI
 
 
 Shift Left Security Testing is a DevSecOps practice that integrates security testing and processes early in the Software Development Life Cycle (SDLC). 
-
