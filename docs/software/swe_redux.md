@@ -87,6 +87,31 @@ There are UI tools built on GIT worktrees to support this.
 
 #### Security
 
+!!! quote
+
+    Effective threat modeling examines data flows, trust boundaries, and potential attack vectors to create a comprehensive security strategy tailored to the specific system.
+
+    In a shift-left approach to security, threat modeling serves as a critical early intervention. By implementing **threat modeling during the design phase—before a single line of code is written**—organizations can identify and address potential vulnerabilities at their inception point. 
+
+    AWS [Accelerate threat modeling with generative AI](https://aws.amazon.com/blogs/machine-learning/accelerate-threat-modeling-with-generative-ai/), JUN 2025 
+
+
+##### Open Source Tools
+
+
+
+
+Per [ref](https://xvnpw.github.io/posts/scaling-threat-modeling-with-ai/), the main artifacts associated with security analysis are:
+🔒 Security Design Documentation: Generating detailed security design review.
+🎯 Threat Modeling: Performing threat modeling analysis.
+🔍 Attack Surface Analysis: Identifying potential entry points and vulnerabilities in the project’s attack surface.
+🌳 Attack Tree Analysis: Visualizing potential attack vectors and their hierarchies through attack tree.
+
+7. https://github.com/scragz/kornelius/tree/main 
+9. https://github.com/awslabs/threat-composer#readme
+10. https://aws.amazon.com/blogs/machine-learning/accelerate-threat-modeling-with-generative-ai/
+https://github.com/awslabs/threat-designer/tree/main?tab=readme-ov-file#prerequisites
+
 ##### Security Analysis
 https://github.com/xvnpw/ai-security-analyzer/blob/dabfc57b6e5da9d99b3df5229fd496a224dac862/ai_security_analyzer/prompts.py
 
@@ -203,3 +228,6 @@ https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_threat_s
 6. https://www.reddit.com/r/vibecoding/comments/1l5o93n/lets_talk_about_security/
 7. https://github.com/scragz/kornelius/tree/main 
 8. https://xvnpw.github.io/posts/scaling-threat-modeling-with-ai/
+9. https://github.com/awslabs/threat-composer#readme
+10. https://aws.amazon.com/blogs/machine-learning/accelerate-threat-modeling-with-generative-ai/
+https://github.com/awslabs/threat-designer/tree/main?tab=readme-ov-file#prerequisites
