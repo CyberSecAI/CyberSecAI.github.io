@@ -24,39 +24,79 @@ icon: material/play-box-edit-outline
 
     This section is hands on walk through of Software Engineering for a Greenfield application using GenAI.
 
-## Introduction
+## BMad Workflows
 
 Having reviewed and played with some of the [SWE agents](swe_agents_report.md), the BMAD-Method was closest to my views on Software 1.0 Redux, so this is used here.
 
-> TODO: BMAD method breaks down requirements into epics and stories, enabling Claude Code to generate structured code and docs with little human intervention.
+There's 2 [BMad Workflows](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow).
 
-There's 2 [BMad Workflows](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow):
-
-- [The Planning Workflow](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow) 
+### [The Planning Workflow](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow) 
    
-    !!! quote "Key Planning Phases"
+!!! quote "Key Planning Phases"
 
-        - Optional Analysis: Analyst conducts market research and competitive analysis
-        - Project Brief: Foundation document created by Analyst or user
-        - PRD Creation: PM transforms brief into comprehensive product requirements
-        - Architecture Design: Architect creates technical foundation based on PRD
-        - Validation & Alignment: PO ensures all documents are consistent and complete
-        - Refinement: Updates to epics, stories, and documents as needed
-        - Environment Transition: Critical switch from web UI to IDE for development workflow
-        - Document Preparation: PO shards large documents for development consumption
-        
-- [The Core Development Cycle](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#52-the-core-development-cycle)
+    - Optional Analysis: Analyst conducts market research and competitive analysis
+    - Project Brief: Foundation document created by Analyst or user
+    - PRD Creation: PM transforms brief into comprehensive product requirements
+    - Architecture Design: Architect creates technical foundation based on PRD
+    - Validation & Alignment: PO ensures all documents are consistent and complete
+    - Refinement: Updates to epics, stories, and documents as needed
+    - Environment Transition: Critical switch from web UI to IDE for development workflow
+    - Document Preparation: PO shards large documents for development consumption
 
-    !!! quote "Key Planning Phases"
+!!! note
 
-        When to move to the IDE: Once you have your PRD, Architecture, optional UX and Briefs - its time to switch over to the IDE to shard your docs, and start implementing the actual code! 
+    The created documents do include checks on these items, but a more detailed focused analysis can also be with these documents done before "The Core Development Cycle".
 
-### UI Designer 
+    - Security & Compliance 
+    - Accessibility Implementation
+
+
+
+    
+
+### [The Core Development Cycle](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#52-the-core-development-cycle)
+
+!!! quote "Key Planning Phases"
+
+    When to move to the IDE: Once you have your PRD, Architecture, optional UX and Briefs - its time to switch over to the IDE to shard your docs, and start implementing the actual code! 
+
+BMAD method breaks down the requirements and other upstream artifacts into epics and stories, enabling Claude Code to generate structured code and docs with little human intervention ([Level 4 Autonomy](./code/code_assistant_agents.md#autonomy-levels-for-ai-coding-tools)).
+
+
+### Other Claude Code Workflows
+
+There are other Claude Code workflows, some example are given here.
+
+##### UI Designer 
 https://www.youtube.com/watch?v=TyGx277x9hQ
 
-### Restrospectives
+##### Restrospectives 
 
 https://www.youtube.com/watch?v=ai_sSQH1Pn4&t=478s
+
+
+
+
+##### Multitasking
+
+https://www.geeky-gadgets.com/how-to-use-git-worktrees-with-claude-code-for-seamless-multitasking/
+
+There are UI tools built on GIT worktrees to support this.
+
+### Other non-Claude Code Workflows
+
+#### Security
+
+##### Security Analysis
+https://github.com/xvnpw/ai-security-analyzer/blob/dabfc57b6e5da9d99b3df5229fd496a224dac862/ai_security_analyzer/prompts.py
+
+##### Threat model Prompts
+https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_stride_threat_model/system.md 
+https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_threat_scenarios/system.md
+https://github.com/scragz/kornelius/blob/main/prompts/audit/security.prompt
+
+#### Accessibility
+https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt
 
 
 
@@ -82,7 +122,7 @@ In the exploratory part of the project at the start I had some [existing documen
 
 Here we build the [Upstream Software Engineering Artifacts](./software_artifacts.md).
 
-Specifically these are the [built artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation).
+Specifically these are the [artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation) that are built with the workflow below.
 
 
 ### Setup
@@ -131,8 +171,9 @@ Specifically, the [Fastest Start: Web UI Full Stack Team at your disposal](https
 </figure>
 <figure markdown>
 ![](../assets/images/bmad11.png)
-Some choices / decisions were delibertate postponed e.g. data exchange formats and schemas per [Principle #3 - Assume variability; preserve options](https://framework.scaledagile.com/assume-variability-preserve-options/). This results in a PARTIAL Status at this point.
 </figure>
+
+Some choices / decisions were delibertate postponed e.g. data exchange formats and schemas per [Principle #3 - Assume variability; preserve options](https://framework.scaledagile.com/assume-variability-preserve-options/). This results in a PARTIAL Status at this point.
 
 
 <figure markdown>
@@ -147,4 +188,18 @@ Prompt to choose how to proceed. Or interact in general via the Prompt.
 </figure>
 
 
+## Security Documents
+https://github.com/xvnpw/ai-security-analyzer/blob/dabfc57b6e5da9d99b3df5229fd496a224dac862/ai_security_analyzer/prompts.py
+https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_stride_threat_model/system.md 
 
+https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_threat_scenarios/system.md
+## References
+
+1. https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/
+2. https://www.geeky-gadgets.com/how-to-use-git-worktrees-with-claude-code-for-seamless-multitasking/
+3. https://github.com/ryoppippi/ccusage
+4. Claude Taskmaster
+5. https://www.reddit.com/r/vibecoding/comments/1lu37up/vibecoding_is_straight_chaos_without_instructions/ 
+6. https://www.reddit.com/r/vibecoding/comments/1l5o93n/lets_talk_about_security/
+7. https://github.com/scragz/kornelius/tree/main 
+8. https://xvnpw.github.io/posts/scaling-threat-modeling-with-ai/
