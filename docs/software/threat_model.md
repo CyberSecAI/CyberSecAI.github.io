@@ -4,6 +4,26 @@
 
     This section covers AI-powered threat modeling for secure system design, focusing on open-source tools and prompt-based solutions. Below is a comparison of features across notable open-source tools that assist in early design-time threat modeling.
 
+## Threat Modeling
+
+
+!!! quote
+
+            
+    - The best use of threat modeling is to improve the security and privacy of a system through early and frequent analysis.
+    - Threat modeling must align with an organization’s development practices and follow design changes in iterations that are each scoped to manageable portions of the system.
+    - The outcomes of threat modeling are meaningful when they are of value to stakeholders.
+    - Dialog is key to establishing the common understandings that lead to value, while documents record those understandings, and enable measurement.
+
+    [Threat Modeling Manifesto](https://www.threatmodelingmanifesto.org/) 
+
+
+!!! quote
+
+    Threat modeling is an investment—in my view, it’s a good one, because finding and mitigating threats in the design phase of your workload feature can reduce the relative cost of mitigation, compared to finding the threats later. Consistently implementing threat modeling will likely also improve your security posture over time.
+
+    https://aws.amazon.com/blogs/security/threat-modeling-your-generative-ai-workload-to-evaluate-security-risk/
+
 ## Open Source Tools Comparison
 
 Comparison of features and capabilities of open-source AI-driven threat modeling tools (focused on early design-phase usage, except AI Security Analyzer which also supports code-level analysis).
@@ -51,6 +71,10 @@ The backend is written in python: threat-designer/backend/threat_designer/
 
 The associated prompts are https://github.com/awslabs/threat-designer/blob/0554b6a97c08e38bb92504ba13768780adb0301f/backend/threat_designer/prompts.py
 
+
+See also 
+1. https://aws-samples.github.io/threat-technique-catalog-for-aws/Techniques/
+2. https://awssecuritydigest.com/articles/threat-modelling-in-aws
 
 #### AWS Threat Composer
 
