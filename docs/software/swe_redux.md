@@ -170,9 +170,7 @@ Some choices / decisions were delibertate postponed e.g. data exchange formats a
 <figure markdown>
 ![](../assets/images/bmad12.png)
 </figure>
-<figure markdown>
-![](../assets/images/bmad13.png)
-</figure>
+
 <figure markdown>
 ![](../assets/images/bmad_choose.png)
 Prompt to choose how to proceed. Or interact in general via the Prompt.
