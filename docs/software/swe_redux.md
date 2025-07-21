@@ -193,6 +193,6 @@ Specifically these are the [security artifacts](https://github.com/CWE-ChatBot/C
 1. https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/
 2. https://www.geeky-gadgets.com/how-to-use-git-worktrees-with-claude-code-for-seamless-multitasking/
 3. https://github.com/ryoppippi/ccusage
-4. Claude Taskmaster
+4. https://github.com/eyaltoledano/claude-task-master/blob/main/docs/tutorial.md
 5. https://www.reddit.com/r/vibecoding/comments/1lu37up/vibecoding_is_straight_chaos_without_instructions/ 
 6. https://www.reddit.com/r/vibecoding/comments/1l5o93n/lets_talk_about_security/
