@@ -198,10 +198,10 @@ Other [Threat Modeling](./threat_model.md) solutions could be used to create the
 
 I added a Security Agent to BMAD per [commits](https://github.com/CyberSecAI/BMAD-METHOD/commits/feature/add-new-agent-security) from Crashedmind. The commit descriptions give the details.
 
-You can browse through the files:
+You can browse through the files e.g.:
 
-- [Security Agent](https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/bmad-core/tasks)
-- [Security Tasks](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/bmad-core/agents/security.md)
+- [Security Agent](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/bmad-core/agents/security.md)
+- [Security Tasks](https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/bmad-core/tasks)
 
 ### Building the Bundles
 
@@ -230,7 +230,7 @@ TODO: insert youtube link showing the agent in use
 
     The output [security artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security). 
 
-    The [changes](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464) to the architecture document by the architect: 
+    The [changes](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464) to the architecture document by the architect based on the security agent's findings
     
        - "| July 23, 2025 | 2.0 | Integrated security agent's findings (WAF, AI Guardrails, DoS Protection, Enhanced Logging). | Winston (Architect) |"
 
