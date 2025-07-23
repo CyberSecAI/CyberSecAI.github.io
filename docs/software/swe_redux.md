@@ -193,6 +193,7 @@ Other [Threat Modeling](./threat_model.md) solutions could be used to create the
     The BMAD Method Security Agent is part of the The BMAD Planning Workflow
 
     - It reviews the existing documents, creates security documents including threat models, security test cases, and security updates to the architecture document.
+    - Unlike the other solutions, this Security Agent can also be used during the code implementation phase.
 
 ### Adding a BMAD Method Security Agent
 
@@ -228,9 +229,11 @@ TODO: insert youtube link showing the agent in use
 
 !!! success
 
-    The output [security artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security). 
+    See the walkthrough of creating and using the Security Agent: https://youtu.be/UdXLFQbogIU
 
-    The [changes](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464) to the architecture document by the architect based on the security agent's findings
+    See the output [security artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security). 
+
+    See the [changes](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464) to the architecture document by the architect based on the security agent's findings
     
        - "| July 23, 2025 | 2.0 | Integrated security agent's findings (WAF, AI Guardrails, DoS Protection, Enhanced Logging). | Winston (Architect) |"
 
