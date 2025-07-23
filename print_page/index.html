@@ -6558,7 +6558,7 @@ to the model].”.</p>
 <h3 id="software-swe_redux-other-non-claude-code-workflows">Other non-Claude Code Workflows<a class="headerlink" href="#software-swe_redux-other-non-claude-code-workflows" title="Permanent link">&para;</a></h3>
 <h4 id="software-swe_redux-accessibility">Accessibility<a class="headerlink" href="#software-swe_redux-accessibility" title="Permanent link">&para;</a></h4>
 <p><a href="https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt">https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt</a></p>
-<h2 id="software-swe_redux-existing-exploratory-documentation">Existing Exploratory Documentation<a class="headerlink" href="#software-swe_redux-existing-exploratory-documentation" title="Permanent link">&para;</a></h2>
+<h2 id="software-swe_redux-phase-0-existing-exploratory-documentation">Phase 0: Existing Exploratory Documentation<a class="headerlink" href="#software-swe_redux-phase-0-existing-exploratory-documentation" title="Permanent link">&para;</a></h2>
 <p>In the exploratory part of the project at the start I had some <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation">existing documentation</a>:</p>
 <ol>
 <li>A Cost Analysis was created by using <ol>
@@ -6576,7 +6576,7 @@ to the model].”.</p>
 <p class="admonition-title">Tip</p>
 <p>I worked the existing document content into the <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">The Planning Workflow</a> by providing the content to the BMAD Persona at the relevant time via the prompt.</p>
 </div>
-<h2 id="software-swe_redux-the-planning-workflow_1"><a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">The Planning Workflow</a><a class="headerlink" href="#software-swe_redux-the-planning-workflow_1" title="Permanent link">&para;</a></h2>
+<h2 id="software-swe_redux-phase-1-bmad-the-planning-workflow">Phase 1 : <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">BMAD The Planning Workflow</a><a class="headerlink" href="#software-swe_redux-phase-1-bmad-the-planning-workflow" title="Permanent link">&para;</a></h2>
 <p>Here we build the <a href="#software-software_artifacts">Upstream Software Engineering Artifacts</a>.</p>
 <p>Specifically these are the <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation">artifacts</a> that are built with the workflow below.</p>
 <h3 id="software-swe_redux-setup">Setup<a class="headerlink" href="#software-swe_redux-setup" title="Permanent link">&para;</a></h3>
@@ -6628,10 +6628,58 @@ to the model].”.</p>
 <p><img alt="" src="../assets/images/bmad_choose.png" />
 Prompt to choose how to proceed. Or interact in general via the Prompt.</p>
 </figure>
-<h2 id="software-swe_redux-security-documents">Security Documents<a class="headerlink" href="#software-swe_redux-security-documents" title="Permanent link">&para;</a></h2>
-<p>BMAD-Method does not have a dedicated Security persona or security documents.</p>
-<p>Other <a href="#software-threat_model">Threat Modeling</a> solutions can be used to create these security documents. </p>
-<p>Specifically these are the <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security">security artifacts</a> that are built with the <a href="#software-threat_model">Threat Modeling</a> solutions.</p>
+<h2 id="software-swe_redux-phase-2-security-review">Phase 2: Security Review<a class="headerlink" href="#software-swe_redux-phase-2-security-review" title="Permanent link">&para;</a></h2>
+<p>BMAD-Method did not have a dedicated Security persona or security documents.</p>
+<p>Other <a href="#software-threat_model">Threat Modeling</a> solutions could be used to create these security documents</p>
+<ul>
+<li>See example <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security">security artifacts</a> </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The different solutions had different features I liked, so I decided to build a BMAD Method Security Agent with all the features I wanted.</p>
+<p>The BMAD Method Security Agent is part of the The BMAD Planning Workflow</p>
+<ul>
+<li>It reviews the existing documents, creates security documents including threat models, security test cases, and security updates to the architecture document.</li>
+</ul>
+</div>
+<h3 id="software-swe_redux-adding-a-bmad-method-security-agent">Adding a BMAD Method Security Agent<a class="headerlink" href="#software-swe_redux-adding-a-bmad-method-security-agent" title="Permanent link">&para;</a></h3>
+<p>I added a Security Agent to BMAD per <a href="https://github.com/CyberSecAI/BMAD-METHOD/commits/feature/add-new-agent-security">commits</a> from Crashedmind. The commit descriptions give the details.</p>
+<p>You can browse through the files:</p>
+<ul>
+<li><a href="https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/bmad-core/tasks">Security Agent</a></li>
+<li><a href="https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/bmad-core/agents/security.md">Security Tasks</a></li>
+</ul>
+<h3 id="software-swe_redux-building-the-bundles">Building the Bundles<a class="headerlink" href="#software-swe_redux-building-the-bundles" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/tools/builders">builder</a> gathers all the relevant files for all the agents into single files in  <a href="https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/dist/teams">https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/dist/teams</a></p>
+<ul>
+<li>e.g. <a href="https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/dist/teams/team-fullstack.txt">team-fullstack.txt</a> contains all the agents including security, and all the other files they need.</li>
+</ul>
+<h3 id="software-swe_redux-create-a-gemini-gem-with-the-fullstack-team">Create a Gemini Gem with the FullStack team<a class="headerlink" href="#software-swe_redux-create-a-gemini-gem-with-the-fullstack-team" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://gemini.google.com/">https://gemini.google.com/</a></li>
+<li>Explore Gems</li>
+<li>New Gems</li>
+<li>CopyNPaste <a href="https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/dist/teams/team-fullstack.txt">team-fullstack.txt</a> into instructions</li>
+<li>Save</li>
+</ul>
+<h3 id="software-swe_redux-using-the-bmad-method-security-agent-via-the-gemini-gem-with-fullstack-team">Using the BMAD Method Security Agent via the Gemini Gem with FullStack team<a class="headerlink" href="#software-swe_redux-using-the-bmad-method-security-agent-via-the-gemini-gem-with-fullstack-team" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Collate the project brief, prd, architecture etc... md files into one file (e.g. using gitingest)</li>
+<li>At the prompt say "here's my existing documentation" and copyNpaste the collated md file into the prompt</li>
+<li>Click the Submit Arrow</li>
+<li>The workflow kicks off</li>
+</ol>
+<p>TODO: insert youtube link showing the agent in use</p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The output <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security">security artifacts</a>. </p>
+<p>The <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464">changes</a> to the architecture document by the architect: </p>
+<ul>
+<li>"| July 23, 2025 | 2.0 | Integrated security agent's findings (WAF, AI Guardrails, DoS Protection, Enhanced Logging). | Winston (Architect) |"</li>
+</ul>
+</div>
+<h2 id="software-swe_redux-phase-3-implementation-by-coding">Phase 3: Implementation by Coding<a class="headerlink" href="#software-swe_redux-phase-3-implementation-by-coding" title="Permanent link">&para;</a></h2>
+<p>TODO</p>
 <h2 id="software-swe_redux-references">References<a class="headerlink" href="#software-swe_redux-references" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/">https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/</a></li>
