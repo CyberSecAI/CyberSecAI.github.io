@@ -91,7 +91,7 @@ https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt
 
 
 
-## Existing Exploratory Documentation
+## Phase 0: Existing Exploratory Documentation
 
 In the exploratory part of the project at the start I had some [existing documentation](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation):
 
@@ -109,7 +109,7 @@ In the exploratory part of the project at the start I had some [existing documen
     I worked the existing document content into the [The Planning Workflow](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow) by providing the content to the BMAD Persona at the relevant time via the prompt.
 
 
-## [The Planning Workflow](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow) 
+## Phase 1 : [BMAD The Planning Workflow](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow) 
 
 Here we build the [Upstream Software Engineering Artifacts](./software_artifacts.md).
 
@@ -177,14 +177,68 @@ Prompt to choose how to proceed. Or interact in general via the Prompt.
 </figure>
 
 
-## Security Documents
+## Phase 2: Security Review
 
-BMAD-Method does not have a dedicated Security persona or security documents.
+BMAD-Method did not have a dedicated Security persona or security documents.
 
-Other [Threat Modeling](./threat_model.md) solutions can be used to create these security documents. 
+Other [Threat Modeling](./threat_model.md) solutions could be used to create these security documents
+
+- See example [security artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security) 
 
 
-Specifically these are the [security artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security) that are built with the [Threat Modeling](./threat_model.md) solutions.
+!!! tip
+
+    The different solutions had different features I liked, so I decided to build a BMAD Method Security Agent with all the features I wanted.
+
+    The BMAD Method Security Agent is part of the The BMAD Planning Workflow
+
+    - It reviews the existing documents, creates security documents including threat models, security test cases, and security updates to the architecture document.
+
+### Adding a BMAD Method Security Agent
+
+I added a Security Agent to BMAD per [commits](https://github.com/CyberSecAI/BMAD-METHOD/commits/feature/add-new-agent-security) from Crashedmind. The commit descriptions give the details.
+
+You can browse through the files:
+
+- [Security Agent](https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/bmad-core/tasks)
+- [Security Tasks](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/bmad-core/agents/security.md)
+
+### Building the Bundles
+
+The [builder](https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/tools/builders) gathers all the relevant files for all the agents into single files in  https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/dist/teams
+
+- e.g. [team-fullstack.txt](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/dist/teams/team-fullstack.txt) contains all the agents including security, and all the other files they need.
+
+### Create a Gemini Gem with the FullStack team
+- https://gemini.google.com/
+- Explore Gems
+- New Gems
+- CopyNPaste [team-fullstack.txt](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/dist/teams/team-fullstack.txt) into instructions
+- Save
+
+### Using the BMAD Method Security Agent via the Gemini Gem with FullStack team
+
+1. Collate the project brief, prd, architecture etc... md files into one file (e.g. using gitingest)
+2. At the prompt say "here's my existing documentation" and copyNpaste the collated md file into the prompt
+3. Click the Submit Arrow
+4. The workflow kicks off
+
+
+TODO: insert youtube link showing the agent in use
+
+!!! success
+
+    The output [security artifacts](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security). 
+
+    The [changes](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464) to the architecture document by the architect: 
+    
+       - "| July 23, 2025 | 2.0 | Integrated security agent's findings (WAF, AI Guardrails, DoS Protection, Enhanced Logging). | Winston (Architect) |"
+
+
+## Phase 3: Implementation by Coding
+
+
+TODO
 
 ## References
 
