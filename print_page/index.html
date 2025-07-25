@@ -6496,69 +6496,55 @@ to the model].”.</p>
 </li>
 </ul>
 <p>A Software Engineering setup should have a way to manage this context and provide it to the agent when required.</p>
-</div></section><section class="print-page" id="software-swe_redux"><h1 id="software-swe_redux-software-engineering-reimagined">Software Engineering Reimagined<a class="headerlink" href="#software-swe_redux-software-engineering-reimagined" title="Permanent link">&para;</a></h1>
+</div></section><section class="print-page" id="software-swe_redux"><h1 id="software-swe_redux-software-engineering-10-redux">Software Engineering 1.0 Redux<a class="headerlink" href="#software-swe_redux-software-engineering-10-redux" title="Permanent link">&para;</a></h1>
 <div class="admonition overview">
 <p class="admonition-title">Overview</p>
-<p>In the early stages of GenAI implementation, organizations tend to "shoehorn" GenAI's advanced capabilities into existing workflows and processes. </p>
-<ul>
-<li>They essentially use powerful new tools to perform the same tasks slightly more efficiently, without fundamentally reimagining what's possible.</li>
-</ul>
-<p>However, the true transformative potential of generative AI emerges when we recognize that it won't simply augment our current operational models—it will radically reshape them. </p>
-<ul>
-<li>The "way of doing things" inevitably undergoes profound change as the technology matures and its implications become more apparent.</li>
-</ul>
-<p>For effective GenAI strategy, organizations must simultaneously:</p>
-<ul>
-<li>Address immediate needs by applying AI to current processes</li>
-<li>Anticipate and design for entirely new operational paradigms that will emerge</li>
-</ul>
-<p>This dual focus ensures solutions remain relevant not just for today's challenges, but for the transformed landscape that GenAI will ultimately create.</p>
-<p>This section is hands on walk through of Software Engineering for a Greenfield application using GenAI.</p>
+<p>This section is hands on end2end turning the thoughts on Software Engineering 1.0 Redux from the previous pages into reality.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Phase</strong></th>
+<th><strong>Input</strong></th>
+<th><strong>Chat History</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exploratory</strong></td>
+<td>-</td>
+<td>-</td>
+<td><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation">Pre-existing documentation</a></td>
+</tr>
+<tr>
+<td><strong>Planning</strong></td>
+<td><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation">Pre-existing documentation</a></td>
+<td><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_planning_chat.md">Chat history</a></td>
+<td><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation">Product Brief, PRD, UX requirements, Architecture document.</a></td>
+</tr>
+<tr>
+<td><strong>Security Review</strong></td>
+<td><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation">Product Brief, PRD, UX requirements, Architecture document.</a></td>
+<td><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_agent_chat.md">Chat history</a></td>
+<td>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security">Security review documents</a> <br>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464">Changes to the architecture document  by the architect based on the security agent's findings</a></td>
+</tr>
+<tr>
+<td><strong>Document Preparation</strong> for development consumption</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Core Development Cycle</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Summary table of the SW Engineering 1.0 Redux phases</em></p>
 </div>
-<h2 id="software-swe_redux-bmad-workflows">BMad Workflows<a class="headerlink" href="#software-swe_redux-bmad-workflows" title="Permanent link">&para;</a></h2>
-<p>Having reviewed and played with some of the <a href="#software-swe_agents_report">SWE agents</a>, the BMAD-Method was closest to my views on Software 1.0 Redux, so this is used here.</p>
-<p>There's 2 <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">BMad Workflows</a>.</p>
-<h3 id="software-swe_redux-the-planning-workflow"><a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">The Planning Workflow</a><a class="headerlink" href="#software-swe_redux-the-planning-workflow" title="Permanent link">&para;</a></h3>
-<div class="admonition quote">
-<p class="admonition-title">Key Planning Phases</p>
-<ul>
-<li>Optional Analysis: Analyst conducts market research and competitive analysis</li>
-<li>Project Brief: Foundation document created by Analyst or user</li>
-<li>PRD Creation: PM transforms brief into comprehensive product requirements</li>
-<li>Architecture Design: Architect creates technical foundation based on PRD</li>
-<li>Validation &amp; Alignment: PO ensures all documents are consistent and complete</li>
-<li>Refinement: Updates to epics, stories, and documents as needed</li>
-<li>Environment Transition: Critical switch from web UI to IDE for development workflow</li>
-<li>Document Preparation: PO shards large documents for development consumption</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The created documents do include checks on these items, but a more detailed focused analysis can also be with these documents done before "The Core Development Cycle".</p>
-<ul>
-<li>Security &amp; Compliance </li>
-<li>Accessibility Implementation</li>
-</ul>
-</div>
-<h3 id="software-swe_redux-the-core-development-cycle"><a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#52-the-core-development-cycle">The Core Development Cycle</a><a class="headerlink" href="#software-swe_redux-the-core-development-cycle" title="Permanent link">&para;</a></h3>
-<div class="admonition quote">
-<p class="admonition-title">Key Planning Phases</p>
-<p>When to move to the IDE: Once you have your PRD, Architecture, optional UX and Briefs - its time to switch over to the IDE to shard your docs, and start implementing the actual code! </p>
-</div>
-<p>BMAD method breaks down the requirements and other upstream artifacts into epics and stories, enabling Claude Code to generate structured code and docs with little human intervention (<a href="#software-code-code_assistant_agents-autonomy-levels-for-ai-coding-tools">Level 4 Autonomy</a>).</p>
-<h3 id="software-swe_redux-other-claude-code-workflows">Other Claude Code Workflows<a class="headerlink" href="#software-swe_redux-other-claude-code-workflows" title="Permanent link">&para;</a></h3>
-<p>There are other Claude Code workflows, some example are given here.</p>
-<h5 id="software-swe_redux-ui-designer">UI Designer<a class="headerlink" href="#software-swe_redux-ui-designer" title="Permanent link">&para;</a></h5>
-<p><a href="https://www.youtube.com/watch?v=TyGx277x9hQ">https://www.youtube.com/watch?v=TyGx277x9hQ</a></p>
-<h5 id="software-swe_redux-restrospectives">Restrospectives<a class="headerlink" href="#software-swe_redux-restrospectives" title="Permanent link">&para;</a></h5>
-<p><a href="https://www.youtube.com/watch?v=ai_sSQH1Pn4&amp;t=478s">https://www.youtube.com/watch?v=ai_sSQH1Pn4&amp;t=478s</a></p>
-<h5 id="software-swe_redux-multitasking">Multitasking<a class="headerlink" href="#software-swe_redux-multitasking" title="Permanent link">&para;</a></h5>
-<p><a href="https://www.geeky-gadgets.com/how-to-use-git-worktrees-with-claude-code-for-seamless-multitasking/">https://www.geeky-gadgets.com/how-to-use-git-worktrees-with-claude-code-for-seamless-multitasking/</a></p>
-<p>There are UI tools built on GIT worktrees to support this.</p>
-<h3 id="software-swe_redux-other-non-claude-code-workflows">Other non-Claude Code Workflows<a class="headerlink" href="#software-swe_redux-other-non-claude-code-workflows" title="Permanent link">&para;</a></h3>
-<h4 id="software-swe_redux-accessibility">Accessibility<a class="headerlink" href="#software-swe_redux-accessibility" title="Permanent link">&para;</a></h4>
-<p><a href="https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt">https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt</a></p>
-<h2 id="software-swe_redux-phase-0-existing-exploratory-documentation">Phase 0: Existing Exploratory Documentation<a class="headerlink" href="#software-swe_redux-phase-0-existing-exploratory-documentation" title="Permanent link">&para;</a></h2>
+<h2 id="software-swe_redux-phase-existing-exploratory-documentation">Phase: Existing Exploratory Documentation<a class="headerlink" href="#software-swe_redux-phase-existing-exploratory-documentation" title="Permanent link">&para;</a></h2>
 <p>In the exploratory part of the project at the start I had some <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation">existing documentation</a>:</p>
 <ol>
 <li>A Cost Analysis was created by using <ol>
@@ -6572,11 +6558,28 @@ to the model].”.</p>
 <li>ADRs using an existing competed example I liked, and redoing it for the architecture decisions I had made using ChatGPT and Gemini <strong>Reasoning</strong> models and Anthropic.</li>
 <li>Some Functional Requirements and use cases and user stories (in a Doc format) from MITRE <abbr title="CWE Common Weakness Enumeration">CWE</abbr> team.</li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>I worked the existing document content into the <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">The Planning Workflow</a> by providing the content to the BMAD Persona at the relevant time via the prompt.</p>
+<h2 id="software-swe_redux-phase-bmad-the-planning-workflow">Phase: <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">BMAD The Planning Workflow</a><a class="headerlink" href="#software-swe_redux-phase-bmad-the-planning-workflow" title="Permanent link">&para;</a></h2>
+<p>Having reviewed and played with some of the <a href="#software-swe_agents_report">SWE agents</a>, the BMAD-Method was closest to my views on Software 1.0 Redux, so this is used here.</p>
+<p>There's 2 <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">BMad Workflows</a>:</p>
+<ul>
+<li><a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">The Planning Workflow</a> </li>
+<li><a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#52-the-core-development-cycle">The Core Development Cycle</a></li>
+</ul>
+<h3 id="software-swe_redux-bmad-the-planning-workflow">BMAD The Planning Workflow<a class="headerlink" href="#software-swe_redux-bmad-the-planning-workflow" title="Permanent link">&para;</a></h3>
+<p>BMAD method breaks down the requirements and other upstream artifacts into epics and stories, enabling Claude Code to generate structured code and docs with little human intervention (<a href="#software-code-code_assistant_agents-autonomy-levels-for-ai-coding-tools">Level 4 Autonomy</a>).</p>
+<div class="admonition quote">
+<p class="admonition-title">Key Planning Phases</p>
+<ul>
+<li>Optional Analysis: Analyst conducts market research and competitive analysis</li>
+<li>Project Brief: Foundation document created by Analyst or user</li>
+<li>PRD Creation: PM transforms brief into comprehensive product requirements</li>
+<li>Architecture Design: Architect creates technical foundation based on PRD</li>
+<li>Validation &amp; Alignment: PO ensures all documents are consistent and complete</li>
+<li>Refinement: Updates to epics, stories, and documents as needed</li>
+<li>Environment Transition: Critical switch from web UI to IDE for development workflow</li>
+<li>Document Preparation: PO shards large documents for development consumption</li>
+</ul>
 </div>
-<h2 id="software-swe_redux-phase-1-bmad-the-planning-workflow">Phase 1 : <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">BMAD The Planning Workflow</a><a class="headerlink" href="#software-swe_redux-phase-1-bmad-the-planning-workflow" title="Permanent link">&para;</a></h2>
 <p>Here we build the <a href="#software-software_artifacts">Upstream Software Engineering Artifacts</a>.</p>
 <p>Specifically these are the <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation">artifacts</a> that are built with the workflow below.</p>
 <h3 id="software-swe_redux-setup">Setup<a class="headerlink" href="#software-swe_redux-setup" title="Permanent link">&para;</a></h3>
@@ -6586,8 +6589,16 @@ to the model].”.</p>
 <li>All these documents are created via a browser interface (Gemini GEM) so the process is IDE-independent!</li>
 <li>Gemini's long-context window allows it to keep the various documents produced in context so it can make consistent changes across them all.</li>
 </ul>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The created files are available via </p>
+<ul>
+<li>the Google Gem Canvas </li>
+<li>the prompt response when you request a specific document</li>
+</ul>
+</div>
+<div class="admonition observation">
+<p class="admonition-title">Observation</p>
 <p>I was impressed how well this setup worked! </p>
 <ul>
 <li>following a logical workflow and prompting for choices or input at each stage (and not getting lost)</li>
@@ -6595,41 +6606,18 @@ to the model].”.</p>
 <li>allowing me to refine the content or ask questions across all the documents as required e.g. if I suggested a change that impacted multiple documents then this was detected by Gemini and the updates made. This ensured consistency across the artefacts.</li>
 </ul>
 </div>
-<h3 id="software-swe_redux-example-interactions-with-bmad-gemini-gem">Example Interactions with BMAD Gemini Gem<a class="headerlink" href="#software-swe_redux-example-interactions-with-bmad-gemini-gem" title="Permanent link">&para;</a></h3>
-<figure>
-<p><img alt="" src="../assets/images/bmad1.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad2.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad4.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad5.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad6.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad9.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad10.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad11.png" /></p>
-</figure>
 <p>Some choices / decisions were delibertate postponed e.g. data exchange formats and schemas per <a href="https://framework.scaledagile.com/assume-variability-preserve-options/">Principle #3 - Assume variability; preserve options</a>. This results in a PARTIAL Status at this point.</p>
-<figure>
-<p><img alt="" src="../assets/images/bmad12.png" /></p>
-</figure>
-<figure>
-<p><img alt="" src="../assets/images/bmad_choose.png" />
-Prompt to choose how to proceed. Or interact in general via the Prompt.</p>
-</figure>
-<h2 id="software-swe_redux-phase-2-security-review">Phase 2: Security Review<a class="headerlink" href="#software-swe_redux-phase-2-security-review" title="Permanent link">&para;</a></h2>
-<p>BMAD-Method did not have a dedicated Security persona or security documents.</p>
+<h3 id="software-swe_redux-interaction-with-bmad-gemini-gem">Interaction with BMAD Gemini Gem<a class="headerlink" href="#software-swe_redux-interaction-with-bmad-gemini-gem" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>See the <strong><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_planning_chat.md">full chat history of creating a Product Brief, PRD, UX requirements, Architecture document.</a></strong> </p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>I worked the pre-existing document content into the <a href="https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow">The Planning Workflow</a> by providing the content to the BMAD Persona at the relevant time via the prompt.</p>
+</div>
+<h2 id="software-swe_redux-phase-security-review">Phase: Security Review<a class="headerlink" href="#software-swe_redux-phase-security-review" title="Permanent link">&para;</a></h2>
+<p>BMAD-Method did not have a dedicated Security persona or security documents (but does include some basic security checks)</p>
 <p>Other <a href="#software-threat_model">Threat Modeling</a> solutions could be used to create these security documents</p>
 <ul>
 <li>See example <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security">security artifacts</a> </li>
@@ -6637,7 +6625,7 @@ Prompt to choose how to proceed. Or interact in general via the Prompt.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>The different solutions had different features I liked, so I decided to build a BMAD Method Security Agent with all the features I wanted.</p>
-<p>The BMAD Method Security Agent is part of the The BMAD Planning Workflow</p>
+<p>The BMAD Method Security Agent fits in the BMAD Planning Workflow</p>
 <ul>
 <li>It reviews the existing documents, creates security documents including threat models, security test cases, and security updates to the architecture document.</li>
 <li>Unlike the other solutions, this Security Agent can also be used during the code implementation phase.</li>
@@ -6670,18 +6658,41 @@ Prompt to choose how to proceed. Or interact in general via the Prompt.</p>
 <li>Click the Submit Arrow</li>
 <li>The workflow kicks off</li>
 </ol>
-<p>TODO: insert youtube link showing the agent in use</p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>See the walkthrough of creating and using the Security Agent: <a href="https://youtu.be/UdXLFQbogIU">https://youtu.be/UdXLFQbogIU</a></p>
-<p>See the output <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security">security artifacts</a>. </p>
-<p>See the <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464">changes</a> to the architecture document by the architect based on the security agent's findings</p>
+<p>See the </p>
+<ul>
+<li><strong><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_agent_chat.md">full chat history using the Security Agent</a></strong>.</li>
+<li><strong><a href="https://www.youtube.com/watch?v=UdXLFQbogIU">full chat history creating and using the Security Agent (Video)</a></strong></li>
+<li>output <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security">security artifacts</a>. </li>
+<li>
+<p><a href="https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464">changes</a> to the architecture document by the architect based on the security agent's findings</p>
 <ul>
 <li>"| July 23, 2025 | 2.0 | Integrated security agent's findings (WAF, AI Guardrails, DoS Protection, Enhanced Logging). | Winston (Architect) |"</li>
 </ul>
+</li>
+</ul>
 </div>
-<h2 id="software-swe_redux-phase-3-implementation-by-coding">Phase 3: Implementation by Coding<a class="headerlink" href="#software-swe_redux-phase-3-implementation-by-coding" title="Permanent link">&para;</a></h2>
-<p>TODO</p>
+<h2 id="software-swe_redux-document-preparation-for-development">Document Preparation for development<a class="headerlink" href="#software-swe_redux-document-preparation-for-development" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Key Planning Phases</p>
+<p>When to move to the IDE: Once you have your PRD, Architecture, optional UX and Briefs - its time to switch over to the IDE to shard your docs, and start implementing the actual code! </p>
+</div>
+<p>Coming soon..</p>
+<h2 id="software-swe_redux-phase-core-development-cycle">Phase: Core Development Cycle<a class="headerlink" href="#software-swe_redux-phase-core-development-cycle" title="Permanent link">&para;</a></h2>
+<p>Coming soon..</p>
+<h2 id="software-swe_redux-other-claude-code-workflows">Other Claude Code Workflows<a class="headerlink" href="#software-swe_redux-other-claude-code-workflows" title="Permanent link">&para;</a></h2>
+<p>There are other Claude Code workflows, some example are given here.</p>
+<h5 id="software-swe_redux-ui-designer">UI Designer<a class="headerlink" href="#software-swe_redux-ui-designer" title="Permanent link">&para;</a></h5>
+<p><a href="https://www.youtube.com/watch?v=TyGx277x9hQ">https://www.youtube.com/watch?v=TyGx277x9hQ</a></p>
+<h5 id="software-swe_redux-retrospectives">Retrospectives<a class="headerlink" href="#software-swe_redux-retrospectives" title="Permanent link">&para;</a></h5>
+<p><a href="https://www.youtube.com/watch?v=ai_sSQH1Pn4&amp;t=478s">https://www.youtube.com/watch?v=ai_sSQH1Pn4&amp;t=478s</a></p>
+<h5 id="software-swe_redux-multitasking">Multitasking<a class="headerlink" href="#software-swe_redux-multitasking" title="Permanent link">&para;</a></h5>
+<p><a href="https://www.geeky-gadgets.com/how-to-use-git-worktrees-with-claude-code-for-seamless-multitasking/">https://www.geeky-gadgets.com/how-to-use-git-worktrees-with-claude-code-for-seamless-multitasking/</a></p>
+<p>There are UI tools built on GIT worktrees to support this.</p>
+<h3 id="software-swe_redux-other-non-claude-code-workflows">Other non-Claude Code Workflows<a class="headerlink" href="#software-swe_redux-other-non-claude-code-workflows" title="Permanent link">&para;</a></h3>
+<h4 id="software-swe_redux-accessibility">Accessibility<a class="headerlink" href="#software-swe_redux-accessibility" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt">https://github.com/scragz/kornelius/blob/main/prompts/audit/a11y.prompt</a></p>
 <h2 id="software-swe_redux-references">References<a class="headerlink" href="#software-swe_redux-references" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/">https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/</a></li>
