@@ -1,3 +1,25 @@
+    In the early stages of GenAI implementation, organizations tend to "shoehorn" GenAI's advanced capabilities into existing workflows and processes. 
+    
+    - They essentially use powerful new tools to perform the same tasks slightly more efficiently, without fundamentally reimagining what's possible.
+
+    However, the true transformative potential of generative AI emerges when we recognize that it won't simply augment our current operational models—it will radically reshape them. 
+
+    - The "way of doing things" inevitably undergoes profound change as the technology matures and its implications become more apparent.
+
+    For effective GenAI strategy, organizations must simultaneously:
+
+    - Address immediate needs by applying AI to current processes
+    - Anticipate and design for entirely new operational paradigms that will emerge
+    
+    This dual focus ensures solutions remain relevant not just for today's challenges, but for the transformed landscape that GenAI will ultimately create.
+
+    This section is hands on walk through of Software Engineering for a Greenfield application using GenAI.
+
+TODO
+    Documentation is not in sync with the code.
+    The output should inform the code
+
+    So addressing these hard problems is better vs just threat modeling a document
 
 
 [AI Engineer World's Fair 2025 ](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0W3ORTR-Cr4Ppw6UrN8kfMh) has some talks that 
@@ -20,7 +42,8 @@ https://forum.cursor.com/t/bmad-method-v2-in-an-evolution-imo-the-power-of-custo
 </figure>
 
 
-
+.git/info/exclude
+https://www.reddit.com/r/git/comments/1jy3yhu/why_gitinfoexclude_exists_if_gitignore_is_better/
 
 https://www.reforge.com/blog/the-coder-framework
 
