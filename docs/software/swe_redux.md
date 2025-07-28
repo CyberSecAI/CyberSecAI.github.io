@@ -159,13 +159,13 @@ You can browse through the files e.g.:
 
     | Document | Description |
     |----------|-------------|
-    | [security_assessment.md](security_assessment.md) | Initial security assessment and analysis |
-    | [threat_model.md](threat_model.md) | Complete STRIDE threat model |
-    | [dread.md](dread.md) | Quantitative DREAD risk assessment |
-    | [security_story_report.md](security_story_report.md) | Actionable security user stories |
-    | [security_test_cases.md](security_test_cases.md) | Security test cases and validation scenarios |
-    | [security_architecture_checklist.md](security_architecture_checklist.md) | Architecture checklist validation |
-    | [compliance_audit.md](compliance_audit.md) | GDPR compliance audit |
+    | [https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security/security_assessment.md](security_assessment.md) | Initial security assessment and analysis |
+    | [https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security/threat_model.md](threat_model.md) | Complete STRIDE threat model |
+    | [https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security/dread.md](dread.md) | Quantitative DREAD risk assessment |
+    | [https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security/security_story_report.md](security_story_report.md) | Actionable security user stories |
+    | [https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security/security_test_cases.md](security_test_cases.md) | Security test cases and validation scenarios |
+    | [https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security/security_architecture_checklist.md](security_architecture_checklist.md) | Architecture checklist validation |
+    | [https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security/compliance_audit.md](compliance_audit.md) | GDPR compliance audit |
 
 ### Building the Bundles
 
