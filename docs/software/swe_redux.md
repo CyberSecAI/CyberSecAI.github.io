@@ -19,6 +19,13 @@ icon: material/play-box-edit-outline
     
     *Summary table of the SW Engineering 1.0 Redux phases*
 
+## Software Security Touchpoints
+
+<figure markdown>
+![](../assets/images/swsectouch.png)
+Image from [Secure Programming with Static Analysis by Brian Chess, Jacob West](https://www.amazon.com/Secure-Programming-Static-Analysis-Brian/dp/0321424778)
+</figure>
+
 
 
 
@@ -45,6 +52,13 @@ There's 2 [BMad Workflows](https://github.com/bmadcode/BMAD-METHOD/blob/main/doc
 
 - [The Planning Workflow](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#51-the-planning-workflow) 
 - [The Core Development Cycle](https://github.com/bmadcode/BMAD-METHOD/blob/main/docs/core-architecture.md#52-the-core-development-cycle)
+
+
+See the updated BMAD flows detailing the Security activities I added:
+
+- [The Planning Workflow](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-vulnerability-tech/docs/core-architecture.md#51-the-planning-workflow) 
+- [The Core Development Cycle](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-vulnerability-tech/docs/core-architecture.md#52-the-core-development-cycle)
+
 
 ### BMAD The Planning Workflow
 
@@ -123,7 +137,7 @@ Other [Threat Modeling](./threat_model.md) solutions could be used to create the
 
 !!! tip
 
-    The different solutions had different features I liked, so I decided to build a BMAD Method Security Agent with all the features I wanted.
+    The different [Threat Modeling](./threat_model.md) solutions had different features I liked, so I decided to build a BMAD Method Security Agent with all the features I wanted.
 
     The BMAD Method Security Agent fits in the BMAD Planning Workflow
 
@@ -138,6 +152,20 @@ You can browse through the files e.g.:
 
 - [Security Agent](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/bmad-core/agents/security.md)
 - [Security Tasks](https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/add-new-agent-security/bmad-core/tasks)
+
+!!! tip
+
+    The [Security Agent](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/add-new-agent-security/bmad-core/agents/security.md) creates these [Security review documents](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security)
+
+    | Document | Description |
+    |----------|-------------|
+    | [security_assessment.md](security_assessment.md) | Initial security assessment and analysis |
+    | [threat_model.md](threat_model.md) | Complete STRIDE threat model |
+    | [dread.md](dread.md) | Quantitative DREAD risk assessment |
+    | [security_story_report.md](security_story_report.md) | Actionable security user stories |
+    | [security_test_cases.md](security_test_cases.md) | Security test cases and validation scenarios |
+    | [security_architecture_checklist.md](security_architecture_checklist.md) | Architecture checklist validation |
+    | [compliance_audit.md](compliance_audit.md) | GDPR compliance audit |
 
 ### Building the Bundles
 
