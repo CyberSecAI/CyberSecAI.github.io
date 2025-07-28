@@ -21,6 +21,8 @@ TODO
 
     So addressing these hard problems is better vs just threat modeling a document
 
+The software security touchpoints as introduced and fleshed out in Software
+Security: Building Security In.
 
 github project https://discord.com/channels/1377115244018532404/1396591539823575130/1396591539823575130
 
@@ -49,6 +51,14 @@ https://www.reddit.com/r/git/comments/1jy3yhu/why_gitinfoexclude_exists_if_gitig
 
 https://www.reforge.com/blog/the-coder-framework
 
+https://www.youtube.com/watch?v=gEWb3qWZXhY&t=138s
+Claude Squad: https://github.com/smtg-ai/claude-squad
+2- Grep: https://vercel.com/blog/grep-a-millio...
+3- Serena: https://github.com/oraios/serena
+4- Claude monitor: https://github.com/Maciek-roboblog/Cl...
+5- Awesome Claude code: https://github.com/hesreallyhim/aweso...
+6- BMAD method: https://github.com/bmadcode/BMAD-METHOD
+7- Task Master: https://github.com/eyaltoledano/claud...
 
 
 trast with validation."

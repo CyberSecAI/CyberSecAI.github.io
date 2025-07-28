@@ -11,7 +11,7 @@ icon: material/play-box-edit-outline
 
     It adds support for this to the BMAD Method by creating a VulnerabilityTech Agent.
 
-
+TODO: add ref to paper guidance improving security
 
 
 !!! quote "Vulnerability Assessment Analyst Tanya"
@@ -100,6 +100,14 @@ it is visible in the code or only in the design.
 
 
 ## How to use LLMs and SAST Tools Together
+
+LLMs can be used with Code Analysis Tools in different ways:
+1. Create a formatted report of findings (this is more an editorial activity - not code analysis)
+2. Triage the findings and indicate if they are True or False Positives (this is a common security activity)
+   1. This involves looking at the source code with the finding
+3. Independently look for issues e.g. using an analysis of [CPGs](https://en.wikipedia.org/wiki/Code_property_graph).
+4. Actively exercise the code by creating or guiding test cases.
+
 
 **LLMs can compliment the Static analysis sweetspot (Generic defects - Visible in the code)**
 
