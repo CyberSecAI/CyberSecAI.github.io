@@ -22,6 +22,8 @@ TODO
     So addressing these hard problems is better vs just threat modeling a document
 
 
+github project https://discord.com/channels/1377115244018532404/1396591539823575130/1396591539823575130
+
 [AI Engineer World's Fair 2025 ](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0W3ORTR-Cr4Ppw6UrN8kfMh) has some talks that 
 
 https://www.youtube.com/watch?v=fD8NLPU0WYU  Agile Coding Is HERE… 90% AI Coding Is Already Done With This

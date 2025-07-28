@@ -37,8 +37,10 @@ nav:
     - Leaderboards: software/code/leaderboards.md
     - Software Engineering Agents Report: software/swe_agents_report.md
     - Software Engineering Agents: software/swe_agents.md    
-    - Software Engineering 1.0 Redux: software/swe_redux.md    
-    - Threat Model: software/threat_model.md    
+    - Software Engineering 1.0 Redux:
+        - Software Engineering 1.0 Redux: software/swe_redux.md    
+        - Software Engineering Security: software/swe_redux_security.md        
+        - Threat Model: software/threat_model.md    
   - CyberSecurity Models:
     - CyberSecurity LLMs: cti_models/cyber_security_models.md
     - Agents: agents/Agents.md

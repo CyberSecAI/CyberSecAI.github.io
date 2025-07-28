@@ -1,3 +1,7 @@
+---
+icon: material/play-box-edit-outline 
+---
+
 # AI-Powered Threat Modeling for Secure System Design
 
 !!! abstract "Overview"
