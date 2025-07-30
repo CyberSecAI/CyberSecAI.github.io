@@ -9,6 +9,8 @@ icon: material/play-box-edit-outline
 
     This section is hands on end2end turning the thoughts on Software Engineering 1.0 Redux from the previous pages into reality.
 
+    Phases are shown in chronological order - note that a second security review was done based on a newly published OWASP guide. 
+
     | **Phase** | **Input** | **Chat History** | **Output** |
     |-----------|-----------|----------|------------|
     |     **Exploratory**     |   -        |      -    |     [Pre-existing documentation](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation)       |
@@ -16,7 +18,8 @@ icon: material/play-box-edit-outline
     |      **Security Review**     |  [Product Brief, PRD, UX requirements, Architecture document.](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation)          |   [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_agent_chat.md)       |  - [Security review documents](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security) <br>- [Changes to the architecture document  by the architect based on the security agent's findings](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464)         |
     |      **Document Preparation** for development consumption     | - [PRD](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation) <br> - [Security Story Report from Security Analyst](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_story_report.md)    |  - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_user_stories.md) <br> - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_stories.md)      |   - [User Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories)<br>- [Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories) ("S-" prefix)                |    
     |      **Core Development Cycle**    |  - [User Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories)<br>- [Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories) ("S-" prefix) <br> - [Security Test Cases](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_test_cases.md)         |          |            |
-    
+    |      **Security Review**     |  [Newly published Securing Agentic Applications Guide, OWASP Gen AI Security Project - Agentic Security Initiative Version 1.0 July 28, 2025](https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/)        |   - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_agent_owasp_new_ai_guide.md)  |  - [Changes to the architecture document, and security documents, based on the security agent's review of the newly published OWASP guide](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/848ab2133301efdf47e42c78b2762045aaca6019) <br> - [Changes to 2 Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/1bdf204671db22af92d675d2a295144ecbd914af)       |
+
     *Summary table of the SW Engineering 1.0 Redux phases*
 
 ## Software Security Touchpoints
