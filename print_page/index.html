@@ -6586,13 +6586,13 @@ to the model].”.</p>
 </tr>
 <tr>
 <td><strong>Document Preparation</strong> for development consumption</td>
-<td></td>
-<td></td>
-<td></td>
+<td>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation">PRD</a> <br> - <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_story_report.md">Security Story Report from Security Analyst</a></td>
+<td>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_user_stories.md">Chat history</a> <br> - <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_stories.md">Chat history</a></td>
+<td>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories">User Stories</a><br>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories">Security Stories</a> ("S-" prefix)</td>
 </tr>
 <tr>
 <td><strong>Core Development Cycle</strong></td>
-<td></td>
+<td>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories">User Stories</a><br>- <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories">Security Stories</a> ("S-" prefix) <br> - <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_test_cases.md">Security Test Cases</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -6815,6 +6815,7 @@ Image from <a href="https://www.amazon.com/Secure-Programming-Static-Analysis-Br
 <p>This section covers the Core Review Security touchpoint.</p>
 <p>It adds support for this to the BMAD Method by creating a VulnerabilityTech Agent.</p>
 </div>
+<p>TODO: add ref to paper guidance improving security</p>
 <div class="admonition quote">
 <p class="admonition-title">Vulnerability Assessment Analyst Tanya</p>
 <p>"Use for performing security scans, identifying and documenting software vulnerabilities, analyzing code for weaknesses, validating patches, assessing system configurations, verifying compliance with security standards, and generating vulnerability reports for audit or remediation purposes."</p>
@@ -6900,6 +6901,12 @@ Image from <a href="https://www.amazon.com/Secure-Programming-Static-Analysis-Br
 it is visible in the code or only in the design.</p>
 </figure>
 <h2 id="software-swe_redux_security-how-to-use-llms-and-sast-tools-together">How to use LLMs and SAST Tools Together<a class="headerlink" href="#software-swe_redux_security-how-to-use-llms-and-sast-tools-together" title="Permanent link">&para;</a></h2>
+<p>LLMs can be used with Code Analysis Tools in different ways:
+1. Create a formatted report of findings (this is more an editorial activity - not code analysis)
+2. Triage the findings and indicate if they are True or False Positives (this is a common security activity)
+   1. This involves looking at the source code with the finding
+3. Independently look for issues e.g. using an analysis of <a href="https://en.wikipedia.org/wiki/Code_property_graph">CPGs</a>.
+4. Actively exercise the code by creating or guiding test cases.</p>
 <p><strong>LLMs can compliment the Static analysis sweetspot (Generic defects - Visible in the code)</strong></p>
 <ul>
 <li>"SAST tools often rely on predefined patterns and rules, which can result in high false-positive rates and an inability to detect novel or context-dependent vulnerabilities" per <a href="https://arxiv.org/html/2409.15735v2">ref</a>.</li>
