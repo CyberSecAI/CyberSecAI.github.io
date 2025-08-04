@@ -7,6 +7,12 @@
     ChatGPTo will be used here but the techniques apply in general to any LLM.
 
 
+!!! Tip
+
+    With newer Reasoning models, there is less of a need for extensive prompts.
+
+    But this Prompt Guidance is still applicable.
+
 ## Prompt Guides
 There are many books, guides, and articles on Prompt Engineering. Some of the better ones are listed here:
 

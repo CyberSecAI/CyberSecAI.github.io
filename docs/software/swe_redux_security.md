@@ -9,84 +9,20 @@ icon: material/play-box-edit-outline
 
     This section covers the Core Review Security touchpoint.
 
-    It adds support for this to the BMAD Method by creating a VulnerabilityTech Agent.
-
-TODO: add ref to paper guidance improving security
+    We touched on this point earlier in [NotebookLM Secure Code](../../NotebookLM/NotebookLM_Secure_Code/).
 
 
-!!! quote "Vulnerability Assessment Analyst Tanya"
+## Software Security Touchpoints
 
-    "Use for performing security scans, identifying and documenting software vulnerabilities, analyzing code for weaknesses, validating patches, assessing system configurations, verifying compliance with security standards, and generating vulnerability reports for audit or remediation purposes."
-
-    The [original brief](https://discord.com/channels/1377115244018532404/1394851634428903615/1396926639119794497) from a user AVSuun
-
-
-## Tools and Claude Code Sub-agents
-
-I wanted to give the VulnerabilityTech agent access to tools for 
-
-- Static Analysis Security Testing (SAST) - combining traditional SAST tools with LLM review 
-- Dependency checking
-
-
-I decided to use Claude Code Sub-agents for this (announced a few days ago https://docs.anthropic.com/en/docs/claude-code/sub-agents). 
-
-- I only focused on Claude Code - not other environments that BMAD may work on.
-
-
-### BMAD Agents vs Claude Code Sub-Agents 
-
-#### Claude Code Sub-Agents 
-- **What They Are**: Specialized AI assistants with custom system prompts and tool access
-- **Architecture**: Defined as Markdown files with YAML frontmatter in `.claude/agents/`
-- **Operation**: Isolated context windows with specific expertise and granular tool permissions
-- **Delegation**: Automatic selection by Claude Code or explicit user invocation
-- **Benefits**: Focused expertise, faster analysis, parallel processing capabilities
-
-#### BMad Framework Current State
-- **12 Specialized Agents**: Comprehensive personas in `bmad-core/agents/`
-- **Complex Configuration**: YAML-based with dependencies and external task references
-- **Full Context Maintenance**: Complete operating instructions and workflow definitions
-- **Command Syntax**: `*command` activation with extensive persona definitions
-
-#### Key Architectural Differences
-1. **Complexity**: BMad = comprehensive personas vs Claude = focused sub-agents
-2. **Dependencies**: BMad = external task references vs Claude = self-contained
-3. **Context**: BMad = full context maintenance vs Claude = isolated context windows
-4. **Activation**: BMad = explicit commands vs Claude = automatic delegation
-
-
-### Claude Code sub-agents Setup
-
-See [how I setup Claude Code sub-agents](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/claude-code-sub-agents-integration/.claude/README.md) to work with BMAD agents that describes how BMAD agents call Claude Code sub-agents.
-
-Four [Claude Code sub-agents](https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/claude-code-sub-agents-integration/.claude/agents) were added:
-
-| **Claude sub-agent** | **Purpose**                                                                                                 
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **dependency-scanner**   | I am a specialized security analyst focused on third-party component security assessment and supply chain risk analysis. My expertise covers dependency vulnerability scanning, license compliance, and supply chain security validation according to NIST SSDF practices.                                                              |
-| **pattern-analyzer**     | I am a specialized security pattern analyst focused on detecting secure and insecure coding patterns across multiple programming languages. My expertise leverages language-specific security knowledge from expansion packs to validate secure coding practices and identify anti-patterns that introduce vulnerabilities.             |
-| **security-reviewer**    | I am a Level 2 orchestrator sub-agent that coordinates comprehensive security analysis by leveraging specialized tool sub-agents. My role is to orchestrate hybrid SAST + LLM security analysis for maximum accuracy and coverage, focusing on practical, exploitable security issues that pose real risks to applications and systems. |
-| **test-validator**       | I am a specialized security testing analyst focused on validating the quality, coverage, and effectiveness of security tests within software projects. My expertise ensures that security testing meets NIST SSDF standards and provides robust protection against real-world threats.                                                  |
+<figure markdown>
+![](../assets/images/swsectouch.png)
+Image from [Secure Programming with Static Analysis by Brian Chess, Jacob West](https://www.amazon.com/Secure-Programming-Static-Analysis-Brian/dp/0321424778)
+</figure>
 
 
 
-I also added a tests dir to BMAD be able to test this. 
 
-- This includes a [deliberately vulnerable app](https://github.com/CyberSecAI/BMAD-METHOD/tree/feature/claude-code-sub-agents-integration/tests/agents/vulnerabilityTech/fixtures/python/vulnerable_app) to test: 
-
-
-
-### VulnerabilityTech Agent Report
-
-!!! success
- 
-    See example [output report](https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/claude-code-sub-agents-integration/tests/reports/consolidated-security-report.md).
-
-    https://github.com/CyberSecAI/BMAD-METHOD/blob/feature/claude-code-sub-agents-integration/tests/reports/consolidated-security-report.md#%EF%B8%8F-nist-ssdf-compliance-assessment
-
-
-## Finding Defects
+## Finding Defects in Source Code
 
 <figure markdown>
 ![](../assets/images/sast_quad.png)
@@ -99,22 +35,30 @@ it is visible in the code or only in the design.
 
 
 
-## How to use LLMs and SAST Tools Together
-
-LLMs can be used with Code Analysis Tools in different ways:
-1. Create a formatted report of findings (this is more an editorial activity - not code analysis)
-2. Triage the findings and indicate if they are True or False Positives (this is a common security activity)
-   1. This involves looking at the source code with the finding
-3. Independently look for issues e.g. using an analysis of [CPGs](https://en.wikipedia.org/wiki/Code_property_graph).
-4. Actively exercise the code by creating or guiding test cases.
-
-
 **LLMs can compliment the Static analysis sweetspot (Generic defects - Visible in the code)**
 
 - "SAST tools often rely on predefined patterns and rules, which can result in high false-positive rates and an inability to detect novel or context-dependent vulnerabilities" per [ref](https://arxiv.org/html/2409.15735v2).
 - Additional context can be given to LLMs to improve their performance e.g. vulnerability reports on similar code
  [LSAST: Enhancing Cybersecurity through LLM-supported Static Application Security Testing](https://arxiv.org/html/2409.15735v2)
 
+
+
+## How to use LLMs and SAST Tools Together
+
+LLMs can be used with Code Analysis Tools in different ways:
+
+1. Create a formatted report of findings: 
+      1. this is more an editorial activity - not code analysis
+2. Utilising LLMs for False Positive Mitigation (FPM) on SAST Warnings: 
+      1. Traditional SAST tools often generate a high volume of false positive alerts, which can be time-consuming and resource-intensive for developers to manually review. 
+      2. LLMs can be integrated to automate this false positive mitigation process
+3. Direct Integration of SAST Results with LLMs:
+      1. SAST tools provide initial insights into known vulnerabilities based on predefined rules and patterns. Their findings, including details like CWE IDs and line numbers, can be formatted and directly incorporated into the prompts provided to LLMs alongside the target code. 
+      2. This approach, referred to as "[RAW LSAST](https://arxiv.org/html/2409.15735v2)," has been shown to significantly enhance the LLM’s ability to detect vulnerabilities that static scanners alone might miss, thereby improving overall detection accuracy 
+4. Independently look for issues 
+      1. e.g. using an analysis of [CPGs](https://en.wikipedia.org/wiki/Code_property_graph).
+5. Actively exercise the code by creating or guiding test cases.
+   
 
 !!! quote
 
