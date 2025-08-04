@@ -2,6 +2,12 @@
 
 !!! abstract "Overview"
       There are several options to consider when building an LM solution for CWE assignment as described here.
+
+!!! tip
+
+      [Vulnerability Root Cause Mapping with CWE: Challenges, Solutions, and Insights from Grounded LLM-based Analysis](https://www.first.org/conference/vulncon2025/program#pVulnerability-Root-Cause-Mapping-with-CWE-Challenges-Solutions-and-Insights-from-Grounded-LLM-based-Analysis) details a more comprehensive production solution using LLMs for CWE Mapping.
+
+
 ## Approach to using Language Models
 
 ### Don't Train A Model On Bad Data!
