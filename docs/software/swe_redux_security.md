@@ -130,6 +130,7 @@ A challenge with using LLMs is to get the precise and complete code context to t
 3. [LSAST: Enhancing Cybersecurity through LLM-supported Static Application Security Testing](https://arxiv.org/html/2409.15735v2)
 4. [CASTLE: Benchmarking Dataset for Static Code Analyzers and LLMs towards CWE Detection](https://arxiv.org/html/2503.09433v1)
 5. [Source Code Vulnerability Detection: Combining Code Language Models and Code Property Graphs](https://arxiv.org/html/2404.14719v1)
+6. [SecLint, a Python-based AI agent for detecting insecure code patterns using RAG](https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability) 
 
 
 
