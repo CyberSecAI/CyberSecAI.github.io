@@ -11,22 +11,32 @@ icon: material/play-box-edit-outline
 
     Phases are shown in chronological order - note that a second security review was done based on a newly published OWASP guide. 
 
+    **Exploratory**
+
+    [Pre-existing documentation](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation). 
+
     **Pre-Code**
+
+    !!! tip
+
+        All of these pre-code outputs were created with a [Gemini Gem](https://gemini.google/overview/gems/) loaded with a [BMAD-Method Full Stack team loaded (modified to add a security agent)](https://github.com/CyberSecAI/BMAD-METHOD/blob/main/dist/teams/team-fullstack.txt). 
+        
+        - This gives a guided interactive experience with different Software Engineering roles.
 
     | **Phase** | **Input** | **Chat History** | **Output** |
     |-----------|-----------|----------|------------|
-    |     **Exploratory**     |   -        |      -    |     [Pre-existing documentation](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation)       |
     |      **Planning**    |  [Pre-existing documentation](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation)         | [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_planning_chat.md)          | [Product Brief, PRD, UX requirements, Architecture document.](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation)           |
     |      **Security Review**     |  [Product Brief, PRD, UX requirements, Architecture document.](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation)          |   [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_agent_chat.md)       |  - [Security review documents](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/security/bmad_fullagent_security) <br>- [Changes to the architecture document  by the architect based on the security agent's findings](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/ad8b50438cc669f3f16afee755756af5300db464)         |
-    |      **Document Preparation** for development consumption     | - [PRD](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation) <br> - [Security Story Report from Security Analyst](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_story_report.md)    |  - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_user_stories.md) <br> - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_stories.md)      |   - [User Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories)<br>- [Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories) ("S-" prefix)                |    
+    |      **Document Preparation** for development consumption     | - [PRD](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#project-documentation) <br> - [Security Story Report from Security Analyst](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_story_report.md)    |  - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_user_stories.md) <br> - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_stories.md)      |   - [User Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories)<br>- [Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories) ("S-" prefix) <br> - [Security Test Cases](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_test_cases.md)             |    
     |      **Security Review**     |  [Newly published Securing Agentic Applications Guide, OWASP Gen AI Security Project - Agentic Security Initiative Version 1.0 July 28, 2025](https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/)        |   - [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/bmad_security_agent_owasp_new_ai_guide.md)  |  - [Changes to the architecture document, and security documents, based on the security agent's review of the newly published OWASP guide](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/848ab2133301efdf47e42c78b2762045aaca6019) <br> - [Changes to 2 Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/commit/1bdf204671db22af92d675d2a295144ecbd914af)       |
-    |      **Kanban (via Gitbub Project) to plan and track work**    |  - [User Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories)<br>- [Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories) ("S-" prefix) <br> - [Security Test Cases](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_test_cases.md)         |   [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/github_add_stories.md)       |     [Kanban Board of Stories](https://github.com/orgs/CWE-ChatBot/projects/1/views/1?filterQuery=)       |
+
                         
     
     **Code**
 
     | **Phase** | **Input** | **Chat History** | **Output** |
     |-----------|-----------|----------|------------|
+    |      **Kanban (via Gitbub Project) to plan and track work**    |  - [User Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories)<br>- [Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories) ("S-" prefix) <br> - [Security Test Cases](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_test_cases.md)         |   [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/github_add_stories.md)       |     [Kanban Board of Stories](https://github.com/orgs/CWE-ChatBot/projects/1/views/1?filterQuery=)       |
     | **Code Review**|   **[Deliberately Vulnerable test app for test and demo purposes](https://github.com/CyberSecAI/BMAD-METHOD/tree/main/tests/agents/vulnerabilityTech/fixtures/python/vulnerable_app)**     |  -  | [Vulnerability Report that includes independent analysis and triage of results, and confidence levels](https://github.com/CyberSecAI/BMAD-METHOD/blob/main/tests/reports/consolidated-security-report.md)       
 
 
