@@ -20,6 +20,16 @@
 | [HAL (Holistic Agent Leaderboard)](https://hal.cs.princeton.edu/)     | Autonomous Agent          | 13 benchmarks (e.g., SWE-bench Verified, USACO, Cybench, TAU-bench) across many domains            | Cost-controlled evaluations; success rates; Pareto fronts  |
 | [TBench](https://www.tbench.ai/)                                      | Autonomous Agent          | Terminal-based complex tasks in realistic environments                                             | Task success rate; command accuracy; time-to-completion    |
 
+
+## Other Evaluations
+
+In addition to leaderboards, it is useful to read about other evaluations and experiments e.g. 
+
+- [How far can we push AI autonomy in code generation?](https://martinfowler.com/articles/pushing-ai-autonomy.html), Birgitta Böckeler ThoughtWorks, August 2025
+
+
+
+
 ## Takeaways
   
 !!! success "Key Takeaways"

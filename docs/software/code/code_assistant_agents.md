@@ -25,9 +25,15 @@
     - For shared understanding among stakeholders
     - As we move [From Code-Centric to Contract-Centric Development](../introduction.md#from-code-centric-to-contract-centric-development)
 
-    !!! quote
 
-        "There's a good chance that, by the end of the year, people aren't using IDEs anymore", [Mastering Claude Code in 30 minutes](https://youtu.be/6eBSHbLKuN0?t=1586), Anthropic, 22 May 2025
+
+Since I made this observation, there have been some relevant updates:
+
+- Amazon Kiro introduces [a “spec-driven development” philosophy](https://garysvenson09.medium.com/kiro-by-amazon-rethinking-the-ai-coding-ide-landscape-ed357628b71e)
+- Sean Grove, OpenAI, July 2025 discuuses [The New Code](https://youtu.be/8rABwKRsec4?si=bVyUlwN6XsRnvzkp) where specifications, not traditional code, are the primary valuable artifact for aligning human and AI intent.
+    - Future IDEs might function as "integrated thought clarifiers," helping to surface and resolve ambiguities in specifications.
+    - Moving from disparate machine encodings to a unified human encoding (specifications) will simplify how we solve problems.
+- "There's a good chance that, by the end of the year, people aren't using IDEs anymore", [Mastering Claude Code in 30 minutes](https://youtu.be/6eBSHbLKuN0?t=1586), Anthropic, 22 May 2025
 
 ## **Autonomy Levels for AI Coding Tools**
 
