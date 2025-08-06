@@ -1,4 +1,4 @@
-# Agent-Based Frameworks for Software Engineering
+# Software Engineering with GenAI
 
 !!! abstract "Overview"
 
@@ -12,6 +12,32 @@
 "Incremental Architecture-centric Validation & Verification Improves Qualification Confidence"
 Continuous Verification & Validation of Critical Software via DevSecOps, https://apps.dtic.mil/sti/pdfs/AD1187382.pdf
 </figure>
+
+## How Anthropic uses Claude for Production Code
+
+[Informative talk from Anthropic](https://www.youtube.com/watch?v=fHWFF_pnqDk) on how they responsibly merged a 22,000-line change, heavily written by Claude, into their production reinforcement learning codebase by employing several key strategies:
+
+- **Embracing the Product Manager Role for Claude**: This wasn't a single prompt but involved days of human work to define requirements and guide Claude
+    - The human team acted as product managers for Claude, providing the necessary context and direction
+- **Focusing on Leaf Nodes**: The change was largely concentrated in "leaf nodes" of the codebase
+  -   These are parts of the system where nothing else depends on them, making it acceptable for some technical debt to exist because they are unlikely to change or have further things built upon them
+- **Heavy Human Review for Core Architecture**
+    - For the parts of the codebase that were important and needed to be extensible, heavy human review was conducted
+- **Designing for Verifiability**:
+    - They carefully designed stress tests for stability and ran them for long durations, allowing stability to be measured without reading the code
+    - The entire system was designed to have easily human-verifiable inputs and outputs, enabling correctness verification based on these without needing to read the full underlying implementation
+    - These elements created verifiable checkpoints that allowed confidence in the change even without understanding the full code
+ 
+By combining these methods, Anthropic was able to achieve the same level of confidence in this AI-generated change as any other change, but deliver it in a fraction of the time and effort it would have taken to write and review every line by hand. This approach allowed them to think differently about their engineering capabilities, realizing that larger features and changes could be undertaken more efficiently
+
+
+!!! note
+
+    [The length of tasks AIs can do is doubling every 7 months](https://youtu.be/fHWFF_pnqDk?t=220).
+
+    As at May 2025, we're at 1 hour.
+
+
 
 ## Software Engineering Artifacts
 
