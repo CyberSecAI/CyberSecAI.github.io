@@ -5486,8 +5486,9 @@ If traditional coding was Software 1.0, and neural networks trained on data repr
 </ul>
 <p><strong>Verification</strong> activities begin in the Product Design phase and conclude with the acceptance test. They do not lead to changes in the requirements baseline; only to changes in the refinements descending from it.</p>
 <p>On the other hand, <strong>validation</strong> identifies problems which must be resolved by a change of the requirements specification. Thus, there are validation activities which occur throughout the software life cycle, including the development phase. </p>
-<div class="highlight"><pre><span></span><code>- For example, a simulation of the product design may establish not only that the design cannot meet the baseline performance requirements (verification), but also that the performance requirements are too stringent for any cost-effective product designs, and therefore need to be changed (validation).
-</code></pre></div>
+<ul>
+<li>For example, a simulation of the product design may establish not only that the design cannot meet the baseline performance requirements (verification), but also that the performance requirements are too stringent for any cost-effective product designs, and therefore need to be changed (validation).</li>
+</ul>
 <p>Basic V&amp;V criteria for software requirements and design specifications: </p>
 <ul>
 <li>completeness</li>
@@ -5924,11 +5925,17 @@ Windsurf, Roo Code, and GitHub Copilot, May 27, 2025</a>.</p>
 <li>For shared understanding among stakeholders</li>
 <li>As we move <a href="#software-introduction-from-code-centric-to-contract-centric-development">From Code-Centric to Contract-Centric Development</a></li>
 </ul>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>"There's a good chance that, by the end of the year, people aren't using IDEs anymore", <a href="https://youtu.be/6eBSHbLKuN0?t=1586">Mastering Claude Code in 30 minutes</a>, Anthropic, 22 May 2025</p>
 </div>
-</div>
+<p>Since I made this observation, there have been some relevant updates:</p>
+<ul>
+<li>Amazon Kiro introduces <a href="https://garysvenson09.medium.com/kiro-by-amazon-rethinking-the-ai-coding-ide-landscape-ed357628b71e">a “spec-driven development” philosophy</a></li>
+<li>Sean Grove, OpenAI, July 2025 discuuses <a href="https://youtu.be/8rABwKRsec4?si=bVyUlwN6XsRnvzkp">The New Code</a> where specifications, not traditional code, are the primary valuable artifact for aligning human and AI intent.<ul>
+<li>Future IDEs might function as "integrated thought clarifiers," helping to surface and resolve ambiguities in specifications.</li>
+<li>Moving from disparate machine encodings to a unified human encoding (specifications) will simplify how we solve problems.</li>
+</ul>
+</li>
+<li>"There's a good chance that, by the end of the year, people aren't using IDEs anymore", <a href="https://youtu.be/6eBSHbLKuN0?t=1586">Mastering Claude Code in 30 minutes</a>, Anthropic, 22 May 2025</li>
+</ul>
 <h2 id="software-code-code_assistant_agents-autonomy-levels-for-ai-coding-tools"><strong>Autonomy Levels for AI Coding Tools</strong><a class="headerlink" href="#software-code-code_assistant_agents-autonomy-levels-for-ai-coding-tools" title="Permanent link">&para;</a></h2>
 <p>We define autonomy levels similar to <a href="https://sourcegraph.com/blog/levels-of-code-ai">how autonomous driving is categorized</a>:</p>
 <ul>
@@ -6602,6 +6609,11 @@ to the model].”.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="software-code-leaderboards-other-evaluations">Other Evaluations<a class="headerlink" href="#software-code-leaderboards-other-evaluations" title="Permanent link">&para;</a></h2>
+<p>In addition to leaderboards, it is useful to read about other evaluations and experiments e.g. </p>
+<ul>
+<li><a href="https://martinfowler.com/articles/pushing-ai-autonomy.html">How far can we push AI autonomy in code generation?</a>, Birgitta Böckeler ThoughtWorks, August 2025</li>
+</ul>
 <h2 id="software-code-leaderboards-takeaways">Takeaways<a class="headerlink" href="#software-code-leaderboards-takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Key Takeaways</p>
@@ -7353,6 +7365,7 @@ The best choice will depend on the user’s acceptance of the trade-off between 
 <li><a href="https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/">The Shift from Models to Compound AI Systems</a>, Feb 18, 2024</li>
 <li><a href="https://github.com/PacktPublishing/LLM-Engineers-Handbook">LLM Engineer's Handbook</a>, by Paul Iusztin and Maxime Labonne, Oct 2024</li>
 <li><a href="https://applied-llms.org/">What We’ve Learned From A Year of Building with LLMs. A practical guide to building successful LLM products, covering the tactical, operational, and strategic.</a>, June 2024</li>
+<li><a href="https://research.google/pubs/an-introduction-to-googles-approach-for-secure-ai-agents/">Google's Approach for Secure AI Agents</a>, Santiago (Sal) Díaz Christoph Kern Kara Olive, Google (2025)</li>
 </ol>
 <h2 id="agents-agents-agents-in-production">Agents in Production<a class="headerlink" href="#agents-agents-agents-in-production" title="Permanent link">&para;</a></h2>
 <ol>
