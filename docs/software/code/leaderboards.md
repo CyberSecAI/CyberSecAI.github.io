@@ -6,6 +6,8 @@
     
     It covers both Coding Assistants and Autonomous Coding Agents
 
+
+
 ## Leaderboards
 
 | Leaderboard                                                          | Category                  | Tasks                                                                                              | Metrics                                                    |
@@ -19,6 +21,23 @@
 | [SWE-bench](https://www.swebench.com/)                                | Autonomous Agent          | 2,294 real-world “Fail-to-Pass” GitHub issues from 12 Python repos                                 | % of issues resolved                                       |
 | [HAL (Holistic Agent Leaderboard)](https://hal.cs.princeton.edu/)     | Autonomous Agent          | 13 benchmarks (e.g., SWE-bench Verified, USACO, Cybench, TAU-bench) across many domains            | Cost-controlled evaluations; success rates; Pareto fronts  |
 | [TBench](https://www.tbench.ai/)                                      | Autonomous Agent          | Terminal-based complex tasks in realistic environments                                             | Task success rate; command accuracy; time-to-completion    |
+
+
+
+### Measuring AI Ability to Complete Long Tasks
+
+!!! tip
+
+    The length of tasks (measured by how long they take human professionals) that generalist
+    autonomous frontier model agents can complete with 50% reliability has been doubling approximately every 7 months for the last 6 years
+
+    [Measuring AI Ability to Complete Long Tasks](https://arxiv.org/pdf/2503.14499)
+
+    <figure markdown>
+    ![](../assets/images/metr.png)
+    </figure>
+
+
 
 
 ## Other Evaluations
