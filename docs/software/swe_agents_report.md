@@ -6,7 +6,8 @@
 
     This section is a Research Report on Agent-Based Frameworks for [Software Engineering 1.0 Redux](./introduction.md#software-10-redux) (aka Agent-Based Frameworks Supporting Upstream Software Engineering Artifacts)
     
-    - These are [Level 4 – Highly Autonomous Coding](./code/code_assistant_agents/#autonomy-levels-for-ai-coding-tools): "The AI can handle complex projects end-to-end, needing only minimal human input"
+    
+    - These are [Level 4 – Highly Autonomous Coding](./code/code_assistant_agents.md#autonomy-levels-for-ai-coding-tools): "The AI can handle complex projects end-to-end, needing only minimal human input"
  
     Some of these build on existing solutions e.g. SuperClaude, ClaudeFlow build on ClaudeCode, and BMAD can build on ClaudeCode or other tools.
 

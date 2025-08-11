@@ -14,6 +14,11 @@
 !!! warning "Result"
     The result is a Grounded Open-System i.e. we can ground - but can't create a closed system - and we still get hallucinations in some cases.
 
+
+!!! tip
+
+      [Vulnerability Root Cause Mapping with CWE: Challenges, Solutions, and Insights from Grounded LLM-based Analysis](https://www.first.org/conference/vulncon2025/program#pVulnerability-Root-Cause-Mapping-with-CWE-Challenges-Solutions-and-Insights-from-Grounded-LLM-based-Analysis) details a more comprehensive production solution using LLMs for CWE Mapping.
+
 ## Recipe
 1. Use ChatGPT GPTs which are ["custom versions of ChatGPT that combine instructions, extra knowledge, and any combination of skills."](https://chatgpt.com/gpts) 
 2. **Grounded**: Provide the MITRE CWE specification as the "extra knowledge" in JSON format (not PDF).

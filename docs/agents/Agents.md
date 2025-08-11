@@ -59,6 +59,7 @@
 3. [The Shift from Models to Compound AI Systems](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/), Feb 18, 2024
 4. [LLM Engineer's Handbook](https://github.com/PacktPublishing/LLM-Engineers-Handbook), by Paul Iusztin and Maxime Labonne, Oct 2024
 5. [What We’ve Learned From A Year of Building with LLMs. A practical guide to building successful LLM products, covering the tactical, operational, and strategic.](https://applied-llms.org/), June 2024
+6. [Google's Approach for Secure AI Agents](https://research.google/pubs/an-introduction-to-googles-approach-for-secure-ai-agents/), Santiago (Sal) Díaz Christoph Kern Kara Olive, Google (2025)
 
 ## Agents in Production
 

@@ -56,7 +56,7 @@
 
     On the other hand, **validation** identifies problems which must be resolved by a change of the requirements specification. Thus, there are validation activities which occur throughout the software life cycle, including the development phase. 
 
-        - For example, a simulation of the product design may establish not only that the design cannot meet the baseline performance requirements (verification), but also that the performance requirements are too stringent for any cost-effective product designs, and therefore need to be changed (validation).
+    - For example, a simulation of the product design may establish not only that the design cannot meet the baseline performance requirements (verification), but also that the performance requirements are too stringent for any cost-effective product designs, and therefore need to be changed (validation).
 
     Basic V&V criteria for software requirements and design specifications: 
     

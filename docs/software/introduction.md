@@ -56,6 +56,11 @@ These approaches share a common insight: **successful software development requi
 
 ## Software 2.0
 
+<figure markdown>
+![](../assets/images/andrey.jpeg)
+</figure>
+
+
 The emergence of artificial intelligence is fundamentally changing how we think about software development.
 
 In 2017, Andrej Karpathy introduced the concept of "Software 2.0" to describe this transformation, where traditional human-written code gives way to AI-generated solutions.
@@ -116,6 +121,42 @@ As Karpathy noted:
     Github is a very successful home for Software 1.0 code. Is there space for a Software 2.0 Github? In this case repositories are datasets and commits are made up of additions and edits of the labels.
 
     https://karpathy.medium.com/software-2-0-a64152b37c35
+
+## Software 3.0
+
+
+Software 3.0 is using English to program LLMs. 
+
+The LLM can be programmed to 
+
+- carry out the end action e.g. sentiment classification.
+- write code to carry out the end action e.g. a web or mobile app.
+
+!!! quote
+
+    Software 1.0 is code, 2.0 was weights of tightly scoped ML models, 3.0 is using English to program LLMs.
+    Just like how in certain use cases software 2.0 would “eat away” at software 1.0 code, software 3.0 will now eat away at a lot of places where we would previously have used 1.0/2.0
+    https://x.com/ethanniser/status/1935056628350599473 
+
+
+!!! quote
+
+    We are witnessing the rise of a new paradigm: Software 3.0.
+    If traditional coding was Software 1.0, and neural networks trained on data represented Software 2.0, Software 3.0 is where your prompts directly program LLMs
+    https://x.com/huwng_tran/status/1935052873769042115 
+
+!!! quote
+
+    There is new category of consumer/manipulator of digital information:
+
+    - Humans (GUIs)
+    - Computers (APIs)
+    - NEW: Agents <- computers... but human-like
+
+    [Andrej Karpathy: Software Is Changing (Again)](https://www.youtube.com/watch?v=LCEmiRjPEtQ)
+
+This new category of consumer/manipulator is in line with "From People to Machines as Consumers/Customers/Creators" per [thoughts-on-the-future-from-the-past](#thoughts-on-the-future-from-the-past).
+
 
 ## Software 1.0 Redux
 
