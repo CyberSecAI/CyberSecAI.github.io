@@ -17,7 +17,7 @@ icon: material/play-box-edit-outline
 
     !!! tip
 
-        All of these pre-code outputs were created with a [Gemini Gem](https://gemini.google/overview/gems/) loaded with a [BMAD-Method Full Stack team loaded (modified to add a security agent)](https://github.com/CyberSecAI/BMAD-METHOD/blob/main/dist/teams/team-fullstack.txt). 
+        All of these pre-code outputs were created with a [Gemini Gem](https://gemini.google.com/gems/view) loaded with a [BMAD-Method Full Stack team loaded (modified to add a security agent)](https://github.com/CyberSecAI/BMAD-METHOD/blob/main/dist/teams/team-fullstack.txt). 
         
         - This gives a guided interactive experience with different Software Engineering roles.
 
