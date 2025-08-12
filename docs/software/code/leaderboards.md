@@ -28,13 +28,13 @@
 
 !!! tip
 
-    The length of tasks (measured by how long they take human professionals) that generalist
-    autonomous frontier model agents can complete with 50% reliability has been doubling approximately every 7 months for the last 6 years
+    **The length of tasks (measured by how long they take human professionals) that generalist
+    autonomous frontier model agents can complete with 50% reliability has been doubling approximately every 7 months for the last 6 years**
 
     [Measuring AI Ability to Complete Long Tasks](https://arxiv.org/pdf/2503.14499)
 
     <figure markdown>
-    ![](../assets/images/metr.png)
+    ![](../../assets/images/metr.png)
     </figure>
 
 
