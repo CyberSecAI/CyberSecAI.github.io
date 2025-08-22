@@ -11,7 +11,9 @@ icon: material/play-box-edit-outline
 
     **Exploratory**
 
-    [Pre-existing documentation](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation). 
+    - [Pre-existing documentation](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/README.md#additional-documentation). 
+    - [user personas and Scenarios](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/user_personas.md)
+    
 
     **Pre-Code**
 
