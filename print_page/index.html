@@ -1245,6 +1245,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/claude_code%20copy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Claude Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6742,6 +6763,12 @@ autonomous frontier model agents can complete with 50% reliability has been doub
 <td>-</td>
 <td><a href="https://github.com/CyberSecAI/BMAD-METHOD/blob/main/tests/reports/consolidated-security-report.md">Vulnerability Report that includes independent analysis and triage of results, and confidence levels</a></td>
 </tr>
+<tr>
+<td><strong>Docker Container</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-  <a href="https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/stories/1.2/DOCKERFILE_SECURITY_REVIEW_v2.md">Dockerfile Security Review Reviewer: Security-Reviewer Agent (AI)</a></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -7138,6 +7165,7 @@ The best choice will depend on the user’s acceptance of the trade-off between 
 <li><a href="https://arxiv.org/html/2503.09433v1">CASTLE: Benchmarking Dataset for Static Code Analyzers and LLMs towards <abbr title="CWE Common Weakness Enumeration">CWE</abbr> Detection</a></li>
 <li><a href="https://arxiv.org/html/2404.14719v1">Source Code Vulnerability Detection: Combining Code Language Models and Code Property Graphs</a></li>
 <li><a href="https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability">SecLint, a Python-based AI agent for detecting insecure code patterns using RAG</a> </li>
+<li><a href="https://noperator.dev/posts/slice/">Slice: SAST + LLM Interprocedural Context Extractor</a>, August 2025</li>
 </ol></section><section class="print-page" id="software-threat_model"><h1 id="software-threat_model-ai-powered-threat-modeling-for-secure-system-design">AI-Powered Threat Modeling for Secure System Design<a class="headerlink" href="#software-threat_model-ai-powered-threat-modeling-for-secure-system-design" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Overview</p>
@@ -7287,7 +7315,49 @@ The best choice will depend on the user’s acceptance of the trade-off between 
 <li><strong>Fabric by Daniel Miessler:</strong> A crowdsourced collection of AI prompt “patterns.” It includes a <a href="https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_stride_threat_model/system.md">create_stride_threat_model</a> pattern to guide an LLM in producing a STRIDE-based threat model from a system description and a <a href="https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_threat_scenarios/system.md">create_threat_scenarios</a> pattern for generating detailed attack scenarios. These patterns can be used with various GPT-based systems to jump-start threat modeling exercises.</li>
 <li><strong>Kornelius Security Audit Prompt:</strong> An <a href="https://github.com/scragz/kornelius/blob/main/prompts/audit/security.prompt">open prompt</a> (from the Kornelius project) that provides a template for security auditing via LLMs. This prompt script can be adapted to evaluate a system’s security posture by enumerating threats and checks.</li>
 </ul>
-<p>Each of the above resources provides ready-made prompt structures that practitioners can use with their AI of choice to conduct threat modeling, complementing the dedicated tools compared in the table.</p></section><h1 class='nav-section-title-end'>Ended: Software Engineering 1.0 Redux</h1><h1 class='nav-section-title-end'>Ended: Software Engineering</h1>
+<p>Each of the above resources provides ready-made prompt structures that practitioners can use with their AI of choice to conduct threat modeling, complementing the dedicated tools compared in the table.</p></section><section class="print-page" id="software-claude_code%20copy"><h1 id="software-claude_code%20copy-overview">Overview<a class="headerlink" href="#software-claude_code%20copy-overview" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>This section looks at some Claude Code setups I use.</p>
+</div>
+<h2 id="software-claude_code%20copy-claude-code-cli-god-mode">Claude Code CLI God Mode<a class="headerlink" href="#software-claude_code%20copy-claude-code-cli-god-mode" title="Permanent link">&para;</a></h2>
+<p>I use Claude Code CLI as my main tool. </p>
+<p>I wanted a way to use other models via Claude Code to </p>
+<ul>
+<li>reduce Claude Code token usage / cost (currently on Pro plan)</li>
+<li>
+<p>use the best tool for the job but maintain context in Claude Code</p>
+<ul>
+<li>Gemini is good for large code bases or data given its large context window</li>
+<li>ChatGPT is good for debugging </li>
+</ul>
+</li>
+</ul>
+<p>There are different ways to achieve this:</p>
+<ul>
+<li>using proxy routers per <a href="https://youtu.be/EkNfythQNRg">https://youtu.be/EkNfythQNRg</a></li>
+<li>using Claude Code as the router via a <a href="https://github.com/alexsmedile/god-cli/blob/main/god-cli.md">Claude Code command</a></li>
+</ul>
+<p>Having played with the former, I settled on the latter as it worked better </p>
+<div class="admonition quote">
+<p class="admonition-title">Highlights from the Reddit Community</p>
+<p>“Gemini CLI feels like garbage… but it has that huge context window we all love. So I added instructions to CLAUDE.md to have Claude use [Gemini CLI in non‑interactive mode] when it needs to gather information about a large part of the codebase.” </p>
+<p>“Gemini is good at explaining single, independent things … Claude is good at doing complex tasks that require a lot of memory, deep thinking, reasoning.” </p>
+<p><a href="https://www.reddit.com/r/ChatGPTCoding/comments/1lm3fxq/gemini_cli_is_awesome_but_only_when_you_make">https://www.reddit.com/r/ChatGPTCoding/comments/1lm3fxq/gemini_cli_is_awesome_but_only_when_you_make</a></p>
+</div>
+<p>This was then extended as a Claude Code command <code>god-cli</code> to support OpenAI Codex also
+<a href="https://github.com/alexsmedile/god-cli/blob/main/god-cli.md">https://github.com/alexsmedile/god-cli/blob/main/god-cli.md</a>.</p>
+<p>So a "<a href="https://github.com/alexsmedile/god-cli/blob/main/TEST.md#test-3--multi-agent-sequence">Map repo architecture, find cause of memory leak, and propose a precise patch</a>" prompt to Claude Code would </p>
+<ul>
+<li>Route to Gemini → architecture map.</li>
+<li>Route to Codex → debugging/diagnosis.</li>
+<li>Route to Claude → minimal diff patch.</li>
+</ul>
+<h2 id="software-claude_code%20copy-takeaways">Takeaways<a class="headerlink" href="#software-claude_code%20copy-takeaways" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Key Takeaways</p>
+<p>By instructing Claude Code (via a god-cli Command) to route specific tasks to specific CLI tools (Google Gemini CLI, OpenAI Codex CLI), you get the best tool for the job, while saving $.</p>
+</div></section><h1 class='nav-section-title-end'>Ended: Software Engineering 1.0 Redux</h1><h1 class='nav-section-title-end'>Ended: Software Engineering</h1>
                         <h1 class='nav-section-title' id='section-cybersecurity-models'>
                             CyberSecurity Models <a class='headerlink' href='#section-cybersecurity-models' title='Permanent link'>↵</a>
                         </h1>
