@@ -39,6 +39,7 @@ icon: material/play-box-edit-outline
     |-----------|-----------|----------|------------|
     |      **Kanban (via Gitbub Project) to plan and track work**    |  - [User Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories)<br>- [Security Stories](https://github.com/CWE-ChatBot/CWE-ChatBot/tree/main/docs/stories) ("S-" prefix) <br> - [Security Test Cases](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/security/bmad_fullagent_security/security_test_cases.md)         |   [Chat history](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/chats/github_add_stories.md)       |     [Kanban Board of Stories](https://github.com/orgs/CWE-ChatBot/projects/1/views/1?filterQuery=)       |
     | **Code Review**|   **[Deliberately Vulnerable test app for test and demo purposes](https://github.com/CyberSecAI/BMAD-METHOD/tree/main/tests/agents/vulnerabilityTech/fixtures/python/vulnerable_app)**     |  -  | [Vulnerability Report that includes independent analysis and triage of results, and confidence levels](https://github.com/CyberSecAI/BMAD-METHOD/blob/main/tests/reports/consolidated-security-report.md)       
+    | **Docker Container**|   -    |  -  | -  [Dockerfile Security Review Reviewer: Security-Reviewer Agent (AI)](https://github.com/CWE-ChatBot/CWE-ChatBot/blob/main/docs/stories/1.2/DOCKERFILE_SECURITY_REVIEW_v2.md)|
 
 
 ## Phase: Existing Exploratory Documentation

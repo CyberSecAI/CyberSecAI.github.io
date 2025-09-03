@@ -42,6 +42,7 @@ nav:
         - Software Engineering 1.0 Redux: software/swe_redux.md    
         - Software Engineering Security: software/swe_redux_security.md        
         - Threat Model: software/threat_model.md    
+        - Claude Code: software/claude_code copy.md
   - CyberSecurity Models:
     - CyberSecurity LLMs: cti_models/cyber_security_models.md
     - Agents: agents/Agents.md
