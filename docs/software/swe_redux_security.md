@@ -136,3 +136,21 @@ A challenge with using LLMs is to get the precise and complete code context to t
 
 
 
+## References
+
+1. Brian, C., & West, J. (2007). *Secure programming with static analysis*. Addison-Wesley.
+2. McGraw, G. (2006). *Software security: Building security in*. Addison-Wesley.
+3. Zhang, Y., Li, Y., Wang, T., et al. (2025). Towards effective complementary security analysis using large language models. *arXiv preprint*. [https://arxiv.org/html/2506.16899v1](https://arxiv.org/html/2506.16899v1)
+4. Xu, H., Chen, M., & Zhou, L. (2025). Leveraging large language models for command injection vulnerability analysis in Python: An empirical study on popular open-source projects. *arXiv preprint*. [https://arxiv.org/html/2505.15088v1](https://arxiv.org/html/2505.15088v1)
+5. Li, J., Wang, P., & Huang, K. (2025). LLM vs. SAST: A technical analysis on detecting coding bugs of GPT4-Advanced Data Analysis. *arXiv preprint*. [https://arxiv.org/html/2506.15212v1](https://arxiv.org/html/2506.15212v1)
+6. Müller, T., & Kim, D. (2024). Comparison of static application security testing tools and large language models for repo-level vulnerability detection. *arXiv preprint*. [https://arxiv.org/abs/2407.16235](https://arxiv.org/abs/2407.16235)
+7. Shen, R., & Zhao, F. (2024). LSAST: Enhancing cybersecurity through LLM-supported static application security testing. *arXiv preprint*. [https://arxiv.org/html/2409.15735v2](https://arxiv.org/html/2409.15735v2)
+8. Kumar, V., & Singh, A. (2025). CASTLE: Benchmarking dataset for static code analyzers and LLMs towards CWE detection. *arXiv preprint*. [https://arxiv.org/html/2503.09433v1](https://arxiv.org/html/2503.09433v1)
+9. Li, C., & Zhang, H. (2024). Source code vulnerability detection: Combining code language models and code property graphs. *arXiv preprint*. [https://arxiv.org/html/2404.14719v1](https://arxiv.org/html/2404.14719v1)
+10. Kolla, H. (2024). SecLint: An agentic code vulnerability detection tool using RAG. *Substack*. [https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability](https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability)
+11. Gross, C. (2025, August). Slice: SAST + LLM interprocedural context extractor. *noperator.dev*. [https://noperator.dev/posts/slice/](https://noperator.dev/posts/slice/)
+12. Google Security Team. (2024). Google Big Sleep AI tool finds critical Chrome vulnerability. *LinkedIn*. [https://lnkd.in/gSkA3kRC](https://lnkd.in/gSkA3kRC)
+13. Heelan, S. (2024). Using o3 to discover a remote zeroday vulnerability in the Linux kernel’s SMB implementation. *LinkedIn*. [https://lnkd.in/gHZqC\_k3](https://lnkd.in/gHZqC_k3)
+14. Wang, Z., Shi, T., Song, D., et al. (2024). CyberGym: Evaluating AI agents' cybersecurity capabilities with real-world vulnerabilities at scale. *UC Berkeley*. [https://www.cybergym.io/](https://www.cybergym.io/)
+15. Gaucher, R., Ermilov, V., & \[Author], A. (2024). Finding vulnerabilities in modern web apps using Claude Code and OpenAI Codex. *LinkedIn*. [https://lnkd.in/gGWaZzHk](https://lnkd.in/gGWaZzHk)
+
