@@ -4,7 +4,7 @@
 
     This section looks at some Claude Code setups I use.
 
-
+    I'll add more over time when I'm done playing with them...
 
 ## Claude Code CLI God Mode
 
@@ -13,7 +13,7 @@ I use Claude Code CLI as my main tool.
 I wanted a way to use other models via Claude Code to 
 
 - reduce Claude Code token usage / cost (currently on Pro plan)
-- use the best tool for the job but maintain context in Claude Code
+- use the [best tool for the job](../introduction/models.md) but maintain context in Claude Code
 
     - Gemini is good for large code bases or data given its large context window
     - ChatGPT is good for debugging 
@@ -48,13 +48,16 @@ So a "[Map repo architecture, find cause of memory leak, and propose a precise p
 
 ## Breakthrough Method of Agile AI-Driven Development
 
-[Breakthrough Method of Agile AI-Driven Development](./swe_redux.md) shows this in action.
+I researched and evaluated different Agent-Based Frameworks for Software Engineering.
+[Breakthrough Method of Agile AI-Driven Development](./swe_agents_report.md) was the one I selected as being closest to my [views](introduction/#software-10-redux).
+
+[Software Engineering 1.0 Redux](./swe_redux.md) shows this in action with the inputs, chat history, output artifacts.
 
 I added several features that I will merge back:
 
 - a security architect (Chris)
 - a vulnerability tech (Tanja) for code analysis
-  - uses sub-agents to combine traditional SAST, Dependency tools with LLMs
+    - uses sub-agents to combine traditional SAST, Dependency tools with LLMs
 
 
 ## CLAUDE.md
@@ -64,14 +67,14 @@ This [CLAUDE.md](https://gist.githubusercontent.com/dwillitzer/d3d103b850a1ef8dd
 1. sycophancy - I prefer my reality raw 
 2. code without test - so TDD approach
 3. code without checking for existing code or being overly eager to code
-4. mocks or otherwise doing something to get the job done - but not the actual documented plan
-
-
-
-
+4. doing something to get the job done - but not the actual documented plan e.g. 
+      1. mocks or stubs 
+      2. instead of installing a documented needed dependency, working around it with a lesser alternative.
 
 ## Takeaways
   
 !!! success "Key Takeaways"
 
-    By instructing Claude Code (via a god-cli Command) to route specific tasks to specific CLI tools (Google Gemini CLI, OpenAI Codex CLI), you get the best tool for the job, while saving $.
+    1. By instructing Claude Code (via a god-cli Command) to route specific tasks to specific CLI tools (Google Gemini CLI, OpenAI Codex CLI), you get the best tool for the job, while saving $.
+    2. Breakthrough Method of Agile AI-Driven Development (with my security additions) fits my current views of Software Engineering with GenAI.
+    3. [CLAUDE.md](https://gist.githubusercontent.com/dwillitzer/d3d103b850a1ef8ddc14e9b5d99a46f1/raw/3ae752ac06e4c6c07e81d38b98bc566887a58f3b/claude_development_policy.md) addresses some of the undesirable behaviors I observed.
