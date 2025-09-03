@@ -1252,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/claude_code%20copy/" class="md-nav__link">
+      <a href="../software/claude_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7315,12 +7315,12 @@ The best choice will depend on the user’s acceptance of the trade-off between 
 <li><strong>Fabric by Daniel Miessler:</strong> A crowdsourced collection of AI prompt “patterns.” It includes a <a href="https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_stride_threat_model/system.md">create_stride_threat_model</a> pattern to guide an LLM in producing a STRIDE-based threat model from a system description and a <a href="https://github.com/danielmiessler/Fabric/blob/main/data/patterns/create_threat_scenarios/system.md">create_threat_scenarios</a> pattern for generating detailed attack scenarios. These patterns can be used with various GPT-based systems to jump-start threat modeling exercises.</li>
 <li><strong>Kornelius Security Audit Prompt:</strong> An <a href="https://github.com/scragz/kornelius/blob/main/prompts/audit/security.prompt">open prompt</a> (from the Kornelius project) that provides a template for security auditing via LLMs. This prompt script can be adapted to evaluate a system’s security posture by enumerating threats and checks.</li>
 </ul>
-<p>Each of the above resources provides ready-made prompt structures that practitioners can use with their AI of choice to conduct threat modeling, complementing the dedicated tools compared in the table.</p></section><section class="print-page" id="software-claude_code%20copy"><h1 id="software-claude_code%20copy-overview">Overview<a class="headerlink" href="#software-claude_code%20copy-overview" title="Permanent link">&para;</a></h1>
+<p>Each of the above resources provides ready-made prompt structures that practitioners can use with their AI of choice to conduct threat modeling, complementing the dedicated tools compared in the table.</p></section><section class="print-page" id="software-claude_code"><h1 id="software-claude_code-overview">Overview<a class="headerlink" href="#software-claude_code-overview" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <p>This section looks at some Claude Code setups I use.</p>
 </div>
-<h2 id="software-claude_code%20copy-claude-code-cli-god-mode">Claude Code CLI God Mode<a class="headerlink" href="#software-claude_code%20copy-claude-code-cli-god-mode" title="Permanent link">&para;</a></h2>
+<h2 id="software-claude_code-claude-code-cli-god-mode">Claude Code CLI God Mode<a class="headerlink" href="#software-claude_code-claude-code-cli-god-mode" title="Permanent link">&para;</a></h2>
 <p>I use Claude Code CLI as my main tool. </p>
 <p>I wanted a way to use other models via Claude Code to </p>
 <ul>
@@ -7353,7 +7353,23 @@ The best choice will depend on the user’s acceptance of the trade-off between 
 <li>Route to Codex → debugging/diagnosis.</li>
 <li>Route to Claude → minimal diff patch.</li>
 </ul>
-<h2 id="software-claude_code%20copy-takeaways">Takeaways<a class="headerlink" href="#software-claude_code%20copy-takeaways" title="Permanent link">&para;</a></h2>
+<h2 id="software-claude_code-breakthrough-method-of-agile-ai-driven-development">Breakthrough Method of Agile AI-Driven Development<a class="headerlink" href="#software-claude_code-breakthrough-method-of-agile-ai-driven-development" title="Permanent link">&para;</a></h2>
+<p><a href="#software-swe_redux">Breakthrough Method of Agile AI-Driven Development</a> shows this in action.</p>
+<p>I added several features that I will merge back:</p>
+<ul>
+<li>a security architect (Chris)</li>
+<li>a vulnerability tech (Tanja) for code analysis</li>
+<li>uses sub-agents to combine traditional SAST, Dependency tools with LLMs</li>
+</ul>
+<h2 id="software-claude_code-claudemd">CLAUDE.md<a class="headerlink" href="#software-claude_code-claudemd" title="Permanent link">&para;</a></h2>
+<p>This <a href="https://gist.githubusercontent.com/dwillitzer/d3d103b850a1ef8ddc14e9b5d99a46f1/raw/3ae752ac06e4c6c07e81d38b98bc566887a58f3b/claude_development_policy.md">CLAUDE.md</a> addresses some of the undesirable behaviors I observed:</p>
+<ol>
+<li>sycophancy - I prefer my reality raw </li>
+<li>code without test - so TDD approach</li>
+<li>code without checking for existing code or being overly eager to code</li>
+<li>mocks or otherwise doing something to get the job done - but not the actual documented plan</li>
+</ol>
+<h2 id="software-claude_code-takeaways">Takeaways<a class="headerlink" href="#software-claude_code-takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Key Takeaways</p>
 <p>By instructing Claude Code (via a god-cli Command) to route specific tasks to specific CLI tools (Google Gemini CLI, OpenAI Codex CLI), you get the best tool for the job, while saving $.</p>
