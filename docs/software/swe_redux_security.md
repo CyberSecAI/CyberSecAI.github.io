@@ -121,13 +121,6 @@ A challenge with using LLMs is to get the precise and complete code context to t
 
 
 
-
-## References
-
-Got it ✅ — I’ve cleaned up your reference list so all the extra `([site][number])` style links are removed, while keeping the main hyperlinks intact.
-
----
-
 ## References
 
 1. Brian, C., & West, J. (2007). *Secure programming with static analysis*. Addison-Wesley.
@@ -146,6 +139,7 @@ Got it ✅ — I’ve cleaned up your reference list so all the extra `([site][n
 14. Wang, Z., Shi, T., Song, D., et al. (2024). CyberGym: Evaluating AI agents' cybersecurity capabilities with real-world vulnerabilities at scale. *UC Berkeley*. [https://www.cybergym.io/](https://www.cybergym.io/)
 15. Gaucher, R., Ermilov, V., & \[Author], A. (2024). Finding vulnerabilities in modern web apps using Claude Code and OpenAI Codex. *LinkedIn*. [https://lnkd.in/gGWaZzHk](https://lnkd.in/gGWaZzHk)
 16. Li, Z., Li, Y., Wang, T., et al. (2024). IRIS: LLM-assisted static analysis for detecting security vulnerabilities. *arXiv preprint*. [https://arxiv.org/abs/2405.17238](https://arxiv.org/abs/2405.17238)
+    1.  [Open Review](https://openreview.net/forum?id=9LdJDU7E91)
 17. (2025). Harnessing the power of LLMs for vulnerability detection. *arXiv preprint*. [https://arxiv.org/html/2504.18423v1](https://arxiv.org/html/2504.18423v1)
 18. (2025). Advancing software vulnerability detection with reasoning-enabled large language models. *Applied Sciences*. [https://www.mdpi.com/2076-3417/15/12/6651](https://www.mdpi.com/2076-3417/15/12/6651)
 19. Khare, A., Dutta, S., Li, Z., Solko-Breslin, A., Alur, R., & Naik, M. (2023). Understanding the effectiveness of large language models in detecting security vulnerabilities. *arXiv preprint*. [https://arxiv.org/abs/2311.16169](https://arxiv.org/abs/2311.16169)
@@ -156,3 +150,4 @@ Got it ✅ — I’ve cleaned up your reference list so all the extra `([site][n
 23. Klieber, W., & Flynn, L. (2024, October 7). Evaluating static analysis alerts with LLMs. *Cybersecurity Engineering, SEI blog*. [https://www.sei.cmu.edu/blog/evaluating-static-analysis-alerts-with-llms/](https://www.sei.cmu.edu/blog/evaluating-static-analysis-alerts-with-llms/)
 24. Ferro, A. (2024). Beyond static analysis: AI-powered vulnerability detection. *Medium*. [https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c](https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c)
 25. (2024). Research on LLM for vulnerability detection – Fernweh. *Blog post*. [https://blog.wohin.me/posts/recent-llm-for-vuln-detection/](https://blog.wohin.me/posts/recent-llm-for-vuln-detection/)
+    1.  Nice summary of 18 studies on LLM for vulnerability detection
