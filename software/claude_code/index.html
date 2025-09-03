@@ -1782,6 +1782,7 @@
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 <p>This section looks at some Claude Code setups I use.</p>
+<p>I'll add more over time when I'm done playing with them...</p>
 </div>
 <h2 id="claude-code-cli-god-mode">Claude Code CLI God Mode<a class="headerlink" href="#claude-code-cli-god-mode" title="Permanent link">&para;</a></h2>
 <p>I use Claude Code CLI as my main tool. </p>
@@ -1789,7 +1790,7 @@
 <ul>
 <li>reduce Claude Code token usage / cost (currently on Pro plan)</li>
 <li>
-<p>use the best tool for the job but maintain context in Claude Code</p>
+<p>use the <a href="../../introduction/models/">best tool for the job</a> but maintain context in Claude Code</p>
 <ul>
 <li>Gemini is good for large code bases or data given its large context window</li>
 <li>ChatGPT is good for debugging </li>
@@ -1817,12 +1818,16 @@
 <li>Route to Claude → minimal diff patch.</li>
 </ul>
 <h2 id="breakthrough-method-of-agile-ai-driven-development">Breakthrough Method of Agile AI-Driven Development<a class="headerlink" href="#breakthrough-method-of-agile-ai-driven-development" title="Permanent link">&para;</a></h2>
-<p><a href="../swe_redux/">Breakthrough Method of Agile AI-Driven Development</a> shows this in action.</p>
+<p>I researched and evaluated different Agent-Based Frameworks for Software Engineering.
+<a href="../swe_agents_report/">Breakthrough Method of Agile AI-Driven Development</a> was the one I selected as being closest to my <a href="introduction/#software-10-redux">views</a>.</p>
+<p><a href="../swe_redux/">Software Engineering 1.0 Redux</a> shows this in action with the inputs, chat history, output artifacts.</p>
 <p>I added several features that I will merge back:</p>
 <ul>
 <li>a security architect (Chris)</li>
-<li>a vulnerability tech (Tanja) for code analysis</li>
+<li>a vulnerability tech (Tanja) for code analysis<ul>
 <li>uses sub-agents to combine traditional SAST, Dependency tools with LLMs</li>
+</ul>
+</li>
 </ul>
 <h2 id="claudemd">CLAUDE.md<a class="headerlink" href="#claudemd" title="Permanent link">&para;</a></h2>
 <p>This <a href="https://gist.githubusercontent.com/dwillitzer/d3d103b850a1ef8ddc14e9b5d99a46f1/raw/3ae752ac06e4c6c07e81d38b98bc566887a58f3b/claude_development_policy.md">CLAUDE.md</a> addresses some of the undesirable behaviors I observed:</p>
@@ -1830,12 +1835,20 @@
 <li>sycophancy - I prefer my reality raw </li>
 <li>code without test - so TDD approach</li>
 <li>code without checking for existing code or being overly eager to code</li>
-<li>mocks or otherwise doing something to get the job done - but not the actual documented plan</li>
+<li>doing something to get the job done - but not the actual documented plan e.g. <ol>
+<li>mocks or stubs </li>
+<li>instead of installing a documented needed dependency, working around it with a lesser alternative.</li>
+</ol>
+</li>
 </ol>
 <h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Key Takeaways</p>
-<p>By instructing Claude Code (via a god-cli Command) to route specific tasks to specific CLI tools (Google Gemini CLI, OpenAI Codex CLI), you get the best tool for the job, while saving $.</p>
+<ol>
+<li>By instructing Claude Code (via a god-cli Command) to route specific tasks to specific CLI tools (Google Gemini CLI, OpenAI Codex CLI), you get the best tool for the job, while saving $.</li>
+<li>Breakthrough Method of Agile AI-Driven Development (with my security additions) fits my current views of Software Engineering with GenAI.</li>
+<li><a href="https://gist.githubusercontent.com/dwillitzer/d3d103b850a1ef8ddc14e9b5d99a46f1/raw/3ae752ac06e4c6c07e81d38b98bc566887a58f3b/claude_development_policy.md">CLAUDE.md</a> addresses some of the undesirable behaviors I observed.</li>
+</ol>
 </div>
 
 
