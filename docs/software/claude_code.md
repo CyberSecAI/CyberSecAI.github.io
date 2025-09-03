@@ -49,7 +49,7 @@ So a "[Map repo architecture, find cause of memory leak, and propose a precise p
 ## Breakthrough Method of Agile AI-Driven Development
 
 I researched and evaluated different Agent-Based Frameworks for Software Engineering.
-[Breakthrough Method of Agile AI-Driven Development](./swe_agents_report.md) was the one I selected as being closest to my [views](introduction/#software-10-redux).
+[Breakthrough Method of Agile AI-Driven Development](./swe_agents_report.md) was the one I selected as being closest to my [views](introduction.md#software-10-redux).
 
 [Software Engineering 1.0 Redux](./swe_redux.md) shows this in action with the inputs, chat history, output artifacts.
 
