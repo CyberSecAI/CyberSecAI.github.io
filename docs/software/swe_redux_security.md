@@ -123,31 +123,33 @@ A challenge with using LLMs is to get the precise and complete code context to t
 
 ## References
 
-1. Brian, C., & West, J. (2007). *Secure programming with static analysis*. Addison-Wesley.
-2. McGraw, G. (2006). *Software security: Building security in*. Addison-Wesley.
-3. Zhang, Y., Li, Y., Wang, T., et al. (2025). Towards effective complementary security analysis using large language models. *arXiv preprint*. [https://arxiv.org/html/2506.16899v1](https://arxiv.org/html/2506.16899v1)
-4. Xu, H., Chen, M., & Zhou, L. (2025). Leveraging large language models for command injection vulnerability analysis in Python: An empirical study on popular open-source projects. *arXiv preprint*. [https://arxiv.org/html/2505.15088v1](https://arxiv.org/html/2505.15088v1)
-5. Li, J., Wang, P., & Huang, K. (2025). LLM vs. SAST: A technical analysis on detecting coding bugs of GPT4-Advanced Data Analysis. *arXiv preprint*. [https://arxiv.org/html/2506.15212v1](https://arxiv.org/html/2506.15212v1)
-6. Müller, T., & Kim, D. (2024). Comparison of static application security testing tools and large language models for repo-level vulnerability detection. *arXiv preprint*. [https://arxiv.org/abs/2407.16235](https://arxiv.org/abs/2407.16235)
-7. Shen, R., & Zhao, F. (2024). LSAST: Enhancing cybersecurity through LLM-supported static application security testing. *arXiv preprint*. [https://arxiv.org/html/2409.15735v2](https://arxiv.org/html/2409.15735v2)
-8. Kumar, V., & Singh, A. (2025). CASTLE: Benchmarking dataset for static code analyzers and LLMs towards CWE detection. *arXiv preprint*. [https://arxiv.org/html/2503.09433v1](https://arxiv.org/html/2503.09433v1)
-9. Li, C., & Zhang, H. (2024). Source code vulnerability detection: Combining code language models and code property graphs. *arXiv preprint*. [https://arxiv.org/html/2404.14719v1](https://arxiv.org/html/2404.14719v1)
-10. Kolla, H. (2024). SecLint: An agentic code vulnerability detection tool using RAG. *Substack*. [https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability](https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability)
-11. Gross, C. (2025, August). Slice: SAST + LLM interprocedural context extractor. *noperator.dev*. [https://noperator.dev/posts/slice/](https://noperator.dev/posts/slice/)
-12. Google Security Team. (2024). Google Big Sleep AI tool finds critical Chrome vulnerability. *LinkedIn*. [https://lnkd.in/gSkA3kRC](https://lnkd.in/gSkA3kRC)
-13. Heelan, S. (2024). Using o3 to discover a remote zeroday vulnerability in the Linux kernel’s SMB implementation. *LinkedIn*. [https://lnkd.in/gHZqC\_k3](https://lnkd.in/gHZqC_k3)
-14. Wang, Z., Shi, T., Song, D., et al. (2024). CyberGym: Evaluating AI agents' cybersecurity capabilities with real-world vulnerabilities at scale. *UC Berkeley*. [https://www.cybergym.io/](https://www.cybergym.io/)
-15. Gaucher, R., Ermilov, V., & \[Author], A. (2024). Finding vulnerabilities in modern web apps using Claude Code and OpenAI Codex. *LinkedIn*. [https://lnkd.in/gGWaZzHk](https://lnkd.in/gGWaZzHk)
-16. Li, Z., Li, Y., Wang, T., et al. (2024). IRIS: LLM-assisted static analysis for detecting security vulnerabilities. *arXiv preprint*. [https://arxiv.org/abs/2405.17238](https://arxiv.org/abs/2405.17238)
+1. AI Cyber Challenge (2025). AIxCC Open Source Archive. 
+   - **Official archive providing open-source access to all seven finalist Cyber Reasoning Systems (CRSs), released to accelerate adoption of AIxCC-developed technology in cybersecurity and software development.** https://archive.aicyberchallenge.com
+2. Brian, C., & West, J. (2007). *Secure programming with static analysis*. Addison-Wesley.
+3. McGraw, G. (2006). *Software security: Building security in*. Addison-Wesley.
+4. Zhang, Y., Li, Y., Wang, T., et al. (2025). Towards effective complementary security analysis using large language models. *arXiv preprint*. [https://arxiv.org/html/2506.16899v1](https://arxiv.org/html/2506.16899v1)
+5. Xu, H., Chen, M., & Zhou, L. (2025). Leveraging large language models for command injection vulnerability analysis in Python: An empirical study on popular open-source projects. *arXiv preprint*. [https://arxiv.org/html/2505.15088v1](https://arxiv.org/html/2505.15088v1)
+6. Li, J., Wang, P., & Huang, K. (2025). LLM vs. SAST: A technical analysis on detecting coding bugs of GPT4-Advanced Data Analysis. *arXiv preprint*. [https://arxiv.org/html/2506.15212v1](https://arxiv.org/html/2506.15212v1)
+7. Müller, T., & Kim, D. (2024). Comparison of static application security testing tools and large language models for repo-level vulnerability detection. *arXiv preprint*. [https://arxiv.org/abs/2407.16235](https://arxiv.org/abs/2407.16235)
+8. Shen, R., & Zhao, F. (2024). LSAST: Enhancing cybersecurity through LLM-supported static application security testing. *arXiv preprint*. [https://arxiv.org/html/2409.15735v2](https://arxiv.org/html/2409.15735v2)
+9.  Kumar, V., & Singh, A. (2025). CASTLE: Benchmarking dataset for static code analyzers and LLMs towards CWE detection. *arXiv preprint*. [https://arxiv.org/html/2503.09433v1](https://arxiv.org/html/2503.09433v1)
+10. Li, C., & Zhang, H. (2024). Source code vulnerability detection: Combining code language models and code property graphs. *arXiv preprint*. [https://arxiv.org/html/2404.14719v1](https://arxiv.org/html/2404.14719v1)
+11. Kolla, H. (2024). SecLint: An agentic code vulnerability detection tool using RAG. *Substack*. [https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability](https://harishkolla.substack.com/p/seclint-an-agentic-code-vulnerability)
+12. Gross, C. (2025, August). Slice: SAST + LLM interprocedural context extractor. *noperator.dev*. [https://noperator.dev/posts/slice/](https://noperator.dev/posts/slice/)
+13. Google Security Team. (2024). Google Big Sleep AI tool finds critical Chrome vulnerability. *LinkedIn*. [https://lnkd.in/gSkA3kRC](https://lnkd.in/gSkA3kRC)
+14. Heelan, S. (2024). Using o3 to discover a remote zeroday vulnerability in the Linux kernel’s SMB implementation. *LinkedIn*. [https://lnkd.in/gHZqC\_k3](https://lnkd.in/gHZqC_k3)
+15. Wang, Z., Shi, T., Song, D., et al. (2024). CyberGym: Evaluating AI agents' cybersecurity capabilities with real-world vulnerabilities at scale. *UC Berkeley*. [https://www.cybergym.io/](https://www.cybergym.io/)
+16. Gaucher, R., Ermilov, V., & \[Author], A. (2024). Finding vulnerabilities in modern web apps using Claude Code and OpenAI Codex. *LinkedIn*. [https://lnkd.in/gGWaZzHk](https://lnkd.in/gGWaZzHk)
+17. Li, Z., Li, Y., Wang, T., et al. (2024). IRIS: LLM-assisted static analysis for detecting security vulnerabilities. *arXiv preprint*. [https://arxiv.org/abs/2405.17238](https://arxiv.org/abs/2405.17238)
     1.  [Open Review](https://openreview.net/forum?id=9LdJDU7E91)
-17. (2025). Harnessing the power of LLMs for vulnerability detection. *arXiv preprint*. [https://arxiv.org/html/2504.18423v1](https://arxiv.org/html/2504.18423v1)
-18. (2025). Advancing software vulnerability detection with reasoning-enabled large language models. *Applied Sciences*. [https://www.mdpi.com/2076-3417/15/12/6651](https://www.mdpi.com/2076-3417/15/12/6651)
-19. Khare, A., Dutta, S., Li, Z., Solko-Breslin, A., Alur, R., & Naik, M. (2023). Understanding the effectiveness of large language models in detecting security vulnerabilities. *arXiv preprint*. [https://arxiv.org/abs/2311.16169](https://arxiv.org/abs/2311.16169)
-20. Yang, Y., Xu, B., Gao, X., & Sun, H. (2025). Context-enhanced vulnerability detection based on large language models. *arXiv preprint*. [https://arxiv.org/abs/2504.16877](https://arxiv.org/abs/2504.16877)
-21. Kaniewski, S., Schmidt, F., Enzweiler, M., Menth, M., & Heer, T. (2025). A systematic literature review on detecting software vulnerabilities with large language models. *arXiv preprint*. [https://arxiv.org/abs/2507.22659](https://arxiv.org/abs/2507.22659)
+18. (2025). Harnessing the power of LLMs for vulnerability detection. *arXiv preprint*. [https://arxiv.org/html/2504.18423v1](https://arxiv.org/html/2504.18423v1)
+19. (2025). Advancing software vulnerability detection with reasoning-enabled large language models. *Applied Sciences*. [https://www.mdpi.com/2076-3417/15/12/6651](https://www.mdpi.com/2076-3417/15/12/6651)
+20. Khare, A., Dutta, S., Li, Z., Solko-Breslin, A., Alur, R., & Naik, M. (2023). Understanding the effectiveness of large language models in detecting security vulnerabilities. *arXiv preprint*. [https://arxiv.org/abs/2311.16169](https://arxiv.org/abs/2311.16169)
+21. Yang, Y., Xu, B., Gao, X., & Sun, H. (2025). Context-enhanced vulnerability detection based on large language models. *arXiv preprint*. [https://arxiv.org/abs/2504.16877](https://arxiv.org/abs/2504.16877)
+22. Kaniewski, S., Schmidt, F., Enzweiler, M., Menth, M., & Heer, T. (2025). A systematic literature review on detecting software vulnerabilities with large language models. *arXiv preprint*. [https://arxiv.org/abs/2507.22659](https://arxiv.org/abs/2507.22659)
     - See **Awesome-LLM4SVD for the surveyed papers, taxonomy, datasets**: [https://github.com/hs-esslingen-it-security/Awesome-LLM4SVD](https://github.com/hs-esslingen-it-security/Awesome-LLM4SVD)
-22. Sheng, Z., Chen, Z., Gu, S., Huang, H., Gu, G., & Huang, J. (2025). LLMs in software security: A survey of vulnerability detection techniques and insights. *arXiv preprint*. [https://arxiv.org/abs/2502.07049](https://arxiv.org/abs/2502.07049)
-23. Klieber, W., & Flynn, L. (2024, October 7). Evaluating static analysis alerts with LLMs. *Cybersecurity Engineering, SEI blog*. [https://www.sei.cmu.edu/blog/evaluating-static-analysis-alerts-with-llms/](https://www.sei.cmu.edu/blog/evaluating-static-analysis-alerts-with-llms/)
-24. Ferro, A. (2024). Beyond static analysis: AI-powered vulnerability detection. *Medium*. [https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c](https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c)
-25. (2024). Research on LLM for vulnerability detection – Fernweh. *Blog post*. [https://blog.wohin.me/posts/recent-llm-for-vuln-detection/](https://blog.wohin.me/posts/recent-llm-for-vuln-detection/)
+23. Sheng, Z., Chen, Z., Gu, S., Huang, H., Gu, G., & Huang, J. (2025). LLMs in software security: A survey of vulnerability detection techniques and insights. *arXiv preprint*. [https://arxiv.org/abs/2502.07049](https://arxiv.org/abs/2502.07049)
+24. Klieber, W., & Flynn, L. (2024, October 7). Evaluating static analysis alerts with LLMs. *Cybersecurity Engineering, SEI blog*. [https://www.sei.cmu.edu/blog/evaluating-static-analysis-alerts-with-llms/](https://www.sei.cmu.edu/blog/evaluating-static-analysis-alerts-with-llms/)
+25. Ferro, A. (2024). Beyond static analysis: AI-powered vulnerability detection. *Medium*. [https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c](https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c)
+26. (2024). Research on LLM for vulnerability detection – Fernweh. *Blog post*. [https://blog.wohin.me/posts/recent-llm-for-vuln-detection/](https://blog.wohin.me/posts/recent-llm-for-vuln-detection/)
     1.  Nice summary of 18 studies on LLM for vulnerability detection
