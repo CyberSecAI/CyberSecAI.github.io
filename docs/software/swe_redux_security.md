@@ -1,7 +1,3 @@
----
-icon: material/play-box-edit-outline 
----
-
 # Software Engineering 1.0 Redux Security
 
 
@@ -124,7 +120,8 @@ A challenge with using LLMs is to get the precise and complete code context to t
 ## References
 
 1. AI Cyber Challenge (2025). AIxCC Open Source Archive. 
-   - **Official archive providing open-source access to all seven finalist Cyber Reasoning Systems (CRSs), released to accelerate adoption of AIxCC-developed technology in cybersecurity and software development.** https://archive.aicyberchallenge.com
+      - **Official archive providing open-source access to all seven finalist Cyber Reasoning Systems (CRSs), released to accelerate adoption of AIxCC-developed technology in cybersecurity and software development.** https://archive.aicyberchallenge.com
+      - See **[DARPA AI Cyber Challenge Tools Comparison Report](./aixcc.md)** 
 2. Brian, C., & West, J. (2007). *Secure programming with static analysis*. Addison-Wesley.
 3. McGraw, G. (2006). *Software security: Building security in*. Addison-Wesley.
 4. Zhang, Y., Li, Y., Wang, T., et al. (2025). Towards effective complementary security analysis using large language models. *arXiv preprint*. [https://arxiv.org/html/2506.16899v1](https://arxiv.org/html/2506.16899v1)
