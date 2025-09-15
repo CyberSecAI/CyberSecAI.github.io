@@ -27,9 +27,9 @@ nav:
     - CISA Vulnrichment: CWE_Assignment/Vulnrichment.md
   - Context Engineering:
     - Context Engineering: context_engineering/context.md        
-  - Prompt Engineering:    
-    - Prompt Engineering: prompt_engineering/prompt_engineering.md    
-    - Fabric: prompt_engineering/Fabric.md    
+    - Prompt Engineering:    
+      - Prompt Engineering: prompt_engineering/prompt_engineering.md    
+      - Fabric: prompt_engineering/Fabric.md    
   - Software Engineering:
     - Overview: software/overview.md  
     - Software Engineering: software/introduction.md
