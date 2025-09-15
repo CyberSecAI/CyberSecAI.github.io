@@ -51,6 +51,13 @@ By combining these methods, Anthropic was able to achieve the same level of conf
 
     These Software Engineering Artifacts inform the code and should live with the code. This means they should be in sync with the code and accessible when code is generated. Specifically, they should be located in the same organization/repository as the code, in a format that is both LLM and human-friendly ([Software Engineering Artifact Formats](./software_artifacts.md#artifact-formats-for-ai-integration)).
 
+    !!! quote 
+
+        At Google, our most successful efforts have been when documentation is treated like code and incorporated into the traditional engineering workflow, making it easier for engineers to write and maintain simple documents. https://abseil.io/resources/swe-book/html/ch10.html#what_qualifies_as_documentationquestion
+
+        Documentation must be as close to the code as possible. It must be easy to maintain, easy to keep up to date, and easy to find.
+
+        [Software Engineering at Google](https://abseil.io/resources/swe-book)
 
 ## Software Engineering Knowledge
 
