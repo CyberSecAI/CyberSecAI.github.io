@@ -25,7 +25,9 @@ nav:
     - NotebookLM CWE: CWE_Assignment/NotebookLM_Cwe.md
     - Vertex AI CWE Agent: CWE_Assignment/vertex_ai.md
     - CISA Vulnrichment: CWE_Assignment/Vulnrichment.md
-  - Prompting:
+  - Context Engineering:
+    - Context Engineering: context_engineering/context.md        
+  - Prompt Engineering:    
     - Prompt Engineering: prompt_engineering/prompt_engineering.md    
     - Fabric: prompt_engineering/Fabric.md    
   - Software Engineering:
@@ -44,6 +46,7 @@ nav:
         - AIxCC: software/aixcc.md      
         - Threat Model: software/threat_model.md    
         - Claude Code: software/claude_code.md
+
   - CyberSecurity Models:
     - CyberSecurity LLMs: cti_models/cyber_security_models.md
     - Agents: agents/Agents.md
@@ -166,6 +169,7 @@ plugins:
   - search
   - mermaid2
   - print-site 
+
 
 
 
