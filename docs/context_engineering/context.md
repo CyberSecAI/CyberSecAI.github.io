@@ -9,7 +9,14 @@
         "Context engineering is the delicate art and science of filling the context window with just the right information for the next step." Andrej Karpathy,
         https://www.youtube.com/watch?v=LCEmiRjPEtQ
 
-  
+
+
+    <figure markdown>
+    ![](../assets/images/context12.png)
+    Source: https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md
+    </figure>
+
+
 
 ## Essential Knowledge
 
