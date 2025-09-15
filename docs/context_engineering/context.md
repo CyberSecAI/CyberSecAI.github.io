@@ -228,20 +228,27 @@ Context Engineering 101 cheat sheet by Lena Hall https://x.com/lenadroid/status/
 
 ### Media & Visualizations
 
-10. Youtube (2025, July). *Elite Context Engineering with Claude Code* — IndyDevDan \[Video].
+10. Youtube (2025, September). *Elite Context Engineering with Claude Code* — IndyDevDan \[Video].
 
     * **Advanced context engineering techniques using Claude Code, as presented by IndyDevDan.**
-      [https://www.youtube.com/watch?v=Kf5-HWJPTIE](https://www.youtube.com/watch?v=Kf5-HWJPTIE) ([YouTube][1])
+      [https://www.youtube.com/watch?v=Kf5-HWJPTIE](https://www.youtube.com/watch?v=Kf5-HWJPTIE) (\[YouTube]\[1])
 
-11. Youtube (2025, July). *Context Engineering for Agents — Lance Martin, LangChain* \[Video].
+11. Youtube (2025, September). *Context Engineering for Agents — Lance Martin, LangChain* \[Video].
 
     * **Discussion on context engineering specifically for agent frameworks, by Lance Martin from LangChain.**
-      [https://www.youtube.com/watch?v=\_IlTcWciEC4](https://www.youtube.com/watch?v=_IlTcWciEC4) ([YouTube][2])
+      [https://www.youtube.com/watch?v=\_IlTcWciEC4](https://www.youtube.com/watch?v=_IlTcWciEC4) (\[YouTube]\[2])
 
 12. Droid, L. (2025, July). *Context Engineering Visualization*.
 
     * **Illustrative summary of context engineering techniques, shared via social media.**
       [https://x.com/lenadroid/status/1943685060785524824/photo/1](https://x.com/lenadroid/status/1943685060785524824/photo/1)
+
+13. Youtube (2025, September). *Advanced Context Engineering for Agents — Dexter Horthy* \[Video].
+
+    * **Walks through why naive back-and-forth prompting fails, how spec-first development keeps teams aligned, and why “everything is context engineering.” From compaction strategies to subagents and planning workflows, he shows how intentional context management turns AI coding from prototypes into production.**
+      [https://www.youtube.com/watch?v=IS\_y40zY-hc](https://www.youtube.com/watch?v=IS_y40zY-hc) (\[YouTube]\[3])
+
+---
 
 
 
