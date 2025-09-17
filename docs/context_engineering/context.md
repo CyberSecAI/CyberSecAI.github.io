@@ -18,10 +18,55 @@
 
 
 
+## Intent Engineering over Context Engineering over Prompt Engineering
+
+### Context Engineering
+
+!!! quote
+
+    +1 for "context engineering" over "prompt engineering".
+
+    People associate prompts with short task descriptions you'd give an LLM in your day-to-day use. When in every industrial-strength LLM app, context engineering is the delicate art and science of filling the context window with just the right information for the next step. Science because doing this right involves task descriptions and explanations, few shot examples, RAG, related (possibly multimodal) data, tools, state and history, compacting... Too little or of the wrong form and the LLM doesn't have the right context for optimal performance. Too much or too irrelevant and the LLM costs might go up and performance might come down. Doing this well is highly non-trivial. And art because of the guiding intuition around LLM psychology of people spirits.
+
+    On top of context engineering itself, an LLM app has to:
+
+    - break up problems just right into control flows
+    - pack the context windows just right
+    - dispatch calls to LLMs of the right kind and capability
+    - handle generation-verification UIUX flows
+    - a lot more - guardrails, security, evals, parallelism, prefetching, ...
+
+    **So context engineering is just one small piece of an emerging thick layer of non-trivial software that coordinates individual LLM calls (and a lot more) into full LLM apps.** The term "ChatGPT wrapper" is tired and really, really wrong.
+
+    https://x.com/karpathy/status/1937902205765607626 @karpathy Jun 25
+
+### Intent Engineering
+
+!!! quote
+
+    I really like it! But it’s still one level too deep. 
+
+    I think the actual skill is more like **Intent engineering. Articulating what you want extremely clearly.**
+
+    As critical as it is, the context is still just support. 
+
+    The more important part is the clear thinking.
+
+    https://x.com/DanielMiessler/status/1937937649005957260 @DanielMiessler Jun 25
+
+
+!!! tip
+
+    See also https://muness.com/posts/intent-engineering/.
+
+    [Breakthrough Method for Agile AI-Driven Development (BMAD](../software/swe_redux.md) is an example framework where intent is expressed and checked.
+  
+
+
 ## Essential Knowledge
 
 
-!!! tip "The best references covering the Problem and Solutio space" 
+!!! tip "The best references covering the Problem and Solution space" 
 
     - Reunig, D. (2025, June 22). [*How long contexts fail (and how to fix them).*](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html)  
       Analyzes failure modes of excessively long context windows.  
@@ -43,7 +88,7 @@
       **Core mantra:** **R&D = Reduce + Delegate.**  
       Reduce what the primary agent sees; delegate everything else to sub-agents or background primaries, with crisp contracts and logs  
 
-
+    
     
 ## Prioritized Context Engineering Steps for Agentic AI
 
@@ -195,7 +240,7 @@ Context Engineering 101 cheat sheet by Lena Hall https://x.com/lenadroid/status/
 3. Martin, R. L. (2025, June). *Context Engineering*.
 
       * **Blog post introducing principles of context engineering for AI systems, including prompt design, retrieval, and orchestration strategies.**
-     [https://rlancemartin.github.io/2025/06/23/context\_engineering/](https://rlancemartin.github.io/2025/06/23/context_engineering/)
+     [https://rlancemartin.github.io/2025/06/23/context_engineering/](https://rlancemartin.github.io/2025/06/23/context_engineering/)
 
 4. Schmid, P. (2025, June). *Context Engineering: Optimizing Prompts and Retrieval for LLMs*.
 
@@ -215,7 +260,7 @@ Context Engineering 101 cheat sheet by Lena Hall https://x.com/lenadroid/status/
 7. Landgraf, T. (2025, August). *Context Engineering for Claude Code: Mastering Deep Technical Knowledge*.
 
       * **Medium article introducing advanced context engineering workflows for Claude Code, including knowledge-file creation, project architecture awareness, and technical validation.**
-     [https://medium.com/%40tl\_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289](https://medium.com/%40tl_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289)
+     [https://medium.com/%40tl_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289](https://medium.com/%40tl_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289)
 
 ---
 
@@ -238,12 +283,12 @@ Context Engineering 101 cheat sheet by Lena Hall https://x.com/lenadroid/status/
 10. Youtube (2025, September). *Elite Context Engineering with Claude Code* — IndyDevDan \[Video].
 
     * **Advanced context engineering techniques using Claude Code, as presented by IndyDevDan.**
-      [https://www.youtube.com/watch?v=Kf5-HWJPTIE](https://www.youtube.com/watch?v=Kf5-HWJPTIE) (\[YouTube]\[1])
+      [https://www.youtube.com/watch?v=Kf5-HWJPTIE](https://www.youtube.com/watch?v=Kf5-HWJPTIE) ([YouTube][1])
 
 11. Youtube (2025, September). *Context Engineering for Agents — Lance Martin, LangChain* \[Video].
 
     * **Discussion on context engineering specifically for agent frameworks, by Lance Martin from LangChain.**
-      [https://www.youtube.com/watch?v=\_IlTcWciEC4](https://www.youtube.com/watch?v=_IlTcWciEC4) (\[YouTube]\[2])
+      [https://www.youtube.com/watch?v=_IlTcWciEC4](https://www.youtube.com/watch?v=_IlTcWciEC4) ([YouTube][2])
 
 12. Droid, L. (2025, July). *Context Engineering Visualization*.
 
@@ -253,7 +298,7 @@ Context Engineering 101 cheat sheet by Lena Hall https://x.com/lenadroid/status/
 13. Youtube (2025, September). *Advanced Context Engineering for Agents — Dexter Horthy* \[Video].
 
     * **Walks through why naive back-and-forth prompting fails, how spec-first development keeps teams aligned, and why “everything is context engineering.” From compaction strategies to subagents and planning workflows, he shows how intentional context management turns AI coding from prototypes into production.**
-      [https://www.youtube.com/watch?v=IS\_y40zY-hc](https://www.youtube.com/watch?v=IS_y40zY-hc) (\[YouTube]\[3])
+      [https://www.youtube.com/watch?v=IS_y40zY-hc](https://www.youtube.com/watch?v=IS_y40zY-hc) ([YouTube][3])
 
 ---
 
