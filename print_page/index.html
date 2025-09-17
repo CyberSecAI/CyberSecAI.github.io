@@ -4830,9 +4830,40 @@ The JSON output allows processing by machines.</p>
 Source: <a href="https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md">https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md</a>
 </figure></p>
 </div>
+<h2 id="context_engineering-context-intent-engineering-over-context-engineering-over-prompt-engineering">Intent Engineering over Context Engineering over Prompt Engineering<a class="headerlink" href="#context_engineering-context-intent-engineering-over-context-engineering-over-prompt-engineering" title="Permanent link">&para;</a></h2>
+<h3 id="context_engineering-context-context-engineering">Context Engineering<a class="headerlink" href="#context_engineering-context-context-engineering" title="Permanent link">&para;</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>+1 for "context engineering" over "prompt engineering".</p>
+<p>People associate prompts with short task descriptions you'd give an LLM in your day-to-day use. When in every industrial-strength LLM app, context engineering is the delicate art and science of filling the context window with just the right information for the next step. Science because doing this right involves task descriptions and explanations, few shot examples, RAG, related (possibly multimodal) data, tools, state and history, compacting... Too little or of the wrong form and the LLM doesn't have the right context for optimal performance. Too much or too irrelevant and the LLM costs might go up and performance might come down. Doing this well is highly non-trivial. And art because of the guiding intuition around LLM psychology of people spirits.</p>
+<p>On top of context engineering itself, an LLM app has to:</p>
+<ul>
+<li>break up problems just right into control flows</li>
+<li>pack the context windows just right</li>
+<li>dispatch calls to LLMs of the right kind and capability</li>
+<li>handle generation-verification UIUX flows</li>
+<li>a lot more - guardrails, security, evals, parallelism, prefetching, ...</li>
+</ul>
+<p><strong>So context engineering is just one small piece of an emerging thick layer of non-trivial software that coordinates individual LLM calls (and a lot more) into full LLM apps.</strong> The term "ChatGPT wrapper" is tired and really, really wrong.</p>
+<p><a href="https://x.com/karpathy/status/1937902205765607626">https://x.com/karpathy/status/1937902205765607626</a> @karpathy Jun 25</p>
+</div>
+<h3 id="context_engineering-context-intent-engineering">Intent Engineering<a class="headerlink" href="#context_engineering-context-intent-engineering" title="Permanent link">&para;</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>I really like it! But it’s still one level too deep. </p>
+<p>I think the actual skill is more like <strong>Intent engineering. Articulating what you want extremely clearly.</strong></p>
+<p>As critical as it is, the context is still just support. </p>
+<p>The more important part is the clear thinking.</p>
+<p><a href="https://x.com/DanielMiessler/status/1937937649005957260">https://x.com/DanielMiessler/status/1937937649005957260</a> @DanielMiessler Jun 25</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See also <a href="https://muness.com/posts/intent-engineering/">https://muness.com/posts/intent-engineering/</a>.</p>
+<p><a href="#software-swe_redux">Breakthrough Method for Agile AI-Driven Development (BMAD</a> is an example framework where intent is expressed and checked.</p>
+</div>
 <h2 id="context_engineering-context-essential-knowledge">Essential Knowledge<a class="headerlink" href="#context_engineering-context-essential-knowledge" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">The best references covering the Problem and Solutio space</p>
+<p class="admonition-title">The best references covering the Problem and Solution space</p>
 <ul>
 <li>
 <p>Reunig, D. (2025, June 22). <a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html"><em>How long contexts fail (and how to fix them).</em></a><br />
