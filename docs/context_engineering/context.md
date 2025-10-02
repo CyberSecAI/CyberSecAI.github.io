@@ -61,6 +61,24 @@
 
     [Breakthrough Method for Agile AI-Driven Development (BMAD](../software/swe_redux.md) is an example framework where intent is expressed and checked.
   
+## Guides from Anthropic and OpenAI 
+
+!!! tip "Guides from Anthropic and OpenAI"
+
+    [Anthropic's Guide](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents):
+
+      * Introduces the concept of "**context rot**," where model performance degrades as the context window fills.
+      * Stresses the importance of providing the smallest possible set of high-signal tokens.
+      * Recommends dynamic, "just-in-time" context retrieval.
+      * For long-horizon tasks, it suggests compaction, structured note-taking, and multi-agent architectures.
+      * They beta released a [Memory Tool](https://docs.claude.com/en/docs/agents-and-tools/tool-use/memory-tool) "to store and retrieve information across conversations through a memory file directory"
+
+
+      [OpenAI Cookbook (on Session Memory)](https://cookbook.openai.com/examples/agents_sdk/session_memory):
+
+      * Provides a concrete implementation of short-term memory management through "session memory."
+      * Details specific techniques like "**context trimming**" (keeping the last N turns) and "context summarization."
+      * Offers practical parameters for implementation, such as context_limit and keep_last_n_turns.
 
 
 ## Essential Knowledge
