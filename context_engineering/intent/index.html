@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/context_engineering/context/">
+        <link rel="canonical" href="https://github.com/CyberSecAI/CyberSecAI.github.io/context_engineering/intent/">
       
       
-        <link rel="prev" href="../../CWE_Assignment/Vulnrichment/">
-      
-      
-        <link rel="next" href="../../prompt_engineering/prompt_engineering/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Context Engineering - CyberSecAI</title>
+        <title>Overview - CyberSecAI</title>
       
     
     
@@ -148,7 +144,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Context Engineering
+              Overview
             
           </span>
         </div>
@@ -805,19 +801,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -831,7 +827,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Context Engineering
@@ -842,30 +838,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Context Engineering
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,269 +850,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#intent-engineering-over-context-engineering-over-prompt-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Intent Engineering over Context Engineering over Prompt Engineering
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Intent Engineering over Context Engineering over Prompt Engineering">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#context-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context Engineering
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#intent-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Intent Engineering
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#guides-from-anthropic-and-openai" class="md-nav__link">
-    <span class="md-ellipsis">
-      Guides from Anthropic and OpenAI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#essential-knowledge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Essential Knowledge
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prioritized-context-engineering-steps-for-agentic-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prioritized Context Engineering Steps for Agentic AI
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prioritized Context Engineering Steps for Agentic AI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-minimize-the-primary-context-treat-it-like-a-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Minimize the Primary Context (treat it like a cache)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-write-context-intentionally-dont-just-append-everything" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Write Context Intentionally (don’t just append everything)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-select-context-dynamically-quality-quantity" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Select Context Dynamically (quality &gt; quantity)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-use-context-priming-instead-of-big-always-on-memory-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Use Context Priming (instead of big always-on memory files)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-kill-always-on-baggage-toolsmcp-autoloading" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Kill Always-On Baggage (tools/MCP autoloading)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-delegate-heavy-work-to-sub-agents-properly" class="md-nav__link">
-    <span class="md-ellipsis">
-      6) Delegate Heavy Work to Sub-Agents (properly)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-delegate-longexpensive-tasks-to-background-primary-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      7) Delegate Long/Expensive Tasks to Background Primary Agents
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-compress-context-mostly-outside-the-window" class="md-nav__link">
-    <span class="md-ellipsis">
-      8) Compress Context (mostly outside the window)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-isolate-contexts-sandboxing-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      9) Isolate Contexts (sandboxing &amp; pipelines)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#10-log-context-bundles-for-replayhandoff" class="md-nav__link">
-    <span class="md-ellipsis">
-      10) Log Context Bundles for replay/handoff
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#11-defend-against-context-failure-modes" class="md-nav__link">
-    <span class="md-ellipsis">
-      11) Defend Against Context Failure Modes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-standardize-schemas-measure-what-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      12) Standardize Schemas &amp; Measure What Matters
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#context-engineering-101-cheat-sheet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context Engineering 101 cheat sheet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="References">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#academic-papers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Academic Papers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blogs-articles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Blogs &amp; Articles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#open-source-repositories-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open Source Repositories &amp; Tools
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#media-visualizations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Media &amp; Visualizations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#takeaways" class="md-nav__link">
-    <span class="md-ellipsis">
-      Takeaways
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2020,28 +1733,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#intent-engineering-over-context-engineering-over-prompt-engineering" class="md-nav__link">
+  <a href="#prioritized-intent-engineering-steps-for-agentic-ai" class="md-nav__link">
     <span class="md-ellipsis">
-      Intent Engineering over Context Engineering over Prompt Engineering
+      Prioritized Intent Engineering Steps for Agentic AI
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Intent Engineering over Context Engineering over Prompt Engineering">
+    <nav class="md-nav" aria-label="Prioritized Intent Engineering Steps for Agentic AI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#context-engineering" class="md-nav__link">
+  <a href="#1-define-mission-intent" class="md-nav__link">
     <span class="md-ellipsis">
-      Context Engineering
+      1) Define Mission Intent
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#intent-engineering" class="md-nav__link">
+  <a href="#2-refine-operational-intents" class="md-nav__link">
     <span class="md-ellipsis">
-      Intent Engineering
+      2) Refine Operational Intents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-codify-intent-as-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Codify Intent as Artifacts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-engineer-for-adaptability" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Engineer for Adaptability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-assure-intent-realization" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Assure Intent Realization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-balance-speed-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Balance Speed &amp; Reflection
     </span>
   </a>
   
@@ -2053,150 +1802,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#guides-from-anthropic-and-openai" class="md-nav__link">
+  <a href="#intent-engineering-101-cheat-sheet" class="md-nav__link">
     <span class="md-ellipsis">
-      Guides from Anthropic and OpenAI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#essential-knowledge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Essential Knowledge
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prioritized-context-engineering-steps-for-agentic-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prioritized Context Engineering Steps for Agentic AI
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prioritized Context Engineering Steps for Agentic AI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-minimize-the-primary-context-treat-it-like-a-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Minimize the Primary Context (treat it like a cache)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-write-context-intentionally-dont-just-append-everything" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Write Context Intentionally (don’t just append everything)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-select-context-dynamically-quality-quantity" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) Select Context Dynamically (quality &gt; quantity)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-use-context-priming-instead-of-big-always-on-memory-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Use Context Priming (instead of big always-on memory files)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-kill-always-on-baggage-toolsmcp-autoloading" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Kill Always-On Baggage (tools/MCP autoloading)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-delegate-heavy-work-to-sub-agents-properly" class="md-nav__link">
-    <span class="md-ellipsis">
-      6) Delegate Heavy Work to Sub-Agents (properly)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-delegate-longexpensive-tasks-to-background-primary-agents" class="md-nav__link">
-    <span class="md-ellipsis">
-      7) Delegate Long/Expensive Tasks to Background Primary Agents
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-compress-context-mostly-outside-the-window" class="md-nav__link">
-    <span class="md-ellipsis">
-      8) Compress Context (mostly outside the window)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-isolate-contexts-sandboxing-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      9) Isolate Contexts (sandboxing &amp; pipelines)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#10-log-context-bundles-for-replayhandoff" class="md-nav__link">
-    <span class="md-ellipsis">
-      10) Log Context Bundles for replay/handoff
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#11-defend-against-context-failure-modes" class="md-nav__link">
-    <span class="md-ellipsis">
-      11) Defend Against Context Failure Modes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-standardize-schemas-measure-what-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      12) Standardize Schemas &amp; Measure What Matters
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#context-engineering-101-cheat-sheet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context Engineering 101 cheat sheet
+      Intent Engineering 101 Cheat Sheet
     </span>
   </a>
   
@@ -2213,36 +1821,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#academic-papers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Academic Papers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#blogs-articles" class="md-nav__link">
     <span class="md-ellipsis">
       Blogs &amp; Articles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#open-source-repositories-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open Source Repositories &amp; Tools
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#media-visualizations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Media &amp; Visualizations
     </span>
   </a>
   
@@ -2280,320 +1861,81 @@
 <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
-<p>This section looks at Context Engineering, and gives Prioritized Context Engineering Steps for Agentic AI.</p>
+<p>This section looks at <strong>Intent Engineering</strong>, and gives Prioritized Intent Engineering Steps for Agentic AI.</p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
-<p>"Context engineering is the delicate art and science of filling the context window with just the right information for the next step." Andrej Karpathy,
-<a href="https://www.youtube.com/watch?v=LCEmiRjPEtQ">https://www.youtube.com/watch?v=LCEmiRjPEtQ</a></p>
+<p>"Articulating what you want extremely clearly." — Daniel Miessler<br />
+<a href="https://x.com/DanielMiessler/status/1937937649005957260">https://x.com/DanielMiessler/status/1937937649005957260</a></p>
 </div>
 <p><figure markdown>
-<img alt="" src="../../assets/images/context12.png" />
-Source: <a href="https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md">https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md</a>
+<img alt="" src="../assets/images/intent.png" /><br />
+Source: Adapted from Muness Castle, <a href="https://muness.com/posts/intent-engineering/">Intent Engineering</a>.
 </figure></p>
 </div>
-<h2 id="intent-engineering-over-context-engineering-over-prompt-engineering">Intent Engineering over Context Engineering over Prompt Engineering<a class="headerlink" href="#intent-engineering-over-context-engineering-over-prompt-engineering" title="Permanent link">&para;</a></h2>
-<h3 id="context-engineering">Context Engineering<a class="headerlink" href="#context-engineering" title="Permanent link">&para;</a></h3>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>+1 for "context engineering" over "prompt engineering".</p>
-<p>People associate prompts with short task descriptions you'd give an LLM in your day-to-day use. When in every industrial-strength LLM app, context engineering is the delicate art and science of filling the context window with just the right information for the next step. Science because doing this right involves task descriptions and explanations, few shot examples, RAG, related (possibly multimodal) data, tools, state and history, compacting... Too little or of the wrong form and the LLM doesn't have the right context for optimal performance. Too much or too irrelevant and the LLM costs might go up and performance might come down. Doing this well is highly non-trivial. And art because of the guiding intuition around LLM psychology of people spirits.</p>
-<p>On top of context engineering itself, an LLM app has to:</p>
+<h2 id="prioritized-intent-engineering-steps-for-agentic-ai">Prioritized Intent Engineering Steps for Agentic AI<a class="headerlink" href="#prioritized-intent-engineering-steps-for-agentic-ai" title="Permanent link">&para;</a></h2>
+<h3 id="1-define-mission-intent">1) Define Mission Intent<a class="headerlink" href="#1-define-mission-intent" title="Permanent link">&para;</a></h3>
 <ul>
-<li>break up problems just right into control flows</li>
-<li>pack the context windows just right</li>
-<li>dispatch calls to LLMs of the right kind and capability</li>
-<li>handle generation-verification UIUX flows</li>
-<li>a lot more - guardrails, security, evals, parallelism, prefetching, ...</li>
-</ul>
-<p><strong>So context engineering is just one small piece of an emerging thick layer of non-trivial software that coordinates individual LLM calls (and a lot more) into full LLM apps.</strong> The term "ChatGPT wrapper" is tired and really, really wrong.</p>
-<p><a href="https://x.com/karpathy/status/1937902205765607626">https://x.com/karpathy/status/1937902205765607626</a> @karpathy Jun 25</p>
-</div>
-<h3 id="intent-engineering">Intent Engineering<a class="headerlink" href="#intent-engineering" title="Permanent link">&para;</a></h3>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>I really like it! But it’s still one level too deep. </p>
-<p>I think the actual skill is more like <strong>Intent engineering. Articulating what you want extremely clearly.</strong></p>
-<p>As critical as it is, the context is still just support. </p>
-<p>The more important part is the clear thinking.</p>
-<p><a href="https://x.com/DanielMiessler/status/1937937649005957260">https://x.com/DanielMiessler/status/1937937649005957260</a> @DanielMiessler Jun 25</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>See also <a href="https://muness.com/posts/intent-engineering/">https://muness.com/posts/intent-engineering/</a>.</p>
-<p><a href="../../software/swe_redux/">Breakthrough Method for Agile AI-Driven Development (BMAD</a> is an example framework where intent is expressed and checked.</p>
-</div>
-<h2 id="guides-from-anthropic-and-openai">Guides from Anthropic and OpenAI<a class="headerlink" href="#guides-from-anthropic-and-openai" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Guides from Anthropic and OpenAI</p>
-<p><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Anthropic's Guide</a>:</p>
-<ul>
-<li>Introduces the concept of "<strong>context rot</strong>," where model performance degrades as the context window fills.</li>
-<li>Stresses the importance of providing the smallest possible set of high-signal tokens.</li>
-<li>Recommends dynamic, "just-in-time" context retrieval.</li>
-<li>For long-horizon tasks, it suggests compaction, structured note-taking, and multi-agent architectures.</li>
-<li>They beta released a <a href="https://docs.claude.com/en/docs/agents-and-tools/tool-use/memory-tool">Memory Tool</a> "to store and retrieve information across conversations through a memory file directory"</li>
-</ul>
-<p><a href="https://cookbook.openai.com/examples/agents_sdk/session_memory">OpenAI Cookbook (on Session Memory)</a>:</p>
-<ul>
-<li>Provides a concrete implementation of short-term memory management through "session memory."</li>
-<li>Details specific techniques like "<strong>context trimming</strong>" (keeping the last N turns) and "context summarization."</li>
-<li>Offers practical parameters for implementation, such as context_limit and keep_last_n_turns.</li>
-</ul>
-</div>
-<h2 id="essential-knowledge">Essential Knowledge<a class="headerlink" href="#essential-knowledge" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">The best references covering the Problem and Solution space</p>
-<ul>
-<li>
-<p>Reunig, D. (2025, June 22). <a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html"><em>How long contexts fail (and how to fix them).</em></a><br />
-  Analyzes failure modes of excessively long context windows.<br />
-<strong>Failure modes:</strong>  </p>
-<ul>
-<li><strong>Context poisoning</strong>: When a hallucination makes it into the context  </li>
-<li><strong>Context distraction</strong>: When the context overwhelms the training  </li>
-<li><strong>Context confusion</strong>: When superfluous context influences the response  </li>
-<li><strong>Context clash</strong>: When parts of the context disagree  </li>
-</ul>
-</li>
-<li>
-<p>Reunig, D. (2025, June 26). <a href="https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html"><em>How to fix your context.</em></a><br />
-  Follow-up article offering tactics to avoid context failure: RAG, tool loadout, context pruning, summarization, and offloading.</p>
-</li>
-<li>
-<p>Martin, R. L. (2025, June 23). <a href="https://rlancemartin.github.io/2025/06/23/context_engineering/"><em>Context engineering.</em></a><br />
-  Overview of practical strategies for structuring and optimizing context for LLMs.<br />
-<strong>Key practices: write, select, compress, isolate</strong></p>
-</li>
-<li>
-<p>IndyDevDan. (2025, July). <a href="https://www.youtube.com/watch?v=Kf5-HWJPTIE"><em>Elite context engineering with Claude Code</em></a><br />
-  Demonstrates advanced context engineering techniques using Claude Code.
-  <strong>Core mantra:</strong> <strong>R&amp;D = Reduce + Delegate.</strong><br />
-  Reduce what the primary agent sees; delegate everything else to sub-agents or background primaries, with crisp contracts and logs  </p>
-</li>
-</ul>
-</div>
-<h2 id="prioritized-context-engineering-steps-for-agentic-ai">Prioritized Context Engineering Steps for Agentic AI<a class="headerlink" href="#prioritized-context-engineering-steps-for-agentic-ai" title="Permanent link">&para;</a></h2>
-<h3 id="1-minimize-the-primary-context-treat-it-like-a-cache">1) Minimize the Primary Context (treat it like a cache)<a class="headerlink" href="#1-minimize-the-primary-context-treat-it-like-a-cache" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Keep only: <strong>goal</strong>, <strong>immediate instructions</strong>, <strong>tiny retrieved slice</strong>, <strong>output schema</strong>.</li>
-<li>Keep ephemeral scratchpads for step-by-step reasoning; purge after use.</li>
-<li>Offload history, rules, and big docs to external memory or files.</li>
-<li>🔑 <strong>Impact:</strong> Faster, cheaper, less distracted agent; fewer long-context failure modes.</li>
+<li>Capture the high-level purpose clearly in one sentence.  </li>
+<li>Translate organizational goals into actionable, testable intents.  </li>
+<li>🔑 <strong>Impact:</strong> Provides north star and scope boundary.  </li>
 </ul>
 <hr />
-<h3 id="2-write-context-intentionally-dont-just-append-everything">2) Write Context Intentionally (don’t just append everything)<a class="headerlink" href="#2-write-context-intentionally-dont-just-append-everything" title="Permanent link">&para;</a></h3>
+<h3 id="2-refine-operational-intents">2) Refine Operational Intents<a class="headerlink" href="#2-refine-operational-intents" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Clear <strong>system message</strong> for goals, rules, constraints, evaluation criteria.</li>
-<li>Define <strong>output schemas</strong> (JSON/table) and acceptance checks.</li>
-<li>Put canonical facts/API contracts in stable references, not the live window.</li>
-<li>Log key decisions so context can be rebuilt if needed.</li>
-<li>🔑 <strong>Impact:</strong> Prevents bloated prompts; establishes reliable “ground truth”.</li>
+<li>Break down mission intent into sub-intents for users, constraints, and environments.  </li>
+<li>Maintain traceability from mission → operations → actions.  </li>
+<li>🔑 <strong>Impact:</strong> Ensures consistency and coverage.  </li>
 </ul>
 <hr />
-<h3 id="3-select-context-dynamically-quality-quantity">3) Select Context Dynamically (quality &gt; quantity)<a class="headerlink" href="#3-select-context-dynamically-quality-quantity" title="Permanent link">&para;</a></h3>
+<h3 id="3-codify-intent-as-artifacts">3) Codify Intent as Artifacts<a class="headerlink" href="#3-codify-intent-as-artifacts" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Retrieve only what’s relevant <strong>now</strong> via embeddings/filters.</li>
-<li>Cap retrieval: few high-signal snippets; drop duplicates/stale text.</li>
-<li>Prefer structured facts (tables/JSON) over long prose.</li>
-<li>🔑 <strong>Impact:</strong> Model focuses on the right information; fewer hallucinations.</li>
+<li>Express intents in prompts, policies, workflows, and tests.  </li>
+<li>Automate checks for intent–artifact alignment.  </li>
+<li>🔑 <strong>Impact:</strong> Makes intent durable, auditable, and governable.  </li>
 </ul>
 <hr />
-<h3 id="4-use-context-priming-instead-of-big-always-on-memory-files">4) Use Context Priming (instead of big always-on memory files)<a class="headerlink" href="#4-use-context-priming-instead-of-big-always-on-memory-files" title="Permanent link">&para;</a></h3>
+<h3 id="4-engineer-for-adaptability">4) Engineer for Adaptability<a class="headerlink" href="#4-engineer-for-adaptability" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Create reusable <strong>prime commands</strong> per task (Purpose → Read/Fetch → Steps → Report).</li>
-<li>Keep a <strong>tiny universal core</strong> (guardrails + IO schema) always loaded.</li>
-<li>Prime on demand for bugfix, feature, research, etc.</li>
-<li>🔑 <strong>Impact:</strong> Minimal startup tokens with task-specific readiness.</li>
+<li>Accept that intents evolve with context and feedback.  </li>
+<li>Version and audit “living intents.”  </li>
+<li>🔑 <strong>Impact:</strong> Keeps systems aligned over time.  </li>
 </ul>
 <hr />
-<h3 id="5-kill-always-on-baggage-toolsmcp-autoloading">5) Kill Always-On Baggage (tools/MCP autoloading)<a class="headerlink" href="#5-kill-always-on-baggage-toolsmcp-autoloading" title="Permanent link">&para;</a></h3>
+<h3 id="5-assure-intent-realization">5) Assure Intent Realization<a class="headerlink" href="#5-assure-intent-realization" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Don’t preload tool packs/MCP servers by default; load <strong>lazily</strong> per task.</li>
-<li>Unload after use; explicitly justify any autoload.</li>
-<li>Audit startup context and remove dead weight.</li>
-<li>🔑 <strong>Impact:</strong> Frees large chunks of window; cuts token waste and latency.</li>
+<li>Validate that agent behavior matches stated intent.  </li>
+<li>Use red-teaming, monitoring, and independent verification.  </li>
+<li>🔑 <strong>Impact:</strong> Provides assurance evidence and trust.  </li>
 </ul>
 <hr />
-<h3 id="6-delegate-heavy-work-to-sub-agents-properly">6) Delegate Heavy Work to <strong>Sub-Agents</strong> (properly)<a class="headerlink" href="#6-delegate-heavy-work-to-sub-agents-properly" title="Permanent link">&para;</a></h3>
+<h3 id="6-balance-speed-reflection">6) Balance Speed &amp; Reflection<a class="headerlink" href="#6-balance-speed-reflection" title="Permanent link">&para;</a></h3>
 <ul>
-<li>One sub-agent = <strong>one job</strong> with a tight <strong>system prompt</strong>.</li>
-<li>Let sub-agents consume <strong>their</strong> windows; return <strong>distilled reports</strong> + artifacts.</li>
-<li>Standard report contract: <code>{summary, key_facts, risks, artifacts[]}</code>.</li>
-<li>🔑 <strong>Impact:</strong> Keeps the primary window small while scaling capability.</li>
+<li>Alternate <strong>rapid AI bursts</strong> with structured reflection (per Muness).  </li>
+<li>Ask: is this necessary, sufficient, aligned?  </li>
+<li>🔑 <strong>Impact:</strong> Avoids “vibe coding,” drives clarity and outcome-orientation.  </li>
 </ul>
-<hr />
-<h3 id="7-delegate-longexpensive-tasks-to-background-primary-agents">7) Delegate Long/Expensive Tasks to <strong>Background Primary Agents</strong><a class="headerlink" href="#7-delegate-longexpensive-tasks-to-background-primary-agents" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Kick off separate agents for crawls, planning, batch edits, evals.</li>
-<li>They write <strong>report files + artifacts</strong>; foreground ingests concise summaries.</li>
-<li>Use this to “get out of the loop” while work continues.</li>
-<li>🔑 <strong>Impact:</strong> Parallelizes work; maintains a lean, responsive main loop.</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><a href="../../software/claude_code/#claude-code-cli-god-mode">Claude Code CLI God Mode</a> is an example of this, delegating to a different Primary model (that is the best tool for the job.)</p>
-</div>
-<hr />
-<h3 id="8-compress-context-mostly-outside-the-window">8) Compress Context (mostly outside the window)<a class="headerlink" href="#8-compress-context-mostly-outside-the-window" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Rolling conversation summaries; hierarchical notes (facts → decisions → actions).</li>
-<li>Store raw data externally; insert only <strong>pointers + summaries</strong>.</li>
-<li>Heuristic trimming rules (dedupe, last-N, relevance thresholds).</li>
-<li>🔑 <strong>Impact:</strong> Extends effective history without clogging the window.</li>
-</ul>
-<hr />
-<h3 id="9-isolate-contexts-sandboxing-pipelines">9) Isolate Contexts (sandboxing &amp; pipelines)<a class="headerlink" href="#9-isolate-contexts-sandboxing-pipelines" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Keep runtime state objects and scratchpads <strong>per agent</strong>.</li>
-<li>Avoid leaking sub-agent history into the primary prompt.</li>
-<li>Build multi-agent pipelines with explicit handoffs.</li>
-<li>🔑 <strong>Impact:</strong> Reduces poisoning, distraction, and cross-task conflicts.</li>
-</ul>
-<hr />
-<h3 id="10-log-context-bundles-for-replayhandoff">10) Log <strong>Context Bundles</strong> for replay/handoff<a class="headerlink" href="#10-log-context-bundles-for-replayhandoff" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Save <code>{run_id, primes, reads, tool_calls, key_findings, decisions, outputs, next_steps}</code>.</li>
-<li>Use bundles to reprime new agents after window blow-ups or for continuity.</li>
-<li>Keep bundles concise—no verbatim dumps of huge content.</li>
-<li>🔑 <strong>Impact:</strong> Reproducibility and seamless continuation across sessions.</li>
-</ul>
-<hr />
-<h3 id="11-defend-against-context-failure-modes">11) Defend Against Context Failure Modes<a class="headerlink" href="#11-defend-against-context-failure-modes" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Poisoning:</strong> verify tool outputs; tag trust levels; gate propagation.</li>
-<li><strong>Confusion:</strong> filter irrelevant turns; dedupe aggressively.</li>
-<li><strong>Conflict:</strong> detect/resolve contradictions before composing answers.</li>
-<li>🔑 <strong>Impact:</strong> Higher reliability and fewer cascading errors.</li>
-</ul>
-<hr />
-<h3 id="12-standardize-schemas-measure-what-matters">12) Standardize Schemas &amp; Measure What Matters<a class="headerlink" href="#12-standardize-schemas-measure-what-matters" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Standard prompt skeletons, report JSON, artifact layout, retrieval policies.</li>
-<li>Track <code>startup_tokens</code>, <code>peak_tokens</code>, <code>#agents_spawned</code>, <code>attempts_to_success</code>, <code>retrieval_hits</code>.</li>
-<li>Set SLOs (e.g., startup ≤10% window, attempts ≤3) and alert on drift.</li>
-<li>🔑 <strong>Impact:</strong> Consistency at scale; makes optimization and debugging straightforward.</li>
-</ul>
-<hr />
-<h2 id="context-engineering-101-cheat-sheet">Context Engineering 101 cheat sheet<a class="headerlink" href="#context-engineering-101-cheat-sheet" title="Permanent link">&para;</a></h2>
+<h2 id="intent-engineering-101-cheat-sheet">Intent Engineering 101 Cheat Sheet<a class="headerlink" href="#intent-engineering-101-cheat-sheet" title="Permanent link">&para;</a></h2>
 <figure>
-<p><img alt="" src="../../assets/images/context_cheatsheet.jpeg" /></p>
-<p>Context Engineering 101 cheat sheet by Lena Hall <a href="https://x.com/lenadroid/status/1943685060785524824">https://x.com/lenadroid/status/1943685060785524824</a></p>
+<p><img alt="" src="../assets/images/intent_cheatsheet.png" /></p>
+<p>Intent Engineering 101 cheat sheet adapted from Muness Castle and CyberSecAI Software Assurance framing.</p>
 </figure>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<h3 id="academic-papers">Academic Papers<a class="headerlink" href="#academic-papers" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Zhang, W., Gupta, R., Müller, F., et al. (2025, July). <em>A Survey of Context Engineering for Large Language Models</em>. <em>arXiv preprint</em>.</p>
-<ul>
-<li><strong>Comprehensive academic survey reviewing context engineering techniques, challenges, and future research directions.</strong>
- <a href="https://arxiv.org/pdf/2507.13334">https://arxiv.org/pdf/2507.13334</a></li>
-</ul>
-</li>
-<li>
-<p>Haseeb, M., et al. (2025, August). <em>Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code</em>. <em>arXiv preprint</em>.</p>
-<ul>
-<li><strong>Proposes a multi-agent workflow combining intent translation, semantic retrieval, document synthesis, and Claude Code to improve code generation and validation in large codebases.</strong>
- <a href="https://arxiv.org/html/2508.08322v1">https://arxiv.org/html/2508.08322v1</a></li>
-</ul>
-</li>
-</ol>
-<hr />
 <h3 id="blogs-articles">Blogs &amp; Articles<a class="headerlink" href="#blogs-articles" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p>Martin, R. L. (2025, June). <em>Context Engineering</em>.</p>
-<ul>
-<li><strong>Blog post introducing principles of context engineering for AI systems, including prompt design, retrieval, and orchestration strategies.</strong>
- <a href="https://rlancemartin.github.io/2025/06/23/context_engineering/">https://rlancemartin.github.io/2025/06/23/context_engineering/</a></li>
-</ul>
-</li>
-<li>
-<p>Schmid, P. (2025, June). <em>Context Engineering: Optimizing Prompts and Retrieval for LLMs</em>.</p>
-<ul>
-<li><strong>Detailed exploration of context engineering patterns and their practical application in LLM development.</strong>
- <a href="https://www.philschmid.de/context-engineering">https://www.philschmid.de/context-engineering</a></li>
-</ul>
-</li>
-<li>
-<p>LlamaIndex (2025, June). <em>Context Engineering – What it is, and techniques to consider</em>.</p>
-<ul>
-<li><strong>Official blog post from LlamaIndex outlining core techniques in context engineering for enterprise AI assistants.</strong>
- <a href="https://www.llamaindex.ai/blog/context-engineering-what-it-is-and-techniques-to-consider">https://www.llamaindex.ai/blog/context-engineering-what-it-is-and-techniques-to-consider</a></li>
-</ul>
-</li>
-<li>
-<p>Datacamp (2025, June). <em>Context Engineering: The Next Frontier of AI Development</em>.</p>
-<ul>
-<li><strong>Educational article explaining how context engineering enhances AI reliability, accuracy, and enterprise integration.</strong>
- <a href="https://www.datacamp.com/blog/context-engineering">https://www.datacamp.com/blog/context-engineering</a></li>
-</ul>
-</li>
-<li>
-<p>Landgraf, T. (2025, August). <em>Context Engineering for Claude Code: Mastering Deep Technical Knowledge</em>.</p>
-<ul>
-<li><strong>Medium article introducing advanced context engineering workflows for Claude Code, including knowledge-file creation, project architecture awareness, and technical validation.</strong>
- <a href="https://medium.com/%40tl_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289">https://medium.com/%40tl_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289</a></li>
-</ul>
-</li>
-</ol>
-<hr />
-<h3 id="open-source-repositories-tools">Open Source Repositories &amp; Tools<a class="headerlink" href="#open-source-repositories-tools" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Kimai, D. (2025, July). <em>Context-Engineering (GitHub Repository)</em>.</p>
-<ul>
-<li><strong>Open-source repository providing frameworks and examples for implementing context engineering strategies in real-world projects.</strong>
- <a href="https://github.com/davidkimai/Context-Engineering">https://github.com/davidkimai/Context-Engineering</a></li>
-</ul>
-</li>
-<li>
-<p><em>Context Engineering Template</em> (2025, August). <em>Context-Engineering-Intro (GitHub Repository)</em>.</p>
-<ul>
-<li><strong>Template repository by coleam00 for setting up Claude Code-based context engineering projects, including examples, global rules, and workflows.</strong>
- <a href="https://github.com/coleam00/context-engineering-intro">https://github.com/coleam00/context-engineering-intro</a></li>
-</ul>
-</li>
-</ol>
-<hr />
-<h3 id="media-visualizations">Media &amp; Visualizations<a class="headerlink" href="#media-visualizations" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Youtube (2025, September). <em>Elite Context Engineering with Claude Code</em> — IndyDevDan [Video].</p>
-<ul>
-<li><strong>Advanced context engineering techniques using Claude Code, as presented by IndyDevDan.</strong>
-  <a href="https://www.youtube.com/watch?v=Kf5-HWJPTIE">https://www.youtube.com/watch?v=Kf5-HWJPTIE</a> ([YouTube][1])</li>
-</ul>
-</li>
-<li>
-<p>Youtube (2025, September). <em>Context Engineering for Agents — Lance Martin, LangChain</em> [Video].</p>
-<ul>
-<li><strong>Discussion on context engineering specifically for agent frameworks, by Lance Martin from LangChain.</strong>
-  <a href="https://www.youtube.com/watch?v=_IlTcWciEC4">https://www.youtube.com/watch?v=_IlTcWciEC4</a> ([YouTube][2])</li>
-</ul>
-</li>
-<li>
-<p>Droid, L. (2025, July). <em>Context Engineering Visualization</em>.</p>
-<ul>
-<li><strong>Illustrative summary of context engineering techniques, shared via social media.</strong>
-  <a href="https://x.com/lenadroid/status/1943685060785524824/photo/1">https://x.com/lenadroid/status/1943685060785524824/photo/1</a></li>
-</ul>
-</li>
-<li>
-<p>Youtube (2025, September). <em>Advanced Context Engineering for Agents — Dexter Horthy</em> [Video].</p>
-<ul>
-<li><strong>Walks through why naive back-and-forth prompting fails, how spec-first development keeps teams aligned, and why “everything is context engineering.” From compaction strategies to subagents and planning workflows, he shows how intentional context management turns AI coding from prototypes into production.</strong>
-  <a href="https://www.youtube.com/watch?v=IS_y40zY-hc">https://www.youtube.com/watch?v=IS_y40zY-hc</a> ([YouTube][3])</li>
-</ul>
-</li>
+<li>Castle, M. (2024). <a href="https://muness.com/posts/intent-engineering/"><em>Intent Engineering</em></a>.  </li>
+<li>CyberSecAI. (2025). <a href="../../software/introduction/"><em>Software Introduction</em></a>, <a href="../../software/software_assurance/"><em>Software Assurance</em></a>, <a href="../../software/software_artifacts/"><em>Software Artifacts</em></a>, <a href="../../software/swe_redux/"><em>SWE Redux</em></a>.  </li>
+<li>Miessler, D. (2025). <a href="https://x.com/DanielMiessler/status/1937937649005957260"><em>Intent Engineering Quote</em></a>.  </li>
 </ol>
 <hr />
 <h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
 <p class="admonition-title">Key Takeaways</p>
 <ul>
-<li><strong>Treat the Context Window Like a CPU Cache, Not a Hard Drive:</strong> The core principle is to keep the primary agent's context minimal and focused—containing only the immediate goal, instructions, and a small slice of relevant data. Offload history, large documents, and non-essential tools to external memory to improve speed, reduce cost, and avoid distraction.</li>
-<li><strong>Reduce and Delegate, Don't Accumulate:</strong> Instead of bloating a single agent's context, delegate heavy or specialized tasks to sub-agents or background agents. These agents work in their own isolated contexts and return only concise, distilled reports, enabling complex work without overwhelming the primary agent.</li>
-<li><strong>Context Must Be Actively Managed, Not Passively Appended:</strong> Implement dynamic strategies like just-in-time retrieval (RAG), summarization, and context isolation to ensure the model always has high-quality, relevant information. Actively defend against common failure modes like poisoning and confusion by verifying inputs and filtering irrelevant data.</li>
+<li><strong>Intent &gt; Context &gt; Prompt.</strong> The hierarchy starts with clarity of purpose.  </li>
+<li><strong>Explicit and Testable.</strong> Intents must be traceable from mission to action.  </li>
+<li><strong>Assurance is critical.</strong> Agent behavior must be independently validated.  </li>
+<li><strong>Living Intents.</strong> Expect evolution; support versioning and governance.  </li>
+<li><strong>Balance exploration with reflection.</strong> Use bursts + checkpoints to avoid drift.  </li>
 </ul>
 </div>
 
@@ -2622,44 +1964,6 @@ Source: <a href="https://github.com/humanlayer/12-factor-agents/blob/main/conten
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../CWE_Assignment/Vulnrichment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CISA Vulnrichment">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                CISA Vulnrichment
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../prompt_engineering/prompt_engineering/" class="md-footer__link md-footer__link--next" aria-label="Next: Prompt Engineering">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Prompt Engineering
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
