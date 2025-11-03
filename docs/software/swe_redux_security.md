@@ -96,7 +96,7 @@ A challenge with using LLMs is to get the precise and complete code context to t
 
 !!! note
 
-    The source code for these does not appear to be publicly available But Joern is an open source solution used [for such purposes](https://arxiv.org/html/2404.14719v1).
+    The source code for these does not appear to be publicly available. But Joern is an open source solution used [for such purposes](https://arxiv.org/html/2404.14719v1).
 
     !!! quote
         A code property graph of a program is a graph representation of the program obtained by merging its abstract syntax trees (AST), control-flow graphs (CFG) and program dependence graphs (PDG) at statement and predicate nodes. 
@@ -113,7 +113,6 @@ A challenge with using LLMs is to get the precise and complete code context to t
     3. **Correct Conclusions**. After obtaining precise and complete code context, there is an opportunity to more effectively guide the LLM to make accurate judgments on bug reports from SAST tools.
 
     [Utilizing Precise and Complete Code Context to Guide LLM in Automatic False Positive Mitigation](https://arxiv.org/html/2411.03079v1)
-
 
 
 
@@ -150,3 +149,13 @@ A challenge with using LLMs is to get the precise and complete code context to t
 25. Ferro, A. (2024). Beyond static analysis: AI-powered vulnerability detection. *Medium*. [https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c](https://medium.com/engaging-innovation/beyond-static-analysis-ai-powered-vulnerability-detection-690ff4e1f94c)
 26. (2024). Research on LLM for vulnerability detection – Fernweh. *Blog post*. [https://blog.wohin.me/posts/recent-llm-for-vuln-detection/](https://blog.wohin.me/posts/recent-llm-for-vuln-detection/)
     1.  Nice summary of 18 studies on LLM for vulnerability detection
+
+### In Depth Articles on Tools
+
+1. Hakimian, P. (2025, October 31). WTF is … AI-Native SAST? *Hackerman’s Hacking Tutorials*. [https://parsiya.net/blog/wtf-is-ai-native-sast/](https://parsiya.net/blog/wtf-is-ai-native-sast/).
+2. scabench-org. (2025). Hound: Language-agnostic AI auditor that autonomously builds and refines adaptive knowledge graphs for deep, iterative code reasoning. *GitHub repository*. [https://github.com/scabench-org/hound](https://github.com/scabench-org/hound). 
+      1. https://muellerberndt.medium.com/unleashing-the-hound-how-ai-agents-find-deep-logic-bugs-in-any-codebase-64c2110e3a6f
+      2. https://muellerberndt.medium.com/hunting-for-security-bugs-in-code-with-ai-agents-a-full-walkthrough-a0dc24e1adf0 
+3. Karger, R. (2024, November 1). How ZeroPath Works: Technical deep-dive into ZeroPath’s SAST methodology—from AST generation to AI-powered vulnerability discovery and automated patch generation. *ZeroPath Blog*. [https://zeropath.com/blog/how-zeropath-works](https://zeropath.com/blog/how-zeropath-works). 
+4. Rogers, J. (2025, September 18). Hacking with AI SASTs: An overview of “AI Security Engineers” / “LLM Security Scanners” for Penetration Testers and Security Teams. *Joshua.Hu — Joshua Rogers’ Scribbles*. [https://joshua.hu/llm-engineer-review-sast-security-ai-tools-pentesters](https://joshua.hu/llm-engineer-review-sast-security-ai-tools-pentesters). 
+
