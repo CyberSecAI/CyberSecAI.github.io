@@ -1293,6 +1293,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../software/pre_post_policy_as_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policy As Code Served Pre and Post Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../software/aixcc/" class="md-nav__link">
         
   
@@ -7609,6 +7630,573 @@ The best choice will depend on the user’s acceptance of the trade-off between 
 </li>
 <li>Karger, R. (2024, November 1). How ZeroPath Works: Technical deep-dive into ZeroPath’s SAST methodology—from AST generation to AI-powered vulnerability discovery and automated patch generation. <em>ZeroPath Blog</em>. <a href="https://zeropath.com/blog/how-zeropath-works">https://zeropath.com/blog/how-zeropath-works</a>. </li>
 <li>Rogers, J. (2025, September 18). Hacking with AI SASTs: An overview of “AI Security Engineers” / “LLM Security Scanners” for Penetration Testers and Security Teams. <em>Joshua.Hu — Joshua Rogers’ Scribbles</em>. <a href="https://joshua.hu/llm-engineer-review-sast-security-ai-tools-pentesters">https://joshua.hu/llm-engineer-review-sast-security-ai-tools-pentesters</a>. </li>
+</ol></section><section class="print-page" id="software-pre_post_policy_as_code"><h1 id="software-pre_post_policy_as_code-policy-as-code-served-pre-and-post-coding">Policy-as-Code Served Pre and Post Coding<a class="headerlink" href="#software-pre_post_policy_as_code-policy-as-code-served-pre-and-post-coding" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>This chapter explains how to turn large, static security documents into <em>working</em> policy-as-code that GenAI Security Agents can apply during design, coding, and review.
+Instead of asking engineers to memorize external and internal standards and guidance, we:</p>
+<ul>
+<li>Break large documents into small, testable <strong>rule cards</strong>  </li>
+<li>Compile those rule cards into reusable <strong>knowledge packs</strong>  </li>
+<li>Expose the packs through <strong>security agents</strong> and <strong>interactive skills</strong>  </li>
+<li>Wire them into <strong>software engineering workflows</strong> so guidance appears at the right time and place  </li>
+</ul>
+<p>The end goal is simple: security guidance lives as close as possible to the code, served automatically at the time of coding as pre-coding guidance and post-coding checks—achieving Continuous Software Assurance.</p>
+<p>🧑🏻‍💻 Source code: <a href="https://github.com/CyberSecAI/genai-sec-agents">https://github.com/CyberSecAI/genai-sec-agents</a></p>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-goals">Goals<a class="headerlink" href="#software-pre_post_policy_as_code-goals" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" src="../assets/images/continuous_sw_ass.png" /></p>
+</figure>
+<p>The Policy-as-Code engine for GenAI Security Agents is designed to:</p>
+<ul>
+<li>
+<p><strong>Operationalise standards</strong>
+  Turn external frameworks and internal policies into concrete, testable rules.</p>
+</li>
+<li>
+<p><strong>Embed security into workflows</strong>
+  Make security checks first-class citizens in planning, design, coding, and review.</p>
+</li>
+<li>
+<p><strong>Support both pre-code and post-code use</strong>
+  Give guidance before the first line of code, and validation once code exists.
+  In general, give guidance pre and post any artifact creation.</p>
+</li>
+<li>
+<p><strong>Provide traceability</strong>
+  Make it clear which requirement, from which document, led to each recommendation.</p>
+</li>
+<li>
+<p><strong>Enable incremental adoption</strong>
+  Start with pre-built knowledge packs, then extend with your own documentation over time.</p>
+</li>
+</ul>
+<hr />
+<h2 id="software-pre_post_policy_as_code-core-concept-from-documents-to-rule-cards">Core Concept: From Documents to Rule Cards<a class="headerlink" href="#software-pre_post_policy_as_code-core-concept-from-documents-to-rule-cards" title="Permanent link">&para;</a></h2>
+<p>The core idea is simple:</p>
+<blockquote>
+<p>Take large security documents and convert them into small, testable <strong>rule cards</strong> that can be applied by <a href="#software-claude_code">Claude Code</a> agents and skills.</p>
+</blockquote>
+<h3 id="software-pre_post_policy_as_code-source-documents">Source Documents<a class="headerlink" href="#software-pre_post_policy_as_code-source-documents" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="" src="../assets/images/gen_ai_guidance.png" /></p>
+</figure>
+<p>Typical sources include:</p>
+<ul>
+<li>OWASP and ASVS guidance as used in this example</li>
+<li>Internal security policies and standards</li>
+<li>Regulator rules and industry frameworks</li>
+<li>Architecture decision records and security guidelines</li>
+</ul>
+<p>These are treated as <strong>source of truth</strong>, not something the LLM invents.</p>
+<h3 id="software-pre_post_policy_as_code-atomic-rule-cards">Atomic Rule Cards<a class="headerlink" href="#software-pre_post_policy_as_code-atomic-rule-cards" title="Permanent link">&para;</a></h3>
+<p>From those documents we create <strong>atomic rule cards</strong>:</p>
+<ul>
+<li>
+<p>Each card represents a <strong>single, precise requirement</strong>
+  (“API must use OAuth2 with short-lived access tokens”, not “use strong auth”)</p>
+</li>
+<li>
+<p>Each card has:</p>
+<ul>
+<li>A clear <strong>condition</strong> (when it applies)</li>
+<li>A <strong>requirement</strong> (what must be true)</li>
+<li><strong>Rationale / references</strong> (why it matters, where it came from)</li>
+<li><strong>Example checks</strong> or questions the agent should ask</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Think of rule cards as “linters for architecture and security design” - small, focused rules that are easy to test and revise.</p>
+</div>
+<h3 id="software-pre_post_policy_as_code-compiled-knowledge-packs">Compiled Knowledge Packs<a class="headerlink" href="#software-pre_post_policy_as_code-compiled-knowledge-packs" title="Permanent link">&para;</a></h3>
+<p>Rule cards are grouped and compiled into <strong>knowledge packs</strong>:</p>
+<ul>
+<li>Packs align with <strong>domains</strong> (authentication, secrets, logging, etc.)</li>
+<li>
+<p>Each pack can be:</p>
+<ul>
+<li>Loaded by a <strong>specialist security agent</strong></li>
+<li>Queried via <strong>interactive skills</strong> or <strong>semantic search</strong> or <strong>grep</strong></li>
+<li>Used in combinations for broader reviews</li>
+</ul>
+</li>
+</ul>
+<p>This compilation step normalises the content into a <strong>machine-friendly format</strong> that agents can load efficiently.</p>
+<h3 id="software-pre_post_policy_as_code-agents-and-skills">Agents and Skills<a class="headerlink" href="#software-pre_post_policy_as_code-agents-and-skills" title="Permanent link">&para;</a></h3>
+<figure>
+<p><img alt="" src="../assets/images/doc_agents.png" /></p>
+</figure>
+<p>The <code>.claude/</code> folder in a project then becomes the delivery vehicle:</p>
+<ul>
+<li>
+<p><strong>Security agents</strong>
+  Deep specialists for cross-cutting reviews (e.g. "comprehensive security review", "authentication specialist").</p>
+</li>
+<li>
+<p><strong>Interactive skills</strong>
+  Specialized context modifiers that can be triggered via slash commands or automatically by Claude (e.g. <code>/authentication-security</code>, <code>/secrets-check</code>, <code>/logging-review</code>).</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The same underlying rule cards and packs power all of these entry points - you don't have to duplicate logic across agents and skills.</p>
+</div>
+<h4 id="software-pre_post_policy_as_code-when-to-use-skills-or-agents">When to Use Skills or Agents<a class="headerlink" href="#software-pre_post_policy_as_code-when-to-use-skills-or-agents" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Skills vs Agents</p>
+<p><strong>Skills</strong> are best for:</p>
+<ul>
+<li><strong>Automatic context injection</strong> - Claude detects when they're needed via pure LLM reasoning</li>
+<li><strong>Interactive workflows</strong> - Progressive disclosure loads only what's needed when matched</li>
+<li><strong>Token efficiency</strong> - Small discovery cost (name + description), larger only when activated</li>
+<li><strong>Learning and exploration</strong> - Rich examples and guidance for understanding capabilities</li>
+<li><strong>Multi-skill composition</strong> - Multiple skills can auto-activate together for complex requests</li>
+</ul>
+<p><strong>Agents</strong> are best for:</p>
+<ul>
+<li><strong>Explicit parallel execution</strong> - Multiple sub-agents run simultaneously via Agent SDK</li>
+<li><strong>Programmatic invocation</strong> - CI/CD pipelines, pre-commit hooks, automated validation</li>
+<li><strong>Deterministic workflows</strong> - User controls exactly which agents run and when</li>
+<li><strong>Background execution</strong> - Long-running tasks with monitoring and output retrieval</li>
+<li><strong>Orchestration patterns</strong> - Main agent delegates to specialist sub-agents</li>
+</ul>
+<p><strong>Critical distinction:</strong> 
+- Skills are <strong>context modifiers</strong> that inject specialized instructions and can constrain allowed tools/model selection. Agents are <strong>task executors</strong> that run in separate contexts for parallel analysis. </p>
+<p><strong>Complementary, not competing:</strong> Use skills for automatic context management in interactive workflows. Use agents for explicit parallel execution in programmatic workflows. Both share the same rule knowledge base via symlinks.</p>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-access-patterns-six-ways-llms-use-security-knowledge">Access Patterns: Six Ways LLMs Use Security Knowledge<a class="headerlink" href="#software-pre_post_policy_as_code-access-patterns-six-ways-llms-use-security-knowledge" title="Permanent link">&para;</a></h2>
+<p>The Policy-as-Code engine exposes <strong>six complementary access patterns</strong>. Each pattern balances:</p>
+<ul>
+<li>How predictable the invocation is</li>
+<li>How much context it needs</li>
+<li>How “deep” the analysis should be</li>
+<li>How it affects the primary Claude Code CLI context</li>
+</ul>
+<h3 id="software-pre_post_policy_as_code-summary-of-patterns">Summary of Patterns<a class="headerlink" href="#software-pre_post_policy_as_code-summary-of-patterns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Activation</th>
+<th>Token Cost</th>
+<th>Context Window Impact</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slash Commands</strong></td>
+<td>Deterministic (user-explicit)</td>
+<td>Variable</td>
+<td>Invokes skills or direct commands</td>
+<td>Explicit developer-invoked guidance</td>
+</tr>
+<tr>
+<td><strong>Skills</strong></td>
+<td>LLM-triggered (based on description) or via slash command</td>
+<td>1.5k-15k per invocation</td>
+<td>Context modifier with progressive disclosure</td>
+<td>Specialized instructions and tool/model constraints</td>
+</tr>
+<tr>
+<td><strong>Agents</strong></td>
+<td>Explicit (Task tool)</td>
+<td>15k+</td>
+<td>Separate context (not main window)</td>
+<td>Parallel analysis, deep validation</td>
+</tr>
+<tr>
+<td><strong>Semantic Search</strong></td>
+<td>Explicit (tool)</td>
+<td>Variable</td>
+<td>On-demand reading into main context</td>
+<td>Standards research, best practices lookup. No vector or RAG DB needed.</td>
+</tr>
+<tr>
+<td><strong>Grep</strong></td>
+<td>Explicit (tool)</td>
+<td>Minimal</td>
+<td>On-demand reading into main context</td>
+<td>Direct pattern search in rules/corpus</td>
+</tr>
+<tr>
+<td><strong>CLAUDE.md</strong></td>
+<td>Automatic (every turn)</td>
+<td>1-5k per turn (~15k per 5-turn conversation)</td>
+<td>Always present in main context</td>
+<td>Workflow orchestration, security enforcement</td>
+</tr>
+</tbody>
+</table>
+<p>Note: numbers are given as representative examples. YMMV!</p>
+<div class="admonition note">
+<p class="admonition-title">Skills vs Slash Commands</p>
+<p><strong>Skills</strong> and <strong>Slash Commands</strong> work together, not as alternatives:</p>
+<ul>
+<li><strong>Skills</strong> are prompt-based context modifiers that inject specialized instructions and can constrain allowed tools and model selection</li>
+<li><strong>Slash Commands</strong> are invocation methods that can trigger skills deterministically (user types <code>/skill-name</code>)</li>
+<li><strong>Skills</strong> can ALSO be triggered automatically via pure LLM reasoning when Claude reads skill descriptions and decides they're relevant</li>
+<li>A skill can be invoked both ways: explicitly via slash command OR automatically when the LLM detects the need</li>
+</ul>
+</div>
+<h3 id="software-pre_post_policy_as_code-when-to-use-which-pattern">When to Use Which Pattern<a class="headerlink" href="#software-pre_post_policy_as_code-when-to-use-which-pattern" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Claude's Autonomy in Pattern Selection</p>
+<p><strong>Claude Code can autonomously choose which access patterns to use</strong> based on task requirements and instructions in the <code>CLAUDE.md</code> file:</p>
+<ul>
+<li>The patterns described below are <strong>guidance for system designers</strong>, not rigid constraints on Claude's behavior</li>
+<li>Claude may decide to use Skills, Agents, Semantic Search, or Grep based on what's most appropriate for the current task</li>
+<li><code>CLAUDE.md</code> instructions can guide Claude to prefer certain patterns in specific contexts (e.g., "always use the security agent for authentication code")</li>
+<li>Developers can invoke patterns explicitly via slash commands, OR Claude can choose them autonomously based on LLM reasoning</li>
+<li>This flexibility allows Claude to adapt its approach based on context, task complexity, and available information</li>
+</ul>
+</div>
+<ul>
+<li>
+<p><strong>Slash Commands</strong>
+  Use when you want <em>deterministic</em>, user-controlled skill invocation:</p>
+<ul>
+<li>A developer explicitly calls <code>/secrets-security</code> while working on config to invoke a specific skill.</li>
+<li>An architect explicitly asks <code>/api-authentication-review</code> to trigger authentication review skills on an ADR.</li>
+</ul>
+</li>
+<li>
+<p><strong>Skills</strong>
+  Use when you want to inject <em>specialized context and constraints</em> into Claude's behavior:</p>
+<ul>
+<li>Define skills that Claude can automatically detect and invoke based on pure LLM reasoning.</li>
+<li>Constrain which tools Claude can use during specific security reviews.</li>
+<li>Modify Claude's model selection or execution permissions for specialized tasks.</li>
+<li>Skills can be triggered either explicitly via slash commands OR automatically when Claude determines they're relevant.</li>
+</ul>
+</li>
+<li>
+<p><strong>Agents</strong>
+  Use when you need <strong>broad, cross-cutting security analysis</strong>:</p>
+<ul>
+<li>“Review this PR against our security standards.”</li>
+<li>“Assess this architecture document for threats and missing controls.”</li>
+</ul>
+</li>
+<li>
+<p><strong>Semantic Search</strong>
+  Use when the question is primarily <strong>research</strong>:</p>
+<ul>
+<li>“What are our password policies?”</li>
+<li>“How do we handle multi-tenant isolation?”</li>
+</ul>
+</li>
+<li>
+<p><strong>Grep</strong>
+  Use when you need <strong>exact phrase matching</strong>:</p>
+<ul>
+<li>“Show all rules that mention ‘JWT’.”</li>
+<li>“Find references to <code>SAMESITE</code> cookies.”</li>
+</ul>
+</li>
+<li>
+<p><strong>CLAUDE.md</strong>
+  Use to <strong>orchestrate when security runs at all</strong>:</p>
+<ul>
+<li>Automatically invoke a security agent when certain file types or keywords appear.</li>
+<li>Ensure security checks become part of the default coding workflow, not an afterthought.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="software-pre_post_policy_as_code-layered-architecture">Layered Architecture<a class="headerlink" href="#software-pre_post_policy_as_code-layered-architecture" title="Permanent link">&para;</a></h2>
+<p>The Policy-as-Code engine follows a simple layered architecture:</p>
+<ol>
+<li>
+<p><strong>Source Documents</strong></p>
+<ul>
+<li>Raw security content: standards, policies, guidelines.</li>
+<li>Semantic search and Grep search these</li>
+</ul>
+</li>
+<li>
+<p><strong>Atomic Rule Cards</strong></p>
+<ul>
+<li>Normalised, testable rules with conditions and references.</li>
+</ul>
+</li>
+<li>
+<p><strong>Compiled Rule Sets (Knowledge Packs)</strong></p>
+<ul>
+<li>Grouped JSON bundles for efficient loading.</li>
+</ul>
+</li>
+<li>
+<p><strong>Agents &amp; Skills</strong></p>
+<ul>
+<li>Human-facing and Claude-code-facing entry points defined in <code>.claude/</code>.</li>
+</ul>
+</li>
+</ol>
+<p>This separation is important:</p>
+<ul>
+<li>Security experts can <strong>iterate on rule cards</strong> without touching agent wiring.</li>
+<li>Developers only see the <strong>agents and skills</strong>, not the internal representation.</li>
+<li>You can run <strong>validation</strong> on rule cards and packs independently from model behaviour.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This layout is intentionally compatible with both current Claude Code workflows and other agent frameworks. The rule packs are just data - any agent that can load them can use them.</p>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-two-modes-of-adoption">Two Modes of Adoption<a class="headerlink" href="#software-pre_post_policy_as_code-two-modes-of-adoption" title="Permanent link">&para;</a></h2>
+<p>The repository supports two complementary adoption paths.</p>
+<h3 id="software-pre_post_policy_as_code-1-use-pre-built-security-knowledge">1. Use Pre-Built Security Knowledge<a class="headerlink" href="#software-pre_post_policy_as_code-1-use-pre-built-security-knowledge" title="Permanent link">&para;</a></h3>
+<p>For teams who want <strong>fast value with minimal setup</strong>:</p>
+<ul>
+<li>Copy the provided <code>.claude/</code> folder into your project.</li>
+<li>
+<p>You immediately get:</p>
+<ul>
+<li>A curated set of <strong>security skills</strong></li>
+<li>A suite of <strong>security agents</strong></li>
+<li>Pre-populated rule packs aligned to common standards (e.g. OWASP / ASVS families)</li>
+</ul>
+</li>
+</ul>
+<p>Typical uses:</p>
+<ul>
+<li>
+<p><strong>Pre-code</strong>
+  Use skills while drafting designs, ADRs, and user stories to catch issues early.</p>
+</li>
+<li>
+<p><strong>Post-code</strong>
+  Use agents to review pull requests, configuration files, Dockerfiles, etc.</p>
+</li>
+</ul>
+<h3 id="software-pre_post_policy_as_code-2-build-your-own-knowledge-packs">2. Build Your Own Knowledge Packs<a class="headerlink" href="#software-pre_post_policy_as_code-2-build-your-own-knowledge-packs" title="Permanent link">&para;</a></h3>
+<p>For organisations with <strong>strong internal standards</strong> or regulatory needs:</p>
+<ul>
+<li>
+<p>Modify the provided tooling to:</p>
+<ul>
+<li>Ingest your internal security policies and standards</li>
+<li>Shard them into rule cards</li>
+<li>Compile them into custom knowledge packs</li>
+<li>Wire those packs into new or existing agents and skills</li>
+</ul>
+</li>
+<li>
+<p>Requirements (high level):</p>
+<ul>
+<li>A Python environment</li>
+<li>The ability to run the build scripts locally or in CI</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start by extending the existing packs - add a <strong>small number of internal rules</strong> for your most critical risks (e.g. data residency, customer data handling) before attempting a full policy migration.</p>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-how-it-fits-the-software-engineering-10-redux-flow">How It Fits the Software Engineering 1.0 Redux Flow<a class="headerlink" href="#software-pre_post_policy_as_code-how-it-fits-the-software-engineering-10-redux-flow" title="Permanent link">&para;</a></h2>
+<p>This engine is designed to plug into the phases already described in the <a href="#software-swe_redux">Software Engineering 1.0 Redux</a> and <a href="#software-swe_redux_security">Software Engineering Security</a> sections.</p>
+<h3 id="software-pre_post_policy_as_code-pre-code-planning-and-security-review">Pre-Code: Planning and Security Review<a class="headerlink" href="#software-pre_post_policy_as_code-pre-code-planning-and-security-review" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Planning</strong></p>
+<ul>
+<li>Use skills to ensure PRDs and architecture docs include required security content.</li>
+<li>Architect and Security roles can call targeted skills for authentication, secrets, logging, and data protection.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Review</strong></p>
+<ul>
+<li>
+<p>Run a comprehensive security agent over:</p>
+<ul>
+<li>Product brief</li>
+<li>Architecture document</li>
+<li>Security stories</li>
+</ul>
+</li>
+<li>
+<p>Generate:</p>
+<ul>
+<li>Security assessment</li>
+<li><a href="#software-threat_model">Threat model</a></li>
+<li>Security test cases</li>
+<li>Security stories to feed into the backlog</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="software-pre_post_policy_as_code-core-development-implementation-and-code-review">Core Development: Implementation and Code Review<a class="headerlink" href="#software-pre_post_policy_as_code-core-development-implementation-and-code-review" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>During implementation</strong></p>
+<ul>
+<li>
+<p>Developers call skills in-context in their IDE:</p>
+<ul>
+<li>“Is this JWT handling secure?”</li>
+<li>“Check this API route for common auth issues.”<ul>
+<li>Agents can be invoked periodically for deeper checks on key modules.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Code review</strong></p>
+<ul>
+<li>
+<p>Use a security agent as a specialized reviewer:</p>
+</li>
+<li>
+<p>Run over diffs, not just whole files.</p>
+</li>
+<li>Map findings back to the rule cards that were violated.</li>
+<li>Output concrete, testable recommendations (often directly convertible into security stories and test cases).</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This keeps the <strong>security source of truth</strong> in one place (rule cards and packs), while letting different roles access it in ways that match their workflows.</p>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-personas-and-how-they-use-it">Personas and How They Use It<a class="headerlink" href="#software-pre_post_policy_as_code-personas-and-how-they-use-it" title="Permanent link">&para;</a></h2>
+<p>The same knowledge packs are surfaced differently for different roles:</p>
+<ul>
+<li>
+<p><strong>Architect</strong></p>
+<ul>
+<li>Uses skills to check architecture documents against security requirements.</li>
+<li>Invokes a security agent for full design reviews.</li>
+</ul>
+</li>
+<li>
+<p><strong>Product Owner / PM</strong></p>
+<ul>
+<li>Ensures security requirements are explicitly captured in PRDs and stories.</li>
+<li>Uses outputs (security stories, test cases) to plan and track work.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security Engineer / Analyst</strong></p>
+<ul>
+<li>Curates rule cards and packs.</li>
+<li>Owns the security validation of the agents.</li>
+<li>Reviews high-risk findings and refines the rules.</li>
+</ul>
+</li>
+<li>
+<p><strong>Developer</strong></p>
+<ul>
+<li>Uses skills inline in the IDE for quick checks.</li>
+<li>Treats the security agent as a specialised reviewer alongside human reviewers.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This aligns with the broader guide’s stance: <strong>LLMs augment, not replace, the existing roles</strong>. The Policy-as-Code engine simply gives each role a more usable interface to the organization’s security brain.</p>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-example-workflow-from-policy-to-actionable-checks">Example Workflow: From Policy to Actionable Checks<a class="headerlink" href="#software-pre_post_policy_as_code-example-workflow-from-policy-to-actionable-checks" title="Permanent link">&para;</a></h2>
+<p>A concrete end-to-end flow might look like this:</p>
+<ol>
+<li>
+<p><strong>Ingest standards</strong></p>
+<ul>
+<li>Security team selects a subset of OWASP / ASVS and internal standards as initial scope.</li>
+</ul>
+</li>
+<li>
+<p><strong>Create rule cards</strong></p>
+<ul>
+<li>Rule cards are authored and reviewed for clarity, conditions, and references.</li>
+</ul>
+</li>
+<li>
+<p><strong>Build knowledge packs</strong></p>
+<ul>
+<li>Packs are compiled by domain (auth, secrets, etc.) and validated.</li>
+</ul>
+</li>
+<li>
+<p><strong>Wire into agents and skills</strong></p>
+<ul>
+<li>Security agents load the full set of relevant packs.</li>
+<li>Skills are exposed for common queries (“check my auth”, “review my logging”).</li>
+</ul>
+</li>
+<li>
+<p><strong>Connect to engineering workflows</strong></p>
+<ul>
+<li><code>.claude/</code> is added to the repo.</li>
+<li>
+<p>CLAUDE.md is updated so that:</p>
+<ul>
+<li>Certain files trigger automatic security checks.</li>
+<li>Developers have easy access to security skills.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Iterate based on findings</strong></p>
+<ul>
+<li>False positives and gaps feed back into rule card revisions.</li>
+<li>New standards or guidance become new or updated cards.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Success</p>
+<p>Once this loop is running, your security standards stop being static irrelevant documents and become a <strong>living, executable policy-as-code system</strong> that evolves along with your software.</p>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-takeaways">Takeaways<a class="headerlink" href="#software-pre_post_policy_as_code-takeaways" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Takeaways</p>
+<ul>
+<li>Large, static security documents are converted into <strong>atomic rule cards</strong> and <strong>knowledge packs</strong>.</li>
+<li>The same packs power <strong>skills</strong>, <strong>agents</strong>, search, and workflow automation via <code>CLAUDE.md</code>.</li>
+<li>Teams can start quickly with <strong>pre-built security content</strong> and then extend with internal policies.</li>
+<li>The engine fits naturally into the <strong>Software Engineering 1.0 Redux</strong> lifecycle: planning, design, implementation, and review.</li>
+<li>Security becomes <strong>embedded and executable</strong>, not a separate after-the-fact checklist.</li>
+</ul>
+</div>
+<hr />
+<h2 id="software-pre_post_policy_as_code-glossary">Glossary<a class="headerlink" href="#software-pre_post_policy_as_code-glossary" title="Permanent link">&para;</a></h2>
+<p><strong>Rule Cards</strong>
+: Small, testable units representing a single, precise security requirement. Each card contains a condition (when it applies), a requirement (what must be true), rationale/references (why it matters), and example checks. Think of them as "linters for architecture and security design."</p>
+<p><strong>Knowledge Packs</strong>
+: Compiled collections of rule cards grouped by security domain (authentication, secrets, logging, etc.). Packs are normalized into machine-friendly JSON format that can be efficiently loaded by agents and skills.</p>
+<p><strong>Context Injection</strong>
+: The process by which skills and CLAUDE.md automatically insert specialized instructions and security rules into Claude's conversation context. Skills use progressive disclosure to load minimal metadata initially, then full content when semantically matched.</p>
+<p><strong>Progressive Disclosure</strong>
+: A token-efficiency strategy where skills load information incrementally: (1) discovery phase loads only name + description, (2) activation phase loads full skill instructions when matched, (3) on-demand phase loads detailed rules (JSON) only if needed.</p>
+<p><strong>Context Modifiers</strong>
+: Skills that inject specialized instructions and can constrain Claude's behavior by modifying allowed tools, model selection, and execution permissions. Distinguished from agents which are task executors in separate contexts.</p>
+<p><strong>LLM Reasoning</strong>
+: The mechanism by which Claude autonomously decides when to activate skills. Based purely on language understanding of skill descriptions and user requests—not algorithmic pattern matching, embeddings, or ML-based intent detection.</p>
+<p><strong>Agent SDK</strong>
+: Claude Code's framework for explicit parallel execution of multiple sub-agents. Agents run in separate contexts (not the main conversation window) and enable programmatic invocation for CI/CD pipelines and automated validation.</p>
+<hr />
+<h2 id="software-pre_post_policy_as_code-references">References<a class="headerlink" href="#software-pre_post_policy_as_code-references" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://github.com/CyberSecAI/genai-sec-agents">GenAI Security Agents Repository</a> - Source code for policy-as-code engine with rule cards and knowledge packs (2025)</li>
+<li><a href="https://leehanchung.github.io/blogs/2025/10/26/claude-skills-deep-dive/">Claude Skills Deep Dive</a> - Technical analysis of skills architecture and activation mechanisms (October 26, 2025)</li>
+<li><a href="https://agiflow.io/blog/claude-code-internals-reverse-engineering-prompt-augmentation/">Claude Code Internals Analysis</a> - Reverse engineering of context injection and prompt augmentation (2025)</li>
+<li><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Agent Skills for the Real World</a> - Anthropic's official documentation on agent skills (2024)</li>
+<li><a href="https://medium.com/data-science-collective/claude-skills-a-technical-deep-dive-into-context-injection-architecture-ee6bf30cf514">Technical Deep Dive into Context Injection</a> - Detailed architecture analysis (2025)</li>
 </ol></section><section class="print-page" id="software-aixcc"><h1 id="software-aixcc-darpa-ai-cyber-challenge-tools-comparison">DARPA AI Cyber Challenge Tools Comparison<a class="headerlink" href="#software-aixcc-darpa-ai-cyber-challenge-tools-comparison" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Overview</p>
