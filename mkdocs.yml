@@ -42,7 +42,8 @@ nav:
       - Leaderboards: software/code/leaderboards.md
     - Software Engineering 1.0 Redux:
         - Software Engineering 1.0 Redux: software/swe_redux.md    
-        - Software Engineering Security: software/swe_redux_security.md  
+        - Software Engineering Security: software/swe_redux_security.md
+        - Policy As Code Served Pre and Post Code: software/pre_post_policy_as_code.md
         - AIxCC: software/aixcc.md      
         - Threat Model: software/threat_model.md    
         - Claude Code: software/claude_code.md
