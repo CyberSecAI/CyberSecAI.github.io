@@ -7844,6 +7844,32 @@ Instead of asking engineers to memorize external and internal standards and guid
 <li>A skill can be invoked both ways: explicitly via slash command OR automatically when the LLM detects the need</li>
 </ul>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Skills Auto-Activation is Probabilistic and Naive</p>
+<p><strong>Automatic skill activation is hit-and-miss and heavily depends on skill description quality:</strong></p>
+<p><strong>Naive Discovery Mechanism:</strong></p>
+<ul>
+<li>Skill matching uses substring and semantic matching on the <code>description</code> field in SKILL.md frontmatter</li>
+<li>The matching algorithm is <strong>not sophisticated</strong> - no embedding models, no matching scores, no ranking</li>
+<li>If your description is vague or lacks keywords matching the user's request, <strong>the skill won't activate at all</strong></li>
+<li>Skills can fail to activate even when they seem clearly relevant</li>
+</ul>
+<p><strong>No Debug Capability:</strong></p>
+<ul>
+<li>There is <strong>no matching score</strong> or confidence metric available</li>
+<li>There is <strong>no debug mode</strong> to see why a skill didn't activate</li>
+<li>The only way to troubleshoot is trial-and-error refinement of descriptions</li>
+</ul>
+<p><strong>Critical Success Factors:</strong></p>
+<ul>
+<li><strong>Include specific keywords</strong> that users are likely to mention (e.g., "JWT", "OAuth2", "password hashing")</li>
+<li><strong>List explicit use cases</strong> in the description ("Use this skill when reviewing login code, authentication flows, or credential handling")</li>
+<li><strong>Add trigger phrases</strong> that map to common developer requests</li>
+<li><strong>Test extensively</strong> with realistic user prompts to validate activation rates</li>
+<li><strong>Quality of CLAUDE.md matters</strong> - clear instructions can guide Claude to prefer certain skills in specific contexts</li>
+</ul>
+<p><strong>Recommendation:</strong> For security-critical workflows, <strong>do NOT rely solely on automatic skill activation</strong>. Use explicit slash commands or deterministic agent invocation for mandatory security checks. Consider skills as helpful guidance that MAY activate, not guaranteed enforcement.</p>
+</div>
 <h3 id="software-pre_post_policy_as_code-when-to-use-which-pattern">When to Use Which Pattern<a class="headerlink" href="#software-pre_post_policy_as_code-when-to-use-which-pattern" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Claude's Autonomy in Pattern Selection</p>
