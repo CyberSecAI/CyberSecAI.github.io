@@ -11,7 +11,7 @@
     - Expose the packs through **security agents** and **interactive skills**  
     - Wire them into **software engineering workflows** so guidance appears at the right time and place  
 
-    The end goal is simple: security guidance codes as close as possible to the code to be served automatically at the time of coding as pre guidance, and post checks i.e. Continuous Software Assurance.
+    The end goal is simple: security guidance lives as close as possible to the code, served automatically at the time of coding as pre-coding guidance and post-coding checks—achieving Continuous Software Assurance.
 
 
     🧑🏻‍💻 Source code: https://github.com/CyberSecAI/genai-sec-agents
@@ -48,7 +48,7 @@ The Policy-as-Code engine for GenAI Security Agents is designed to:
 
 The core idea is simple:
 
-> Take large security documents and convert them into small, testable **rule cards** that can be applied by (Claude Code CLI) agents and skills.
+> Take large security documents and convert them into small, testable **rule cards** that can be applied by [Claude Code](claude_code.md) agents and skills.
 
 ### Source Documents
 
@@ -309,7 +309,7 @@ For organisations with **strong internal standards** or regulatory needs:
 
 ## How It Fits the Software Engineering 1.0 Redux Flow
 
-This engine is designed to plug into the phases already described in the Software Engineering 1.0 Redux sections.
+This engine is designed to plug into the phases already described in the [Software Engineering 1.0 Redux](swe_redux.md) and [Software Engineering Security](swe_redux_security.md) sections.
 
 ### Pre-Code: Planning and Security Review
 
@@ -329,7 +329,7 @@ This engine is designed to plug into the phases already described in the Softwar
     * Generate:
 
         * Security assessment
-        * Threat model
+        * [Threat model](threat_model.md)
         * Security test cases
         * Security stories to feed into the backlog
 
@@ -440,9 +440,35 @@ A concrete end-to-end flow might look like this:
 
 ---
 
+## Glossary
+
+**Rule Cards**
+: Small, testable units representing a single, precise security requirement. Each card contains a condition (when it applies), a requirement (what must be true), rationale/references (why it matters), and example checks. Think of them as "linters for architecture and security design."
+
+**Knowledge Packs**
+: Compiled collections of rule cards grouped by security domain (authentication, secrets, logging, etc.). Packs are normalized into machine-friendly JSON format that can be efficiently loaded by agents and skills.
+
+**Context Injection**
+: The process by which skills and CLAUDE.md automatically insert specialized instructions and security rules into Claude's conversation context. Skills use progressive disclosure to load minimal metadata initially, then full content when semantically matched.
+
+**Progressive Disclosure**
+: A token-efficiency strategy where skills load information incrementally: (1) discovery phase loads only name + description, (2) activation phase loads full skill instructions when matched, (3) on-demand phase loads detailed rules (JSON) only if needed.
+
+**Context Modifiers**
+: Skills that inject specialized instructions and can constrain Claude's behavior by modifying allowed tools, model selection, and execution permissions. Distinguished from agents which are task executors in separate contexts.
+
+**LLM Reasoning**
+: The mechanism by which Claude autonomously decides when to activate skills. Based purely on language understanding of skill descriptions and user requests—not algorithmic pattern matching, embeddings, or ML-based intent detection.
+
+**Agent SDK**
+: Claude Code's framework for explicit parallel execution of multiple sub-agents. Agents run in separate contexts (not the main conversation window) and enable programmatic invocation for CI/CD pipelines and automated validation.
+
+---
+
 ## References
 
-2. [Claude Skills Deep Dive](https://leehanchung.github.io/blogs/2025/10/26/claude-skills-deep-dive/)
-3. [Claude Code Internals Analysis](https://agiflow.io/blog/claude-code-internals-reverse-engineering-prompt-augmentation/)
-4. [Agent Skills for the Real World](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
-5. [Technical Deep Dive](https://medium.com/data-science-collective/claude-skills-a-technical-deep-dive-into-context-injection-architecture-ee6bf30cf514)
+1. [GenAI Security Agents Repository](https://github.com/CyberSecAI/genai-sec-agents) - Source code for policy-as-code engine with rule cards and knowledge packs (2025)
+2. [Claude Skills Deep Dive](https://leehanchung.github.io/blogs/2025/10/26/claude-skills-deep-dive/) - Technical analysis of skills architecture and activation mechanisms (October 26, 2025)
+3. [Claude Code Internals Analysis](https://agiflow.io/blog/claude-code-internals-reverse-engineering-prompt-augmentation/) - Reverse engineering of context injection and prompt augmentation (2025)
+4. [Agent Skills for the Real World](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) - Anthropic's official documentation on agent skills (2024)
+5. [Technical Deep Dive into Context Injection](https://medium.com/data-science-collective/claude-skills-a-technical-deep-dive-into-context-injection-architecture-ee6bf30cf514) - Detailed architecture analysis (2025)
