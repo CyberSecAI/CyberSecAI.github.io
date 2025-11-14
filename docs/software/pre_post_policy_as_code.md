@@ -11,10 +11,10 @@
     - Expose the packs through **security agents** and **interactive skills**  
     - Wire them into **software engineering workflows** so guidance appears at the right time and place  
 
-    The end goal is simple: security guidance codes as close as possible to the code to be served automatically at the time of coding as pre-coding guidance, and post-coding checks.
+    The end goal is simple: security guidance codes as close as possible to the code to be served automatically at the time of coding as pre guidance, and post checks i.e. Continuous Software Assurance.
 
 
-
+    🧑🏻‍💻 Source code: https://github.com/CyberSecAI/genai-sec-agents
 ---
 
 ## Goals
@@ -34,6 +34,7 @@ The Policy-as-Code engine for GenAI Security Agents is designed to:
 
 * **Support both pre-code and post-code use**
   Give guidance before the first line of code, and validation once code exists.
+  In general, give guidance pre and post any artifact creation.
 
 * **Provide traceability**
   Make it clear which requirement, from which document, led to each recommendation.
@@ -104,20 +105,46 @@ This compilation step normalises the content into a **machine-friendly format** 
 The `.claude/` folder in a project then becomes the delivery vehicle:
 
 * **Security agents**
-  Deep specialists for cross-cutting reviews (e.g. “comprehensive security review”, “authentication specialist”).
+  Deep specialists for cross-cutting reviews (e.g. "comprehensive security review", "authentication specialist").
 
 * **Interactive skills**
-  Narrow, predictable commands for developers (e.g. `/authentication-security`, `/secrets-check`, `/logging-review`).
+  Specialized context modifiers that can be triggered via slash commands or automatically by Claude (e.g. `/authentication-security`, `/secrets-check`, `/logging-review`).
 
 !!! note
 
-    The same underlying rule cards and packs power all of these entry points - you don’t have to duplicate logic across agents and skills.
+    The same underlying rule cards and packs power all of these entry points - you don't have to duplicate logic across agents and skills.
+
+#### When to Use Skills or Agents
+
+!!! note "Skills vs Agents"
+
+
+    **Skills** are best for:
+
+    - **Automatic context injection** - Claude detects when they're needed via pure LLM reasoning
+    - **Interactive workflows** - Progressive disclosure loads only what's needed when matched
+    - **Token efficiency** - Small discovery cost (name + description), larger only when activated
+    - **Learning and exploration** - Rich examples and guidance for understanding capabilities
+    - **Multi-skill composition** - Multiple skills can auto-activate together for complex requests
+
+    **Agents** are best for:
+
+    - **Explicit parallel execution** - Multiple sub-agents run simultaneously via Agent SDK
+    - **Programmatic invocation** - CI/CD pipelines, pre-commit hooks, automated validation
+    - **Deterministic workflows** - User controls exactly which agents run and when
+    - **Background execution** - Long-running tasks with monitoring and output retrieval
+    - **Orchestration patterns** - Main agent delegates to specialist sub-agents
+
+    **Critical distinction:** 
+    - Skills are **context modifiers** that inject specialized instructions and can constrain allowed tools/model selection. Agents are **task executors** that run in separate contexts for parallel analysis. 
+
+    **Complementary, not competing:** Use skills for automatic context management in interactive workflows. Use agents for explicit parallel execution in programmatic workflows. Both share the same rule knowledge base via symlinks.
 
 ---
 
-## Access Patterns: Five Ways LLMs Use Security Knowledge
+## Access Patterns: Six Ways LLMs Use Security Knowledge
 
-The Policy-as-Code engine exposes **five complementary access patterns**. Each pattern balances:
+The Policy-as-Code engine exposes **six complementary access patterns**. Each pattern balances:
 
 * How predictable the invocation is
 * How much context it needs
@@ -128,19 +155,51 @@ The Policy-as-Code engine exposes **five complementary access patterns**. Each p
 
 | Pattern             | Activation                                     | Token Cost | Context Window Impact                | Use Case                                          |
 | ------------------- | ---------------------------------------------- | ---------- | ------------------------------------ | ------------------------------------------------- |
-| **Skills**          | Deterministic (slash) or probabilistic         | 2k-12k     | Progressive loading into main context | User-facing guidance, progressive disclosure      |
+| **Slash Commands**  | Deterministic (user-explicit)                  | Variable   | Invokes skills or direct commands    | Explicit developer-invoked guidance               |
+| **Skills**          | LLM-triggered (based on description) or via slash command | 1.5k-15k per invocation | Context modifier with progressive disclosure | Specialized instructions and tool/model constraints |
 | **Agents**          | Explicit (Task tool)                           | 15k+       | Separate context (not main window)   | Parallel analysis, deep validation                |
 | **Semantic Search** | Explicit (tool)                                | Variable   | On-demand reading into main context  | Standards research, best practices lookup. No vector or RAG DB needed. |
 | **Grep**            | Explicit (tool)                                | Minimal    | On-demand reading into main context  | Direct pattern search in rules/corpus             |
-| **CLAUDE.md**       | Automatic (patterns)                           | <1k        | Always present in main context       | Workflow orchestration, security enforcement      |
+| **CLAUDE.md**       | Automatic (every turn)                         | 1-5k per turn (~15k per 5-turn conversation) | Always present in main context | Workflow orchestration, security enforcement      |
+
+Note: numbers are given as representative examples. YMMV!
+
+!!! note "Skills vs Slash Commands"
+
+    **Skills** and **Slash Commands** work together, not as alternatives:
+
+    - **Skills** are prompt-based context modifiers that inject specialized instructions and can constrain allowed tools and model selection
+    - **Slash Commands** are invocation methods that can trigger skills deterministically (user types `/skill-name`)
+    - **Skills** can ALSO be triggered automatically via pure LLM reasoning when Claude reads skill descriptions and decides they're relevant
+    - A skill can be invoked both ways: explicitly via slash command OR automatically when the LLM detects the need
+
 
 ### When to Use Which Pattern
 
-* **Skills**
-  Use when you want *predictable*, scoped behaviours:
+!!! info "Claude's Autonomy in Pattern Selection"
 
-    * A developer calls `/secrets-security` while working on config.
-    * An architect asks `/api-authentication-review` on an ADR.
+    **Claude Code can autonomously choose which access patterns to use** based on task requirements and instructions in the `CLAUDE.md` file:
+
+    - The patterns described below are **guidance for system designers**, not rigid constraints on Claude's behavior
+    - Claude may decide to use Skills, Agents, Semantic Search, or Grep based on what's most appropriate for the current task
+    - `CLAUDE.md` instructions can guide Claude to prefer certain patterns in specific contexts (e.g., "always use the security agent for authentication code")
+    - Developers can invoke patterns explicitly via slash commands, OR Claude can choose them autonomously based on LLM reasoning
+    - This flexibility allows Claude to adapt its approach based on context, task complexity, and available information
+
+
+* **Slash Commands**
+  Use when you want *deterministic*, user-controlled skill invocation:
+
+    * A developer explicitly calls `/secrets-security` while working on config to invoke a specific skill.
+    * An architect explicitly asks `/api-authentication-review` to trigger authentication review skills on an ADR.
+
+* **Skills**
+  Use when you want to inject *specialized context and constraints* into Claude's behavior:
+
+    * Define skills that Claude can automatically detect and invoke based on pure LLM reasoning.
+    * Constrain which tools Claude can use during specific security reviews.
+    * Modify Claude's model selection or execution permissions for specialized tasks.
+    * Skills can be triggered either explicitly via slash commands OR automatically when Claude determines they're relevant.
 
 * **Agents**
   Use when you need **broad, cross-cutting security analysis**:
@@ -278,19 +337,19 @@ This engine is designed to plug into the phases already described in the Softwar
 
 * **During implementation**
 
-  * Developers call skills in-context in their IDE:
+    * Developers call skills in-context in their IDE:
 
-    * “Is this JWT handling secure?”
-    * “Check this API route for common auth issues.”
-  * Agents can be invoked periodically for deeper checks on key modules.
+        * “Is this JWT handling secure?”
+        * “Check this API route for common auth issues.”
+    * Agents can be invoked periodically for deeper checks on key modules.
 
 * **Code review**
 
-  * Use a security agent as a specialized reviewer:
+    * Use a security agent as a specialized reviewer:
 
-    * Run over diffs, not just whole files.
-    * Map findings back to the rule cards that were violated.
-    * Output concrete, testable recommendations (often directly convertible into security stories and test cases).
+      * Run over diffs, not just whole files.
+      * Map findings back to the rule cards that were violated.
+      * Output concrete, testable recommendations (often directly convertible into security stories and test cases).
 
 !!! note
 
@@ -363,7 +422,7 @@ A concrete end-to-end flow might look like this:
       * False positives and gaps feed back into rule card revisions.
       * New standards or guidance become new or updated cards.
 
-!!! success "Success"
+!!! tip "Success"
 
     Once this loop is running, your security standards stop being static irrelevant documents and become a **living, executable policy-as-code system** that evolves along with your software.
 
@@ -373,11 +432,11 @@ A concrete end-to-end flow might look like this:
 
 !!! success "Takeaways"
 
-   - Large, static security documents are converted into **atomic rule cards** and **knowledge packs**.
-   - The same packs power **skills**, **agents**, search, and workflow automation via `CLAUDE.md`.
-   - Teams can start quickly with **pre-built security content** and then extend with internal policies.
-   - The engine fits naturally into the **Software Engineering 1.0 Redux** lifecycle: planning, design, implementation, and review.
-   - Security becomes **embedded and executable**, not a separate after-the-fact checklist.
+    - Large, static security documents are converted into **atomic rule cards** and **knowledge packs**.
+    - The same packs power **skills**, **agents**, search, and workflow automation via `CLAUDE.md`.
+    - Teams can start quickly with **pre-built security content** and then extend with internal policies.
+    - The engine fits naturally into the **Software Engineering 1.0 Redux** lifecycle: planning, design, implementation, and review.
+    - Security becomes **embedded and executable**, not a separate after-the-fact checklist.
 
 ---
 
