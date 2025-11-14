@@ -173,6 +173,33 @@ Note: numbers are given as representative examples. YMMV!
     - **Skills** can ALSO be triggered automatically via pure LLM reasoning when Claude reads skill descriptions and decides they're relevant
     - A skill can be invoked both ways: explicitly via slash command OR automatically when the LLM detects the need
 
+!!! warning "Skills Auto-Activation is Probabilistic and Naive"
+
+    **Automatic skill activation is hit-and-miss and heavily depends on skill description quality:**
+
+    **Naive Discovery Mechanism:**
+
+    - Skill matching uses substring and semantic matching on the `description` field in SKILL.md frontmatter
+    - The matching algorithm is **not sophisticated** - no embedding models, no matching scores, no ranking
+    - If your description is vague or lacks keywords matching the user's request, **the skill won't activate at all**
+    - Skills can fail to activate even when they seem clearly relevant
+
+    **No Debug Capability:**
+
+    - There is **no matching score** or confidence metric available
+    - There is **no debug mode** to see why a skill didn't activate
+    - The only way to troubleshoot is trial-and-error refinement of descriptions
+
+    **Critical Success Factors:**
+    
+    - **Include specific keywords** that users are likely to mention (e.g., "JWT", "OAuth2", "password hashing")
+    - **List explicit use cases** in the description ("Use this skill when reviewing login code, authentication flows, or credential handling")
+    - **Add trigger phrases** that map to common developer requests
+    - **Test extensively** with realistic user prompts to validate activation rates
+    - **Quality of CLAUDE.md matters** - clear instructions can guide Claude to prefer certain skills in specific contexts
+
+    **Recommendation:** For security-critical workflows, **do NOT rely solely on automatic skill activation**. Use explicit slash commands or deterministic agent invocation for mandatory security checks. Consider skills as helpful guidance that MAY activate, not guaranteed enforcement.
+
 
 ### When to Use Which Pattern
 
