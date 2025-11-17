@@ -243,77 +243,102 @@ Context Engineering 101 cheat sheet by Lena Hall https://x.com/lenadroid/status/
 
 1. Zhang, W., Gupta, R., Müller, F., et al. (2025, July). *A Survey of Context Engineering for Large Language Models*. *arXiv preprint*.
 
-      * **Comprehensive academic survey reviewing context engineering techniques, challenges, and future research directions.**
+   * **Comprehensive academic survey reviewing context engineering techniques, challenges, and future research directions.**
      [https://arxiv.org/pdf/2507.13334](https://arxiv.org/pdf/2507.13334)
 
 2. Haseeb, M., et al. (2025, August). *Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code*. *arXiv preprint*.
 
-      * **Proposes a multi-agent workflow combining intent translation, semantic retrieval, document synthesis, and Claude Code to improve code generation and validation in large codebases.**
+   * **Proposes a multi-agent workflow combining intent translation, semantic retrieval, document synthesis, and Claude Code to improve code generation and validation in large codebases.**
      [https://arxiv.org/html/2508.08322v1](https://arxiv.org/html/2508.08322v1)
+
+3. Hua, Q., Ye, L., Fu, D., Xiao, Y., Cai, X., Wu, Y., Lin, J., Wang, J., & Liu, P. (2025, October). *Context Engineering 2.0: The Context of Context Engineering*. *arXiv preprint*.
+
+   * **Foundational position paper that situates context engineering historically, defines it as entropy reduction between human intentions and machine-readable representations, and introduces a four-era framework with design considerations for context collection, management, and usage.**
+     [https://arxiv.org/abs/2510.26493](https://arxiv.org/abs/2510.26493)
 
 ---
 
 ### Blogs & Articles
 
-3. Martin, R. L. (2025, June). *Context Engineering*.
+4. Martin, R. L. (2025, June). *Context Engineering*.
 
-      * **Blog post introducing principles of context engineering for AI systems, including prompt design, retrieval, and orchestration strategies.**
+   * **Blog post introducing principles of context engineering for AI systems, including prompt design, retrieval, and orchestration strategies.**
      [https://rlancemartin.github.io/2025/06/23/context_engineering/](https://rlancemartin.github.io/2025/06/23/context_engineering/)
 
-4. Schmid, P. (2025, June). *Context Engineering: Optimizing Prompts and Retrieval for LLMs*.
+5. Schmid, P. (2025, June). *Context Engineering: Optimizing Prompts and Retrieval for LLMs*.
 
-      * **Detailed exploration of context engineering patterns and their practical application in LLM development.**
+   * **Detailed exploration of context engineering patterns and their practical application in LLM development.**
      [https://www.philschmid.de/context-engineering](https://www.philschmid.de/context-engineering)
 
-5. LlamaIndex (2025, June). *Context Engineering – What it is, and techniques to consider*.
+6. LlamaIndex (2025, June). *Context Engineering – What it is, and techniques to consider*.
 
-      * **Official blog post from LlamaIndex outlining core techniques in context engineering for enterprise AI assistants.**
+   * **Official blog post from LlamaIndex outlining core techniques in context engineering for enterprise AI assistants.**
      [https://www.llamaindex.ai/blog/context-engineering-what-it-is-and-techniques-to-consider](https://www.llamaindex.ai/blog/context-engineering-what-it-is-and-techniques-to-consider)
 
-6. Datacamp (2025, June). *Context Engineering: The Next Frontier of AI Development*.
+7. Datacamp (2025, June). *Context Engineering: The Next Frontier of AI Development*.
 
-      * **Educational article explaining how context engineering enhances AI reliability, accuracy, and enterprise integration.**
+   * **Educational article explaining how context engineering enhances AI reliability, accuracy, and enterprise integration.**
      [https://www.datacamp.com/blog/context-engineering](https://www.datacamp.com/blog/context-engineering)
 
-7. Landgraf, T. (2025, August). *Context Engineering for Claude Code: Mastering Deep Technical Knowledge*.
+8. Landgraf, T. (2025, August). *Context Engineering for Claude Code: Mastering Deep Technical Knowledge*.
 
-      * **Medium article introducing advanced context engineering workflows for Claude Code, including knowledge-file creation, project architecture awareness, and technical validation.**
+   * **Medium article introducing advanced context engineering workflows for Claude Code, including knowledge-file creation, project architecture awareness, and technical validation.**
      [https://medium.com/%40tl_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289](https://medium.com/%40tl_99311/context-engineering-for-claude-code-mastering-deep-technical-knowledge-bae14f158289)
+
+9. Breunig, D. (2025, June). *How to Fix Your Context*.
+
+   * **Practical guide to diagnosing long-context failures and applying tactics like RAG, tool loadouts, quarantine, pruning, summarization, and offloading to stabilize agent behavior.**
+     [https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html](https://www.dbreunig.com/2025/06/26/how-to-fix-your-context.html)
+
+10. LangChain. (n.d.). *Context engineering in agents*.
+
+    * **Official LangChain documentation page explaining context engineering as the core of reliable agents, with middleware patterns for managing model, tool, and life-cycle context.**
+      [https://docs.langchain.com/oss/python/langchain/context-engineering](https://docs.langchain.com/oss/python/langchain/context-engineering)
+
+11. LangChain. (2025, July). *Context Engineering*.
+
+    * **LangChain blog post (“Context Engineering for Agents”) organizing context engineering strategies into write, select, compress, and isolate patterns, with concrete examples from real agents.**
+      [https://blog.langchain.com/context-engineering-for-agents/](https://blog.langchain.com/context-engineering-for-agents/)
+
+12. Osmani, A. (2024, July). *Context Engineering: Bringing Engineering Discipline to Prompts*.
+
+    * **Substack essay framing context engineering as bringing software-engineering discipline and information architecture to prompt and context design for production AI systems.**
+      [https://addyo.substack.com/p/context-engineering-bringing-engineering](https://addyo.substack.com/p/context-engineering-bringing-engineering)
 
 ---
 
 ### Open Source Repositories & Tools
 
-8. Kimai, D. (2025, July). *Context-Engineering (GitHub Repository)*.
+13. Kimai, D. (2025, July). *Context-Engineering (GitHub Repository)*.
 
-      * **Open-source repository providing frameworks and examples for implementing context engineering strategies in real-world projects.**
-     [https://github.com/davidkimai/Context-Engineering](https://github.com/davidkimai/Context-Engineering)
+    * **Open-source repository providing frameworks and examples for implementing context engineering strategies in real-world projects.**
+      [https://github.com/davidkimai/Context-Engineering](https://github.com/davidkimai/Context-Engineering)
 
-9. *Context Engineering Template* (2025, August). *Context-Engineering-Intro (GitHub Repository)*.
+14. *Context Engineering Template* (2025, August). *Context-Engineering-Intro (GitHub Repository)*.
 
-      * **Template repository by coleam00 for setting up Claude Code-based context engineering projects, including examples, global rules, and workflows.**
-     [https://github.com/coleam00/context-engineering-intro](https://github.com/coleam00/context-engineering-intro)
+    * **Template repository by coleam00 for setting up Claude Code-based context engineering projects, including examples, global rules, and workflows.**
+      [https://github.com/coleam00/context-engineering-intro](https://github.com/coleam00/context-engineering-intro)
 
 ---
 
 ### Media & Visualizations
 
-10. Youtube (2025, September). *Elite Context Engineering with Claude Code* — IndyDevDan \[Video].
+15. Youtube (2025, September). *Elite Context Engineering with Claude Code* — IndyDevDan [Video].
 
     * **Advanced context engineering techniques using Claude Code, as presented by IndyDevDan.**
       [https://www.youtube.com/watch?v=Kf5-HWJPTIE](https://www.youtube.com/watch?v=Kf5-HWJPTIE) ([YouTube][1])
 
-11. Youtube (2025, September). *Context Engineering for Agents — Lance Martin, LangChain* \[Video].
+16. Youtube (2025, September). *Context Engineering for Agents — Lance Martin, LangChain* [Video].
 
     * **Discussion on context engineering specifically for agent frameworks, by Lance Martin from LangChain.**
       [https://www.youtube.com/watch?v=_IlTcWciEC4](https://www.youtube.com/watch?v=_IlTcWciEC4) ([YouTube][2])
 
-12. Droid, L. (2025, July). *Context Engineering Visualization*.
+17. Droid, L. (2025, July). *Context Engineering Visualization*.
 
     * **Illustrative summary of context engineering techniques, shared via social media.**
       [https://x.com/lenadroid/status/1943685060785524824/photo/1](https://x.com/lenadroid/status/1943685060785524824/photo/1)
 
-13. Youtube (2025, September). *Advanced Context Engineering for Agents — Dexter Horthy* \[Video].
+18. Youtube (2025, September). *Advanced Context Engineering for Agents — Dexter Horthy* [Video].
 
     * **Walks through why naive back-and-forth prompting fails, how spec-first development keeps teams aligned, and why “everything is context engineering.” From compaction strategies to subagents and planning workflows, he shows how intentional context management turns AI coding from prototypes into production.**
       [https://www.youtube.com/watch?v=IS_y40zY-hc](https://www.youtube.com/watch?v=IS_y40zY-hc) ([YouTube][3])
