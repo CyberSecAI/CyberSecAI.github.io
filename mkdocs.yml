@@ -161,7 +161,7 @@ extra:
     link: https://github.com/CyberSecAI/CyberSecAI.github.io
     name: source on Github
   - icon: fontawesome/solid/download
-    link: https://github.com/CyberSecAI/CyberSecAI.github.io/print_page/
+    link: https://CyberSecAI.github.io/print_page/
     name: Save as HTML or print to PDF / paper
 
 copyright: Copyright &copy; Contributors to the CyberSecAI Guide.
