@@ -47,6 +47,15 @@ nav:
         - AIxCC: software/aixcc.md      
         - Threat Model: software/threat_model.md    
         - Claude Code: software/claude_code.md
+    - Agentic Security Assurance:
+        - Principles for Agentic Security Assurance: software/agentic_security_principles.md
+        - Security Intelligence Pipeline: software/security_intelligence_pipeline.md
+        - Four Discovery Modes: software/four_discovery_modes.md
+        - Verification Is the Bottleneck: software/verification_bottleneck.md
+        - Twin Environments and Continuous Runtime Testing: software/twin_environments_cart.md
+        - Variant Analysis and Class Eradication: software/variant_analysis_class_eradication.md
+        - Agentic Application Security Lessons: software/agentic_application_security_lessons.md
+        - Critical Thinking for Agentic Security: software/critical_thinking_agentic_security.md
 
   - CyberSecurity Models:
     - CyberSecurity LLMs: cti_models/cyber_security_models.md
@@ -170,7 +179,6 @@ plugins:
   - search
   - mermaid2
   - print-site 
-
 
 
 

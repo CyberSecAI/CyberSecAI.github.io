@@ -66,7 +66,7 @@ The comparison spans from Level 1 (basic autocomplete) through Level 4 (autonomo
 
 !!! tip
 
-    See also [Feature Comparison and Analysis of Leading AI IDEs: Cursor, Windsurf, Roo Code, and GitHub Copilot, May 27, 2025](../../assets/docs/IDEs_Feature_Comparison.pdf).
+    See also [Feature Comparison and Analysis of Leading AI IDEs: Cursor, Windsurf, Roo Code, and GitHub Copilot, May 27, 2025](../assets/docs/IDEs_Feature_Comparison.pdf).
 
 ## 5. [Leaderboards](./code/leaderboards.md)
 
@@ -77,6 +77,17 @@ A curated collection of benchmarks and evaluation metrics for Large Language Mod
 
 - Leaderboards are a good way to quantitatively and objectively compare solutions.
 - Comparison across multiple metrics and leaderboards avoids solutions that overfit to a benchmark.
+
+## 6. Agentic Security Assurance
+
+The [Agentic Security Assurance](./agentic_security_principles.md) series applies the same assurance fundamentals to AI-assisted and agentic security work. It starts with verification, validation, requirements, architecture trade-offs, and evidence quality, then turns those principles into a practical security intelligence loop: find, verify, judge, fix, test, propagate, and learn.
+
+**Key Takeaways:**
+
+- Agentic security engineering does not replace software assurance; it makes verification and validation more important.
+- Discovery is only one stage. The durable system is the feedback loop that turns verified findings into fixes, tests, policies, and variant searches.
+- Runtime testing and twin environments complement source analysis because some failures appear only in behavior, state, and integration.
+- Critical thinking is a control: separate evidence from assumptions, state preconditions, make the strongest objection, and define reversal conditions.
 
 ---
 
