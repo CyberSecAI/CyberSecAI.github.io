@@ -2,11 +2,13 @@
 
 !!! abstract "Overview"
 
-    A twin environment is not another staging environment.
+    A twin environment is an adversarial proof instrument.
 
     Staging reduces release risk. A twin exists so agents can explore, inject, probe, trace, and prove behavior safely.
 
     The strategic question is no longer only "Can we find it?" It is "Can we prove it, fix it, verify the fix, and turn the lesson into a standing control?"
+
+    This chapter is the runtime side of the same assurance argument in [Software Assurance](software_assurance.md): verification and validation need to travel together. A finding may be true in code and still unimportant in operation; a control may exist in code and still fail in operation.
 
 ## A Twin Is Not CI/CD
 
@@ -34,7 +36,7 @@ CI answers whether codified checks pass. A twin answers whether a system behaves
 
 A twin is an isolated, production-representative simulator built for exploration.
 
-It does not need to copy every production detail. It needs enough behavioral fidelity to exercise the security property under review: identity, authorization, tool calls, data boundaries, network egress, logging, user interaction, persistence, and failure modes.
+The twin copies only the production details needed to exercise the security property under review: identity, authorization, tool calls, data boundaries, network egress, logging, user interaction, persistence, and failure modes.
 
 The right analogy is often closer to an emulator than a deployment environment. The twin should let testers inject inputs, observe internal state, capture traces, and replay the same scenario after a fix.
 
@@ -83,6 +85,8 @@ A practical sequence:
 
 Source code shows intent. Runtime shows behavior.
 
+Source code intelligence finds what is in the code. It cannot find everything that only manifests after deployment, identity resolution, cloud state changes, or tool sequencing.
+
 Runtime testing catches failures that are invisible or ambiguous in code:
 
 - guardrails configured differently than expected
@@ -96,9 +100,31 @@ Runtime testing catches failures that are invisible or ambiguous in code:
 
 Use source analysis to form hypotheses. Use runtime testing to test behavior.
 
+!!! observation "Runtime-only classes"
+
+    Logging that is declared but not flowing, stale resources, cloud-state drift, organization membership, short-lived identity state, and post-deploy configuration mutations are not source-code facts. They are runtime facts.
+
+## Understand the Data First
+
+Do not scale runtime testing blind.
+
+Before building a twin or CART programme, look at the findings data you already have:
+
+| Data question | Why it matters |
+|---|---|
+| Where do findings concentrate? | Pareto effects decide where to build fidelity first |
+| Which classes are false positives? | Bad signal destroys trust before the programme matures |
+| How long does remediation actually take? | Mean time hides survival curves and stuck queues |
+| Which alerts never become owned work? | Detection without action is backlog theatre |
+| Which controls disagree about reality? | A scanner and an enforcement log can both be "working" and still contradict each other |
+
+!!! tip "EDA before CART"
+
+    Use exploratory data analysis to decide where runtime verification will produce signal and where it will produce noise.
+
 ## Continuous Exploration
 
-The twin is not only for security incidents.
+The twin supports more than security incidents.
 
 It is a standing exploration environment for features, bugs, and vulnerabilities. Agents can explore a workflow, find a strange behavior, adapt their plan, and decide what to test next. That feedback loop is where agentic testing differs from static gates.
 
@@ -110,11 +136,25 @@ That changes the scarce resource. The hard part is no longer producing leads; it
     observe -> hypothesize -> inject -> trace -> judge -> replay -> learn
     ```
 
+## Discovery Forces Proof Infrastructure
+
+Large-scale discovery changes the operating problem.
+
+If a team can produce hundreds of plausible findings, manual triage becomes the bottleneck. If it can produce hundreds of plausible critical findings, manual triage becomes a programme risk. The system needs an environment that can turn candidates into proof, reject weak reports, and replay fixes without exhausting the people who own the software.
+
+That is the strategic role of the twin: proof infrastructure.
+
+!!! observation "The forcing function"
+
+    Discovery at scale is only useful when proof scales with it. Otherwise the result is a larger queue with better prose.
+
 ## Continuous Automated Red Teaming
 
 Periodic red teaming leaves long quiet periods.
 
-Continuous automated red teaming keeps pressure on known classes between human-led assessments. The point is not to replace expert red teams. The point is to turn their methods into recurring checks for critical workflows.
+Continuous automated red teaming keeps pressure on known classes between human-led assessments. It turns expert red-team methods into recurring checks for critical workflows.
+
+The timing pressure comes from public evidence. The Zero Day Clock tracks exploit windows collapsing, and the [un]prompted "8 Minutes to Admin" case shows how fast an AI-assisted intrusion can move once the path is found. Periodic testing still has value, but it cannot be the only pressure on critical paths.
 
 Two modes are useful:
 
@@ -125,11 +165,20 @@ Two modes are useful:
 
 Continuous testing is how red-team knowledge becomes an operational control.
 
+!!! info "CART modes"
+
+    - **External mode:** no credentials, no source access, same view as an attacker.
+    - **Twin mode:** authenticated or post-compromise context inside an isolated representative system.
+
+    The first tests the perimeter. The second tests what source review and perimeter testing cannot see.
+
 ## Agentic Systems Need Interaction
 
 Agentic vulnerabilities often require a sequence.
 
 The unsafe behavior may not appear until a model reads untrusted content, chooses a tool, calls the tool, observes the result, and chooses another action. Static review can identify the dangerous possibility. A twin can show whether the chain actually executes.
+
+This is where the agentic-application case studies matter. Rehberger's promptware examples, BrowseSafe's production prompt-injection work, and capability-bounded agent designs all point at the same runtime requirement: test the full sequence.
 
 This matters for:
 
@@ -177,6 +226,8 @@ This is also why critical and high-severity findings with strong proof deserve p
 
 The target operating model is self-service. Security supplies proof, replay, proximity, and class guidance. System owners apply the fix, make the design trade-off, replay the scenario, and keep the regression without waiting for a specialist to translate the finding.
 
+The handoff should avoid prescribing the local integration unless the control must be centralized. The better default is: present the proven failure, the replay, the failed assumption, and the closure criteria; let the owning team decide the implementation that fits their architecture.
+
 ## Feed Runtime Findings Back Into Source Intelligence
 
 Runtime proof is not the end of the investigation.
@@ -189,6 +240,8 @@ runtime failure -> class extraction -> source/variant search -> fix -> regressio
 
 The compounding value is the lesson, not the single replay.
 
+Runtime findings can become source intelligence. A misconfiguration pattern discovered in a twin can become a static rule, a policy-as-code rule card, a review checklist, or a variant search across infrastructure templates.
+
 ## References
 
 - [Verification Is the Bottleneck](verification_bottleneck.md)
@@ -196,16 +249,25 @@ The compounding value is the lesson, not the single replay.
 - [Software Assurance](software_assurance.md)
 - [Security Intelligence Pipeline](security_intelligence_pipeline.md)
 - [Threat Model](threat_model.md)
+- [Zero Day Clock](https://zerodayclock.com/)
+- [The Dark Factory Pattern](https://hackernoon.com/the-dark-factory-pattern-moving-from-ai-assisted-to-fully-autonomous-coding)
+- [Sergej Epp: 8 Minutes to Admin](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/xCtcQkJBReQ_Sergej_Epp_8_Minutes_to_Admin_We_Caught_It_in_the_Wild.md)
+- [Johann Rehberger: Your Agent Works for Me Now](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/zVUm23P7ZNg_Johann_Rehberger_Your_Agent_Works_for_Me_Now.md)
+- [Kyle Polley: Training BrowseSafe](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/Fzgqx1MauJg_Kyle_Polley_Training_BrowseSafe_Lessons_from_Detecting_Prompt_Injection.md)
+- [Brooks McMillin: Building Secure Agentic Systems](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/SzLVXAzjOEU_Brooks_McMillin_Building_Secure_Agentic_Systems.md)
 
 ## Takeaways
 
 !!! success "Takeaways"
 
-    - A twin is not staging. It is an adversarial test instrument.
+    - A twin is an adversarial test instrument, separate from staging.
     - CI/CD proves known checks. A twin supports interactive exploration.
     - Build twins around security properties, not around perfect production cloning.
     - Probes, hooks, injection points, traces, and replay are the core features.
     - Runtime testing turns plausible paths into behavioral evidence.
+    - Runtime-only classes include state drift, stale resources, identity state, and logging reality.
+    - Do EDA before CART: know your false positives, Pareto clusters, and remediation queues.
+    - Discovery at scale forces proof infrastructure; otherwise the queue just gets bigger.
     - The strategic metric is time to insight actioned: find, prove, patch, verify, prevent, detect.
     - System owners need actionable proof, not a pile of plausible reports.
     - Every runtime proof should become a source-analysis seed, regression test, or preventive control.

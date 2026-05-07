@@ -2,7 +2,7 @@
 
 !!! abstract "Overview"
 
-    Agentic security engineering does not replace software assurance. It makes the old rules harder to ignore.
+    Agentic security engineering makes software assurance harder to ignore.
 
     The old assurance questions still work. They just have less patience for vague requirements, missing trade-offs, and findings that sound plausible but cannot be reproduced.
 
@@ -10,7 +10,27 @@
 
 !!! info "Basis for this model"
 
-    This is a practitioner model grounded in [software assurance](software_assurance.md), CodeQL-style semantic analysis, [multi-repo variant analysis](https://github.blog/security/vulnerability-research/multi-repository-variant-analysis-a-new-way-to-perform-security-research/), [OWASP GenAI risks](https://genai.owasp.org/), and runtime validation practice. Treat the loop as an assurance pattern, then calibrate thresholds and metrics with local evidence.
+    This is a practitioner model grounded in [software assurance](software_assurance.md), [Software Engineering Security](swe_redux_security.md), CodeQL-style semantic analysis, [multi-repo variant analysis](https://github.blog/security/vulnerability-research/multi-repository-variant-analysis-a-new-way-to-perform-security-research/), [OWASP GenAI risks](https://genai.owasp.org/), [DARPA AIxCC](aixcc.md), and runtime validation practice. Treat the loop as an assurance pattern, then calibrate thresholds and metrics with local evidence.
+
+## Update the Risk Model
+
+Pre-AI assumptions leak into security programmes.
+
+One common assumption is that dangerous vulnerabilities arrive as named CVEs, then flow through patch prioritization. That still happens. It is no longer enough.
+
+Public [un]prompted 2026 notes make the pressure concrete: Trail of Bits at 200 bugs/week/engineer, Meta FENRIR at $8.80 per vulnerability, and real-world intrusion speed measured in minutes rather than sprint cycles. Treat those as demonstrated external signals, not as local guarantees. The lesson is the economic direction: discovery, triage, and exploitation are becoming cheaper to run at scale.
+
+| Old assumption | Agentic security assumption |
+|---|---|
+| The vulnerability has a CVE | Some of the most important findings begin as unnamed zero-days |
+| The scanner is the control | The pipeline is the control |
+| Human review scales with code volume | Verification must be designed as a system |
+| Per-repo scanning gives coverage | Cross-repo intelligence is needed for variants and class campaigns |
+| Remediation is a ticket | Remediation includes patch, regression, variant search, and prevention |
+
+!!! observation "The moat is the system"
+
+    Models change. The durable investment is the harness: requirements, source intelligence, verifier, twin, judge, campaign tracker, and feedback loop.
 
 ## Start With V&V
 
@@ -25,7 +45,7 @@ Agentic systems need both.
 
 A vulnerability report is verification-biased: it asks whether a bug exists. A security programme must also validate whether the remediation changes the outcome that matters.
 
-This is where agents are most useful today: not as unchecked generators, but as scalable participants in validation and verification. Let them search, challenge, reproduce, compare, and propose. Keep the evidence standard outside the model.
+Agents are most useful today as scalable participants in validation and verification. Let them search, challenge, reproduce, compare, and propose. Keep the evidence standard outside the model.
 
 ## Requirements Are the Contract
 
@@ -43,7 +63,7 @@ The [Software Artifacts](software_artifacts.md) chapter makes this point for AI-
 
 ## Evidence Beats Assertion
 
-An agent saying "this is exploitable" is not evidence. It is a lead.
+An agent saying "this is exploitable" is a lead.
 
 Evidence can be source evidence, a reachable source-to-sink path, a reproducible proof of concept, a runtime trace, a failing regression test, or a clearly stated assumption that can be tested later.
 
@@ -55,7 +75,7 @@ Evidence can be source evidence, a reachable source-to-sink path, a reproducible
 | Variant | Structural similarity to a confirmed finding, independently verified |
 | Remediation | Test showing the old path fails and expected behavior still works |
 
-The standard is not perfect proof. The standard is enough evidence for a skilled critic to reproduce, dispute, or falsify the claim.
+The standard is enough evidence for a skilled critic to reproduce, dispute, or falsify the claim.
 
 !!! tip "Evidence test"
 
@@ -83,7 +103,7 @@ Static review can show that a control is absent. Runtime review can show that a 
 
 ## Every Confirmed Finding Is a Seed
 
-A confirmed vulnerability is not just a ticket. It is a new search pattern.
+A confirmed vulnerability becomes a new search pattern.
 
 Once a finding is real, extract the class:
 
@@ -109,11 +129,11 @@ More autonomy improves user experience and task completion. It also expands blas
 | Shared memory | Better continuity, persistence risk |
 | Fail-open guardrails | Better availability, weaker containment |
 
-The architecture decision record matters because future agents will copy the implementation. They need the reason and the consequences, not only the code.
+The architecture decision record matters because future agents will copy the implementation. They need the reason and the consequences alongside the code.
 
 ## Quality Attributes Are Security Inputs
 
-Security is not only the absence of vulnerabilities.
+Security includes more than the absence of vulnerabilities.
 
 Reliability, recoverability, observability, isolation, and operability are security properties in agentic systems. If the system cannot explain what an agent did, recover from a bad action, or isolate a tool from sensitive state, the security design is incomplete.
 
@@ -143,8 +163,18 @@ This connects directly to [Policy-as-Code Served Pre and Post Coding](pre_post_p
 
 - [Software Assurance](software_assurance.md)
 - [Software Artifacts](software_artifacts.md)
+- [Software Engineering Security](swe_redux_security.md)
+- [DARPA AI Cyber Challenge Tools Comparison](aixcc.md)
 - [Policy-as-Code Served Pre and Post Coding](pre_post_policy_as_code.md)
 - [Software Engineering 1.0 Redux](swe_redux.md)
+- [Anthropic: Preparing your security program for AI-accelerated offense](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense)
+- [Anthropic Red Team: Claude Mythos Preview zero-day evaluation](https://red.anthropic.com/2026/mythos-preview/)
+- [Zero Day Clock](https://zerodayclock.com/)
+- [OWASP GenAI Security Project](https://genai.owasp.org/)
+- [CodeQL documentation](https://codeql.github.com/docs/)
+- [[un]prompted 2026 conference index](https://github.com/CyberSecAI/unprompted_2026)
+- [Dan Guido: 200 Bugs/Week/Engineer](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/kgwvAyF7qsA_Dan_Guido_200_Bugs_Week_Engineer_How_We_Rebuilt_Trail_of_Bits_Around_AI.md)
+- [Meta FENRIR: AI Hunting for AI Zero-Days at Scale](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md)
 
 ## Takeaways
 

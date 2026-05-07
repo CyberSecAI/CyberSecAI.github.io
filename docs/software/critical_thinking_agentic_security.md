@@ -43,6 +43,22 @@ Every claim needs a label.
 
 This prevents the common failure mode where a plausible inference becomes a stated fact two paragraphs later.
 
+!!! observation "The dangerous slide"
+
+    "The input might reach the sink" becomes "the sink is reachable" becomes "this is exploitable." Labeling evidence stops that slide.
+
+For programme claims, use a second label.
+
+| Programme label | Meaning |
+|---|---|
+| Observed | Directly measured in your environment |
+| Demonstrated | Shown in an external system or published case |
+| Expected | Inferred from architecture or prior evidence; requires local validation |
+
+This is how you keep source-grounded writing honest. A pilot result, a conference case study, and an architectural expectation are all useful. They should not be written as the same kind of evidence.
+
+Use this distinction when citing public AI-security results. A conference case study can demonstrate that a pattern works somewhere. It does not prove your environment has the same signal, cost, false-positive rate, or remediation capacity.
+
 ## Step 3: Analyze Options
 
 Security decisions are trade-offs.
@@ -123,7 +139,7 @@ Use this for findings, design reviews, and remediation plans.
 
 Agentic findings need a specific review posture.
 
-The review should not ask whether the report sounds plausible. It should ask what evidence would survive an adversarial reader.
+Ask what evidence would survive an adversarial reader.
 
 | Agent claim | Critical-thinking check |
 |---|---|
@@ -135,6 +151,8 @@ The review should not ask whether the report sounds plausible. It should ask wha
 
 The discipline is simple: label the claim, test the objection, then decide what evidence is still missing.
 
+That is the common thread across Source to Sink, FENRIR, and the Mythos red-team writeup: the valuable systems make claims smaller, evidence sharper, and promotion harder.
+
 ## References
 
 - [Principles for Agentic Security Assurance](agentic_security_principles.md)
@@ -142,6 +160,9 @@ The discipline is simple: label the claim, test the objection, then decide what 
 - [Software Assurance](software_assurance.md)
 - [Security Intelligence Pipeline](security_intelligence_pipeline.md)
 - [Software Artifacts](software_artifacts.md)
+- [Anthropic Red Team: Claude Mythos Preview zero-day evaluation](https://red.anthropic.com/2026/mythos-preview/)
+- [Scott Behrens and Justice Cassel: Source to Sink](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/bxwEZMhqeR0_Scott_Behrens_Justice_Cassel_Source_to_Sink_Improving_LLM_Vuln_Discovery.md)
+- [Meta FENRIR: AI Hunting for AI Zero-Days at Scale](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md)
 
 ## Takeaways
 
@@ -150,6 +171,7 @@ The discipline is simple: label the claim, test the objection, then decide what 
     - Critical thinking keeps agentic speed attached to reality.
     - Frame the security property before choosing the tool.
     - Label evidence and assumptions explicitly.
+    - Distinguish observed, demonstrated, and expected claims.
     - Compare controls by trade-off, not preference.
     - Put the strongest objection in the review, not the postmortem.
     - Every decision should define how it will learn.

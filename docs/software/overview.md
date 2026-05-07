@@ -80,17 +80,38 @@ A curated collection of benchmarks and evaluation metrics for Large Language Mod
 
 ## 6. Agentic Security Assurance
 
-The [Agentic Security Assurance](./agentic_security_principles.md) series applies the same assurance fundamentals to AI-assisted and agentic security work. It starts with verification, validation, requirements, architecture trade-offs, and evidence quality, then turns those principles into a practical security intelligence loop: find, verify, judge, fix, test, propagate, and learn.
+The [Agentic Security Assurance](./agentic_security_principles.md) series applies the same assurance fundamentals to AI-assisted and agentic security work.
+
+The core claim is blunt: CVE-centric, per-repo, pipeline-only security is no longer enough. Defenders need a system that protects the flow of new code and the stock of existing code.
+
+!!! info "Operating model"
+
+    ```text
+    source code intelligence + runtime verification + data intelligence
+      -> find -> verify -> judge -> patch -> campaign
+    ```
+
+That model is the thread through the series: scan your own code before attackers do, validate the signal, and turn confirmed findings into tests, policy, and class-eradication campaigns.
+
+The source trail matters. The local foundation is [Software Assurance](./software_assurance.md), [Software Artifacts](./software_artifacts.md), [Software Engineering Security](./swe_redux_security.md), and [AIxCC](./aixcc.md). The external pressure comes from [Anthropic's AI-accelerated offense guidance](https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense), [Zero Day Clock](https://zerodayclock.com/), and [un]prompted examples such as [Source to Sink](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/bxwEZMhqeR0_Scott_Behrens_Justice_Cassel_Source_to_Sink_Improving_LLM_Vuln_Discovery.md), [FENRIR](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md), [200 Bugs/Week/Engineer](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/kgwvAyF7qsA_Dan_Guido_200_Bugs_Week_Engineer_How_We_Rebuilt_Trail_of_Bits_Around_AI.md), and [Your Agent Works for Me Now](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/zVUm23P7ZNg_Johann_Rehberger_Your_Agent_Works_for_Me_Now.md).
+
+!!! info "Source trail"
+
+    - Assurance: verification, validation, requirements, architecture trade-offs.
+    - Source-code security: structured analysis, source-to-sink reasoning, and AIxCC-style autonomous systems.
+    - External signals: time-to-exploit collapse, staged LLM triage, runtime agent exploitation, and multi-repo variant propagation.
 
 !!! abstract "Reading order"
 
-    Read the series in order if you want the operating model. Jump to [Twin Environments and Continuous Runtime Testing](./twin_environments_cart.md) for runtime validation depth, or [Variant Analysis and Class Eradication](./variant_analysis_class_eradication.md) for MRVA and class-eradication depth.
+    Read the series in order if you want the operating model. Jump to [Four Discovery Modes](./four_discovery_modes.md) for the R1/R2/R3/R4 frame, [Twin Environments and Continuous Runtime Testing](./twin_environments_cart.md) for CART and runtime validation depth, or [Variant Analysis and Class Eradication](./variant_analysis_class_eradication.md) for MRVA and campaign depth.
 
 !!! success "Key Takeaways"
 
-    - Agentic security engineering does not replace software assurance; it makes verification and validation more important.
-    - Discovery is only one stage. The durable system is the feedback loop that turns verified findings into fixes, tests, policies, and variant searches.
+    - Agentic security engineering depends on software assurance; it makes verification and validation more important.
+    - In-band scanning protects the flow; out-of-band intelligence protects the stock.
+    - Discovery is only one stage. The durable system is find, verify, judge, patch, campaign.
     - Runtime testing and twin environments complement source analysis because some failures appear only in behavior, state, and integration.
+    - Evidence gates matter: false-positive rate, triage speed, patch velocity, signal quality, and class eradication.
     - Critical thinking is a control: separate evidence from assumptions, state preconditions, make the strongest objection, and define reversal conditions.
 
 ---

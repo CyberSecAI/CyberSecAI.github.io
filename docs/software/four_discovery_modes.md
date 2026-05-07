@@ -4,36 +4,44 @@
 
     Vulnerability discovery is not one activity.
 
-    A reasoning agent, a policy scan, a history review, and a source-to-sink query are different instruments. They answer different questions and fail in different ways.
+    Use the R1/R2/R3/R4 frame: exploratory reasoning, context-guided intelligence, invariant verification, and pattern matching. They answer different questions. They also fail differently.
 
-    Treating them as one thing leads to bad expectations: too much faith in scanners, too little respect for history, and too much noise handed to engineers.
+    The mistake is asking one mode to do all jobs. The discipline is measuring what each mode uniquely finds, what it costs, and how much verification it needs.
 
-## The Four Modes
+## The R1-R4 Frame
 
-Use four modes:
+Use two axes: code-first vs architecture-first, and known-pattern vs novel reasoning.
 
-| Mode | Question | Typical output |
+```text
+                Known patterns <--------------------> Novel reasoning
+
+Architecture-     +-------------------+------------------------+
+first             | R3: Invariant     | R2: Context-guided     |
+                  | verification      | intelligence           |
+                  | "Is it safe?"     | "What's unfinished?"   |
+                  +-------------------+------------------------+
+Code-first        | R4: Pattern       | R1: Exploratory        |
+                  | matching          | reasoning              |
+                  | "Does it match?" | "What's wrong?"        |
+                  +-------------------+------------------------+
+```
+
+| Mode | Question | Best output |
 |---|---|---|
-| Exploratory reasoning | What is wrong here? | Novel attack paths and missing checks |
-| Domain breadth scanning | Which known risk classes appear? | Broad posture findings and repeated patterns |
-| Historical intelligence | What did past changes reveal? | Incomplete fixes, regressions, and high-risk hotspots |
-| Semantic confirmation and MRVA | Is the path real, and where else does it exist? | Verified source-to-sink paths, variants, and PoCs |
+| R1: Exploratory reasoning | What is wrong here? | Candidate attack paths, missing checks, proof strategy |
+| R2: Context-guided intelligence | What is unfinished, risky, or repeated? | Churn hotspots, archaeology seeds, semantic findings, variants |
+| R3: Invariant verification | Is the design safe against the stated security properties? | Requirement and architecture violations |
+| R4: Pattern matching | Does this match a known risky class? | Breadth findings, posture gaps, policy violations |
 
-These modes can run independently. They work best as a system.
+!!! observation "The important metric is uniqueness"
 
-!!! tip "Coverage principle"
+    Do not ask which mode "wins." Ask what high-value finding each mode would miss if it were removed. Low overlap can be healthy when the modes are designed to see different surfaces.
 
-    Do not ask one discovery mode to do all jobs. Diversity is coverage.
+## R1: Exploratory Reasoning
 
-!!! observation "Overlap is not the only signal"
+R1 is the closest agentic equivalent of a skilled human reviewer walking the code.
 
-    If the modes are healthy, they should not all find the same bugs. Ask what class each mode would miss if you removed it.
-
-## Mode 1: Exploratory Reasoning
-
-Exploratory reasoning is the closest agentic equivalent of a skilled human reviewer walking the code.
-
-It reads the system, forms hypotheses, traces trust boundaries, and tries to build a plausible attack. It is strong when the bug is semantic: the code does what it says, but what it says is unsafe.
+It starts code-first. The agent reads entry points, traces trust boundaries, and tries to build a plausible attack. It is strong when the bug is semantic: the code does what it says, but what it says is unsafe.
 
 It is especially useful for:
 
@@ -47,137 +55,132 @@ It is especially useful for:
 
 | Input | Output |
 |---|---|
-| Source tree, architecture notes, entrypoints, known risky surfaces | One or more candidate attack paths with source evidence and a proposed proof strategy |
+| Source tree, entrypoints, architecture notes, known risky surfaces | Candidate attack paths with source evidence and a proposed proof strategy |
 
-The weakness is coverage. A reasoning pass can be brilliant and still miss the next file. Use it to find the sharp edge, not to prove the whole estate is safe.
+The weakness is coverage. A reasoning pass can be brilliant and still miss the next file. Use R1 to find sharp edges quickly, not to prove the estate is safe.
 
-## Mode 2: Domain Breadth Scanning
+## R2: Context-Guided Intelligence
 
-Breadth scanning asks a different question: which known classes appear across the system?
+R2 is where the intelligence layer has the most leverage.
 
-This is where specialized checklists, skills, rule packs, and deterministic tools work well. CI/CD security, supply chain hygiene, container hardening, cloud configuration, logging, secrets, cryptography, dependency posture, and observability all benefit from domain-specific breadth.
+Give the agent intelligence: churn, history, incomplete fixes, source-to-sink evidence, and confirmed seeds from other systems.
 
-Breadth scanning is less elegant than exploit discovery. It is also how you find the boring risks that become incidents.
+The public evidence points in the same direction. The Source to Sink work argues for structured path evidence over "brick of text" prompting. FENRIR uses a cascade: cheap static filters first, fast model triage second, deep sandbox verification last. Put LLM reasoning where the structured signal is already strong.
 
-| Input | Output |
-|---|---|
-| Domain checklists, policy rules, code/config search, dependency and infrastructure metadata | Posture findings, repeated class candidates, and control gaps |
+R2 has four stages.
 
-The weakness is depth. A breadth scan can tell you a dangerous pattern exists. It may not prove that a specific attacker can exploit it. Confirm high-value results with source tracing, runtime testing, or a PoC.
+| Stage | Capability | Question | Why it matters |
+|---|---|---|---|
+| A | Code churn hotspot | Where should expensive review start? | High churn near trust boundaries is a routing signal |
+| B | Git vulnerability archaeology | What history matters? | Incomplete fixes often leave sibling paths vulnerable |
+| C | CodeQL + LLM bridge | Is it semantically real? | Structured dataflow reduces guesswork; context reduces false positives |
+| D | Variant analysis | Where else does it exist? | One confirmed issue becomes a class-level search |
 
-!!! info "Out-of-band scanning"
+!!! observation "Every fix commit is a hypothesis"
 
-    Breadth scanning does not have to live only in CI. A portfolio-level scan can clone many codebases, normalize metadata, and look for repeated classes across ownership boundaries. That gives defenders a view attackers do not have: the whole estate at once.
+    A security fix says, "this class is fixed." Stage B tests that hypothesis. Did the change fix the pattern, or only one instance?
 
-## Mode 3: Historical Intelligence
+### Stage A: Code Churn Hotspot
 
-Git history is security data. So are code smells.
+Not all files deserve the same attention.
 
-A security fix says: somebody already found a boundary worth changing. The useful question is whether the fix changed the class or only the instance.
+Rank by `churn x security relevance`. A cosmetic rename should not weigh the same as repeated changes to auth logic, parsing, crypto, deserialization, authorization, or outbound actions.
 
-Historical intelligence looks for:
+Output: a priority list. Not vulnerabilities. A map of where expensive review is more likely to pay rent.
 
-- awkward or overly complex code near trust boundaries
-- incomplete fixes
-- reverted controls
-- sibling code paths missed by a patch
-- churn in security-sensitive files
-- repeated emergency changes near trust boundaries
-- old workarounds that became permanent architecture
-- security-sensitive files whose risk comes from change velocity, not size
+### Stage B: Vulnerability Archaeology
 
-Two sub-modes are useful.
+History doubles as discovery intelligence.
 
-| Sub-mode | Question | Output |
-|---|---|---|
-| Churn hotspot analysis | Where should expensive review start? | Files or components ranked by churn and security relevance |
-| Vulnerability archaeology | Which past fixes imply unfinished work? | Fix patterns, sibling candidates, and regression seeds |
+Look for commits that harden validation, patch injection, fix auth, add escaping, or mention security. Then ask whether the same pre-fix pattern still exists in sibling paths.
 
-This mode is powerful because the current code can look clean. The history shows why it became that way, and whether the reason was fully addressed.
+!!! tip "Archaeology seed"
 
-!!! tip "History as a hypothesis engine"
+    A good seed captures the old pattern, the patched pattern, the missing control, the affected framework, and the sibling locations to check.
 
-    Every fix commit is a hypothesis: "the class is fixed." Test that hypothesis.
+### Stage C: CodeQL + LLM Bridge
 
-## Mode 4: Semantic Confirmation and MRVA
+CodeQL gives structure: AST, control flow, data flow, sources, sinks, and path evidence.
 
-Semantic confirmation gives structure to the search. Multi-repo variant analysis (MRVA) gives it scale.
+Keep CodeQL as the structure. Use LLM/context triage to reason over it:
 
-Tools such as CodeQL can model control flow, data flow, sources, sinks, and framework APIs. Agents can then reason over that structured evidence: whether a path is reachable, whether a sanitizer is real, whether an attacker controls the source, and whether a sink actually matters.
+- Is the path reachable from attacker-controlled input?
+- Did the query miss a sanitizer, authorization check, framework escape, or deployment constraint?
+- What preconditions are needed?
+- What proof would reduce the remaining uncertainty?
 
-Once a finding is confirmed, the same structure supports propagation. Search for equivalent patterns across codebases, templates, services, and frameworks. The goal is not to find the same line of code. The goal is to find the same failed assumption.
+This is the bridge: deterministic tooling finds candidate paths; contextual reasoning decides which paths deserve promotion.
 
-For example: a confirmed missing confirmation before an external action should not only produce one fix. It should produce a search for other actions with the same authority boundary, the same missing confirmation, or the same unsafe helper.
+This is why the bridge belongs in R2 rather than R4. R4 can match the known pattern. Stage C asks whether the path is live, relevant, and missing a real barrier.
 
-### The MRVA Shape
+### Stage D: Variant Analysis
 
-MRVA is a repeatable workflow:
+A confirmed vulnerability becomes intelligence.
+
+Encode the class as a variant seed, then search for structurally equivalent paths across codebases, frameworks, templates, and generated projects. Look for the same failed assumption, not the same line.
 
 ```text
 confirmed finding
   -> variant seed
-     -> targeted corpus selection
+     -> target selection
         -> semantic or structural search
            -> LLM/context triage
               -> proximity scoring
-                 -> PoC or remediation campaign
+                 -> PoC, fix, or campaign
 ```
 
-| Step | Purpose |
+## R3: Invariant Verification
+
+R3 is architecture-first.
+
+It starts from a security property and asks whether the implementation, design, and runtime behavior preserve it. This is where requirements, threat models, ADRs, policy-as-code, and acceptance criteria become active contracts.
+
+Examples of invariants:
+
+- untrusted content must not become instruction
+- cross-tenant data must not cross the tenant boundary
+- external actions require informed confirmation
+- secrets must not be reachable from untrusted execution
+- privileged tools must not run from untrusted context
+- logging must flow for security-relevant actions
+
+| Input | Output |
 |---|---|
-| Confirm the seed | Start from a real finding, not a hunch |
-| Extract the class | Name the failed assumption and missing control |
-| Select targets | Search systems likely to share the API, framework, template, or pattern |
-| Run semantic search | Use CodeQL, structural search, or other source-aware tooling |
-| Triage with context | Remove mitigated, dead, or unreachable candidates |
-| Score proximity | Track how close each candidate is to mechanical exploitation |
-| Promote campaigns | Fix the class, not just the first instance |
+| Requirements, threat model, architecture decision, policy rule, runtime trace | Evidence that the invariant holds, fails, or needs a narrower test |
 
-### Source, Sink, Sanitizer
+R3 finds compositional failures. The code may look correct in isolation while the system violates the property.
 
-Most useful semantic security queries reduce to three definitions.
+## R4: Pattern Matching and Breadth
 
-| Component | Question |
+R4 is known-pattern breadth.
+
+This is where domain skills, rule packs, Semgrep, CodeQL query suites, dependency scanning, IaC checks, secrets scanning, container checks, logging checks, and cloud posture rules earn their keep.
+
+It also connects back to [Policy-as-Code Served Pre and Post Coding](pre_post_policy_as_code.md): repeated review lessons should become standing rules where the rule is clear enough to enforce.
+
+R4 is less elegant than exploit discovery. It is also how you find the boring risks that become incidents.
+
+| Strength | Weakness |
 |---|---|
-| Source | Where does untrusted, remote, user-controlled, or attacker-influenced data enter? |
-| Sink | Which operation is dangerous if that data reaches it? |
-| Sanitizer or barrier | Which validation, escaping, authorization, confirmation, or deployment control blocks exploitation? |
+| Broad coverage of known classes | Can generate high volume and detection-level findings |
+| Cheap to repeat once rules exist | Struggles with missing code and design intent |
+| Good for compliance and hygiene | Needs verification before promotion |
 
-For MRVA, these definitions should come from confirmed findings whenever possible. A real source-to-sink path teaches you what the generic query should look for.
+!!! warning "Do not scale breadth before signal"
 
-### Execution Models
-
-There is no single MRVA execution model.
-
-| Model | Best for | Trade-off |
-|---|---|---|
-| Local CodeQL fan-out | Private, regulated, or offline code where databases must be built locally | Most control, more setup |
-| Downloaded pre-built databases | Public or hosted code where CodeQL databases already exist | Fast start, limited by database availability |
-| IDE multi-database execution | Interactive query development and analyst review | Excellent for iteration, less ideal for scheduled campaigns |
-| Hosted or hybrid MRVA | Large repo-list execution with platform orchestration | Less local control, more built-in orchestration |
-| Structural search plus agent triage | Patterns that are not worth a full dataflow query yet | Fast and flexible, weaker proof |
-
-The execution choice is environmental. The assurance pattern is stable: seed, search, verify, score, remediate, feed back.
-
-## Why Overlap Should Be Low
-
-If every mode finds the same things, the system is redundant.
-
-Low overlap is not a failure when the modes are designed to see different surfaces. Exploratory reasoning should find semantic chains. Breadth scanning should find posture gaps. History should find incomplete fixes. Semantic propagation should find variants.
-
-The review question is not "Which mode won?" It is "Which classes would we have missed if we removed this mode?"
+    Pattern matching is valuable, but high-volume detection without a verifier creates a queue, not a programme. Establish signal and verification first, then expand breadth.
 
 ## Operating Pattern
 
-A practical run looks like this:
+A practical run preserves the R1-R4 distinction:
 
-1. Use intelligence to choose targets and themes.
-2. Run exploratory reasoning for high-impact chains.
-3. Run domain breadth scans for class coverage.
-4. Mine history for incomplete fixes and hotspots.
-5. Use semantic analysis to confirm paths.
-6. Run MRVA to propagate confirmed classes.
-7. Feed findings, false positives, and fixes back into the next run.
+1. Use R1 to get fast exploratory signal on a high-risk target.
+2. Use R2 to direct attention with churn, history, semantic evidence, and variants.
+3. Use R3 to test the actual security invariants.
+4. Use R4 to broaden coverage across known classes.
+5. Compare unique findings, cost per verified finding, false-positive rate, and campaign yield.
+
+The result should be an evidence-backed portfolio, not a single scanner score.
 
 ## References
 
@@ -185,19 +188,23 @@ A practical run looks like this:
 - [Variant Analysis and Class Eradication](variant_analysis_class_eradication.md)
 - [Principles for Agentic Security Assurance](agentic_security_principles.md)
 - [Policy-as-Code Served Pre and Post Coding](pre_post_policy_as_code.md)
+- [Software Engineering Security](swe_redux_security.md)
+- [DARPA AI Cyber Challenge Tools Comparison](aixcc.md)
 - [CodeQL documentation](https://codeql.github.com/docs/)
 - [GitHub: Multi-repository variant analysis](https://github.blog/security/vulnerability-research/multi-repository-variant-analysis-a-new-way-to-perform-security-research/)
 - [Trail of Bits mrva](https://github.com/trailofbits/mrva)
+- [Scott Behrens and Justice Cassel: Source to Sink](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/bxwEZMhqeR0_Scott_Behrens_Justice_Cassel_Source_to_Sink_Improving_LLM_Vuln_Discovery.md)
+- [Meta FENRIR: AI Hunting for AI Zero-Days at Scale](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md)
+- [Jenny Guanni Qu: Why Most ML Vulnerability Detection Fails](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/93jhfuL-ndo_Jenny_Guanni_Qu_Why_Most_ML_Vulnerability_Detection_Fails.md)
 
 ## Takeaways
 
 !!! success "Takeaways"
 
-    - No single discovery mode subsumes the others.
-    - Exploratory reasoning finds semantic chains and missing checks.
-    - Domain breadth scanning finds posture and policy classes that deep review may never choose.
-    - Historical intelligence turns past fixes into current hypotheses.
-    - MRVA turns one confirmed finding into a class-level search.
-    - Source/sink/sanitizer modeling is the practical heart of semantic security queries.
-    - Low overlap between modes is useful when each mode sees a different surface.
-    - The operating pattern is portfolio, not pipeline monoculture.
+    - Use the R1/R2/R3/R4 frame; do not collapse discovery into one generic scan.
+    - R1 finds sharp semantic paths quickly, but it does not prove coverage.
+    - R2 is the intelligence engine: churn, archaeology, semantic confirmation, variant propagation.
+    - R3 tests whether the system preserves its security invariants.
+    - R4 gives breadth across known classes, but it needs verification discipline.
+    - Stage B treats every fix commit as a hypothesis; Stage D turns every confirmed finding into a class search.
+    - Measure unique findings, false-positive rate, cost per verified finding, and campaign yield.

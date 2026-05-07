@@ -4,15 +4,17 @@
 
     Agentic discovery creates more leads than humans can triage by hand.
 
-    That is not a security outcome unless verification scales with it. A pile of plausible findings is an attention attack on your own engineers; eventually they stop trusting the queue.
+    Without scalable verification, a pile of plausible findings becomes an attention attack on your own engineers; eventually they stop trusting the queue.
 
     The verifier is the trust boundary of the pipeline. It decides what is real, what is exploitable, what should be fixed now, and what should become a broader class-eradication campaign.
+
+    Anthropic's Mythos red-team notes make the point bluntly: discovery can advance faster than reliable exploit creation. Treat that gap as the design reason for a separate verification system.
 
 ## What Verification Must Prove
 
 Verification turns a candidate into an evidence-backed decision.
 
-It does not always need a weaponized exploit. It does need enough proof to classify the finding, reject it, or identify the missing evidence.
+It usually needs enough proof to classify the finding, reject it, or identify the missing evidence. A weaponized exploit is only one evidence shape.
 
 | Evidence tier | What it proves | When it is enough |
 |---|---|---|
@@ -24,7 +26,26 @@ It does not always need a weaponized exploit. It does need enough proof to class
 
 !!! tip "Verification ladder"
 
-    Verification is not one technique. It is a ladder of confidence. Use the lightest evidence that can answer the disputed security question.
+    Use verification as a ladder of confidence. Apply the lightest evidence that can answer the disputed security question.
+
+## Separate Generator From Evaluator
+
+Autonomous coding gives security a useful lesson: the generator should not be the evaluator.
+
+If the same loop that produced a finding also decides whether the finding is true, it will tend to reward its own story. A better architecture separates discovery from verification. Discovery can be broad and creative. Verification must be adversarial and held to evidence.
+
+The [Dark Factory pattern](https://hackernoon.com/the-dark-factory-pattern-moving-from-ai-assisted-to-fully-autonomous-coding) uses the same separation for autonomous coding: generate work, then evaluate it against scenarios the generator does not control. Security needs the same architecture, with stronger evidence gates.
+
+| Autonomous coding pattern | Security pipeline equivalent |
+|---|---|
+| Generator | Discovery agent or scanner |
+| Holdout scenario | Adversarial test, PoC, replay, trace |
+| Evaluator | Verifier or judge, human or agent |
+| Acceptance gate | Promotion from candidate to verified finding |
+
+!!! observation "The verifier is load-bearing"
+
+    Prompts guide. Verifiers control. If the verifier is weak, every downstream metric is suspect.
 
 ## Try to Disprove the Finding
 
@@ -40,7 +61,7 @@ It asks why the finding might be wrong:
 - Is the impact blocked by permissions, isolation, or user confirmation?
 - Is the report a duplicate of the same root cause?
 
-This is where critical thinking belongs in the pipeline. A confident agent report without disproof attempts is not yet analysis.
+This is where critical thinking belongs in the pipeline. A confident agent report without disproof attempts remains a claim.
 
 ## Proofs of Concept Are Tools, Not Trophies
 
@@ -60,7 +81,7 @@ The goal is decision-quality evidence. Spectacle adds noise.
 
 !!! observation "Match the proof to the doubt"
 
-    If the doubt is "does the parser accept this shape?", write the parser test. If the doubt is "can a user actually reach this action?", use a runtime replay. A bigger PoC is not automatically a better PoC.
+    If the doubt is "does the parser accept this shape?", write the parser test. If the doubt is "can a user actually reach this action?", use a runtime replay. Match the PoC to the disputed assumption.
 
 ## Proximity Scores Evidence, Not Drama
 
@@ -81,7 +102,7 @@ Proximity is the exploitation-distance score used to decide how close a finding 
 
     - P4 requires a concrete payload or attack input. If the exact input cannot be specified, cap at P3.
     - P3 requires demonstrated barrier absence. If a sanitizer, auth gate, framework mitigation, or deployment constraint remains, cap at P2.
-    - P5 requires execution or mechanical proof of the full chain, not just a convincing story.
+    - P5 requires execution or mechanical proof of the full chain.
 
 Severity tells impact. Proximity tells how much evidence exists that the impact can be realized.
 
@@ -152,10 +173,30 @@ candidate -> verified finding -> prioritized work -> patch -> regression -> vari
 | Time to remediation | Measures whether proven risk is reaching ownership and closure |
 | False-positive rate | Measures trust in the pipeline |
 | Confirmed finding rate | Measures discovery quality |
-| Proximity distribution | Measures evidence strength, not just severity labels |
+| Proximity distribution | Measures evidence strength behind severity labels |
 | Findings converted into tests or rules | Measures compounding learning |
 
 The bottleneck moves as the system improves. First it is discovery. Then verification. Then remediation. Then prevention.
+
+!!! warning "Do not promote unowned proof"
+
+    Promote a verified finding with an owner, the failed assumption, the reproduction path, the proposed closure test, and the expected remediation shape.
+
+## Evidence Gates
+
+Use gates to stop the programme from scaling noise.
+
+| Gate | Minimum evidence |
+|---|---|
+| Candidate -> triage | Source location, claim, suspected boundary, suspected impact |
+| Triage -> verified | Reproduction, source-to-sink path, runtime trace, or explicit unresolved assumption |
+| Verified -> patch | Owner, preconditions, proximity, proposed fix shape |
+| Patch -> accepted | Old path closed and intended behavior still works |
+| Accepted -> campaign | Variant seed, search scope, prevention control, re-scan criterion |
+
+!!! tip "Campaign closure"
+
+    Close a class when known instances are remediated, prevention is enabled, and a re-scan comes back clean.
 
 ## References
 
@@ -164,6 +205,12 @@ The bottleneck moves as the system improves. First it is discovery. Then verific
 - [Security Intelligence Pipeline](security_intelligence_pipeline.md)
 - [Twin Environments and Continuous Runtime Testing](twin_environments_cart.md)
 - [Software Artifacts](software_artifacts.md)
+- [Software Engineering Security](swe_redux_security.md)
+- [DARPA AI Cyber Challenge Tools Comparison](aixcc.md)
+- [Anthropic Red Team: Claude Mythos Preview zero-day evaluation](https://red.anthropic.com/2026/mythos-preview/)
+- [The Dark Factory Pattern](https://hackernoon.com/the-dark-factory-pattern-moving-from-ai-assisted-to-fully-autonomous-coding)
+- [Scott Behrens and Justice Cassel: Source to Sink](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/bxwEZMhqeR0_Scott_Behrens_Justice_Cassel_Source_to_Sink_Improving_LLM_Vuln_Discovery.md)
+- [Meta FENRIR: AI Hunting for AI Zero-Days at Scale](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md)
 
 ## Takeaways
 
@@ -176,4 +223,6 @@ The bottleneck moves as the system improves. First it is discovery. Then verific
     - Deduplicate by failed assumption so teams can fix the control, not the symptoms.
     - Preconditions are part of the vulnerability.
     - Remediation is not done until the old path is closed and intended behavior still works.
+    - Separate generator from evaluator. Discovery proposes; verification promotes.
+    - Use evidence gates before scaling from finding to patch to campaign.
     - The metric that matters is time to insight actioned.

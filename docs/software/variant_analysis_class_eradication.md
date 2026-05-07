@@ -43,7 +43,7 @@ It should capture enough detail for another reviewer or agent to search without 
 
 !!! tip "Seed discipline"
 
-    Variant analysis improves when seeds describe structure, not just keywords.
+    Variant analysis improves when seeds describe structure rather than keywords alone.
 
 !!! observation "Example seed"
 
@@ -55,7 +55,9 @@ It should capture enough detail for another reviewer or agent to search without 
 
 Multi-repo variant analysis takes a confirmed vulnerability class and searches owned codebases for structurally equivalent instances.
 
-It is not just search. It is search plus evidence. A good MRVA run keeps the original proof, adapts the pattern to each target, and independently verifies every promoted candidate.
+MRVA is search plus evidence. A good run keeps the original proof, adapts the pattern to each target, and independently verifies every promoted candidate.
+
+GitHub's MRVA work gives the public baseline for multi-repository search. The agentic addition is better target selection, framework adaptation, and contextual triage around the same source/sink/barrier model. Source-to-sink discovery and FENRIR both reinforce the same principle: broad search needs evidence-bound promotion.
 
 ```text
 confirmed seed
@@ -130,7 +132,9 @@ Variant search should be broad. Variant promotion should be strict.
 
 Use text search, semantic search, CodeQL, framework-specific queries, dependency graphs, and agent review to find candidates. Then verify each candidate independently. Similar code is not automatically vulnerable.
 
-The search can be generous because candidates are cheap. Promotion has to be strict because engineering time is not.
+The search can be generous because candidates are cheap. Promotion has to be strict because engineering time is scarce.
+
+This is also where previous [Software Engineering Security](swe_redux_security.md) lessons apply. Static structure helps you find paths. Assurance discipline decides whether the path matters.
 
 | Search method | Good use |
 |---|---|
@@ -156,7 +160,7 @@ A class fix changes the shared abstraction, default, policy, generator, template
 
 ## Regression Checks Keep the Class Dead
 
-A class is not eradicated until it is hard to reintroduce.
+Eradication means the class is hard to reintroduce.
 
 Regression can take several forms:
 
@@ -185,6 +189,17 @@ A campaign has a defined class, scope, owner, remediation pattern, verification 
 | Remediation | What is the preferred class-level fix? |
 | Prevention | Which rule, test, or design change keeps it from returning? |
 
+!!! info "Campaign closure criteria"
+
+    A campaign is closed when:
+
+    - all known instances are remediated
+    - the preferred prevention control is enabled
+    - a re-scan finds zero recurrence in the defined scope
+    - the regression or policy rule is owned
+
+    Anything less is progress, not eradication.
+
 ## References
 
 - [Security Intelligence Pipeline](security_intelligence_pipeline.md)
@@ -194,6 +209,11 @@ A campaign has a defined class, scope, owner, remediation pattern, verification 
 - [CodeQL documentation](https://codeql.github.com/docs/)
 - [GitHub: Multi-repository variant analysis](https://github.blog/security/vulnerability-research/multi-repository-variant-analysis-a-new-way-to-perform-security-research/)
 - [Trail of Bits mrva](https://github.com/trailofbits/mrva)
+- [Software Engineering Security](swe_redux_security.md)
+- [DARPA AI Cyber Challenge Tools Comparison](aixcc.md)
+- [Scott Behrens and Justice Cassel: Source to Sink](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/bxwEZMhqeR0_Scott_Behrens_Justice_Cassel_Source_to_Sink_Improving_LLM_Vuln_Discovery.md)
+- [Meta FENRIR: AI Hunting for AI Zero-Days at Scale](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md)
+- [Dan Guido: 200 Bugs/Week/Engineer](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/kgwvAyF7qsA_Dan_Guido_200_Bugs_Week_Engineer_How_We_Rebuilt_Trail_of_Bits_Around_AI.md)
 
 ## Takeaways
 
@@ -209,3 +229,4 @@ A campaign has a defined class, scope, owner, remediation pattern, verification 
     - Prefer the fix that removes the unsafe pattern from future code.
     - Fixes decay. Regression checks preserve the lesson.
     - One-off fixes reduce backlog. Campaigns reduce future vulnerability supply.
+    - Close campaigns with evidence: instances fixed, prevention enabled, re-scan clean.
