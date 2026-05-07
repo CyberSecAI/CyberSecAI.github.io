@@ -16,7 +16,13 @@
 
 Pre-AI assumptions leak into security programmes.
 
-Public [un]prompted 2026 notes make the pressure concrete: Trail of Bits at 200 bugs/week/engineer, Meta FENRIR at $8.80 per vulnerability, and real-world intrusion speed measured in minutes. Treat those as demonstrated external signals, not as local guarantees. The lesson is the economic direction: discovery, triage, and exploitation are getting cheaper.
+Public [un]prompted 2026 notes make the pressure concrete:
+
+- [Trail of Bits at 200 bugs/week/engineer](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/kgwvAyF7qsA_Dan_Guido_200_Bugs_Week_Engineer_How_We_Rebuilt_Trail_of_Bits_Around_AI.md): discovery economics are changing.
+- [Meta FENRIR at $8.80 per vulnerability](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md): triage and verification costs are dropping.
+- [Real-world intrusion speed measured in minutes](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/xCtcQkJBReQ_Sergej_Epp_8_Minutes_to_Admin_We_Caught_It_in_the_Wild.md): exploitation can move quickly once the path is found.
+
+Treat those as demonstrated external signals, not local guarantees. The lesson: discovery, triage, and exploitation are getting cheaper.
 
 | Old assumption | Agentic security assumption |
 |---|---|
@@ -167,6 +173,7 @@ This connects directly to [Policy-as-Code Served Pre and Post Coding](pre_post_p
 - [[un]prompted 2026 conference index](https://github.com/CyberSecAI/unprompted_2026)
 - [Dan Guido: 200 Bugs/Week/Engineer](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/kgwvAyF7qsA_Dan_Guido_200_Bugs_Week_Engineer_How_We_Rebuilt_Trail_of_Bits_Around_AI.md)
 - [Meta FENRIR: AI Hunting for AI Zero-Days at Scale](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/c6_bRzHCf3U_Peter_Girnus_Derek_Chen_FENRIR_AI_Hunting_for_AI_Zero-Days_at_Scale.md)
+- [Sergej Epp: 8 Minutes to Admin](https://github.com/CyberSecAI/unprompted_2026/blob/master/insights/xCtcQkJBReQ_Sergej_Epp_8_Minutes_to_Admin_We_Caught_It_in_the_Wild.md)
 
 ## Takeaways
 
