@@ -4,17 +4,17 @@
 
     Agentic applications fail at boundaries.
 
-    The model is rarely the whole problem. The system around the model decides what content becomes instruction, what tools can do, what state persists, what needs confirmation, and what evidence humans can inspect after something goes wrong.
+    The model is rarely the whole problem. The architecture decides what content becomes instruction, what tools can do, what state persists, what needs confirmation, and what evidence humans can inspect.
 
-    Treat the model as one component inside a security architecture. The moat is the system, not the prompt.
+    Treat the model as one component inside a security architecture. The architecture is the moat.
 
 ## Separate Content From Instruction
 
 Untrusted content should not become instruction by accident.
 
-Agentic applications ingest web pages, documents, messages, calendar entries, tickets, logs, search results, and tool output. Some of that content may contain adversarial instructions. The system must preserve the distinction between "content to analyze" and "instructions to follow."
+Agentic applications ingest web pages, documents, messages, calendar entries, tickets, logs, search results, and tool output. Some of that content may contain adversarial instructions. Preserve the distinction between "content to analyze" and "instructions to follow."
 
-Johann Rehberger's promptware examples are a useful public reference here: the attack is not merely "the model got confused." The system let untrusted content acquire authority across tools, memory, or later turns.
+Johann Rehberger's promptware examples show the failure: untrusted content acquiring authority across tools, memory, or later turns.
 
 Useful controls:
 
@@ -39,7 +39,7 @@ The model should not be the authorization layer.
 
 Tools need explicit policy outside the prompt. The policy should decide which actions are allowed, which require confirmation, which require stronger identity, and which are never available from untrusted context.
 
-Brooks McMillin's capability-bounding pattern is the practical version: expose only the tools, memory, and permissions the agent needs for the job. Reducing the tool surface is both a security control and a context-quality control.
+Brooks McMillin's capability-bounding pattern is the practical version: expose only the tools, memory, and permissions the agent needs for the job.
 
 | Tool class | Example policy question |
 |---|---|
@@ -69,7 +69,7 @@ Ask whether the user can understand the specific risk before the action happens.
 
 Persistent memory is stored influence.
 
-If untrusted content can write memory, it can shape future behavior. If sensitive content can enter memory, it can leak later. If memory appears in system context, it becomes part of the instruction environment.
+Untrusted content in memory can shape future behavior. Sensitive content in memory can leak later. Memory in system context becomes part of the instruction environment.
 
 Memory controls should answer:
 
@@ -86,7 +86,7 @@ Treat memory writes like durable configuration changes.
 
 Security controls decay when each surface implements its own version.
 
-One client, platform, workflow, or rendering path may have a strong sanitizer while another has a weaker copy. Attackers look for the weakest surface. Agentic systems make this worse because content flows across surfaces: page to summary, message to tool result, document to memory, tool output to response.
+One client, platform, workflow, or rendering path may have a strong sanitizer while another has a weaker copy. Attackers look for the weakest surface. Agentic content crosses surfaces: page to summary, message to tool result, document to memory, tool output to response.
 
 Prefer shared libraries, centralized policy, and cross-surface tests.
 
@@ -110,9 +110,9 @@ BrowseSafe is a useful production reference because it moves past keyword matchi
 
 Moving from assistant mode to action mode changes risk.
 
-If the system can browse, click, send, write, buy, delete, invite, deploy, or execute, it has crossed from advice into authority. That transition should be explicit in design and testable in implementation.
+Browse, click, send, write, buy, delete, invite, deploy, and execute are authority changes. Make that transition explicit in design and testable in implementation.
 
-The "Auth-by-One" testing work gives the application-security analogue: validate the state change. Do not infer that the system is safe because the UI path looks right or the prompt says the right thing.
+The "Auth-by-One" testing work gives the application-security analogue: validate the state change. A safe-looking UI path or prompt is not proof.
 
 Good designs define:
 
@@ -150,7 +150,7 @@ Agentic application failures are interactive.
 
 The dangerous chain may require untrusted content, a retrieval step, a tool call, a model observation, and a follow-up action. That is hard to prove with static review alone.
 
-A twin environment lets the team inject hostile content, trace tool use, capture confirmations, and replay the same scenario after remediation. It turns "the prompt says not to" into evidence about whether the system actually holds the boundary.
+A twin environment lets the team inject hostile content, trace tool use, capture confirmations, and replay the scenario after remediation. It turns prompt intent into boundary evidence.
 
 ## References
 
@@ -168,7 +168,7 @@ A twin environment lets the team inject hostile content, trace tool use, capture
 
 !!! success "Takeaways"
 
-    - Agentic application security is system security.
+    - Agentic application security is architecture security.
     - Keep content and instruction separate.
     - Put authorization outside the model.
     - Confirm the specific risky action, not the agent's vague intent.

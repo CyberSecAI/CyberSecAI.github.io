@@ -6,7 +6,7 @@
 
     Use the R1/R2/R3/R4 frame: exploratory reasoning, context-guided intelligence, invariant verification, and pattern matching. They answer different questions. They also fail differently.
 
-    The mistake is asking one mode to do all jobs. The discipline is measuring what each mode uniquely finds, what it costs, and how much verification it needs.
+    Measure what each mode uniquely finds, what it costs, and how much verification it needs.
 
 ## The R1-R4 Frame
 
@@ -33,13 +33,11 @@ Code-first        | R4: Pattern       | R1: Exploratory        |
 | R3: Invariant verification | Is the design safe against the stated security properties? | Requirement and architecture violations |
 | R4: Pattern matching | Does this match a known risky class? | Breadth findings, posture gaps, policy violations |
 
-!!! observation "The important metric is uniqueness"
+!!! observation "Metric: uniqueness"
 
-    Do not ask which mode "wins." Ask what high-value finding each mode would miss if it were removed. Low overlap can be healthy when the modes are designed to see different surfaces.
+    Do not ask which mode "wins." Ask what valuable finding each mode would miss if it were removed. Low overlap can be healthy when the modes are designed to see different surfaces.
 
 ## R1: Exploratory Reasoning
-
-R1 is the closest agentic equivalent of a skilled human reviewer walking the code.
 
 It starts code-first. The agent reads entry points, traces trust boundaries, and tries to build a plausible attack. It is strong when the bug is semantic: the code does what it says, but what it says is unsafe.
 
@@ -51,21 +49,19 @@ It is especially useful for:
 - missing confirmation gates
 - cross-context data exposure
 - logic flaws not represented by a simple source-to-sink rule
-- multi-step chains where one harmless-looking action enables the next
+- multi-step chains where one harmless-looking action opens the next step
 
 | Input | Output |
 |---|---|
 | Source tree, entrypoints, architecture notes, known risky surfaces | Candidate attack paths with source evidence and a proposed proof strategy |
 
-The weakness is coverage. A reasoning pass can be brilliant and still miss the next file. Use R1 to find sharp edges quickly, not to prove the estate is safe.
+The weakness is coverage. Use R1 to find sharp edges quickly, not to prove the estate is safe.
 
 ## R2: Context-Guided Intelligence
 
-R2 is where the intelligence layer has the most leverage.
-
 Give the agent intelligence: churn, history, incomplete fixes, source-to-sink evidence, and confirmed seeds from other systems.
 
-The public evidence points in the same direction. The Source to Sink work argues for structured path evidence over "brick of text" prompting. FENRIR uses a cascade: cheap static filters first, fast model triage second, deep sandbox verification last. Put LLM reasoning where the structured signal is already strong.
+Source to Sink argues for structured path evidence over "brick of text" prompting. FENRIR uses a cascade: cheap static filters first, fast model triage second, deep sandbox verification last. Put LLM reasoning where structured signal is already strong.
 
 R2 has four stages.
 
@@ -86,7 +82,7 @@ Not all files deserve the same attention.
 
 Rank by `churn x security relevance`. A cosmetic rename should not weigh the same as repeated changes to auth logic, parsing, crypto, deserialization, authorization, or outbound actions.
 
-Output: a priority list. Not vulnerabilities. A map of where expensive review is more likely to pay rent.
+Output: a priority list, not vulnerabilities.
 
 ### Stage B: Vulnerability Archaeology
 
@@ -111,7 +107,7 @@ Keep CodeQL as the structure. Use LLM/context triage to reason over it:
 
 This is the bridge: deterministic tooling finds candidate paths; contextual reasoning decides which paths deserve promotion.
 
-This is why the bridge belongs in R2 rather than R4. R4 can match the known pattern. Stage C asks whether the path is live, relevant, and missing a real barrier.
+Keep the bridge in R2. R4 can match the known pattern. Stage C asks whether the path is live, relevant, and missing a real barrier.
 
 ### Stage D: Variant Analysis
 
@@ -133,7 +129,7 @@ confirmed finding
 
 R3 is architecture-first.
 
-It starts from a security property and asks whether the implementation, design, and runtime behavior preserve it. This is where requirements, threat models, ADRs, policy-as-code, and acceptance criteria become active contracts.
+Start from a security property and ask whether implementation, design, and runtime behavior preserve it. Requirements, threat models, ADRs, policy-as-code, and acceptance criteria become active contracts.
 
 Examples of invariants:
 
@@ -148,13 +144,13 @@ Examples of invariants:
 |---|---|
 | Requirements, threat model, architecture decision, policy rule, runtime trace | Evidence that the invariant holds, fails, or needs a narrower test |
 
-R3 finds compositional failures. The code may look correct in isolation while the system violates the property.
+R3 finds compositional failures: code that looks correct in isolation while the system violates the property.
 
 ## R4: Pattern Matching and Breadth
 
 R4 is known-pattern breadth.
 
-This is where domain skills, rule packs, Semgrep, CodeQL query suites, dependency scanning, IaC checks, secrets scanning, container checks, logging checks, and cloud posture rules earn their keep.
+Domain skills, rule packs, Semgrep, CodeQL query suites, dependency scanning, IaC checks, secrets scanning, container checks, logging checks, and cloud posture rules earn their keep here.
 
 It also connects back to [Policy-as-Code Served Pre and Post Coding](pre_post_policy_as_code.md): repeated review lessons should become standing rules where the rule is clear enough to enforce.
 

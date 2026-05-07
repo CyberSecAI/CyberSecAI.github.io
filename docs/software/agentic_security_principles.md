@@ -4,9 +4,9 @@
 
     Agentic security engineering makes software assurance harder to ignore.
 
-    The old assurance questions still work. They just have less patience for vague requirements, missing trade-offs, and findings that sound plausible but cannot be reproduced.
+    The old assurance questions still work. They punish vague requirements, hidden trade-offs, and findings that cannot be reproduced.
 
-    When agents can write code, review code, search code, and exploit code, the useful question is not "Which model should we use?" The useful question is "What evidence would make us trust the outcome?"
+    When agents can write code, review code, search code, and exploit code, ask: "What evidence would make us trust the outcome?"
 
 !!! info "Basis for this model"
 
@@ -16,13 +16,11 @@
 
 Pre-AI assumptions leak into security programmes.
 
-One common assumption is that dangerous vulnerabilities arrive as named CVEs, then flow through patch prioritization. That still happens. It is no longer enough.
-
-Public [un]prompted 2026 notes make the pressure concrete: Trail of Bits at 200 bugs/week/engineer, Meta FENRIR at $8.80 per vulnerability, and real-world intrusion speed measured in minutes rather than sprint cycles. Treat those as demonstrated external signals, not as local guarantees. The lesson is the economic direction: discovery, triage, and exploitation are becoming cheaper to run at scale.
+Public [un]prompted 2026 notes make the pressure concrete: Trail of Bits at 200 bugs/week/engineer, Meta FENRIR at $8.80 per vulnerability, and real-world intrusion speed measured in minutes. Treat those as demonstrated external signals, not as local guarantees. The lesson is the economic direction: discovery, triage, and exploitation are getting cheaper.
 
 | Old assumption | Agentic security assumption |
 |---|---|
-| The vulnerability has a CVE | Some of the most important findings begin as unnamed zero-days |
+| The vulnerability has a CVE | Dangerous findings can begin as unnamed zero-days |
 | The scanner is the control | The pipeline is the control |
 | Human review scales with code volume | Verification must be designed as a system |
 | Per-repo scanning gives coverage | Cross-repo intelligence is needed for variants and class campaigns |
@@ -30,20 +28,18 @@ Public [un]prompted 2026 notes make the pressure concrete: Trail of Bits at 200 
 
 !!! observation "The moat is the system"
 
-    Models change. The durable investment is the harness: requirements, source intelligence, verifier, twin, judge, campaign tracker, and feedback loop.
+    Models change. The durable investment is the harness: requirements, source intelligence, verifier, twin, judge, campaign tracker, and learning loop.
 
 ## Start With V&V
 
-[Software Assurance](software_assurance.md) already gives the foundation: verification asks whether we are building it right; validation asks whether we are building the right thing.
-
-Agentic systems need both.
+[Software Assurance](software_assurance.md) gives the foundation: verification asks whether we are building it right; validation asks whether we are building the right thing.
 
 | Assurance question | Agentic security translation |
 |---|---|
 | Are we building it right? | Does the implementation match the security requirement, architecture decision, and expected control behavior? |
 | Are we building the right thing? | Does the control reduce real risk in the operational setting, or did we automate the wrong assumption? |
 
-A vulnerability report is verification-biased: it asks whether a bug exists. A security programme must also validate whether the remediation changes the outcome that matters.
+A vulnerability report asks whether a bug exists. A security programme must also validate whether the remediation changes the outcome that matters.
 
 Agents are most useful today as scalable participants in validation and verification. Let them search, challenge, reproduce, compare, and propose. Keep the evidence standard outside the model.
 
@@ -51,7 +47,7 @@ Agents are most useful today as scalable participants in validation and verifica
 
 Agents need precise "what" before they can safely produce or judge "how."
 
-The requirements do not need to be bureaucratic. They do need to be testable. A requirement like "protect sensitive data" is too weak for an agent. A requirement like "the assistant must not send content from one origin to another without an explicit user-confirmed action" can be tested, challenged, and encoded as a regression check.
+Requirements need to be testable. "Protect sensitive data" is too weak. "The assistant must not send content from one origin to another without an explicit user-confirmed action" can be tested, challenged, and encoded as a regression check.
 
 The [Software Artifacts](software_artifacts.md) chapter makes this point for AI-era engineering: artifacts become active contracts. Security requirements, threat models, acceptance criteria, ADRs, and test cases are no longer side documents. They are the steering system.
 
@@ -85,7 +81,7 @@ The standard is enough evidence for a skilled critic to reproduce, dispute, or f
 
 Discovery should be broad, creative, and cheap. Judgment should be slower, adversarial, and evidence-based.
 
-This separation matters because agents are good at satisfying the test they can see. If the same loop generates the finding and grades the finding, the system is easy to fool. Use one process to discover candidates and a separate process to disprove them.
+Agents satisfy the test they can see. If the same loop generates and grades the finding, the process is easy to fool. Use one process to discover candidates and a separate process to disprove them.
 
 | Stage | Bias we want | Failure mode |
 |---|---|---|
@@ -95,11 +91,9 @@ This separation matters because agents are good at satisfying the test they can 
 
 ## Static and Runtime Evidence Are Complements
 
-Source analysis finds what is visible in code. Runtime testing finds what only appears in behavior, state, integration, or deployment.
+Source analysis finds what is visible in code. Runtime testing finds what appears in behavior, state, integration, or deployment.
 
-Neither is enough alone.
-
-Static review can show that a control is absent. Runtime review can show that a declared control is not effective. Static review can find a dangerous code path. Runtime review can show the attacker can actually reach it under realistic preconditions.
+Static review can show an absent control or dangerous path. Runtime review can show whether a declared control works and whether an attacker can reach the path under realistic preconditions.
 
 ## Every Confirmed Finding Is a Seed
 
@@ -113,7 +107,7 @@ Once a finding is real, extract the class:
 - Which sibling components could repeat it?
 - Which regression test would stop it coming back?
 
-This is the difference between fixing a bug and eradicating a class.
+That is the difference between fixing a bug and eradicating a class.
 
 ## Architecture Is Trade-Offs
 
@@ -133,9 +127,7 @@ The architecture decision record matters because future agents will copy the imp
 
 ## Quality Attributes Are Security Inputs
 
-Security includes more than the absence of vulnerabilities.
-
-Reliability, recoverability, observability, isolation, and operability are security properties in agentic systems. If the system cannot explain what an agent did, recover from a bad action, or isolate a tool from sensitive state, the security design is incomplete.
+Reliability, recoverability, observability, isolation, and operability are security properties in agentic systems. A system that cannot explain what an agent did, recover from a bad action, or isolate a tool from sensitive state has an incomplete security design.
 
 | Quality attribute | Agentic security question |
 |---|---|
@@ -147,7 +139,7 @@ Reliability, recoverability, observability, isolation, and operability are secur
 
 ## The Loop Matters More Than the Scan
 
-A scanner without a feedback loop becomes another alert queue.
+A scanner without a learning loop becomes another alert queue.
 
 !!! tip "The durable assurance loop"
 
@@ -184,8 +176,8 @@ This connects directly to [Policy-as-Code Served Pre and Post Coding](pre_post_p
     - If the requirement is not testable, an agent cannot reliably verify it.
     - Treat agent output as hypotheses until evidence upgrades it.
     - Let discovery be noisy. Make verification unforgiving.
-    - Do not ask static analysis to prove runtime safety, or runtime testing to replace source understanding.
+    - Use static analysis for source understanding and runtime testing for behavior.
     - Never close a confirmed finding until you have asked where else the same class could exist.
-    - Make the trade-off explicit. "Why" is more important than "how" when agents will reproduce the pattern.
+    - Capture the "why." Future agents will reproduce the pattern.
     - Treat quality attributes as first-class security requirements.
     - Do not buy or build "an AI scanner." Build a learning assurance loop.

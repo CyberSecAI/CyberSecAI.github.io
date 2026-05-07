@@ -6,7 +6,7 @@
 
     Models are fluent. Security evidence is not. The job is to keep those two facts separate.
 
-    Critical thinking is the discipline that prevents speed from turning into false confidence. It frames the problem, labels evidence, tests objections, and feeds the lesson back into the system.
+    Critical thinking keeps speed from turning into false confidence: frame the problem, label evidence, test objections, feed back the lesson.
 
 ## Step 1: Frame the Problem
 
@@ -41,7 +41,7 @@ Every claim needs a label.
 | Unknown | Decision-relevant and not yet answered |
 | Contradicted | Evidence points in different directions |
 
-This prevents the common failure mode where a plausible inference becomes a stated fact two paragraphs later.
+This stops a plausible inference from becoming a stated fact two paragraphs later.
 
 !!! observation "The dangerous slide"
 
@@ -55,9 +55,7 @@ For programme claims, use a second label.
 | Demonstrated | Shown in an external system or published case |
 | Expected | Inferred from architecture or prior evidence; requires local validation |
 
-This is how you keep source-grounded writing honest. A pilot result, a conference case study, and an architectural expectation are all useful. They should not be written as the same kind of evidence.
-
-Use this distinction when citing public AI-security results. A conference case study can demonstrate that a pattern works somewhere. It does not prove your environment has the same signal, cost, false-positive rate, or remediation capacity.
+Keep source-grounded writing honest. A pilot result, a conference case study, and an architectural expectation are different kinds of evidence. A conference case can demonstrate that a pattern works somewhere; it does not prove your environment has the same signal, cost, false-positive rate, or remediation capacity.
 
 ## Step 3: Analyze Options
 
@@ -97,11 +95,9 @@ Ask:
 - Are we overfitting to one example?
 - What evidence would change the recommendation?
 
-This is especially important with agent-generated findings. The model may produce a coherent narrative around a weak path. The critic's job is to break the narrative if the evidence does not hold.
+Agent-generated findings often wrap weak paths in coherent narrative. Break the narrative if the evidence does not hold.
 
 ## Step 5: Define the Learning Loop
-
-A good security decision includes a feedback loop.
 
 Define:
 
@@ -120,7 +116,7 @@ For agentic security, useful indicators include false-positive rate, confirmed f
     decision -> outcome -> evidence -> rule/test/seed -> next decision
     ```
 
-If there is no feedback loop, the decision will age badly.
+Decisions without learning loops age badly.
 
 ## A Lightweight Review Template
 
@@ -151,7 +147,7 @@ Ask what evidence would survive an adversarial reader.
 
 The discipline is simple: label the claim, test the objection, then decide what evidence is still missing.
 
-That is the common thread across Source to Sink, FENRIR, and the Mythos red-team writeup: the valuable systems make claims smaller, evidence sharper, and promotion harder.
+Source to Sink, FENRIR, and the Mythos red-team writeup share the same lesson: smaller claims, sharper evidence, harder promotion.
 
 ## References
 

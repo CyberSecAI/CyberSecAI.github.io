@@ -6,7 +6,7 @@
 
     Without scalable verification, a pile of plausible findings becomes an attention attack on your own engineers; eventually they stop trusting the queue.
 
-    The verifier is the trust boundary of the pipeline. It decides what is real, what is exploitable, what should be fixed now, and what should become a broader class-eradication campaign.
+    The verifier is the trust boundary. It decides what is real, exploitable, urgent, and campaign-worthy.
 
     Anthropic's Mythos red-team notes make the point bluntly: discovery can advance faster than reliable exploit creation. Treat that gap as the design reason for a separate verification system.
 
@@ -30,9 +30,9 @@ It usually needs enough proof to classify the finding, reject it, or identify th
 
 ## Separate Generator From Evaluator
 
-Autonomous coding gives security a useful lesson: the generator should not be the evaluator.
+Autonomous coding gives security a useful lesson: separate generator from evaluator.
 
-If the same loop that produced a finding also decides whether the finding is true, it will tend to reward its own story. A better architecture separates discovery from verification. Discovery can be broad and creative. Verification must be adversarial and held to evidence.
+If the same loop produces and grades a finding, it tends to reward its own story. Discovery can be broad and creative. Verification must be adversarial and held to evidence.
 
 The [Dark Factory pattern](https://hackernoon.com/the-dark-factory-pattern-moving-from-ai-assisted-to-fully-autonomous-coding) uses the same separation for autonomous coding: generate work, then evaluate it against scenarios the generator does not control. Security needs the same architecture, with stronger evidence gates.
 
@@ -49,9 +49,7 @@ The [Dark Factory pattern](https://hackernoon.com/the-dark-factory-pattern-movin
 
 ## Try to Disprove the Finding
 
-The best verifier is adversarial.
-
-It asks why the finding might be wrong:
+The verifier asks why the finding might be wrong:
 
 - Is the cited code still present?
 - Is the input actually attacker-controlled?
@@ -61,13 +59,13 @@ It asks why the finding might be wrong:
 - Is the impact blocked by permissions, isolation, or user confirmation?
 - Is the report a duplicate of the same root cause?
 
-This is where critical thinking belongs in the pipeline. A confident agent report without disproof attempts remains a claim.
+A confident agent report without disproof attempts remains a claim.
 
 ## Proofs of Concept Are Tools, Not Trophies
 
 A PoC has one job: reduce uncertainty.
 
-Sometimes a small script is enough. Sometimes a unit test is better. Sometimes runtime interaction in an isolated twin is required. The PoC should match the disputed assumption.
+Sometimes a small script is enough. Sometimes a unit test is better. Sometimes runtime interaction in an isolated twin is required. Match the PoC to the disputed assumption.
 
 | Disputed assumption | Useful PoC shape |
 |---|---|
@@ -77,7 +75,7 @@ Sometimes a small script is enough. Sometimes a unit test is better. Sometimes r
 | Cross-context data can leak | Isolated runtime reproduction |
 | Fix works | Regression test using the old payload |
 
-The goal is decision-quality evidence. Spectacle adds noise.
+Use PoCs for decision-quality evidence. Spectacle adds noise.
 
 !!! observation "Match the proof to the doubt"
 
@@ -108,9 +106,7 @@ Severity tells impact. Proximity tells how much evidence exists that the impact 
 
 ## Deduplicate by Failed Assumption
 
-Agentic discovery often reports symptoms as separate vulnerabilities.
-
-That is useful during discovery and dangerous during planning. If five reports share one missing control, engineering should usually fix the control, not chase five isolated patches.
+Agentic discovery often reports symptoms as separate vulnerabilities. If five reports share one missing control, engineering should usually fix the control, not chase five isolated patches.
 
 Deduplication should preserve evidence while grouping by root cause:
 
@@ -126,7 +122,7 @@ The grouping unit is the failed assumption, not the file path.
 
 Severity without preconditions is storytelling.
 
-A useful verified finding states what the attacker needs:
+A verified finding states what the attacker needs:
 
 - network position
 - authentication level
@@ -137,13 +133,13 @@ A useful verified finding states what the attacker needs:
 - required timing
 - target configuration
 
-This protects both sides. Security avoids exaggeration. Engineering sees what must be true for exploitation.
+Preconditions protect both sides: security avoids exaggeration, and engineering sees what must be true for exploitation.
 
 ## Remediation Must Be Verified Too
 
 A fix is also a hypothesis.
 
-It says: this change removes the vulnerability without breaking intended behavior. Verification has to test both halves.
+A fix says: this change removes the vulnerability without breaking intended behavior. Verification has to test both halves.
 
 The remediation acceptance test should include:
 
@@ -153,13 +149,11 @@ The remediation acceptance test should include:
 - the class is represented in a regression test, rule, or review checklist
 - the decision is documented when the fix is a trade-off
 
-This is where twin environments matter. They let teams replay the old path, observe the new behavior, and catch unintended breakage before the fix becomes another incident.
+Twin environments let teams replay the old path, observe the new behavior, and catch unintended breakage before the fix becomes another incident.
 
 The word "fixed" should mean two things: the old path is closed, and the intended path still works.
 
 ## Time to Insight Actioned
-
-Candidate count is a volume metric. It does not tell you whether risk moved.
 
 Track how quickly the pipeline turns a candidate into an actioned outcome:
 

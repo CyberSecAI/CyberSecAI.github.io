@@ -2,15 +2,13 @@
 
 !!! abstract "Overview"
 
-    Fixing one vulnerability is necessary. Finding the family is leverage.
+    Fix one vulnerability. Find the family.
 
     A confirmed bug tells you more than "this line is wrong." It reveals a failed assumption that may exist elsewhere: in sibling code, shared helpers, copied templates, generated projects, infrastructure modules, or agent tools that reuse the same trust model.
 
     The first fix buys down immediate risk. The variant search buys down future surprise.
 
 ## From Instance to Class
-
-The first task after confirmation is abstraction.
 
 Ask what class the finding belongs to:
 
@@ -43,7 +41,7 @@ It should capture enough detail for another reviewer or agent to search without 
 
 !!! tip "Seed discipline"
 
-    Variant analysis improves when seeds describe structure rather than keywords alone.
+    Variant analysis improves when seeds describe structure and keywords.
 
 !!! observation "Example seed"
 
@@ -53,11 +51,11 @@ It should capture enough detail for another reviewer or agent to search without 
 
 ## MRVA: Multi-Repo Variant Analysis
 
-Multi-repo variant analysis takes a confirmed vulnerability class and searches owned codebases for structurally equivalent instances.
+Multi-repo variant analysis searches owned codebases for structurally equivalent instances of a confirmed class.
 
 MRVA is search plus evidence. A good run keeps the original proof, adapts the pattern to each target, and independently verifies every promoted candidate.
 
-GitHub's MRVA work gives the public baseline for multi-repository search. The agentic addition is better target selection, framework adaptation, and contextual triage around the same source/sink/barrier model. Source-to-sink discovery and FENRIR both reinforce the same principle: broad search needs evidence-bound promotion.
+GitHub's MRVA work gives the public baseline. The agentic addition is target selection, framework adaptation, and contextual triage around the same source/sink/barrier model. Source-to-sink discovery and FENRIR reinforce the same rule: broad search needs evidence-bound promotion.
 
 ```text
 confirmed seed
@@ -124,7 +122,7 @@ For semantic MRVA, query development should be staged.
 | Local dataflow | Same-function or nearby source-to-sink paths | Medium |
 | Global dataflow | Cross-function and framework-mediated flows | Higher |
 
-Path-heavy queries are powerful but expensive. Use intelligence and target selection to avoid running the heaviest query everywhere.
+Path-heavy queries are expensive. Use intelligence and target selection before running them broadly.
 
 ## Search Broadly, Verify Narrowly
 
@@ -134,7 +132,7 @@ Use text search, semantic search, CodeQL, framework-specific queries, dependency
 
 The search can be generous because candidates are cheap. Promotion has to be strict because engineering time is scarce.
 
-This is also where previous [Software Engineering Security](swe_redux_security.md) lessons apply. Static structure helps you find paths. Assurance discipline decides whether the path matters.
+[Software Engineering Security](swe_redux_security.md) provides the assurance rule: static structure finds paths; evidence decides whether the path matters.
 
 | Search method | Good use |
 |---|---|
@@ -172,7 +170,7 @@ Regression can take several forms:
 - generator/template changes
 - code review guidance
 
-This is where [Policy-as-Code Served Pre and Post Coding](pre_post_policy_as_code.md) becomes practical. A lesson from one bug becomes a reusable rule that can guide design and review before the next bug exists.
+[Policy-as-Code Served Pre and Post Coding](pre_post_policy_as_code.md) turns a bug lesson into a reusable rule for design and review.
 
 ## Campaigns Beat Whack-a-Mole
 
@@ -221,7 +219,7 @@ A campaign has a defined class, scope, owner, remediation pattern, verification 
 
     - Name the failed assumption before writing the fix.
     - A variant seed should describe structure: source, sink, missing control, preconditions, and false-positive clues.
-    - MRVA is search plus evidence, not keyword matching at scale.
+    - MRVA is search plus evidence. Keyword breadth alone is not enough.
     - Source/sink/barrier modeling is the practical heart of semantic variant analysis.
     - Execution models vary; the assurance contract stays the same.
     - Start with the smallest query that rediscovers the seed, then broaden carefully.

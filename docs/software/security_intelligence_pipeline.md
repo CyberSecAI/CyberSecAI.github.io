@@ -4,7 +4,7 @@
 
     The bottleneck has moved.
 
-    With agentic search and semantic tooling, finding possible vulnerabilities is getting cheaper. Turning those possibilities into evidence-backed, prioritized, fixed, and regression-tested outcomes is the hard part.
+    Agentic search makes candidate vulnerabilities cheaper. Evidence-backed, prioritized, fixed, regression-tested outcomes remain hard.
 
     If the output is only a longer findings list, the pipeline has failed. The work is to decide what to look for, where to look, how to prove it, and how the next run becomes harder to fool.
 
@@ -25,7 +25,7 @@ In-band scanning protects the flow: new commits, pull requests, pipeline gates. 
 
     In-band checks are necessary. They do not answer the question, "What is already vulnerable in the code we have?" Out-of-band intelligence exists to answer that question.
 
-The zero-day gap is the other pressure point. EPSS, KEV, CVSS, and dependency advisories all assume a vulnerability has a name. AI-discovered zero-days do not start with a CVE. They start as a path through your code. Anthropic's AI-accelerated offense guidance, the Zero Day Clock, and the [un]prompted 2026 "8 Minutes to Admin" case all point at the same operating problem: calendar-speed vulnerability management is mismatched to machine-speed discovery.
+The zero-day gap is the other pressure point. EPSS, KEV, CVSS, and dependency advisories assume the vulnerability has a name. AI-discovered zero-days start as a path through your code. Anthropic's AI-accelerated offense guidance, the Zero Day Clock, and the [un]prompted 2026 "8 Minutes to Admin" case point at the same problem: calendar-speed vulnerability management against machine-speed discovery.
 
 ## The Pipeline Shape
 
@@ -55,7 +55,7 @@ Each stage has a different job.
 
 ## Three Capabilities, One System
 
-Source scanning is necessary. The full system also needs runtime verification and data intelligence.
+Pair source scanning with runtime verification and data intelligence.
 
 | Capability | Primary question | Examples |
 |---|---|---|
@@ -63,23 +63,15 @@ Source scanning is necessary. The full system also needs runtime verification an
 | Runtime verification | What is actually exploitable or drifting in behavior? | Ineffective controls, identity state, logging not flowing, stale resources, lateral movement |
 | Data intelligence | Where should we spend attention? | Pareto effects, false-positive rate, remediation survival curves, detection-to-action gaps |
 
-These feed the same operating loop:
-
-```text
-find -> verify -> judge -> patch -> campaign
-```
-
-The high-value move is connecting these capabilities so one confirmed issue changes what the system looks for next.
-
-This is also the through-line from [Software Engineering Security](swe_redux_security.md) and [DARPA AIxCC](aixcc.md): orchestration, structured evidence, validation, and a feedback loop beat a single clever prompt.
+Connect these capabilities so one confirmed issue changes what the system looks for next. That is the through-line from [Software Engineering Security](swe_redux_security.md) and [DARPA AIxCC](aixcc.md): orchestration, structured evidence, validation, and feedback beat a single clever prompt.
 
 ## The Discovery Funnel
 
 The funnel starts wide and ends narrow.
 
-It begins with an owned software portfolio: many repositories, many languages, many dependency ecosystems, and uneven security history. Route attention through increasingly precise stages until only evidence-backed findings remain.
+Start with the owned software portfolio: many repositories, many languages, many dependency ecosystems, uneven security history. Route attention through increasingly precise stages until only evidence-backed findings remain.
 
-This often works better out of band than inside a single repository. Clone the portfolio, build the index, run cross-repo intelligence, and then hand system owners only the evidence-backed work they need to own. CI still matters, but CI is not the only place security reasoning should happen.
+Run this out of band. Clone the portfolio, build the index, run cross-repo intelligence, and hand system owners evidence-backed work. CI still matters. It is no longer the only place security reasoning should happen.
 
 !!! info "Generic discovery funnel"
 
@@ -93,8 +85,6 @@ This often works better out of band than inside a single repository. Clone the p
                      -> remediation, variant search, and feedback
     ```
 
-Each stage reduces a different kind of uncertainty.
-
 | Funnel stage | Reduces uncertainty about |
 |---|---|
 | Portfolio input | What software is in scope |
@@ -105,13 +95,9 @@ Each stage reduces a different kind of uncertainty.
 | Verification and proximity scoring | Which findings are real, exploitable, and close to proof |
 | Remediation and feedback | Which fixes, tests, and rules make the next run better |
 
-The funnel is a decision system, not a report generator.
-
-The wrong move is to run the most expensive agentic review everywhere and call the result coverage. The better move is to use cheap signals first, spend reasoning where the signal is strongest, and demand stronger evidence as the candidate moves down the funnel.
+Do not run the most expensive agentic review everywhere and call it coverage. Use cheap signals first, spend reasoning where the signal is strongest, and demand stronger evidence as the candidate moves down the funnel.
 
 ## Intelligence Comes First
-
-Blind scanning wastes agent time and reviewer attention.
 
 Good intelligence narrows the search without making it brittle. It combines dependency alerts, historical fixes, churn, architecture notes, threat models, bug bounty themes, production incidents, known dangerous patterns, and code smells.
 
@@ -138,9 +124,9 @@ Spend expensive reasoning on the code and designs where mistakes are most likely
 
 The scalable unit is the skill.
 
-A useful security skill packages a repeatable expert lens: which code smells matter, which files deserve attention, which tools to run, what evidence promotes a candidate, which false positives to suppress, and what remediation shape usually works.
+A useful security skill packages a repeatable expert lens: code smells, target files, tool sequence, promotion evidence, false-positive suppressions, and remediation shape.
 
-That is how human review knowledge compounds. The expert does not restart every investigation from first principles. The skill carries the checklist, the tool sequence, the disproof questions, and the promotion standard into the next run.
+The expert does not restart every investigation from first principles. The skill carries the checklist, disproof questions, and promotion standard into the next run.
 
 | Skill element | What it preserves |
 |---|---|
@@ -156,7 +142,7 @@ That is how human review knowledge compounds. The expert does not restart every 
 
 ## Investigation Stages
 
-Use four investigation stages. Keep them distinct.
+Use four investigation stages.
 
 | Stage | Name | Question | Output |
 |---|---|---|---|
@@ -165,17 +151,13 @@ Use four investigation stages. Keep them distinct.
 | C | CodeQL + LLM bridge | Is it semantically real? | Triaged source-to-sink paths with exploitability notes |
 | D | Variant analysis | Where else does it exist? | Cross-codebase candidates and campaign scope |
 
-The stages compound. Stage B produces seeds that Stage C can test. Stage C produces confirmed paths that Stage D can propagate. Stage D produces campaign scope that feeds policy, tests, and future scanning.
+The stages compound: Stage B produces seeds, Stage C tests them, Stage D propagates confirmed paths into campaign scope.
 
-Public systems show the same shape. Source-to-sink LLM discovery uses structured path evidence to reduce shallow prompting. FENRIR reports deterministic pre-filtering that reduces hundreds of raw alerts to tens of high-confidence reports before deep verification. Trail of Bits describes the organizational version: compound expert audit knowledge into reusable agents instead of restarting from a blank review each time.
+Public examples show the same shape. Source-to-sink LLM discovery uses structured path evidence to reduce shallow prompting. FENRIR reports deterministic pre-filtering that reduces hundreds of raw alerts to tens of high-confidence reports before deep verification. Trail of Bits describes the organizational version: compound expert audit knowledge into reusable agents.
 
 ## Discovery Needs Multiple Lenses
 
-No single method sees the whole system.
-
 Exploratory reasoning finds logic flaws and missing checks. Domain scans find broad configuration and posture issues. Git history finds incomplete fixes. Semantic analysis finds source-to-sink paths. Runtime testing finds behavior that source cannot prove.
-
-These are complements, not substitutes.
 
 | Lens | Good at | Weak at |
 |---|---|---|
@@ -218,13 +200,13 @@ Verification should be adversarial. It should try to disprove the finding, not m
     - Can the behavior be reproduced?
     - Does the remediation close the path without breaking intended use?
 
-This is where many agentic systems fail. They optimize for plausible reports instead of reproducible evidence.
+Many agentic systems optimize for plausible reports instead of reproducible evidence.
 
 ## Judgment Turns Findings Into Work
 
 Engineering needs judged findings.
 
-Judgment means deduplicating variants, ranking by real risk, assigning ownership, and separating "fix now" from "campaign later." This is also where the pipeline should decide whether the right output is a patch, a design change, a policy rule, a regression test, or a broader class-eradication effort.
+Judgment means deduplicating variants, ranking by real risk, assigning ownership, and choosing the output: patch, design change, policy rule, regression test, or class-eradication campaign.
 
 | Judgment dimension | Question |
 |---|---|
@@ -253,7 +235,7 @@ Severity tells impact. Proximity tells how much evidence exists that the impact 
 
 ## Propagation Is the Multiplier
 
-The biggest advantage defenders have is owned-system visibility.
+Defenders have owned-system visibility.
 
 An external attacker sees one exposed surface at a time. A defender can search every codebase, design pattern, and deployment template they own. A confirmed finding should become a seed for variant analysis.
 
@@ -268,11 +250,9 @@ The seed should capture class-level structure:
 
 ## Feedback Makes the System Compound
 
-Every run should improve the next run.
-
 False positives should reduce future noise. Confirmed findings should add new seeds. Remediations should add tests. Repeated patterns should become rule cards, skills, prompts, or static checks. Human review decisions should be captured as training signal for the process, not trapped in chat transcripts.
 
-The feedback loop is where agentic security becomes engineering instead of theater.
+Compounding turns agentic security into engineering.
 
 !!! tip "Compounding effect"
 
@@ -294,7 +274,7 @@ Measure the programme, not the tool.
 | False-positive rate | Whether the verifier is protecting engineering attention |
 | Signal quality | How many high-severity findings have verified exploitability |
 | Patch velocity | Whether proven risk is being closed fast enough |
-| Class eradication | Whether campaigns remove the family rather than the first instance alone |
+| Class eradication | Whether campaigns remove the family, not only the first instance |
 | Model portability | Whether the system depends on one model or one vendor |
 
 !!! warning "Common failure mode"
@@ -303,7 +283,7 @@ Measure the programme, not the tool.
 
 !!! tip "Discovery as forcing function"
 
-    Once discovery can produce high-confidence candidates at scale, the programme has to mature. The constraint moves from "can we find it?" to "can we prove it, assign it, fix it, and keep the class gone?"
+    Once discovery can produce many high-confidence candidates, the programme has to mature. The constraint moves from "can we find it?" to "can we prove it, assign it, fix it, and keep the class gone?"
 
 !!! info "Reference trail"
 
