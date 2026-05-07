@@ -4,7 +4,7 @@
 
     Agentic discovery creates more leads than humans can triage by hand.
 
-    That is not a security outcome unless verification scales with it. A pile of plausible findings is an attention attack on your own engineers.
+    That is not a security outcome unless verification scales with it. A pile of plausible findings is an attention attack on your own engineers; eventually they stop trusting the queue.
 
     The verifier is the trust boundary of the pipeline. It decides what is real, what is exploitable, what should be fixed now, and what should become a broader class-eradication campaign.
 
@@ -57,6 +57,10 @@ Sometimes a small script is enough. Sometimes a unit test is better. Sometimes r
 | Fix works | Regression test using the old payload |
 
 The goal is decision-quality evidence. Spectacle adds noise.
+
+!!! observation "Match the proof to the doubt"
+
+    If the doubt is "does the parser accept this shape?", write the parser test. If the doubt is "can a user actually reach this action?", use a runtime replay. A bigger PoC is not automatically a better PoC.
 
 ## Proximity Scores Evidence, Not Drama
 
@@ -130,9 +134,11 @@ The remediation acceptance test should include:
 
 This is where twin environments matter. They let teams replay the old path, observe the new behavior, and catch unintended breakage before the fix becomes another incident.
 
+The word "fixed" should mean two things: the old path is closed, and the intended path still works.
+
 ## Time to Insight Actioned
 
-The useful operational metric is not candidate count.
+Candidate count is a volume metric. It does not tell you whether risk moved.
 
 Track how quickly the pipeline turns a candidate into an actioned outcome:
 

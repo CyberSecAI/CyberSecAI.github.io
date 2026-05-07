@@ -4,13 +4,13 @@
 
     The bottleneck has moved.
 
-    Finding possible vulnerabilities is getting cheaper. Turning those possibilities into evidence-backed, prioritized, fixed, and regression-tested outcomes is the hard part.
+    With agentic search and semantic tooling, finding possible vulnerabilities is getting cheaper. Turning those possibilities into evidence-backed, prioritized, fixed, and regression-tested outcomes is the hard part.
 
-    An agentic security pipeline should not be a single scanner. It should be an intelligence system that decides what to look for, where to look, how to verify it, and how to make the next run smarter.
+    If the output is only a longer findings list, the pipeline has failed. The work is to decide what to look for, where to look, how to prove it, and how the next run becomes harder to fool.
 
 ## The Pipeline Shape
 
-The useful loop is simple.
+The loop is simple. The discipline is keeping the stages separate.
 
 !!! tip "Pipeline loop"
 
@@ -30,13 +30,17 @@ Each stage has a different job.
 | Propagation | Where else could it exist? | Variant search and class-level campaign |
 | Feedback | What did we learn? | Tuning, suppressions, new rules, new tests |
 
+!!! observation "The scanner is not the product"
+
+    A scanner produces candidates. A security intelligence pipeline produces decisions: reject, prove, fix, campaign, suppress, or turn into a reusable rule.
+
 ## The Discovery Funnel
 
 The funnel starts wide and ends narrow.
 
 It begins with an owned software portfolio: many repositories, many languages, many dependency ecosystems, and uneven security history. The goal is not to scan everything with the most expensive method. The goal is to route attention through increasingly precise stages until only evidence-backed findings remain.
 
-This often works better out of band than inside a single repository. Clone the portfolio, build the index, run cross-repo intelligence, and then hand product teams only the evidence-backed work they need to own. CI still matters, but CI is not the only place security reasoning should happen.
+This often works better out of band than inside a single repository. Clone the portfolio, build the index, run cross-repo intelligence, and then hand system owners only the evidence-backed work they need to own. CI still matters, but CI is not the only place security reasoning should happen.
 
 !!! info "Generic discovery funnel"
 
@@ -64,6 +68,8 @@ Each stage reduces a different kind of uncertainty.
 
 This is the important move: the funnel is not a report generator. It is a decision system.
 
+The wrong move is to run the most expensive agentic review everywhere and call the result coverage. The better move is to use cheap signals first, spend reasoning where the signal is strongest, and demand stronger evidence as the candidate moves down the funnel.
+
 ## Intelligence Comes First
 
 Blind scanning wastes agent time and reviewer attention.
@@ -84,6 +90,10 @@ The point is not to predict every vulnerability. The point is to spend expensive
 !!! tip "Core heuristic"
 
     Past vulnerabilities predict future ones. A confirmed weakness in one component often appears again as a variant in sibling components, shared templates, copied helpers, generated code, or repeated architecture patterns.
+
+!!! observation "Code smells are routing signals"
+
+    Awkward parsing, duplicated authorization checks, hand-rolled escaping, high churn around trust boundaries, and fixes that only touch one caller are not vulnerabilities by themselves. They are places where expensive review is more likely to pay rent.
 
 ## Discovery Needs Multiple Lenses
 
@@ -162,7 +172,7 @@ Proximity is not severity. It is the evidence ladder from "this looks dangerous"
     | 1 | Sink found | Dangerous API, unsafe operation, or security-sensitive sink exists. |
     | 2 | Sink reached | Attacker-controlled or remote-influenced input reaches the sink, but a barrier remains. |
     | 3 | Barrier absent or bypassed | Source-to-sink path exists with no effective sanitizer, guard, or deployment barrier. |
-    | 4 | Payload constructable | A concrete attack input can be specified, but one remaining defense or runtime unknown blocks full proof. |
+    | 4 | Payload constructable | The source, sink, and absent or bypassed barrier are known; a concrete attack input can be specified, but full execution is not yet proven. |
     | 5 | Exploit proven | PoC executes, or exploitation is mechanically proven end to end. |
 
 Severity tells impact. Proximity tells how much evidence exists that the impact can be realized.

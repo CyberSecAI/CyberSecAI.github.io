@@ -4,11 +4,13 @@
 
     Vulnerability discovery is not one activity.
 
-    It is a portfolio of complementary searches. Each search answers a different question, produces a different evidence shape, and fails in a different way. Treating them as one thing leads to bad expectations: too much faith in scanners, too little respect for history, and too much noise handed to engineers.
+    A reasoning agent, a policy scan, a history review, and a source-to-sink query are different instruments. They answer different questions and fail in different ways.
+
+    Treating them as one thing leads to bad expectations: too much faith in scanners, too little respect for history, and too much noise handed to engineers.
 
 ## The Four Modes
 
-The useful split is:
+Use four modes:
 
 | Mode | Question | Typical output |
 |---|---|---|
@@ -22,6 +24,10 @@ These modes can run independently. They work best as a system.
 !!! tip "Coverage principle"
 
     Do not ask one discovery mode to do all jobs. Diversity is coverage.
+
+!!! observation "Overlap is not the only signal"
+
+    If the modes are healthy, they should not all find the same bugs. Ask what class each mode would miss if you removed it.
 
 ## Mode 1: Exploratory Reasoning
 
@@ -100,6 +106,8 @@ Semantic confirmation gives structure to the search. Multi-repo variant analysis
 Tools such as CodeQL can model control flow, data flow, sources, sinks, and framework APIs. Agents can then reason over that structured evidence: whether a path is reachable, whether a sanitizer is real, whether an attacker controls the source, and whether a sink actually matters.
 
 Once a finding is confirmed, the same structure supports propagation. Search for equivalent patterns across codebases, templates, services, and frameworks. The goal is not to find the same line of code. The goal is to find the same failed assumption.
+
+For example: a confirmed missing confirmation before an external action should not only produce one fix. It should produce a search for other actions with the same authority boundary, the same missing confirmation, or the same unsafe helper.
 
 ### The MRVA Shape
 

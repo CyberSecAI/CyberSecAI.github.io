@@ -4,7 +4,7 @@
 
     A twin environment is not another staging environment.
 
-    Staging reduces release risk. A twin exists so agents can explore, inject, probe, trace, and prove behavior safely. That distinction matters because AI-assisted discovery can generate more credible vulnerability leads than teams can manually verify.
+    Staging reduces release risk. A twin exists so agents can explore, inject, probe, trace, and prove behavior safely.
 
     The strategic question is no longer only "Can we find it?" It is "Can we prove it, fix it, verify the fix, and turn the lesson into a standing control?"
 
@@ -26,6 +26,10 @@ CI answers whether codified checks pass. A twin answers whether a system behaves
 
     CI/CD asks whether known tests pass. A twin lets an agent ask new questions, take actions, observe results, and adapt the next step.
 
+!!! observation "Where staging falls short"
+
+    Staging can tell you whether the happy path still works. It rarely lets an agent safely place hostile content in the workflow, force strange state transitions, probe the policy boundary, and keep the trace needed to prove what happened.
+
 ## What a Twin Is
 
 A twin is an isolated, production-representative simulator built for exploration.
@@ -35,6 +39,17 @@ It does not need to copy every production detail. It needs enough behavioral fid
 The right analogy is often closer to an emulator than a deployment environment. The twin should let testers inject inputs, observe internal state, capture traces, and replay the same scenario after a fix.
 
 High fidelity does not mean literal replication. Some dependencies can be real. Others can be simulated, mocked with richer behavior, or generated agentically as the test demands. The question is whether the twin preserves the behavior needed to prove or disprove the security claim.
+
+!!! info "Fidelity contract"
+
+    | Fidelity dimension | Must preserve |
+    |---|---|
+    | Identity | The same authentication and authorization decision shape |
+    | State | The state transitions relevant to the claim |
+    | Tool and action surface | The risky actions, permissions, and confirmation gates |
+    | Data boundary | The origin, tenant, workspace, or sensitivity boundary under test |
+    | Observability | Enough trace data to prove or disprove the path |
+    | Replay | The same exploit and fix scenario can be rerun |
 
 | Twin capability | What it enables |
 |---|---|
@@ -87,7 +102,7 @@ The twin is not only for security incidents.
 
 It is a standing exploration environment for features, bugs, and vulnerabilities. Agents can explore a workflow, find a strange behavior, adapt their plan, and decide what to test next. That feedback loop is where agentic testing differs from static gates.
 
-This matters because the discovery side is getting cheaper. The scarce resource becomes decision-quality proof.
+That changes the scarce resource. The hard part is no longer producing leads; it is producing decision-quality proof.
 
 !!! info "Exploration loop"
 
@@ -130,9 +145,9 @@ If the vulnerability depends on a sequence of actions, verify it in an environme
 
 ## Time to Insight Actioned
 
-The useful metric is not "findings generated."
+Do not measure this by "findings generated."
 
-The useful metric is time to insight actioned: how long it takes to move from candidate vulnerability to proven risk, accepted fix, verified non-regression, and reusable learning.
+Measure time to insight actioned: how long it takes to move from candidate vulnerability to proven risk, accepted fix, verified non-regression, and reusable learning.
 
 For a vulnerability, the value stream is:
 
@@ -152,15 +167,15 @@ find -> triage -> prove -> patch -> verify -> prevent -> detect
 
 Discovery without this loop creates backlog. A twin should shorten the loop.
 
-## Product Teams Own the Fix
+## System Owners Own the Remediation
 
-Security teams can find, verify, and explain. Product teams usually have to fix.
+Security teams can find, verify, and explain. System owners usually have to change the code, configuration, workflow, or architecture.
 
-That means the twin must produce evidence a product team can act on: a replay, trace, preconditions, expected behavior, proposed remediation shape, and regression test. A verified finding should arrive as engineering work, not as a mystery story.
+That means the twin must produce evidence a system owner can act on: a replay, trace, preconditions, expected behavior, proposed remediation shape, and regression test. A verified finding should arrive as engineering work, not as a mystery story.
 
 This is also why critical and high-severity findings with strong proof deserve priority. When discovery scales, ownership and remediation discipline become the constraint.
 
-The target operating model is self-service. Product teams should be able to run the proof, inspect the trace, apply the fix, replay the scenario, and keep the regression without waiting for a specialist to translate the finding.
+The target operating model is self-service. Security supplies proof, replay, proximity, and class guidance. System owners apply the fix, make the design trade-off, replay the scenario, and keep the regression without waiting for a specialist to translate the finding.
 
 ## Feed Runtime Findings Back Into Source Intelligence
 
@@ -192,5 +207,5 @@ The compounding value is the lesson, not the single replay.
     - Probes, hooks, injection points, traces, and replay are the core features.
     - Runtime testing turns plausible paths into behavioral evidence.
     - The strategic metric is time to insight actioned: find, prove, patch, verify, prevent, detect.
-    - Product teams need actionable proof, not a pile of plausible reports.
+    - System owners need actionable proof, not a pile of plausible reports.
     - Every runtime proof should become a source-analysis seed, regression test, or preventive control.

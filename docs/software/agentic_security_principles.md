@@ -4,7 +4,13 @@
 
     Agentic security engineering does not replace software assurance. It makes the old rules harder to ignore.
 
-    When agents can write code, review code, search code, and exploit code, the useful question is not "Which model should we use?" The useful question is "Which assurance principles still hold when the work moves faster than human review?"
+    The old assurance questions still work. They just have less patience for vague requirements, missing trade-offs, and findings that sound plausible but cannot be reproduced.
+
+    When agents can write code, review code, search code, and exploit code, the useful question is not "Which model should we use?" The useful question is "What evidence would make us trust the outcome?"
+
+!!! info "Basis for this model"
+
+    This is a practitioner model grounded in [software assurance](software_assurance.md), CodeQL-style semantic analysis, [multi-repo variant analysis](https://github.blog/security/vulnerability-research/multi-repository-variant-analysis-a-new-way-to-perform-security-research/), [OWASP GenAI risks](https://genai.owasp.org/), and runtime validation practice. Treat the loop as an assurance pattern, then calibrate thresholds and metrics with local evidence.
 
 ## Start With V&V
 
@@ -29,6 +35,12 @@ The requirements do not need to be bureaucratic. They do need to be testable. A 
 
 The [Software Artifacts](software_artifacts.md) chapter makes this point for AI-era engineering: artifacts become active contracts. Security requirements, threat models, acceptance criteria, ADRs, and test cases are no longer side documents. They are the steering system.
 
+!!! observation "Bad framing creates bad autonomy"
+
+    The wrong move is to ask an agent to "make this secure."
+
+    The better move is to state the boundary, the attacker, the forbidden outcome, and the evidence needed to accept the result. Agents are much better at executing a security contract than guessing one.
+
 ## Evidence Beats Assertion
 
 An agent saying "this is exploitable" is not evidence. It is a lead.
@@ -45,11 +57,15 @@ Evidence can be source evidence, a reachable source-to-sink path, a reproducible
 
 The standard is not perfect proof. The standard is enough evidence for a skilled critic to reproduce, dispute, or falsify the claim.
 
+!!! tip "Evidence test"
+
+    If another reviewer cannot rerun the path, inspect the trace, or challenge the assumption, the report is still a hypothesis.
+
 ## Separate Discovery From Judgment
 
 Discovery should be broad, creative, and cheap. Judgment should be slower, adversarial, and evidence-based.
 
-This separation matters because agents are good at satisfying the test they can see. If the same agent generates the finding and grades the finding, the system is easy to fool. A better design uses one process to discover candidates and a separate process to disprove them.
+This separation matters because agents are good at satisfying the test they can see. If the same loop generates the finding and grades the finding, the system is easy to fool. Use one process to discover candidates and a separate process to disprove them.
 
 | Stage | Bias we want | Failure mode |
 |---|---|---|

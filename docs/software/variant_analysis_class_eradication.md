@@ -6,6 +6,8 @@
 
     A confirmed bug tells you more than "this line is wrong." It reveals a failed assumption that may exist elsewhere: in sibling code, shared helpers, copied templates, generated projects, infrastructure modules, or agent tools that reuse the same trust model.
 
+    The first fix buys down immediate risk. The variant search buys down future surprise.
+
 ## From Instance to Class
 
 The first task after confirmation is abstraction.
@@ -42,6 +44,12 @@ It should capture enough detail for another reviewer or agent to search without 
 !!! tip "Seed discipline"
 
     Variant analysis improves when seeds describe structure, not just keywords.
+
+!!! observation "Example seed"
+
+    Weak seed: "find more uses of this function."
+
+    Better seed: "find places where attacker-controlled content reaches an outbound action without a confirmation gate, excluding paths where the action is scoped to the same origin or tenant."
 
 ## MRVA: Multi-Repo Variant Analysis
 
@@ -121,6 +129,8 @@ Path-heavy queries are powerful but expensive. Use intelligence and target selec
 Variant search should be broad. Variant promotion should be strict.
 
 Use text search, semantic search, CodeQL, framework-specific queries, dependency graphs, and agent review to find candidates. Then verify each candidate independently. Similar code is not automatically vulnerable.
+
+The search can be generous because candidates are cheap. Promotion has to be strict because engineering time is not.
 
 | Search method | Good use |
 |---|---|

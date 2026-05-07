@@ -82,12 +82,16 @@ A curated collection of benchmarks and evaluation metrics for Large Language Mod
 
 The [Agentic Security Assurance](./agentic_security_principles.md) series applies the same assurance fundamentals to AI-assisted and agentic security work. It starts with verification, validation, requirements, architecture trade-offs, and evidence quality, then turns those principles into a practical security intelligence loop: find, verify, judge, fix, test, propagate, and learn.
 
-**Key Takeaways:**
+!!! abstract "Reading order"
 
-- Agentic security engineering does not replace software assurance; it makes verification and validation more important.
-- Discovery is only one stage. The durable system is the feedback loop that turns verified findings into fixes, tests, policies, and variant searches.
-- Runtime testing and twin environments complement source analysis because some failures appear only in behavior, state, and integration.
-- Critical thinking is a control: separate evidence from assumptions, state preconditions, make the strongest objection, and define reversal conditions.
+    Read the series in order if you want the operating model. Jump to [Twin Environments and Continuous Runtime Testing](./twin_environments_cart.md) for runtime validation depth, or [Variant Analysis and Class Eradication](./variant_analysis_class_eradication.md) for MRVA and class-eradication depth.
+
+!!! success "Key Takeaways"
+
+    - Agentic security engineering does not replace software assurance; it makes verification and validation more important.
+    - Discovery is only one stage. The durable system is the feedback loop that turns verified findings into fixes, tests, policies, and variant searches.
+    - Runtime testing and twin environments complement source analysis because some failures appear only in behavior, state, and integration.
+    - Critical thinking is a control: separate evidence from assumptions, state preconditions, make the strongest objection, and define reversal conditions.
 
 ---
 
